@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-09-30",
+  "brand": {
+    "name": "Let's Surf Together",
+    "logoOrange": "#EA5934",
+    "legacyWebOrange": "#FE582C",
+    "cream": "#FFFAE7",
+    "ink": "#1B1B1B"
+  },
+  "trips": [
+    {
+      "slug": "salvador",
+      "title": "El Salvador",
+      "location": "El Sunzal",
+      "departure": "2026-10-25",
+      "return": "2026-11-01",
+      "nights": 7,
+      "levels": [
+        2,
+        3
+      ],
+      "levelRequirement": "Autonomía total en el agua",
+      "price": 1499,
+      "currency": "EUR",
+      "priceBasis": "Habitación compartida",
+      "availability": null,
+      "source": "https://www.letsurftogether.com/producto/el-salvador-25-oct-1-nov/",
+      "dossier": "https://www.letsurftogether.com/wp-content/uploads/2026/07/LST-EL-SALVADOR-SURFTRIP-25-OCT-5-NOV-1.pdf"
+    }
+  ],
+  "destinationsAwaitingNewDates": [
+    "Asturias",
+    "Euskadi",
+    "Azores"
+  ],
+  "pending": [
+    "Fechas futuras de los demás destinos",
+    "Disponibilidad actual de El Salvador",
+    "Armonizar naranja SVG #EA5934 y naranja web #FE582C",
+    "Material adicional del Drive y retratos del equipo identificados",
+    "Validar permisos de reutilización de fotografías y tipografías para el lanzamiento",
+    "CMS, CRM, consentimiento y textos legales de producción fuera de esta fase"
+  ]
+}
