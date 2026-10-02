@@ -1,29 +1,23 @@
-# Propuesta 01 — un cuaderno de surf de LST
+# Propuesta 02 — más personas y varios viajes a la vista
 
-## Decisiones a partir del cuestionario
+La home conserva el logotipo, los colores y las fuentes de LST. Se han reducido los titulares de eslogan, la numeración editorial y los remates repetidos. Aura sigue dando personalidad a la apertura; las secciones usan Work Sans para una lectura más natural.
 
-Se conserva el logotipo original, el crema y negro del sitio actual, el naranja del SVG entregado y las tipografías existentes Aura, Work Sans, Space Mono y Space Grotesk. El cuestionario pide cercanía, conexión, disfrute, progreso y una experiencia acompañada por sus organizadores. Por eso abrimos con «Surfea. Mejora. Comparte.», explicamos que se puede venir solo y mostramos personas y sesiones reales de LST. No se ha trasladado a esta marca el público ni las promesas de Travelhood.
+## Viajes
 
-## Identidad propia
+Una única lista de cuatro fichas muestra El Salvador, Asturias, Euskadi y Azores. Cada ficha tiene fotografía, destino, fecha, nivel/duración, precio y una acción. Se elimina la ficha grande con tabla, el lateral de otros destinos y las notas de procedencia intercaladas; el detalle y su fuente se consultan en el panel.
 
-Apertura asimétrica con titular tipográfico y foto independiente; pequeño segundo encuadre como recuerdo de viaje; secciones numeradas y pies documentales; fichero de salida con campos visibles; bordes rectos y botones rectangulares. El contraste negro/crema/naranja y la tipografía Aura llevan el peso visual. Las fotografías aportan la vida del viaje, sin iconografía de surf decorativa.
+La lista admite cualquier número de fichas: cuatro columnas en escritorio, dos en tablet y una en móvil. No hay carrusel que esconda salidas ni una jerarquía especial para la primera.
 
-La web actual usa #FE582C como naranja mientras el SVG entregado usa #EA5934. Esta propuesta toma el SVG como referencia y lo conserva intacto. Este matiz se deja para validación de identidad, sin presentar una paleta nueva como aprobada.
+El Salvador conserva los únicos datos futuros confirmados: 25 octubre–1 noviembre 2026, 7 noches, nivel II–III con autonomía y 1.499 € en habitación compartida. Los otros tres destinos sirven para revisar el comportamiento de una oferta más amplia y muestran explícitamente que sus nuevas fechas, nivel, duración y precio están pendientes. No son salidas nuevas confirmadas. No se han inventado fechas, precios ni plazas.
 
-## Claridad comercial
+## Tono
 
-El primer CTA lleva directamente a la oferta. El Salvador concentra fecha, duración, nivel, precio y acción en una ficha visible también en móvil. Las futuras fechas sin confirmar tienen un tratamiento distinto. El panel permite elegir salida, indicar nivel y probar la solicitud; muestra desde el inicio que no envía ni guarda información, y que solicitar no equivale a reservar.
+La apertura pasa a «Nos vamos de surf. ¿Te vienes?». Los apartados explican quién acompaña, cómo se comparte el viaje y cómo encontrar el nivel. Se elimina la banda de palabras de marca, los remates de eslogan y las cifras a gran tamaño. La historia de Marruecos y el testimonio de Laura se mantienen, con procedencia documentada.
 
-El dossier confirma nivel II–III, autonomía real en el agua, 7 noches y 1.499 € por habitación compartida. No se han usado descuentos ni cifras de disponibilidad. El nivel puede explorarse con pestañas que funcionan con ratón, táctil y teclado. FAQ y navegación usan controles semánticos; el panel usa dialog nativo con foco y Escape.
+## Interacción
 
-## Revisar primero
+Cada ficha abre el panel con su propio destino seleccionado. Los destinos sin fecha no heredan la fecha ni la tarifa de El Salvador. Se conservan la validación, el cierre con Escape, la navegación por teclado y el borrado del formulario. La solicitud sigue siendo una demostración que no envía ni guarda datos.
 
-1. **Apertura y tono.** Validar «Surfea. Mejora. Comparte.», el tamaño de Aura y la proporción surf/grupo.
-2. **Paleta y fotografía.** Resolver los dos naranjas existentes y elegir fotos adicionales del Drive, incluido un retrato del equipo correctamente identificado.
-3. **Ficha y solicitud.** Validar qué datos se priorizan, el encaje por nivel y los campos mínimos que posteriormente necesita el CRM.
+## Pendiente
 
-## Contenido pendiente
-
-Nuevas fechas de Asturias, Euskadi y Azores; disponibilidad real; selección definitiva del material del Drive; retratos identificados. El testimonio de Laura procede de la home pública, las cifras +28 y +213 del cuestionario. No se han inventado reseñas ni identificado caras por apariencia. El texto del origen procede del cuestionario; «¿Nos vamos?» es un recurso editorial, no una cita literal atribuida a Lucas.
-
-La integración CMS/CRM, las políticas de reserva y los documentos legales quedan para su fase correspondiente. La propuesta no recoge datos personales.
+Confirmar próximas fechas, tarifas y niveles de Asturias, Euskadi y Azores; disponibilidad de El Salvador; decidir entre el naranja del SVG (#EA5934, usado aquí) y el de la web anterior (#FE582C). CMS, CRM, pagos y páginas interiores quedan fuera de esta fase.

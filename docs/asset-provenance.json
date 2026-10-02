@@ -129,5 +129,24 @@
     "name": "Blanca",
     "quote": "Ha sido una experiencia súper bonita, en la que en pocos días fuimos todos una gran familia",
     "source": "https://www.letsurftogether.com/"
+  },
+  "revision2": {
+    "date": "2026-10-02",
+    "additionalUsage": [
+      {
+        "file": "dist/assets/asturias.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/06/Asturias_2024_14-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/",
+        "note": "Source verified in retained Nosotros CSS (aboutcss.css)."
+      },
+      {
+        "file": "dist/assets/euskadi.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Laga-2024_01.jpg"
+      },
+      {
+        "file": "dist/assets/azores.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/11.png"
+      }
+    ]
   }
 }
