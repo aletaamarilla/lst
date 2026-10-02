@@ -29,9 +29,10 @@
     }
   ],
   "destinationsAwaitingNewDates": [
-    "Asturias",
+    "Azores",
     "Euskadi",
-    "Azores"
+    "Marruecos",
+    "Cádiz"
   ],
   "pending": [
     "Fechas futuras de los demás destinos",
@@ -40,5 +41,25 @@
     "Material adicional del Drive y retratos del equipo identificados",
     "Validar permisos de reutilización de fotografías y tipografías para el lanzamiento",
     "CMS, CRM, consentimiento y textos legales de producción fuera de esta fase"
-  ]
+  ],
+  "designScenario": {
+    "datedDepartures": 2,
+    "upcomingDestinations": 4,
+    "sampleDeparture": {
+      "slug": "asturias",
+      "departure": "2026-11-06",
+      "return": "2026-11-08",
+      "confirmed": false,
+      "isExample": true,
+      "price": null,
+      "note": "Fictional dates for the requested two-confirmed-departure design scenario. Visibly marked as an example; never offered as a real confirmed trip."
+    }
+  },
+  "contact": {
+    "channel": "whatsapp",
+    "phone": "34648189257",
+    "source": "https://www.letsurftogether.com/contacto/",
+    "checkedAt": "2026-10-02",
+    "note": "Uses the existing published contact number, pending user confirmation of the WhatsApp recipient. Links prefill text; no automated messages or lead collection."
+  }
 }

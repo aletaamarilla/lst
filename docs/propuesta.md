@@ -1,24 +1,17 @@
-# Propuesta 04 — una sección que ayuda a elegir
+# Propuesta de home · revisión 5
 
-La composición deja de tratar todas las ofertas como tarjetas idénticas. El Salvador ocupa la apertura por ser la salida con fecha, nivel y tarifa confirmados. Los otros tres destinos conservan su fotografía y una consulta propia, agrupados como destinos con nuevas fechas pendientes. La sección completa se ve como una selección editorial y conserva las cuatro opciones sin un carrusel.
+Dos salidas destacadas con fotografías amplias, fecha sobre la imagen y consulta directa por WhatsApp. Debajo, cuatro destinos próximos con menor peso visual. La jerarquía permite comparar los viajes con fecha antes de explorar destinos pendientes.
 
-## Decisiones visuales
+## Recorrido de contacto
 
-Una fotografía horizontal da espacio a la ola y al destino principal. La fecha funciona como una etiqueta de calendario legible, el nombre mantiene Aura y la información de decisión pasa a una zona clara. Las fotografías de los otros destinos, con formatos menores, introducen variedad y escala. El crema, el naranja y la tipografía original sostienen la identidad; el negro deja de llenar cuatro bloques idénticos.
+Todos los puntos de contacto llevan a WhatsApp: fichas de viaje, próximos destinos, ayuda para elegir, dudas, cierre y pie de página. Cada enlace incluye un mensaje contextual editable. No hay formulario, email ni envío automático. El panel «Ver detalles» de El Salvador conserva su información comercial y termina con el mismo acceso a WhatsApp.
 
-## Recorrido comercial propuesto
+Se utiliza provisionalmente el teléfono público de LST +34 648 18 92 57 (https://www.letsurftogether.com/contacto/), pendiente de confirmación del usuario como receptor de WhatsApp.
 
-1. Identificar la salida que tiene fechas y consultar su nivel.
-2. Ver duración, requisito de autonomía y precio completo por persona, con habitación compartida.
-3. Abrir el viaje mediante la acción principal naranja.
-4. Consultar otro destino o pedir orientación si esa salida no encaja.
+## Escenario de contenido
 
-El enlace a los niveles resuelve una duda de encaje. La ayuda para elegir queda al final como segundo camino de conversión. Se eliminan las tres repeticiones de «por confirmar» por destino: el estado pendiente aparece en el encabezado y al pie de la colección, y sigue explícito en cada panel de consulta.
+- El Salvador: fechas reales 25 octubre–1 noviembre 2026, 7 noches, nivel II–III con autonomía, 1.499 € por persona en habitación compartida. Disponibilidad por consultar.
+- Asturias: ejemplo visual de la segunda salida, 6–8 noviembre 2026. La ficha indica «Salida de ejemplo», «Maqueta» y fechas de muestra sin salida real confirmada. No se inventan precio, programa ni nivel. El mensaje de WhatsApp consulta las salidas reales, sin ofrecer la fecha ficticia.
+- Azores, Euskadi, Marruecos y Cádiz: cuatro destinos próximamente, sin fechas futuras confirmadas. Fotos documentales de viajes previos de LST.
 
-Esta es una hipótesis de diseño para facilitar la elección y la solicitud; su efecto sobre la conversión deberá medirse con tráfico real. No se añaden urgencia artificial, plazas ni descuentos.
-
-## Datos y alcance
-
-El Salvador: 25 octubre–1 noviembre 2026, 7 noches, nivel II–III con autonomía, 1.499 € por persona en habitación compartida. Sesiones y análisis de vídeo constan en el dossier. Disponibilidad por consultar. Asturias, Euskadi y Azores muestran destinos reales, no salidas futuras confirmadas; sus nuevas fechas, programa, nivel y precio siguen pendientes.
-
-En escritorio se combina una salida amplia con los otros tres destinos; en móvil la salida abre la sección y las siguientes fichas pasan a un formato horizontal compacto. La lista de salidas admite más artículos sin ocultarlos. Los formularios siguen siendo demostraciones sin envío ni almacenamiento. CMS, CRM, pagos y páginas interiores quedan fuera de esta fase.
+El efecto sobre consultas o ventas es una hipótesis de diseño que deberá medirse con tráfico real. No se añaden urgencia artificial, plazas disponibles ni descuentos. La versión permanece privada y con noindex.

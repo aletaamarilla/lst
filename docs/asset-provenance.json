@@ -159,5 +159,20 @@
         "note": "Previously reviewed documentary LST image; source file retained from initial asset research."
       }
     ]
+  },
+  "revision5": {
+    "date": "2026-10-02",
+    "additionalUsage": [
+      {
+        "file": "dist/assets/marruecos.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Marruecos_2025_53-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/"
+      },
+      {
+        "file": "dist/assets/cadiz.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Cadiz_2024_202-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/"
+      }
+    ]
   }
 }
