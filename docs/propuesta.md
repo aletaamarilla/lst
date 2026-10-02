@@ -15,3 +15,11 @@ Se utiliza provisionalmente el teléfono público de LST +34 648 18 92 57 (https
 - Azores, Euskadi, Marruecos y Cádiz: cuatro destinos próximamente, sin fechas futuras confirmadas. Fotos documentales de viajes previos de LST.
 
 El efecto sobre consultas o ventas es una hipótesis de diseño que deberá medirse con tráfico real. No se añaden urgencia artificial, plazas disponibles ni descuentos. La versión permanece privada y con noindex.
+
+## Revisión 6 · primera pantalla
+
+La apertura usa una fotografía documental de LST a todo el ancho con el titular de marca integrado. El encuadre mantiene a la surfista a la derecha en escritorio y reserva un espacio visible para la acción en móvil. El degradado proporciona contraste al texto. Se mantiene el mensaje «Nos vamos de surf. ¿Te vienes?» y se concreta la experiencia en una frase breve.
+
+El CTA principal «Ver viajes y fechas» lleva a las salidas. La consulta por WhatsApp es una alternativa secundaria visible para resolver dudas. La navegación también permite el acceso directo a WhatsApp. La foto de grupo acompaña «Ven por tu cuenta. El grupo lo ponemos nosotros» y enlaza a la experiencia: responde a la duda de viajar sin compañía, sin añadir cifras, reseñas ni promesas nuevas.
+
+En móvil la foto de grupo continúa debajo de la invitación principal. No hay carrusel, vídeo automático ni movimiento obligatorio. Se respetan las preferencias de movimiento reducido. El diseño es una hipótesis para mejorar comprensión e intención de consulta; no implica una mejora de conversión medida.
