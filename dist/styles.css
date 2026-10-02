@@ -54,3 +54,63 @@
 @media(max-width:1100px){.trip-grid{gap:28px 24px}.trip-card-photo{aspect-ratio:1.12}.trips .trip-card h3{font-size:49px;bottom:17px;left:23px}.trip-card-copy{padding:21px 23px 24px}.trip-card-fit{min-height:21px}.trip-card-price span{max-width:150px}}
 @media(max-width:760px){.trips{padding-top:35px;padding-bottom:46px}.trips .section-heading{margin-bottom:25px}.trips .section-heading h2{font:400 clamp(38px,10.3vw,56px)/1.04 var(--display)}.trips .section-heading>div>p{margin-top:11px}.trip-grid{gap:26px}.trip-card-photo{aspect-ratio:1.2}.trips .trip-card h3{font-size:46px;left:19px;bottom:14px}.trip-card-copy{padding:19px 19px 21px}.trip-card-date{font-size:16px}.trip-card-fit{font-size:14px;min-height:21px}.trip-card-price strong{font-size:25px}.trip-card-pending .trip-card-price strong{font-size:16px}.trip-card-price span{max-width:140px}.trip-card-action{font-size:14px;padding:12px 16px}}
 @media(max-width:359px){.trip-card-copy{padding-inline:15px}.trip-card-bottom{gap:10px}.trip-card-action{padding-inline:11px}.trip-card-price span{max-width:116px}}
+
+/* Revision 04: editorial composition built around a clear booking decision. */
+.journeys{padding-top:53px;padding-bottom:58px;border-top:1px solid var(--line)}
+.journeys-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}
+.journeys-eyebrow{font:400 12px/1.4 var(--mono);letter-spacing:.1em;margin-bottom:13px}
+.journeys-heading h2{font:400 clamp(48px,5.1vw,70px)/1.05 var(--display);letter-spacing:0}
+.journeys-heading h2 span{color:var(--orange)}
+.journeys-level-link{font:500 15px/1.5 var(--body);text-underline-offset:6px;margin-bottom:8px;white-space:nowrap}
+.journeys-layout{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(0,1fr);gap:35px;align-items:start}
+.departure-list{display:grid;gap:30px;min-width:0}
+.departure-feature{background:#fffdf5;box-shadow:0 8px 24px #1b1b1b0b}
+.departure-photo{position:relative;isolation:isolate;overflow:hidden}
+.departure-photo>img{width:100%;height:342px;object-fit:cover;object-position:50% 52%}
+.departure-photo::after{content:'';position:absolute;inset:35% 0 0;z-index:1;background:linear-gradient(180deg,transparent,rgba(0,0,0,.64));pointer-events:none}
+.departure-date{position:absolute;z-index:2;left:25px;top:24px;display:flex;flex-direction:column;gap:5px;background:var(--paper);color:var(--ink);border-left:4px solid var(--orange);padding:13px 18px 14px;box-shadow:0 2px 10px #0001}
+.departure-date>span{font:400 12px/1.4 var(--mono);letter-spacing:.015em}
+.departure-date strong{font:600 21px/1.15 var(--body);letter-spacing:-.025em}
+.departure-photo-title{position:absolute;left:29px;bottom:23px;right:20px;z-index:2;color:var(--paper)}
+.departure-photo-title p{font:400 12px/1.4 var(--mono);letter-spacing:.035em;margin-bottom:8px}
+.departure-photo-title h3{font:400 clamp(48px,4.8vw,66px)/1 var(--display);letter-spacing:0}
+.departure-body{padding:26px 29px 27px}
+.departure-description{font:500 19px/1.5 var(--body);letter-spacing:-.015em}
+.departure-facts{display:flex;flex-wrap:wrap;gap:8px 0;margin:17px 0 22px;color:var(--muted);font-size:14px;line-height:1.5}
+.departure-facts span+span{border-left:1px solid #bbb29b;padding-left:14px;margin-left:14px}
+.departure-booking{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:20px;border-top:1px solid var(--line)}
+.departure-price{display:flex;flex-direction:column;gap:4px}
+.departure-price>span{font-size:12px;line-height:1.5;color:var(--muted)}
+.departure-price>strong{font:600 35px/1.15 var(--body);letter-spacing:-.045em}
+.departure-price small{font-size:26px}
+.departure-booking>div{display:flex;flex-direction:column;align-items:stretch;gap:10px}
+.departure-cta{min-width:212px;border:0;font:600 16px/1.4 var(--body);min-height:54px;padding:15px 25px}
+.departure-booking>div>p{font-size:12px;line-height:1.5;color:var(--muted);text-align:center}
+.destination-collection{min-width:0}
+.destination-collection-heading{display:flex;flex-direction:column;gap:5px;margin-bottom:18px}
+.destination-collection-heading h3{font:600 22px/1.25 var(--body);letter-spacing:-.03em}
+.destination-collection-heading p{font-size:14px;color:var(--muted)}
+.destination-list{display:grid;gap:18px}
+.destination-preview{display:grid;grid-template-columns:minmax(0,.93fr) minmax(0,1fr);background:#fffdf5;min-height:158px;position:relative}
+.destination-preview-photo{overflow:hidden;min-width:0}
+.destination-preview-photo img{width:100%;height:100%;min-height:158px;object-fit:cover;transition:transform .4s ease}
+.destination-preview:nth-child(1) img{object-position:77% 50%}
+.destination-preview:nth-child(2) img{object-position:49% 54%}
+.destination-preview:nth-child(3) img{object-position:50% 65%}
+.destination-preview-copy{padding:22px 21px;display:flex;flex-direction:column;align-items:start;min-width:0}
+.destination-preview-copy h4{font:400 38px/1.05 var(--display);letter-spacing:0;margin:0 0 6px}
+.destination-preview-copy p{font-size:14px;line-height:1.5;color:var(--muted);margin-bottom:12px}
+.destination-preview-action{font:600 14px/1.45 var(--body);color:var(--ink);border:0;border-bottom:2px solid var(--orange);background:none;padding:9px 0 5px;min-height:40px;text-align:left;margin-top:auto}
+.destination-preview-action:hover{border-color:var(--ink)}
+.destination-collection-note{font-size:12px;line-height:1.6;color:var(--muted);margin-top:16px;max-width:380px}
+.journeys-help{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:27px 29px;margin-top:32px;border:1px solid var(--line);background:var(--paper)}
+.journeys-help-copy{display:flex;align-items:center;gap:25px}
+.journeys-help-copy>img{width:65px;height:auto;flex-shrink:0}
+.journeys-help h3{font:600 20px/1.3 var(--body);letter-spacing:-.02em;margin-bottom:5px}
+.journeys-help p{font-size:15px;line-height:1.5;color:var(--muted)}
+.journeys-help-button{background:transparent;color:var(--ink);border:1px solid var(--ink);font:500 15px/1.5 var(--body);padding:12px 21px;min-height:48px;white-space:nowrap;transition:background .2s,color .2s}
+.journeys-help-button:hover{background:var(--ink);color:var(--paper)}
+@media(hover:hover) and (prefers-reduced-motion:no-preference){.destination-preview:hover img{transform:scale(1.035)}}
+@media(max-width:1100px){.journeys-layout{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px}.departure-photo>img{height:325px}.departure-date{left:19px;top:20px;padding:12px 14px}.departure-photo-title{left:23px;bottom:23px}.departure-body{padding:24px 23px}.departure-description{font-size:18px}.desktop-break{display:none}.departure-facts{font-size:13px}.departure-facts span+span{padding-left:10px;margin-left:10px}.departure-booking{flex-direction:column;align-items:stretch;gap:18px}.departure-price{display:grid;grid-template-columns:1fr auto;gap:3px 12px;align-items:center}.departure-price>strong{grid-column:2;grid-row:1/3;font-size:30px}.departure-price>span{grid-column:1}.departure-booking>div>p{text-align:left}.destination-preview{grid-template-columns:minmax(0,.72fr) minmax(0,1fr);min-height:178px}.destination-preview-photo img{min-height:178px}.destination-preview-copy{padding:22px 17px}.destination-preview-copy h4{font-size:34px}.destination-preview-action{font-size:14px}.journeys-help{padding:25px 23px}.journeys-help-copy{gap:18px}.journeys-help-copy>img{width:53px}}
+@media(max-width:800px){.journeys-layout{grid-template-columns:1fr;gap:34px}.departure-photo>img{height:345px}.departure-description{font-size:19px}.departure-booking{flex-direction:row;align-items:center}.departure-price{display:flex;align-items:start}.departure-facts{font-size:14px}.destination-list{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.destination-preview{display:flex;flex-direction:column;min-height:0}.destination-preview-photo img{height:auto;min-height:0;aspect-ratio:1.35}.destination-preview-copy{padding:18px;flex:1}.destination-preview-copy h4{font-size:34px}.destination-preview-action{min-height:44px}.destination-collection-note{max-width:none}.journeys-help-copy>img{display:none}.journeys-help{gap:18px;padding:23px}}
+@media(max-width:600px){.journeys{padding-top:35px;padding-bottom:43px}.journeys-heading{display:block;margin-bottom:25px}.journeys-eyebrow{font-size:12px;margin-bottom:12px}.journeys-heading h2{font-size:clamp(40px,11vw,57px)}.journeys-level-link{display:inline-block;font-size:14px;margin-top:17px;margin-bottom:0}.departure-photo>img{height:280px;object-position:62% 50%}.departure-date{left:15px;top:16px;padding:10px 13px 11px;gap:4px}.departure-date strong{font-size:18px}.departure-date>span{font-size:12px}.departure-photo-title{left:19px;bottom:19px}.departure-photo-title h3{font-size:48px}.departure-photo-title p{font-size:12px;margin-bottom:7px}.departure-body{padding:21px 19px 22px}.departure-description{font-size:17px;line-height:1.55}.departure-facts{font-size:13px;gap:8px 0;margin:15px 0 18px}.departure-facts span+span{margin-left:10px;padding-left:10px}.departure-facts span:last-child{flex-basis:100%;border:0;margin-left:0;padding-left:0}.departure-booking{flex-direction:column;align-items:stretch;gap:17px;padding-top:18px}.departure-price{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 9px}.departure-price>strong{grid-column:2;grid-row:1/3;font-size:32px}.departure-price>span{grid-column:1;font-size:12px}.departure-cta{width:100%;font-size:16px;min-height:52px}.departure-booking>div{gap:9px}.departure-booking>div>p{text-align:center}.destination-collection-heading{gap:5px;margin-bottom:17px}.destination-collection-heading h3{font-size:22px}.destination-list{grid-template-columns:1fr;gap:15px}.destination-preview{display:grid;grid-template-columns:42% minmax(0,1fr);min-height:154px}.destination-preview-photo img{height:100%;min-height:154px;aspect-ratio:auto}.destination-preview-copy{padding:18px 17px}.destination-preview-copy h4{font-size:35px}.destination-preview-copy p{font-size:13px;margin-bottom:5px}.destination-preview-action{font-size:13px;min-height:44px;padding-top:9px}.destination-collection-note{font-size:12px;line-height:1.6;margin-top:14px}.journeys-help{margin-top:27px;padding:23px 21px;display:block}.journeys-help h3{font-size:20px;line-height:1.3}.journeys-help p{font-size:15px;margin-top:7px}.journeys-help-button{margin-top:18px;width:100%;font-size:15px}.journeys-help-copy{display:block}}
