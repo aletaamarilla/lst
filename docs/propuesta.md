@@ -1,10 +1,10 @@
-# Propuesta 02 — más personas y varios viajes a la vista
+# Propuesta 03 — viajes con más presencia visual
 
 La home conserva el logotipo, los colores y las fuentes de LST. Se han reducido los titulares de eslogan, la numeración editorial y los remates repetidos. Aura sigue dando personalidad a la apertura; las secciones usan Work Sans para una lectura más natural.
 
 ## Viajes
 
-Una única lista de cuatro fichas muestra El Salvador, Asturias, Euskadi y Azores. Cada ficha tiene fotografía, destino, fecha, nivel/duración, precio y una acción. Se elimina la ficha grande con tabla, el lateral de otros destinos y las notas de procedencia intercaladas; el detalle y su fuente se consultan en el panel.
+Una única lista de cuatro fichas muestra El Salvador, Asturias, Euskadi y Azores. La fotografía gana altura y el nombre del destino aparece sobre ella en Aura, con un degradado oscuro para mantener su lectura. Debajo, el panel negro de marca concentra fecha, nivel/duración, precio y un botón naranja. Se recupera carácter visual sin añadir etiquetas, iconos ni información nueva. Se elimina la ficha grande con tabla, el lateral de otros destinos y las notas de procedencia intercaladas; el detalle y su fuente se consultan en el panel.
 
 La lista admite cualquier número de fichas: cuatro columnas en escritorio, dos en tablet y una en móvil. No hay carrusel que esconda salidas ni una jerarquía especial para la primera.
 
