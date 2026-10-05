@@ -61,5 +61,20 @@
     "source": "https://www.letsurftogether.com/contacto/",
     "checkedAt": "2026-10-02",
     "note": "Uses the existing published contact number, pending user confirmation of the WhatsApp recipient. Links prefill text; no automated messages or lead collection."
+  },
+  "bookingFlow": {
+    "channel": "whatsapp",
+    "steps": [
+      "Consultar viaje y nivel",
+      "Comprobar disponibilidad, programa e inclusiones",
+      "Formalizar la reserva según las condiciones facilitadas por el equipo"
+    ],
+    "source": "User instruction: all booking enquiries through WhatsApp. Actual confirmation is handled by LST.",
+    "notSpecified": [
+      "payment method",
+      "deposit applicable to all trips",
+      "response time",
+      "cancellation policy"
+    ]
   }
 }

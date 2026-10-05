@@ -1,6 +1,6 @@
 # Let's Surf Together — propuesta de home
 
-Proyecto independiente de Travelhood. Primera propuesta visual responsive, basada en el cuestionario entregado, los SVG originales y el material publicado por LST. Incluye la home, un escenario de diseño con dos salidas y cuatro destinos pendientes, y enlaces de consulta por WhatsApp.
+Proyecto independiente de Travelhood. Primera propuesta visual responsive, basada en el cuestionario entregado, los SVG originales y el material publicado por LST. Incluye la home completa, dos salidas con fecha (una es una muestra), cuatro próximos viajes pendientes de fechas, orientación por nivel y el recorrido de reserva por WhatsApp.
 
 ## Ejecutar
 
@@ -20,7 +20,7 @@ Abrir `http://localhost:4175`. El servidor sirve exclusivamente `dist/` y añade
 - `dist/assets/`: logos sin modificar, imágenes optimizadas y fuentes locales.
 - `docs/content-inventory.json`: datos comerciales y pendientes para la futura migración a CMS.
 - `docs/asset-provenance.json`: fuentes del material visual.
-- `docs/propuesta.md`: decisiones y tres puntos prioritarios para revisar.
+- `docs/propuesta.md`: decisiones de diseño y alcance de cada revisión.
 
 ## Alcance y comportamiento
 
@@ -35,3 +35,9 @@ No se copian al sitio los datos legales privados del cuestionario. `noindex,nofo
 ## Evolución a CMS
 
 La lista `.departure-list` muestra las dos salidas en paralelo en escritorio y apiladas en móvil. `.destination-list` muestra cuatro destinos: cuatro columnas en escritorio, dos en tablet y fichas horizontales en móvil. El inventario distingue expresamente los datos reales del escenario de diseño. En la siguiente fase conviene generar fichas y mensajes de WhatsApp desde una única fuente del CMS, con estados confirmado/pendiente y ejemplos excluidos del sitio comercial.
+
+## Recorrido de la landing
+
+La apertura editorial presenta el producto y lleva a los viajes o a «Cómo reservar». Después del calendario, la experiencia y el testimonio real aportan contexto sobre el viaje. El bloque de reserva explica la consulta por WhatsApp, la comprobación de nivel/disponibilidad y la formalización con el equipo. Niveles, origen de LST y preguntas frecuentes resuelven las dudas restantes antes del cierre de contacto.
+
+No se prometen un plazo de respuesta, un método de pago, condiciones de cancelación ni depósito comunes a todas las salidas. No hay seguimiento de ventas implementado; el efecto sobre consultas y reservas debe medirse en producción.

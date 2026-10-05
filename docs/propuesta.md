@@ -23,3 +23,11 @@ La apertura usa una fotografía documental de LST a todo el ancho con el titular
 El CTA principal «Ver viajes y fechas» lleva a las salidas. La consulta por WhatsApp es una alternativa secundaria visible para resolver dudas. La navegación también permite el acceso directo a WhatsApp. La foto de grupo acompaña «Ven por tu cuenta. El grupo lo ponemos nosotros» y enlaza a la experiencia: responde a la duda de viajar sin compañía, sin añadir cifras, reseñas ni promesas nuevas.
 
 En móvil la foto de grupo continúa debajo de la invitación principal. No hay carrusel, vídeo automático ni movimiento obligatorio. Se respetan las preferencias de movimiento reducido. El diseño es una hipótesis para mejorar comprensión e intención de consulta; no implica una mejora de conversión medida.
+
+## Revisión 7 · recorrido de consulta y reserva
+
+Se revisa la landing completa: apertura de revista de surf con tipografía sobre papel, fotografías separadas del texto y un montaje asimétrico; calendario; experiencia con testimonio real; reserva en tres pasos; niveles; origen de LST; dudas y cierre por WhatsApp. Se reescribe el texto con información concreta y se eliminan frases como «el grupo lo ponemos nosotros» y «también nos apetece volver a».
+
+Los cuatro destinos se presentan como próximos viajes por anunciar, con fechas pendientes. Asturias conserva su identificación como muestra. El bloque «Cómo reservar» explica la consulta, la comprobación de nivel y disponibilidad y la formalización de la plaza. No se afirman método de pago, rapidez de respuesta, depósito universal ni cancelaciones que no se han confirmado. La facilidad consiste en iniciar la reserva con un WhatsApp y recibir los pasos del equipo.
+
+Las secciones tienen una acción adecuada a cada duda, sin formularios, pop-ups comerciales ni urgencia artificial. La secuencia se diseña para ayudar a elegir y consultar; el efecto comercial necesita medición real.
