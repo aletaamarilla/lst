@@ -38,6 +38,6 @@ La lista `.departure-list` muestra las dos salidas en paralelo en escritorio y a
 
 ## Recorrido de la landing
 
-La apertura editorial presenta el producto y lleva a los viajes o a «Cómo reservar». Después del calendario, la experiencia y el testimonio real aportan contexto sobre el viaje. El bloque de reserva explica la consulta por WhatsApp, la comprobación de nivel/disponibilidad y la formalización con el equipo. Niveles, origen de LST y preguntas frecuentes resuelven las dudas restantes antes del cierre de contacto.
+La portada ocupa la primera pantalla con una fotografía de surf, la firma de LST y un único CTA hacia los viajes. La navegación ofrece acceso a «Cómo reservar». Después del calendario, la experiencia y el testimonio real aportan contexto sobre el viaje. El bloque de reserva explica la consulta por WhatsApp, la comprobación de nivel/disponibilidad y la formalización con el equipo. Niveles, origen de LST y preguntas frecuentes resuelven las dudas restantes antes del cierre de contacto.
 
 No se prometen un plazo de respuesta, un método de pago, condiciones de cancelación ni depósito comunes a todas las salidas. No hay seguimiento de ventas implementado; el efecto sobre consultas y reservas debe medirse en producción.

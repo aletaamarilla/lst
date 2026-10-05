@@ -15,3 +15,7 @@ dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close(
 dialog.addEventListener('click',event=>{const box=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom))dialog.close();});
 dialog.addEventListener('close',()=>detailTrigger?.focus());
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&nav.classList.contains('is-open')){nav.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Abrir menú');toggle.focus();}});
+
+const cover=document.querySelector('.cover-hero');
+const siteHeader=document.querySelector('.site-header');
+if(cover&&'IntersectionObserver' in window){new IntersectionObserver(([entry])=>siteHeader.classList.toggle('is-scrolled',!entry.isIntersecting),{rootMargin:'-78px 0px 0px 0px',threshold:0}).observe(cover);}

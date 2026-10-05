@@ -31,3 +31,9 @@ Se revisa la landing completa: apertura de revista de surf con tipografía sobre
 Los cuatro destinos se presentan como próximos viajes por anunciar, con fechas pendientes. Asturias conserva su identificación como muestra. El bloque «Cómo reservar» explica la consulta, la comprobación de nivel y disponibilidad y la formalización de la plaza. No se afirman método de pago, rapidez de respuesta, depósito universal ni cancelaciones que no se han confirmado. La facilidad consiste en iniciar la reserva con un WhatsApp y recibir los pasos del equipo.
 
 Las secciones tienen una acción adecuada a cada duda, sin formularios, pop-ups comerciales ni urgencia artificial. La secuencia se diseña para ayudar a elegir y consultar; el efecto comercial necesita medición real.
+
+## Revisión 8 · portada mínima
+
+La portada ocupa la primera pantalla con una sola fotografía real de El Sunzal, el titular «Nos vemos en el pico» (firma de LST), una etiqueta que identifica los viajes en grupo y el CTA «Ver los viajes». El logo blanco y la navegación se integran sobre la foto. El encuadre mantiene al surfista por encima del titular y el degradado aporta contraste sin cubrir el centro de la imagen.
+
+La navegación móvil cambia a fondo claro al salir de la portada o abrir el menú. La composición elimina los párrafos y la segunda foto de la apertura y conserva el recorrido de reserva y las secciones ya preparadas debajo. No se añaden carrusel, vídeo ni animación obligatoria.
