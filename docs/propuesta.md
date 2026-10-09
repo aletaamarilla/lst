@@ -64,3 +64,12 @@ Se conserva la composición aprobada. «Ver fotos» abre una galería con despla
 El modelo admite varias salidas para cada destino. Una sola fecha conserva la consulta directa; con varias se despliegan las fechas y cada fila consulta esa salida por WhatsApp. Asturias muestra dos fechas ficticias (6–8 y 20–22 noviembre) para revisar la interacción, identificadas como ejemplo en la web y en ambos mensajes. El Salvador mantiene su única salida real publicada.
 
 Los niveles siempre se muestran: todos por defecto y configurables por destino. El Salvador conserva II–III con autonomía; los otros cinco destinos se configuran para todos los niveles por indicación del cliente. Se elimina el texto de niveles pendientes. Las fechas, programas y tarifas aún no confirmados siguen identificados como pendientes.
+
+
+## Revisión 12 · presentación al cliente y selección de fechas
+
+Por indicación expresa del cliente, Asturias se presenta con dos salidas de noviembre y programa completo, sin avisos de muestra en tarjetas, página, popup o mensajes. Se utiliza una tarifa de demostración de 349 € por persona. La trazabilidad permanece en `demoData` y en el inventario interno; estos datos se sustituirán por las salidas definitivas.
+
+Las fechas se abren desde «Elegir fecha», en una ventana inspirada en la interacción de Travelhood: panel desde abajo en teléfono, ventana centrada en escritorio, lista interior desplazable, una consulta de WhatsApp por salida y retorno al punto de lectura al cerrar. No se añaden depósitos, plazas restantes ni condiciones de cancelación ficticias.
+
+Las flechas decorativas desaparecen en móvil. Los controles de las fotos se llaman Anterior, Siguiente y Cerrar; las flechas de escritorio se dibujan en SVG para evitar interpretaciones como emoji. Incluido y No incluido quedan siempre visibles, sin botones de cierre o colapso, tanto en El Salvador como en Asturias.

@@ -39,7 +39,7 @@ export function departuresFor(trip) {
     if (result.price !== null && (!Number.isFinite(result.price) || result.price <= 0)) {
       throw new Error(`Invalid departure price: ${trip.id}/${departure.id}`);
     }
-    if (!['confirmed', 'example', 'upcoming'].includes(result.state)) {
+    if (!['confirmed', 'upcoming'].includes(result.state)) {
       throw new Error(`Invalid departure state: ${trip.id}/${departure.id}`);
     }
     return result;
@@ -47,9 +47,6 @@ export function departuresFor(trip) {
 }
 
 export function departureMessage(trip, departure) {
-  if (departure.state === 'example') {
-    return `¡Hola, LST! Me interesa un próximo viaje real a ${trip.name}. He visto la fecha de ejemplo ${departure.date}. ¿Tenéis alguna salida real por esas fechas?`;
-  }
   return departure.message ?? `¡Hola, LST! Me interesa el viaje a ${trip.name} del ${departure.date}. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?`;
 }
 
@@ -62,10 +59,10 @@ export function tripFacts(trip) {
   const departures = departuresFor(trip);
   const durations = [...new Set(departures.map(departure => departure.duration))];
   return [
-    [trip.state === 'example' ? 'Fechas de muestra' : 'Fechas', departures.length > 1
-      ? `${departures.length} fechas ${trip.state === 'example' ? 'de muestra' : 'disponibles'}`
+    ['Fechas', departures.length > 1
+      ? trip.dateLabel ?? 'Varias salidas'
       : departures[0]?.date ?? 'Por anunciar'],
-    [trip.state === 'example' ? 'Duración de muestra' : 'Duración', durations.length === 1
+    ['Duración', durations.length === 1
       ? durations[0] : departures.length ? 'Según la salida' : 'Por confirmar'],
     ['Nivel de surf', `${levelLabel(trip)}${trip.levelRequirement ? ` · ${trip.levelRequirement}` : ''}`],
   ];

@@ -65,3 +65,7 @@
 @media(max-width:359px){.minimal-cover .site-header .brand{width:199px}.hero.cover-hero h1{font-size:42px}.cover-content{padding-bottom:34px}.cover-label{font-size:10px;letter-spacing:.02em}}
 @media(max-height:720px) and (min-width:761px){.hero.cover-hero,.cover-content{min-height:100svh}.cover-content{padding-top:112px;padding-bottom:32px}.hero.cover-hero h1{font-size:clamp(72px,8.3vw,112px);margin-bottom:25px}.cover-label{margin-bottom:17px}}
 @media(max-height:650px) and (max-width:760px){.hero.cover-hero,.cover-content{min-height:100svh}.cover-content{padding-top:100px;padding-bottom:28px}.hero.cover-hero h1{font-size:clamp(42px,13.4vw,75px);margin-bottom:23px}.cover-label{margin-bottom:16px}}
+
+/* Keep action labels clear on mobile; desktop arrows are drawn consistently. */
+.action-arrow{display:none}
+@media(min-width:1000px){.action-arrow{display:block;flex-shrink:0;width:18px;height:18px}}

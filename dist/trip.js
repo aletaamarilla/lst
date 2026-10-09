@@ -1,13 +1,62 @@
-const dialog = document.querySelector('.photo-dialog');
-const strip = dialog.querySelector('.photo-strip');
+const photoDialog = document.querySelector('.photo-dialog');
+const strip = photoDialog.querySelector('.photo-strip');
 const slides = [...strip.querySelectorAll('.photo-slide')];
-const counter = dialog.querySelector('.photo-counter');
-const previous = dialog.querySelector('[data-photo-prev]');
-const next = dialog.querySelector('[data-photo-next]');
+const counter = photoDialog.querySelector('.photo-counter');
+const previous = photoDialog.querySelector('[data-photo-prev]');
+const next = photoDialog.querySelector('[data-photo-next]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 let index = 0;
-let trigger = null;
 let scrollFrame = 0;
+
+// Native dialogs keep keyboard focus inside and prevent background interaction.
+function wireDialog(dialog, closeSelector) {
+  let opener = null;
+  let scrollPosition = 0;
+  const close = dialog.querySelector(closeSelector);
+  close.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const focusable = [...dialog.querySelectorAll('button:not(:disabled), a[href], [tabindex]:not([tabindex="-1"])')].filter(element => element.getClientRects().length);
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
+  });
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.left = '';
+    document.body.style.right = '';
+    const root = document.documentElement;
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, scrollPosition);
+    root.style.scrollBehavior = previousBehavior;
+    opener?.focus({preventScroll: true});
+  });
+  return button => {
+    opener = button;
+    scrollPosition = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollPosition}px`;
+    document.body.style.left = '0';
+    document.body.style.right = '0';
+    dialog.showModal();
+    close.focus({preventScroll: true});
+  };
+}
+
+const openGallery = wireDialog(photoDialog, '.photo-close');
 
 function updatePhoto(selected) {
   index = Math.max(0, Math.min(selected, slides.length - 1));
@@ -20,18 +69,13 @@ function updatePhoto(selected) {
 
 function movePhoto(selected, animate = true) {
   updatePhoto(selected);
-  strip.scrollTo({
-    left: index * strip.clientWidth,
-    behavior: animate && !reducedMotion.matches ? 'smooth' : 'instant',
-  });
+  strip.scrollTo({left: index * strip.clientWidth, behavior: animate && !reducedMotion.matches ? 'smooth' : 'instant'});
 }
 
 function openPhoto(selected, button) {
-  trigger = button;
   updatePhoto(selected);
-  dialog.showModal();
+  openGallery(button);
   movePhoto(index, false);
-  dialog.querySelector('.photo-close').focus();
 }
 
 document.querySelectorAll('[data-photo]').forEach(button => {
@@ -40,7 +84,6 @@ document.querySelectorAll('[data-photo]').forEach(button => {
 document.querySelector('[data-open-gallery]')?.addEventListener('click', event => openPhoto(0, event.currentTarget));
 previous.addEventListener('click', () => movePhoto(index - 1));
 next.addEventListener('click', () => movePhoto(index + 1));
-dialog.querySelector('.photo-close').addEventListener('click', () => dialog.close());
 strip.addEventListener('scroll', () => {
   if (scrollFrame) return;
   scrollFrame = requestAnimationFrame(() => {
@@ -49,31 +92,24 @@ strip.addEventListener('scroll', () => {
   });
 }, {passive: true});
 new ResizeObserver(() => {
-  if (dialog.open && strip.clientWidth) movePhoto(index, false);
+  if (photoDialog.open && strip.clientWidth) movePhoto(index, false);
 }).observe(strip);
-dialog.addEventListener('keydown', event => {
-  const target = {ArrowRight: index + 1, ArrowLeft: index - 1, Home: 0, End: slides.length - 1}[event.key];
-  if (target !== undefined) {
+photoDialog.addEventListener('keydown', event => {
+  let selected;
+  if (event.key === 'ArrowRight') selected = index + 1;
+  if (event.key === 'ArrowLeft') selected = index - 1;
+  if (event.key === 'Home') selected = 0;
+  if (event.key === 'End') selected = slides.length - 1;
+  if (selected !== undefined) {
     event.preventDefault();
-    movePhoto(target);
+    movePhoto(selected);
   }
 });
-dialog.addEventListener('click', event => {
-  if (event.target !== dialog) return;
-  const bounds = dialog.getBoundingClientRect();
-  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-});
-dialog.addEventListener('close', () => trigger?.focus({preventScroll: true}));
 
-// Use the visible native date picker: on the page in mobile, in the sidebar on desktop.
-document.querySelectorAll('[data-open-dates]').forEach(link => {
-  link.addEventListener('click', event => {
-    const picker = [...document.querySelectorAll('[data-date-picker]')].find(element => element.getClientRects().length);
-    if (!picker) return;
-    event.preventDefault();
-    picker.open = true;
-    const summary = picker.querySelector('summary');
-    summary.focus({preventScroll: true});
-    summary.scrollIntoView({block: 'start', behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+const departureDialog = document.querySelector('.departure-dialog');
+if (departureDialog) {
+  const openDates = wireDialog(departureDialog, '.departure-close');
+  document.querySelectorAll('[data-open-dates]').forEach(button => {
+    button.addEventListener('click', () => openDates(button));
   });
-});
+}

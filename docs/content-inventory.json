@@ -45,25 +45,26 @@
   "designScenario": {
     "datedDepartures": 2,
     "upcomingDestinations": 4,
-    "sampleDepartures": [
+    "note": "Client-requested presentation demo. Asturias dates, prices and programme appear as confirmed, without sample labels; replace demoData before commercial launch.",
+    "clientDemoDepartures": [
       {
         "slug": "asturias",
         "departure": "2026-11-06",
         "return": "2026-11-08",
-        "confirmed": false,
-        "isExample": true,
-        "price": null
+        "verifiedCommercialDeparture": false,
+        "presentationState": "confirmed",
+        "price": 349
       },
       {
         "slug": "asturias",
         "departure": "2026-11-20",
         "return": "2026-11-22",
-        "confirmed": false,
-        "isExample": true,
-        "price": null
+        "verifiedCommercialDeparture": false,
+        "presentationState": "confirmed",
+        "price": 349
       }
     ],
-    "note": "Two fictional Asturias departures demonstrate date selection. Labels and enquiry messages explicitly disclose samples; these are not confirmed offers."
+    "includes": "Two nights shared surf house, breakfasts, coaching, video review, mobility and LST accompaniment; internal demo content."
   },
   "contact": {
     "channel": "whatsapp",
@@ -100,10 +101,9 @@
     "realProgrammeCheckedAt": "2026-10-09",
     "states": [
       "confirmed",
-      "example",
       "upcoming"
     ],
-    "note": "Only El Salvador is offered with verified upcoming dates and price. Previous trip services, dates and rates are not reused as offers for pending destinations.",
+    "note": "Salvador has verified upcoming information. Asturias uses client-authorized demonstration information tracked internally in demoData. Other four destinations retain pending dates/programme.",
     "levels": {
       "default": [
         1,
@@ -147,6 +147,6 @@
       ],
       "source": "User instruction on 2026-10-09: levels always configured; default all levels. Verified Salvador restriction retained."
     },
-    "multipleDates": "data/trips.json departures; each dated enquiry identifies its own departure."
+    "multipleDates": "One accessible dialog with internal scroll, mobile bottom sheet and desktop centered window; independent enquiry for each departure."
   }
 }

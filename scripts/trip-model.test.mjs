@@ -28,7 +28,7 @@ test('multiple departures retain distinct dates, prices and WhatsApp messages', 
     {id: 'second', date: '15 — 22 nov 2026', duration: '7 noches', price: 1599},
   ]};
   const departures = departuresFor(trip);
-  assert.equal(tripFacts(trip)[0][1], '2 fechas disponibles');
+  assert.equal(tripFacts(trip)[0][1], 'Varias salidas');
   assert.equal(tripFacts(trip)[2][1], 'Todos los niveles');
   assert.equal(tripPrice(trip), 'Desde 1.499 €');
   assert.notEqual(departureMessage(trip, departures[0]), departureMessage(trip, departures[1]));
@@ -44,8 +44,12 @@ test('pending destinations keep all levels and do not manufacture dates or price
   assert.equal(tripPrice(trip), 'Fechas por anunciar');
 });
 
-test('sample enquiries disclose the specific fictional date', () => {
-  const trip = {name: 'Asturias', state: 'example', departures: [{id: 'sample', date: '20 — 22 nov 2026'}]};
-  assert.match(departureMessage(trip, departuresFor(trip)[0]), /fecha de ejemplo 20 — 22 nov 2026/);
-  assert.match(departureMessage(trip, departuresFor(trip)[0]), /salida real/);
+test('client demo dates use the normal dated enquiry and configured period', () => {
+  const trip = {name: 'Asturias', state: 'confirmed', dateLabel: 'Noviembre 2026', demoData: {clientPresentation: true}, departures: [
+    {id: 'nov-6', date: '6 — 8 nov 2026'}, {id: 'nov-20', date: '20 — 22 nov 2026'},
+  ]};
+  assert.equal(tripFacts(trip)[0][1], 'Noviembre 2026');
+  const message = departureMessage(trip, departuresFor(trip)[1]);
+  assert.match(message, /Asturias del 20 — 22 nov 2026/);
+  assert.doesNotMatch(message, /ejemplo|muestra|fictici/);
 });

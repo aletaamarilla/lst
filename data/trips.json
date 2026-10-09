@@ -129,46 +129,46 @@
     "slug": "asturias",
     "name": "Asturias",
     "place": "Costa cantábrica · España",
-    "state": "example",
+    "state": "confirmed",
     "hero": "asturias-surf.webp",
     "heroAlt": "Una surfista de LST sobre una ola en Asturias",
     "heroPosition": "62% 48%",
-    "tagline": "Surf y unos días en el norte.",
-    "intro": "Playas entre acantilados y sesiones en el Cantábrico. Si te apetece una escapada de surf en Asturias, podemos contarte qué salidas reales tiene previstas LST.",
-    "notice": "Salidas de ejemplo. El 6–8 y el 20–22 de noviembre son fechas ficticias de esta propuesta; no hay viajes confirmados ni reservas para esos días.",
-    "storyTitle": "Asturias, con LST.",
-    "storyLabel": "DE NUESTROS VIAJES ANTERIORES",
-    "storyIntro": "En la salida publicada de septiembre, el programa combinó coaching por niveles, vídeos de las sesiones y convivencia en una surf house. Es una referencia de cómo viajamos; el próximo programa aún no está anunciado.",
+    "tagline": "Un fin de semana de surf en Asturias.",
+    "intro": "Dos noches en la costa asturiana, con sesiones de surf, coaching y alojamiento en una surf house. Elige el fin de semana que te encaje y ven con nosotros.",
+    "notice": "Consulta la disponibilidad con el equipo antes de reservar.",
+    "storyTitle": "El plan en Asturias.",
+    "storyLabel": "VIERNES, SÁBADO Y DOMINGO",
+    "storyIntro": "Llegamos el viernes y surfeamos el sábado y el domingo. Entre sesiones habrá tiempo para revisar vídeos, descansar y conocer la costa.",
     "story": [
       [
-        "Sesiones por niveles",
-        "La salida anterior se organizó para niveles I, II y III, con coaching y trabajo técnico adaptado a cada grupo."
+        "Viernes: nos encontramos en la surf house",
+        "Llegada al alojamiento, reparto de habitaciones y primera cena juntos. Nos conocemos y repasamos el plan del fin de semana."
       ],
       [
-        "Aprender a leer el mar",
-        "El programa anterior incluyó teoría de las condiciones, revisión de vídeos y trabajo de movilidad aplicado al surf."
+        "Sábado: surf y coaching",
+        "Elegimos la playa según el estado del mar y organizamos las sesiones según la experiencia de cada uno. Después revisamos los vídeos para trabajar la técnica."
       ],
       [
-        "Nos encontramos en destino",
-        "En viajes anteriores a Asturias se coordinó la llegada desde distintas ciudades y se compartieron los días en una surf house."
+        "Domingo: un último baño",
+        "Volvemos al agua por la mañana y repasamos lo que hemos practicado. Después recogemos y volvemos a casa."
       ]
     ],
     "gallery": [
       [
         "asturias-surf.webp",
         "Una sesión de surf de LST en Asturias",
-        "Una sesión de un viaje anterior a Asturias."
+        "Surf en Asturias."
       ],
       [
         "asturias.webp",
         "Viajeros de LST con sus tablas en una playa de Asturias",
-        "El grupo, entre sesiones. Viaje anterior de LST."
+        "El grupo, entre sesiones."
       ]
     ],
     "levelTitle": "Todos los niveles son bienvenidos.",
     "levelText": "Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.",
     "pastSource": "https://www.letsurftogether.com/producto/asturias-11-13-septiembre/",
-    "message": "¡Hola, LST! Me interesa un próximo viaje real a Asturias. He visto que las fechas de noviembre son un ejemplo. ¿Qué salidas tenéis previstas y para qué niveles?",
+    "message": "¡Hola, LST! Me interesa el viaje a Asturias. ¿Podemos consultar las fechas y la disponibilidad?",
     "levels": [
       1,
       2,
@@ -177,22 +177,75 @@
     ],
     "departures": [
       {
-        "id": "sample-2026-11-06",
+        "id": "2026-11-06",
         "date": "6 — 8 nov 2026",
         "start": "2026-11-06",
         "end": "2026-11-08",
         "duration": "2 noches",
-        "state": "example"
+        "state": "confirmed",
+        "price": 349
       },
       {
-        "id": "sample-2026-11-20",
+        "id": "2026-11-20",
         "date": "20 — 22 nov 2026",
         "start": "2026-11-20",
         "end": "2026-11-22",
         "duration": "2 noches",
-        "state": "example"
+        "state": "confirmed",
+        "price": 349
       }
-    ]
+    ],
+    "dateLabel": "Noviembre 2026",
+    "includes": [
+      "2 noches en una surf house, en habitación compartida",
+      "Desayunos del sábado y del domingo",
+      "Sesiones de surf y coaching durante los dos días",
+      "Grabación y revisión de vídeos de las sesiones",
+      "Trabajo de movilidad antes de entrar al agua",
+      "Acompañamiento del equipo de LST"
+    ],
+    "excludes": [
+      "El viaje de ida y vuelta a Asturias",
+      "Comidas y cenas",
+      "Tabla y neopreno; alquiler a consultar",
+      "Seguro personal de viaje"
+    ],
+    "priceNote": "Por persona · habitación compartida",
+    "inclusionsNote": "Precio por persona en habitación compartida. Si necesitas material o tienes dudas sobre la llegada, consúltanos antes de reservar.",
+    "faqs": [
+      [
+        "¿Puedo venir si estoy empezando?",
+        "Sí. Este viaje admite todos los niveles. Cuéntanos qué experiencia tienes en el agua para orientarte antes de reservar."
+      ],
+      [
+        "¿Puedo apuntarme sin conocer a nadie?",
+        "Sí. Puedes venir por tu cuenta o con amigos. Compartiremos alojamiento, sesiones y los ratos entre baños."
+      ],
+      [
+        "¿Tengo que llevar tabla y neopreno?",
+        "El material no está incluido. Puedes llevar el tuyo o consultar las opciones de alquiler antes de apuntarte."
+      ],
+      [
+        "¿Cómo llego a Asturias?",
+        "El desplazamiento de ida y vuelta corre por tu cuenta. Te indicamos el punto de encuentro y la hora de llegada antes del viaje."
+      ],
+      [
+        "¿Cómo confirmo mi plaza?",
+        "Elige una fecha y escríbenos por WhatsApp. Revisamos la disponibilidad, resolvemos tus dudas y te explicamos cómo formalizar la reserva."
+      ]
+    ],
+    "demoData": {
+      "clientPresentation": true,
+      "replaceBeforeLaunch": true,
+      "fields": [
+        "departures",
+        "price",
+        "programme",
+        "includes",
+        "excludes"
+      ],
+      "note": "Client explicitly requested realistic demo content without sample labels on 2026-10-09. These are presentation data, not verified future departures."
+    }
   },
   {
     "id": "azores",
