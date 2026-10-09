@@ -45,15 +45,25 @@
   "designScenario": {
     "datedDepartures": 2,
     "upcomingDestinations": 4,
-    "sampleDeparture": {
-      "slug": "asturias",
-      "departure": "2026-11-06",
-      "return": "2026-11-08",
-      "confirmed": false,
-      "isExample": true,
-      "price": null,
-      "note": "Fictional dates for the requested two-confirmed-departure design scenario. Visibly marked as an example; never offered as a real confirmed trip."
-    }
+    "sampleDepartures": [
+      {
+        "slug": "asturias",
+        "departure": "2026-11-06",
+        "return": "2026-11-08",
+        "confirmed": false,
+        "isExample": true,
+        "price": null
+      },
+      {
+        "slug": "asturias",
+        "departure": "2026-11-20",
+        "return": "2026-11-22",
+        "confirmed": false,
+        "isExample": true,
+        "price": null
+      }
+    ],
+    "note": "Two fictional Asturias departures demonstrate date selection. Labels and enquiry messages explicitly disclose samples; these are not confirmed offers."
   },
   "contact": {
     "channel": "whatsapp",
@@ -93,6 +103,50 @@
       "example",
       "upcoming"
     ],
-    "note": "Only El Salvador is offered with verified upcoming dates and price. Previous trip services, dates and rates are not reused as offers for pending destinations."
+    "note": "Only El Salvador is offered with verified upcoming dates and price. Previous trip services, dates and rates are not reused as offers for pending destinations.",
+    "levels": {
+      "default": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "el-salvador": [
+        2,
+        3
+      ],
+      "asturias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "azores": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "euskadi": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "marruecos": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cadiz": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source": "User instruction on 2026-10-09: levels always configured; default all levels. Verified Salvador restriction retained."
+    },
+    "multipleDates": "data/trips.json departures; each dated enquiry identifies its own departure."
   }
 }

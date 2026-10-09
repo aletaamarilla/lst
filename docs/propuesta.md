@@ -55,3 +55,12 @@ Cada página usa los logos originales, Aura, Work Sans, Space Mono, naranja #EA5
 Hay seis rutas independientes generadas desde data/trips.json. El Salvador presenta el programa público y el dossier revisados el 09/10/2026, con tarifa compartida de 1.499 €, nivel II–III, autonomía, siete noches, alojamiento y exclusiones. No se anuncia disponibilidad, descuento ni promesa de mejora. Asturias conserva su fecha ficticia como ejemplo. Los otros destinos usan recuerdos documentados de salidas anteriores y explican que la nueva fecha, nivel, programa y precio siguen pendientes. No se trasladan servicios antiguos a una nueva oferta.
 
 Los contactos son consultas por WhatsApp con contexto, sin envío automático, formularios, email, pagos online, CRM o inscripción a alertas. La reserva se formaliza con el equipo. Las páginas y la home permanecen privadas y con noindex.
+
+
+## Revisión 11 · galería, fechas y lectura del detalle
+
+Se conserva la composición aprobada. «Ver fotos» abre una galería con desplazamiento horizontal nativo y ajuste por foto: admite el gesto del teléfono, botones, teclado y cierre con retorno del foco. La navegación interna entre plan, nivel, inclusiones y dudas se retira para dar continuidad a la lectura. «Descargar dossier» pasa a la ficha de reserva, con acceso equivalente en el resumen móvil.
+
+El modelo admite varias salidas para cada destino. Una sola fecha conserva la consulta directa; con varias se despliegan las fechas y cada fila consulta esa salida por WhatsApp. Asturias muestra dos fechas ficticias (6–8 y 20–22 noviembre) para revisar la interacción, identificadas como ejemplo en la web y en ambos mensajes. El Salvador mantiene su única salida real publicada.
+
+Los niveles siempre se muestran: todos por defecto y configurables por destino. El Salvador conserva II–III con autonomía; los otros cinco destinos se configuran para todos los niveles por indicación del cliente. Se elimina el texto de niveles pendientes. Las fechas, programas y tarifas aún no confirmados siguen identificados como pendientes.

@@ -1,5 +1,6 @@
 import {readFile,access,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
+import {departuresFor, departureMessage, levelLabel} from './trip-model.mjs';
 import {execFileSync} from 'node:child_process';
 const root=path.resolve('dist');
 const trips=JSON.parse(await readFile('data/trips.json','utf8'));
@@ -36,8 +37,20 @@ const home=pages.get(path.join(root,'index.html')).html;
 for(const t of trips){
  if(!home.includes(`href="/viajes/${t.slug}/"`))errors.push(`Home missing trip route ${t.slug}`);
  const page=pages.get(path.join(root,'viajes',t.slug,'index.html'));
+ if(page){
+  if(!page.html.includes(levelLabel(t)))errors.push(`Missing configured level ${t.slug}`);
+  if(page.html.includes('trip-section-nav')||page.html.includes('Leer el programa completo'))errors.push(`Old detail navigation or dossier position ${t.slug}`);
+  if(t.dossier&&!page.html.includes('Descargar dossier'))errors.push(`Missing booking dossier ${t.slug}`);
+  const departures=departuresFor(t);
+  if(departures.length>1){
+   for(const d of departures){
+    const links=[...page.html.matchAll(/data-whatsapp="[^"]+" href="([^"]+)" data-departure="([^"]+)"/g)].filter(m=>m[2]===d.id);
+    if(!links.length||links.some(m=>new URL(m[1]).searchParams.get('text')!==departureMessage(t,d)))errors.push(`Incorrect dated enquiry ${t.slug}/${d.id}`);
+   }
+  }else if(page.html.includes('data-open-dates'))errors.push(`Unexpected multiple-date action ${t.slug}`);
+ }
  if(!page)errors.push(`Missing trip page ${t.slug}`);
- else if(t.state==='example'&&!page.html.includes('fecha ficticia'))errors.push('Sample disclosure missing from Asturias');
+ else if(t.state==='example'&&!/fechas? ficticias?/.test(page.html))errors.push('Sample disclosure missing from Asturias');
  else if(t.state==='upcoming'&&!page.html.includes('Por confirmar'))errors.push(`Pending state unclear ${t.slug}`);
 }
 if(!home.includes('Salida de ejemplo'))errors.push('Sample disclosure missing from home');
