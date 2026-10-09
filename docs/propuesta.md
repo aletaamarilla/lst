@@ -37,3 +37,11 @@ Las secciones tienen una acción adecuada a cada duda, sin formularios, pop-ups 
 La portada ocupa la primera pantalla con una sola fotografía real de El Sunzal, el titular «Nos vemos en el pico» (firma de LST), una etiqueta que identifica los viajes en grupo y el CTA «Ver los viajes». El logo blanco y la navegación se integran sobre la foto. El encuadre mantiene al surfista por encima del titular y el degradado aporta contraste sin cubrir el centro de la imagen.
 
 La navegación móvil cambia a fondo claro al salir de la portada o abrir el menú. La composición elimina los párrafos y la segunda foto de la apertura y conserva el recorrido de reserva y las secciones ya preparadas debajo. No se añaden carrusel, vídeo ni animación obligatoria.
+
+## Revisión 9 · slogan, acciones y orientación por nivel
+
+La portada presenta «Surfear juntos sabe mejor»: una frase breve sobre la experiencia compartida que da nombre a LST. Titular, etiqueta y CTA se centran en la parte inferior de la foto, dejando la acción del surfista visible encima. «Elige tu próximo viaje» lleva al calendario con una flecha discreta. Se conserva una sola imagen y una sola acción principal.
+
+Las dos tarjetas con fecha usan «Ver viaje». Se elimina el acceso duplicado «Ver detalles» y la consulta se realiza después de leer el panel correspondiente. El panel de Asturias mantiene el aviso de fechas ficticias. Los paneles son la interacción de la maqueta de home; las landings propias de cada viaje se implementarán en la fase de páginas interiores. Los próximos destinos usan «Me interesa», con consulta contextual por WhatsApp y sin registro ni avisos automáticos.
+
+Se cambia el acceso a la guía por «¿Cuál es mi nivel?» y se indican los nombres Aprendices y Riders en El Salvador. Por ahora no se filtra el catálogo: las otras cinco opciones no tienen nivel definido. El filtro resultaría útil cuando varias salidas reales tengan niveles establecidos; deberá admitir varios niveles por viaje y tratar explícitamente los pendientes.

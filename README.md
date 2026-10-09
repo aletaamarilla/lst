@@ -16,7 +16,7 @@ Abrir `http://localhost:4175`. El servidor sirve exclusivamente `dist/` y añade
 
 - `dist/index.html`: contenido semántico, viajes y enlaces de WhatsApp.
 - `dist/styles.css`: sistema visual y adaptación responsive.
-- `dist/app.js`: menú móvil, pestañas de nivel y panel informativo de El Salvador.
+- `dist/app.js`: menú móvil, pestañas de nivel y paneles informativos de los dos viajes con fecha.
 - `dist/assets/`: logos sin modificar, imágenes optimizadas y fuentes locales.
 - `docs/content-inventory.json`: datos comerciales y pendientes para la futura migración a CMS.
 - `docs/asset-provenance.json`: fuentes del material visual.
@@ -38,6 +38,12 @@ La lista `.departure-list` muestra las dos salidas en paralelo en escritorio y a
 
 ## Recorrido de la landing
 
-La portada ocupa la primera pantalla con una fotografía de surf, la firma de LST y un único CTA hacia los viajes. La navegación ofrece acceso a «Cómo reservar». Después del calendario, la experiencia y el testimonio real aportan contexto sobre el viaje. El bloque de reserva explica la consulta por WhatsApp, la comprobación de nivel/disponibilidad y la formalización con el equipo. Niveles, origen de LST y preguntas frecuentes resuelven las dudas restantes antes del cierre de contacto.
+La portada ocupa la primera pantalla con una fotografía de surf, «Surfear juntos sabe mejor» y el CTA centrado «Elige tu próximo viaje». La navegación ofrece acceso a «Cómo reservar». Después del calendario, la experiencia y el testimonio real aportan contexto sobre el viaje. El bloque de reserva explica la consulta por WhatsApp, la comprobación de nivel/disponibilidad y la formalización con el equipo. Niveles, origen de LST y preguntas frecuentes resuelven las dudas restantes antes del cierre de contacto.
 
 No se prometen un plazo de respuesta, un método de pago, condiciones de cancelación ni depósito comunes a todas las salidas. No hay seguimiento de ventas implementado; el efecto sobre consultas y reservas debe medirse en producción.
+
+## Acciones de las tarjetas y niveles
+
+«Ver viaje» abre en este prototipo el panel del destino correspondiente. El Salvador conserva su programa y Asturias muestra el aviso de ejemplo. La consulta por WhatsApp queda dentro de la ficha; no se presenta como navegación al viaje. Las futuras landings de cada viaje sustituirán estos paneles cuando se implemente esa fase. «Me interesa» en los cuatro destinos sin fecha abre WhatsApp con una consulta contextual; no registra intereses ni promete avisos automáticos.
+
+Se conserva «¿Cuál es mi nivel?» junto al calendario y los niveles conocidos en las fichas. No se añade un filtro que oculte resultados: solo El Salvador tiene niveles definidos y las otras cinco opciones están pendientes. Cuando el catálogo tenga salidas reales clasificadas, se podrá filtrar por niveles admitidos sin excluir las salidas todavía pendientes de clasificación.
