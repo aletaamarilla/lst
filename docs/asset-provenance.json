@@ -174,5 +174,56 @@
         "sourcePage": "https://www.letsurftogether.com/sobre-lst/"
       }
     ]
+  },
+  "revision10": {
+    "date": "2026-10-09",
+    "additionalUsage": [
+      {
+        "file": "dist/assets/salvador-17.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/17.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/el-salvador-25-oct-1-nov/"
+      },
+      {
+        "file": "dist/assets/salvador-18.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/18.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/el-salvador-25-oct-1-nov/"
+      },
+      {
+        "file": "dist/assets/salvador-19.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/19.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/el-salvador-25-oct-1-nov/"
+      },
+      {
+        "file": "dist/assets/azores-coast.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/12.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/azores-27-sept-3-oct/"
+      },
+      {
+        "file": "dist/assets/azores-surf.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/13.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/azores-27-sept-3-oct/"
+      },
+      {
+        "file": "dist/assets/euskadi-coast.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/2.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/euskadi-18-20-septiembre/"
+      },
+      {
+        "file": "dist/assets/euskadi-stay.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2026/07/3.png",
+        "sourcePage": "https://www.letsurftogether.com/producto/euskadi-18-20-septiembre/"
+      },
+      {
+        "file": "dist/assets/marruecos-day.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Marruecos_2025_08-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/"
+      },
+      {
+        "file": "dist/assets/cadiz-session.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Cadiz_2024_180-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/"
+      }
+    ],
+    "note": "Official LST documentary images. Future destination pages identify past-trip imagery. WebP compression and size optimisation only."
   }
 }

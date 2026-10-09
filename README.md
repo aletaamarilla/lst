@@ -1,49 +1,64 @@
-# Let's Surf Together — propuesta de home
+# Let's Surf Together — home y viajes
 
-Proyecto independiente de Travelhood. Primera propuesta visual responsive, basada en el cuestionario entregado, los SVG originales y el material publicado por LST. Incluye la home completa, dos salidas con fecha (una es una muestra), cuatro próximos viajes pendientes de fechas, orientación por nivel y el recorrido de reserva por WhatsApp.
+Proyecto independiente de Travelhood. Web estática con la home y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
 
-## Ejecutar
+## Ejecutar y editar
 
-Requiere Node.js 20 o posterior, sin instalar dependencias:
+Requiere Node.js 20 o posterior, sin instalar dependencias.
 
 ```sh
+npm run build
+npm run check
 npm run dev
 ```
 
-Abrir `http://localhost:4175`. El servidor sirve exclusivamente `dist/` y añade Content-Type. `npm run check` valida sintaxis, referencias locales, anclas y ausencia de formularios, enlaces de WhatsApp y aviso de salida de ejemplo. Los archivos de `dist/` son el código fuente de este prototipo estático y se versionan; no hay paso de compilación.
+Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-Type. La home se edita en dist/index.html. Las páginas de viaje se generan desde data/trips.json y scripts/render-trips.mjs con npm run build. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
 
 ## Estructura
 
-- `dist/index.html`: contenido semántico, viajes y enlaces de WhatsApp.
-- `dist/styles.css`: sistema visual y adaptación responsive.
-- `dist/app.js`: menú móvil, pestañas de nivel y paneles informativos de los dos viajes con fecha.
-- `dist/assets/`: logos sin modificar, imágenes optimizadas y fuentes locales.
-- `docs/content-inventory.json`: datos comerciales y pendientes para la futura migración a CMS.
-- `docs/asset-provenance.json`: fuentes del material visual.
-- `docs/propuesta.md`: decisiones de diseño y alcance de cada revisión.
+- dist/index.html: home, calendario y guía de niveles.
+- dist/styles.css: estilos y tokens originales compartidos.
+- dist/mobile.css: composición de la home desde teléfono, con mejoras para pantallas mayores.
+- dist/app.js: menú móvil y pestañas de nivel.
+- data/trips.json: seis destinos, estados, textos, imágenes y mensajes de consulta.
+- scripts/render-trips.mjs: plantilla común para páginas independientes.
+- dist/viajes/*/index.html: páginas publicadas de los seis viajes.
+- dist/trip.css: diseño de detalle desde móvil, barra inferior y ficha lateral de escritorio.
+- dist/trip.js: galería ampliable, teclado y retorno del foco.
+- dist/assets/: material documental de LST, logos sin modificar y fuentes locales.
+- docs/content-inventory.json: datos comerciales, fuentes y pendientes.
+- docs/asset-provenance.json: procedencia del material visual.
+- docs/propuesta.md: decisiones de diseño de cada revisión.
 
-## Alcance y comportamiento
+## Rutas
 
-Todo el contacto comercial se realiza por WhatsApp, mediante enlaces `wa.me` con un mensaje preparado para cada destino y para orientación. No hay formularios, campos de email, enlaces mailto, envío automático, almacenamiento, cookies, pagos ni CRM. El visitante decide si edita y envía el mensaje en WhatsApp. Se utiliza +34 648 18 92 57, el número de contacto publicado por LST; está pendiente confirmar con el usuario que es el receptor de WhatsApp definitivo.
+- /viajes/el-salvador/
+- /viajes/asturias/
+- /viajes/azores/
+- /viajes/euskadi/
+- /viajes/marruecos/
+- /viajes/cadiz/
 
-El diseño solicitado muestra dos fichas grandes de salidas con fecha y cuatro destinos próximamente. Solo El Salvador tiene datos reales confirmados en las fuentes: 25/10–01/11/2026, 7 noches, nivel II–III y autonomía, 1.499 € en habitación compartida; disponibilidad por consultar. Asturias (06–08/11/2026) es una salida de ejemplo, identificada tanto en la ficha como en su mensaje de WhatsApp. Sus fechas son ficticias y no constituyen una oferta confirmada. No se inventan precio, nivel ni plazas. Sustituir el ejemplo por el segundo viaje real cuando el cliente lo facilite.
+Todas las tarjetas de la home enlazan a la página correspondiente. «Ver viaje» y «Me interesa» navegan dentro de la web; WhatsApp queda en las páginas de detalle y en los puntos de ayuda de la home. Se han retirado los paneles de detalle de las revisiones anteriores.
 
-Azores, Euskadi, Marruecos y Cádiz representan cuatro destinos sin salida futura confirmada, sin fechas, precios ni reservas. Son destinos de viajes pasados de LST, utilizados para completar el escenario visual. El contenido es una instantánea y no se actualiza automáticamente.
+## Datos y estados comerciales
 
-No se copian al sitio los datos legales privados del cuestionario. `noindex,nofollow` evita tratar la propuesta como el sitio comercial definitivo. No se han implementado páginas interiores, políticas legales ni automatizaciones.
+Solo El Salvador tiene una salida futura con datos verificados: 25/10–01/11/2026, siete noches, niveles II–III con autonomía y tarifa general de 1.499 € por persona en habitación compartida. Programa y dossier revisados el 09/10/2026. Disponibilidad por consultar; no se anuncian plazas restantes ni early bird sin confirmar su vigencia.
 
-## Evolución a CMS
+Asturias (06–08/11/2026) sigue siendo un ejemplo de diseño. La fecha es ficticia, está marcada en la tarjeta y página, y no se ofrece como viaje real. Su contacto pregunta por futuras salidas reales. Sustituir el ejemplo cuando se facilite el segundo viaje confirmado.
 
-La lista `.departure-list` muestra las dos salidas en paralelo en escritorio y apiladas en móvil. `.destination-list` muestra cuatro destinos: cuatro columnas en escritorio, dos en tablet y fichas horizontales en móvil. El inventario distingue expresamente los datos reales del escenario de diseño. En la siguiente fase conviene generar fichas y mensajes de WhatsApp desde una única fuente del CMS, con estados confirmado/pendiente y ejemplos excluidos del sitio comercial.
+Azores, Euskadi, Marruecos y Cádiz tienen páginas completas de destino con próximas fechas, nivel y programa pendientes. Los recuerdos de viajes anteriores y sus fotos se presentan como tales. Sus servicios, alojamientos y precios anteriores no se trasladan a la nueva oferta. Para activar una salida real, actualizar el estado y todos los datos confirmados en data/trips.json y reconstruir las páginas. El sitio no se actualiza automáticamente.
 
-## Recorrido de la landing
+## Consulta y reserva
 
-La portada ocupa la primera pantalla con una fotografía de surf, «Surfear juntos sabe mejor» y el CTA centrado «Elige tu próximo viaje». La navegación ofrece acceso a «Cómo reservar». Después del calendario, la experiencia y el testimonio real aportan contexto sobre el viaje. El bloque de reserva explica la consulta por WhatsApp, la comprobación de nivel/disponibilidad y la formalización con el equipo. Niveles, origen de LST y preguntas frecuentes resuelven las dudas restantes antes del cierre de contacto.
+El único canal comercial es WhatsApp, con enlaces wa.me y mensajes contextualizados. No hay formularios, campos de email, mailto, envío automático, pagos online, CRM, almacenamiento ni registro de intereses. «Me interesa» inicia una conversación; no suscribe a avisos automáticos. El visitante decide si edita y envía el mensaje.
 
-No se prometen un plazo de respuesta, un método de pago, condiciones de cancelación ni depósito comunes a todas las salidas. No hay seguimiento de ventas implementado; el efecto sobre consultas y reservas debe medirse en producción.
+Se conserva +34 648 18 92 57, el teléfono publicado por LST, pendiente de confirmación del cliente como receptor definitivo. La plaza se confirma con el equipo según las condiciones del viaje; abrir WhatsApp no constituye una reserva. No se prometen tiempos de respuesta, un depósito universal ni condiciones de cancelación no verificadas.
 
-## Acciones de las tarjetas y niveles
+## Móvil y validación
 
-«Ver viaje» abre en este prototipo el panel del destino correspondiente. El Salvador conserva su programa y Asturias muestra el aviso de ejemplo. La consulta por WhatsApp queda dentro de la ficha; no se presenta como navegación al viaje. Las futuras landings de cada viaje sustituirán estos paneles cuando se implemente esa fase. «Me interesa» en los cuatro destinos sin fecha abre WhatsApp con una consulta contextual; no registra intereses ni promete avisos automáticos.
+La home ofrece tarjetas más compactas, acciones de al menos 44 px y niveles distribuidos en dos columnas en teléfono. Los detalles muestran destino, fecha y nivel en la portada de la salida confirmada; el precio y la consulta se mantienen accesibles en la barra inferior. El contenido sigue en una columna, con programa y dudas desplegables, galería deslizable y fotos ampliables. La zona inferior respeta safe-area-inset-bottom. A partir de 1000 px se usa una ficha lateral de consulta.
 
-Se conserva «¿Cuál es mi nivel?» junto al calendario y los niveles conocidos en las fichas. No se añade un filtro que oculte resultados: solo El Salvador tiene niveles definidos y las otras cinco opciones están pendientes. Cuando el catálogo tenga salidas reales clasificadas, se podrá filtrar por niveles admitidos sin excluir las salidas todavía pendientes de clasificación.
+npm run check valida las siete páginas, enlaces locales entre páginas y anclas, imágenes y fuentes, contactos contextuales, estados de ejemplo/pendiente, noindex y sintaxis de JavaScript. La revisión 10 también se ha comprobado en navegador a 320, 390, 768, 1024 y 1440 px, con navegación home–viaje–calendario, menú, niveles, galería, retorno del foco y dudas.
+
+El efecto sobre ventas requiere medición en producción. La propuesta permanece privada y con noindex,nofollow. No se añaden todavía CMS, automatizaciones ni políticas legales, y no se trasladan datos legales privados del cuestionario.

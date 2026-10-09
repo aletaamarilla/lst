@@ -76,5 +76,23 @@
       "response time",
       "cancellation policy"
     ]
+  },
+  "detailPages": {
+    "dataSource": "data/trips.json",
+    "routes": [
+      "/viajes/el-salvador/",
+      "/viajes/asturias/",
+      "/viajes/azores/",
+      "/viajes/euskadi/",
+      "/viajes/marruecos/",
+      "/viajes/cadiz/"
+    ],
+    "realProgrammeCheckedAt": "2026-10-09",
+    "states": [
+      "confirmed",
+      "example",
+      "upcoming"
+    ],
+    "note": "Only El Salvador is offered with verified upcoming dates and price. Previous trip services, dates and rates are not reused as offers for pending destinations."
   }
 }

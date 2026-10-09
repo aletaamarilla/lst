@@ -45,3 +45,13 @@ La portada presenta «Surfear juntos sabe mejor»: una frase breve sobre la expe
 Las dos tarjetas con fecha usan «Ver viaje». Se elimina el acceso duplicado «Ver detalles» y la consulta se realiza después de leer el panel correspondiente. El panel de Asturias mantiene el aviso de fechas ficticias. Los paneles son la interacción de la maqueta de home; las landings propias de cada viaje se implementarán en la fase de páginas interiores. Los próximos destinos usan «Me interesa», con consulta contextual por WhatsApp y sin registro ni avisos automáticos.
 
 Se cambia el acceso a la guía por «¿Cuál es mi nivel?» y se indican los nombres Aprendices y Riders en El Salvador. Por ahora no se filtra el catálogo: las otras cinco opciones no tienen nivel definido. El filtro resultaría útil cuando varias salidas reales tengan niveles establecidos; deberá admitir varios niveles por viaje y tratar explícitamente los pendientes.
+
+## Revisión 10 · móvil y páginas de viaje
+
+La home reduce la altura de las fichas en teléfono, simplifica sus datos, usa acciones de al menos 44 px y distribuye los niveles en dos columnas. La portada conserva su slogan y su composición centrada; la primera pantalla móvil deja antes el acceso al calendario. Las seis tarjetas enlazan ahora a páginas propias.
+
+Cada página usa los logos originales, Aura, Work Sans, Space Mono, naranja #EA5934 y crema #FFFAE7. El orden móvil presenta destino, propuesta, fecha/duración/nivel, programa, fotos ampliables, encaje por nivel, alojamiento e inclusiones cuando están confirmados, equipo, dudas y consulta. Una barra inferior muestra el precio o el estado pendiente y el acceso a WhatsApp, respetando la zona segura del teléfono. En escritorio, una ficha lateral acompaña la lectura. Los programas y las dudas usan desplegables; no hay movimiento automático.
+
+Hay seis rutas independientes generadas desde data/trips.json. El Salvador presenta el programa público y el dossier revisados el 09/10/2026, con tarifa compartida de 1.499 €, nivel II–III, autonomía, siete noches, alojamiento y exclusiones. No se anuncia disponibilidad, descuento ni promesa de mejora. Asturias conserva su fecha ficticia como ejemplo. Los otros destinos usan recuerdos documentados de salidas anteriores y explican que la nueva fecha, nivel, programa y precio siguen pendientes. No se trasladan servicios antiguos a una nueva oferta.
+
+Los contactos son consultas por WhatsApp con contexto, sin envío automático, formularios, email, pagos online, CRM o inscripción a alertas. La reserva se formaliza con el equipo. Las páginas y la home permanecen privadas y con noindex.
