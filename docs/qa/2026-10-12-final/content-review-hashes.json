@@ -1,0 +1,205 @@
+{
+  "date": "2026-10-12",
+  "reviewer": "independent content/documentation subagent",
+  "repository": "https://github.com/aletaamarilla/lst",
+  "checkout": "/home/amfernandez/personalProjects/letsurftogethersystem",
+  "baseCommit": "6053e6173d6114ee741bc0f4310d79418f22199e",
+  "candidate": "working tree with previous uncommitted revisions 13–17",
+  "scope": "Content, documentation and data compatibility; no independent browser or pipeline execution by this reviewer",
+  "reviewedFileSha256": {
+    "dist/index.html": "3a53357e29c574ba0039e3b39938ec56efdbd67a27fcecba2b28eba4ecd915da",
+    "data/trips.json": "2c23bf58b7eb4a0576d30cd8eff38634fd2e66168831d25e13d512febb8aaed1",
+    "scripts/render-trips.mjs": "56a455a136a739b495eb97dfcd3754e7f7051857450a5e79fd90fd330aca58bf",
+    "docs/content-inventory.json": "c12e837202981085b6d18ed63f735693c8cb4bbfbcc26c3d18e5fcebd854b58a",
+    "docs/asset-provenance.json": "362e46a767e64f4c41fd85f2d8f714b6fadaf6989882e83ec4b65956a5a9b379",
+    "README.md": "decabc4e76b51ab5347122cc5125a10e22cdb433dec417f75b7c52affc5cfb00",
+    "docs/propuesta.md": "ba2033989273c9a762edfc3f0bfbb7a2782940101e2df396c33a158f63b8cb36",
+    "dist/viajes/asturias/index.html": "f86787cdeaa99fba3f7b6a524565ef6d996abea8f8062aaf15d825c205fee4f6",
+    "dist/viajes/azores/index.html": "43cce2d67958f9e8741236691d42f6365be866c97eeb213096a608b81bb4a6d7",
+    "dist/viajes/cadiz/index.html": "a034a51fa2510501c3a11ab3ec51cd1ad5e753d55655af57e322759e75dfc51a",
+    "dist/viajes/el-salvador/index.html": "a905ffeae5197c9964dba6f51815e20759cbac1c32e3961097e042d4e75cf69c",
+    "dist/viajes/euskadi/index.html": "b78ba49c2794758130c3e3047294b2f91697eca3d1f021cd87dd3950060c2688",
+    "dist/viajes/marruecos/index.html": "090bf0c789ce023a49c95d5e17586f89b8cd81b71fe72913ccd72326f4aec6f4"
+  },
+  "unchangedSinceInitialContentReview": true,
+  "tripFieldsChangedVsHead": {
+    "el-salvador": [
+      "team"
+    ],
+    "asturias": [
+      "heroMinHeightMobile",
+      "heroPositionMobile",
+      "team"
+    ],
+    "azores": [
+      "heroLayout"
+    ],
+    "euskadi": [
+      "heroPositionMobile"
+    ],
+    "marruecos": [
+      "testimonial"
+    ],
+    "cadiz": [
+      "heroLayout"
+    ]
+  },
+  "pageTextChecks": [
+    {
+      "page": "dist/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "Let's Surf Together — Surf, viajes y buena gente",
+      "noindex": true
+    },
+    {
+      "page": "dist/viajes/asturias/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "Asturias · Viaje de surf — Let’s Surf Together",
+      "noindex": true
+    },
+    {
+      "page": "dist/viajes/azores/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "Azores · Viaje de surf — Let’s Surf Together",
+      "noindex": true
+    },
+    {
+      "page": "dist/viajes/cadiz/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "Cádiz · Viaje de surf — Let’s Surf Together",
+      "noindex": true
+    },
+    {
+      "page": "dist/viajes/el-salvador/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "El Salvador · Viaje de surf — Let’s Surf Together",
+      "noindex": true
+    },
+    {
+      "page": "dist/viajes/euskadi/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "Euskadi · Viaje de surf — Let’s Surf Together",
+      "noindex": true
+    },
+    {
+      "page": "dist/viajes/marruecos/index.html",
+      "h1Count": 1,
+      "formCount": 0,
+      "environmentalOperationalClaims": false,
+      "unfilledPlaceholder": false,
+      "title": "Marruecos · Viaje de surf — Let’s Surf Together",
+      "noindex": true
+    }
+  ],
+  "sourceEvidence": [
+    {
+      "id": "brand-questionnaire",
+      "type": "client local PDF",
+      "sha256": "741bfdfd395f87cff1b2b2a55ff0aa4db8c845cd7757225ee108762dea21ad5a",
+      "references": [
+        "Page 1, questions 1–4",
+        "Page 2, questions 8–9",
+        "Page 3, question 14"
+      ],
+      "note": "Read directly; no document copy or private legal/personal contents included."
+    },
+    {
+      "id": "legacy-home-retained",
+      "url": "https://www.letsurftogether.com/",
+      "retainedFile": "/tmp/lst-community-20261012/source-home.html",
+      "sha256": "ad53b44d654a193f04809eae13fbda6da100504fc3ffa5cce0881b0200524230",
+      "checks": [
+        "Laura excerpt literal with Morocco attribution",
+        "Ainhoa excerpt literal; review does not name a destination"
+      ],
+      "note": "Retained source read directly; not a new commercial or live-source investigation."
+    },
+    {
+      "id": "salvador-dossier-retained",
+      "url": "https://www.letsurftogether.com/wp-content/uploads/2026/07/LST-EL-SALVADOR-SURFTRIP-25-OCT-5-NOV-1.pdf",
+      "retainedFile": "/tmp/lst-presentation-20261012/salvador-dossier.pdf",
+      "sha256": "1ee72d793a44368fb727f057b95fb3aaa5c22b2f8321224446c45123ff005879",
+      "references": [
+        "Pages 2 and 5: technical follow-up",
+        "Pages 6 and 8: local guides and session coordination"
+      ],
+      "note": "Scope restricted to provenance of team roles. Prices, dates, services and current commercial accuracy were not investigated."
+    }
+  ],
+  "pendingEnvironmentalCommitments": [
+    {
+      "id": "plastic-collection",
+      "status": "pending-current-evidence",
+      "sourceIds": [
+        "legacy-home",
+        "legacy-about"
+      ],
+      "publicUI": false,
+      "reviewCopy": "Durante nuestros viajes recogemos plásticos de las playas.",
+      "requires": [
+        "Confirmación fechada del responsable de LST de que la actividad continúa y a qué viajes se aplica.",
+        "Registro reciente de una recogida identificable (fecha, lugar y actividad) y confirmación de su inclusión en las salidas a las que se atribuya."
+      ],
+      "publicationRule": "No publicar como actividad general si solo se confirma para algunas salidas; adaptar el texto al alcance acreditado."
+    },
+    {
+      "id": "universal-plastic",
+      "status": "pending-current-evidence",
+      "sourceIds": [
+        "legacy-home",
+        "legacy-about"
+      ],
+      "publicUI": false,
+      "reviewCopy": "Colaboramos con Universal Plastic en proyectos de recogida de plásticos.",
+      "requires": [
+        "Confirmación fechada de ambas partes o acuerdo vigente con periodo, entidad y proyecto identificados.",
+        "Precisar en qué consiste la colaboración actual; una mención antigua o un logo no acredita actividad."
+      ],
+      "publicationRule": "Publicar solo si está activa y el alcance coincide con la redacción; no añadir logo ni resultados."
+    },
+    {
+      "id": "three-percent",
+      "status": "pending-current-evidence",
+      "sourceIds": [
+        "legacy-home",
+        "legacy-about"
+      ],
+      "publicUI": false,
+      "reviewCopy": "Destinamos el 3 % de cada reserva a proyectos de recogida de plásticos en colaboración con Universal Plastic.",
+      "requires": [
+        "Confirmación fechada de que sigue vigente el 3 % y del conjunto de reservas al que se aplica.",
+        "Definir la base de cálculo (importe bruto o neto, impuestos y conceptos incluidos), el tratamiento de cancelaciones y reembolsos, y desde cuándo se aplica.",
+        "Identificar destinatario, proyectos, periodicidad y mecanismo de aportación; aportar justificantes recientes de transferencias o liquidaciones.",
+        "Confirmar la colaboración vigente con Universal Plastic antes de vincularla a la aportación."
+      ],
+      "publicationRule": "No publicar sin respaldo del porcentaje, alcance y ejecución. Si el alcance confirmado es distinto, reescribir y revisar antes de incorporar a la interfaz."
+    }
+  ],
+  "findings": [],
+  "implementationFilesChangedByReviewer": [],
+  "limitations": [
+    "No browser interaction/layout validation in this subreview.",
+    "No new commercial accuracy or current availability investigation.",
+    "Historical report PASS statuses were not accepted as current validation.",
+    "Current validity/execution of pending environmental actions not confirmed.",
+    "No messages, push, publication or deployment."
+  ]
+}

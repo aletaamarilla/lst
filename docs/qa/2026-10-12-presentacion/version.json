@@ -1,0 +1,103 @@
+{
+  "repository": "https://github.com/aletaamarilla/lst",
+  "checkout": "/home/amfernandez/personalProjects/letsurftogethersystem",
+  "branch": "main",
+  "baseCommit": "6053e6173d6114ee741bc0f4310d79418f22199e",
+  "status": "uncommitted local implementation; no push or deployment",
+  "date": "2026-10-12",
+  "changedThisTask": {
+    "README.md": {
+      "before": "da13d68f89138715d99b65d23e91fdc88980892e1648c4b6895d7bf6206553ea",
+      "after": "ed49f41a862bac91f198784271cfa8092ef2624665eb39cbd427a96a8fa56557"
+    },
+    "data/trips.json": {
+      "before": "13f49761c7db782e14faf2462c93f42d72195b16201cc9c5d06918b3ea0b7eaa",
+      "after": "b8109239e7ac9db3cf7c86249b51d17c4c8198587ba7bacae65e67bc96f89421"
+    },
+    "dist/index.html": {
+      "before": "5f7728adb44ac19c094742fd41dd4a12fbfbd993b7ca2e8768719bcb00e4be66",
+      "after": "dfe809772b895c97eaf3dfb532ede2c3deafb0b6466da2e7a9421a7f62fc7f5d"
+    },
+    "dist/mobile.css": {
+      "before": "0e1a83d6047a3c81e853046a732ff84b972c5f79f9823ba381c8636eec504ce0",
+      "after": "51ba6367d643655c07f47bbd8612398445f63f42e45c3f03359a5359bd6ab387"
+    },
+    "dist/viajes/asturias/index.html": {
+      "before": "cc162da7bf840cd9bc8c0f406e9e2ceeb84081f12a406becd8463020ae20daba",
+      "after": "529dc0e7fd28d9935fee16c872a0236a77973d18e44d7f8172933e1fa18bbf0d"
+    },
+    "dist/viajes/azores/index.html": {
+      "before": "c056b157d8faac093e91055087ea83d272f3a85dc3a946e2f3dc81de2d2d0267",
+      "after": "94f041009894b2bfaad95ec4b6db7d551b3bbb8b8ebfc310827d463e3ee7485d"
+    },
+    "dist/viajes/cadiz/index.html": {
+      "before": "d011b38f88e2dbf6efd5995ac13f5640c78482bb54744c53080cd218523a5691",
+      "after": "a1e0226181b8b208d762cdf9bbc860941954c94811654b5c6444399e2d931213"
+    },
+    "dist/viajes/el-salvador/index.html": {
+      "before": "244f9a9a22b0e08d120ce02b1b3961861c846cf3647d1cb54ab8d86386b7a1fb",
+      "after": "33d6e2b734e8651b25b16020bfa159c3e11f49b0a7ee55773cbdf177d3b57ef2"
+    },
+    "dist/viajes/euskadi/index.html": {
+      "before": "9dd95fa27b6391f328f0d9ca1a6b6972daabd693cee327422ed6417010580635",
+      "after": "b707f543075b7a7b513d3ec1f9a9cf21a52514b197d1967ae96f61cddcb45442"
+    },
+    "dist/viajes/marruecos/index.html": {
+      "before": "ca86f3680b9642f1283e05990d32af29209d64e7942b751e141839597f94fdc8",
+      "after": "623c4dc1be77267aede330682b99d17801e298a371eaaa9237a1a14c1ccb6bd3"
+    },
+    "docs/content-inventory.json": {
+      "before": "851ba1cc37cf88f45c75835505e53801cde42d7fd7a8f265dffc144c6b303dd1",
+      "after": "6183b5817b6d3bc287494b3348f495123d937e51b8ff3469bf5862c0cd8c2b3a"
+    },
+    "docs/propuesta.md": {
+      "before": "7415b71caebf678f1f68d86ef127cfaf23894ed69db86cd9fd44e4dd240f4181",
+      "after": "d5dd93958ea42216ef22530da35a8f8f4f59d4aa3bb4593da6aa9482ea57c807"
+    },
+    "scripts/render-trips.mjs": {
+      "before": "ed551c5d9557a6f0c069b207584589965edeb377599f5473b82f11d2f2696fd2",
+      "after": "98628025b07df59a94922cecb689f57ed34fd86fccbfdba33a3ac37c07cff06d"
+    }
+  },
+  "independentlyReviewedImplementation": {
+    "dist/index.html": "dfe809772b895c97eaf3dfb532ede2c3deafb0b6466da2e7a9421a7f62fc7f5d",
+    "dist/mobile.css": "51ba6367d643655c07f47bbd8612398445f63f42e45c3f03359a5359bd6ab387",
+    "data/trips.json": "b8109239e7ac9db3cf7c86249b51d17c4c8198587ba7bacae65e67bc96f89421",
+    "scripts/render-trips.mjs": "98628025b07df59a94922cecb689f57ed34fd86fccbfdba33a3ac37c07cff06d"
+  },
+  "questionnaireSha256": "741bfdfd395f87cff1b2b2a55ff0aa4db8c845cd7757225ee108762dea21ad5a",
+  "newArtifacts": {
+    "docs/qa/2026-10-12-presentacion/README.md": "b9f5e2bb7bddb0809a876e5b62628626f455ce957a0c0eced252998d612866a6",
+    "docs/qa/2026-10-12-presentacion/capturas/asturias-1440-team.png": "e94707141651e358d22fea5133a090a0d905bf958d3c53779d0de6711a0ab3ed",
+    "docs/qa/2026-10-12-presentacion/capturas/asturias-390-team.png": "5fccc8c8619b3002ccee664557f756e7a3a117b7202b087b243a736cedc499da",
+    "docs/qa/2026-10-12-presentacion/capturas/audit.json": "130d8dd7f24f722e22693c63cee14fb66db6c773bd479d1c89686874c4a18c16",
+    "docs/qa/2026-10-12-presentacion/capturas/azores-1440-team.png": "230f02803d5e247c50ca8226acbb5b166b282cba7465acf66e9b332700e970ad",
+    "docs/qa/2026-10-12-presentacion/capturas/azores-1440-viewport.png": "1271139c024b6ea7f09a48c097d037a84ddfa59048de995d6038d2855ae4f9a3",
+    "docs/qa/2026-10-12-presentacion/capturas/azores-390-team.png": "a701c60c614f10ba757fd28f5ad5a9a95357b6b97ed5a75dec1f5a8e805f7af6",
+    "docs/qa/2026-10-12-presentacion/capturas/azores-390-viewport.png": "bbd474de9eb466fec7ad1c63e556a6dba7e181d86b6d78aa3ef6447364aae830",
+    "docs/qa/2026-10-12-presentacion/capturas/cadiz-1440-team.png": "6042ba6cf34fdc753a9764d859b2926bb1285d9c16b64145e624f23f69c8b74e",
+    "docs/qa/2026-10-12-presentacion/capturas/cadiz-390-team.png": "dba821680203db4698c0a622e082487be0fbafbfdf9a12b4e01e543a9def8a78",
+    "docs/qa/2026-10-12-presentacion/capturas/el-salvador-1440-team.png": "709fcd74360e0c43f9a0751d4f1527015d5cb973daebebbcede1466db297c0ef",
+    "docs/qa/2026-10-12-presentacion/capturas/el-salvador-1440-viewport.png": "c116f728f0fd7faf4d39da8602181c0acd30fd2103b50f2f36c00bf5d177478b",
+    "docs/qa/2026-10-12-presentacion/capturas/el-salvador-390-team.png": "86f2d5da7129f256480c51442a7fee138e9ea37cb2ada04e37f5af90d0bc4974",
+    "docs/qa/2026-10-12-presentacion/capturas/el-salvador-390-viewport.png": "204770ccdb33c65bf856f8e5bdf63b6edf44f0537deecaa9302b9d2694852bcb",
+    "docs/qa/2026-10-12-presentacion/capturas/euskadi-1440-team.png": "ef27550af1c9e093db14beb9c0dbda8b6d7247be81d627740f933bbf77109fc8",
+    "docs/qa/2026-10-12-presentacion/capturas/euskadi-390-team.png": "b1cbd6bd50e3c5e32bd7f2c9df752c452fa4913e401fd20ee98ab1f8f213ae88",
+    "docs/qa/2026-10-12-presentacion/capturas/home-1440-experience.png": "797826db70e513e08e355c65e1245625cb76382e511cd8561859f96375d19726",
+    "docs/qa/2026-10-12-presentacion/capturas/home-1440-full.png": "7ea0b0f3fcb30e1f07a2270d96d20971f30910e8945c8e4b6c115e886508bcd3",
+    "docs/qa/2026-10-12-presentacion/capturas/home-1440-hero.png": "88d1ab92af7da62f182d7b2aa58b88393a7b93ddf4d8efa74dc987be80d07d95",
+    "docs/qa/2026-10-12-presentacion/capturas/home-1440-people.png": "048e9eee8a9210013bc6d10ca7b87d112a7f3036a36c485c8fa213581e4c6613",
+    "docs/qa/2026-10-12-presentacion/capturas/home-390-experience.png": "5cf1dc620c6aa2dc954c9ef1aafb7d6660c79344d039a081f1d847cee8273e31",
+    "docs/qa/2026-10-12-presentacion/capturas/home-390-full.png": "72d37bee8fa96a611d9d9ab8893420418f0c3fc7365320c75ecd8718167ea6fb",
+    "docs/qa/2026-10-12-presentacion/capturas/home-390-hero.png": "f395893a9e34797bbf8209d17c4744bf87850604f499408ef5f02825707cb276",
+    "docs/qa/2026-10-12-presentacion/capturas/home-390-people.png": "3966b280ea0db2f7c72e8a647140d1f1a972868a7beaba1beecdcd2bc60fb757",
+    "docs/qa/2026-10-12-presentacion/capturas/marruecos-1440-team.png": "9a0a516a21855e19f517ba3551619ea7c0ed142dc0a9d01f0f299c9baee3be7a",
+    "docs/qa/2026-10-12-presentacion/capturas/marruecos-390-team.png": "37139b23afcef616b4e437c86f8e99dfc3dec1604e4a398150fcc5bdb5a8d199",
+    "docs/qa/2026-10-12-presentacion/estado-inicial.txt": "01df0f178a994983b89a44236c6a81b9a9c00617e4308b1a7a11c84f20b6d8a9",
+    "docs/qa/2026-10-12-presentacion/huellas-iniciales.json": "84e8ef6e876a7e292e5e4f7f368fb299106bcf677ee3dd72298c06a6da65085f",
+    "docs/qa/2026-10-12-presentacion/preservation.json": "0720b49b1285f9fa4fa34bb64c17f41fe2207a2bb7a68ab1362d0226e7a40347",
+    "docs/qa/2026-10-12-presentacion/revision-independiente.md": "c3f89c3197ea28b241d890ce5a114411b875b80ec7e1e0195792ad70a7a0fc6c",
+    "docs/qa/2026-10-12-presentacion/task-only.diff": "c74ac87ccc07f91695bf6e2db6b94253733377a2f31c8a368db82ac9f0659cc1",
+    "docs/qa/2026-10-12-presentacion/verification.json": "3652a229f2e448ccb6bf84521f4cc9792dbbc335b6621c7105944cc44424530f"
+  }
+}

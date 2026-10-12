@@ -1,0 +1,23 @@
+{
+  "repository": "https://github.com/aletaamarilla/lst",
+  "checkout": "/home/amfernandez/personalProjects/letsurftogethersystem",
+  "baseCommit": "6053e6173d6114ee741bc0f4310d79418f22199e",
+  "branch": "main",
+  "uncommitted": true,
+  "modifiedFromTaskStart": [
+    "dist/trip.css",
+    "dist/trip.js"
+  ],
+  "newFiles": [
+    "scripts/check-dialogs.mjs",
+    "docs/qa/2026-10-12-fotos/"
+  ],
+  "candidateHashes": {
+    "dist/trip.css": "64588cd6618b26eeb4b592381b9f2072fa071bf80af1fb5afdcf0f7d183c6d8d",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13",
+    "scripts/check-dialogs.mjs": "c5afef3dd9c004e3357db749fb717a9d11b20abffc45c9c7dd7ad0cb6d57b28d"
+  },
+  "published": false,
+  "pushed": false,
+  "candidateId": "970c468407c9fb85f0ac9447303ce97b0b1e93d918d585f5cbb17c82cb080655"
+}

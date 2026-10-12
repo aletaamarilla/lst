@@ -1,0 +1,337 @@
+{
+  "checks": [
+    {
+      "name": "home-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "home-390 hero text and CTA fit",
+      "pass": true,
+      "detail": {
+        "titleBottom": 597.46875,
+        "introTop": 615.46875,
+        "introBottom": 663.46875,
+        "ctaTop": 687.46875,
+        "ctaBottom": 741.46875,
+        "viewport": 844
+      }
+    },
+    {
+      "name": "home-390 trip calendar anchor reachable",
+      "pass": true
+    },
+    {
+      "name": "home-390 experiencia heading visible via anchor",
+      "pass": true,
+      "detail": {
+        "heading": {
+          "x": 20,
+          "y": 172.140625,
+          "width": 350,
+          "height": 45.359375
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 71
+        }
+      }
+    },
+    {
+      "name": "home-390 nosotros heading visible via anchor",
+      "pass": true,
+      "detail": {
+        "heading": {
+          "x": 20,
+          "y": 173.1875,
+          "width": 350,
+          "height": 90.71875
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 71
+        }
+      }
+    },
+    {
+      "name": "home-390 Lucas signature preserved",
+      "pass": true
+    },
+    {
+      "name": "home-390 current LST follows origin",
+      "pass": true
+    },
+    {
+      "name": "el-salvador-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "el-salvador-390 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "asturias-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "asturias-390 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "asturias-390 two dates retained",
+      "pass": true
+    },
+    {
+      "name": "asturias-390 date dialog returns focus",
+      "pass": true
+    },
+    {
+      "name": "azores-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "azores-390 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "euskadi-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "euskadi-390 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "marruecos-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "marruecos-390 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "cadiz-390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "cadiz-390 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "home-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "home-1440 hero text and CTA fit",
+      "pass": true,
+      "detail": {
+        "titleBottom": 688,
+        "introTop": 706,
+        "introBottom": 760,
+        "ctaTop": 788,
+        "ctaBottom": 842,
+        "viewport": 900
+      }
+    },
+    {
+      "name": "home-1440 trip calendar anchor reachable",
+      "pass": true
+    },
+    {
+      "name": "home-1440 experiencia heading visible via anchor",
+      "pass": true,
+      "detail": {
+        "heading": {
+          "x": 64,
+          "y": 207.25,
+          "width": 443.453125,
+          "height": 60.46875
+        },
+        "header": {
+          "x": 0,
+          "y": -2275,
+          "width": 1440,
+          "height": 102
+        }
+      }
+    },
+    {
+      "name": "home-1440 nosotros heading visible via anchor",
+      "pass": true,
+      "detail": {
+        "heading": {
+          "x": 64,
+          "y": 208.421875,
+          "width": 554.65625,
+          "height": 120.9375
+        },
+        "header": {
+          "x": 0,
+          "y": -4316,
+          "width": 1440,
+          "height": 102
+        }
+      }
+    },
+    {
+      "name": "home-1440 Lucas signature preserved",
+      "pass": true
+    },
+    {
+      "name": "home-1440 current LST follows origin",
+      "pass": true
+    },
+    {
+      "name": "el-salvador-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "el-salvador-1440 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "asturias-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "asturias-1440 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "asturias-1440 two dates retained",
+      "pass": true
+    },
+    {
+      "name": "asturias-1440 date dialog returns focus",
+      "pass": true
+    },
+    {
+      "name": "azores-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "azores-1440 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "euskadi-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "euskadi-1440 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "marruecos-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "marruecos-1440 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "cadiz-1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "cadiz-1440 team avoids duplicate origin",
+      "pass": true
+    },
+    {
+      "name": "no JavaScript errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "WhatsApp recipient and context retained",
+      "pass": true,
+      "detail": 16
+    }
+  ],
+  "errors": [],
+  "whatsapp": [
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+      "message": "¡Hola, LST! Me gustaría apuntarme a uno de vuestros viajes de surf. ¿Me ayudáis con las fechas, el nivel y la reserva?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Salvador%20del%2025%20de%20octubre%20al%201%20de%20noviembre%20de%202026.%20%C2%BFPodemos%20revisar%20mi%20nivel%2C%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%3F",
+      "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%2020%20%E2%80%94%2022%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Azores.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Azores. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Euskadi.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Euskadi. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Marruecos.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Marruecos. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 390,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20C%C3%A1diz.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Cádiz. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+      "message": "¡Hola, LST! Me gustaría apuntarme a uno de vuestros viajes de surf. ¿Me ayudáis con las fechas, el nivel y la reserva?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Salvador%20del%2025%20de%20octubre%20al%201%20de%20noviembre%20de%202026.%20%C2%BFPodemos%20revisar%20mi%20nivel%2C%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%3F",
+      "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%2020%20%E2%80%94%2022%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Azores.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Azores. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Euskadi.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Euskadi. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Marruecos.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Marruecos. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "width": 1440,
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20C%C3%A1diz.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Cádiz. ¿Tenéis novedades sobre las fechas y el programa?"
+    }
+  ]
+}

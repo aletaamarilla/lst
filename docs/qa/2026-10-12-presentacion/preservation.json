@@ -1,0 +1,152 @@
+[
+  {
+    "name": "All previous trip values preserved, including demo and pending states",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "el-salvador generated HTML unchanged outside team block",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "el-salvador WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "asturias generated HTML unchanged outside team block",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "asturias WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "azores generated HTML unchanged outside team block",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "azores WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "euskadi generated HTML unchanged outside team block",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "euskadi WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "marruecos generated HTML unchanged outside team block",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "marruecos WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "cadiz generated HTML unchanged outside team block",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "cadiz WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "Home calendar unchanged",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "Home booking and levels unchanged",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "Home FAQ and closing unchanged",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "Home WhatsApp links identical",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "All existing home photos retained",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "All brand/photo/font asset bytes unchanged",
+    "pass": true,
+    "detail": 32
+  },
+  {
+    "name": "dist/app.js pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dist/trip.js pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dist/trip.css pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dist/styles.css pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "docs/asset-provenance.json pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "scripts/check.mjs pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "scripts/trip-model.mjs pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "scripts/trip-model.test.mjs pre-existing version preserved",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "README.md previous contents retained as prefix",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "docs/propuesta.md previous contents retained as prefix",
+    "pass": true,
+    "detail": null
+  },
+  {
+    "name": "dist/mobile.css previous contents retained as prefix",
+    "pass": true,
+    "detail": null
+  }
+]

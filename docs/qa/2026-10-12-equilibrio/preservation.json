@@ -1,0 +1,297 @@
+{
+  "checks": [
+    {
+      "name": "dist/index.html preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/trip.js preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/app.js preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/azores-coast.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/after-surf.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/community.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/surf-session.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/cadiz.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/asturias-surf.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/marruecos-day.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/learning.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/azores.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/cadiz-session.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/azores-surf.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/euskadi-coast.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/el-salvador.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/euskadi-stay.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/salvador-17.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/asturias.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/group.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/euskadi.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/marruecos.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/salvador-18.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/salvador-19.webp preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/fonts/work-sans.woff2 preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/fonts/space-mono.woff2 preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/fonts/space-grotesk.woff2 preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/fonts/aura.ttf preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/fonts/montserrat.woff2 preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/fonts/space-mono-bold.woff2 preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/brand/symbol-orange.svg preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/brand/symbol-black.svg preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/brand/logo-white.svg preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/brand/logo-black.svg preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/assets/brand/logo-orange.svg preserved",
+      "pass": true
+    },
+    {
+      "name": "docs/asset-provenance.json preserved",
+      "pass": true
+    },
+    {
+      "name": "docs/content-inventory.json preserved",
+      "pass": true
+    },
+    {
+      "name": "all prior travel data preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/index.html details preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/el-salvador/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/el-salvador/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/el-salvador/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/el-salvador/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/el-salvador/index.html details preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/asturias/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/asturias/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/asturias/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/asturias/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/asturias/index.html details preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/azores/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/azores/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/azores/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/azores/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/azores/index.html details preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/euskadi/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/euskadi/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/euskadi/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/euskadi/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/euskadi/index.html details preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/marruecos/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/marruecos/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/marruecos/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/marruecos/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/marruecos/index.html details preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/cadiz/index.html text preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/cadiz/index.html links preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/cadiz/index.html images preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/cadiz/index.html headings preserved",
+      "pass": true
+    },
+    {
+      "name": "dist/viajes/cadiz/index.html details preserved",
+      "pass": true
+    }
+  ],
+  "allPassed": true
+}

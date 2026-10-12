@@ -1,0 +1,41 @@
+{
+  "baseCommit": "6053e6173d6114ee741bc0f4310d79418f22199e",
+  "candidate": "uncommitted local diff",
+  "date": "2026-10-12",
+  "files": {
+    "README.md": "da13d68f89138715d99b65d23e91fdc88980892e1648c4b6895d7bf6206553ea",
+    "dist/app.js": "5a1ee78e68db4d3ea9e6cc6ec158ce614c816d0cab50ab63533daf9040b4c727",
+    "dist/index.html": "5f7728adb44ac19c094742fd41dd4a12fbfbd993b7ca2e8768719bcb00e4be66",
+    "dist/mobile.css": "0e1a83d6047a3c81e853046a732ff84b972c5f79f9823ba381c8636eec504ce0",
+    "dist/styles.css": "e83b0d24f76b3d0e612825e9a6cff59fc6530e1b2d14b0d6d82f17ee3106e3e1",
+    "dist/trip.css": "63c9ec7de714509c71725ae1a7bf94039c0f150279a7e204a62427f5b1efa7a1",
+    "dist/trip.js": "1be265756c5775bc94ca1de1481e33342bc268b8755d6ab7e1f6c5791f80ce83",
+    "dist/viajes/azores/index.html": "c056b157d8faac093e91055087ea83d272f3a85dc3a946e2f3dc81de2d2d0267",
+    "dist/viajes/cadiz/index.html": "d011b38f88e2dbf6efd5995ac13f5640c78482bb54744c53080cd218523a5691",
+    "dist/viajes/el-salvador/index.html": "244f9a9a22b0e08d120ce02b1b3961861c846cf3647d1cb54ab8d86386b7a1fb",
+    "dist/viajes/euskadi/index.html": "9dd95fa27b6391f328f0d9ca1a6b6972daabd693cee327422ed6417010580635",
+    "dist/viajes/marruecos/index.html": "ca86f3680b9642f1283e05990d32af29209d64e7942b751e141839597f94fdc8",
+    "docs/propuesta.md": "7415b71caebf678f1f68d86ef127cfaf23894ed69db86cd9fd44e4dd240f4181",
+    "scripts/render-trips.mjs": "ed551c5d9557a6f0c069b207584589965edeb377599f5473b82f11d2f2696fd2",
+    "scripts/check-ux.mjs": "c3bcf6fec9ae40b12c5df05bac8a1b6ed6ce504eb54da550f13b5647ae6e32b7"
+  },
+  "unchangedDataSHA256": "13f49761c7db782e14faf2462c93f42d72195b16201cc9c5d06918b3ea0b7eaa",
+  "evidenceFiles": [
+    "docs/qa/2026-10-12-whatsapp/README.md",
+    "docs/qa/2026-10-12-whatsapp/after/audit.json",
+    "docs/qa/2026-10-12-whatsapp/after/cards-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/after/dates-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/after/dates-text200-320.png",
+    "docs/qa/2026-10-12-whatsapp/after/el-salvador-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/after/menu-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/before/audit.json",
+    "docs/qa/2026-10-12-whatsapp/before/cards-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/before/dates-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/before/el-salvador-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/before/menu-390x844.png",
+    "docs/qa/2026-10-12-whatsapp/pipeline.txt",
+    "docs/qa/2026-10-12-whatsapp/preservation.json",
+    "docs/qa/2026-10-12-whatsapp/reviewer-final-matrix.log",
+    "docs/qa/2026-10-12-whatsapp/verification.json"
+  ]
+}

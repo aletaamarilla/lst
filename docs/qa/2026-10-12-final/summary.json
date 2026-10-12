@@ -1,0 +1,55 @@
+{
+  "pipeline": {
+    "build": 0,
+    "test": 0,
+    "check": 0,
+    "unitTests": 5
+  },
+  "matrix": {
+    "views": 140,
+    "checks": 726,
+    "rawContainerSignals": 62,
+    "horizontalOverflow": 0,
+    "missingImages": 0,
+    "pageErrors": [],
+    "automaticExternalRequests": []
+  },
+  "geometry": {
+    "views": 120,
+    "fontBoxSignals": 14,
+    "signalsRetestedWithPaintedTextMetrics": 14,
+    "paintedTextCollisions": 0
+  },
+  "journey": {
+    "checks": 459,
+    "initialDateFormatSignals": 2,
+    "dateSignalsRetested": [
+      {
+        "width": 390,
+        "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?",
+        "datesMatch": true,
+        "intercepted": true
+      },
+      {
+        "width": 1440,
+        "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?",
+        "datesMatch": true,
+        "intercepted": true
+      }
+    ],
+    "interceptedConsultations": 14
+  },
+  "existingBrowserSuites": {
+    "uxChecks": 1225,
+    "uxIssues": [],
+    "dialogChecks": 1744,
+    "dialogIssues": [],
+    "interceptedConsultations": 108,
+    "trustedPhotoSwipePairs": 18
+  },
+  "externalLinks": {
+    "headRequests": 10,
+    "http200": 10
+  },
+  "observedProductRegressions": []
+}

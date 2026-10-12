@@ -1,0 +1,177 @@
+--- before/README.md
++++ after/README.md
+@@ -98,3 +98,9 @@
+ La experiencia empieza por la duda de llegar por tu cuenta. Dos extractos breves aportan evidencia distinta dentro del bloque existente: Laura sobre viajar sin compañía, con su contexto de Marruecos, y Ainhoa sobre aprender mediante correcciones en vídeo. Su reseña no indica destino y solo aparece en la home. La foto de surfskate se identifica como Cádiz, 2024; el relato de cultura y paisajes se presenta como recuerdo de Laura.
+ 
+ La ficha de Marruecos conserva únicamente la voz correspondiente a ese destino y añade contexto histórico al extracto. Se reconstruyen las seis fichas; las otras cinco producen HTML idéntico. Datos provisionales, WhatsApp, equipo, fotografías, marca y cambios anteriores se conservan. [Selección, fuentes, texto final, capturas y validación](docs/qa/2026-10-12-comunidad/README.md). No se ha publicado ni hecho push.
++
++## Revisión 16 · respeto al lugar y al océano
++
++«El lugar también importa» añade un único bloque breve al cierre de la presentación de LST. Recupera el respeto al océano, a los surfistas locales y a sus costumbres como principios de marca. No modifica las fichas ni sus datos provisionales.
++
++Las fuentes antiguas publican recogidas de plásticos, una colaboración con Universal Plastic y una aportación del 3 % por reserva. No se ha acreditado su vigencia ni ejecución en las fuentes disponibles. El inventario distingue publicación documentada de acción verificada y contiene tres textos concretos para revisión, con la confirmación necesaria para cada uno. [Texto, fuentes, pendientes y validación local](docs/qa/2026-10-12-responsabilidad/README.md).
+--- before/dist/index.html
++++ after/dist/index.html
+@@ -78,7 +78,9 @@
+ </section>
+ <section class="booking section-width section-space" id="reservar" aria-labelledby="booking-title"><div class="booking-intro"><p class="eyebrow">RESERVAS POR WHATSAPP</p><h2 id="booking-title">Cómo reservar</h2><p>Empieza por escribirnos por WhatsApp. Te explicamos el viaje y los pasos para apuntarte.</p><a class="button" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20un%20viaje%20de%20surf.%20%C2%BFPod%C3%A9is%20explicarme%20las%20fechas%20disponibles%20y%20c%C3%B3mo%20reservar%3F" target="_blank" rel="noopener noreferrer">Quiero consultar un viaje</a><p class="booking-reassurance">Puedes preguntar antes de decidirte.</p></div><ol class="booking-steps"><li><div class="step-number" aria-hidden="true">01</div><div><h3>Elige un viaje y escríbenos</h3><p>Dinos cuál te interesa, cómo surfeas y si vienes solo o acompañado.</p></div></li><li><div class="step-number" aria-hidden="true">02</div><div><h3>Revisamos los detalles contigo</h3><p>Comprobamos el nivel y la disponibilidad. Te contamos el programa, el alojamiento y qué incluye el precio.</p></div></li><li><div class="step-number" aria-hidden="true">03</div><div><h3>Confirmas tu plaza</h3><p>Cuando lo tengas claro, te indicamos cómo formalizar la reserva y las condiciones del viaje.</p></div></li></ol></section>
+ <section class="levels section-width section-space" id="niveles"><div class="section-heading"><div><p class="eyebrow">ANTES DE ELEGIR</p><h2>¿Qué nivel necesitas?</h2></div><p>Cada viaje indica los niveles que admite. Si tienes dudas, dinos qué olas coges y cómo te manejas en el agua.</p></div><div class="level-tabs" role="tablist" aria-label="Niveles de surf"><button role="tab" aria-selected="true" aria-controls="level-panel" id="level-1" data-level="1"><span class="level-number">I</span><span>Rookies</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-2" data-level="2"><span class="level-number">II</span><span>Aprendices</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-3" data-level="3"><span class="level-number">III</span><span>Riders</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-4" data-level="4"><span class="level-number">IV</span><span>Supercracks</span></button></div><div id="level-panel" class="level-panel" role="tabpanel" aria-labelledby="level-1" tabindex="0"><div><p class="eyebrow" id="level-caption">NIVEL I / ROOKIES</p><h3 id="level-title">Estás empezando</h3></div><div><p id="level-description">Estás aprendiendo a remar y a ponerte de pie, y empiezas a disfrutar en espumas y olas pequeñas.</p><p class="level-caution">Consulta siempre los niveles admitidos en cada salida. No todos los viajes están pensados para todos los niveles.</p><a id="level-source" class="text-link" href="https://www.letsurftogether.com/rookies/" target="_blank" rel="noopener">Conocer este nivel en LST</a></div></div><div class="level-help"><p>¿No tienes claro tu nivel?</p><a class="text-link" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20antes%20de%20elegir%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer">Preguntarlo por WhatsApp</a></div></section>
+-<section class="people" id="nosotros" aria-labelledby="people-title"><div class="section-width section-space"><div class="people-grid"><div class="people-copy"><p class="eyebrow">LET’S SURF TOGETHER</p><h2 id="people-title">Todo empezó<br>en Marruecos.</h2><p>Lucas propuso un viaje de surf a su comunidad. Aquel primer grupo y lo que vivieron allí dieron pie a LST.</p><p>Después de un año preparando el proyecto, Let's Surf Together arrancó a finales de 2024.</p><h3>Hoy, un equipo que viaja contigo.</h3><p>Quienes organizamos las salidas también estamos allí: compartimos las sesiones y el día a día del grupo. Antes de apuntarte, te ayudamos a entender el programa y los niveles de cada viaje.</p><div class="brand-signature">Nos vemos en el pico.<span>Lucas · Let’s Surf Together</span></div></div><figure class="people-photo"><img src="/assets/group.webp" alt="El grupo de Let's Surf Together reunido en la playa de Laga" width="1500" height="1000" loading="lazy"><figcaption>Laga, 2024.</figcaption></figure></div></div></section>
++<section class="people" id="nosotros" aria-labelledby="people-title"><div class="section-width section-space"><div class="people-grid"><div class="people-copy"><p class="eyebrow">LET’S SURF TOGETHER</p><h2 id="people-title">Todo empezó<br>en Marruecos.</h2><p>Lucas propuso un viaje de surf a su comunidad. Aquel primer grupo y lo que vivieron allí dieron pie a LST.</p><p>Después de un año preparando el proyecto, Let's Surf Together arrancó a finales de 2024.</p><h3>Hoy, un equipo que viaja contigo.</h3><p>Quienes organizamos las salidas también estamos allí: compartimos las sesiones y el día a día del grupo. Antes de apuntarte, te ayudamos a entender el programa y los niveles de cada viaje.</p><div class="brand-signature">Nos vemos en el pico.<span>Lucas · Let’s Surf Together</span></div></div><figure class="people-photo"><img src="/assets/group.webp" alt="El grupo de Let's Surf Together reunido en la playa de Laga" width="1500" height="1000" loading="lazy"><figcaption>Laga, 2024.</figcaption></figure></div>
++ <div class="lst-respect" aria-labelledby="respect-title"><h3 id="respect-title">El lugar también importa.</h3><p>Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.</p></div>
++</div></section>
+ <section class="faq section-width section-space" id="dudas" aria-labelledby="faq-title"><div><p class="eyebrow">ANTES DE APUNTARTE</p><h2 id="faq-title">Las dudas<br>de siempre</h2><p>Si falta la tuya, escríbenos.</p><a class="text-link" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div><div class="faq-list"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Sí. Muchos viajeros se apuntan por su cuenta. Te unirás al grupo para las sesiones, las comidas y las actividades del viaje.</p></details><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Mira los niveles indicados en la salida. Si no lo tienes claro, escríbenos y cuéntanos cómo surfeas. Te orientamos antes de reservar.</p></details><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un viaje y escríbenos por WhatsApp. Revisamos contigo el nivel y la disponibilidad, te explicamos las condiciones y te indicamos los pasos para confirmar la plaza.</p></details><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>Cada salida tiene su programa. Revisa los servicios incluidos y los gastos que van aparte. En El Salvador, por ejemplo, los vuelos y el seguro personal no están incluidos.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>El mensaje inicia la consulta. El equipo te explicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Dínoslo antes de reservar. Consultamos las opciones del alojamiento y te confirmamos lo que se puede adaptar en ese viaje.</p></details></div></section>
+ <section class="last-call"><div class="section-width"><div><p class="eyebrow">TU PRÓXIMO VIAJE</p><h2>¿Te apuntas?</h2></div><div><p>Si ya tienes un destino en mente, escríbenos. Te contamos las fechas, el programa y cómo reservar.</p><a class="button button-dark" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="closing-trips" href="#viajes">Volver a ver los viajes</a></div></div></section>
+ <footer class="site-footer section-width"><div class="footer-main"><a href="#" class="brand"><img src="/assets/brand/logo-black.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><div><a class="" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp · +34 648 18 92 57</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener">Instagram · @letsurftogether</a></div><a href="#reservar">Cómo reservar</a></div><div class="footer-bottom"><span>© 2026 LET’S SURF TOGETHER</span></div></footer>
+--- before/dist/mobile.css
++++ after/dist/mobile.css
+@@ -125,3 +125,13 @@
+  .minimal-cover .community-voices blockquote{font-size:26px;max-width:28ch}
+  .minimal-cover .community-voices .testimonial+ .testimonial{border-left:1px solid #ffffff35;padding-left:38px}
+ }
++
++/* Responsibility: brand principles within the existing LST presentation. */
++.minimal-cover .lst-respect{display:grid;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
++.minimal-cover .lst-respect h3{font:600 20px/1.35 var(--body);letter-spacing:-.03em}
++.minimal-cover .lst-respect p{font-size:15px;line-height:1.65;max-width:65ch}
++@media(min-width:761px){
++ .minimal-cover .lst-respect{grid-template-columns:1fr 1.25fr;gap:40px}
++ .minimal-cover .lst-respect h3{font-size:22px}
++}
++@media(min-width:1201px){.minimal-cover .lst-respect{gap:64px}}
+--- before/docs/content-inventory.json
++++ after/docs/content-inventory.json
+@@ -280,5 +280,121 @@
+     "quoteHandling": "Literal contiguous endings; leading omissions marked with […]. Source link and attribution preserved. No stars, scores, traveller counts, review portraits or inferred review dates.",
+     "photoContext": "Existing learning.webp: surfskate in Cadiz, 2024. Caption marks past trip; image is not identified as either reviewer. All asset bytes and uses preserved.",
+     "report": "docs/qa/2026-10-12-comunidad/README.md"
++  },
++  "responsibilityRevision16": {
++    "date": "2026-10-12",
++    "scope": "Un único bloque de principios dentro de #nosotros en la home; sin cambios en fichas ni datos de viajes.",
++    "sources": [
++      {
++        "id": "legacy-home",
++        "url": "https://www.letsurftogether.com/",
++        "checkedAt": "2026-10-12",
++        "sections": [
++          "CONOCENOS UN POCO",
++          "CUIDAMOS DE NUESTROS OCEANOS"
++        ],
++        "evidence": "Publicación del respeto local y de las afirmaciones sobre recogida, colaboración y 3 %. La presencia actual del texto no demuestra vigencia ni ejecución.",
++        "sha256": "ad53b44d654a193f04809eae13fbda6da100504fc3ffa5cce0881b0200524230"
++      },
++      {
++        "id": "legacy-about",
++        "url": "https://www.letsurftogether.com/sobre-lst/",
++        "checkedAt": "2026-10-12",
++        "sections": [
++          "Respeto a los Surfistas Locales",
++          "CUIDAMOS DE NUESTROS OCEANOS"
++        ],
++        "evidence": "Principios de humildad y respeto a surfistas locales y costumbres; repite las afirmaciones ambientales de la home. No es confirmación independiente de ejecución.",
++        "sha256": "571ed36cd50e21e825d59a2721e437b9e01f9ac8f3365363b23f679ed58c6e90"
++      },
++      {
++        "id": "brand-questionnaire",
++        "document": "Cuestionario_Marca_Web_LST.pdf",
++        "checkedAt": "2026-10-12",
++        "pages": 5,
++        "references": "P. 1, preguntas 1 y 4: cultura local y honestidad; p. 2, preguntas 6–9: tono e identidad; p. 3, pregunta 14: pasión compartida por el océano.",
++        "evidence": "Revisión de las cinco páginas: sin confirmación de recogidas actuales, colaboración con Universal Plastic ni aportación del 3 %. No se copian los datos legales o personales.",
++        "sha256": "741bfdfd395f87cff1b2b2a55ff0aa4db8c845cd7757225ee108762dea21ad5a"
++      },
++      {
++        "id": "checkout",
++        "files": [
++          "README.md",
++          "docs/propuesta.md",
++          "docs/content-inventory.json",
++          "docs/asset-provenance.json",
++          "data/trips.json"
++        ],
++        "evidence": "Los registros previos y datos disponibles no aportan respaldo de vigencia o ejecución de estas tres acciones. Se conservan las revisiones anteriores y todos los datos provisionales."
++      }
++    ],
++    "principles": {
++      "status": "implemented",
++      "sourceIds": [
++        "legacy-home",
++        "legacy-about",
++        "brand-questionnaire"
++      ],
++      "heading": "El lugar también importa.",
++      "copy": "Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.",
++      "location": "dist/index.html, #nosotros > .section-width > .lst-respect",
++      "meaning": "Declaración de valores; no describe un protocolo operativo ni garantiza un resultado ambiental."
++    },
++    "documentedActions": {
++      "status": "publication-only",
++      "finding": "Está documentado que LST publicó estas iniciativas. No se ha encontrado evidencia suficiente de ejecución, pagos o continuidad actual en las fuentes revisadas. No se presentan como acciones realizadas ni vigentes."
++    },
++    "pendingCommitments": [
++      {
++        "id": "plastic-collection",
++        "status": "pending-current-evidence",
++        "sourceIds": [
++          "legacy-home",
++          "legacy-about"
++        ],
++        "publicUI": false,
++        "reviewCopy": "Durante nuestros viajes recogemos plásticos de las playas.",
++        "requires": [
++          "Confirmación fechada del responsable de LST de que la actividad continúa y a qué viajes se aplica.",
++          "Registro reciente de una recogida identificable (fecha, lugar y actividad) y confirmación de su inclusión en las salidas a las que se atribuya."
++        ],
++        "publicationRule": "No publicar como actividad general si solo se confirma para algunas salidas; adaptar el texto al alcance acreditado."
++      },
++      {
++        "id": "universal-plastic",
++        "status": "pending-current-evidence",
++        "sourceIds": [
++          "legacy-home",
++          "legacy-about"
++        ],
++        "publicUI": false,
++        "reviewCopy": "Colaboramos con Universal Plastic en proyectos de recogida de plásticos.",
++        "requires": [
++          "Confirmación fechada de ambas partes o acuerdo vigente con periodo, entidad y proyecto identificados.",
++          "Precisar en qué consiste la colaboración actual; una mención antigua o un logo no acredita actividad."
++        ],
++        "publicationRule": "Publicar solo si está activa y el alcance coincide con la redacción; no añadir logo ni resultados."
++      },
++      {
++        "id": "three-percent",
++        "status": "pending-current-evidence",
++        "sourceIds": [
++          "legacy-home",
++          "legacy-about"
++        ],
++        "publicUI": false,
++        "reviewCopy": "Destinamos el 3 % de cada reserva a proyectos de recogida de plásticos en colaboración con Universal Plastic.",
++        "requires": [
++          "Confirmación fechada de que sigue vigente el 3 % y del conjunto de reservas al que se aplica.",
++          "Definir la base de cálculo (importe bruto o neto, impuestos y conceptos incluidos), el tratamiento de cancelaciones y reembolsos, y desde cuándo se aplica.",
++          "Identificar destinatario, proyectos, periodicidad y mecanismo de aportación; aportar justificantes recientes de transferencias o liquidaciones.",
++          "Confirmar la colaboración vigente con Universal Plastic antes de vincularla a la aportación."
++        ],
++        "publicationRule": "No publicar sin respaldo del porcentaje, alcance y ejecución. Si el alcance confirmado es distinto, reescribir y revisar antes de incorporar a la interfaz."
++      }
++    ],
++    "otherLegacyClaims": "No se trasladan charlas, formación ambiental, convenios locales, reducción de huella ni promesas de dejar cada lugar intacto: tampoco se acreditan como prácticas actuales.",
++    "dependencies": "Confirmaciones y documentación de LST; confirmación o acuerdo de Universal Plastic. Sin dependencias nuevas de código ni investigación comercial de viajes.",
++    "report": "docs/qa/2026-10-12-responsabilidad/README.md"
+   }
+ }
+--- before/docs/propuesta.md
++++ after/docs/propuesta.md
+@@ -106,3 +106,9 @@
+ La organización ya se explica en el proceso de reserva; una tercera reseña no resolvería una duda nueva en este recorrido. Los recuerdos comparten un enlace de fuente, sin nuevo CTA comercial, carrusel o bloque de página. La mayoría femenina descrita en el cuestionario orienta una voz acogedora y la presencia de viajeras, sin presentar un viaje exclusivo ni prometer encaje, amistad o seguridad. El equipo permanece intacto.
+ 
+ [Informe de comunidad](qa/2026-10-12-comunidad/README.md): selección y descartes, procedencia, evidencia y límites. Se conserva el escenario provisional de viajes sin verificarlo y no se publica.
++
++## Revisión 16 · responsabilidad como parte de LST
++
++Se añade «El lugar también importa» dentro de la presentación existente, después de la historia, el equipo y la foto de Laga. Un título y un párrafo sitúan el respeto al océano, a los surfistas locales y a sus costumbres en la personalidad de LST. En móvil se leen seguidos; en escritorio se alinean con las dos columnas de la presentación. No hay una nueva sección principal, fotografías, sellos, logos ni CTA.
++
++El inventario registra por separado los principios publicables, las afirmaciones documentadas en la web antigua y las tres acciones pendientes de acreditar (recogidas, Universal Plastic y 3 %). Los textos para revisión viven exclusivamente en documentación. No se sustituyen por nuevas promesas ambientales ni se trasladan a las fichas de viajes. Se mantienen marca, materiales, comunidad, presentación, WhatsApp y datos de demostración.

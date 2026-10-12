@@ -1,0 +1,46 @@
+[
+  {
+    "phase": "baseline",
+    "skipBottom": 27.1875,
+    "plans": [
+      {
+        "scroll": 299,
+        "client": 280
+      },
+      {
+        "scroll": 284,
+        "client": 280
+      },
+      {
+        "scroll": 284,
+        "client": 280
+      }
+    ],
+    "focus": {
+      "top": 16,
+      "bottom": 143.1875
+    }
+  },
+  {
+    "phase": "candidate",
+    "skipBottom": -100,
+    "plans": [
+      {
+        "scroll": 280,
+        "client": 280
+      },
+      {
+        "scroll": 280,
+        "client": 280
+      },
+      {
+        "scroll": 280,
+        "client": 280
+      }
+    ],
+    "focus": {
+      "top": 16,
+      "bottom": 143.1875
+    }
+  }
+]

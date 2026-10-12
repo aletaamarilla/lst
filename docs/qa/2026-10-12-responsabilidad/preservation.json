@@ -1,0 +1,521 @@
+{
+  "checks": [
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/README.md",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/antes/home-1440-experience.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/antes/home-390-experience.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/antes/marruecos-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/antes/marruecos-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/baseline-hashes.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/browser-checks.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/candidate-hashes.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas-audit.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas/home-1440-experience.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas/home-1440-full.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas/home-390-experience.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas/home-390-full.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas/marruecos-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/capturas/marruecos-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/preservation.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/revision-independiente.md",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/sources.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/task-only.diff",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-comunidad/version.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/README.md",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/asturias-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/asturias-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/audit.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/azores-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/azores-1440-viewport.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/azores-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/azores-390-viewport.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/cadiz-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/cadiz-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/el-salvador-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/el-salvador-1440-viewport.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/el-salvador-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/el-salvador-390-viewport.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/euskadi-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/euskadi-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-1440-experience.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-1440-full.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-1440-hero.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-1440-people.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-390-experience.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-390-full.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-390-hero.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/home-390-people.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/marruecos-1440-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/capturas/marruecos-390-team.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/estado-inicial.txt",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/huellas-iniciales.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/preservation.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/revision-independiente.md",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/task-only.diff",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/verification.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-presentacion/version.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/README.md",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/after/audit.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/after/cards-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/after/dates-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/after/dates-text200-320.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/after/el-salvador-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/after/menu-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/before/audit.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/before/cards-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/before/dates-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/before/el-salvador-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/before/menu-390x844.png",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/pipeline.txt",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/preservation.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/verification.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/qa/2026-10-12-whatsapp/version.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: scripts/check-ux.mjs",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: .gitignore",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: .openai/hosting.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: data/trips.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/app.js",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/after-surf.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/asturias-surf.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/asturias.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/azores-coast.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/azores-surf.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/azores.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/brand/logo-black.svg",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/brand/logo-orange.svg",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/brand/logo-white.svg",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/brand/symbol-black.svg",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/brand/symbol-orange.svg",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/cadiz-session.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/cadiz.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/community.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/el-salvador.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/euskadi-coast.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/euskadi-stay.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/euskadi.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/fonts/aura.ttf",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/fonts/montserrat.woff2",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/fonts/space-grotesk.woff2",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/fonts/space-mono-bold.woff2",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/fonts/space-mono.woff2",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/fonts/work-sans.woff2",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/group.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/learning.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/marruecos-day.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/marruecos.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/salvador-17.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/salvador-18.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/salvador-19.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/assets/surf-session.webp",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/styles.css",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/trip.css",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/trip.js",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/viajes/asturias/index.html",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/viajes/azores/index.html",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/viajes/cadiz/index.html",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/viajes/el-salvador/index.html",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/viajes/euskadi/index.html",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: dist/viajes/marruecos/index.html",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: docs/asset-provenance.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: package.json",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: scripts/check.mjs",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: scripts/render-trips.mjs",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: scripts/serve.mjs",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: scripts/trip-model.mjs",
+      "pass": true
+    },
+    {
+      "check": "Sin cambios: scripts/trip-model.test.mjs",
+      "pass": true
+    },
+    {
+      "check": "Contenido previo conservado: README.md",
+      "pass": true
+    },
+    {
+      "check": "Contenido previo conservado: docs/propuesta.md",
+      "pass": true
+    },
+    {
+      "check": "Contenido previo conservado: dist/mobile.css",
+      "pass": true
+    },
+    {
+      "check": "Home idéntica al retirar el único bloque nuevo",
+      "pass": true
+    },
+    {
+      "check": "Inventario previo conservado",
+      "pass": true
+    },
+    {
+      "check": "Seis fichas idénticas tras build",
+      "pass": true
+    },
+    {
+      "check": "Ningún compromiso pendiente en el texto de las siete páginas HTML",
+      "pass": true
+    }
+  ],
+  "failures": []
+}

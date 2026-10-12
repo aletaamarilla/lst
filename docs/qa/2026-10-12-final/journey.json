@@ -1,0 +1,1908 @@
+{
+  "checks": [
+    {
+      "name": "el-salvador 390 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 8 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 disclosure 8 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 390 single date retained",
+      "ok": false
+    },
+    {
+      "name": "el-salvador 390 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 multiple dates selector",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 selected date retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 selected date retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 390 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "azores 390 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "azores 390 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "azores 390 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "azores 390 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "azores 390 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "azores 390 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "azores 390 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "azores 390 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "azores 390 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "azores 390 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "azores 390 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 390 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 390 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "azores 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "azores 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "azores 390 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "azores 390 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "euskadi 390 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "marruecos 390 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 destination retained",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "cadiz 390 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 8 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 disclosure 8 restores",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "el-salvador 1440 single date retained",
+      "ok": false
+    },
+    {
+      "name": "el-salvador 1440 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 multiple dates selector",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 selected date retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 selected date retained",
+      "ok": true
+    },
+    {
+      "name": "asturias 1440 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "azores 1440 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "euskadi 1440 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "marruecos 1440 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 home to correct trip",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 configured level and context",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 level message retains destination and purpose",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 trip to guide",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide End 4",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide ArrowRight 1",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide ArrowLeft 4",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide Home 1",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide ArrowRight 2",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide ArrowRight 3",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 guide back preserves trip",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 thumbnail 0 selected",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 thumbnail 0 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 thumbnail 1 selected",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 thumbnail 1 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 thumbnail 2 selected",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 thumbnail 2 focus/scroll return",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 0 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 0 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 1 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 1 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 2 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 2 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 3 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 3 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 4 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 4 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 5 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 5 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 6 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 6 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 7 opens/closes",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 disclosure 7 restores",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 single/pending direct consultation",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 consultation intercepted",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 destination retained",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 pending retains inquiry state",
+      "ok": true
+    },
+    {
+      "name": "cadiz 1440 returns to home catalogue",
+      "ok": true
+    },
+    {
+      "name": "no uncaught JS errors",
+      "ok": true,
+      "data": []
+    }
+  ],
+  "issues": [
+    {
+      "name": "el-salvador 390 single date retained"
+    },
+    {
+      "name": "el-salvador 1440 single date retained"
+    }
+  ],
+  "messages": [
+    {
+      "tag": "el-salvador 390",
+      "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?"
+    },
+    {
+      "tag": "asturias 390",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "tag": "asturias 390",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "tag": "azores 390",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Azores. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "euskadi 390",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Euskadi. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "marruecos 390",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Marruecos. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "cadiz 390",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Cádiz. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "el-salvador 1440",
+      "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?"
+    },
+    {
+      "tag": "asturias 1440",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "tag": "asturias 1440",
+      "message": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "tag": "azores 1440",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Azores. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "euskadi 1440",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Euskadi. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "marruecos 1440",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Marruecos. ¿Tenéis novedades sobre las fechas y el programa?"
+    },
+    {
+      "tag": "cadiz 1440",
+      "message": "¡Hola, LST! Me interesa el próximo viaje a Cádiz. ¿Tenéis novedades sobre las fechas y el programa?"
+    }
+  ],
+  "errors": []
+}

@@ -1,21 +1,21 @@
 /* Detail pages start with the phone layout; wider layouts enhance it. */
-.trip-page{padding-bottom:calc(88px + env(safe-area-inset-bottom));font-size:16px}
+.trip-page{padding-bottom:var(--trip-dock-height,88px);font-size:16px}
 .trip-page h2{font-size:clamp(36px,9.3vw,48px);line-height:1.08}
 .trip-page .eyebrow{font-size:11px;margin-bottom:13px;letter-spacing:.045em}
 .trip-page .button{min-height:52px;gap:12px;border:0;font-size:15px}
-.trip-page :is(a,button,summary){scroll-margin-block:110px}
-.trip-header{position:sticky;top:0;z-index:25;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);min-height:72px}
+.trip-page :is(a,button,summary){scroll-margin-block:12px}
+.trip-header{flex-wrap:wrap;position:sticky;top:0;z-index:25;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;background:var(--paper);border-bottom:1px solid var(--line);min-height:72px}
 .trip-header .brand{width:154px}
-.trip-back{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;text-decoration:none;min-height:44px;white-space:nowrap}
+.trip-back{max-width:100%;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;text-decoration:none;min-height:44px;white-space:normal}
 
 .trip-header .trip-header-cta{display:none}
 .trip-cover{position:relative;isolation:isolate;min-height:300px;display:flex;align-items:end;overflow:hidden;color:var(--paper);background:var(--ink)}
 .trip-cover-image,.trip-cover-shade{position:absolute;inset:0;width:100%;height:100%;z-index:-2;object-fit:cover;object-position:var(--trip-position)}
 .trip-cover-shade{z-index:-1;background:linear-gradient(transparent 15%,#101a16b3 100%)}
-.trip-cover-copy{padding:45px 20px 23px;max-width:100%}
+.trip-cover-copy{padding:90px 20px 23px;max-width:100%}
 .trip-cover .eyebrow{margin-bottom:9px}
 .trip-cover h1{font:400 clamp(54px,16vw,86px)/.96 var(--display);letter-spacing:-.015em;margin:0 0 15px}
-.trip-state{font:500 10px/1.5 var(--mono);letter-spacing:.035em;border:1px solid #fffae780;padding:5px 8px;display:inline-block}
+.trip-state{font:500 12px/1.5 var(--mono);letter-spacing:.035em;border:1px solid #fffae780;padding:5px 8px;display:inline-block}
 .cover-photos{position:absolute;top:16px;right:16px;display:flex;align-items:center;gap:9px;border:0;background:var(--paper);color:var(--ink);min-height:44px;padding:10px 13px;font-size:12px;font-weight:600}
 .cover-photos span{border-left:1px solid var(--line);padding-left:9px}
 .trip-shell,.trip-layout{width:calc(100% - 40px);max-width:1220px;margin-inline:auto}
@@ -24,14 +24,14 @@
 .trip-summary>p:not(.eyebrow){line-height:1.65}
 .trip-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px 14px;border-block:1px solid var(--line);padding:20px 0;margin:25px 0 16px}
 .trip-facts>div:last-child{grid-column:1/-1}
-.trip-facts dt,.pending-facts dt{font-size:12px;color:var(--muted);margin-bottom:6px}
+.trip-facts dt,.pending-facts dt{font-size:13px;color:var(--muted);margin-bottom:6px}
 .trip-facts dd,.pending-facts dd{font-size:14px;font-weight:600;line-height:1.5;margin:0}
-.trip-summary>.trip-notice{font-size:12px;color:var(--muted);line-height:1.6}
+.trip-summary>.trip-notice{font-size:14px;color:var(--muted);line-height:1.6}
 .trip-block{padding-block:40px;border-bottom:1px solid var(--line)}
 .trip-block h2{margin-bottom:20px;text-wrap:balance}
 .trip-block>p:not(.eyebrow){line-height:1.65;margin-bottom:17px}
 .plan-list{margin-top:23px;border-top:1px solid var(--line)}
-.plan-item summary{display:grid;grid-template-columns:30px 1fr 18px;gap:12px;align-items:start;font-size:16px;line-height:1.5;padding:20px 0}
+.plan-item summary{display:grid;grid-template-columns:30px minmax(0,1fr) 18px;gap:12px;align-items:start;font-size:16px;line-height:1.5;padding:20px 0}
 .plan-item .plan-number{font:400 23px/1.1 var(--display);color:#a33417}
 .plan-item .plan-toggle{font-size:22px;font-weight:400}
 .plan-item[open] .plan-toggle{transform:rotate(45deg)}
@@ -40,13 +40,13 @@
 .source-program{display:inline-block;min-height:44px;padding-block:13px;margin-top:10px;font-size:13px}
 .gallery-heading{margin-bottom:20px}
 .gallery-heading h2{margin-bottom:12px}
-.gallery-hint{font-size:12px;color:var(--muted)}
+.gallery-hint{font-size:13px;color:var(--muted)}
 .gallery-track{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding-bottom:12px}
 .gallery-track figure{flex:0 0 87%;min-width:0;scroll-snap-align:start}
 .gallery-photo{width:100%;display:block;position:relative;border:0;padding:0;background:var(--ink);color:var(--paper)}
 .gallery-photo img{width:100%;height:auto;aspect-ratio:1.42;object-fit:cover}
 .gallery-photo>span{position:absolute;right:10px;bottom:10px;display:grid;place-items:center;background:var(--paper);color:var(--ink);width:36px;height:36px;font-size:23px}
-.gallery-track figcaption,.trip-figure figcaption{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.55}
+.gallery-track figcaption,.trip-figure figcaption{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.55}
 .trip-level{background:var(--ink);color:var(--paper);margin-top:15px;padding:30px 22px;border:0}
 .trip-level .eyebrow{color:#ff9c7f}
 .trip-level ul{list-style:none;padding:0;margin:20px 0}
@@ -56,7 +56,7 @@
 .trip-level>.button-level{width:100%;margin-top:13px}
 .trip-figure{margin-bottom:20px}
 .trip-figure img{width:100%;height:auto;aspect-ratio:1.5;object-fit:cover}
-.trip-page .fine-print{font-size:12px;color:var(--muted);line-height:1.6;margin-top:17px}
+.trip-page .fine-print{font-size:14px;color:var(--muted);line-height:1.6;margin-top:17px}
 .inclusion-grid{display:grid;gap:20px}
 .inclusion-list{border:1px solid var(--line);padding-inline:18px}
 .inclusion-list h3{font-size:18px;font-weight:600;padding:20px 0;letter-spacing:0}
@@ -89,31 +89,32 @@
 .related-trip img{width:85px;height:78px;object-fit:cover}
 .related-trip div{display:flex;flex-direction:column;gap:6px}
 .related-trip div>span{font:400 30px/1.1 var(--display)}
-.related-trip small{font-size:11px;color:var(--muted)}
+.related-trip small{font-size:13px;color:var(--muted)}
 .related-section .text-link{display:inline-flex;min-height:44px;align-items:center}
 .trip-footer{display:grid;gap:22px;padding-block:30px}
 .trip-footer .brand{width:190px}
 .trip-footer>div{display:flex;gap:25px;flex-wrap:wrap;font-size:13px}
 .trip-footer>div a{min-height:44px;display:flex;align-items:center;text-underline-offset:5px}
 .trip-footer>p{font:400 10px/1.6 var(--mono);border-top:1px solid var(--line);padding-top:18px;color:var(--muted)}
-.trip-dock{position:fixed;z-index:30;bottom:0;inset-inline:0;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px 20px calc(13px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--ink)}
-.trip-dock>div{display:flex;flex-direction:column;gap:4px}
+.trip-dock{flex-wrap:wrap;position:fixed;z-index:30;bottom:0;inset-inline:0;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:13px 20px calc(13px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--ink)}
+.trip-dock>div{min-width:min-content;flex:1 1 100px;display:flex;flex-direction:column;gap:4px}
 .trip-dock strong{font-size:22px;line-height:1.15;letter-spacing:-.02em}
 .trip-page[data-state="upcoming"] .trip-dock strong{font-size:16px}
-.trip-dock div>span{font-size:10px;color:var(--muted)}
-.trip-dock .dock-cta{font-size:14px;min-height:50px;padding-inline:16px;flex-shrink:0}
-.photo-dialog{padding:0;border:0;margin:auto;width:min(1100px,100%);max-width:100%;max-height:100dvh;background:var(--ink);color:var(--paper);overflow-y:auto}
+.trip-dock div>span{font-size:13px;color:var(--muted)}
+.trip-dock .dock-cta{font-size:14px;min-height:50px;padding-inline:16px;flex:1 1 136px}
+.photo-dialog{padding:0;border:0;margin:auto;width:min(1100px,100%);max-width:100%;height:min(900px,100dvh);max-height:100dvh;background:var(--ink);color:var(--paper);overflow:hidden}
+.photo-dialog[open]{display:flex;flex-direction:column}
 .photo-dialog::backdrop{background:#000e}
-.photo-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 18px}
+.photo-heading{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:calc(14px + env(safe-area-inset-top)) 18px 14px}
 .photo-heading>div>p:first-child{font-size:15px;font-weight:600}
 .photo-heading .photo-instruction{font-size:12px;color:#d3cfbf;margin-top:3px}
 .photo-close{flex-shrink:0;min-width:66px;min-height:44px;padding:10px 12px;color:var(--paper);border:1px solid #fffae780;background:transparent;font-size:13px;font-weight:500}
-.photo-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}
+.photo-strip{flex:1;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}
 .photo-strip::-webkit-scrollbar{display:none}
-.photo-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
-.photo-slide img{height:min(62dvh,60vw,calc(100dvh - 190px),620px);width:100%;object-fit:contain}
-.photo-slide figcaption{min-height:50px;padding:14px 20px 0;font-size:12px;text-align:center;line-height:1.6}
-.photo-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px 22px;font-size:12px}
+.photo-slide{display:flex;flex-direction:column;flex:0 0 100%;min-width:0;min-height:0;scroll-snap-align:start;scroll-snap-stop:always}
+.photo-slide img{flex:1;min-height:0;height:0;width:100%;object-fit:contain}
+.photo-slide figcaption{flex-shrink:0;min-height:50px;padding:14px 20px 0;font-size:12px;text-align:center;line-height:1.6}
+.photo-controls{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px calc(22px + env(safe-area-inset-bottom));font-size:12px}
 .photo-controls button{border:1px solid #fffae780;background:none;color:var(--paper);min-width:88px;min-height:44px;padding:10px 12px;font-size:12px;font-weight:500}
 @media(min-width:600px){
  .trip-header{padding-inline:32px}.trip-header .brand{width:200px}.trip-back{font-size:14px}
@@ -127,16 +128,16 @@
 }
 @media(min-width:1000px){
  .trip-page{padding-bottom:0}.trip-page h2{font-size:48px}.trip-header{padding:18px 56px;gap:30px}.trip-header .brand{width:226px}.trip-back{margin-left:auto}.trip-header .trip-header-cta{display:flex;min-height:44px;padding-block:10px}
- .trip-shell,.trip-layout{width:calc(100% - 112px)}.trip-cover{min-height:460px}.trip-cover-copy{width:min(1220px,calc(100% - 112px));margin-inline:auto;padding:50px 0 40px}.trip-cover h1{font-size:132px}.trip-cover .eyebrow{font-size:13px}.trip-state{font-size:11px}.cover-photos{top:auto;bottom:40px;right:56px}
- .trip-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:50px;align-items:start}.trip-content{min-width:0}.trip-summary{padding-top:45px}.trip-booking{display:block;padding-top:45px;align-self:stretch}.booking-card{position:sticky;top:110px;max-height:calc(100dvh - 130px);overflow-y:auto;scrollbar-width:thin;border:1px solid var(--line);background:#fffdf5;padding:25px}.booking-card .eyebrow{font-size:10px}.booking-card h2{font-size:42px;margin-bottom:23px}.booking-card-price{font-size:31px;font-weight:600;line-height:1.2;letter-spacing:-.035em}.trip-page[data-state="upcoming"] .booking-card-price{font-size:22px;letter-spacing:-.02em}.booking-card-price-note{font-size:11px;color:var(--muted);margin-top:9px}.booking-card dl{border-top:1px solid var(--line);padding-top:18px;margin:23px 0}.booking-card dl>div{margin-bottom:14px}.booking-card dt{font-size:11px;color:var(--muted);margin-bottom:4px}.booking-card dd{font-size:13px;font-weight:600;margin:0}.booking-card-cta{width:100%}.booking-card-help{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.6}.booking-card-link{display:inline-flex;align-items:center;min-height:44px;font-size:12px;text-underline-offset:5px;margin-top:7px}.trip-dock{display:none}
+ .trip-shell,.trip-layout{width:calc(100% - 112px)}.trip-cover{min-height:460px}.trip-cover-copy{width:min(1220px,calc(100% - 112px));margin-inline:auto;padding:50px 0 40px}.trip-cover h1{font-size:132px}.trip-cover .eyebrow{font-size:13px}.trip-state{font-size:12px}.cover-photos{top:auto;bottom:40px;right:56px}
+ .trip-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:50px;align-items:start}.trip-content{min-width:0}.trip-summary{padding-top:45px}.trip-booking{display:block;padding-top:45px;align-self:stretch}.booking-card{position:sticky;top:110px;max-height:calc(100dvh - 130px);overflow-y:auto;scrollbar-width:thin;border:1px solid var(--line);background:#fffdf5;padding:25px}.booking-card .eyebrow{font-size:12px}.booking-card h2{font-size:42px;margin-bottom:23px}.booking-card-price{font-size:31px;font-weight:600;line-height:1.2;letter-spacing:-.035em}.trip-page[data-state="upcoming"] .booking-card-price{font-size:22px;letter-spacing:-.02em}.booking-card-price-note{font-size:13px;color:var(--muted);margin-top:9px}.booking-card dl{border-top:1px solid var(--line);padding-top:18px;margin:23px 0}.booking-card dl>div{margin-bottom:14px}.booking-card dt{font-size:13px;color:var(--muted);margin-bottom:4px}.booking-card dd{font-size:13px;font-weight:600;margin:0}.booking-card-cta{width:100%}.booking-card-help{font-size:14px;color:var(--muted);margin-top:14px;line-height:1.6}.booking-card-link{display:inline-flex;align-items:center;min-height:44px;font-size:12px;text-underline-offset:5px;margin-top:7px}.trip-dock{display:none}
  .gallery-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;gap:15px}.gallery-track:has(figure:last-child:nth-child(2)){grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-track figure{min-width:0}.gallery-photo img{aspect-ratio:1.15}.gallery-hint{display:none}.trip-figure img{aspect-ratio:1.7}.trip-facts dd{font-size:13px}.trip-block>p:not(.eyebrow){font-size:16px}.related-section{padding-block:48px}
 }
 @media(min-width:1280px){.trip-layout{grid-template-columns:minmax(0,1fr) 350px;gap:74px}.booking-card{padding:30px}.trip-facts dd{font-size:15px}.trip-cover{min-height:500px}}
 @media(prefers-reduced-motion:reduce){.gallery-track{scroll-behavior:auto}}
 
-.cover-key-facts{display:flex;flex-wrap:wrap;gap:8px 15px;font:500 11px/1.5 var(--mono)}
+.cover-key-facts{display:flex;flex-wrap:wrap;gap:8px 15px;font:500 13px/1.5 var(--mono)}
 .cover-key-facts>span{display:inline-block;border:1px solid #fffae780;padding:5px 8px}
-@media(min-width:1000px){.cover-key-facts{font-size:12px}}
+@media(min-width:1000px){.cover-key-facts{font-size:13px}}
 
 
 /* On phones, actions use words without decorative arrow glyphs. */
@@ -153,29 +154,90 @@
 .departure-dialog[open]{display:flex;flex-direction:column}
 .departure-dialog::backdrop{background:#10151299;backdrop-filter:blur(3px)}
 .departure-dialog-heading{display:flex;align-items:start;justify-content:space-between;gap:18px;padding:25px 20px 10px;flex-shrink:0}
-.departure-dialog .eyebrow{color:#a33417;font-size:10px;margin-bottom:7px}
+.departure-dialog .eyebrow{color:#a33417;font-size:12px;margin-bottom:7px}
 .trip-page .departure-dialog h2{font-size:40px;line-height:1.08;margin:0}
 .departure-close{background:transparent;border:1px solid var(--line);color:var(--ink);min-height:44px;padding:10px 14px;font-size:13px;font-weight:500;flex-shrink:0}
 .departure-close:hover{background:var(--ink);color:var(--paper)}
 .departure-dialog-intro{font-size:14px;line-height:1.6;color:var(--muted);padding:0 20px 19px;flex-shrink:0}
 .departure-dialog-list{min-height:0;overflow-y:auto;overscroll-behavior-y:contain;display:grid;grid-auto-rows:min-content;gap:12px;padding:0 20px 18px}
 .departure-option{background:#fffdf5;border:1px solid var(--line);padding:17px;min-width:0}
-.departure-option-status{font:400 9px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.03em;color:#a33417;margin-bottom:7px}
+.departure-option-status{font:400 12px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.03em;color:#a33417;margin-bottom:7px}
 .departure-option h3{font:600 19px/1.4 var(--body);letter-spacing:-.02em;margin-bottom:7px}
-.departure-option-meta{font-size:12px;line-height:1.5;color:var(--muted)}
-.departure-option-booking{display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:15px;margin-top:17px}
+.departure-option-meta{font-size:14px;line-height:1.5;color:var(--muted)}
+.departure-option-booking{flex-wrap:wrap;display:flex;justify-content:space-between;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:15px;margin-top:17px}
 .departure-option-price{display:flex;flex-direction:column;gap:3px}
 .departure-option-price strong{font:600 24px/1.2 var(--body);letter-spacing:-.025em}
-.departure-option-price span{font-size:11px;color:var(--muted)}
+.departure-option-price span{font-size:13px;color:var(--muted)}
 .trip-page .departure-enquiry{min-height:48px;font-size:14px;padding:12px 20px}
-.departure-dialog-help{border-top:1px solid var(--line);padding:16px 20px calc(18px + env(safe-area-inset-bottom));font-size:12px;line-height:1.6;color:var(--muted);flex-shrink:0}
+.departure-dialog-help{border-top:1px solid var(--line);padding:16px 20px calc(18px + env(safe-area-inset-bottom));font-size:14px;line-height:1.6;color:var(--muted);flex-shrink:0}
 @media(min-width:640px){
  .departure-dialog{inset:0;margin:auto;width:calc(100% - 48px);max-width:680px;max-height:min(85dvh,780px);border-radius:12px}
  .departure-dialog-heading{padding:28px 28px 12px}.trip-page .departure-dialog h2{font-size:46px}
  .departure-dialog-intro{padding-inline:28px;padding-bottom:22px}.departure-dialog-list{padding:0 28px 24px;gap:14px}
  .departure-option{display:grid;grid-template-columns:minmax(0,1fr) 160px;gap:24px;align-items:center;padding:23px}
- .departure-option h3{font-size:21px}.departure-option-meta{font-size:13px}
+ .departure-option h3{font-size:21px}.departure-option-meta{font-size:14px}
  .departure-option-booking{border:0;margin:0;padding:0;flex-direction:column;align-items:stretch;gap:13px}.departure-option-price{text-align:right}
  .departure-dialog-help{padding:18px 28px 22px}
 }
 @media(min-width:1000px){.mobile-booking-options{display:none}.action-arrow{display:block;flex-shrink:0;width:18px;height:18px}}
+
+html:has(.trip-page){scroll-padding-top:calc(var(--trip-header-height,72px) + 12px);scroll-padding-bottom:calc(var(--trip-dock-height,88px) + 12px)}
+.trip-page{overflow-wrap:anywhere}
+.trip-dock strong{white-space:nowrap}
+.trip-dock .dock-cta{max-width:100%}
+.departure-dialog-heading>div{min-width:0}
+/* A short viewport needs the reading space, including with enlarged text. */
+@media(max-height:600px){
+ .trip-header{position:relative}
+ .departure-dialog-heading{padding-top:12px}
+ .trip-page .departure-dialog h2{font-size:32px}
+}
+
+.trip-page.dock-in-flow{padding-bottom:0}
+.dock-in-flow .trip-dock{position:static}
+.departure-dialog.is-constrained{overflow-y:auto;scroll-padding-top:var(--departure-heading-height);scroll-padding-bottom:12px}
+.departure-dialog.is-constrained .departure-dialog-heading{position:sticky;top:0;z-index:1;background:var(--paper)}
+.departure-dialog.is-constrained[open]{display:block}
+.departure-dialog.is-constrained .departure-dialog-list{overflow:visible}
+/* The enlarged plus sign must not extend beyond its grid cell. */
+.plan-toggle{justify-self:center}
+
+/* Context stays with a past-trip testimonial, separate from the next team. */
+.trip-quote .trip-quote-context{margin:0 0 14px;font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* With large text in a very short viewport, keep a usable photo and scroll.
+   The close button stays reachable even when the heading itself cannot fit. */
+.photo-dialog.is-constrained{overflow-y:auto;scroll-padding-block:var(--dialog-close-space) 12px}
+.photo-dialog.is-constrained .photo-strip{flex:none;height:calc(160px + var(--photo-caption-height))}
+.photo-dialog.is-constrained .photo-close,.departure-dialog.is-heading-tall .departure-close{position:fixed;top:var(--dialog-close-top);right:var(--dialog-close-right);z-index:2}
+.photo-dialog.is-constrained .photo-close{background:var(--ink)}
+.departure-dialog.is-heading-tall{scroll-padding-top:var(--dialog-close-space)}
+.departure-dialog.is-heading-tall .departure-dialog-heading{position:static}
+.departure-dialog.is-heading-tall .departure-close{background:var(--paper)}
+.photo-dialog.is-constrained .photo-heading::after,.departure-dialog.is-heading-tall .departure-dialog-heading::after{content:"";width:var(--dialog-close-width);flex-shrink:0}
+
+/* Landscape previews retain faces, boards and the surrounding destination. */
+.gallery-photo img{aspect-ratio:1.5;object-fit:contain;background:var(--paper)}
+@media(max-width:599px){
+ .trip-cover{min-height:var(--trip-cover-min-mobile,300px)}
+ .trip-cover-image{object-position:var(--trip-position-mobile,var(--trip-position))}
+}
+/* Group photos need the entire frame and a title outside the faces. */
+.trip-cover--group{display:grid;min-height:0;background:var(--ink)}
+.trip-cover--group .trip-cover-image{position:static;height:auto;aspect-ratio:auto;object-fit:contain;z-index:auto}
+.trip-cover--group .trip-cover-shade{display:none}
+.trip-cover--group .trip-cover-copy{padding:24px 20px;width:100%;margin:0}
+.trip-cover--group .cover-photos{position:static;justify-self:start;margin:0 20px 24px}
+.trip-cover--group h1{margin-bottom:14px}
+@media(min-width:600px){
+ .trip-cover--group{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);align-items:center;column-gap:24px;padding:32px}
+ .trip-cover--group .trip-cover-image{grid-column:2;grid-row:1/3}
+ .trip-cover--group .trip-cover-copy{grid-column:1;grid-row:1;align-self:end;padding:0 0 24px}
+ .trip-cover--group h1{font-size:clamp(76px,9.2vw,132px)}
+ .trip-cover--group .cover-photos{grid-column:1;grid-row:2;align-self:start;margin:0}
+}
+@media(min-width:1000px){.trip-cover--group{padding:40px 56px;column-gap:50px}}
+
+/* Program headings inherit their row's size; controls scale with the text. */
+.plan-item summary{grid-template-columns:minmax(30px,max-content) minmax(0,1fr) 2em}
+.plan-item summary>span:not(.plan-number):not(.plan-toggle){font-size:inherit}

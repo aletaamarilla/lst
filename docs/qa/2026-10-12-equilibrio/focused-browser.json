@@ -1,0 +1,250 @@
+[
+  {
+    "phase": "before",
+    "slug": "home",
+    "width": 320,
+    "text": 100,
+    "skipBottom": -47.203125,
+    "cardOverlaps": [
+      false,
+      false
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 70.375,
+        "lineHeight": 35.2
+      }
+    ]
+  },
+  {
+    "phase": "before",
+    "slug": "asturias",
+    "width": 320,
+    "text": 100,
+    "skipBottom": -47.203125,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "before",
+    "slug": "home",
+    "width": 390,
+    "text": 100,
+    "skipBottom": -47.203125,
+    "cardOverlaps": [
+      false,
+      false
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 35.1875,
+        "lineHeight": 35.2
+      }
+    ]
+  },
+  {
+    "phase": "before",
+    "slug": "asturias",
+    "width": 390,
+    "text": 100,
+    "skipBottom": -47.203125,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "before",
+    "slug": "home",
+    "width": 320,
+    "text": 200,
+    "skipBottom": 27.1875,
+    "cardOverlaps": [
+      true,
+      true
+    ],
+    "priceWraps": [
+      true,
+      true
+    ],
+    "marruecos": [
+      {
+        "height": 211.171875,
+        "lineHeight": 70.4
+      }
+    ]
+  },
+  {
+    "phase": "before",
+    "slug": "asturias",
+    "width": 320,
+    "text": 200,
+    "skipBottom": 27.1875,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "before",
+    "slug": "home",
+    "width": 390,
+    "text": 200,
+    "skipBottom": -22.40625,
+    "cardOverlaps": [
+      true,
+      true
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 140.78125,
+        "lineHeight": 70.4
+      }
+    ]
+  },
+  {
+    "phase": "before",
+    "slug": "asturias",
+    "width": 390,
+    "text": 200,
+    "skipBottom": -22.40625,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "after",
+    "slug": "home",
+    "width": 320,
+    "text": 100,
+    "skipBottom": -100,
+    "cardOverlaps": [
+      false,
+      false
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 30.796875,
+        "lineHeight": 30.8
+      }
+    ]
+  },
+  {
+    "phase": "after",
+    "slug": "asturias",
+    "width": 320,
+    "text": 100,
+    "skipBottom": -100,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "after",
+    "slug": "home",
+    "width": 390,
+    "text": 100,
+    "skipBottom": -100,
+    "cardOverlaps": [
+      false,
+      false
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 35.1875,
+        "lineHeight": 35.2
+      }
+    ]
+  },
+  {
+    "phase": "after",
+    "slug": "asturias",
+    "width": 390,
+    "text": 100,
+    "skipBottom": -100,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "after",
+    "slug": "home",
+    "width": 320,
+    "text": 200,
+    "skipBottom": -100,
+    "cardOverlaps": [
+      false,
+      false
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 61.59375,
+        "lineHeight": 61.6
+      }
+    ]
+  },
+  {
+    "phase": "after",
+    "slug": "asturias",
+    "width": 320,
+    "text": 200,
+    "skipBottom": -100,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  },
+  {
+    "phase": "after",
+    "slug": "home",
+    "width": 390,
+    "text": 200,
+    "skipBottom": -100,
+    "cardOverlaps": [
+      false,
+      false
+    ],
+    "priceWraps": [
+      false,
+      false
+    ],
+    "marruecos": [
+      {
+        "height": 70.390625,
+        "lineHeight": 70.4
+      }
+    ]
+  },
+  {
+    "phase": "after",
+    "slug": "asturias",
+    "width": 390,
+    "text": 200,
+    "skipBottom": -100,
+    "cardOverlaps": [],
+    "priceWraps": [],
+    "marruecos": []
+  }
+]

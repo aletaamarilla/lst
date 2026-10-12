@@ -1,0 +1,18 @@
+{
+  "url": "https://www.letsurftogether.com/",
+  "checkedAt": "2026-10-12",
+  "sha256": "ad53b44d654a193f04809eae13fbda6da100504fc3ffa5cce0881b0200524230",
+  "checks": [
+    {
+      "name": "Laura",
+      "literalSubstring": true,
+      "destination": "Marruecos"
+    },
+    {
+      "name": "Ainhoa",
+      "literalSubstring": true,
+      "destination": null
+    }
+  ],
+  "questionnaireSha256": "741bfdfd395f87cff1b2b2a55ff0aa4db8c845cd7757225ee108762dea21ad5a"
+}

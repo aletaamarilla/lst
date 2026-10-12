@@ -1,0 +1,278 @@
+[
+  {
+    "name": "Laura excerpt literal and attributed in published source",
+    "pass": true
+  },
+  {
+    "name": "Laura culture and landscape context",
+    "pass": true
+  },
+  {
+    "name": "Ainhoa excerpt literal and attributed in published source",
+    "pass": true
+  },
+  {
+    "name": "Ainhoa video context",
+    "pass": true
+  },
+  {
+    "name": "All trip fields except Morocco testimonial preserved",
+    "pass": true
+  },
+  {
+    "name": "Home outside experience byte-identical",
+    "pass": true
+  },
+  {
+    "name": "dist/mobile.css previous content preserved as prefix",
+    "pass": true
+  },
+  {
+    "name": "dist/trip.css previous content preserved as prefix",
+    "pass": true
+  },
+  {
+    "name": "dist/styles.css unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/app.js unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/trip.js unchanged",
+    "pass": true
+  },
+  {
+    "name": "scripts/trip-model.mjs unchanged",
+    "pass": true
+  },
+  {
+    "name": "scripts/trip-model.test.mjs unchanged",
+    "pass": true
+  },
+  {
+    "name": "scripts/check.mjs unchanged",
+    "pass": true
+  },
+  {
+    "name": "package.json unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/azores-coast.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/after-surf.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/community.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/surf-session.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/cadiz.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/asturias-surf.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/marruecos-day.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/learning.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/azores.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/cadiz-session.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/azores-surf.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/euskadi-coast.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/el-salvador.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/euskadi-stay.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/salvador-17.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/asturias.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/group.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/euskadi.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/marruecos.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/salvador-18.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/salvador-19.webp unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/fonts/work-sans.woff2 unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/fonts/space-mono.woff2 unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/fonts/space-grotesk.woff2 unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/fonts/aura.ttf unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/fonts/montserrat.woff2 unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/fonts/space-mono-bold.woff2 unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/brand/symbol-orange.svg unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/brand/symbol-black.svg unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/brand/logo-white.svg unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/brand/logo-black.svg unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/assets/brand/logo-orange.svg unchanged",
+    "pass": true
+  },
+  {
+    "name": "dist/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/asturias/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/asturias/index.html byte-identical",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/asturias/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/euskadi/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/euskadi/index.html byte-identical",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/euskadi/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/el-salvador/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/el-salvador/index.html byte-identical",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/el-salvador/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/marruecos/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "Morocco generated HTML unchanged outside testimonial",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/marruecos/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/cadiz/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/cadiz/index.html byte-identical",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/cadiz/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/azores/index.html WhatsApp links preserved",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/azores/index.html byte-identical",
+    "pass": true
+  },
+  {
+    "name": "dist/viajes/azores/index.html image references preserved",
+    "pass": true
+  },
+  {
+    "name": "No testimonial transferred to other destination",
+    "pass": true
+  },
+  {
+    "name": "No extra commercial action",
+    "pass": true
+  }
+]

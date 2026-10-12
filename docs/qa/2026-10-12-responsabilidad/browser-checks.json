@@ -1,0 +1,298 @@
+[
+  {
+    "width": 390,
+    "height": 844,
+    "textScale": 1,
+    "checks": {
+      "http": true,
+      "anchor": true,
+      "noErrors": true,
+      "oneBlockInPresentation": true,
+      "noHorizontalOverflow": true,
+      "noClippedText": true,
+      "noOverlap": true,
+      "noPendingClaims": true,
+      "fonts": true
+    },
+    "errors": [],
+    "layout": {
+      "block": {
+        "x": 20,
+        "y": 374.46875,
+        "width": 350,
+        "height": 187.75,
+        "bottom": 562.21875,
+        "right": 370
+      },
+      "paragraph": {
+        "x": 20,
+        "y": 438.46875,
+        "width": 350,
+        "height": 123.75,
+        "bottom": 562.21875,
+        "right": 370
+      },
+      "title": {
+        "x": 20,
+        "y": 399.46875,
+        "width": 350,
+        "height": 27,
+        "bottom": 426.46875,
+        "right": 370
+      },
+      "text": "Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.",
+      "font": "\"Work Sans\", Arial, sans-serif",
+      "size": "15px",
+      "lineHeight": "24.75px",
+      "inside": true,
+      "siblings": 2,
+      "count": 1,
+      "grid": "350px",
+      "overflow": false,
+      "clipped": false,
+      "titleOverlap": false,
+      "tokens": {
+        "orange": "#ea5934",
+        "paper": "#fffae7",
+        "ink": "#1b1b1b"
+      },
+      "fontFaces": [
+        {
+          "family": "Aura",
+          "status": "loaded"
+        },
+        {
+          "family": "Work Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Mono",
+          "status": "loaded"
+        }
+      ],
+      "unsupportedClaims": false
+    }
+  },
+  {
+    "width": 1440,
+    "height": 900,
+    "textScale": 1,
+    "checks": {
+      "http": true,
+      "anchor": true,
+      "noErrors": true,
+      "oneBlockInPresentation": true,
+      "noHorizontalOverflow": true,
+      "noClippedText": true,
+      "noOverlap": true,
+      "noPendingClaims": true,
+      "fonts": true
+    },
+    "errors": [],
+    "layout": {
+      "block": {
+        "x": 64,
+        "y": 745.71875,
+        "width": 1312,
+        "height": 99.25,
+        "bottom": 844.96875,
+        "right": 1376
+      },
+      "paragraph": {
+        "x": 682.65625,
+        "y": 770.71875,
+        "width": 606.453125,
+        "height": 74.25,
+        "bottom": 844.96875,
+        "right": 1289.109375
+      },
+      "title": {
+        "x": 64,
+        "y": 770.71875,
+        "width": 554.65625,
+        "height": 74.25,
+        "bottom": 844.96875,
+        "right": 618.65625
+      },
+      "text": "Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.",
+      "font": "\"Work Sans\", Arial, sans-serif",
+      "size": "15px",
+      "lineHeight": "24.75px",
+      "inside": true,
+      "siblings": 2,
+      "count": 1,
+      "grid": "554.656px 693.344px",
+      "overflow": false,
+      "clipped": false,
+      "titleOverlap": false,
+      "tokens": {
+        "orange": "#ea5934",
+        "paper": "#fffae7",
+        "ink": "#1b1b1b"
+      },
+      "fontFaces": [
+        {
+          "family": "Aura",
+          "status": "loaded"
+        },
+        {
+          "family": "Work Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Mono",
+          "status": "loaded"
+        }
+      ],
+      "unsupportedClaims": false
+    }
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "textScale": 1,
+    "checks": {
+      "http": true,
+      "anchor": true,
+      "noErrors": true,
+      "oneBlockInPresentation": true,
+      "noHorizontalOverflow": true,
+      "noClippedText": true,
+      "noOverlap": true,
+      "noPendingClaims": true,
+      "fonts": true
+    },
+    "errors": [],
+    "layout": {
+      "block": {
+        "x": 20,
+        "y": 309.984375,
+        "width": 280,
+        "height": 212.5,
+        "bottom": 522.484375,
+        "right": 300
+      },
+      "paragraph": {
+        "x": 20,
+        "y": 373.984375,
+        "width": 280,
+        "height": 148.5,
+        "bottom": 522.484375,
+        "right": 300
+      },
+      "title": {
+        "x": 20,
+        "y": 334.984375,
+        "width": 280,
+        "height": 27,
+        "bottom": 361.984375,
+        "right": 300
+      },
+      "text": "Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.",
+      "font": "\"Work Sans\", Arial, sans-serif",
+      "size": "15px",
+      "lineHeight": "24.75px",
+      "inside": true,
+      "siblings": 2,
+      "count": 1,
+      "grid": "280px",
+      "overflow": false,
+      "clipped": false,
+      "titleOverlap": false,
+      "tokens": {
+        "orange": "#ea5934",
+        "paper": "#fffae7",
+        "ink": "#1b1b1b"
+      },
+      "fontFaces": [
+        {
+          "family": "Aura",
+          "status": "loaded"
+        },
+        {
+          "family": "Work Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Mono",
+          "status": "loaded"
+        }
+      ],
+      "unsupportedClaims": false
+    }
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "textScale": 2,
+    "checks": {
+      "http": true,
+      "anchor": true,
+      "noErrors": true,
+      "oneBlockInPresentation": true,
+      "noHorizontalOverflow": true,
+      "noClippedText": true,
+      "noOverlap": true,
+      "noPendingClaims": true,
+      "fonts": true
+    },
+    "errors": [],
+    "layout": {
+      "block": {
+        "x": 20,
+        "y": 147.640625,
+        "width": 350,
+        "height": 640,
+        "bottom": 787.640625,
+        "right": 370
+      },
+      "paragraph": {
+        "x": 20,
+        "y": 292.640625,
+        "width": 350,
+        "height": 495,
+        "bottom": 787.640625,
+        "right": 370
+      },
+      "title": {
+        "x": 20,
+        "y": 172.640625,
+        "width": 350,
+        "height": 108,
+        "bottom": 280.640625,
+        "right": 370
+      },
+      "text": "Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.",
+      "font": "\"Work Sans\", Arial, sans-serif",
+      "size": "30px",
+      "lineHeight": "49.5px",
+      "inside": true,
+      "siblings": 2,
+      "count": 1,
+      "grid": "350px",
+      "overflow": false,
+      "clipped": false,
+      "titleOverlap": false,
+      "tokens": {
+        "orange": "#ea5934",
+        "paper": "#fffae7",
+        "ink": "#1b1b1b"
+      },
+      "fontFaces": [
+        {
+          "family": "Aura",
+          "status": "loaded"
+        },
+        {
+          "family": "Work Sans",
+          "status": "loaded"
+        },
+        {
+          "family": "Space Mono",
+          "status": "loaded"
+        }
+      ],
+      "unsupportedClaims": false
+    }
+  }
+]

@@ -1,0 +1,3064 @@
+{
+  "selectedWidth": 768,
+  "hashes": {
+    "dist/trip.css": "64588cd6618b26eeb4b592381b9f2072fa071bf80af1fb5afdcf0f7d183c6d8d",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13",
+    "scripts/check-dialogs.mjs": "c5afef3dd9c004e3357db749fb717a9d11b20abffc45c9c7dd7ad0cb6d57b28d"
+  },
+  "checks": [
+    {
+      "name": "el-salvador 768x1024 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo beginning",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 76.421875,
+          "width": 66,
+          "height": 44,
+          "top": 76.421875,
+          "right": 750,
+          "bottom": 120.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 750,
+          "bottom": 940,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 106,
+          "bottom": 940,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 reduce dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo end",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce reduced motion immediate scroll",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce body stays locked",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1308,
+        "after": 1308
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 reduce photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 reduce direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo beginning",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 76.421875,
+          "width": 66,
+          "height": 44,
+          "top": 76.421875,
+          "right": 750,
+          "bottom": 120.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 750,
+          "bottom": 940,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 106,
+          "bottom": 940,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo end",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce reduced motion immediate scroll",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce body stays locked",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1216,
+        "after": 1216
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce dates initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce dates single modal",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce dock hidden during dates",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce date layout stable",
+      "pass": true,
+      "detail": [
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        }
+      ]
+    },
+    {
+      "name": "asturias 768x1024 reduce expected departures",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "asturias 768x1024 reduce sheet or centered",
+      "pass": true,
+      "detail": {
+        "x": 44,
+        "y": 220.234375,
+        "width": 680,
+        "height": 583.515625
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce reverse Tab reaches last date",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce last date keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 644.359375,
+          "width": 160,
+          "height": 48,
+          "top": 644.359375,
+          "right": 672,
+          "bottom": 692.359375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce close visible after dates scroll",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 626.171875,
+          "y": 248.234375,
+          "width": 69.828125,
+          "height": 44,
+          "top": 248.234375,
+          "right": 696,
+          "bottom": 292.234375,
+          "left": 626.171875
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce dates Tab wraps to close",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce date 1 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce date 1 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 469.421875,
+          "width": 160,
+          "height": 48,
+          "top": 469.421875,
+          "right": 672,
+          "bottom": 517.421875,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce date 2 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce date 2 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 644.359375,
+          "width": 160,
+          "height": 48,
+          "top": 644.359375,
+          "right": 672,
+          "bottom": 692.359375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce departure 1 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x1024 reduce popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce departure 2 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x1024 reduce popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 reduce dates click close restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 2687,
+        "after": 2687
+      }
+    },
+    {
+      "name": "asturias 768x1024 reduce dates Escape restores content opener",
+      "pass": true,
+      "detail": {
+        "before": 3922,
+        "after": 3922,
+        "focus": "button reserve-main"
+      }
+    },
+    {
+      "name": "azores 768x1024 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo beginning",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 76.421875,
+          "width": 66,
+          "height": 44,
+          "top": 76.421875,
+          "right": 750,
+          "bottom": 120.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "azores 768x1024 reduce photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 750,
+          "bottom": 940,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "azores 768x1024 reduce photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 106,
+          "bottom": 940,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "azores 768x1024 reduce dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo end",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce reduced motion immediate scroll",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce body stays locked",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1299,
+        "after": 1299
+      }
+    },
+    {
+      "name": "azores 768x1024 reduce photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 reduce direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo beginning",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 76.421875,
+          "width": 66,
+          "height": 44,
+          "top": 76.421875,
+          "right": 750,
+          "bottom": 120.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 750,
+          "bottom": 940,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 106,
+          "bottom": 940,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo end",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference native trusted horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference body stays locked",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1308,
+        "after": 1308
+      }
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference page gallery native horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x1024 no-preference direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo beginning",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 76.421875,
+          "width": 66,
+          "height": 44,
+          "top": 76.421875,
+          "right": 750,
+          "bottom": 120.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 750,
+          "bottom": 940,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 106,
+          "bottom": 940,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo end",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference native trusted horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference body stays locked",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1216,
+        "after": 1216
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference page gallery native horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference dates initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference dates single modal",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference dock hidden during dates",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference date layout stable",
+      "pass": true,
+      "detail": [
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        }
+      ]
+    },
+    {
+      "name": "asturias 768x1024 no-preference expected departures",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "asturias 768x1024 no-preference sheet or centered",
+      "pass": true,
+      "detail": {
+        "x": 44,
+        "y": 220.234375,
+        "width": 680,
+        "height": 583.515625
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference reverse Tab reaches last date",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference last date keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 644.359375,
+          "width": 160,
+          "height": 48,
+          "top": 644.359375,
+          "right": 672,
+          "bottom": 692.359375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference close visible after dates scroll",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 626.171875,
+          "y": 248.234375,
+          "width": 69.828125,
+          "height": 44,
+          "top": 248.234375,
+          "right": 696,
+          "bottom": 292.234375,
+          "left": 626.171875
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference dates Tab wraps to close",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference date 1 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference date 1 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 469.421875,
+          "width": 160,
+          "height": 48,
+          "top": 469.421875,
+          "right": 672,
+          "bottom": 517.421875,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference date 2 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference date 2 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 644.359375,
+          "width": 160,
+          "height": 48,
+          "top": 644.359375,
+          "right": 672,
+          "bottom": 692.359375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference departure 1 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x1024 no-preference popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference departure 2 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x1024 no-preference popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x1024 no-preference dates click close restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 2687,
+        "after": 2687
+      }
+    },
+    {
+      "name": "asturias 768x1024 no-preference dates Escape restores content opener",
+      "pass": true,
+      "detail": {
+        "before": 3922,
+        "after": 3922,
+        "focus": "button reserve-main"
+      }
+    },
+    {
+      "name": "azores 768x1024 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo beginning",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 76.421875,
+          "width": 66,
+          "height": 44,
+          "top": 76.421875,
+          "right": 750,
+          "bottom": 120.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "azores 768x1024 no-preference photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 750,
+          "bottom": 940,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "azores 768x1024 no-preference photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 896,
+          "width": 88,
+          "height": 44,
+          "top": 896,
+          "right": 106,
+          "bottom": 940,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "azores 768x1024 no-preference dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo end",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference native trusted horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference body stays locked",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1299,
+        "after": 1299
+      }
+    },
+    {
+      "name": "azores 768x1024 no-preference photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference page gallery native horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "azores 768x1024 no-preference direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo beginning",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 14.421875,
+          "width": 66,
+          "height": 44,
+          "top": 14.421875,
+          "right": 750,
+          "bottom": 58.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 750,
+          "bottom": 338,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 106,
+          "bottom": 338,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x360 reduce dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo end",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce reduced motion immediate scroll",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce body stays locked",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1676,
+        "after": 1676
+      }
+    },
+    {
+      "name": "el-salvador 768x360 reduce photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 reduce direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo beginning",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 14.421875,
+          "width": 66,
+          "height": 44,
+          "top": 14.421875,
+          "right": 750,
+          "bottom": 58.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 750,
+          "bottom": 338,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 106,
+          "bottom": 338,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo end",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce reduced motion immediate scroll",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce body stays locked",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1584,
+        "after": 1584
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce dates initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce dates single modal",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce dock hidden during dates",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce date layout stable",
+      "pass": true,
+      "detail": [
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        }
+      ]
+    },
+    {
+      "name": "asturias 768x360 reduce expected departures",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "asturias 768x360 reduce sheet or centered",
+      "pass": true,
+      "detail": {
+        "x": 44,
+        "y": 27,
+        "width": 680,
+        "height": 306
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce reverse Tab reaches last date",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce last date keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 198,
+          "width": 160,
+          "height": 48,
+          "top": 198,
+          "right": 672,
+          "bottom": 246,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce close visible after dates scroll",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 626.171875,
+          "y": 39,
+          "width": 69.828125,
+          "height": 44,
+          "top": 39,
+          "right": 696,
+          "bottom": 83,
+          "left": 626.171875
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce dates Tab wraps to close",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce date 1 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce date 1 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 184.0625,
+          "width": 160,
+          "height": 48,
+          "top": 184.0625,
+          "right": 672,
+          "bottom": 232.0625,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce date 2 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce date 2 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 198,
+          "width": 160,
+          "height": 48,
+          "top": 198,
+          "right": 672,
+          "bottom": 246,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce departure 1 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x360 reduce popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce departure 2 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x360 reduce popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 reduce dates click close restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 3055,
+        "after": 3055
+      }
+    },
+    {
+      "name": "asturias 768x360 reduce dates Escape restores content opener",
+      "pass": true,
+      "detail": {
+        "before": 4290,
+        "after": 4290,
+        "focus": "button reserve-main"
+      }
+    },
+    {
+      "name": "azores 768x360 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo beginning",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 14.421875,
+          "width": 66,
+          "height": 44,
+          "top": 14.421875,
+          "right": 750,
+          "bottom": 58.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "azores 768x360 reduce photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 750,
+          "bottom": 338,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "azores 768x360 reduce photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 106,
+          "bottom": 338,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "azores 768x360 reduce dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo end",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce reduced motion immediate scroll",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce body stays locked",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1667,
+        "after": 1667
+      }
+    },
+    {
+      "name": "azores 768x360 reduce photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 reduce direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo beginning",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 14.421875,
+          "width": 66,
+          "height": 44,
+          "top": 14.421875,
+          "right": 750,
+          "bottom": 58.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 750,
+          "bottom": 338,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 106,
+          "bottom": 338,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "el-salvador 768x360 no-preference dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo end",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference native trusted horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference body stays locked",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1676,
+        "after": 1676
+      }
+    },
+    {
+      "name": "el-salvador 768x360 no-preference photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference page gallery native horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "el-salvador 768x360 no-preference direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo beginning",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 14.421875,
+          "width": 66,
+          "height": 44,
+          "top": 14.421875,
+          "right": 750,
+          "bottom": 58.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 750,
+          "bottom": 338,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 106,
+          "bottom": 338,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo end",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference native trusted horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference body stays locked",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1584,
+        "after": 1584
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference page gallery native horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference dates initial focus",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference dates single modal",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference dock hidden during dates",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference date layout stable",
+      "pass": true,
+      "detail": [
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        },
+        {
+          "className": "departure-dialog is-constrained",
+          "heading": 84.734375
+        }
+      ]
+    },
+    {
+      "name": "asturias 768x360 no-preference expected departures",
+      "pass": true,
+      "detail": 2
+    },
+    {
+      "name": "asturias 768x360 no-preference sheet or centered",
+      "pass": true,
+      "detail": {
+        "x": 44,
+        "y": 27,
+        "width": 680,
+        "height": 306
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference reverse Tab reaches last date",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference last date keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 198,
+          "width": 160,
+          "height": 48,
+          "top": 198,
+          "right": 672,
+          "bottom": 246,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference close visible after dates scroll",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 626.171875,
+          "y": 39,
+          "width": 69.828125,
+          "height": 44,
+          "top": 39,
+          "right": 696,
+          "bottom": 83,
+          "left": 626.171875
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference dates Tab wraps to close",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference date 1 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference date 1 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 184.0625,
+          "width": 160,
+          "height": 48,
+          "top": 184.0625,
+          "right": 672,
+          "bottom": 232.0625,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference date 2 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference date 2 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 198,
+          "width": 160,
+          "height": 48,
+          "top": 198,
+          "right": 672,
+          "bottom": 246,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference departure 1 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 6 — 8 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x360 no-preference popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference departure 2 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del 20 — 22 nov 2026. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "asturias 768x360 no-preference popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "asturias 768x360 no-preference dates click close restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 3055,
+        "after": 3055
+      }
+    },
+    {
+      "name": "asturias 768x360 no-preference dates Escape restores content opener",
+      "pass": true,
+      "detail": {
+        "before": 4290,
+        "after": 4290,
+        "focus": "button reserve-main"
+      }
+    },
+    {
+      "name": "azores 768x360 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo initial focus",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo beginning",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 684,
+          "y": 14.421875,
+          "width": 66,
+          "height": 44,
+          "top": 14.421875,
+          "right": 750,
+          "bottom": 58.421875,
+          "left": 684
+        }
+      }
+    },
+    {
+      "name": "azores 768x360 no-preference photo next visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 662,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 750,
+          "bottom": 338,
+          "left": 662
+        }
+      }
+    },
+    {
+      "name": "azores 768x360 no-preference photo previous visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 18,
+          "y": 294,
+          "width": 88,
+          "height": 44,
+          "top": 294,
+          "right": 106,
+          "bottom": 338,
+          "left": 18
+        }
+      }
+    },
+    {
+      "name": "azores 768x360 no-preference dock hidden during photos",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo reverse Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo Tab wraps",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo end",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo contains entire image",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference native trusted horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference body stays locked",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference photo Escape restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 1667,
+        "after": 1667
+      }
+    },
+    {
+      "name": "azores 768x360 no-preference photo click close restores second opener",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference cover photo focus restored",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference page gallery native horizontal swipe",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference single or pending date has no selector",
+      "pass": true
+    },
+    {
+      "name": "azores 768x360 no-preference direct consultation context",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 dates initial focus",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 dates single modal",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 dock hidden during dates",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date layout stable",
+      "pass": true,
+      "detail": [
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        },
+        {
+          "className": "departure-dialog",
+          "heading": 115.859375
+        }
+      ]
+    },
+    {
+      "name": "long-dates 768x1024 text100 expected departures",
+      "pass": true,
+      "detail": 16
+    },
+    {
+      "name": "long-dates 768x1024 text100 sheet or centered",
+      "pass": true,
+      "detail": {
+        "x": 44,
+        "y": 122,
+        "width": 680,
+        "height": 780
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 reverse Tab reaches last date",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 last date keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 742.25,
+          "width": 160,
+          "height": 48,
+          "top": 742.25,
+          "right": 672,
+          "bottom": 790.25,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 close visible after dates scroll",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 626.171875,
+          "y": 150,
+          "width": 69.828125,
+          "height": 44,
+          "top": 150,
+          "right": 696,
+          "bottom": 194,
+          "left": 626.171875
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 dates Tab wraps to close",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 1 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 1 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 371.1875,
+          "width": 160,
+          "height": 48,
+          "top": 371.1875,
+          "right": 672,
+          "bottom": 419.1875,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 2 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 2 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 546.125,
+          "width": 160,
+          "height": 48,
+          "top": 546.125,
+          "right": 672,
+          "bottom": 594.125,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 3 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 3 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 721.0625,
+          "width": 160,
+          "height": 48,
+          "top": 721.0625,
+          "right": 672,
+          "bottom": 769.0625,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 4 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 4 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 536,
+          "width": 160,
+          "height": 48,
+          "top": 536,
+          "right": 672,
+          "bottom": 584,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 5 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 5 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 710.9375,
+          "width": 160,
+          "height": 48,
+          "top": 710.9375,
+          "right": 672,
+          "bottom": 758.9375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 6 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 6 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 536.875,
+          "width": 160,
+          "height": 48,
+          "top": 536.875,
+          "right": 672,
+          "bottom": 584.875,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 7 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 7 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 711.8125,
+          "width": 160,
+          "height": 48,
+          "top": 711.8125,
+          "right": 672,
+          "bottom": 759.8125,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 8 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 8 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 536.75,
+          "width": 160,
+          "height": 48,
+          "top": 536.75,
+          "right": 672,
+          "bottom": 584.75,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 9 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 9 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 711.6875,
+          "width": 160,
+          "height": 48,
+          "top": 711.6875,
+          "right": 672,
+          "bottom": 759.6875,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 10 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 10 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 536.625,
+          "width": 160,
+          "height": 48,
+          "top": 536.625,
+          "right": 672,
+          "bottom": 584.625,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 11 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 11 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 711.5625,
+          "width": 160,
+          "height": 48,
+          "top": 711.5625,
+          "right": 672,
+          "bottom": 759.5625,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 12 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 12 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 536.5,
+          "width": 160,
+          "height": 48,
+          "top": 536.5,
+          "right": 672,
+          "bottom": 584.5,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 13 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 13 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 711.4375,
+          "width": 160,
+          "height": 48,
+          "top": 711.4375,
+          "right": 672,
+          "bottom": 759.4375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 14 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 14 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 536.375,
+          "width": 160,
+          "height": 48,
+          "top": 536.375,
+          "right": 672,
+          "bottom": 584.375,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 15 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 15 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 711.3125,
+          "width": 160,
+          "height": 48,
+          "top": 711.3125,
+          "right": 672,
+          "bottom": 759.3125,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 16 keyboard order",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 date 16 keyboard visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 512,
+          "y": 742.25,
+          "width": 160,
+          "height": 48,
+          "top": 742.25,
+          "right": 672,
+          "bottom": 790.25,
+          "left": 512
+        }
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 departure 1 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del Prueba 1: 2027-01-01 – 2027-01-03. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "long-dates 768x1024 text100 popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 departure 8 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del Prueba 8: 2027-02-19 – 2027-02-21. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "long-dates 768x1024 text100 popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 departure 16 WhatsApp context",
+      "pass": true,
+      "detail": "¡Hola, LST! Me interesa el viaje a Asturias del Prueba 16: 2027-04-16 – 2027-04-18. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?"
+    },
+    {
+      "name": "long-dates 768x1024 text100 popup intercepted",
+      "pass": true
+    },
+    {
+      "name": "long-dates 768x1024 text100 dates click close restores focus and reading",
+      "pass": true,
+      "detail": {
+        "reading": 2687,
+        "after": 2687
+      }
+    },
+    {
+      "name": "long-dates 768x1024 text100 dates Escape restores content opener",
+      "pass": true,
+      "detail": {
+        "before": 3922,
+        "after": 3922,
+        "focus": "button reserve-main"
+      }
+    },
+    {
+      "name": "no uncaught page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "whatsapp": [
+    {
+      "tag": "asturias 768x1024 reduce",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x1024 reduce",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%2020%20%E2%80%94%2022%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x1024 no-preference",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x1024 no-preference",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%2020%20%E2%80%94%2022%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x360 reduce",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x360 reduce",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%2020%20%E2%80%94%2022%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x360 no-preference",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "asturias 768x360 no-preference",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%2020%20%E2%80%94%2022%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "long-dates 768x1024 text100",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%20Prueba%201%3A%202027-01-01%20%E2%80%93%202027-01-03.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "long-dates 768x1024 text100",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%20Prueba%208%3A%202027-02-19%20%E2%80%93%202027-02-21.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    },
+    {
+      "tag": "long-dates 768x1024 text100",
+      "url": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%20Prueba%2016%3A%202027-04-16%20%E2%80%93%202027-04-18.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F"
+    }
+  ],
+  "errors": [],
+  "touch": [
+    {
+      "tag": "el-salvador 768x1024 no-preference",
+      "trusted": [
+        true,
+        true
+      ]
+    },
+    {
+      "tag": "asturias 768x1024 no-preference",
+      "trusted": [
+        true,
+        true
+      ]
+    },
+    {
+      "tag": "azores 768x1024 no-preference",
+      "trusted": [
+        true,
+        true
+      ]
+    },
+    {
+      "tag": "el-salvador 768x360 no-preference",
+      "trusted": [
+        true,
+        true
+      ]
+    },
+    {
+      "tag": "asturias 768x360 no-preference",
+      "trusted": [
+        true,
+        true
+      ]
+    },
+    {
+      "tag": "azores 768x360 no-preference",
+      "trusted": [
+        true,
+        true
+      ]
+    }
+  ],
+  "dimensions": [
+    {
+      "tag": "el-salvador 768x1024 reduce",
+      "normal": {
+        "x": 32,
+        "y": 361.25,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          768,
+          460.8
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 134.84375,
+          "width": 768,
+          "height": 697.15625,
+          "top": 134.84375,
+          "right": 768,
+          "bottom": 832,
+          "left": 0
+        }
+      }
+    },
+    {
+      "tag": "asturias 768x1024 reduce",
+      "normal": {
+        "x": 32,
+        "y": 360.859375,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          733,
+          1100
+        ],
+        "painted": [
+          464.5595738636364,
+          697.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 134.84375,
+          "width": 768,
+          "height": 697.15625,
+          "top": 134.84375,
+          "right": 768,
+          "bottom": 832,
+          "left": 0
+        }
+      }
+    },
+    {
+      "tag": "azores 768x1024 reduce",
+      "normal": {
+        "x": 32,
+        "y": 360.390625,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          768,
+          460.8
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 134.84375,
+          "width": 768,
+          "height": 697.15625,
+          "top": 134.84375,
+          "right": 768,
+          "bottom": 832,
+          "left": 0
+        }
+      }
+    },
+    {
+      "tag": "el-salvador 768x1024 no-preference",
+      "normal": {
+        "x": 32,
+        "y": 361.25,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          768,
+          460.8
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 1,
+          "y": 134.84375,
+          "width": 768,
+          "height": 697.15625,
+          "top": 134.84375,
+          "right": 769,
+          "bottom": 832,
+          "left": 1
+        }
+      }
+    },
+    {
+      "tag": "asturias 768x1024 no-preference",
+      "normal": {
+        "x": 32,
+        "y": 360.859375,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          733,
+          1100
+        ],
+        "painted": [
+          464.5595738636364,
+          697.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 1,
+          "y": 134.84375,
+          "width": 768,
+          "height": 697.15625,
+          "top": 134.84375,
+          "right": 769,
+          "bottom": 832,
+          "left": 1
+        }
+      }
+    },
+    {
+      "tag": "azores 768x1024 no-preference",
+      "normal": {
+        "x": 32,
+        "y": 360.390625,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          768,
+          460.8
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 1,
+          "y": 134.84375,
+          "width": 768,
+          "height": 697.15625,
+          "top": 134.84375,
+          "right": 769,
+          "bottom": 832,
+          "left": 1
+        }
+      }
+    },
+    {
+      "tag": "el-salvador 768x360 reduce",
+      "normal": {
+        "x": 32,
+        "y": -6.75,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          261.9270833333333,
+          157.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 72.84375,
+          "width": 768,
+          "height": 157.15625,
+          "top": 72.84375,
+          "right": 768,
+          "bottom": 230,
+          "left": 0
+        }
+      }
+    },
+    {
+      "tag": "asturias 768x360 reduce",
+      "normal": {
+        "x": 32,
+        "y": -7.140625,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          733,
+          1100
+        ],
+        "painted": [
+          104.72321022727273,
+          157.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 72.84375,
+          "width": 768,
+          "height": 157.15625,
+          "top": 72.84375,
+          "right": 768,
+          "bottom": 230,
+          "left": 0
+        }
+      }
+    },
+    {
+      "tag": "azores 768x360 reduce",
+      "normal": {
+        "x": 32,
+        "y": -7.609375,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          261.9270833333333,
+          157.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 0,
+          "y": 72.84375,
+          "width": 768,
+          "height": 157.15625,
+          "top": 72.84375,
+          "right": 768,
+          "bottom": 230,
+          "left": 0
+        }
+      }
+    },
+    {
+      "tag": "el-salvador 768x360 no-preference",
+      "normal": {
+        "x": 32,
+        "y": -6.75,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          261.9270833333333,
+          157.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 1,
+          "y": 72.84375,
+          "width": 768,
+          "height": 157.15625,
+          "top": 72.84375,
+          "right": 769,
+          "bottom": 230,
+          "left": 1
+        }
+      }
+    },
+    {
+      "tag": "asturias 768x360 no-preference",
+      "normal": {
+        "x": 32,
+        "y": -7.140625,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          733,
+          1100
+        ],
+        "painted": [
+          104.72321022727273,
+          157.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 1,
+          "y": 72.84375,
+          "width": 768,
+          "height": 157.15625,
+          "top": 72.84375,
+          "right": 769,
+          "bottom": 230,
+          "left": 1
+        }
+      }
+    },
+    {
+      "tag": "azores 768x360 no-preference",
+      "normal": {
+        "x": 32,
+        "y": -7.609375,
+        "width": 422.390625,
+        "height": 297.453125
+      },
+      "expanded": {
+        "natural": [
+          1000,
+          600
+        ],
+        "painted": [
+          261.9270833333333,
+          157.15625
+        ],
+        "fit": "contain",
+        "box": {
+          "x": 1,
+          "y": 72.84375,
+          "width": 768,
+          "height": 157.15625,
+          "top": 72.84375,
+          "right": 769,
+          "bottom": 230,
+          "left": 1
+        }
+      }
+    }
+  ]
+}

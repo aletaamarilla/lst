@@ -225,5 +225,30 @@
       }
     ],
     "note": "Official LST documentary images. Future destination pages identify past-trip imagery. WebP compression and size optimisation only."
+  },
+  "communityRevision15": {
+    "date": "2026-10-12",
+    "legacyTestimonialNote": "The top-level Blanca testimonial is historical research, not the current displayed selection. Current voices and context are in content-inventory.json communityRevision15.",
+    "usage": [
+      {
+        "file": "dist/assets/learning.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Cadiz_2024_152-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/",
+        "context": "Documentary surfskate demonstration with group, Cadiz 2024; past-trip caption added in home. Not a portrait or evidence identifying Laura or Ainhoa."
+      },
+      {
+        "file": "dist/assets/marruecos.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Marruecos_2025_53-scaled.jpg",
+        "sourcePage": "https://www.letsurftogether.com/sobre-lst/",
+        "context": "Existing group photograph at night, used in Morocco card/detail. Usage unchanged; not linked to the date or identity of Laura’s review."
+      },
+      {
+        "file": "dist/assets/group.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Laga-2024_01.jpg",
+        "sourcePage": "https://www.letsurftogether.com/",
+        "context": "Existing Laga 2024 group photograph in LST presentation, unchanged. No named faces or current staff identification."
+      }
+    ],
+    "changes": "No new images, downloads, generated assets or changed image bytes; original provenance records retained."
   }
 }

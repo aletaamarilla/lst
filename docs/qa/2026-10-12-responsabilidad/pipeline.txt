@@ -1,0 +1,15 @@
+Ejecución local del 12/10/2026. Transcripción de la salida de herramientas.
+Node.js v22.16.0; npm 10.9.2.
+
+$ npm run build
+> lets-surf-together-home@0.1.0 build
+> node scripts/render-trips.mjs
+Rendered 6 standalone trip pages.
+Exit code: 0
+
+$ npm run check
+> lets-surf-together-home@0.1.0 check
+> node scripts/check.mjs
+Verified 6 standalone trip pages.
+PASS: 7 pages, independent routes, all local links/anchors/assets, contextual WhatsApp, client demo and pending states, modal dates and fixed inclusions, JavaScript and noindex.
+Exit code: 0

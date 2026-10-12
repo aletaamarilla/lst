@@ -1,0 +1,697 @@
+LAYOUT / 320 568 {
+  scrollWidth: 320,
+  width: 320,
+  header: {
+    x: 0,
+    y: 0,
+    width: 320,
+    height: 70,
+    top: 0,
+    right: 320,
+    bottom: 70,
+    left: 0
+  },
+  dock: undefined,
+  padding: '0px'
+}
+MENU 320 568 {
+  text: 'Consultar por WhatsApp',
+  rect: {
+    x: 20,
+    y: 286,
+    width: 280,
+    height: 48.390625,
+    top: 286,
+    right: 300,
+    bottom: 334.390625,
+    left: 20
+  },
+  href: 'https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F',
+  color: 'rgb(27, 27, 27)',
+  background: 'rgb(234, 89, 52)',
+  navRect: {
+    x: 0,
+    y: 70,
+    width: 320,
+    height: 285.390625,
+    top: 70,
+    right: 320,
+    bottom: 355.390625,
+    left: 0
+  },
+  navClient: 284,
+  navScroll: 284
+}
+LAYOUT / 390 844 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 70,
+    top: 0,
+    right: 390,
+    bottom: 70,
+    left: 0
+  },
+  dock: undefined,
+  padding: '0px'
+}
+MENU 390 844 {
+  text: 'Consultar por WhatsApp',
+  rect: {
+    x: 20,
+    y: 286,
+    width: 350,
+    height: 48.390625,
+    top: 286,
+    right: 370,
+    bottom: 334.390625,
+    left: 20
+  },
+  href: 'https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F',
+  color: 'rgb(27, 27, 27)',
+  background: 'rgb(234, 89, 52)',
+  navRect: {
+    x: 0,
+    y: 70,
+    width: 390,
+    height: 285.390625,
+    top: 70,
+    right: 390,
+    bottom: 355.390625,
+    left: 0
+  },
+  navClient: 284,
+  navScroll: 284
+}
+LAYOUT / 768 1024 {
+  scrollWidth: 768,
+  width: 768,
+  header: {
+    x: 0,
+    y: 0,
+    width: 768,
+    height: 70,
+    top: 0,
+    right: 768,
+    bottom: 70,
+    left: 0
+  },
+  dock: undefined,
+  padding: '0px'
+}
+MENU 768 1024 {
+  text: 'Consultar por WhatsApp',
+  rect: {
+    x: 20,
+    y: 286,
+    width: 728,
+    height: 48.390625,
+    top: 286,
+    right: 748,
+    bottom: 334.390625,
+    left: 20
+  },
+  href: 'https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F',
+  color: 'rgb(27, 27, 27)',
+  background: 'rgb(234, 89, 52)',
+  navRect: {
+    x: 0,
+    y: 70,
+    width: 768,
+    height: 285.390625,
+    top: 70,
+    right: 768,
+    bottom: 355.390625,
+    left: 0
+  },
+  navClient: 284,
+  navScroll: 284
+}
+LAYOUT / 1024 768 {
+  scrollWidth: 1024,
+  width: 1024,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1024,
+    height: 92,
+    top: 0,
+    right: 1024,
+    bottom: 92,
+    left: 0
+  },
+  dock: undefined,
+  padding: '0px'
+}
+LAYOUT / 1440 900 {
+  scrollWidth: 1440,
+  width: 1440,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1440,
+    height: 102,
+    top: 0,
+    right: 1440,
+    bottom: 102,
+    left: 0
+  },
+  dock: undefined,
+  padding: '0px'
+}
+LAYOUT / 390 400 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 70,
+    top: 0,
+    right: 390,
+    bottom: 70,
+    left: 0
+  },
+  dock: undefined,
+  padding: '0px'
+}
+MENU 390 400 {
+  text: 'Consultar por WhatsApp',
+  rect: {
+    x: 20,
+    y: 286,
+    width: 350,
+    height: 48.390625,
+    top: 286,
+    right: 370,
+    bottom: 334.390625,
+    left: 20
+  },
+  href: 'https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F',
+  color: 'rgb(27, 27, 27)',
+  background: 'rgb(234, 89, 52)',
+  navRect: {
+    x: 0,
+    y: 70,
+    width: 390,
+    height: 285.390625,
+    top: 70,
+    right: 390,
+    bottom: 355.390625,
+    left: 0
+  },
+  navClient: 284,
+  navScroll: 284
+}
+LAYOUT /viajes/el-salvador/ 320 568 {
+  scrollWidth: 320,
+  width: 320,
+  header: {
+    x: 0,
+    y: 0,
+    width: 320,
+    height: 72,
+    top: 0,
+    right: 320,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 471.421875,
+    width: 320,
+    height: 96.578125,
+    top: 471.421875,
+    right: 320,
+    bottom: 568,
+    left: 0
+  },
+  padding: '96.5781px'
+}
+LAYOUT /viajes/el-salvador/ 390 844 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 72,
+    top: 0,
+    right: 390,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 767,
+    width: 390,
+    height: 77,
+    top: 767,
+    right: 390,
+    bottom: 844,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/el-salvador/ 768 1024 {
+  scrollWidth: 768,
+  width: 768,
+  header: {
+    x: 0,
+    y: 0,
+    width: 768,
+    height: 72,
+    top: 0,
+    right: 768,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 947,
+    width: 768,
+    height: 77,
+    top: 947,
+    right: 768,
+    bottom: 1024,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/el-salvador/ 1024 768 {
+  scrollWidth: 1024,
+  width: 1024,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1024,
+    height: 81,
+    top: 0,
+    right: 1024,
+    bottom: 81,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  },
+  padding: '0px'
+}
+LAYOUT /viajes/el-salvador/ 1440 900 {
+  scrollWidth: 1440,
+  width: 1440,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1440,
+    height: 81,
+    top: 0,
+    right: 1440,
+    bottom: 81,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  },
+  padding: '0px'
+}
+LAYOUT /viajes/el-salvador/ 390 400 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 72,
+    top: 0,
+    right: 390,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 323,
+    width: 390,
+    height: 77,
+    top: 323,
+    right: 390,
+    bottom: 400,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/asturias/ 320 568 {
+  scrollWidth: 320,
+  width: 320,
+  header: {
+    x: 0,
+    y: 0,
+    width: 320,
+    height: 72,
+    top: 0,
+    right: 320,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 471.421875,
+    width: 320,
+    height: 96.578125,
+    top: 471.421875,
+    right: 320,
+    bottom: 568,
+    left: 0
+  },
+  padding: '96.5781px'
+}
+LAYOUT /viajes/asturias/ 390 844 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 72,
+    top: 0,
+    right: 390,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 767,
+    width: 390,
+    height: 77,
+    top: 767,
+    right: 390,
+    bottom: 844,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/asturias/ 768 1024 {
+  scrollWidth: 768,
+  width: 768,
+  header: {
+    x: 0,
+    y: 0,
+    width: 768,
+    height: 72,
+    top: 0,
+    right: 768,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 947,
+    width: 768,
+    height: 77,
+    top: 947,
+    right: 768,
+    bottom: 1024,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/asturias/ 1024 768 {
+  scrollWidth: 1024,
+  width: 1024,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1024,
+    height: 81,
+    top: 0,
+    right: 1024,
+    bottom: 81,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  },
+  padding: '0px'
+}
+LAYOUT /viajes/asturias/ 1440 900 {
+  scrollWidth: 1440,
+  width: 1440,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1440,
+    height: 81,
+    top: 0,
+    right: 1440,
+    bottom: 81,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  },
+  padding: '0px'
+}
+LAYOUT /viajes/asturias/ 390 400 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 72,
+    top: 0,
+    right: 390,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 323,
+    width: 390,
+    height: 77,
+    top: 323,
+    right: 390,
+    bottom: 400,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/azores/ 320 568 {
+  scrollWidth: 320,
+  width: 320,
+  header: {
+    x: 0,
+    y: 0,
+    width: 320,
+    height: 72,
+    top: 0,
+    right: 320,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 471.8125,
+    width: 320,
+    height: 96.1875,
+    top: 471.8125,
+    right: 320,
+    bottom: 568,
+    left: 0
+  },
+  padding: '96.1875px'
+}
+LAYOUT /viajes/azores/ 390 844 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 72,
+    top: 0,
+    right: 390,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 767,
+    width: 390,
+    height: 77,
+    top: 767,
+    right: 390,
+    bottom: 844,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/azores/ 768 1024 {
+  scrollWidth: 768,
+  width: 768,
+  header: {
+    x: 0,
+    y: 0,
+    width: 768,
+    height: 72,
+    top: 0,
+    right: 768,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 947,
+    width: 768,
+    height: 77,
+    top: 947,
+    right: 768,
+    bottom: 1024,
+    left: 0
+  },
+  padding: '77px'
+}
+LAYOUT /viajes/azores/ 1024 768 {
+  scrollWidth: 1024,
+  width: 1024,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1024,
+    height: 81,
+    top: 0,
+    right: 1024,
+    bottom: 81,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  },
+  padding: '0px'
+}
+LAYOUT /viajes/azores/ 1440 900 {
+  scrollWidth: 1440,
+  width: 1440,
+  header: {
+    x: 0,
+    y: 0,
+    width: 1440,
+    height: 81,
+    top: 0,
+    right: 1440,
+    bottom: 81,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  },
+  padding: '0px'
+}
+LAYOUT /viajes/azores/ 390 400 {
+  scrollWidth: 390,
+  width: 390,
+  header: {
+    x: 0,
+    y: 0,
+    width: 390,
+    height: 72,
+    top: 0,
+    right: 390,
+    bottom: 72,
+    left: 0
+  },
+  dock: {
+    x: 0,
+    y: 323,
+    width: 390,
+    height: 77,
+    top: 323,
+    right: 390,
+    bottom: 400,
+    left: 0
+  },
+  padding: '77px'
+}
+TAB 0 { active: '<a href="#viajes">Viajes</a>', open: 'true' }
+TAB 1 { active: '<a href="#experiencia">La experiencia</a>', open: 'true' }
+TAB 2 { active: '<a href="#reservar">Cómo reservar</a>', open: 'true' }
+TAB 3 { active: '<a href="#nosotros">LST</a>', open: 'true' }
+TAB 4 {
+  active: '<a class="button nav-whatsapp" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>',
+  open: 'true'
+}
+TAB 5 {
+  active: '<a class="button hero-primary" href="#viajes">Elige tu próximo viaje <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m-6-6 6 6 6-6"></path></svg></a>',
+  open: 'false'
+}
+TAB 6 {
+  active: '<a class="journeys-level-link" href="#niveles">¿Cuál es mi nivel?</a>',
+  open: 'false'
+}
+DATES {
+  active: '<a class="button departure-enquiry" data-whatsapp="asturias" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Asturias%20del%206%20%E2%80%94%208%20nov%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" data-departure="2026-11-06" target="_blank" rel="noopener noreferrer" aria-label="Consultar Asturias, 6 — 8 nov 2026, por WhatsApp">Consultar <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"></path></svg></a>',
+  rect: {
+    x: 245.046875,
+    y: 372.53125,
+    width: 106.953125,
+    height: 48,
+    top: 372.53125,
+    right: 352,
+    bottom: 420.53125,
+    left: 245.046875
+  },
+  dialog: {
+    x: 0,
+    y: 48,
+    width: 390,
+    height: 352,
+    top: 48,
+    right: 390,
+    bottom: 400,
+    left: 0
+  }
+}

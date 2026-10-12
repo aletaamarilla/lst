@@ -1,0 +1,55 @@
+
+> lets-surf-together-home@0.1.0 build
+> node scripts/render-trips.mjs
+
+Rendered 6 standalone trip pages.
+
+> lets-surf-together-home@0.1.0 test
+> node --test scripts/trip-model.test.mjs
+
+TAP version 13
+# Subtest: levels default to all four; explicit restrictions remain configured
+ok 1 - levels default to all four; explicit restrictions remain configured
+  ---
+  duration_ms: 1.337299
+  type: 'test'
+  ...
+# Subtest: single departure retains its date, duration, price and enquiry context
+ok 2 - single departure retains its date, duration, price and enquiry context
+  ---
+  duration_ms: 10.982645
+  type: 'test'
+  ...
+# Subtest: multiple departures retain distinct dates, prices and WhatsApp messages
+ok 3 - multiple departures retain distinct dates, prices and WhatsApp messages
+  ---
+  duration_ms: 0.486923
+  type: 'test'
+  ...
+# Subtest: pending destinations keep all levels and do not manufacture dates or prices
+ok 4 - pending destinations keep all levels and do not manufacture dates or prices
+  ---
+  duration_ms: 0.189486
+  type: 'test'
+  ...
+# Subtest: client demo dates use the normal dated enquiry and configured period
+ok 5 - client demo dates use the normal dated enquiry and configured period
+  ---
+  duration_ms: 0.217862
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 59.779279
+
+> lets-surf-together-home@0.1.0 check
+> node scripts/check.mjs
+
+Verified 6 standalone trip pages.
+PASS: 7 pages, independent routes, all local links/anchors/assets, contextual WhatsApp, client demo and pending states, modal dates and fixed inclusions, JavaScript and noindex.

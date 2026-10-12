@@ -1,0 +1,434 @@
+{
+  "hashes": {
+    "dist/trip.css": "64588cd6618b26eeb4b592381b9f2072fa071bf80af1fb5afdcf0f7d183c6d8d",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13"
+  },
+  "checks": [
+    {
+      "tag": "320x320 text200",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text200",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x360 text200",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x400 text200",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x420 text200",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "390x440 text200",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "320x360 text200",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "photo class stable",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "photo has >=96px height",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "photo close visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "photo next initially visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "next visible by keyboard",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "next and endpoint focus",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "home returns first",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "photo close focus+reading",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "dates class stable",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "last date actual focus visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "dates close visible with last selected",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "first date focus visible",
+      "pass": true
+    },
+    {
+      "tag": "320x320 text100",
+      "name": "dates Escape restores content opener",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

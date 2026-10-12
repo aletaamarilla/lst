@@ -41,7 +41,7 @@ Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-
 - /viajes/marruecos/
 - /viajes/cadiz/
 
-Todas las tarjetas de la home enlazan a la página correspondiente. «Ver viaje» y «Me interesa» navegan dentro de la web; WhatsApp queda en las páginas de detalle y en los puntos de ayuda de la home. Se han retirado los paneles de detalle de las revisiones anteriores.
+Todas las tarjetas de la home enlazan a la página correspondiente. «Ver viaje» y «Ver destino» navegan dentro de la web; WhatsApp queda en las páginas de detalle y en los puntos de ayuda de la home. Se han retirado los paneles de detalle de las revisiones anteriores.
 
 ## Datos y estados comerciales
 
@@ -61,7 +61,7 @@ El dossier se enlaza desde la ficha de reserva de escritorio y desde el resumen 
 
 ## Consulta y reserva
 
-El único canal comercial es WhatsApp, con enlaces wa.me y mensajes contextualizados. No hay formularios, campos de email, mailto, envío automático, pagos online, CRM, almacenamiento ni registro de intereses. «Me interesa» inicia una conversación; no suscribe a avisos automáticos. El visitante decide si edita y envía el mensaje.
+El único canal comercial es WhatsApp, con enlaces wa.me y mensajes contextualizados. No hay formularios, campos de email, mailto, envío automático, pagos online, CRM, almacenamiento ni registro de intereses. «Consultar plaza», «Consultar destino» y «Consultar por WhatsApp» inician una conversación; no suscribe a avisos automáticos. El visitante decide si edita y envía el mensaje.
 
 Se conserva +34 648 18 92 57, el teléfono publicado por LST, pendiente de confirmación del cliente como receptor definitivo. La plaza se confirma con el equipo según las condiciones del viaje; abrir WhatsApp no constituye una reserva. No se prometen tiempos de respuesta, un depósito universal ni condiciones de cancelación no verificadas.
 
@@ -76,3 +76,45 @@ La revisión 11 se comprobó en navegador a 320, 390, 768 y 1440 px: gesto horiz
 La revisión 12 se comprueba a 320, 390, 768 y 1440 px: popup, foco y teclado, retorno a la posición de lectura, lista larga de fechas, consulta independiente de cada fecha, gesto horizontal de fotos, etiquetas sin flechas en móvil e inclusiones fijas. WhatsApp se intercepta durante las pruebas, sin contactar al equipo.
 
 El efecto sobre ventas requiere medición en producción. La propuesta permanece privada y con noindex,nofollow. No se añaden todavía CMS, automatizaciones ni políticas legales, y no se trasladan datos legales privados del cuestionario.
+
+## Revisión 13 · WhatsApp y legibilidad móvil
+
+La navegación se despliega hasta 999 px y contiene «Consultar por WhatsApp», con el mismo teléfono y mensaje general de la cabecera. Desde 1000 px se conserva el acceso de escritorio. El botón precede al menú en el orden de teclado; Escape, la salida del foco y la navegación cierran el panel.
+
+Los destinos pendientes de la home usan «Ver destino»; sus fichas usan «Consultar destino». Las notas, fechas, estados y condiciones de precio tienen tamaños diferenciados de 12–14 px. La barra de consulta reserva su altura real; pasa al flujo al superar el 25 % de la altura visible para permitir leer con texto ampliado. El selector conserva sus consultas por fecha y desplaza todo el panel cuando su cabecera y ayuda no dejan espacio suficiente para la lista.
+
+La evidencia, límites, capturas antes/después y ejecución opcional del comprobador de navegador están en [el informe de revisión](docs/qa/2026-10-12-whatsapp/README.md). No se añaden dependencias al proyecto.
+
+## Revisión 14 · experiencia y presentación de LST
+
+La apertura conserva «Surfear juntos sabe mejor» y añade una frase sobre aprendizaje, grupo, descubrimiento y acompañamiento. «Así viajamos con LST» concreta la experiencia; «Todo empezó en Marruecos» conserva el origen de Lucas y lo enlaza con «Hoy, un equipo que viaja contigo». La firma «Nos vemos en el pico» se mantiene.
+
+Las fichas dejan de repetir el origen. Las dos salidas con fecha usan `team.title` y `team.text` de `data/trips.json`, limitados a las funciones ya descritas en cada programa. El generador usa un texto de consulta si no hay equipo documentado; en los cuatro destinos pendientes no atribuye un equipo ni servicios al próximo viaje. No se alteran escenarios, fechas, precios, inclusiones o consultas.
+
+Fuentes, texto final, datos de equipo pendientes y validación de esta revisión: [informe de presentación](docs/qa/2026-10-12-presentacion/README.md). El inventario conserva la trazabilidad del cuestionario y los textos específicos.
+
+## Revisión 15 · comunidad y prueba social
+
+La experiencia empieza por la duda de llegar por tu cuenta. Dos extractos breves aportan evidencia distinta dentro del bloque existente: Laura sobre viajar sin compañía, con su contexto de Marruecos, y Ainhoa sobre aprender mediante correcciones en vídeo. Su reseña no indica destino y solo aparece en la home. La foto de surfskate se identifica como Cádiz, 2024; el relato de cultura y paisajes se presenta como recuerdo de Laura.
+
+La ficha de Marruecos conserva únicamente la voz correspondiente a ese destino y añade contexto histórico al extracto. Se reconstruyen las seis fichas; las otras cinco producen HTML idéntico. Datos provisionales, WhatsApp, equipo, fotografías, marca y cambios anteriores se conservan. [Selección, fuentes, texto final, capturas y validación](docs/qa/2026-10-12-comunidad/README.md). No se ha publicado ni hecho push.
+
+## Revisión 16 · respeto al lugar y al océano
+
+«El lugar también importa» añade un único bloque breve al cierre de la presentación de LST. Recupera el respeto al océano, a los surfistas locales y a sus costumbres como principios de marca. No modifica las fichas ni sus datos provisionales.
+
+Las fuentes antiguas publican recogidas de plásticos, una colaboración con Universal Plastic y una aportación del 3 % por reserva. No se ha acreditado su vigencia ni ejecución en las fuentes disponibles. El inventario distingue publicación documentada de acción verificada y contiene tres textos concretos para revisión, con la confirmación necesaria para cada uno. [Texto, fuentes, pendientes y validación local](docs/qa/2026-10-12-responsabilidad/README.md).
+
+## Revisión 17 · equilibrio visual y lectura
+
+Se conserva la portada de la home y el orden de las siete páginas. Las fotos de grupo y aprendizaje recuperan su encuadre; Azores y Cádiz separan la imagen del título. Asturias y Euskadi ajustan únicamente su portada móvil. Tarjetas, precios y encabezados del programa admiten texto ampliado sin solaparse. Se conservan los textos revisados, datos provisionales, fuentes, logos, colores e interacciones.
+
+`heroLayout: "group"`, `heroPositionMobile` y `heroMinHeightMobile` son campos visuales opcionales de `data/trips.json`, consumidos por el generador. No describen servicios ni cambian estados comerciales.
+
+[Comparación antes/después, decisiones conservadas, archivos y validación local](docs/qa/2026-10-12-equilibrio/README.md). No se ha hecho commit, push, publicación ni despliegue.
+
+## Revisión 18 · integración final independiente
+
+Revisada la home y las seis fichas sobre la candidata anterior sin commit. No se observaron regresiones que requirieran cambios de producto. `npm run build`, `npm test` y `npm run check` pasan; se añaden pruebas actuales en Chromium, 140 vistas en los cinco anchos solicitados con pantalla baja/texto ampliado, recorridos por los seis destinos y revisión independiente de contenido. Las consultas se interceptan localmente.
+
+[Tabla de comprobaciones, capturas, versión, alertas contrastadas y límites](docs/qa/2026-10-12-final/README.md). Se conservan los datos provisionales y el historial. El cierre de esta fase no valida un lanzamiento: datos definitivos, contenido pendiente, migración de URLs, indexación y medición quedan anotados para una fase posterior.

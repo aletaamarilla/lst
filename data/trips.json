@@ -122,7 +122,11 @@
         "message": "¡Hola, LST! Me interesa El Salvador del 25 de octubre al 1 de noviembre de 2026. ¿Podemos revisar mi nivel, la disponibilidad y cómo reservar?"
       }
     ],
-    "priceNote": "Por persona · habitación compartida"
+    "priceNote": "Por persona · habitación compartida",
+    "team": {
+      "title": "LST y los guías locales.",
+      "text": "El equipo de LST coordina las sesiones y el seguimiento técnico. Los guías locales aportan su conocimiento del spot."
+    }
   },
   {
     "id": "asturias",
@@ -245,7 +249,13 @@
         "excludes"
       ],
       "note": "Client explicitly requested realistic demo content without sample labels on 2026-10-09. These are presentation data, not verified future departures."
-    }
+    },
+    "team": {
+      "title": "El equipo de LST, contigo.",
+      "text": "El equipo de LST acompaña al grupo durante el fin de semana. Compartimos los días de surf y los ratos entre sesiones."
+    },
+    "heroPositionMobile": "0% 48%",
+    "heroMinHeightMobile": 400
   },
   {
     "id": "azores",
@@ -302,7 +312,8 @@
       3,
       4
     ],
-    "departures": []
+    "departures": [],
+    "heroLayout": "group"
   },
   {
     "id": "euskadi",
@@ -359,7 +370,8 @@
       3,
       4
     ],
-    "departures": []
+    "departures": [],
+    "heroPositionMobile": "15% 48%"
   },
   {
     "id": "marruecos",
@@ -405,9 +417,10 @@
     "levelText": "Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.",
     "testimonial": {
       "name": "Laura",
-      "trip": "Viajera de LST · Marruecos",
-      "quote": "Todos compartíamos un hobby: el surf, y aunque teníamos diferentes niveles, ese hobby fue lo que nos unió.",
-      "source": "https://www.letsurftogether.com/"
+      "trip": "Viajera de LST · Marruecos, viaje anterior",
+      "quote": "[…] y muchos de nosotros íbamos solos!",
+      "source": "https://www.letsurftogether.com/",
+      "context": "Laura recuerda conocer al grupo, probar la gastronomía y descubrir paisajes en un viaje anterior a Marruecos."
     },
     "pastSource": "https://www.letsurftogether.com/sobre-lst/",
     "message": "¡Hola, LST! Me interesa el próximo viaje a Marruecos. ¿Tenéis novedades sobre las fechas y el programa?",
@@ -474,6 +487,7 @@
       3,
       4
     ],
-    "departures": []
+    "departures": [],
+    "heroLayout": "group"
   }
 ]

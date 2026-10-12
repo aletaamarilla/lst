@@ -1,0 +1,297 @@
+--- a/dist/trip.css
++++ b/dist/trip.css
+@@ -102,18 +102,19 @@
+ .trip-page[data-state="upcoming"] .trip-dock strong{font-size:16px}
+ .trip-dock div>span{font-size:13px;color:var(--muted)}
+ .trip-dock .dock-cta{font-size:14px;min-height:50px;padding-inline:16px;flex:1 1 136px}
+-.photo-dialog{padding:0;border:0;margin:auto;width:min(1100px,100%);max-width:100%;max-height:100dvh;background:var(--ink);color:var(--paper);overflow-y:auto}
++.photo-dialog{padding:0;border:0;margin:auto;width:min(1100px,100%);max-width:100%;height:min(900px,100dvh);max-height:100dvh;background:var(--ink);color:var(--paper);overflow:hidden}
++.photo-dialog[open]{display:flex;flex-direction:column}
+ .photo-dialog::backdrop{background:#000e}
+-.photo-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 18px}
++.photo-heading{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:calc(14px + env(safe-area-inset-top)) 18px 14px}
+ .photo-heading>div>p:first-child{font-size:15px;font-weight:600}
+ .photo-heading .photo-instruction{font-size:12px;color:#d3cfbf;margin-top:3px}
+ .photo-close{flex-shrink:0;min-width:66px;min-height:44px;padding:10px 12px;color:var(--paper);border:1px solid #fffae780;background:transparent;font-size:13px;font-weight:500}
+-.photo-strip{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}
++.photo-strip{flex:1;min-height:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none}
+ .photo-strip::-webkit-scrollbar{display:none}
+-.photo-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+-.photo-slide img{height:min(62dvh,60vw,calc(100dvh - 190px),620px);width:100%;object-fit:contain}
+-.photo-slide figcaption{min-height:50px;padding:14px 20px 0;font-size:12px;text-align:center;line-height:1.6}
+-.photo-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px 22px;font-size:12px}
++.photo-slide{display:flex;flex-direction:column;flex:0 0 100%;min-width:0;min-height:0;scroll-snap-align:start;scroll-snap-stop:always}
++.photo-slide img{flex:1;min-height:0;height:0;width:100%;object-fit:contain}
++.photo-slide figcaption{flex-shrink:0;min-height:50px;padding:14px 20px 0;font-size:12px;text-align:center;line-height:1.6}
++.photo-controls{flex-shrink:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px calc(22px + env(safe-area-inset-bottom));font-size:12px}
+ .photo-controls button{border:1px solid #fffae780;background:none;color:var(--paper);min-width:88px;min-height:44px;padding:10px 12px;font-size:12px;font-weight:500}
+ @media(min-width:600px){
+  .trip-header{padding-inline:32px}.trip-header .brand{width:200px}.trip-back{font-size:14px}
+@@ -188,13 +189,14 @@
+ /* A short viewport needs the reading space, including with enlarged text. */
+ @media(max-height:600px){
+  .trip-header{position:relative}
+- .departure-dialog-heading{position:relative;padding-top:70px}
+- .departure-close{position:absolute;top:12px;right:20px}
++ .departure-dialog-heading{padding-top:12px}
++ .trip-page .departure-dialog h2{font-size:32px}
+ }
+ 
+ .trip-page.dock-in-flow{padding-bottom:0}
+ .dock-in-flow .trip-dock{position:static}
+-.departure-dialog.is-constrained{overflow-y:auto}
++.departure-dialog.is-constrained{overflow-y:auto;scroll-padding-top:var(--departure-heading-height);scroll-padding-bottom:12px}
++.departure-dialog.is-constrained .departure-dialog-heading{position:sticky;top:0;z-index:1;background:var(--paper)}
+ .departure-dialog.is-constrained[open]{display:block}
+ .departure-dialog.is-constrained .departure-dialog-list{overflow:visible}
+ /* The enlarged plus sign must not extend beyond its grid cell. */
+@@ -202,3 +204,14 @@
+ 
+ /* Context stays with a past-trip testimonial, separate from the next team. */
+ .trip-quote .trip-quote-context{margin:0 0 14px;font-size:14px;line-height:1.6;color:var(--muted)}
++
++/* With large text in a very short viewport, keep a usable photo and scroll.
++   The close button stays reachable even when the heading itself cannot fit. */
++.photo-dialog.is-constrained{overflow-y:auto;scroll-padding-block:var(--dialog-close-space) 12px}
++.photo-dialog.is-constrained .photo-strip{flex:none;height:calc(160px + var(--photo-caption-height))}
++.photo-dialog.is-constrained .photo-close,.departure-dialog.is-heading-tall .departure-close{position:fixed;top:var(--dialog-close-top);right:var(--dialog-close-right);z-index:2}
++.photo-dialog.is-constrained .photo-close{background:var(--ink)}
++.departure-dialog.is-heading-tall{scroll-padding-top:var(--dialog-close-space)}
++.departure-dialog.is-heading-tall .departure-dialog-heading{position:static}
++.departure-dialog.is-heading-tall .departure-close{background:var(--paper)}
++.photo-dialog.is-constrained .photo-heading::after,.departure-dialog.is-heading-tall .departure-dialog-heading::after{content:"";width:var(--dialog-close-width);flex-shrink:0}
+--- a/dist/trip.js
++++ b/dist/trip.js
+@@ -62,8 +62,13 @@
+   index = Math.max(0, Math.min(selected, slides.length - 1));
+   const label = `${index + 1} / ${slides.length}`;
+   if (counter.textContent !== label) counter.textContent = label;
++  const focusedControl = document.activeElement;
+   previous.disabled = index === 0;
+   next.disabled = index === slides.length - 1;
++  // Disabling the focused end button would otherwise drop keyboard focus.
++  if ((focusedControl === previous && previous.disabled) || (focusedControl === next && next.disabled)) {
++    strip.focus({preventScroll: true});
++  }
+   slides[index].querySelector('img').loading = 'eager';
+ }
+ 
+@@ -130,13 +135,41 @@
+ window.addEventListener('resize', updateReadingSpace);
+ updateReadingSpace();
+ 
++// Anchor only the close button if large text needs a scrolling dialog.
++function positionDialogClose(dialog, heading, close) {
++  const bounds = dialog.getBoundingClientRect();
++  const style = getComputedStyle(heading);
++  const top = parseFloat(style.paddingTop);
++  dialog.style.setProperty('--dialog-close-width', `${close.getBoundingClientRect().width}px`);
++  dialog.style.setProperty('--dialog-close-top', `${bounds.top + top}px`);
++  dialog.style.setProperty('--dialog-close-right', `${window.innerWidth - bounds.right + parseFloat(style.paddingRight)}px`);
++  dialog.style.setProperty('--dialog-close-space', `${top + close.getBoundingClientRect().height + 12}px`);
++}
++
++const photoHeading = photoDialog.querySelector('.photo-heading');
++const photoControls = photoDialog.querySelector('.photo-controls');
++const photoClose = photoDialog.querySelector('.photo-close');
++const captions = slides.map(slide => slide.querySelector('figcaption'));
++const photoFitObserver = new ResizeObserver(() => {
++  if (!photoDialog.open) return;
++  const captionHeight = Math.max(...captions.map(caption => caption.getBoundingClientRect().height));
++  const imageSpace = photoDialog.clientHeight - photoHeading.getBoundingClientRect().height - photoControls.getBoundingClientRect().height - captionHeight;
++  photoDialog.style.setProperty('--photo-caption-height', `${captionHeight}px`);
++  photoDialog.classList.toggle('is-constrained', imageSpace < 96);
++  positionDialogClose(photoDialog, photoHeading, photoClose);
++});
++[photoDialog, photoHeading, photoControls, photoClose, ...captions].forEach(part => photoFitObserver.observe(part));
++
+ // If large text leaves too little room for dates, scroll the whole panel.
+ if (departureDialog) {
+   const fixedParts = [...departureDialog.querySelectorAll('.departure-dialog-heading, .departure-dialog-intro, .departure-dialog-help')];
+   const fitDates = () => {
+     if (!departureDialog.open) return;
++    departureDialog.style.setProperty('--departure-heading-height', `${fixedParts[0].getBoundingClientRect().height + 12}px`);
+     const remaining = departureDialog.clientHeight - fixedParts.reduce((sum, part) => sum + part.getBoundingClientRect().height, 0);
+     departureDialog.classList.toggle('is-constrained', remaining < 160);
++    departureDialog.classList.toggle('is-heading-tall', fixedParts[0].getBoundingClientRect().height > departureDialog.clientHeight - 100);
++    positionDialogClose(departureDialog, fixedParts[0], departureDialog.querySelector('.departure-close'));
+   };
+   const datesObserver = new ResizeObserver(fitDates);
+   [departureDialog, ...fixedParts].forEach(part => datesObserver.observe(part));
+--- /dev/null
++++ b/scripts/check-dialogs.mjs
+@@ -0,0 +1,174 @@
++// Optional browser regression checks. Start npm run dev; supply an existing
++// Playwright module and Chromium via LST_PLAYWRIGHT_MODULE / LST_CHROMIUM_PATH.
++// WhatsApp is fulfilled locally. Long departures exist only in a temp fixture.
++import {createRequire} from 'node:module';
++import fs from 'node:fs';
++import path from 'node:path';
++import os from 'node:os';
++import {spawnSync} from 'node:child_process';
++import {createHash} from 'node:crypto';
++const require=createRequire(import.meta.url);
++const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
++const root=process.env.LST_REPO||process.cwd();
++const {departureMessage,tripMessage}=await import(path.join(root,'scripts/trip-model.mjs'));
++const trips=JSON.parse(fs.readFileSync(path.join(root,'data/trips.json')));
++const output=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-dialog-verification');
++const baseURL=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
++fs.mkdirSync(output,{recursive:true});
++const selectedWidth=Number(process.env.LST_QA_WIDTH||0);
++const matchesWidth=([width])=>!selectedWidth||width===selectedWidth;
++const hashes=Object.fromEntries(['dist/trip.css','dist/trip.js','scripts/check-dialogs.mjs'].map(file=>[file,createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]));
++const report={selectedWidth,hashes,checks:[],issues:[],whatsapp:[],errors:[],touch:[],dimensions:[]};
++const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
++const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'lst-departures-'));
++const fixtureTrips=structuredClone(trips),fixtureTrip=fixtureTrips.find(t=>t.slug==='asturias');
++fixtureTrip.departures=Array.from({length:16},(_,i)=>{const start=new Date(Date.UTC(2027,0,1+i*7)),end=new Date(+start+2*86400000);return {...fixtureTrip.departures[0],id:`qa-only-${i+1}`,start:start.toISOString().slice(0,10),end:end.toISOString().slice(0,10),date:`Prueba ${i+1}: ${start.toISOString().slice(0,10)} – ${end.toISOString().slice(0,10)}`,price:300+i};});
++fs.mkdirSync(path.join(fixture,'data'));fs.writeFileSync(path.join(fixture,'data/trips.json'),JSON.stringify(fixtureTrips));
++const render=spawnSync(process.execPath,[path.join(root,'scripts/render-trips.mjs')],{cwd:fixture,encoding:'utf8'});
++if(render.status!==0)throw Error(render.stderr);
++const fixtureHTML=fs.readFileSync(path.join(fixture,'dist/viajes/asturias/index.html'),'utf8');
++const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
++const usable=locator=>locator.evaluate(e=>{const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return {ok:r.top>=0&&r.bottom<=innerHeight+1&&r.left>=0&&r.right<=innerWidth+1&&(hit===e||e.contains(hit)),rect:r.toJSON()};});
++async function swipe(page,locator,left=true){
++ const box=await locator.boundingBox(),cdp=await page.context().newCDPSession(page);
++ const x=box.x+box.width*(left?.85:.15),y=Math.max(1,Math.min(page.viewportSize().height-1,box.y+box.height/2));
++ const end=box.x+box.width*(left?.15:.85);
++ await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});
++ for(let step=1;step<=12;step++){await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x+(end-x)*step/12,y}]});await page.waitForTimeout(16);}
++ await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await page.waitForTimeout(450);await cdp.detach();
++}
++async function settledPhoto(page,n){await page.waitForFunction(n=>{const s=document.querySelector('.photo-strip');return document.querySelector('.photo-counter').textContent.startsWith(`${n+1} /`)&&Math.abs(s.scrollLeft-n*s.clientWidth)<2;},n,{timeout:4000});}
++async function dates(page,context,tag,long=false){
++ const width=page.viewportSize().width;
++ const trigger=page.locator(width>=1000?'.booking-card-cta':'.dock-cta');
++ await page.locator('.trip-team').scrollIntoViewIfNeeded();await trigger.scrollIntoViewIfNeeded();await page.waitForTimeout(50);
++ const reading=await page.evaluate(()=>scrollY);await trigger.click();await page.waitForTimeout(80);
++ const d=page.locator('.departure-dialog'),close=page.locator('.departure-close'),links=page.locator('.departure-enquiry');
++ check(tag+' dates initial focus',await close.evaluate(e=>document.activeElement===e));
++ check(tag+' dates single modal',await page.locator('.departure-dialog[open]').count()===1);
++ check(tag+' dock hidden during dates',await page.locator('.trip-dock').evaluate(e=>getComputedStyle(e).visibility==='hidden'));
++ const states=[];for(let i=0;i<8;i++){states.push(await d.evaluate(e=>({className:e.className,heading:e.querySelector('.departure-dialog-heading').getBoundingClientRect().height})));await page.waitForTimeout(25);}
++ check(tag+' date layout stable',new Set(states.map(s=>JSON.stringify(s))).size===1,states);
++ const count=await links.count();check(tag+' expected departures',count===(long?16:2),count);
++ const rect=await d.boundingBox();check(tag+' sheet or centered',width<640?Math.abs(rect.y+rect.height-page.viewportSize().height)<2:Math.abs(rect.y-(page.viewportSize().height-rect.height)/2)<2,rect);
++ await page.keyboard.press('Shift+Tab');check(tag+' reverse Tab reaches last date',await links.last().evaluate(e=>document.activeElement===e));
++ check(tag+' last date keyboard visible',(await usable(links.last())).ok,await usable(links.last()));
++ check(tag+' close visible after dates scroll',(await usable(close)).ok,await usable(close));
++ await page.keyboard.press('Tab');check(tag+' dates Tab wraps to close',await close.evaluate(e=>document.activeElement===e));
++ for(let i=0;i<count;i++){
++  await page.keyboard.press('Tab');check(tag+` date ${i+1} keyboard order`,await links.nth(i).evaluate(e=>document.activeElement===e));
++  check(tag+` date ${i+1} keyboard visible`,(await usable(links.nth(i))).ok,await usable(links.nth(i)));
++ }
++ const selected=long?[0,7,15]:[0,1];
++ for(const i of selected){
++  await links.nth(i).scrollIntoViewIfNeeded();
++  const popupPromise=context.waitForEvent('page');await links.nth(i).click();const popup=await popupPromise;await popup.waitForLoadState();
++  const actual=new URL(popup.url());const dep=(long?fixtureTrip:trips.find(t=>t.slug==='asturias')).departures[i];
++  check(tag+` departure ${i+1} WhatsApp context`,actual.origin==='https://wa.me'&&actual.pathname==='/34648189257'&&actual.searchParams.get('text')===departureMessage(long?fixtureTrip:trips.find(t=>t.slug==='asturias'),dep),actual.searchParams.get('text'));
++  check(tag+' popup intercepted',await popup.locator('body').innerText()==='Local interception. No message sent.');await popup.close();
++ }
++ if(long)await page.screenshot({path:path.join(output,tag.replaceAll(' ','-')+'-last-date.png')});
++ await close.click();await page.waitForTimeout(60);
++ check(tag+' dates click close restores focus and reading',await trigger.evaluate(e=>document.activeElement===e)&&Math.abs(await page.evaluate(()=>scrollY)-reading)<2,{reading,after:await page.evaluate(()=>scrollY)});
++ // Exercise the in-content trigger and native Escape separately.
++ const content=page.locator('.reserve-main');await content.scrollIntoViewIfNeeded();const pos=await page.evaluate(()=>scrollY);await content.click();await page.keyboard.press('Escape');await page.waitForFunction(()=>!document.querySelector('.departure-dialog').open&&document.body.style.position!=='fixed');
++ check(tag+' dates Escape restores content opener',await content.evaluate(e=>document.activeElement===e)&&Math.abs(await page.evaluate(()=>scrollY)-pos)<2,{before:pos,after:await page.evaluate(()=>scrollY),focus:await page.evaluate(()=>document.activeElement.className)});
++}
++try{
++ const sizes=[[320,740],[390,844],[768,1024],[1440,900],[320,320],[390,360],[768,360],[1440,480]];
++ for(const [width,height] of (process.env.LST_QA_QUICK?sizes.slice(0,1):sizes).filter(matchesWidth)){
++  for(const motion of ['reduce','no-preference']){
++   for(const slug of ['el-salvador','asturias','azores']){
++    const tag=`${slug} ${width}x${height} ${motion}`;
++    const context=await browser.newContext({viewport:{width,height},isMobile:width<1000,hasTouch:true,reducedMotion:motion});
++    await context.route('https://**/*',async r=>{const url=new URL(r.request().url());if(url.hostname==='wa.me'){report.whatsapp.push({tag,url:url.href});await r.fulfill({contentType:'text/plain',body:'Local interception. No message sent.'});}else await r.abort();});
++    if(process.env.LST_DIALOG_BASELINE)for(const file of ['trip.css','trip.js'])await context.route(`**/${file}`,r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist',file)}));
++    const page=await context.newPage();page.setDefaultTimeout(5000);page.on('pageerror',e=>report.errors.push({tag,message:e.message}));
++    try{
++     await page.goto(`${baseURL}/viajes/${slug}/`);await page.evaluate(()=>document.fonts.ready);
++     check(tag+' no horizontal overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
++     const opener=page.locator('[data-photo="0"]');await opener.scrollIntoViewIfNeeded();await page.waitForTimeout(70);
++     const reading=await page.evaluate(()=>scrollY);const normal=await opener.locator('img').boundingBox();await opener.click();await page.waitForTimeout(60);
++     const close=page.locator('.photo-close'),prev=page.locator('[data-photo-prev]'),next=page.locator('[data-photo-next]'),count=await page.locator('.photo-slide').count();
++     check(tag+' photo initial focus',await close.evaluate(e=>document.activeElement===e));
++     check(tag+' photo beginning',await prev.isDisabled()&&await page.locator('.photo-counter').innerText()===`1 / ${count}`);
++     check(tag+' photo close visible',(await usable(close)).ok,await usable(close));
++     check(tag+' photo next visible',(await usable(next)).ok,await usable(next));
++     check(tag+' photo previous visible',(await usable(prev)).ok,await usable(prev));
++     check(tag+' dock hidden during photos',await page.locator('.trip-dock').evaluate(e=>getComputedStyle(e).visibility==='hidden'));
++     await page.keyboard.press('Shift+Tab');check(tag+' photo reverse Tab wraps',await next.evaluate(e=>document.activeElement===e));await page.keyboard.press('Tab');check(tag+' photo Tab wraps',await close.evaluate(e=>document.activeElement===e));
++     await next.click();await settledPhoto(page,1);await prev.click();await settledPhoto(page,0);
++     await page.keyboard.press('ArrowLeft');await settledPhoto(page,0);await page.keyboard.press('End');await settledPhoto(page,count-1);
++     check(tag+' photo end',await next.isDisabled()&&!await prev.isDisabled());await page.keyboard.press('ArrowRight');await settledPhoto(page,count-1);
++     await page.keyboard.press('Home');await settledPhoto(page,0);await page.keyboard.press('ArrowRight');await settledPhoto(page,1);
++     if(motion==='reduce')check(tag+' reduced motion immediate scroll',await page.locator('.photo-strip').evaluate(e=>Math.abs(e.scrollLeft-e.clientWidth)<2));
++     const image=page.locator('.photo-slide img').nth(1);await image.evaluate(e=>e.decode());
++     const dims=await image.evaluate(e=>{const r=e.getBoundingClientRect(),scale=Math.min(r.width/e.naturalWidth,r.height/e.naturalHeight);return {natural:[e.naturalWidth,e.naturalHeight],painted:[e.naturalWidth*scale,e.naturalHeight*scale],fit:getComputedStyle(e).objectFit,box:r.toJSON()};});
++     report.dimensions.push({tag,normal,expanded:dims});check(tag+' photo contains entire image',dims.fit==='contain'&&dims.box.height>0&&dims.box.top>=0&&dims.box.bottom<=height);
++     if(slug==='asturias'&&height>=740&&width<=390)check(tag+' portrait inspection fills width',dims.painted[0]>=width-2,dims);
++     await page.keyboard.press('Home');await settledPhoto(page,0);
++     if(width<1000&&motion==='no-preference'){
++      await page.evaluate(()=>{window.qaTouches=[];document.querySelector('.photo-strip').addEventListener('touchstart',e=>qaTouches.push(e.isTrusted),{passive:true});});
++      await swipe(page,page.locator('.photo-slide img').first());await settledPhoto(page,1);
++      await swipe(page,page.locator('.photo-slide img').nth(1),false);await settledPhoto(page,0);
++      const trusted=await page.evaluate(()=>qaTouches);report.touch.push({tag,trusted});check(tag+' native trusted horizontal swipe',trusted.length===2&&trusted.every(Boolean));
++      // Native browser history gestures are documented separately in the QA report.
++      await page.keyboard.press('ArrowLeft');await settledPhoto(page,0);
++     }
++     const beforeLock=await page.evaluate(()=>document.body.style.top);await page.mouse.wheel(0,400);await page.waitForTimeout(70);check(tag+' body stays locked',await page.evaluate(()=>document.body.style.position==='fixed'&&scrollY===0)&&await page.evaluate(()=>document.body.style.top)===beforeLock);
++     await page.keyboard.press('Escape');await page.waitForTimeout(80);
++     check(tag+' photo Escape restores focus and reading',await opener.evaluate(e=>document.activeElement===e)&&Math.abs(await page.evaluate(()=>scrollY)-reading)<2,{reading,after:await page.evaluate(()=>scrollY)});
++     // Open a specific thumbnail, resize while selected, close with its button.
++     const second=page.locator('[data-photo="1"]');await second.scrollIntoViewIfNeeded();const pos=await page.evaluate(()=>scrollY);await second.click();await settledPhoto(page,1);
++     await page.setViewportSize({width:width+10,height});await settledPhoto(page,1);await page.setViewportSize({width,height});await settledPhoto(page,1);
++     await close.click();await page.waitForTimeout(80);check(tag+' photo click close restores second opener',await second.evaluate(e=>document.activeElement===e)&&Math.abs(await page.evaluate(()=>scrollY)-pos)<2);
++     await page.locator('[data-open-gallery]').click();await settledPhoto(page,0);await close.click();await page.waitForTimeout(70);check(tag+' cover photo focus restored',await page.locator('[data-open-gallery]').evaluate(e=>document.activeElement===e));
++     if(width<1000&&motion==='no-preference'){
++      await page.locator('[data-photo="0"]').scrollIntoViewIfNeeded();
++      await swipe(page,page.locator('.gallery-track'));
++      check(tag+' page gallery native horizontal swipe',await page.locator('.gallery-track').evaluate(e=>e.scrollLeft>10)&&await page.locator('.photo-dialog').evaluate(e=>!e.open));
++     }
++     if(slug==='asturias')await dates(page,context,tag);
++     else{
++      check(tag+' single or pending date has no selector',await page.locator('.departure-dialog').count()===0&&await page.locator('[data-open-dates]').count()===0);
++      const link=page.locator(width>=1000?'.trip-header-cta':'.dock-cta'),expected=tripMessage(trips.find(t=>t.slug===slug));
++      check(tag+' direct consultation context',new URL(await link.getAttribute('href')).searchParams.get('text')===expected);
++     }
++    }catch(e){console.error(tag,e.stack);report.issues.push({name:tag+' execution',detail:e.message});await page.screenshot({path:path.join(output,tag.replaceAll(' ','-')+'-failure.png')}).catch(()=>{});}
++    await context.close();
++   }
++  }
++ }
++ // Enlarged text must leave a usable photo; sample layout stability as well
++ // as page errors because a ResizeObserver feedback loop need not throw.
++ for(const [width,height] of [[320,320],[390,360],[390,400],[390,420],[390,440]].filter(matchesWidth)){
++  const tag=`large-photo ${width}x${height}`,context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
++  const page=await context.newPage();await page.route('https://**/*',r=>r.abort());
++  await page.goto(`${baseURL}/viajes/asturias/`);await page.evaluate(()=>document.fonts.ready);
++  await page.evaluate(()=>{const all=[...document.querySelectorAll('body,body *')],sizes=all.map(e=>parseFloat(getComputedStyle(e).fontSize));all.forEach((e,i)=>e.style.fontSize=`${sizes[i]*2}px`);});
++  const opener=page.locator('[data-photo="1"]');await opener.scrollIntoViewIfNeeded();const reading=await page.evaluate(()=>scrollY);await opener.click();await page.waitForTimeout(100);
++  const states=[];
++  for(let i=0;i<10;i++){states.push(await page.evaluate(()=>({className:document.querySelector('.photo-dialog').className,imageHeight:document.querySelector('.photo-slide img').getBoundingClientRect().height,closeTop:document.querySelector('.photo-close').getBoundingClientRect().top})));await page.waitForTimeout(25);}
++  check(tag+' layout stable',new Set(states.map(s=>JSON.stringify(s))).size===1,states);
++  check(tag+' image remains usable',states.every(s=>s.imageHeight>=120),states[0]);
++  const previous=page.locator('[data-photo-prev]');await previous.scrollIntoViewIfNeeded();check(tag+' controls reachable',(await usable(previous)).ok,await usable(previous));
++  check(tag+' close reachable after scrolling',(await usable(page.locator('.photo-close'))).ok,await usable(page.locator('.photo-close')));
++  await previous.click();await settledPhoto(page,0);await page.keyboard.press('ArrowRight');await settledPhoto(page,1);
++  await page.screenshot({path:path.join(output,tag.replaceAll(' ','-')+'.png')});
++  await page.locator('.photo-close').click();await page.waitForTimeout(60);check(tag+' close restores focus and reading',await opener.evaluate(e=>document.activeElement===e)&&Math.abs(await page.evaluate(()=>scrollY)-reading)<2);
++  await context.close();
++ }
++ for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1440,900,1],[320,320,1],[390,360,1],[390,480,2],[320,740,2],[320,320,2],[390,360,2],[390,420,2]].filter(matchesWidth)){
++  const tag=`long-dates ${width}x${height} text${zoom*100}`,context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
++  await context.route('**/viajes/asturias/',r=>r.fulfill({contentType:'text/html',body:fixtureHTML}));
++  await context.route('https://**/*',async r=>{report.whatsapp.push({tag,url:r.request().url()});await r.fulfill({contentType:'text/plain',body:'Local interception. No message sent.'});});
++  if(process.env.LST_DIALOG_BASELINE)for(const file of ['trip.css','trip.js'])await context.route(`**/${file}`,r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist',file)}));
++  const page=await context.newPage();page.setDefaultTimeout(5000);
++  try{await page.goto(`${baseURL}/viajes/asturias/`);await page.evaluate(()=>document.fonts.ready);
++   if(zoom===2)await page.evaluate(()=>{const all=[...document.querySelectorAll('body,body *')],sizes=all.map(e=>parseFloat(getComputedStyle(e).fontSize));all.forEach((e,i)=>e.style.fontSize=`${sizes[i]*2}px`);});
++   await dates(page,context,tag,true);
++  }catch(e){console.error(tag,e.stack);report.issues.push({name:tag+' execution',detail:e.message});await page.screenshot({path:path.join(output,tag.replaceAll(' ','-')+'-failure.png')}).catch(()=>{});}
++  await context.close();
++ }
++ check('no uncaught page errors',report.errors.length===0,report.errors);
++}finally{await browser.close();fs.rmSync(fixture,{recursive:true,force:true});fs.writeFileSync(path.join(output,'verification.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({checks:report.checks.length,issues:report.issues,whatsapp:report.whatsapp.length,touch:report.touch.length},null,2));if(report.issues.length)process.exitCode=1;}

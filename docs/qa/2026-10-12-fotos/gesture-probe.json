@@ -1,0 +1,242 @@
+[
+  {
+    "name": "candidate",
+    "actions": [
+      {
+        "i": 0,
+        "left": true,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "2 / 2",
+          "left": 390,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 1,
+        "left": false,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "1 / 2",
+          "left": 0,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            },
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 0,
+        "left": false,
+        "url": "about:blank",
+        "state": {}
+      }
+    ]
+  },
+  {
+    "name": "baseline",
+    "actions": [
+      {
+        "i": 0,
+        "left": true,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "2 / 2",
+          "left": 390,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 1,
+        "left": false,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "1 / 2",
+          "left": 0,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            },
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 0,
+        "left": false,
+        "url": "about:blank",
+        "state": {}
+      }
+    ]
+  },
+  {
+    "name": "root",
+    "actions": [
+      {
+        "i": 0,
+        "left": true,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "2 / 2",
+          "left": 390,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 1,
+        "left": false,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "1 / 2",
+          "left": 0,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            },
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 0,
+        "left": false,
+        "url": "about:blank",
+        "state": {}
+      }
+    ]
+  },
+  {
+    "name": "dialog",
+    "actions": [
+      {
+        "i": 0,
+        "left": true,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "2 / 2",
+          "left": 390,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 1,
+        "left": false,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "1 / 2",
+          "left": 0,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            },
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 0,
+        "left": false,
+        "url": "about:blank",
+        "state": {}
+      }
+    ]
+  },
+  {
+    "name": "touch",
+    "actions": [
+      {
+        "i": 0,
+        "left": true,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "2 / 2",
+          "left": 390,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 1,
+        "left": false,
+        "url": "http://127.0.0.1:4175/viajes/asturias/",
+        "state": {
+          "counter": "1 / 2",
+          "left": 0,
+          "touches": [
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            },
+            {
+              "trusted": true,
+              "target": "IMG",
+              "cls": "photo-slide"
+            }
+          ]
+        }
+      },
+      {
+        "i": 0,
+        "left": false,
+        "url": "about:blank",
+        "state": {}
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "checks": [
+    {
+      "name": "390 home anchor remains readable",
+      "pass": true
+    },
+    {
+      "name": "390 quote source keyboard navigation",
+      "pass": true
+    },
+    {
+      "name": "390 fixed quotations",
+      "pass": true
+    },
+    {
+      "name": "390 context and distinct attribution",
+      "pass": true
+    },
+    {
+      "name": "390 menu WhatsApp",
+      "pass": true
+    },
+    {
+      "name": "390 testimonial context present",
+      "pass": true
+    },
+    {
+      "name": "390 Morocco enquiry preserved",
+      "pass": true
+    },
+    {
+      "name": "390 dates still available",
+      "pass": true
+    },
+    {
+      "name": "390 dates focus restored",
+      "pass": true
+    },
+    {
+      "name": "390 text200 /#experiencia",
+      "pass": true
+    },
+    {
+      "name": "390 text200 /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1440 home anchor remains readable",
+      "pass": true
+    },
+    {
+      "name": "1440 quote source keyboard navigation",
+      "pass": true
+    },
+    {
+      "name": "1440 fixed quotations",
+      "pass": true
+    },
+    {
+      "name": "1440 context and distinct attribution",
+      "pass": true
+    },
+    {
+      "name": "1440 testimonial context present",
+      "pass": true
+    },
+    {
+      "name": "1440 Morocco enquiry preserved",
+      "pass": true
+    },
+    {
+      "name": "1440 dates still available",
+      "pass": true
+    },
+    {
+      "name": "1440 dates focus restored",
+      "pass": true
+    },
+    {
+      "name": "No browser errors",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "opened": [
+    "https://www.letsurftogether.com/",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Marruecos.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F",
+    "https://www.letsurftogether.com/",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20pr%C3%B3ximo%20viaje%20a%20Marruecos.%20%C2%BFTen%C3%A9is%20novedades%20sobre%20las%20fechas%20y%20el%20programa%3F"
+  ]
+}

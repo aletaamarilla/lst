@@ -1,0 +1,39 @@
+{
+  "batches": [
+    {
+      "width": 320,
+      "checks": 502,
+      "issues": 0,
+      "interceptedWhatsApp": 20,
+      "touchScenarios": 6
+    },
+    {
+      "width": 390,
+      "checks": 567,
+      "issues": 0,
+      "interceptedWhatsApp": 23,
+      "touchScenarios": 6
+    },
+    {
+      "width": 768,
+      "checks": 345,
+      "issues": 0,
+      "interceptedWhatsApp": 11,
+      "touchScenarios": 6
+    },
+    {
+      "width": 1440,
+      "checks": 333,
+      "issues": 0,
+      "interceptedWhatsApp": 11,
+      "touchScenarios": 0
+    }
+  ],
+  "checks": 1747,
+  "issues": 0,
+  "interceptedWhatsApp": 65,
+  "touchScenarios": 18,
+  "allBatchesMatchFinalHashes": true,
+  "previousUXChecks": 1225,
+  "independentChecks": 85
+}
