@@ -118,3 +118,9 @@ Se conserva la portada de la home y el orden de las siete páginas. Las fotos de
 Revisada la home y las seis fichas sobre la candidata anterior sin commit. No se observaron regresiones que requirieran cambios de producto. `npm run build`, `npm test` y `npm run check` pasan; se añaden pruebas actuales en Chromium, 140 vistas en los cinco anchos solicitados con pantalla baja/texto ampliado, recorridos por los seis destinos y revisión independiente de contenido. Las consultas se interceptan localmente.
 
 [Tabla de comprobaciones, capturas, versión, alertas contrastadas y límites](docs/qa/2026-10-12-final/README.md). Se conservan los datos provisionales y el historial. El cierre de esta fase no valida un lanzamiento: datos definitivos, contenido pendiente, migración de URLs, indexación y medición quedan anotados para una fase posterior.
+
+## Revisión 19 · cabecera fija
+
+La cabecera de la home permanece fija en móvil y escritorio. Conserva la transparencia al inicio de la portada y muestra fondo crema, logo oscuro y acceso de WhatsApp naranja desde el primer desplazamiento. La separación de las anclas se calcula con la altura real de la cabecera para mantener visibles las secciones con texto ampliado.
+
+Validación sobre la base `d9b7201`: build, tests y check pasan. Chromium comprobó 16 vistas entre 320 y 1440 px, incluida pantalla baja y texto al 200 %, primer scroll, anclas, menú móvil y regreso arriba. Revisión independiente del diff final sin bloqueos. No se alteran las fichas, los datos de viajes ni sus consultas.
