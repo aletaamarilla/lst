@@ -250,5 +250,36 @@
       }
     ],
     "changes": "No new images, downloads, generated assets or changed image bytes; original provenance records retained."
+  },
+  "aboutRevision26": {
+    "date": "2026-10-13",
+    "route": "/conocenos/",
+    "changes": "Reutilización de archivos existentes sin modificar sus bytes ni añadir retratos. Todas las fotografías se muestran completas, sin recorte CSS.",
+    "usage": [
+      {
+        "file": "dist/assets/group.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Laga-2024_01.jpg",
+        "caption": "Laga, 2024. Una de nuestras fotos de grupo.",
+        "identity": "Comunidad; ninguna cara identificada ni atribución de equipo actual."
+      },
+      {
+        "file": "dist/assets/learning.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Cadiz_2024_152-scaled.jpg",
+        "caption": "Cádiz, 2024. Aprendiendo también fuera del agua.",
+        "identity": "Escena de surfskate, sin atribuir nombre o titulación a quien hace la demostración."
+      },
+      {
+        "file": "dist/assets/marruecos-day.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Marruecos_2025_08-scaled.jpg",
+        "caption": "Marruecos, 2025. Un atardecer de un viaje anterior. Consulta las actividades de cada salida.",
+        "identity": "Fuera del origen, no se atribuye al viaje de prueba de Lucas ni se ofrece como actividad de una nueva salida."
+      },
+      {
+        "file": "dist/assets/after-surf.webp",
+        "source": "https://www.letsurftogether.com/wp-content/uploads/2025/05/Cadiz_2024_178-scaled.jpg",
+        "caption": "Cádiz, 2024. Gente con la que compartir el viaje.",
+        "identity": "Participantes sentados en esterillas. Ilustra el grupo, no un retrato del equipo."
+      }
+    ]
   }
 }

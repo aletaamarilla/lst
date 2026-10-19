@@ -1,0 +1,123 @@
+{
+  "serverCodeEqualExceptPort": true,
+  "responses": {
+    "/niveles/": {
+      "candidate": "ed615332212ba4f96fd016ba1909e02eaf4db0b9b1f2087506cc2adc9f5ac997",
+      "baseline": "ed615332212ba4f96fd016ba1909e02eaf4db0b9b1f2087506cc2adc9f5ac997"
+    },
+    "/levels.css": {
+      "candidate": "92b45157970f9944c8891c5ae898e8b85cb3b4df98e4ae5df4c6566ee67317cb",
+      "baseline": "92b45157970f9944c8891c5ae898e8b85cb3b4df98e4ae5df4c6566ee67317cb"
+    },
+    "/levels.js": {
+      "candidate": "b71761ab91b3d3738076d97a8b7ad9cbc6d29692f5e528b71c219fa325cff24b",
+      "baseline": "b71761ab91b3d3738076d97a8b7ad9cbc6d29692f5e528b71c219fa325cff24b"
+    },
+    "/app.js": {
+      "candidate": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3",
+      "baseline": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3"
+    },
+    "/mobile.css": {
+      "candidate": "76fbb140c20442a8e4f8728d2c1c5b93f7e97ff0bba62770707c5b28e968b535",
+      "baseline": "76fbb140c20442a8e4f8728d2c1c5b93f7e97ff0bba62770707c5b28e968b535"
+    },
+    "/styles.css": {
+      "candidate": "208b17c01e6112544f6bc4804073b8e02f252940dd32e6115e818ce8b9a4ea47",
+      "baseline": "208b17c01e6112544f6bc4804073b8e02f252940dd32e6115e818ce8b9a4ea47"
+    }
+  },
+  "candidate": {
+    "lastChecks": [
+      {
+        "name": "390 smooth arrival cue at destination rookies",
+        "pass": true,
+        "detail": {
+          "top": 85.53125,
+          "bottom": 764.53125,
+          "header": 71
+        }
+      },
+      {
+        "name": "390 smooth cue clears with focus retained rookies",
+        "pass": true
+      },
+      {
+        "name": "1440 smooth arrival cue at destination supercracks",
+        "pass": true,
+        "detail": {
+          "top": 117.296875,
+          "bottom": 705.28125,
+          "header": 103
+        }
+      },
+      {
+        "name": "1440 smooth cue clears with focus retained supercracks",
+        "pass": true
+      },
+      {
+        "name": "1440 smooth arrival cue at destination supercracks",
+        "pass": true,
+        "detail": {
+          "top": 115.296875,
+          "bottom": 703.28125,
+          "header": 103
+        }
+      },
+      {
+        "name": "1440 smooth cue clears with focus retained supercracks",
+        "pass": true
+      }
+    ],
+    "issues": [],
+    "errors": [],
+    "timeoutAt": "scripts/check-levels.mjs:146",
+    "scenario": "1440 px: third motion activation, Rookies after Supercracks twice"
+  },
+  "baseline": {
+    "lastChecks": [
+      {
+        "name": "390 smooth arrival cue at destination rookies",
+        "pass": true,
+        "detail": {
+          "top": 85.53125,
+          "bottom": 764.53125,
+          "header": 71
+        }
+      },
+      {
+        "name": "390 smooth cue clears with focus retained rookies",
+        "pass": true
+      },
+      {
+        "name": "1440 smooth arrival cue at destination supercracks",
+        "pass": true,
+        "detail": {
+          "top": 117.296875,
+          "bottom": 705.28125,
+          "header": 103
+        }
+      },
+      {
+        "name": "1440 smooth cue clears with focus retained supercracks",
+        "pass": true
+      },
+      {
+        "name": "1440 smooth arrival cue at destination supercracks",
+        "pass": true,
+        "detail": {
+          "top": 115.296875,
+          "bottom": 703.28125,
+          "header": 103
+        }
+      },
+      {
+        "name": "1440 smooth cue clears with focus retained supercracks",
+        "pass": true
+      }
+    ],
+    "issues": [],
+    "errors": [],
+    "timeoutAt": "scripts/check-levels.mjs:146",
+    "scenario": "1440 px: third motion activation, Rookies after Supercracks twice"
+  }
+}

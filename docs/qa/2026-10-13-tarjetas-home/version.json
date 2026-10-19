@@ -1,0 +1,18 @@
+{
+  "repository": "git@github.com:aletaamarilla/lst.git",
+  "head": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+  "committed": false,
+  "files": {
+    "dist/index.html": "7d8fcde292e4bfba25249dfb817d44f026161bd1509d02583ef969d4aa87ccbe",
+    "dist/home-cards.css": "4e8e8ae9e73e60580ad830384c581196d1733aad003dd87259c57b97ca2d5009",
+    "scripts/check-home-cards.mjs": "49cefcdda54e05705a68b8a68f6b042f5bf9fc4a19f9316b26944f0da68f3af5",
+    "scripts/check-ux.mjs": "892af6cb4c9cde5e9b4ec25852640e8321f0592de1304a99d829d884c8c6205d",
+    "README.md": "541bad18bee9532ef671f7dd8ddf5b4b6044b19a3e6384a5d5f77f6af74f0bff",
+    "docs/propuesta.md": "ea083677996b048b69a6f1ba94352873808f9a70f2c64aba13e55199f2b58067"
+  },
+  "newFiles": [
+    "dist/home-cards.css",
+    "scripts/check-home-cards.mjs",
+    "docs/qa/2026-10-13-tarjetas-home/"
+  ]
+}

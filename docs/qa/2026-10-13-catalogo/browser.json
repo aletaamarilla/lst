@@ -1,0 +1,2310 @@
+{
+  "checks": [
+    {
+      "name": "320 catalog HTTP",
+      "pass": true
+    },
+    {
+      "name": "320 initial six destinations",
+      "pass": true
+    },
+    {
+      "name": "320 header fixed, title clear",
+      "pass": true
+    },
+    {
+      "name": "320 original photos/fonts",
+      "pass": true
+    },
+    {
+      "name": "320 el-salvador data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "320 el-salvador detail opens",
+      "pass": true
+    },
+    {
+      "name": "320 asturias data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "320 asturias detail opens",
+      "pass": true
+    },
+    {
+      "name": "320 Asturias two date enquiries retained",
+      "pass": true
+    },
+    {
+      "name": "320 azores data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "320 azores detail opens",
+      "pass": true
+    },
+    {
+      "name": "320 euskadi data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "320 euskadi detail opens",
+      "pass": true
+    },
+    {
+      "name": "320 marruecos data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "320 marruecos detail opens",
+      "pass": true
+    },
+    {
+      "name": "320 cadiz data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "320 cadiz detail opens",
+      "pass": true
+    },
+    {
+      "name": "320 level all AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count /",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout /",
+      "pass": true
+    },
+    {
+      "name": "320 level all AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "320 count /confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout /confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 level all AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count /upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout /upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 level 1 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 1/",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 1/",
+      "pass": true
+    },
+    {
+      "name": "320 level 1 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "320 count 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 level 1 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 level 2 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 2/",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 2/",
+      "pass": true
+    },
+    {
+      "name": "320 level 2 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "320 count 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 level 2 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 level 3 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 3/",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 3/",
+      "pass": true
+    },
+    {
+      "name": "320 level 3 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "320 count 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 level 3 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 level 4 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 4/",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 4/",
+      "pass": true
+    },
+    {
+      "name": "320 level 4 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "320 count 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "320 level 4 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "320 count 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 filter keeps layout 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "320 result changes exposed to assistive technology",
+      "pass": true
+    },
+    {
+      "name": "320 clear resets both filters and URL",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=1",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=2",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=3",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=4",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=0",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=5",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=rookies",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=2foo",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=02",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=2.0",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=%202",
+      "pass": true
+    },
+    {
+      "name": "320 URL nivel=",
+      "pass": true
+    },
+    {
+      "name": "320 keyboard level and focus",
+      "pass": true
+    },
+    {
+      "name": "320 keyboard combined state",
+      "pass": true
+    },
+    {
+      "name": "320 keyboard clear",
+      "pass": true
+    },
+    {
+      "name": "320 keyboard reaches first detail link",
+      "pass": true
+    },
+    {
+      "name": "320 current catalog in menu",
+      "pass": true
+    },
+    {
+      "name": "320 menu Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "320 reload preserves both",
+      "pass": true
+    },
+    {
+      "name": "320 history restores previous state",
+      "pass": true
+    },
+    {
+      "name": "320 history forward restores combination",
+      "pass": true
+    },
+    {
+      "name": "320 200% text no page overflow",
+      "pass": true
+    },
+    {
+      "name": "320 200% all six readable",
+      "pass": true
+    },
+    {
+      "name": "390 catalog HTTP",
+      "pass": true
+    },
+    {
+      "name": "390 initial six destinations",
+      "pass": true
+    },
+    {
+      "name": "390 header fixed, title clear",
+      "pass": true
+    },
+    {
+      "name": "390 original photos/fonts",
+      "pass": true
+    },
+    {
+      "name": "390 el-salvador data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "390 el-salvador detail opens",
+      "pass": true
+    },
+    {
+      "name": "390 asturias data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "390 asturias detail opens",
+      "pass": true
+    },
+    {
+      "name": "390 Asturias two date enquiries retained",
+      "pass": true
+    },
+    {
+      "name": "390 azores data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "390 azores detail opens",
+      "pass": true
+    },
+    {
+      "name": "390 euskadi data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "390 euskadi detail opens",
+      "pass": true
+    },
+    {
+      "name": "390 marruecos data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "390 marruecos detail opens",
+      "pass": true
+    },
+    {
+      "name": "390 cadiz data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "390 cadiz detail opens",
+      "pass": true
+    },
+    {
+      "name": "390 level all AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count /",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout /",
+      "pass": true
+    },
+    {
+      "name": "390 level all AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "390 count /confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout /confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 level all AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count /upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout /upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 level 1 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 1/",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 1/",
+      "pass": true
+    },
+    {
+      "name": "390 level 1 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "390 count 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 level 1 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 level 2 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 2/",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 2/",
+      "pass": true
+    },
+    {
+      "name": "390 level 2 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "390 count 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 level 2 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 level 3 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 3/",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 3/",
+      "pass": true
+    },
+    {
+      "name": "390 level 3 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "390 count 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 level 3 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 level 4 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 4/",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 4/",
+      "pass": true
+    },
+    {
+      "name": "390 level 4 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "390 count 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "390 level 4 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "390 count 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 filter keeps layout 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "390 result changes exposed to assistive technology",
+      "pass": true
+    },
+    {
+      "name": "390 clear resets both filters and URL",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=1",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=2",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=3",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=4",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=0",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=5",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=rookies",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=2foo",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=02",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=2.0",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=%202",
+      "pass": true
+    },
+    {
+      "name": "390 URL nivel=",
+      "pass": true
+    },
+    {
+      "name": "390 keyboard level and focus",
+      "pass": true
+    },
+    {
+      "name": "390 keyboard combined state",
+      "pass": true
+    },
+    {
+      "name": "390 keyboard clear",
+      "pass": true
+    },
+    {
+      "name": "390 keyboard reaches first detail link",
+      "pass": true
+    },
+    {
+      "name": "390 current catalog in menu",
+      "pass": true
+    },
+    {
+      "name": "390 menu Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "390 reload preserves both",
+      "pass": true
+    },
+    {
+      "name": "390 history restores previous state",
+      "pass": true
+    },
+    {
+      "name": "390 history forward restores combination",
+      "pass": true
+    },
+    {
+      "name": "390 200% text no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390 200% all six readable",
+      "pass": true
+    },
+    {
+      "name": "768 catalog HTTP",
+      "pass": true
+    },
+    {
+      "name": "768 initial six destinations",
+      "pass": true
+    },
+    {
+      "name": "768 header fixed, title clear",
+      "pass": true
+    },
+    {
+      "name": "768 original photos/fonts",
+      "pass": true
+    },
+    {
+      "name": "768 el-salvador data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "768 el-salvador detail opens",
+      "pass": true
+    },
+    {
+      "name": "768 asturias data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "768 asturias detail opens",
+      "pass": true
+    },
+    {
+      "name": "768 Asturias two date enquiries retained",
+      "pass": true
+    },
+    {
+      "name": "768 azores data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "768 azores detail opens",
+      "pass": true
+    },
+    {
+      "name": "768 euskadi data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "768 euskadi detail opens",
+      "pass": true
+    },
+    {
+      "name": "768 marruecos data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "768 marruecos detail opens",
+      "pass": true
+    },
+    {
+      "name": "768 cadiz data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "768 cadiz detail opens",
+      "pass": true
+    },
+    {
+      "name": "768 level all AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count /",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout /",
+      "pass": true
+    },
+    {
+      "name": "768 level all AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "768 count /confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout /confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 level all AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count /upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout /upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 level 1 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 1/",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 1/",
+      "pass": true
+    },
+    {
+      "name": "768 level 1 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "768 count 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 level 1 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 level 2 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 2/",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 2/",
+      "pass": true
+    },
+    {
+      "name": "768 level 2 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "768 count 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 level 2 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 level 3 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 3/",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 3/",
+      "pass": true
+    },
+    {
+      "name": "768 level 3 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "768 count 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 level 3 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 level 4 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 4/",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 4/",
+      "pass": true
+    },
+    {
+      "name": "768 level 4 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "768 count 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "768 level 4 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "768 count 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 filter keeps layout 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "768 result changes exposed to assistive technology",
+      "pass": true
+    },
+    {
+      "name": "768 clear resets both filters and URL",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=1",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=2",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=3",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=4",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=0",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=5",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=rookies",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=2foo",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=02",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=2.0",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=%202",
+      "pass": true
+    },
+    {
+      "name": "768 URL nivel=",
+      "pass": true
+    },
+    {
+      "name": "768 keyboard level and focus",
+      "pass": true
+    },
+    {
+      "name": "768 keyboard combined state",
+      "pass": true
+    },
+    {
+      "name": "768 keyboard clear",
+      "pass": true
+    },
+    {
+      "name": "768 keyboard reaches first detail link",
+      "pass": true
+    },
+    {
+      "name": "768 current catalog in menu",
+      "pass": true
+    },
+    {
+      "name": "768 menu Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "768 reload preserves both",
+      "pass": true
+    },
+    {
+      "name": "768 history restores previous state",
+      "pass": true
+    },
+    {
+      "name": "768 history forward restores combination",
+      "pass": true
+    },
+    {
+      "name": "768 200% text no page overflow",
+      "pass": true
+    },
+    {
+      "name": "768 200% all six readable",
+      "pass": true
+    },
+    {
+      "name": "1440 catalog HTTP",
+      "pass": true
+    },
+    {
+      "name": "1440 initial six destinations",
+      "pass": true
+    },
+    {
+      "name": "1440 header fixed, title clear",
+      "pass": true
+    },
+    {
+      "name": "1440 original photos/fonts",
+      "pass": true
+    },
+    {
+      "name": "1440 el-salvador data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 el-salvador detail opens",
+      "pass": true
+    },
+    {
+      "name": "1440 asturias data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 asturias detail opens",
+      "pass": true
+    },
+    {
+      "name": "1440 Asturias two date enquiries retained",
+      "pass": true
+    },
+    {
+      "name": "1440 azores data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 azores detail opens",
+      "pass": true
+    },
+    {
+      "name": "1440 euskadi data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 euskadi detail opens",
+      "pass": true
+    },
+    {
+      "name": "1440 marruecos data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 marruecos detail opens",
+      "pass": true
+    },
+    {
+      "name": "1440 cadiz data and native detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 cadiz detail opens",
+      "pass": true
+    },
+    {
+      "name": "1440 level all AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count /",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout /",
+      "pass": true
+    },
+    {
+      "name": "1440 level all AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "1440 count /confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout /confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 level all AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count /upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout /upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 level 1 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 1/",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 1/",
+      "pass": true
+    },
+    {
+      "name": "1440 level 1 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 1/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 level 1 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 1/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 level 2 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 2/",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 2/",
+      "pass": true
+    },
+    {
+      "name": "1440 level 2 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 2/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 level 2 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 2/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 level 3 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 3/",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 3/",
+      "pass": true
+    },
+    {
+      "name": "1440 level 3 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "el-salvador",
+          "asturias"
+        ],
+        "expected": [
+          "el-salvador",
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 3/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 level 3 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 3/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 level 4 AND all",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "asturias",
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 4/",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 4/",
+      "pass": true
+    },
+    {
+      "name": "1440 level 4 AND confirmed",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "asturias"
+        ],
+        "expected": [
+          "asturias"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 4/confirmed",
+      "pass": true
+    },
+    {
+      "name": "1440 level 4 AND upcoming",
+      "pass": true,
+      "detail": {
+        "actual": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ],
+        "expected": [
+          "azores",
+          "euskadi",
+          "marruecos",
+          "cadiz"
+        ]
+      }
+    },
+    {
+      "name": "1440 count 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 filter keeps layout 4/upcoming",
+      "pass": true
+    },
+    {
+      "name": "1440 result changes exposed to assistive technology",
+      "pass": true
+    },
+    {
+      "name": "1440 clear resets both filters and URL",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=1",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=2",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=3",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=4",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=0",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=5",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=rookies",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=2foo",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=02",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=2.0",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=%202",
+      "pass": true
+    },
+    {
+      "name": "1440 URL nivel=",
+      "pass": true
+    },
+    {
+      "name": "1440 keyboard level and focus",
+      "pass": true
+    },
+    {
+      "name": "1440 keyboard combined state",
+      "pass": true
+    },
+    {
+      "name": "1440 keyboard clear",
+      "pass": true
+    },
+    {
+      "name": "1440 keyboard reaches first detail link",
+      "pass": true
+    },
+    {
+      "name": "1440 reload preserves both",
+      "pass": true
+    },
+    {
+      "name": "1440 history restores previous state",
+      "pass": true
+    },
+    {
+      "name": "1440 history forward restores combination",
+      "pass": true
+    },
+    {
+      "name": "1440 200% text no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 200% all six readable",
+      "pass": true
+    },
+    {
+      "name": "390 without JS all six visible despite URL filter",
+      "pass": true
+    },
+    {
+      "name": "390 without JS no overflow",
+      "pass": true
+    },
+    {
+      "name": "390 without JS detail el-salvador",
+      "pass": true
+    },
+    {
+      "name": "390 without JS detail asturias",
+      "pass": true
+    },
+    {
+      "name": "390 without JS detail azores",
+      "pass": true
+    },
+    {
+      "name": "390 without JS detail euskadi",
+      "pass": true
+    },
+    {
+      "name": "390 without JS detail marruecos",
+      "pass": true
+    },
+    {
+      "name": "390 without JS detail cadiz",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS all six visible despite URL filter",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS detail el-salvador",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS detail asturias",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS detail azores",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS detail euskadi",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS detail marruecos",
+      "pass": true
+    },
+    {
+      "name": "1440 without JS detail cadiz",
+      "pass": true
+    },
+    {
+      "name": "home calendar CTA opens catalog",
+      "pass": true
+    },
+    {
+      "name": "Conócenos CTA opens catalog",
+      "pass": true
+    },
+    {
+      "name": "guide rookies opens numeric filter",
+      "pass": true
+    },
+    {
+      "name": "guide aprendices opens numeric filter",
+      "pass": true
+    },
+    {
+      "name": "guide riders opens numeric filter",
+      "pass": true
+    },
+    {
+      "name": "guide supercracks opens numeric filter",
+      "pass": true
+    },
+    {
+      "name": "empty fixture explains zero matches",
+      "pass": true
+    },
+    {
+      "name": "empty fixture existing WhatsApp consultation",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp intercepted without sending",
+      "pass": true
+    },
+    {
+      "name": "empty fixture clear restores results and visible focus",
+      "pass": true
+    },
+    {
+      "name": "no JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "intercepted": [
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20con%20mi%20nivel%20de%20surf.%20%C2%BFPodemos%20revisar%20las%20opciones%2C%20las%20fechas%20y%20la%20disponibilidad%3F"
+  ]
+}

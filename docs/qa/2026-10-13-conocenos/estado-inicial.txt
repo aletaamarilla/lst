@@ -1,0 +1,31 @@
+ M README.md
+ M dist/app.js
+ M dist/index.html
+ M dist/mobile.css
+ M dist/trip.css
+ M dist/viajes/asturias/index.html
+ M dist/viajes/azores/index.html
+ M dist/viajes/cadiz/index.html
+ M dist/viajes/el-salvador/index.html
+ M dist/viajes/euskadi/index.html
+ M dist/viajes/marruecos/index.html
+ M docs/content-inventory.json
+ M docs/propuesta.md
+ M package.json
+ M scripts/check-ux.mjs
+ M scripts/check.mjs
+ M scripts/render-trips.mjs
+?? dist/home-cards.css
+?? dist/levels.css
+?? dist/levels.js
+?? dist/niveles/
+?? docs/qa/2026-10-12-niveles-ajustes/
+?? docs/qa/2026-10-12-niveles-conversion/
+?? docs/qa/2026-10-12-niveles-redesign/
+?? docs/qa/2026-10-12-niveles/
+?? docs/qa/2026-10-13-conocenos/
+?? docs/qa/2026-10-13-niveles-pulido/
+?? docs/qa/2026-10-13-tarjetas-home/
+?? scripts/check-home-cards.mjs
+?? scripts/check-levels.mjs
+?? scripts/render-level-trips.mjs

@@ -396,5 +396,228 @@
     "otherLegacyClaims": "No se trasladan charlas, formación ambiental, convenios locales, reducción de huella ni promesas de dejar cada lugar intacto: tampoco se acreditan como prácticas actuales.",
     "dependencies": "Confirmaciones y documentación de LST; confirmación o acuerdo de Universal Plastic. Sin dependencias nuevas de código ni investigación comercial de viajes.",
     "report": "docs/qa/2026-10-12-responsabilidad/README.md"
+  },
+  "levelsRevision20": {
+    "date": "2026-10-12",
+    "route": "/niveles/",
+    "scope": "Guía estática de orientación, enlaces de home y fichas; datos de viajes sin modificar ni investigar.",
+    "sources": [
+      {
+        "file": "dist/app.js",
+        "base": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+        "use": "Definiciones y nombres actuales, conservados literalmente."
+      },
+      {
+        "url": "https://www.letsurftogether.com/rookies/",
+        "use": "Bases: remada, puesta en pie, espumas y pequeñas paredes; posición y confianza."
+      },
+      {
+        "url": "https://www.letsurftogether.com/nivel-ii-aprendices/",
+        "use": "Olas verdes, reconocimiento de pared, bombeo y giros básicos; postura y surfing de espaldas. Leída mediante HTTP directo tras 429 del navegador de fuentes."
+      },
+      {
+        "url": "https://www.letsurftogether.com/nivel-iii-rides/",
+        "use": "Autonomía de entrada y salida, lectura del mar, postura, maniobras y cambio de pesos."
+      },
+      {
+        "url": "https://www.letsurftogether.com/nivel-iv-supercracks/",
+        "use": "Surf sólido y fluido en olas con fuerza, elección de secciones, perfeccionamiento. Tubos y aéreos figuran como objetivos, no requisitos."
+      },
+      {
+        "file": "data/trips.json",
+        "fields": [
+          "levels",
+          "levelRequirement",
+          "levelTitle",
+          "levelText",
+          "levelChecks"
+        ],
+        "use": "El Salvador II–III con autonomía como ejemplo de requisito adicional; datos intactos y sin investigación comercial."
+      }
+    ],
+    "editorial": "La separación entre técnica y autonomía y la invitación a describir condiciones/ayuda son síntesis orientativa de las fuentes, no una nueva escala o evaluación. No se trasladan absolutos de seguridad ni exigencias numéricas.",
+    "navigation": "Anclas nativas para los cuatro niveles, home y fichas enlazadas; viajes en /#viajes.",
+    "contact": "WhatsApp existente; mensaje editable sobre nivel y encaje. Consultar no confirma plaza.",
+    "photo": "dist/assets/group.webp, Laga 2024, procedencia existente en docs/asset-provenance.json. Sin modificar bytes ni identificar personas.",
+    "report": "docs/qa/2026-10-12-niveles/README.md"
+  },
+  "levelsRevision21": {
+    "date": "2026-10-12",
+    "route": "/niveles/",
+    "supersedesUI": "levelsRevision20",
+    "purpose": "Página definitiva de niveles, sin derivación a contenido antiguo.",
+    "sources": "Mismas cuatro páginas originales y definiciones existentes revisadas en levelsRevision20; fuentes solo en documentación interna. No se investigan datos de viajes.",
+    "copy": "Reescritura orientativa en tres claves: En el agua, Tu surf y Tu siguiente paso. Conserva significado, sin requisitos, tablas obligatorias, titulaciones, altura de ola ni clasificación automática.",
+    "mobile": "Índice antes de la fotografía; cuatro tarjetas en una columna, dos por dos en escritorio. Cabecera fija, navegación nativa y lectura sin JS.",
+    "photography": [
+      {
+        "file": "dist/assets/surf-session.webp",
+        "use": "Apertura con surfista sobre una ola; no se atribuye un nivel concreto."
+      },
+      {
+        "file": "dist/assets/after-surf.webp",
+        "use": "Grupo de LST fuera del agua; sin nombres ni atribución de roles."
+      }
+    ],
+    "contact": "Solo WhatsApp como contacto externo. Se conservan navegación interna, calendario y avisos de orientación/no confirmación.",
+    "report": "docs/qa/2026-10-12-niveles-redesign/README.md"
+  },
+  "levelsRevision22": {
+    "date": "2026-10-12",
+    "purpose": "Navegación consistente, feedback de nivel explorado y paso directo a viajes/WhatsApp.",
+    "selection": "Manual; no cuestionario ni clasificación automática. Foco, hash, query e historial conservan contexto.",
+    "tripSource": "data/trips.json a través de scripts/trip-model.mjs; sin editar datos ni consultar fuentes comerciales nuevas.",
+    "tripPresentation": "Un bloque generado con salidas con fecha y destinos por anunciar; niveles y requisito de autonomía visibles. Matching orienta la exploración, el equipo verifica encaje y disponibilidad.",
+    "seoSources": [
+      {
+        "url": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+        "use": "Enlaces HTML con href y textos descriptivos; enlazado interno que ayude a usuarios y buscadores."
+      },
+      {
+        "url": "https://developers.google.com/search/docs/appearance/ai-features",
+        "use": "Fundamentos SEO aplicables a funciones de IA de Google; no necesidad de esquema especial, ni garantía de aparición. Requiere indexación."
+      }
+    ],
+    "seoScope": "HTML estático enlazable sin JS; se conserva noindex,nofollow. No se afirma optimización universal para todos los motores de IA ni mejora medida de ventas.",
+    "report": "docs/qa/2026-10-12-niveles-conversion/README.md"
+  },
+  "levelsRevision23": {
+    "date": "2026-10-12",
+    "purpose": "Aplicar jerarquía de viajes, ayuda única y tarjetas/WhatsApp más visibles.",
+    "cards": "Identidad oscura, descripción, situaciones y siguiente paso separados; selección naranja y botón WhatsApp completo de contraste alto. Definiciones intactas.",
+    "trips": "Salidas con fecha visibles primero, destinos pendientes en details nativo inicialmente cerrado. Contadores siguen el nivel explorado.",
+    "help": "Se elimina guide-trips-help; data-guide-enquiry pertenece al bloque de orientación final y conserva el nivel/mensaje seleccionado.",
+    "preserved": "Datos provisionales, autonomía, disponibilidad por consultar, consulta no confirma plaza, rutas, filtros e historial.",
+    "report": "docs/qa/2026-10-12-niveles-ajustes/README.md"
+  },
+  "levelsRevision24": {
+    "date": "2026-10-13",
+    "purpose": "Destacado breve al navegar, botones compactos en una fila y desplegable estable.",
+    "feedback": "Al activar el índice, destacado de 1,1 s una vez llegado al nivel; no persiste al filtrar, recargar o navegar por historial.",
+    "actions": "Ver viajes / WhatsApp; mensajes y etiquetas accesibles mantienen el nivel. Misma fila desde 320 px a tamaño normal; reflujo al ampliar texto.",
+    "disclosure": "Título y contador sin transformación; solo gira el icono. Estilos acotados a la guía.",
+    "preserved": "Definiciones, fuentes previas, datos provisionales, fotografía, marca, autonomía, consulta sin confirmación de plaza y rutas.",
+    "report": "docs/qa/2026-10-13-niveles-pulido/README.md"
+  },
+  "aboutRevision26": {
+    "date": "2026-10-13",
+    "route": "/conocenos/",
+    "scope": "Página Conócenos, resumen de home y enlaces de navegación/fichas. Sin cambiar datos ni programas de viajes.",
+    "sources": [
+      {
+        "id": "brand-questionnaire",
+        "document": "Cuestionario_Marca_Web_LST.pdf",
+        "access": "PDF local leído el 13/10/2026; no incorporado al repositorio ni copiados datos legales privados. Huella SHA-256 en el informe.",
+        "references": {
+          "presentation": "p. 1, preguntas 1–3: progreso, cultura local, aventura, comunidad, viajar solo.",
+          "accompaniment": "p. 1, pregunta 4: quienes organizan viajan y acompañan.",
+          "voice": "p. 2, preguntas 6–9: cercanía, diversión, claridad, identidad; firma de Lucas.",
+          "origin": "p. 3, pregunta 14: viaje de prueba a Marruecos, Lucas y su comunidad, año de preparación, arranque a finales de 2024.",
+          "level": "p. 5, nota FAQ: atender a los niveles del viaje concreto."
+        }
+      },
+      {
+        "id": "legacy-about",
+        "url": "https://www.letsurftogether.com/sobre-lst/",
+        "access": "Texto consultado el 13/10/2026; publicación histórica, no confirmación de vigencia de prestaciones.",
+        "use": "Comidas y conversaciones compartidas; descubrimiento de gastronomía, paisajes y vida local; respeto a surfistas locales y costumbres. Ningún servicio universal ni compromiso ambiental cuantificado."
+      },
+      {
+        "id": "documentary-photos",
+        "file": "docs/asset-provenance.json",
+        "use": "Escenas de comunidad, surfskate y recuerdos, con sus pies de contexto. No identifican a Lucas, viajeros por nombre ni miembros del equipo."
+      },
+      {
+        "id": "reviewed-home",
+        "file": "dist/index.html",
+        "baseline": "docs/qa/2026-10-13-conocenos/antes/dist/index.html",
+        "use": "Desarrolla presentación y respeto de revisiones 14–16, conserva experiencia y reseñas. La firma completa pasa a la nueva página; el resumen invita a ampliar."
+      }
+    ],
+    "editorial": "El nuevo titular y las transiciones expresan la personalidad, sin garantía de progreso, amistad, seguridad o repetición. La escena de surfskate describe la imagen documental de Cádiz. El atardecer de Marruecos se presenta como recuerdo de 2025, fuera del bloque del origen, sin vincularlo al primer viaje ni incluir la actividad en una nueva salida.",
+    "people": "Solo Lucas por su vínculo con el origen y su firma. Sin cargos actuales, credenciales o retratos atribuidos. Acompañamiento descrito de forma general con respaldo del cuestionario; equipo y servicios concretos remiten a cada ficha.",
+    "environment": "responsibilityRevision16 sigue vigente sin cambios: recogidas de plásticos, Universal Plastic y 3 % pendientes de evidencia actual; excluidos de la interfaz.",
+    "pending": [
+      "Nombres, funciones públicas y salidas que acompaña cada persona del equipo actual.",
+      "Función actual de Lucas, más allá de su papel documentado en el origen.",
+      "Retratos identificados y autorización de uso; no atribuir caras de las fotos de grupo.",
+      "Programa y acompañantes de los cuatro destinos pendientes, antes de confirmar su próxima salida.",
+      "Vigencia y alcance de recogidas de plásticos, colaboración con Universal Plastic y 3 % según responsibilityRevision16.",
+      "Confirmación del teléfono como receptor definitivo: se mantiene el contacto existente."
+    ],
+    "preserved": "data/trips.json, marca, bytes de fotografías/fuentes/logos, escenarios provisionales, consultas y noindex. No se revalida ni actualiza oferta comercial.",
+    "report": "docs/qa/2026-10-13-conocenos/README.md"
+  },
+  "catalog20261013": {
+    "route": "/viajes/",
+    "source": "data/trips.json; levelsFor y tripFacts de scripts/trip-model.mjs. Sin investigación comercial.",
+    "filters": {
+      "level": [
+        "Todos",
+        "I · Rookies",
+        "II · Aprendices",
+        "III · Riders",
+        "IV · Supercracks"
+      ],
+      "state": {
+        "confirmed": "Con fecha",
+        "upcoming": "Próximamente"
+      },
+      "semantics": "Intersección de nivel compatible y estado; sin inferir disponibilidad de plazas."
+    },
+    "defaults": "levels ausente, null o vacío admite I–IV según el modelo existente. Restricciones explícitas no se amplían.",
+    "presentation": "Fotografía existente, nombre, estado, fechas/duración si existen, niveles y autonomía; acción al detalle. Sin nueva urgencia, servicios, precio ni promesas.",
+    "url": "nivel=1,2,3,4; inválidos muestran todos los niveles. Historial y recarga conservan la selección.",
+    "preserved": "Asturias demo autorizada, cuatro destinos próximos, WhatsApp como consulta sin confirmación; datos comerciales y recursos intactos.",
+    "emptyStateEvidence": "Fixture HTTP aislada en navegador y pruebas unitarias; ninguna combinación actual queda vacía.",
+    "report": "docs/qa/2026-10-13-catalogo/README.md"
+  },
+  "faqPage20261013": {
+    "date": "2026-10-13",
+    "route": "/preguntas-frecuentes/",
+    "scope": "Ocho FAQs generales en cuatro temas, resumen de tres en home y navegación compartida. Datos comerciales sin investigar ni modificar.",
+    "sources": [
+      {
+        "file": "dist/index.html",
+        "baseline": "docs/qa/2026-10-13-faqs/antes/dist/index.html",
+        "sections": [
+          "dudas",
+          "experiencia",
+          "reservar"
+        ],
+        "use": "Viajar por cuenta propia, nivel, inclusiones, alimentación, consulta y confirmación."
+      },
+      {
+        "file": "data/trips.json",
+        "fields": [
+          "el-salvador.faqs",
+          "asturias.faqs"
+        ],
+        "use": "Seleccionar dudas de material y llegada; no generalizar exclusiones, niveles, traslados o alojamiento."
+      },
+      {
+        "file": "scripts/render-trips.mjs",
+        "section": "faqs(trip)",
+        "use": "Mantener preguntas específicas y estado de los cuatro programas pendientes."
+      },
+      {
+        "file": "docs/content-inventory.json",
+        "sections": [
+          "bookingFlow",
+          "contact",
+          "detailPages"
+        ],
+        "use": "WhatsApp abre una consulta; condiciones de formalización según viaje. Contacto existente sin revalidación comercial."
+      }
+    ],
+    "selection": "Una pregunta sobre venir por tu cuenta; una sobre nivel; cuatro sobre preparación; dos sobre consulta y confirmación. La llegada adapta las preguntas específicas existentes sin trasladar su respuesta al conjunto de viajes.",
+    "pending": [
+      "Condiciones de pago, depósitos, cancelación y seguros no documentadas como políticas generales: no publicadas en FAQs.",
+      "Programas, alojamiento, material y traslados de salidas por anunciar, dentro de sus fichas.",
+      "Confirmación del contacto definitivo y de los datos provisionales, en una fase posterior."
+    ],
+    "navigation": "Viajes, Niveles, Conócenos y FAQs; logo a Inicio; La experiencia y Cómo reservar en home/pie. Catálogo /viajes/ desarrollado por otro trabajo concurrente; esta entrega lo integra, no lo reemplaza.",
+    "preserved": "data/trips.json y recursos de marca sin cambios; FAQs específicas de las seis fichas idénticas a la base; noindex,nofollow en once rutas.",
+    "report": "docs/qa/2026-10-13-faqs/README.md"
   }
 }

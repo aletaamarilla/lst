@@ -1,0 +1,41 @@
+{
+  "repository": "https://github.com/aletaamarilla/lst",
+  "checkout": "/home/amfernandez/personalProjects/letsurftogethersystem",
+  "baseCommit": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+  "branch": "main",
+  "candidate": "uncommitted",
+  "files": {
+    "README.md": "372c88e11a3582ce8227aa3e82b07108010b0e5d8f2c36515070c820908f57a3",
+    "dist/app.js": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3",
+    "dist/index.html": "e9ddec4bec48e71347fe53fbd2ca46c1bda292c310ffd43033ce21564a00e002",
+    "dist/viajes/asturias/index.html": "10a70c80394f8812895fc62c14911cdb5ecd24adaa2224078021e6739cc8f60b",
+    "dist/viajes/azores/index.html": "80a37dd1d10559cd720bda0ee59f7f8fdfbe1bca534c74609435a54d73c1e973",
+    "dist/viajes/cadiz/index.html": "661c465a036f8b24ea24e06eacb18e20d5d6e38d7b191c5f213e93430d105772",
+    "dist/viajes/el-salvador/index.html": "6bdbc391bcbe2c8452657ac6da39dba663fcc19e1a7b6799a6fef7a62a745b55",
+    "dist/viajes/euskadi/index.html": "870309b80d679420e354c8fcf863b3d0273d406a1e744b8329e0a501376b4159",
+    "dist/viajes/marruecos/index.html": "03280a335757606dda5ff14aa7718814ced36ab871714b1066f5533d4cabc158",
+    "docs/content-inventory.json": "816bb6a231662440bb9c2c052928d7d22e592baba1cc8adc926e8ba29e241bf4",
+    "docs/propuesta.md": "23562bfb18fe2e2ad34fe61fc7fdc93c9d76a6cec209f64f5bef8121cac22935",
+    "scripts/check.mjs": "a257148c41b8e41c5f469a54555b28f4d1a2e9f1f25c606f48be2b09c60d92ca",
+    "scripts/render-trips.mjs": "cb4a6589f42133f44d4e64432e7f11482c7b8065ed7b8544d3175a3321aa67a4",
+    "dist/niveles/index.html": "990febe6b914574bb63a4d50d9dd73d65b4c71abe6e5b5153be579b046f4a8e8",
+    "dist/levels.css": "f4103b4b4f102f758942f06b88221c3c7f162c9c2189f53ff75a6898e0a76e1e",
+    "scripts/check-levels.mjs": "53b5f11e9df753ea2161c977499bf86ec5c3aa3fe94f2dd01d97f549a97ce5fe"
+  },
+  "reviewedFilesMatch": {
+    "dist/niveles/index.html": true,
+    "dist/levels.css": true,
+    "dist/app.js": true,
+    "dist/index.html": true,
+    "scripts/render-trips.mjs": true,
+    "scripts/check.mjs": true,
+    "scripts/check-levels.mjs": true,
+    "data/trips.json": true,
+    "dist/viajes/asturias/index.html": true,
+    "dist/viajes/azores/index.html": true,
+    "dist/viajes/cadiz/index.html": true,
+    "dist/viajes/el-salvador/index.html": true,
+    "dist/viajes/euskadi/index.html": true,
+    "dist/viajes/marruecos/index.html": true
+  }
+}

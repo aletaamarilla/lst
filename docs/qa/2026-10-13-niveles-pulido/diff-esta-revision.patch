@@ -1,0 +1,269 @@
+--- antes/dist/niveles/index.html
++++ dist/niveles/index.html
+@@ -23,29 +23,29 @@
+  <div class="guide-content section-width">
+   <div class="guide-section-intro"><p class="eyebrow">ENCUENTRA TU PUNTO DE PARTIDA</p><p>Piensa en tus baños habituales: qué olas coges y cómo te sientes en ellas.</p></div>
+   <div class="guide-levels-grid"><section class="guide-level" id="rookies" aria-labelledby="rookies-title" tabindex="-1">
+- <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel I">I</span><div class="guide-level-titles"><span class="guide-selection">Nivel que estás explorando</span><p class="eyebrow">Las primeras olas</p><h2 id="rookies-title">Rookies</h2></div></div></header>
++ <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel I">I</span><div class="guide-level-titles"><p class="eyebrow">Las primeras olas</p><h2 id="rookies-title">Rookies</h2></div></div></header>
+  <div class="guide-level-body"><p class="guide-definition">Estás aprendiendo a remar y a ponerte de pie. Cada espuma es una oportunidad para encontrar el equilibrio.</p>
+  <dl class="guide-level-facts"><div><dt>EN EL AGUA</dt><dd>Espumas y olas pequeñas, con poca fuerza.</dd></div><div><dt>TU SURF</dt><dd>Todavía estás afianzando la posición en la tabla y la puesta en pie. Empiezas a deslizarte por pequeñas paredes.</dd></div></dl></div>
+  <div class="guide-practice"><h3>Tu siguiente paso</h3><p>Remar con más control, levantarte con fluidez y entender cómo se mueve la ola.</p></div>
+-<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=rookies#viajes-por-nivel" data-guide-choice="rookies">Ver viajes para Rookies</a><a class="button guide-level-enquiry" data-whatsapp="nivel-rookies" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20I%20%28Rookies%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>Consultar por WhatsApp</span></a></div></section>
++<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=rookies#viajes-por-nivel" data-guide-choice="rookies" aria-label="Ver viajes para Rookies">Ver viajes</a><a class="button guide-level-enquiry" data-whatsapp="nivel-rookies" aria-label="Consultar el nivel Rookies por WhatsApp" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20I%20%28Rookies%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>WhatsApp</span></a></div></section>
+ <section class="guide-level" id="aprendices" aria-labelledby="aprendices-title" tabindex="-1">
+- <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel II">II</span><div class="guide-level-titles"><span class="guide-selection">Nivel que estás explorando</span><p class="eyebrow">Ya recorres la pared</p><h2 id="aprendices-title">Aprendices</h2></div></div></header>
++ <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel II">II</span><div class="guide-level-titles"><p class="eyebrow">Ya recorres la pared</p><h2 id="aprendices-title">Aprendices</h2></div></div></header>
+  <div class="guide-level-body"><p class="guide-definition">Coges olas que aún no han roto y sigues su pared. Ahora quieres ganar velocidad y controlar tus primeros giros.</p>
+  <dl class="guide-level-facts"><div><dt>EN EL AGUA</dt><dd>Te encuentras a gusto en condiciones moderadas. Con más fuerza de mar, todavía te falta confianza.</dd></div><div><dt>TU SURF</dt><dd>Reconoces por dónde seguir la ola. Pruebas el bombeo —los movimientos para ganar velocidad— y algún giro básico.</dd></div></dl></div>
+  <div class="guide-practice"><h3>Tu siguiente paso</h3><p>Mejorar la postura, elegir las secciones de la ola y practicar los giros, también de espaldas a la pared.</p></div>
+-<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=aprendices#viajes-por-nivel" data-guide-choice="aprendices">Ver viajes para Aprendices</a><a class="button guide-level-enquiry" data-whatsapp="nivel-aprendices" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20II%20%28Aprendices%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>Consultar por WhatsApp</span></a></div></section>
++<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=aprendices#viajes-por-nivel" data-guide-choice="aprendices" aria-label="Ver viajes para Aprendices">Ver viajes</a><a class="button guide-level-enquiry" data-whatsapp="nivel-aprendices" aria-label="Consultar el nivel Aprendices por WhatsApp" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20II%20%28Aprendices%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>WhatsApp</span></a></div></section>
+ <section class="guide-level" id="riders" aria-labelledby="riders-title" tabindex="-1">
+- <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel III">III</span><div class="guide-level-titles"><span class="guide-selection">Nivel que estás explorando</span><p class="eyebrow">Giros con intención</p><h2 id="riders-title">Riders</h2></div></div></header>
++ <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel III">III</span><div class="guide-level-titles"><p class="eyebrow">Giros con intención</p><h2 id="riders-title">Riders</h2></div></div></header>
+  <div class="guide-level-body"><p class="guide-definition">Surfeas con autonomía y enlazas maniobras. Buscas más precisión para aprovechar cada parte de la ola.</p>
+  <dl class="guide-level-facts"><div><dt>EN EL AGUA</dt><dd>Lees el mar y sabes entrar y salir por tu cuenta.</dd></div><div><dt>TU SURF</dt><dd>Mantienes una postura sólida y haces giros con soltura en distintas secciones de la ola.</dd></div></dl></div>
+  <div class="guide-practice"><h3>Tu siguiente paso</h3><p>Afinar los cambios de peso, mejorar la ejecución de cada giro y elegir el momento de iniciarlo.</p></div>
+-<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=riders#viajes-por-nivel" data-guide-choice="riders">Ver viajes para Riders</a><a class="button guide-level-enquiry" data-whatsapp="nivel-riders" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20III%20%28Riders%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>Consultar por WhatsApp</span></a></div></section>
++<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=riders#viajes-por-nivel" data-guide-choice="riders" aria-label="Ver viajes para Riders">Ver viajes</a><a class="button guide-level-enquiry" data-whatsapp="nivel-riders" aria-label="Consultar el nivel Riders por WhatsApp" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20III%20%28Riders%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>WhatsApp</span></a></div></section>
+ <section class="guide-level" id="supercracks" aria-labelledby="supercracks-title" tabindex="-1">
+- <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel IV">IV</span><div class="guide-level-titles"><span class="guide-selection">Nivel que estás explorando</span><p class="eyebrow">Cada detalle cuenta</p><h2 id="supercracks-title">Supercracks</h2></div></div></header>
++ <header class="guide-level-heading"><div class="guide-level-top"><span class="guide-level-number" aria-label="Nivel IV">IV</span><div class="guide-level-titles"><p class="eyebrow">Cada detalle cuenta</p><h2 id="supercracks-title">Supercracks</h2></div></div></header>
+  <div class="guide-level-body"><p class="guide-definition">Tu surf es sólido, rápido y fluido, también en olas con fuerza. Quieres llevar tus maniobras un paso más allá.</p>
+  <dl class="guide-level-facts"><div><dt>EN EL AGUA</dt><dd>Te encuentras a gusto en olas potentes y bien formadas.</dd></div><div><dt>TU SURF</dt><dd>Conectas giros con fluidez y reconoces las secciones que te permiten sacar más partido a cada maniobra.</dd></div></dl></div>
+  <div class="guide-practice"><h3>Tu siguiente paso</h3><p>Perfeccionar tus giros, trabajar la técnica de los tubos o explorar los aéreos.</p></div>
+-<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=supercracks#viajes-por-nivel" data-guide-choice="supercracks">Ver viajes para Supercracks</a><a class="button guide-level-enquiry" data-whatsapp="nivel-supercracks" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20IV%20%28Supercracks%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>Consultar por WhatsApp</span></a></div></section></div>
++<div class="guide-level-actions"><a class="button guide-level-cta" href="?nivel=supercracks#viajes-por-nivel" data-guide-choice="supercracks" aria-label="Ver viajes para Supercracks">Ver viajes</a><a class="button guide-level-enquiry" data-whatsapp="nivel-supercracks" aria-label="Consultar el nivel Supercracks por WhatsApp" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20IV%20%28Supercracks%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>WhatsApp</span></a></div></section></div>
+   <p class="guide-reading-note">Puedes reconocerte en más de un nivel. No hace falta encajar en todo: te ayudamos a orientarte antes de elegir viaje.</p>
+  </div>
+  <section class="guide-autonomy section-width" id="autonomia" aria-labelledby="autonomy-title" tabindex="-1">
+--- antes/dist/levels.css
++++ dist/levels.css
+@@ -15,7 +15,7 @@
+ .guide-lead{font-size:16px;line-height:1.6;max-width:34em}
+ .guide-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:24px}
+ .guide-index a{display:flex;align-items:center;gap:8px;min-height:66px;padding:12px 9px;border:1px solid var(--ink);text-decoration:none;transition:background .15s}
+-.guide-index a:hover{background:var(--orange)}
++@media(hover:hover){.guide-index a:hover{background:var(--orange)}}
+ .guide-index-number{font:400 22px/1 var(--display);flex:0 0 20px;white-space:nowrap}
+ .guide-index strong{display:block;font-size:14px;line-height:1.3}
+ .guide-index small{display:block;font-size:12px;line-height:1.5;margin-top:3px;color:var(--muted)}
+@@ -114,18 +114,19 @@
+ }
+ @media(prefers-reduced-motion:reduce){.guide-index a{transition:none}}
+ 
+-/* Native anchor feedback, enhanced with persistent selection and travel context. */
+-.guide-selection{display:none;font:600 11px/1.4 var(--body);margin-bottom:7px;color:var(--ink)}
+-.guide-level.is-selected,html:not(.guide-enhanced) .guide-level:target{border-color:var(--orange);box-shadow:inset 4px 0 0 var(--orange)}
+-.guide-level.is-selected .guide-selection,html:not(.guide-enhanced) .guide-level:target .guide-selection{display:inline}
+-.guide-level.is-selected .guide-level-titles>.eyebrow,html:not(.guide-enhanced) .guide-level:target .guide-level-titles>.eyebrow{display:none}
+-.guide-index a[aria-current=location]{background:var(--orange);border-color:var(--ink)}
+-.guide-index a[aria-current=location] small{color:var(--ink)}
+-.guide-level-actions{display:grid;gap:10px;padding:20px;border-top:1px solid var(--line);background:var(--paper)}
+-.guide-level-cta{width:100%;font-size:15px;padding:12px;min-height:48px;text-align:center}
+-.guide-level-enquiry{display:flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px;font-size:15px;font-weight:600;background:var(--ink);color:var(--paper);text-decoration:none;text-align:center}
++/* A brief arrival cue; the travel filter keeps its own explicit state. */
++.guide-level-heading,.guide-level-number{transition:background .18s,color .18s}
++.guide-level.is-arriving{border-color:var(--orange)}
++.guide-level.is-arriving .guide-level-heading{background:var(--orange);color:var(--ink)}
++.guide-level.is-arriving .guide-level-number{background:var(--ink);color:var(--paper)}
++html:not(.guide-enhanced) .guide-level:target .guide-level-heading{animation:guide-arrival 1.1s ease-out}
++@keyframes guide-arrival{0%,60%{background:var(--orange);color:var(--ink)}100%{background:var(--ink);color:var(--paper)}}
++.guide-level-actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,7.5em),1fr));font-size:13px;gap:8px;padding:16px 20px;border-top:1px solid var(--line);background:var(--paper)}
++.guide-level-cta,.guide-level-enquiry{width:100%;font-size:inherit;padding:9px 8px;min-height:44px;text-align:center}
++.guide-level-enquiry{display:flex;align-items:center;justify-content:center;gap:6px;font-weight:600;background:var(--ink);color:var(--paper);text-decoration:none}
+ .guide-level-enquiry:hover{background:var(--paper);color:var(--ink)}
+ .guide-level-enquiry svg,.guide-contact svg{flex-shrink:0}
++.guide-level-enquiry svg{width:18px;height:18px}
+ .guide-level-enquiry span,.guide-contact span{min-width:0}
+ .guide-trips{padding-block:36px;border-top:1px solid var(--line)}
+ .guide-trips h2{font:400 40px/1.04 var(--display);letter-spacing:-.015em;margin-bottom:18px}
+@@ -150,20 +151,19 @@
+ @media(min-width:700px){.guide-trips{padding-block:52px}.guide-trips-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.guide-trip-card{grid-template-columns:110px minmax(0,1fr)}}
+ @media(min-width:1100px){.guide-trips h2{font-size:54px}.guide-trip-card>div{padding:20px}.guide-trip-card h4{font-size:36px}}
+ 
+-/* Clear identity and a stronger selection signal, including the focused anchor. */
+-.guide-level.is-selected .guide-level-heading,html:not(.guide-enhanced) .guide-level:target .guide-level-heading{background:var(--orange);color:var(--ink)}
+-.guide-level.is-selected .guide-level-number,html:not(.guide-enhanced) .guide-level:target .guide-level-number{background:var(--ink);color:var(--paper)}
+-.levels-page section.guide-level.is-selected:focus{box-shadow:inset 4px 0 0 var(--orange)}
++/* Isolate this disclosure from the shared FAQ summary/icon rules. */
+ .guide-trip-pending{border:1px solid var(--line);background:var(--paper)}
+ .guide-trip-pending>summary{display:flex;align-items:center;gap:12px;min-height:64px;padding:16px;font-size:15px;font-weight:600;list-style:none}
+ .guide-trip-pending>summary::-webkit-details-marker{display:none}
++.guide-trip-pending>summary>span{font-size:inherit;line-height:1.4}
++.guide-trip-pending[open]>summary>span{transform:none}
+ .guide-trip-pending>summary>span:first-child{flex:1;min-width:0}
+ .guide-trip-pending .guide-pending-count{display:grid;place-items:center;min-width:30px;min-height:30px;padding:4px;background:var(--ink);color:var(--paper);font:400 12px/1.5 var(--mono)}
+ .guide-trip-pending .guide-pending-toggle{font-size:22px;font-weight:400;transition:transform .2s}
+-.guide-trip-pending[open] .guide-pending-toggle{transform:rotate(45deg)}
+-.guide-pending-intro{padding:0 16px 16px;font-size:14px;color:var(--muted)}
++.guide-trip-pending[open]>summary>.guide-pending-toggle{transform:rotate(45deg)}
++.guide-trip-pending>.guide-pending-intro{padding:0 16px 16px;font-size:14px;color:var(--muted)}
+ .guide-trip-pending .guide-trips-grid{padding:0 16px 16px}
+ .guide-trip-pending[open]>summary{border-bottom:1px solid var(--line);margin-bottom:16px}
+ .guide-trip-pending:not([open]){margin-bottom:12px}
+-@media(min-width:700px){.guide-level-actions{padding:22px 24px}}
+-@media(min-width:1100px){.guide-level-actions{padding:22px 30px}.guide-level-number{width:64px;min-height:64px;font-size:30px}}
++@media(min-width:700px){.guide-level-actions{padding:16px 24px}}
++@media(min-width:1100px){.guide-level-actions{padding:18px 30px}.guide-level-number{width:64px;min-height:64px;font-size:30px}}
+--- antes/dist/levels.js
++++ dist/levels.js
+@@ -22,7 +22,6 @@
+ }
+ function showLevel(slug){
+  const level=names[slug];
+- cards.forEach(card=>card.classList.toggle('is-selected',card.id===slug));
+  indexLinks.forEach(link=>{
+   if(link.hash==='#'+slug)link.setAttribute('aria-current','location');
+   else link.removeAttribute('aria-current');
+@@ -42,15 +41,34 @@
+  if(level){const url=new URL(generalEnquiry);url.searchParams.set('text',`¡Hola, LST! Me reconozco en el nivel ${level[1]} (${level[2]}) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?`);enquiry.href=url.href;}else enquiry.href=generalEnquiry;
+ }
+ function updateUrl(slug,hash){
++ clearFlash();
+  const url=new URL(location.href);
+  if(slug)url.searchParams.set('nivel',slug);else url.searchParams.delete('nivel');
+  url.hash=hash;
+  history.pushState(null,'',url);
+  showLevel(slug);
+ }
++let arrivalFrame,highlightTimer;
++function clearFlash(){
++ cancelAnimationFrame(arrivalFrame);
++ clearTimeout(highlightTimer);
++ cards.forEach(card=>card.classList.remove('is-arriving'));
++}
+ function flash(card){
+- if(reducedMotion.matches)return;
+- card.animate([{backgroundColor:'#fff1ca'},{backgroundColor:'#fffdf5'}],{duration:900,easing:'ease-out'});
++ clearFlash();
++ const started=performance.now();
++ // Start the brief cue at the destination, after the native anchor scroll.
++ const arrive=()=>{
++  const top=card.getBoundingClientRect().top;
++  const offset=parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop)||0;
++  if(Math.abs(top-offset)>3){
++   if(performance.now()-started<2000)arrivalFrame=requestAnimationFrame(arrive);
++   return;
++  }
++  card.classList.add('is-arriving');
++  highlightTimer=setTimeout(()=>card.classList.remove('is-arriving'),1100);
++ };
++ arrivalFrame=requestAnimationFrame(arrive);
+ }
+ indexLinks.forEach(link=>link.addEventListener('click',event=>{
+  if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+--- antes/scripts/check-levels.mjs
++++ scripts/check-levels.mjs
+@@ -50,7 +50,13 @@
+   for(const slug of slugs){
+    await p.locator(`.guide-index a[href="#${slug}"]`).click();
+    const rect=await geometry(p,`#${slug}`);check(tag+' anchor '+slug,rect.top>=rect.header-1&&rect.top<=rect.header+20,rect);
+-   check(tag+' selected card '+slug,await p.locator('.guide-level.is-selected').evaluateAll((els,slug)=>els.length===1&&els[0].id===slug,slug));
++   await p.waitForFunction(s=>document.getElementById(s).classList.contains('is-arriving'),slug);
++   check(tag+' brief arrival cue '+slug,await p.locator('.guide-level.is-arriving').evaluateAll((els,slug)=>els.length===1&&els[0].id===slug,slug));
++   await p.waitForFunction(()=>!document.querySelector('.guide-level.is-arriving'));
++   check(tag+' highlight expires '+slug,await p.locator(`#${slug}`).evaluate(e=>getComputedStyle(e).borderLeftColor!=='rgb(234, 89, 52)'&&getComputedStyle(e.querySelector('.guide-level-heading')).backgroundColor==='rgb(27, 27, 27)'));
++   const actions=await p.locator(`#${slug} .guide-level-actions a`).evaluateAll(els=>els.map(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height,scroll:e.scrollWidth,client:e.clientWidth,label:e.getAttribute('aria-label')};}));
++   check(tag+' compact card actions '+slug,actions.length===2&&actions.every(a=>a.height>=44&&a.scroll<=a.client&&a.label),actions);
++   if(zoom===1)check(tag+' card actions on one row '+slug,Math.abs(actions[0].top-actions[1].top)<1&&actions[0].right<actions[1].left,actions);
+    check(tag+' selected index '+slug,await p.locator('.guide-index [aria-current=location]').getAttribute('href')==='#'+slug);
+    check(tag+' anchor focus '+slug,await p.evaluate(s=>document.activeElement.id===s,slug));
+   }
+@@ -64,6 +70,8 @@
+    check(tag+' pending matching count '+slug,await p.locator('[data-guide-pending-count]').innerText()===String(pendingCount));
+    await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');
+    check(tag+' pending opens with keyboard '+slug,await p.locator('.guide-trip-pending').evaluate(e=>e.open));
++   const disclosure=await p.locator('.guide-trip-pending').evaluate(e=>{const summary=e.querySelector('summary'),r=summary.getBoundingClientRect(),title=summary.firstElementChild.getBoundingClientRect(),intro=e.querySelector('.guide-pending-intro').getBoundingClientRect();return {upright:[...summary.children].slice(0,2).every(e=>getComputedStyle(e).transform==='none'),contained:title.top>=r.top&&title.bottom<=r.bottom&&title.left>=r.left&&title.right<=r.right,introGap:intro.top-r.bottom};});
++   check(tag+' disclosure text stays in place '+slug,disclosure.upright&&disclosure.contained&&disclosure.introGap>=0&&disclosure.introGap<24,disclosure);
+    const expected=trips.filter(t=>levelsFor(t).includes(index+1)).map(t=>t.slug).sort();
+    const shown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.pathname.split('/')[2]).sort());
+    check(tag+' configured matching trips '+slug,JSON.stringify(shown)===JSON.stringify(expected),{shown,expected});
+@@ -75,7 +83,7 @@
+    check(tag+' card WhatsApp context '+slug,new URL(await cardContact.getAttribute('href')).searchParams.get('text').includes(['Rookies','Aprendices','Riders','Supercracks'][index]));
+   }
+   await p.locator('[data-guide-filter=""]').click();
+-  check(tag+' all clears selected card',await p.locator('.guide-level.is-selected').count()===0);
++  check(tag+' all leaves no highlighted card',await p.locator('.guide-level.is-arriving').count()===0);
+   check(tag+' all shows dated trips first',await p.locator('.guide-trip-card:visible').count()===trips.filter(t=>t.state==='confirmed').length);
+   await p.locator('.guide-trip-pending summary').click();check(tag+' all pending remain available',await p.locator('.guide-trip-card:visible').count()===trips.length);
+   await p.goto(base+'/niveles/#aprendices');await p.evaluate(()=>document.fonts.ready);
+@@ -121,16 +129,30 @@
+  const historyContext=await context({viewport:{width:390,height:844}}),historyPage=await historyContext.newPage();
+  await historyPage.goto(base+'/niveles/#rookies');await historyPage.locator('#rookies .guide-level-cta').click();await historyPage.locator('[data-guide-filter="riders"]').click();
+  const bordered=()=>historyPage.locator('.guide-level').evaluateAll(els=>els.filter(e=>getComputedStyle(e).borderLeftColor==='rgb(234, 89, 52)').map(e=>e.id));
+- check('only current card highlighted after filter',JSON.stringify(await bordered())===JSON.stringify(['riders']));
++ check('travel filter does not highlight a card',JSON.stringify(await bordered())==='[]');
+  await historyPage.reload();check('reload restores selected travel level',await historyPage.locator('[data-guide-filter="riders"]').getAttribute('aria-pressed')==='true');
+  await historyPage.goBack();check('back restores Rookies trips',await historyPage.locator('[data-guide-filter="rookies"]').getAttribute('aria-pressed')==='true');
+  await historyPage.goForward();check('forward restores Riders trips',await historyPage.locator('[data-guide-filter="riders"]').getAttribute('aria-pressed')==='true');
+  await historyPage.locator('[data-guide-filter=""]').click();check('all clears obsolete target',JSON.stringify(await bordered())==='[]');
+- await historyPage.goto(base+'/niveles/#rookies');await historyPage.waitForFunction(()=>new URL(location.href).searchParams.get('nivel')==='rookies'&&document.querySelector('.guide-level.is-selected')?.id==='rookies');const beforeUrl=historyPage.url();const newTabPromise=historyContext.waitForEvent('page');await historyPage.locator('.guide-index a[href="#riders"]').click({modifiers:['Control']});const newTab=await newTabPromise;await newTab.waitForLoadState();await newTab.close();
+- check('modified click keeps current context',historyPage.url()===beforeUrl&&await historyPage.locator('.guide-level.is-selected').getAttribute('id')==='rookies'&&await historyPage.locator('[data-guide-filter="rookies"]').getAttribute('aria-pressed')==='true',{beforeUrl,afterUrl:historyPage.url()});
++ await historyPage.goto(base+'/niveles/#rookies');await historyPage.waitForFunction(()=>new URL(location.href).searchParams.get('nivel')==='rookies'&&document.querySelector('[data-guide-filter=rookies]').getAttribute('aria-pressed')==='true');const beforeUrl=historyPage.url();const newTabPromise=historyContext.waitForEvent('page');await historyPage.locator('.guide-index a[href="#riders"]').click({modifiers:['Control']});const newTab=await newTabPromise;await newTab.waitForLoadState();await newTab.close();
++ check('modified click keeps current context',historyPage.url()===beforeUrl&&await historyPage.locator('.guide-level.is-arriving').count()===0&&await historyPage.locator('[data-guide-filter="rookies"]').getAttribute('aria-pressed')==='true',{beforeUrl,afterUrl:historyPage.url()});
+  await historyContext.close();
++ for(const width of [320,390,1440]){
++  const motionContext=await context({viewport:{width,height:844},reducedMotion:'no-preference'}),motionPage=await motionContext.newPage();
++  await motionPage.goto(base+'/niveles/');await motionPage.evaluate(()=>document.fonts.ready);
++  for(const slug of ['supercracks','supercracks','rookies']){
++   const link=motionPage.locator(`.guide-index a[href="#${slug}"]`);
++   await link.focus();await motionPage.keyboard.press('Enter');
++   await motionPage.waitForFunction(s=>document.getElementById(s).classList.contains('is-arriving'),slug);
++   const rect=await geometry(motionPage,`#${slug}`);
++   check(width+' smooth arrival cue at destination '+slug,rect.top>=rect.header-1&&rect.top<=rect.header+20,rect);
++   await motionPage.waitForFunction(()=>!document.querySelector('.is-arriving'));await motionPage.waitForTimeout(220);
++   check(width+' smooth cue clears with focus retained '+slug,await motionPage.locator(`#${slug}`).evaluate(e=>e===document.activeElement&&getComputedStyle(e.querySelector('.guide-level-heading')).backgroundColor==='rgb(27, 27, 27)'));
++  }
++  await motionContext.close();
++ }
+  const c=await context({viewport:{width:390,height:844},javaScriptEnabled:false}),p=await c.newPage();
+- await p.goto(base+'/niveles/');check('static content without JS',await p.locator('.guide-level:visible').count()===4);await p.locator('.guide-index a[href="#riders"]').click();check('native anchor without JS',new URL(p.url()).hash==='#riders');check('pending folded without JS',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);check('native highlight without JS',await p.locator('#riders').evaluate(e=>getComputedStyle(e).borderLeftColor==='rgb(234, 89, 52)'));check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);await c.close();
++ await p.goto(base+'/niveles/');check('static content without JS',await p.locator('.guide-level:visible').count()===4);await p.locator('.guide-index a[href="#riders"]').click();check('native anchor without JS',new URL(p.url()).hash==='#riders');check('pending folded without JS',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);check('no persistent highlight without JS',await p.locator('#riders').evaluate(e=>getComputedStyle(e).borderLeftColor!=='rgb(234, 89, 52)'));check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);await c.close();
+  for(const href of report.whatsapp){const u=new URL(href);check('WhatsApp destination',u.origin==='https://wa.me'&&u.pathname==='/34648189257'&&!!u.searchParams.get('text'));}
+  check('shared script has no page errors',report.errors.length===0,report.errors);
+ } finally {await browser.close();fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(report,null,2)+'\n');}
+--- antes/README.md
++++ README.md
+@@ -166,3 +166,10 @@
+ Las tarjetas de nivel separan identidad, descripción, situaciones y siguiente paso. WhatsApp deja de ser un enlace discreto: las cuatro tarjetas ofrecen un botón de contraste alto, icono y etiqueta explícita, junto a la exploración de viajes. El nivel elegido mantiene su destacado también al recibir foco.
+ 
+ Los viajes con fecha quedan visibles; los destinos pendientes pasan a «Otros destinos por anunciar», un desplegable nativo accesible con teclado y sin JavaScript. Su contador sigue el filtro elegido. La ayuda se unifica en el bloque final «¿Encaja tu nivel? Lo vemos contigo», que conserva el contexto del nivel para WhatsApp. [Capturas y validación de la versión actual](docs/qa/2026-10-12-niveles-ajustes/README.md).
++
++
++## Revisión 24 · destacado breve y acciones compactas
++
++Al activar un nivel del índice, su cabecera se destaca durante 1,1 segundos después de llegar con el scroll y recupera su aspecto habitual. El filtro de viajes conserva su contexto, sin mantener ninguna tarjeta coloreada. Los botones «Ver viajes» y «WhatsApp» comparten fila desde 320 px con áreas de pulsación de al menos 44 px; al ampliar el texto pueden apilarse para conservar legibilidad.
++
++El desplegable «Otros destinos por anunciar» aísla sus estilos de las preguntas frecuentes: título y contador permanecen horizontales y solo gira el icono. [Capturas y comprobaciones de esta revisión](docs/qa/2026-10-13-niveles-pulido/README.md).
+--- antes/docs/propuesta.md
++++ docs/propuesta.md
+@@ -160,3 +160,10 @@
+ Las fichas de nivel ganan una cabecera oscura con nombre y numeral, una zona de lectura clara y acciones separadas. Al elegir un nivel la cabecera pasa a naranja y el destacado se conserva con foco de teclado. La consulta de WhatsApp utiliza un botón completo oscuro con icono y texto, visible en teléfono.
+ 
+ En el bloque de viajes se priorizan las salidas con fecha. Los destinos por anunciar permanecen en el HTML y se exploran desde un único desplegable nativo. Los filtros actualizan tanto el número de viajes con fecha como el de destinos pendientes, sin alterar sus condiciones comerciales. Se elimina el bloque de consulta repetido de la lista; la ayuda final recibe el nivel explorado y su mensaje contextual. [Evidencia actual](qa/2026-10-12-niveles-ajustes/README.md).
++
++
++## Revisión 24 · ajustes de interacción móvil
++
++El destacado deja de representar una selección permanente: sirve únicamente para localizar durante un instante el nivel al que se acaba de saltar. La exploración de viajes y el mensaje contextual de WhatsApp siguen guardando el nivel elegido.
++
++Las tarjetas ofrecen dos acciones breves en la misma fila, «Ver viajes» y «WhatsApp», con nombres accesibles que incluyen el nivel. Se conserva el botón de consulta explícito de la ayuda final. En el desplegable de próximos destinos se corrige la herencia de la regla de FAQ que giraba todos los spans, incluido el título. [Evidencia](qa/2026-10-13-niveles-pulido/README.md).
+--- antes/docs/content-inventory.json
++++ docs/content-inventory.json
+@@ -489,5 +489,14 @@
+     "help": "Se elimina guide-trips-help; data-guide-enquiry pertenece al bloque de orientación final y conserva el nivel/mensaje seleccionado.",
+     "preserved": "Datos provisionales, autonomía, disponibilidad por consultar, consulta no confirma plaza, rutas, filtros e historial.",
+     "report": "docs/qa/2026-10-12-niveles-ajustes/README.md"
++  },
++  "levelsRevision24": {
++    "date": "2026-10-13",
++    "purpose": "Destacado breve al navegar, botones compactos en una fila y desplegable estable.",
++    "feedback": "Al activar el índice, destacado de 1,1 s una vez llegado al nivel; no persiste al filtrar, recargar o navegar por historial.",
++    "actions": "Ver viajes / WhatsApp; mensajes y etiquetas accesibles mantienen el nivel. Misma fila desde 320 px a tamaño normal; reflujo al ampliar texto.",
++    "disclosure": "Título y contador sin transformación; solo gira el icono. Estilos acotados a la guía.",
++    "preserved": "Definiciones, fuentes previas, datos provisionales, fotografía, marca, autonomía, consulta sin confirmación de plaza y rutas.",
++    "report": "docs/qa/2026-10-13-niveles-pulido/README.md"
+   }
+ }

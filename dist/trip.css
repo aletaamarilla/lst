@@ -241,3 +241,9 @@ html:has(.trip-page){scroll-padding-top:calc(var(--trip-header-height,72px) + 12
 /* Program headings inherit their row's size; controls scale with the text. */
 .plan-item summary{grid-template-columns:minmax(30px,max-content) minmax(0,1fr) 2em}
 .plan-item summary>span:not(.plan-number):not(.plan-toggle){font-size:inherit}
+
+/* The same destinations remain reachable from every trip header. */
+.trip-header-nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap;min-width:0}
+.trip-header-levels{display:inline-flex;align-items:center;min-height:44px;font-size:12px;font-weight:600;text-underline-offset:5px}
+@media(max-width:639px){.trip-header .brand{width:132px}.trip-header{gap:10px}.trip-header-nav{gap:12px}}
+@media(min-width:1000px){.trip-header-nav{margin-left:auto}.trip-header-nav .trip-back{margin-left:0}.trip-header-levels{font-size:14px}}

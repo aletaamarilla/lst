@@ -1,0 +1,38 @@
+/* Home invitations only: detail pages and the level catalogue keep their own styles. */
+#viajes .home-trip-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+#viajes .home-trip{min-width:0}
+#viajes .home-trip-link{display:flex;flex-direction:column;height:100%;color:var(--ink);text-decoration:none;scroll-margin-block:calc(var(--home-header-height,70px) + 16px) 24px}
+#viajes .home-trip-photo{width:100%;height:auto;aspect-ratio:1.8;object-fit:cover;object-position:50% 54%}
+#viajes .home-trip-copy{display:flex;flex-direction:column;align-items:flex-start;flex:1;min-width:0;padding:16px 0 0}
+#viajes .home-trip-copy :is(h3,h4){font:400 40px/1.12 var(--display);letter-spacing:-.015em;overflow-wrap:anywhere}
+#viajes .home-trip-date{margin-top:8px;font:400 14px/1.6 var(--mono)}
+#viajes .home-trip-meta{margin-top:6px;font:400 15px/1.5 var(--body)}
+#viajes .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;max-width:100%;min-height:44px;margin:12px 0 0;padding:10px 12px;font:600 15px/1.4 var(--body);text-decoration:none}
+#viajes .home-trip-action svg{flex:none}
+#viajes .home-trip-link:focus-visible{outline:3px solid var(--ink);outline-offset:6px;box-shadow:0 0 0 9px var(--paper)}
+#viajes .home-trip-link:is(:hover,:focus-visible) .home-trip-action{background:var(--ink);color:var(--paper)}
+#viajes .home-trip-grid-pending{gap:24px}
+#viajes .home-trip-pending .home-trip-link{flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px}
+#viajes .home-trip-pending .home-trip-photo{flex:1 1 38%;min-width:0;width:38%;aspect-ratio:auto;object-fit:contain}
+#viajes .home-trip-pending .home-trip-copy{flex:1 1 9em;padding:0}
+#viajes .home-trip-pending h4{font-size:32px}
+#viajes .home-trip-pending .home-trip-date{margin-top:5px}
+#viajes .home-trip-pending .home-trip-meta{margin-top:4px}
+#viajes .home-trip-pending .home-trip-action{margin-top:10px}
+@media(min-width:700px){
+ #viajes .home-trip-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+ #viajes .home-trip-copy{padding-top:18px}
+ #viajes .home-trip-meta{margin-bottom:12px}
+ #viajes .home-trip-action{margin-top:auto}
+ #viajes .home-trip-pending .home-trip-link{flex-direction:column;flex-wrap:nowrap;gap:0;align-items:stretch}
+ #viajes .home-trip-pending .home-trip-photo{flex:none;width:100%;aspect-ratio:1.5;object-fit:cover}
+ #viajes .home-trip-pending:first-child .home-trip-photo{object-position:77% 50%}
+ #viajes .home-trip-pending .home-trip-copy{flex:1;padding-top:16px}
+ #viajes .home-trip-pending .home-trip-action{margin-top:auto}
+}
+@media(min-width:1100px){
+ #viajes .home-trip-photo{aspect-ratio:2.2}
+ #viajes .home-trip-copy :is(h3,h4){font-size:48px}
+ #viajes .home-trip-grid-pending{grid-template-columns:repeat(4,minmax(0,1fr))}
+ #viajes .home-trip-pending h4{font-size:36px}
+}

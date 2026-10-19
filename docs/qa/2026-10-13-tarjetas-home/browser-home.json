@@ -1,0 +1,3429 @@
+{
+  "checks": [
+    {
+      "name": "320-normal no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "320-normal six cards",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "320-normal autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 327.234375,
+        "linkWidth": 280,
+        "linkHeight": 327.234375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-normal el-salvador photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-normal asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-normal asturias date state",
+      "pass": true
+    },
+    {
+      "name": "320-normal asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 327.234375,
+        "linkWidth": 280,
+        "linkHeight": 327.234375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-normal asturias photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-normal azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-normal azores date state",
+      "pass": true
+    },
+    {
+      "name": "320-normal azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-normal azores photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-normal euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-normal euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "320-normal euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-normal euskadi photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-normal marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-normal marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "320-normal marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-normal marruecos photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-normal cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-normal cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "320-normal cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-normal cadiz photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-salvador keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/el-salvador/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 492.84375,
+        "bottom": 820.078125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320-normal asturias keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/asturias/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 331.078125,
+        "bottom": 658.3125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320-normal azores keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/azores/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 426.03125,
+        "bottom": 563.75,
+        "header": 71
+      }
+    },
+    {
+      "name": "320-normal euskadi keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/euskadi/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 587.75,
+        "bottom": 725.46875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320-normal marruecos keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/marruecos/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 682.46875,
+        "bottom": 820.1875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320-normal cadiz keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/cadiz/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 426.1875,
+        "bottom": 563.90625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320-normal Enter opens detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "320-text200 six cards",
+      "pass": true
+    },
+    {
+      "name": "320-text200 el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-text200 el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "320-text200 autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "320-text200 el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 596.328125,
+        "linkWidth": 280,
+        "linkHeight": 596.328125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "320-text200 asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-text200 asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 asturias date state",
+      "pass": true
+    },
+    {
+      "name": "320-text200 asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 461.9375,
+        "linkWidth": 280,
+        "linkHeight": 461.9375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "320-text200 azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-text200 azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 azores date state",
+      "pass": true
+    },
+    {
+      "name": "320-text200 azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 402.46875,
+        "linkWidth": 280,
+        "linkHeight": 402.46875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "320-text200 euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-text200 euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "320-text200 euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 421.046875,
+        "linkWidth": 280,
+        "linkHeight": 421.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "320-text200 marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-text200 marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "320-text200 marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 421.125,
+        "linkWidth": 280,
+        "linkHeight": 421.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "320-text200 cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-text200 cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "320-text200 cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-text200 cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 421.125,
+        "linkWidth": 280,
+        "linkHeight": 421.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "320-no-js no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "320-no-js six cards",
+      "pass": true
+    },
+    {
+      "name": "320-no-js el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-no-js el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-no-js el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "320-no-js autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "320-no-js el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-no-js el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 327.234375,
+        "linkWidth": 280,
+        "linkHeight": 327.234375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-no-js asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-no-js asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-no-js asturias date state",
+      "pass": true
+    },
+    {
+      "name": "320-no-js asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-no-js asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 327.234375,
+        "linkWidth": 280,
+        "linkHeight": 327.234375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-no-js azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-no-js azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-no-js azores date state",
+      "pass": true
+    },
+    {
+      "name": "320-no-js azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-no-js azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-no-js euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-no-js euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-no-js euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "320-no-js euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-no-js euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-no-js marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-no-js marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-no-js marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "320-no-js marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-no-js marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-no-js cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "320-no-js cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "320-no-js cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "320-no-js cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "320-no-js cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 280,
+        "height": 137.71875,
+        "linkWidth": 280,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "320-no-js navigates without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "390-normal no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "390-normal six cards",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "390-normal autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 366.125,
+        "linkWidth": 350,
+        "linkHeight": 366.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-normal el-salvador photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-normal asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-normal asturias date state",
+      "pass": true
+    },
+    {
+      "name": "390-normal asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 366.125,
+        "linkWidth": 350,
+        "linkHeight": 366.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-normal asturias photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-normal azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-normal azores date state",
+      "pass": true
+    },
+    {
+      "name": "390-normal azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-normal azores photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-normal euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-normal euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "390-normal euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-normal euskadi photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-normal marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-normal marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "390-normal marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-normal marruecos photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-normal cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-normal cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "390-normal cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-normal cadiz photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-salvador keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/el-salvador/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 454.15625,
+        "bottom": 820.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390-normal asturias keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/asturias/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 312.28125,
+        "bottom": 678.40625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390-normal azores keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/azores/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 682.53125,
+        "bottom": 820.25,
+        "header": 71
+      }
+    },
+    {
+      "name": "390-normal euskadi keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/euskadi/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 426.25,
+        "bottom": 563.96875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390-normal marruecos keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/marruecos/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 587.96875,
+        "bottom": 725.6875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390-normal cadiz keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/cadiz/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 682.6875,
+        "bottom": 820.40625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390-normal Enter opens detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "390-text200 six cards",
+      "pass": true
+    },
+    {
+      "name": "390-text200 el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-text200 el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "390-text200 autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "390-text200 el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 500.828125,
+        "linkWidth": 350,
+        "linkHeight": 500.828125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "390-text200 asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-text200 asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 asturias date state",
+      "pass": true
+    },
+    {
+      "name": "390-text200 asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 500.828125,
+        "linkWidth": 350,
+        "linkHeight": 500.828125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "390-text200 azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-text200 azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 azores date state",
+      "pass": true
+    },
+    {
+      "name": "390-text200 azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 444.46875,
+        "linkWidth": 350,
+        "linkHeight": 444.46875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "390-text200 euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-text200 euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "390-text200 euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 467.6875,
+        "linkWidth": 350,
+        "linkHeight": 467.6875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "390-text200 marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-text200 marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "390-text200 marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 467.796875,
+        "linkWidth": 350,
+        "linkHeight": 467.796875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "390-text200 cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-text200 cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "390-text200 cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-text200 cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 467.796875,
+        "linkWidth": 350,
+        "linkHeight": 467.796875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "390-no-js no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "390-no-js six cards",
+      "pass": true
+    },
+    {
+      "name": "390-no-js el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-no-js el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-no-js el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "390-no-js autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "390-no-js el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-no-js el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 366.125,
+        "linkWidth": 350,
+        "linkHeight": 366.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-no-js asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-no-js asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-no-js asturias date state",
+      "pass": true
+    },
+    {
+      "name": "390-no-js asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-no-js asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 366.125,
+        "linkWidth": 350,
+        "linkHeight": 366.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-no-js azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-no-js azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-no-js azores date state",
+      "pass": true
+    },
+    {
+      "name": "390-no-js azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-no-js azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-no-js euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-no-js euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-no-js euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "390-no-js euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-no-js euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-no-js marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-no-js marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-no-js marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "390-no-js marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-no-js marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-no-js cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "390-no-js cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "390-no-js cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "390-no-js cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "390-no-js cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 350,
+        "height": 137.71875,
+        "linkWidth": 350,
+        "linkHeight": 137.71875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "390-no-js navigates without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "768-normal no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "768-normal six cards",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "768-normal autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 365.453125,
+        "linkWidth": 338,
+        "linkHeight": 365.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-normal el-salvador photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-normal asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-normal asturias date state",
+      "pass": true
+    },
+    {
+      "name": "768-normal asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 365.453125,
+        "linkWidth": 338,
+        "linkHeight": 365.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-normal asturias photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-normal azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-normal azores date state",
+      "pass": true
+    },
+    {
+      "name": "768-normal azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-normal azores photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-normal euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-normal euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "768-normal euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-normal euskadi photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-normal marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-normal marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "768-normal marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-normal marruecos photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-normal cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-normal cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "768-normal cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-normal cadiz photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-salvador keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/el-salvador/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 454.71875,
+        "bottom": 820.171875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768-normal asturias keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/asturias/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 454.71875,
+        "bottom": 820.171875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768-normal azores keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/azores/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 301.953125,
+        "bottom": 689,
+        "header": 71
+      }
+    },
+    {
+      "name": "768-normal euskadi keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/euskadi/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 301.953125,
+        "bottom": 689,
+        "header": 71
+      }
+    },
+    {
+      "name": "768-normal marruecos keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/marruecos/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 433,
+        "bottom": 820.046875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768-normal cadiz keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/cadiz/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 433,
+        "bottom": 820.046875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768-normal Enter opens detail",
+      "pass": true
+    },
+    {
+      "name": "768-normal titles dates and actions align by row",
+      "pass": true,
+      "detail": [
+        [
+          [
+            [
+              -273.515625,
+              -273.515625
+            ],
+            [
+              -220.71875,
+              -220.71875
+            ],
+            [
+              -169.828125,
+              -169.828125
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              259.28125,
+              259.28125
+            ],
+            [
+              300.109375,
+              300.109375
+            ],
+            [
+              349,
+              349
+            ]
+          ],
+          [
+            [
+              674.328125,
+              674.328125
+            ],
+            [
+              715.15625,
+              715.15625
+            ],
+            [
+              764.046875,
+              764.046875
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "768-text200 no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "768-text200 six cards",
+      "pass": true
+    },
+    {
+      "name": "768-text200 el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-text200 el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "768-text200 autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "768-text200 el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-text200 el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 589.75,
+        "linkWidth": 338,
+        "linkHeight": 589.75,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "768-text200 asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-text200 asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 asturias date state",
+      "pass": true
+    },
+    {
+      "name": "768-text200 asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-text200 asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 589.75,
+        "linkWidth": 338,
+        "linkHeight": 589.75,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "768-text200 azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-text200 azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 azores date state",
+      "pass": true
+    },
+    {
+      "name": "768-text200 azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-text200 azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 467.796875,
+        "linkWidth": 338,
+        "linkHeight": 467.796875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "768-text200 euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-text200 euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "768-text200 euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-text200 euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 467.796875,
+        "linkWidth": 338,
+        "linkHeight": 467.796875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "768-text200 marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-text200 marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "768-text200 marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-text200 marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 467.796875,
+        "linkWidth": 338,
+        "linkHeight": 467.796875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "768-text200 cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-text200 cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "768-text200 cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-text200 cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 467.796875,
+        "linkWidth": 338,
+        "linkHeight": 467.796875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "768-no-js no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "768-no-js six cards",
+      "pass": true
+    },
+    {
+      "name": "768-no-js el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-no-js el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-no-js el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "768-no-js autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "768-no-js el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-no-js el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 365.453125,
+        "linkWidth": 338,
+        "linkHeight": 365.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-no-js asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-no-js asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-no-js asturias date state",
+      "pass": true
+    },
+    {
+      "name": "768-no-js asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-no-js asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 365.453125,
+        "linkWidth": 338,
+        "linkHeight": 365.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-no-js azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-no-js azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-no-js azores date state",
+      "pass": true
+    },
+    {
+      "name": "768-no-js azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-no-js azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-no-js euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-no-js euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-no-js euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "768-no-js euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-no-js euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-no-js marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-no-js marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-no-js marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "768-no-js marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-no-js marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-no-js cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "768-no-js cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "768-no-js cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "768-no-js cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "768-no-js cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 338,
+        "height": 387.046875,
+        "linkWidth": 338,
+        "linkHeight": 387.046875,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "768-no-js navigates without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "1440-normal no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "1440-normal six cards",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "1440-normal autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 642,
+        "height": 478.453125,
+        "linkWidth": 642,
+        "linkHeight": 478.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-normal el-salvador photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-normal asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-normal asturias date state",
+      "pass": true
+    },
+    {
+      "name": "1440-normal asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 642,
+        "height": 478.453125,
+        "linkWidth": 642,
+        "linkHeight": 478.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-normal asturias photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-normal azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-normal azores date state",
+      "pass": true
+    },
+    {
+      "name": "1440-normal azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-normal azores photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-normal euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-normal euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "1440-normal euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-normal euskadi photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-normal marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-normal marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "1440-normal marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-normal marruecos photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-normal cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-normal cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "1440-normal cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-normal cadiz photo opens correct detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-salvador keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/el-salvador/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 497.390625,
+        "bottom": 975.84375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440-normal asturias keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/asturias/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 497.390625,
+        "bottom": 975.84375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440-normal azores keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/azores/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 419.625,
+        "bottom": 790.484375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440-normal euskadi keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/euskadi/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 419.625,
+        "bottom": 790.484375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440-normal marruecos keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/marruecos/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 419.625,
+        "bottom": 790.484375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440-normal cadiz keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "href": "/viajes/cadiz/",
+        "visible": true,
+        "outline": "solid",
+        "outlineWidth": 3,
+        "top": 419.625,
+        "bottom": 790.484375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440-normal Enter opens detail",
+      "pass": true
+    },
+    {
+      "name": "1440-normal titles dates and actions align by row",
+      "pass": true,
+      "detail": [
+        [
+          [
+            [
+              119.203125,
+              119.203125
+            ],
+            [
+              180.953125,
+              180.953125
+            ],
+            [
+              231.84375,
+              231.84375
+            ]
+          ]
+        ],
+        [
+          [
+            [
+              640.28125,
+              640.28125,
+              640.28125,
+              640.28125
+            ],
+            [
+              685.59375,
+              685.59375,
+              685.59375,
+              685.59375
+            ],
+            [
+              734.484375,
+              734.484375,
+              734.484375,
+              734.484375
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "1440-text200 no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 six cards",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 642,
+        "height": 577.125,
+        "linkWidth": 642,
+        "linkHeight": 577.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 asturias date state",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 642,
+        "height": 577.125,
+        "linkWidth": 642,
+        "linkHeight": 577.125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 azores date state",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 536.703125,
+        "linkWidth": 307,
+        "linkHeight": 536.703125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 536.703125,
+        "linkWidth": 307,
+        "linkHeight": 536.703125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 536.703125,
+        "linkWidth": 307,
+        "linkHeight": 536.703125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 536.703125,
+        "linkWidth": 307,
+        "linkHeight": 536.703125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          28,
+          30,
+          30
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js six cards",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js el-salvador unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js el-salvador destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js el-salvador date state",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js autonomy retained",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js el-salvador expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js el-salvador legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 642,
+        "height": 478.453125,
+        "linkWidth": 642,
+        "linkHeight": 478.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js asturias unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js asturias destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js asturias date state",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js asturias expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js asturias legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 642,
+        "height": 478.453125,
+        "linkWidth": 642,
+        "linkHeight": 478.453125,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js azores unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js azores destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js azores date state",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js azores expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js azores legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js euskadi unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js euskadi destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js euskadi date state",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js euskadi expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js euskadi legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js marruecos unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js marruecos destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js marruecos date state",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js marruecos expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js marruecos legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js cadiz unique main link",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js cadiz destination and level",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js cadiz date state",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js cadiz expanded commercial info stays in detail",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js cadiz legibility and complete hit area",
+      "pass": true,
+      "detail": {
+        "width": 307,
+        "height": 370.859375,
+        "linkWidth": 307,
+        "linkHeight": 370.859375,
+        "overflow": [],
+        "photoLoaded": true,
+        "fonts": [
+          14,
+          15,
+          15
+        ]
+      }
+    },
+    {
+      "name": "1440-no-js navigates without JavaScript",
+      "pass": true
+    },
+    {
+      "name": "no JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "measurements": [
+    {
+      "viewport": 320,
+      "slug": "el-salvador",
+      "width": 280,
+      "height": 327.234375,
+      "linkWidth": 280,
+      "linkHeight": 327.234375,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 320,
+      "slug": "asturias",
+      "width": 280,
+      "height": 327.234375,
+      "linkWidth": 280,
+      "linkHeight": 327.234375,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 320,
+      "slug": "azores",
+      "width": 280,
+      "height": 137.71875,
+      "linkWidth": 280,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 320,
+      "slug": "euskadi",
+      "width": 280,
+      "height": 137.71875,
+      "linkWidth": 280,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 320,
+      "slug": "marruecos",
+      "width": 280,
+      "height": 137.71875,
+      "linkWidth": 280,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 320,
+      "slug": "cadiz",
+      "width": 280,
+      "height": 137.71875,
+      "linkWidth": 280,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 390,
+      "slug": "el-salvador",
+      "width": 350,
+      "height": 366.125,
+      "linkWidth": 350,
+      "linkHeight": 366.125,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 390,
+      "slug": "asturias",
+      "width": 350,
+      "height": 366.125,
+      "linkWidth": 350,
+      "linkHeight": 366.125,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 390,
+      "slug": "azores",
+      "width": 350,
+      "height": 137.71875,
+      "linkWidth": 350,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 390,
+      "slug": "euskadi",
+      "width": 350,
+      "height": 137.71875,
+      "linkWidth": 350,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 390,
+      "slug": "marruecos",
+      "width": 350,
+      "height": 137.71875,
+      "linkWidth": 350,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 390,
+      "slug": "cadiz",
+      "width": 350,
+      "height": 137.71875,
+      "linkWidth": 350,
+      "linkHeight": 137.71875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 768,
+      "slug": "el-salvador",
+      "width": 338,
+      "height": 365.453125,
+      "linkWidth": 338,
+      "linkHeight": 365.453125,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 768,
+      "slug": "asturias",
+      "width": 338,
+      "height": 365.453125,
+      "linkWidth": 338,
+      "linkHeight": 365.453125,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 768,
+      "slug": "azores",
+      "width": 338,
+      "height": 387.046875,
+      "linkWidth": 338,
+      "linkHeight": 387.046875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 768,
+      "slug": "euskadi",
+      "width": 338,
+      "height": 387.046875,
+      "linkWidth": 338,
+      "linkHeight": 387.046875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 768,
+      "slug": "marruecos",
+      "width": 338,
+      "height": 387.046875,
+      "linkWidth": 338,
+      "linkHeight": 387.046875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 768,
+      "slug": "cadiz",
+      "width": 338,
+      "height": 387.046875,
+      "linkWidth": 338,
+      "linkHeight": 387.046875,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 1440,
+      "slug": "el-salvador",
+      "width": 642,
+      "height": 478.453125,
+      "linkWidth": 642,
+      "linkHeight": 478.453125,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 1440,
+      "slug": "asturias",
+      "width": 642,
+      "height": 478.453125,
+      "linkWidth": 642,
+      "linkHeight": 478.453125,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 1440,
+      "slug": "azores",
+      "width": 307,
+      "height": 370.859375,
+      "linkWidth": 307,
+      "linkHeight": 370.859375,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 1440,
+      "slug": "euskadi",
+      "width": 307,
+      "height": 370.859375,
+      "linkWidth": 307,
+      "linkHeight": 370.859375,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 1440,
+      "slug": "marruecos",
+      "width": 307,
+      "height": 370.859375,
+      "linkWidth": 307,
+      "linkHeight": 370.859375,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    },
+    {
+      "viewport": 1440,
+      "slug": "cadiz",
+      "width": 307,
+      "height": 370.859375,
+      "linkWidth": 307,
+      "linkHeight": 370.859375,
+      "overflow": [],
+      "photoLoaded": true,
+      "fonts": [
+        14,
+        15,
+        15
+      ]
+    }
+  ]
+}

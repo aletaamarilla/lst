@@ -1,0 +1,34 @@
+{
+  "changedExistingFiles": {
+    "README.md": {
+      "before": "f4f034272382dc91405551c1baef17bdab7ddc00896a16b98eea3a9a4b02c81b",
+      "after": "541bad18bee9532ef671f7dd8ddf5b4b6044b19a3e6384a5d5f77f6af74f0bff"
+    },
+    "scripts/check-ux.mjs": {
+      "before": "a887e12c3b8ade6644cf17f978fed36b6a8bc215009748606eff3559323988ce",
+      "after": "892af6cb4c9cde5e9b4ec25852640e8321f0592de1304a99d829d884c8c6205d"
+    },
+    "docs/propuesta.md": {
+      "before": "ed7720bff9745b57c9840a5d68f3b17a4939b2b03ec2f48a9814f510c4ef76c9",
+      "after": "ea083677996b048b69a6f1ba94352873808f9a70f2c64aba13e55199f2b58067"
+    },
+    "dist/index.html": {
+      "before": "7d9aacf4b4aef8876535ea96dd2c0625f2b88b3568b415403a7bfaa5f81cb570",
+      "after": "7d8fcde292e4bfba25249dfb817d44f026161bd1509d02583ef969d4aa87ccbe"
+    }
+  },
+  "unchangedFiles": 587,
+  "homeOutsideCardsIdentical": true,
+  "protectedProduct": [
+    "data/trips.json",
+    "dist/app.js",
+    "dist/mobile.css",
+    "dist/styles.css",
+    "dist/levels.js",
+    "dist/levels.css",
+    "dist/niveles/index.html",
+    "dist/trip.css",
+    "dist/trip.js",
+    "dist/viajes/*/index.html"
+  ]
+}

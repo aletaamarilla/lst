@@ -1,0 +1,1007 @@
+{
+  "hashes": {
+    "dist/index.html": "7d8fcde292e4bfba25249dfb817d44f026161bd1509d02583ef969d4aa87ccbe",
+    "dist/home-cards.css": "4e8e8ae9e73e60580ad830384c581196d1733aad003dd87259c57b97ca2d5009",
+    "scripts/check-ux.mjs": "892af6cb4c9cde5e9b4ec25852640e8321f0592de1304a99d829d884c8c6205d"
+  },
+  "baselineKeys": [
+    "head",
+    "status",
+    "hashes"
+  ],
+  "errors": [],
+  "views": [
+    {
+      "width": 320,
+      "cards": [
+        {
+          "name": "El Salvador",
+          "text": "El Salvador\n          25 oct — 1 nov 2026\n          7 noches · Nivel II–III con autonomía\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/el-salvador/",
+          "width": 280,
+          "height": 327.234375,
+          "imgWidth": 280,
+          "imgHeight": 156,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Asturias",
+          "text": "Asturias\n          Noviembre 2026\n          2 noches · Todos los niveles\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/asturias/",
+          "width": 280,
+          "height": 327.234375,
+          "imgWidth": 280,
+          "imgHeight": 156,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Azores",
+          "text": "Azores\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/azores/",
+          "width": 280,
+          "height": 137.71875,
+          "imgWidth": 113,
+          "imgHeight": 68,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Euskadi",
+          "text": "Euskadi\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/euskadi/",
+          "width": 280,
+          "height": 137.71875,
+          "imgWidth": 113,
+          "imgHeight": 75,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Marruecos",
+          "text": "Marruecos\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/marruecos/",
+          "width": 280,
+          "height": 137.71875,
+          "imgWidth": 113,
+          "imgHeight": 75,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Cádiz",
+          "text": "Cádiz\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/cadiz/",
+          "width": 280,
+          "height": 137.71875,
+          "imgWidth": 113,
+          "imgHeight": 75,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        }
+      ],
+      "focus": [
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/el-salvador/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 492.84375,
+          "bottom": 820.078125,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/asturias/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 330.078125,
+          "bottom": 657.3125,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/azores/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 425.03125,
+          "bottom": 562.75,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/euskadi/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 586.75,
+          "bottom": 724.46875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/marruecos/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 682.46875,
+          "bottom": 820.1875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/cadiz/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 425.1875,
+          "bottom": 562.90625,
+          "header": 71,
+          "focusVisible": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "cards": [
+        {
+          "name": "El Salvador",
+          "text": "El Salvador\n          25 oct — 1 nov 2026\n          7 noches · Nivel II–III con autonomía\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/el-salvador/",
+          "width": 350,
+          "height": 366.125,
+          "imgWidth": 350,
+          "imgHeight": 194,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Asturias",
+          "text": "Asturias\n          Noviembre 2026\n          2 noches · Todos los niveles\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/asturias/",
+          "width": 350,
+          "height": 366.125,
+          "imgWidth": 350,
+          "imgHeight": 194,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Azores",
+          "text": "Azores\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/azores/",
+          "width": 350,
+          "height": 137.71875,
+          "imgWidth": 162,
+          "imgHeight": 97,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Euskadi",
+          "text": "Euskadi\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/euskadi/",
+          "width": 350,
+          "height": 137.71875,
+          "imgWidth": 162,
+          "imgHeight": 108,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Marruecos",
+          "text": "Marruecos\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/marruecos/",
+          "width": 350,
+          "height": 137.71875,
+          "imgWidth": 162,
+          "imgHeight": 108,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Cádiz",
+          "text": "Cádiz\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/cadiz/",
+          "width": 350,
+          "height": 137.71875,
+          "imgWidth": 162,
+          "imgHeight": 108,
+          "imgFit": "contain",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        }
+      ],
+      "focus": [
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/el-salvador/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 454.15625,
+          "bottom": 820.28125,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/asturias/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 311.28125,
+          "bottom": 677.40625,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/azores/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 682.53125,
+          "bottom": 820.25,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/euskadi/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 425.25,
+          "bottom": 562.96875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/marruecos/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 586.96875,
+          "bottom": 724.6875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/cadiz/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 682.6875,
+          "bottom": 820.40625,
+          "header": 71,
+          "focusVisible": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "cards": [
+        {
+          "name": "El Salvador",
+          "text": "El Salvador\n          25 oct — 1 nov 2026\n          7 noches · Nivel II–III con autonomía\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/el-salvador/",
+          "width": 338,
+          "height": 365.453125,
+          "imgWidth": 338,
+          "imgHeight": 188,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Asturias",
+          "text": "Asturias\n          Noviembre 2026\n          2 noches · Todos los niveles\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/asturias/",
+          "width": 338,
+          "height": 365.453125,
+          "imgWidth": 338,
+          "imgHeight": 188,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Azores",
+          "text": "Azores\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/azores/",
+          "width": 338,
+          "height": 387.046875,
+          "imgWidth": 338,
+          "imgHeight": 225,
+          "imgFit": "cover",
+          "imgPosition": "77% 50%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Euskadi",
+          "text": "Euskadi\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/euskadi/",
+          "width": 338,
+          "height": 387.046875,
+          "imgWidth": 338,
+          "imgHeight": 225,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Marruecos",
+          "text": "Marruecos\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/marruecos/",
+          "width": 338,
+          "height": 387.046875,
+          "imgWidth": 338,
+          "imgHeight": 225,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Cádiz",
+          "text": "Cádiz\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/cadiz/",
+          "width": 338,
+          "height": 387.046875,
+          "imgWidth": 338,
+          "imgHeight": 225,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        }
+      ],
+      "focus": [
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/el-salvador/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 454.71875,
+          "bottom": 820.171875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/asturias/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 454.71875,
+          "bottom": 820.171875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/azores/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 300.953125,
+          "bottom": 688,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/euskadi/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 300.953125,
+          "bottom": 688,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/marruecos/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 433,
+          "bottom": 820.046875,
+          "header": 71,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/cadiz/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 433,
+          "bottom": 820.046875,
+          "header": 71,
+          "focusVisible": true
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "cards": [
+        {
+          "name": "El Salvador",
+          "text": "El Salvador\n          25 oct — 1 nov 2026\n          7 noches · Nivel II–III con autonomía\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/el-salvador/",
+          "width": 642,
+          "height": 478.453125,
+          "imgWidth": 642,
+          "imgHeight": 292,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Asturias",
+          "text": "Asturias\n          Noviembre 2026\n          2 noches · Todos los niveles\n          Ver viaje",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/asturias/",
+          "width": 642,
+          "height": 478.453125,
+          "imgWidth": 642,
+          "imgHeight": 292,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Azores",
+          "text": "Azores\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/azores/",
+          "width": 307,
+          "height": 370.859375,
+          "imgWidth": 307,
+          "imgHeight": 205,
+          "imgFit": "cover",
+          "imgPosition": "77% 50%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Euskadi",
+          "text": "Euskadi\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/euskadi/",
+          "width": 307,
+          "height": 370.859375,
+          "imgWidth": 307,
+          "imgHeight": 205,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Marruecos",
+          "text": "Marruecos\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/marruecos/",
+          "width": 307,
+          "height": 370.859375,
+          "imgWidth": 307,
+          "imgHeight": 205,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        },
+        {
+          "name": "Cádiz",
+          "text": "Cádiz\n            Próximamente\n            Todos los niveles\n            Ver destino",
+          "links": 1,
+          "nested": 0,
+          "href": "/viajes/cadiz/",
+          "width": 307,
+          "height": 370.859375,
+          "imgWidth": 307,
+          "imgHeight": 205,
+          "imgFit": "cover",
+          "imgPosition": "50% 54%",
+          "minFont": 14,
+          "overflow": false
+        }
+      ],
+      "focus": [
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/el-salvador/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 497.390625,
+          "bottom": 975.84375,
+          "header": 103,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/asturias/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 497.390625,
+          "bottom": 975.84375,
+          "header": 103,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/azores/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 418.625,
+          "bottom": 789.484375,
+          "header": 103,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/euskadi/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 418.625,
+          "bottom": 789.484375,
+          "header": 103,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/marruecos/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 418.625,
+          "bottom": 789.484375,
+          "header": 103,
+          "focusVisible": true
+        },
+        {
+          "class": "home-trip-link",
+          "href": "/viajes/cadiz/",
+          "outline": "rgb(27, 27, 27) solid 3px",
+          "top": 418.625,
+          "bottom": 789.484375,
+          "header": 103,
+          "focusVisible": true
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "width": 320,
+      "expected": "/viajes/el-salvador/",
+      "actual": "/viajes/el-salvador/",
+      "title": "El Salvador"
+    },
+    {
+      "width": 320,
+      "expected": "/viajes/asturias/",
+      "actual": "/viajes/asturias/",
+      "title": "Asturias"
+    },
+    {
+      "width": 320,
+      "expected": "/viajes/azores/",
+      "actual": "/viajes/azores/",
+      "title": "Azores"
+    },
+    {
+      "width": 320,
+      "expected": "/viajes/euskadi/",
+      "actual": "/viajes/euskadi/",
+      "title": "Euskadi"
+    },
+    {
+      "width": 320,
+      "expected": "/viajes/marruecos/",
+      "actual": "/viajes/marruecos/",
+      "title": "Marruecos"
+    },
+    {
+      "width": 320,
+      "expected": "/viajes/cadiz/",
+      "actual": "/viajes/cadiz/",
+      "title": "Cádiz"
+    },
+    {
+      "width": 390,
+      "expected": "/viajes/el-salvador/",
+      "actual": "/viajes/el-salvador/",
+      "title": "El Salvador"
+    },
+    {
+      "width": 390,
+      "expected": "/viajes/asturias/",
+      "actual": "/viajes/asturias/",
+      "title": "Asturias"
+    },
+    {
+      "width": 390,
+      "expected": "/viajes/azores/",
+      "actual": "/viajes/azores/",
+      "title": "Azores"
+    },
+    {
+      "width": 390,
+      "expected": "/viajes/euskadi/",
+      "actual": "/viajes/euskadi/",
+      "title": "Euskadi"
+    },
+    {
+      "width": 390,
+      "expected": "/viajes/marruecos/",
+      "actual": "/viajes/marruecos/",
+      "title": "Marruecos"
+    },
+    {
+      "width": 390,
+      "expected": "/viajes/cadiz/",
+      "actual": "/viajes/cadiz/",
+      "title": "Cádiz"
+    },
+    {
+      "width": 768,
+      "expected": "/viajes/el-salvador/",
+      "actual": "/viajes/el-salvador/",
+      "title": "El Salvador"
+    },
+    {
+      "width": 768,
+      "expected": "/viajes/asturias/",
+      "actual": "/viajes/asturias/",
+      "title": "Asturias"
+    },
+    {
+      "width": 768,
+      "expected": "/viajes/azores/",
+      "actual": "/viajes/azores/",
+      "title": "Azores"
+    },
+    {
+      "width": 768,
+      "expected": "/viajes/euskadi/",
+      "actual": "/viajes/euskadi/",
+      "title": "Euskadi"
+    },
+    {
+      "width": 768,
+      "expected": "/viajes/marruecos/",
+      "actual": "/viajes/marruecos/",
+      "title": "Marruecos"
+    },
+    {
+      "width": 768,
+      "expected": "/viajes/cadiz/",
+      "actual": "/viajes/cadiz/",
+      "title": "Cádiz"
+    },
+    {
+      "width": 1440,
+      "expected": "/viajes/el-salvador/",
+      "actual": "/viajes/el-salvador/",
+      "title": "El Salvador"
+    },
+    {
+      "width": 1440,
+      "expected": "/viajes/asturias/",
+      "actual": "/viajes/asturias/",
+      "title": "Asturias"
+    },
+    {
+      "width": 1440,
+      "expected": "/viajes/azores/",
+      "actual": "/viajes/azores/",
+      "title": "Azores"
+    },
+    {
+      "width": 1440,
+      "expected": "/viajes/euskadi/",
+      "actual": "/viajes/euskadi/",
+      "title": "Euskadi"
+    },
+    {
+      "width": 1440,
+      "expected": "/viajes/marruecos/",
+      "actual": "/viajes/marruecos/",
+      "title": "Marruecos"
+    },
+    {
+      "width": 1440,
+      "expected": "/viajes/cadiz/",
+      "actual": "/viajes/cadiz/",
+      "title": "Cádiz"
+    }
+  ],
+  "filters": [
+    {
+      "slug": "",
+      "visible": [
+        "/viajes/el-salvador/",
+        "/viajes/asturias/",
+        "/viajes/azores/",
+        "/viajes/euskadi/",
+        "/viajes/marruecos/",
+        "/viajes/cadiz/"
+      ],
+      "pendingCount": "4"
+    },
+    {
+      "slug": "rookies",
+      "visible": [
+        "/viajes/asturias/",
+        "/viajes/azores/",
+        "/viajes/euskadi/",
+        "/viajes/marruecos/",
+        "/viajes/cadiz/"
+      ],
+      "pendingCount": "4"
+    },
+    {
+      "slug": "aprendices",
+      "visible": [
+        "/viajes/el-salvador/",
+        "/viajes/asturias/",
+        "/viajes/azores/",
+        "/viajes/euskadi/",
+        "/viajes/marruecos/",
+        "/viajes/cadiz/"
+      ],
+      "pendingCount": "4"
+    },
+    {
+      "slug": "riders",
+      "visible": [
+        "/viajes/el-salvador/",
+        "/viajes/asturias/",
+        "/viajes/azores/",
+        "/viajes/euskadi/",
+        "/viajes/marruecos/",
+        "/viajes/cadiz/"
+      ],
+      "pendingCount": "4"
+    },
+    {
+      "slug": "supercracks",
+      "visible": [
+        "/viajes/asturias/",
+        "/viajes/azores/",
+        "/viajes/euskadi/",
+        "/viajes/marruecos/",
+        "/viajes/cadiz/"
+      ],
+      "pendingCount": "4"
+    }
+  ],
+  "checks": [
+    {
+      "name": "320 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320 one link per card no controls nested",
+      "pass": true
+    },
+    {
+      "name": "320 card text no clipping",
+      "pass": true
+    },
+    {
+      "name": "320 sequential keyboard enters six card links",
+      "pass": true
+    },
+    {
+      "name": "320 focus card clears header",
+      "pass": true
+    },
+    {
+      "name": "320 opens El Salvador",
+      "pass": true
+    },
+    {
+      "name": "320 opens Asturias",
+      "pass": true
+    },
+    {
+      "name": "320 opens Azores",
+      "pass": true
+    },
+    {
+      "name": "320 opens Euskadi",
+      "pass": true
+    },
+    {
+      "name": "320 opens Marruecos",
+      "pass": true
+    },
+    {
+      "name": "320 opens Cádiz",
+      "pass": true
+    },
+    {
+      "name": "390 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390 one link per card no controls nested",
+      "pass": true
+    },
+    {
+      "name": "390 card text no clipping",
+      "pass": true
+    },
+    {
+      "name": "390 sequential keyboard enters six card links",
+      "pass": true
+    },
+    {
+      "name": "390 focus card clears header",
+      "pass": true
+    },
+    {
+      "name": "390 opens El Salvador",
+      "pass": true
+    },
+    {
+      "name": "390 opens Asturias",
+      "pass": true
+    },
+    {
+      "name": "390 opens Azores",
+      "pass": true
+    },
+    {
+      "name": "390 opens Euskadi",
+      "pass": true
+    },
+    {
+      "name": "390 opens Marruecos",
+      "pass": true
+    },
+    {
+      "name": "390 opens Cádiz",
+      "pass": true
+    },
+    {
+      "name": "768 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768 one link per card no controls nested",
+      "pass": true
+    },
+    {
+      "name": "768 card text no clipping",
+      "pass": true
+    },
+    {
+      "name": "768 sequential keyboard enters six card links",
+      "pass": true
+    },
+    {
+      "name": "768 focus card clears header",
+      "pass": true
+    },
+    {
+      "name": "768 opens El Salvador",
+      "pass": true
+    },
+    {
+      "name": "768 opens Asturias",
+      "pass": true
+    },
+    {
+      "name": "768 opens Azores",
+      "pass": true
+    },
+    {
+      "name": "768 opens Euskadi",
+      "pass": true
+    },
+    {
+      "name": "768 opens Marruecos",
+      "pass": true
+    },
+    {
+      "name": "768 opens Cádiz",
+      "pass": true
+    },
+    {
+      "name": "1440 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 one link per card no controls nested",
+      "pass": true
+    },
+    {
+      "name": "1440 card text no clipping",
+      "pass": true
+    },
+    {
+      "name": "1440 sequential keyboard enters six card links",
+      "pass": true
+    },
+    {
+      "name": "1440 focus card clears header",
+      "pass": true
+    },
+    {
+      "name": "1440 opens El Salvador",
+      "pass": true
+    },
+    {
+      "name": "1440 opens Asturias",
+      "pass": true
+    },
+    {
+      "name": "1440 opens Azores",
+      "pass": true
+    },
+    {
+      "name": "1440 opens Euskadi",
+      "pass": true
+    },
+    {
+      "name": "1440 opens Marruecos",
+      "pass": true
+    },
+    {
+      "name": "1440 opens Cádiz",
+      "pass": true
+    },
+    {
+      "name": "320 text 200 no horizontal overflow",
+      "pass": true
+    }
+  ]
+}

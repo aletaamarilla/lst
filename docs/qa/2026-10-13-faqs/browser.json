@@ -1,0 +1,3850 @@
+{
+  "checks": [
+    {
+      "name": "320-normal FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "320-normal no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "headerHeight": 71,
+        "headerPosition": "fixed",
+        "titleTop": 193.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "320-normal title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "headerHeight": 71,
+        "headerPosition": "fixed",
+        "titleTop": 193.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "320-normal retained fonts",
+      "pass": true
+    },
+    {
+      "name": "320-normal skip-link first",
+      "pass": true
+    },
+    {
+      "name": "320-normal skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "320-normal multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "320-normal open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320-normal independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "320-normal anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 145.515625
+      }
+    },
+    {
+      "name": "320-normal anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 145.859375
+      }
+    },
+    {
+      "name": "320-normal anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 145.328125
+      }
+    },
+    {
+      "name": "320-normal anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 145.359375
+      }
+    },
+    {
+      "name": "320-normal fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "320-normal keyboard opens menu",
+      "pass": true
+    },
+    {
+      "name": "320-normal next focus is Viajes",
+      "pass": true
+    },
+    {
+      "name": "320-normal Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320-normal mobile menu navigation",
+      "pass": true
+    },
+    {
+      "name": "320-normal WhatsApp is an intercepted enquiry",
+      "pass": true
+    },
+    {
+      "name": "320-normal home keeps three questions",
+      "pass": true
+    },
+    {
+      "name": "320-normal home enters full FAQ",
+      "pass": true
+    },
+    {
+      "name": "320-text200 FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "320-text200 no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "headerHeight": 133.296875,
+        "headerPosition": "fixed",
+        "titleTop": 195.78125,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "320-text200 title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "headerHeight": 133.296875,
+        "headerPosition": "fixed",
+        "titleTop": 195.78125,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "320-text200 retained fonts",
+      "pass": true
+    },
+    {
+      "name": "320-text200 skip-link first",
+      "pass": true
+    },
+    {
+      "name": "320-text200 skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "320-text200 multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "320-text200 open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320-text200 independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "320-text200 anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 133.296875,
+        "title": 226.921875
+      }
+    },
+    {
+      "name": "320-text200 anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 133.296875,
+        "title": 227.65625
+      }
+    },
+    {
+      "name": "320-text200 anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 133.296875,
+        "title": 226.921875
+      }
+    },
+    {
+      "name": "320-text200 anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 133.296875,
+        "title": 227.703125
+      }
+    },
+    {
+      "name": "320-text200 fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "320-text200 keyboard opens menu",
+      "pass": true
+    },
+    {
+      "name": "320-text200 next focus is Viajes",
+      "pass": true
+    },
+    {
+      "name": "320-text200 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320-text200 mobile menu navigation",
+      "pass": true
+    },
+    {
+      "name": "320-no-js FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "headerHeight": 70,
+        "headerPosition": "sticky",
+        "titleTop": 215.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "320-no-js title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 320,
+        "headerHeight": 70,
+        "headerPosition": "sticky",
+        "titleTop": 215.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "320-no-js retained fonts",
+      "pass": true
+    },
+    {
+      "name": "320-no-js skip-link first",
+      "pass": true
+    },
+    {
+      "name": "320-no-js skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "320-no-js keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "320-no-js multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "320-no-js open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320-no-js independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "320-no-js anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 144.515625
+      }
+    },
+    {
+      "name": "320-no-js anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 144.859375
+      }
+    },
+    {
+      "name": "320-no-js anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 144.328125
+      }
+    },
+    {
+      "name": "320-no-js anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 144.359375
+      }
+    },
+    {
+      "name": "320-no-js no-JS navigation visible /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no-JS navigation visible /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no-JS navigation visible /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no-JS navigation visible /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no-JS catalog has all destinations",
+      "pass": true
+    },
+    {
+      "name": "390-normal FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "390-normal no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 390,
+        "headerHeight": 71,
+        "headerPosition": "fixed",
+        "titleTop": 139.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "390-normal title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 390,
+        "headerHeight": 71,
+        "headerPosition": "fixed",
+        "titleTop": 139.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "390-normal retained fonts",
+      "pass": true
+    },
+    {
+      "name": "390-normal skip-link first",
+      "pass": true
+    },
+    {
+      "name": "390-normal skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "390-normal multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "390-normal open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390-normal independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "390-normal anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 145.4375
+      }
+    },
+    {
+      "name": "390-normal anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 145.78125
+      }
+    },
+    {
+      "name": "390-normal anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 146.0625
+      }
+    },
+    {
+      "name": "390-normal anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 146.15625
+      }
+    },
+    {
+      "name": "390-normal fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "390-normal keyboard opens menu",
+      "pass": true
+    },
+    {
+      "name": "390-normal next focus is Viajes",
+      "pass": true
+    },
+    {
+      "name": "390-normal Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390-normal mobile menu navigation",
+      "pass": true
+    },
+    {
+      "name": "390-normal WhatsApp is an intercepted enquiry",
+      "pass": true
+    },
+    {
+      "name": "390-normal home keeps three questions",
+      "pass": true
+    },
+    {
+      "name": "390-normal home enters full FAQ",
+      "pass": true
+    },
+    {
+      "name": "390-text200 FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "390-text200 no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 390,
+        "headerHeight": 79.296875,
+        "headerPosition": "fixed",
+        "titleTop": 158.390625,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "390-text200 title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 390,
+        "headerHeight": 79.296875,
+        "headerPosition": "fixed",
+        "titleTop": 158.390625,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "390-text200 retained fonts",
+      "pass": true
+    },
+    {
+      "name": "390-text200 skip-link first",
+      "pass": true
+    },
+    {
+      "name": "390-text200 skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "390-text200 multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "390-text200 open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390-text200 independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "390-text200 anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 173.125
+      }
+    },
+    {
+      "name": "390-text200 anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 173.859375
+      }
+    },
+    {
+      "name": "390-text200 anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 172.890625
+      }
+    },
+    {
+      "name": "390-text200 anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 173.03125
+      }
+    },
+    {
+      "name": "390-text200 fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "390-text200 keyboard opens menu",
+      "pass": true
+    },
+    {
+      "name": "390-text200 next focus is Viajes",
+      "pass": true
+    },
+    {
+      "name": "390-text200 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390-text200 mobile menu navigation",
+      "pass": true
+    },
+    {
+      "name": "390-no-js FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 390,
+        "headerHeight": 70,
+        "headerPosition": "sticky",
+        "titleTop": 215.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "390-no-js title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 390,
+        "headerHeight": 70,
+        "headerPosition": "sticky",
+        "titleTop": 215.6875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "390-no-js retained fonts",
+      "pass": true
+    },
+    {
+      "name": "390-no-js skip-link first",
+      "pass": true
+    },
+    {
+      "name": "390-no-js skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "390-no-js keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "390-no-js multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "390-no-js open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390-no-js independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "390-no-js anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 144.4375
+      }
+    },
+    {
+      "name": "390-no-js anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 144.78125
+      }
+    },
+    {
+      "name": "390-no-js anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 145.0625
+      }
+    },
+    {
+      "name": "390-no-js anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 145.15625
+      }
+    },
+    {
+      "name": "390-no-js no-JS navigation visible /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no-JS navigation visible /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no-JS navigation visible /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no-JS navigation visible /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no-JS catalog has all destinations",
+      "pass": true
+    },
+    {
+      "name": "768-normal FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "768-normal no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 768,
+        "headerHeight": 71,
+        "headerPosition": "fixed",
+        "titleTop": 152.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "768-normal title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 768,
+        "headerHeight": 71,
+        "headerPosition": "fixed",
+        "titleTop": 152.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "768-normal retained fonts",
+      "pass": true
+    },
+    {
+      "name": "768-normal skip-link first",
+      "pass": true
+    },
+    {
+      "name": "768-normal skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "768-normal multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "768-normal open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768-normal independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "768-normal anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 150.984375
+      }
+    },
+    {
+      "name": "768-normal anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 150.671875
+      }
+    },
+    {
+      "name": "768-normal anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 150.421875
+      }
+    },
+    {
+      "name": "768-normal anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 71,
+        "title": 150.609375
+      }
+    },
+    {
+      "name": "768-normal fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "768-normal keyboard opens menu",
+      "pass": true
+    },
+    {
+      "name": "768-normal next focus is Viajes",
+      "pass": true
+    },
+    {
+      "name": "768-normal Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768-normal mobile menu navigation",
+      "pass": true
+    },
+    {
+      "name": "768-normal WhatsApp is an intercepted enquiry",
+      "pass": true
+    },
+    {
+      "name": "768-normal home keeps three questions",
+      "pass": true
+    },
+    {
+      "name": "768-normal home enters full FAQ",
+      "pass": true
+    },
+    {
+      "name": "768-text200 FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "768-text200 no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 768,
+        "headerHeight": 79.296875,
+        "headerPosition": "fixed",
+        "titleTop": 170.1875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "768-text200 title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 768,
+        "headerHeight": 79.296875,
+        "headerPosition": "fixed",
+        "titleTop": 170.1875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "768-text200 retained fonts",
+      "pass": true
+    },
+    {
+      "name": "768-text200 skip-link first",
+      "pass": true
+    },
+    {
+      "name": "768-text200 skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "768-text200 multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "768-text200 open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768-text200 independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "768-text200 anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 176.96875
+      }
+    },
+    {
+      "name": "768-text200 anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 177.484375
+      }
+    },
+    {
+      "name": "768-text200 anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 177
+      }
+    },
+    {
+      "name": "768-text200 anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 79.296875,
+        "title": 177.671875
+      }
+    },
+    {
+      "name": "768-text200 fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "768-text200 keyboard opens menu",
+      "pass": true
+    },
+    {
+      "name": "768-text200 next focus is Viajes",
+      "pass": true
+    },
+    {
+      "name": "768-text200 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768-text200 mobile menu navigation",
+      "pass": true
+    },
+    {
+      "name": "768-no-js FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 768,
+        "headerHeight": 70,
+        "headerPosition": "sticky",
+        "titleTop": 228.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "768-no-js title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 768,
+        "headerHeight": 70,
+        "headerPosition": "sticky",
+        "titleTop": 228.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "768-no-js retained fonts",
+      "pass": true
+    },
+    {
+      "name": "768-no-js skip-link first",
+      "pass": true
+    },
+    {
+      "name": "768-no-js skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "768-no-js keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "768-no-js multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "768-no-js open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768-no-js independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "768-no-js anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 149.984375
+      }
+    },
+    {
+      "name": "768-no-js anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 149.671875
+      }
+    },
+    {
+      "name": "768-no-js anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 149.421875
+      }
+    },
+    {
+      "name": "768-no-js anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 70,
+        "title": 149.609375
+      }
+    },
+    {
+      "name": "768-no-js no-JS navigation visible /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no-JS navigation visible /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no-JS navigation visible /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no-JS navigation visible /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no-JS catalog has all destinations",
+      "pass": true
+    },
+    {
+      "name": "1024-normal FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1024-normal no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1024,
+        "headerHeight": 93,
+        "headerPosition": "fixed",
+        "titleTop": 174.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1024-normal title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1024,
+        "headerHeight": 93,
+        "headerPosition": "fixed",
+        "titleTop": 174.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1024-normal retained fonts",
+      "pass": true
+    },
+    {
+      "name": "1024-normal skip-link first",
+      "pass": true
+    },
+    {
+      "name": "1024-normal skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "1024-normal keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "1024-normal multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "1024-normal open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024-normal independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "1024-normal anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 172.1875
+      }
+    },
+    {
+      "name": "1024-normal anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 172.875
+      }
+    },
+    {
+      "name": "1024-normal anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 172.4375
+      }
+    },
+    {
+      "name": "1024-normal anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 172.6875
+      }
+    },
+    {
+      "name": "1024-normal fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "1024-normal desktop menu fits",
+      "pass": true,
+      "detail": [
+        {
+          "left": 32,
+          "right": 247,
+          "top": 28.484375,
+          "bottom": 63.5
+        },
+        {
+          "left": 585.578125,
+          "right": 626.4375,
+          "top": 24,
+          "bottom": 68
+        },
+        {
+          "left": 646.4375,
+          "right": 696.421875,
+          "top": 24,
+          "bottom": 68
+        },
+        {
+          "left": 716.421875,
+          "right": 791.921875,
+          "top": 24,
+          "bottom": 68
+        },
+        {
+          "left": 811.921875,
+          "right": 846.4375,
+          "top": 24,
+          "bottom": 68
+        },
+        {
+          "left": 881.4375,
+          "right": 992,
+          "top": 24.5,
+          "bottom": 67.5
+        }
+      ]
+    },
+    {
+      "name": "1024-normal WhatsApp is an intercepted enquiry",
+      "pass": true
+    },
+    {
+      "name": "1024-normal home keeps three questions",
+      "pass": true
+    },
+    {
+      "name": "1024-normal home enters full FAQ",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1024,
+        "headerHeight": 110.1875,
+        "headerPosition": "fixed",
+        "titleTop": 192.1875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1024-text200 title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1024,
+        "headerHeight": 110.1875,
+        "headerPosition": "fixed",
+        "titleTop": 192.1875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1024-text200 retained fonts",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 skip-link first",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024-text200 independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 110.1875,
+        "title": 207.96875
+      }
+    },
+    {
+      "name": "1024-text200 anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 110.1875,
+        "title": 208.375
+      }
+    },
+    {
+      "name": "1024-text200 anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 110.1875,
+        "title": 207.71875
+      }
+    },
+    {
+      "name": "1024-text200 anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 110.1875,
+        "title": 208.09375
+      }
+    },
+    {
+      "name": "1024-text200 fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 desktop menu fits",
+      "pass": true,
+      "detail": [
+        {
+          "left": 32,
+          "right": 247,
+          "top": 37.078125,
+          "bottom": 72.09375
+        },
+        {
+          "left": 314.1875,
+          "right": 395.90625,
+          "top": 32.59375,
+          "bottom": 76.59375
+        },
+        {
+          "left": 415.90625,
+          "right": 515.859375,
+          "top": 32.59375,
+          "bottom": 76.59375
+        },
+        {
+          "left": 535.859375,
+          "right": 686.84375,
+          "top": 32.59375,
+          "bottom": 76.59375
+        },
+        {
+          "left": 706.84375,
+          "right": 775.875,
+          "top": 32.59375,
+          "bottom": 76.59375
+        },
+        {
+          "left": 810.875,
+          "right": 992,
+          "top": 24,
+          "bottom": 85.1875
+        }
+      ]
+    },
+    {
+      "name": "1024-no-js FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1024,
+        "headerHeight": 93,
+        "headerPosition": "sticky",
+        "titleTop": 251.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1024-no-js title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1024,
+        "headerHeight": 93,
+        "headerPosition": "sticky",
+        "titleTop": 251.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1024-no-js retained fonts",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js skip-link first",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024-no-js independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 149.1875
+      }
+    },
+    {
+      "name": "1024-no-js anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 149.875
+      }
+    },
+    {
+      "name": "1024-no-js anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 149.4375
+      }
+    },
+    {
+      "name": "1024-no-js anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 93,
+        "title": 149.6875
+      }
+    },
+    {
+      "name": "1024-no-js no-JS navigation visible /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no-JS navigation visible /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no-JS navigation visible /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no-JS navigation visible /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no-JS catalog has all destinations",
+      "pass": true
+    },
+    {
+      "name": "1440-normal FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1440-normal no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "headerHeight": 103,
+        "headerPosition": "fixed",
+        "titleTop": 200.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1440-normal title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "headerHeight": 103,
+        "headerPosition": "fixed",
+        "titleTop": 200.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1440-normal retained fonts",
+      "pass": true
+    },
+    {
+      "name": "1440-normal skip-link first",
+      "pass": true
+    },
+    {
+      "name": "1440-normal skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "1440-normal keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "1440-normal multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "1440-normal open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440-normal independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "1440-normal anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 190.1875
+      }
+    },
+    {
+      "name": "1440-normal anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 190.3125
+      }
+    },
+    {
+      "name": "1440-normal anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 190.875
+      }
+    },
+    {
+      "name": "1440-normal anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 190.9375
+      }
+    },
+    {
+      "name": "1440-normal fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "1440-normal desktop menu fits",
+      "pass": true,
+      "detail": [
+        {
+          "left": 56,
+          "right": 298,
+          "top": 31.28125,
+          "bottom": 70.703125
+        },
+        {
+          "left": 977.578125,
+          "right": 1018.4375,
+          "top": 29,
+          "bottom": 73
+        },
+        {
+          "left": 1038.4375,
+          "right": 1088.421875,
+          "top": 29,
+          "bottom": 73
+        },
+        {
+          "left": 1108.421875,
+          "right": 1183.921875,
+          "top": 29,
+          "bottom": 73
+        },
+        {
+          "left": 1203.921875,
+          "right": 1238.4375,
+          "top": 29,
+          "bottom": 73
+        },
+        {
+          "left": 1273.4375,
+          "right": 1384,
+          "top": 29.5,
+          "bottom": 72.5
+        }
+      ]
+    },
+    {
+      "name": "1440-normal WhatsApp is an intercepted enquiry",
+      "pass": true
+    },
+    {
+      "name": "1440-normal home keeps three questions",
+      "pass": true
+    },
+    {
+      "name": "1440-normal home enters full FAQ",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "headerHeight": 120.1875,
+        "headerPosition": "fixed",
+        "titleTop": 218.1875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1440-text200 title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "headerHeight": 120.1875,
+        "headerPosition": "fixed",
+        "titleTop": 218.1875,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1440-text200 retained fonts",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 skip-link first",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440-text200 independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 120.1875,
+        "title": 225.96875
+      }
+    },
+    {
+      "name": "1440-text200 anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 120.1875,
+        "title": 226.25
+      }
+    },
+    {
+      "name": "1440-text200 anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 120.1875,
+        "title": 226.203125
+      }
+    },
+    {
+      "name": "1440-text200 anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 120.1875,
+        "title": 226.234375
+      }
+    },
+    {
+      "name": "1440-text200 fixed header after scrolling",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 desktop menu fits",
+      "pass": true,
+      "detail": [
+        {
+          "left": 56,
+          "right": 298,
+          "top": 39.875,
+          "bottom": 79.296875
+        },
+        {
+          "left": 706.1875,
+          "right": 787.90625,
+          "top": 37.59375,
+          "bottom": 81.59375
+        },
+        {
+          "left": 807.90625,
+          "right": 907.859375,
+          "top": 37.59375,
+          "bottom": 81.59375
+        },
+        {
+          "left": 927.859375,
+          "right": 1078.84375,
+          "top": 37.59375,
+          "bottom": 81.59375
+        },
+        {
+          "left": 1098.84375,
+          "right": 1167.875,
+          "top": 37.59375,
+          "bottom": 81.59375
+        },
+        {
+          "left": 1202.875,
+          "right": 1384,
+          "top": 29,
+          "bottom": 90.1875
+        }
+      ]
+    },
+    {
+      "name": "1440-no-js FAQ HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no horizontal overflow",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "headerHeight": 103,
+        "headerPosition": "sticky",
+        "titleTop": 277.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1440-no-js title clears header",
+      "pass": true,
+      "detail": {
+        "scrollWidth": 1440,
+        "headerHeight": 103,
+        "headerPosition": "sticky",
+        "titleTop": 277.59375,
+        "overflow": [],
+        "fonts": {
+          "heading": "Aura, Impact, sans-serif",
+          "body": "\"Work Sans\", Arial, sans-serif",
+          "label": "\"Space Mono\", monospace"
+        }
+      }
+    },
+    {
+      "name": "1440-no-js retained fonts",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js skip-link first",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js skip-link focuses main",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 0",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 1",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 2",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 3",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 4",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 5",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 6",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js keyboard opens answer 7",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js multiple answers stay open",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js open answers do not overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440-no-js independent close preserves others",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js anchor clears header grupo",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 157.1875
+      }
+    },
+    {
+      "name": "1440-no-js anchor clears header nivel",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 157.3125
+      }
+    },
+    {
+      "name": "1440-no-js anchor clears header preparacion",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 157.875
+      }
+    },
+    {
+      "name": "1440-no-js anchor clears header reserva",
+      "pass": true,
+      "detail": {
+        "header": 103,
+        "title": 157.9375
+      }
+    },
+    {
+      "name": "1440-no-js no-JS navigation visible /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no-JS navigation visible /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no-JS navigation visible /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no-JS navigation visible /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no-JS catalog has all destinations",
+      "pass": true
+    },
+    {
+      "name": "320 route /",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /viajes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /viajes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /viajes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /viajes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 logo home /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 route /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /niveles/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /niveles/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /niveles/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /niveles/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 logo home /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 route /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /conocenos/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /conocenos/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /conocenos/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /conocenos/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 logo home /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 route /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /preguntas-frecuentes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /preguntas-frecuentes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /preguntas-frecuentes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "320 header link /preguntas-frecuentes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 logo home /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "320 specific FAQs preserved /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "320 detail disclosures work /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "320 specific FAQs preserved /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "320 detail disclosures work /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "320 specific FAQs preserved /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "320 detail disclosures work /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "320 specific FAQs preserved /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "320 detail disclosures work /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "320 specific FAQs preserved /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "320 detail disclosures work /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "320 route /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "320 noindex /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "320 page fits /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "320 specific FAQs preserved /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "320 detail disclosures work /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "390 route /",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /viajes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /viajes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /viajes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /viajes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 logo home /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 route /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /niveles/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /niveles/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /niveles/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /niveles/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 logo home /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 route /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /conocenos/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /conocenos/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /conocenos/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /conocenos/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 logo home /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 route /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /preguntas-frecuentes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /preguntas-frecuentes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /preguntas-frecuentes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "390 header link /preguntas-frecuentes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 logo home /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "390 specific FAQs preserved /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "390 detail disclosures work /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "390 specific FAQs preserved /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "390 detail disclosures work /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "390 specific FAQs preserved /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "390 detail disclosures work /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "390 specific FAQs preserved /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "390 detail disclosures work /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "390 specific FAQs preserved /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "390 detail disclosures work /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "390 route /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "390 noindex /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "390 page fits /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "390 specific FAQs preserved /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "390 detail disclosures work /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "768 route /",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /viajes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /viajes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /viajes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /viajes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 logo home /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 route /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /niveles/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /niveles/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /niveles/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /niveles/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 logo home /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 route /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /conocenos/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /conocenos/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /conocenos/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /conocenos/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 logo home /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 route /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /preguntas-frecuentes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /preguntas-frecuentes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /preguntas-frecuentes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "768 header link /preguntas-frecuentes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 logo home /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "768 specific FAQs preserved /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "768 detail disclosures work /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "768 specific FAQs preserved /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "768 detail disclosures work /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "768 specific FAQs preserved /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "768 detail disclosures work /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "768 specific FAQs preserved /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "768 detail disclosures work /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "768 specific FAQs preserved /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "768 detail disclosures work /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "768 route /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "768 noindex /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "768 page fits /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "768 specific FAQs preserved /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "768 detail disclosures work /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /viajes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /viajes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /viajes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /viajes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 logo home /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /niveles/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /niveles/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /niveles/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /niveles/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 logo home /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /conocenos/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /conocenos/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /conocenos/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /conocenos/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 logo home /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /preguntas-frecuentes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /preguntas-frecuentes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /preguntas-frecuentes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1024 header link /preguntas-frecuentes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 logo home /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1024 specific FAQs preserved /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1024 detail disclosures work /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1024 specific FAQs preserved /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1024 detail disclosures work /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1024 specific FAQs preserved /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1024 detail disclosures work /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1024 specific FAQs preserved /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1024 detail disclosures work /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1024 specific FAQs preserved /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1024 detail disclosures work /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1024 route /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1024 noindex /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1024 page fits /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1024 specific FAQs preserved /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1024 detail disclosures work /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /viajes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /viajes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /viajes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /viajes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 logo home /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /niveles/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /niveles/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /niveles/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /niveles/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 logo home /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /conocenos/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /conocenos/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /conocenos/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /conocenos/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 logo home /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /preguntas-frecuentes/ -> /viajes/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /preguntas-frecuentes/ -> /niveles/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /preguntas-frecuentes/ -> /conocenos/",
+      "pass": true
+    },
+    {
+      "name": "1440 header link /preguntas-frecuentes/ -> /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 logo home /preguntas-frecuentes/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1440 specific FAQs preserved /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1440 detail disclosures work /viajes/el-salvador/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1440 specific FAQs preserved /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1440 detail disclosures work /viajes/asturias/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1440 specific FAQs preserved /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1440 detail disclosures work /viajes/azores/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1440 specific FAQs preserved /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1440 detail disclosures work /viajes/euskadi/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1440 specific FAQs preserved /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1440 detail disclosures work /viajes/marruecos/",
+      "pass": true
+    },
+    {
+      "name": "1440 route /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1440 noindex /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1440 page fits /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1440 specific FAQs preserved /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "1440 detail disclosures work /viajes/cadiz/",
+      "pass": true
+    },
+    {
+      "name": "320 short menu contact reachable",
+      "pass": true
+    },
+    {
+      "name": "390 short menu contact reachable",
+      "pass": true
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "views": [
+    {
+      "tag": "320-normal",
+      "scrollWidth": 320,
+      "headerHeight": 71,
+      "headerPosition": "fixed",
+      "titleTop": 193.6875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "320-text200",
+      "scrollWidth": 320,
+      "headerHeight": 133.296875,
+      "headerPosition": "fixed",
+      "titleTop": 195.78125,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "320-no-js",
+      "scrollWidth": 320,
+      "headerHeight": 70,
+      "headerPosition": "sticky",
+      "titleTop": 215.6875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "390-normal",
+      "scrollWidth": 390,
+      "headerHeight": 71,
+      "headerPosition": "fixed",
+      "titleTop": 139.6875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "390-text200",
+      "scrollWidth": 390,
+      "headerHeight": 79.296875,
+      "headerPosition": "fixed",
+      "titleTop": 158.390625,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "390-no-js",
+      "scrollWidth": 390,
+      "headerHeight": 70,
+      "headerPosition": "sticky",
+      "titleTop": 215.6875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "768-normal",
+      "scrollWidth": 768,
+      "headerHeight": 71,
+      "headerPosition": "fixed",
+      "titleTop": 152.59375,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "768-text200",
+      "scrollWidth": 768,
+      "headerHeight": 79.296875,
+      "headerPosition": "fixed",
+      "titleTop": 170.1875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "768-no-js",
+      "scrollWidth": 768,
+      "headerHeight": 70,
+      "headerPosition": "sticky",
+      "titleTop": 228.59375,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "1024-normal",
+      "scrollWidth": 1024,
+      "headerHeight": 93,
+      "headerPosition": "fixed",
+      "titleTop": 174.59375,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "1024-text200",
+      "scrollWidth": 1024,
+      "headerHeight": 110.1875,
+      "headerPosition": "fixed",
+      "titleTop": 192.1875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "1024-no-js",
+      "scrollWidth": 1024,
+      "headerHeight": 93,
+      "headerPosition": "sticky",
+      "titleTop": 251.59375,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "1440-normal",
+      "scrollWidth": 1440,
+      "headerHeight": 103,
+      "headerPosition": "fixed",
+      "titleTop": 200.59375,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "1440-text200",
+      "scrollWidth": 1440,
+      "headerHeight": 120.1875,
+      "headerPosition": "fixed",
+      "titleTop": 218.1875,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    },
+    {
+      "tag": "1440-no-js",
+      "scrollWidth": 1440,
+      "headerHeight": 103,
+      "headerPosition": "sticky",
+      "titleTop": 277.59375,
+      "overflow": [],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      }
+    }
+  ]
+}

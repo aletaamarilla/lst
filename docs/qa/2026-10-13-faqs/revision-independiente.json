@@ -1,0 +1,3540 @@
+{
+  "checks": [
+    {
+      "name": "JS 320 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 320 / menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 320 / menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 320 / escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /niveles/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /niveles/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 320 /niveles/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /conocenos/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /conocenos/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 320 /conocenos/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /viajes/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /viajes/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 320 /viajes/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 320 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 116.765625,
+        "header": 71
+      }
+    },
+    {
+      "name": "JS 320 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 320 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 390 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 390 / menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 390 / menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 390 / escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /niveles/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /niveles/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 390 /niveles/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /conocenos/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /conocenos/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 390 /conocenos/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /viajes/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /viajes/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 390 /viajes/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 390 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 117.3125,
+        "header": 71
+      }
+    },
+    {
+      "name": "JS 390 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 390 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 768 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 768 / menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 768 / menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 768 / escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /niveles/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /niveles/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 768 /niveles/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /conocenos/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /conocenos/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 768 /conocenos/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /viajes/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /viajes/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 768 /viajes/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 71,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ menu keyboard enters",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ menu fits",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 82,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 130,
+          "bottom": 178,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 178,
+          "bottom": 226,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 226,
+          "bottom": 274,
+          "hit": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "top": 286,
+          "bottom": 334.390625,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 768 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 122.890625,
+        "header": 71
+      }
+    },
+    {
+      "name": "JS 768 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 768 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 92,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1000 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 144.71875,
+        "header": 93
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1000 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 102,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "fixed"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "JS 1440 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 162.71875,
+        "header": 103
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "JS 1440 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 / fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 320 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /niveles/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 320 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /conocenos/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 320 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 320 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 115.765625,
+        "header": 70
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 320 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 320,
+        "scrollWidth": 320,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 / fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 390 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /niveles/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 390 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /conocenos/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 390 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 390 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 116.3125,
+        "header": 70
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 390 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 390,
+        "scrollWidth": 390,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 / fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 768 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /niveles/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 768 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /conocenos/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 768 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 70,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 86,
+          "bottom": 130,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 768 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 121.890625,
+        "header": 70
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 768 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 768,
+        "scrollWidth": 768,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 72,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 / fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1000 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /niveles/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1000 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /conocenos/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1000 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 93,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 109,
+          "bottom": 153,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1000 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 121.71875,
+        "header": 93
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1000 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1000,
+        "scrollWidth": 1000,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 / route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 / fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1440 /niveles/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /niveles/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1440 /conocenos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /conocenos/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1440 /viajes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 103,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ fallback links clickable",
+      "pass": true,
+      "data": [
+        {
+          "text": "Viajes",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Niveles",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "Conócenos",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        },
+        {
+          "text": "FAQs",
+          "top": 119,
+          "bottom": 163,
+          "hit": true
+        }
+      ]
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ native questions",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ all eight open with keyboard",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ no overflow after opening",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 0 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 1 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 2 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 3 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 4 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 5 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 6 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ answer 7 visible",
+      "pass": true
+    },
+    {
+      "name": "noJS 1440 /preguntas-frecuentes/ anchor heading below fixed header",
+      "pass": true,
+      "data": {
+        "target": 129.71875,
+        "header": 103
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/el-salvador/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/asturias/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/azores/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/euskadi/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/marruecos/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    },
+    {
+      "name": "noJS 1440 /viajes/cadiz/ route/noindex/width",
+      "pass": true,
+      "data": {
+        "w": 1440,
+        "scrollWidth": 1440,
+        "noindex": "noindex,nofollow",
+        "header": {
+          "top": 0,
+          "bottom": 81,
+          "position": "sticky"
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "hashes": {
+    "dist/preguntas-frecuentes/index.html": "8d984465d4e66ef697c37ee200c0cc34a04331f359d198d74e02abaefe836808",
+    "dist/faq.css": "6278a717f605060bcd61dfa4d1df8d2913b91a93756ba1b537fd05eb2d87f9ce",
+    "dist/index.html": "ee58b9ca6c8ec8be5174543e670e62bb08f0343438c78578266d847190020b02",
+    "dist/styles.css": "32cf90e36f701b81b4dfa9abe49f9a3c83857b89d2e1095bca9d5b66d101a098",
+    "dist/mobile.css": "b1b64a70f69d357dcf127726cad726cf405fd3dcf460e5ae9548164574ae0519",
+    "dist/app.js": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3",
+    "dist/niveles/index.html": "33bfacdeafbbd7bf0321e490c120becb1c95acd6ed27e7105046eed70858390f",
+    "dist/conocenos/index.html": "53f68529fdddff35876d6230381f6fa3fb69fa2e9291883f26f8a7b9219d4506",
+    "dist/viajes/index.html": "d520c520b5eccca53b247e3105f4b33ccc5b375a9b2b338d95d1a71d5479bd46",
+    "scripts/render-trips.mjs": "086158712a4556daab668d343408f7e52411b5ed62ee86dccc4683d41368a219",
+    "data/trips.json": "2c23bf58b7eb4a0576d30cd8eff38634fd2e66168831d25e13d512febb8aaed1",
+    "dist/viajes/el-salvador/index.html": "f162e39c0a88418c9ec91b292c5d09c13a0fc9c0977eed3d7fcc8576b6977558",
+    "dist/viajes/asturias/index.html": "c1bd0e64445296f9cf046280fb4310fe257efce621b5896dc1ae3f908678df97",
+    "dist/viajes/azores/index.html": "0fbdc427c647c7f3713eb75ba6db86e6b746b082b58b38cc9307cca0c3eec377",
+    "dist/viajes/euskadi/index.html": "0db79bd36452a842af028be0590c6398d5c1313948fbe75de5a3abcd19bc818c",
+    "dist/viajes/marruecos/index.html": "7da42cc7dadbd1aa2a0204a706ef6f83585923dcb330d3f8d35de3a229cf3230",
+    "dist/viajes/cadiz/index.html": "979df7fd57bbf21e514785ee2e1dba7a6f73c4a5a8e330a93649f424f09af5bf",
+    "scripts/check.mjs": "bdf5e0ef0df75abf04ac77206d30801708e7e1406139d28ce57f3522b87a421b",
+    "scripts/check-ux.mjs": "b2bec8e1f48011c6d1385f0ac864cb12507ea8d0011cab0cdce287965b8b7e06",
+    "dist/trip.css": "64d6b99fda3e0d60c50c7f3e3caaf750b243033f080071708f998ed0e3111224"
+  },
+  "review": {
+    "baseCommit": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+    "baseSnapshot": "/tmp/lst-faq-baseline",
+    "candidate": "uncommitted working tree, hashes recorded",
+    "unresolvedBlockingFindings": [],
+    "resolvedFindings": [
+      {
+        "priority": "P2",
+        "location": "dist/index.html:7; dist/mobile.css:184",
+        "scenario": "No JavaScript: fallback navigation on home was beneath fixed header at 320/390/768/1000/1440 px.",
+        "resolution": "Shared no-JS selector keeps sticky header in document flow and removes redundant main padding. Revalidated clickable fallback at all widths."
+      }
+    ],
+    "content": "All 8 FAQ answers traceable to baseline home and data/trips.json. Conditions remain destination-specific; no new policies, guarantees or commercial data. WhatsApp starts an enquiry. No unsupported content found.",
+    "preservation": {
+      "tripDetails": {
+        "el-salvador": true,
+        "asturias": true,
+        "azores": true,
+        "euskadi": true,
+        "marruecos": true,
+        "cadiz": true
+      },
+      "tripDataUnchanged": true,
+      "assetProvenanceUnchanged": true
+    },
+    "commands": {
+      "npm test": "25/25 pass",
+      "npm run check": "PASS, 11 pages",
+      "npm run build": "Not run by reviewer to avoid implementation writes; parent reports own execution.",
+      "timing": "Reviewer test/check executed before final no-JS and summary CSS fixes; browser and visual results apply to final recorded hashes. Tests themselves unchanged by these fixes."
+    },
+    "browser": "Chromium; 300 checks pass and 0 page errors across 11 routes, 5 widths, JavaScript on/off; 72 additional 200% text checks pass. Native Enter/Space opens all 8 FAQs simultaneously; after-open width checked. Headings remain visible after anchors; normal/menu/escape focus checked.",
+    "visualInspection": [
+      "/tmp/lst-faq-independent-390-top.png",
+      "/tmp/lst-faq-independent-1440-all.png"
+    ],
+    "limits": [
+      "No real mobile device, screen reader, Safari or Firefox test.",
+      "Commercial provisional source truth was not researched or altered.",
+      "Concurrent catalog implementation examined only for shared navigation/route integration, not claimed as FAQ work."
+    ]
+  }
+}

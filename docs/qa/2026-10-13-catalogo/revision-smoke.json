@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "width": 390,
+      "queries": 11,
+      "keyboard": true,
+      "clear": true,
+      "asturiasDates": 2,
+      "backRestores": true
+    },
+    {
+      "width": 390,
+      "noJsDestinations": 6,
+      "noJsLink": true,
+      "aboutHeader": {
+        "top": 211.140625,
+        "bottom": 70,
+        "position": "sticky"
+      },
+      "aboutStickyAfterScroll": true
+    },
+    {
+      "width": 1440,
+      "queries": 11,
+      "keyboard": true,
+      "clear": true,
+      "asturiasDates": 2,
+      "backRestores": true
+    },
+    {
+      "width": 1440,
+      "noJsDestinations": 6,
+      "noJsLink": true,
+      "aboutHeader": {
+        "top": 269.796875,
+        "bottom": 103,
+        "position": "sticky"
+      },
+      "aboutStickyAfterScroll": true
+    }
+  ]
+}

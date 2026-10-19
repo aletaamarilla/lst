@@ -1,0 +1,536 @@
+diff --git a/README.md b/README.md
+index 93a62dd..f0647fd 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # Let's Surf Together — home y viajes
+ 
+-Proyecto independiente de Travelhood. Web estática con la home y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
++Proyecto independiente de Travelhood. Web estática con la home, la guía de niveles y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
+ 
+ ## Ejecutar y editar
+ 
+@@ -16,7 +16,9 @@ Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-
+ 
+ ## Estructura
+ 
+-- dist/index.html: home, calendario y guía de niveles.
++- dist/index.html: home, calendario y resumen de niveles.
++- dist/niveles/index.html: guía estática de los cuatro niveles, autonomía y orientación.
++- dist/levels.css: estilos de la guía; reutiliza la cabecera y los tokens compartidos.
+ - dist/styles.css: estilos y tokens originales compartidos.
+ - dist/mobile.css: composición de la home desde teléfono, con mejoras para pantallas mayores.
+ - dist/app.js: menú móvil y pestañas de nivel.
+@@ -34,6 +36,8 @@ Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-
+ 
+ ## Rutas
+ 
++- /niveles/
++
+ - /viajes/el-salvador/
+ - /viajes/asturias/
+ - /viajes/azores/
+@@ -69,7 +73,7 @@ Se conserva +34 648 18 92 57, el teléfono publicado por LST, pendiente de confi
+ 
+ La home ofrece tarjetas más compactas, acciones de al menos 44 px y niveles distribuidos en dos columnas en teléfono. Los detalles muestran destino, fecha y nivel en la portada de la salida confirmada; el precio y la consulta se mantienen accesibles en la barra inferior. El contenido sigue en una columna, con programa y dudas desplegables, galería deslizable y fotos ampliables. La zona inferior respeta safe-area-inset-bottom. A partir de 1000 px se usa una ficha lateral de consulta.
+ 
+-npm test comprueba niveles por defecto, restricciones explícitas, fechas únicas y múltiples, precios y mensajes de consulta. npm run check valida las siete páginas, enlaces locales entre páginas y anclas, imágenes y fuentes, contactos contextuales, contenido de demo y estados pendientes, noindex y sintaxis de JavaScript. La revisión 10 se comprobó en navegador a 320, 390, 768, 1024 y 1440 px, con navegación home–viaje–calendario, menú, niveles, galería, retorno del foco y dudas.
++npm test comprueba niveles por defecto, restricciones explícitas, fechas únicas y múltiples, precios y mensajes de consulta. npm run check valida las ocho páginas, enlaces locales entre páginas y anclas, imágenes y fuentes, contactos contextuales, contenido de demo y estados pendientes, noindex y sintaxis de JavaScript. La revisión 10 se comprobó en navegador a 320, 390, 768, 1024 y 1440 px, con navegación home–viaje–calendario, menú, niveles, galería, retorno del foco y dudas.
+ 
+ La revisión 11 se comprobó en navegador a 320, 390, 768 y 1440 px: gesto horizontal real en la galería móvil, botones y teclado, retorno del foco, apertura y cierre de varias fechas, dos enlaces de WhatsApp independientes interceptados sin contactar al equipo, niveles, posición del dossier y ausencia de desbordamiento horizontal.
+ 
+@@ -124,3 +128,14 @@ Revisada la home y las seis fichas sobre la candidata anterior sin commit. No se
+ La cabecera de la home permanece fija en móvil y escritorio. Conserva la transparencia al inicio de la portada y muestra fondo crema, logo oscuro y acceso de WhatsApp naranja desde el primer desplazamiento. La separación de las anclas se calcula con la altura real de la cabecera para mantener visibles las secciones con texto ampliado.
+ 
+ Validación sobre la base `d9b7201`: build, tests y check pasan. Chromium comprobó 16 vistas entre 320 y 1440 px, incluida pantalla baja y texto al 200 %, primer scroll, anclas, menú móvil y regreso arriba. Revisión independiente del diff final sin bloqueos. No se alteran las fichas, los datos de viajes ni sus consultas.
++
++
++## Revisión 20 · guía de niveles
++
++`/niveles/` se edita directamente en `dist/niveles/index.html`. Presenta Rookies, Aprendices, Riders y Supercracks con anclas nativas, situaciones reconocibles y objetivos de trabajo; distingue técnica y autonomía y orienta a quien duda. No puntúa ni asigna niveles. Reutiliza la cabecera fija y `app.js` sin requerir pestañas en la nueva página.
++
++El calendario y la duda de nivel en la home enlazan a la guía. Su resumen conserva las pestañas y lleva al ancla correspondiente. Las seis fichas actualizan el enlace desde `scripts/render-trips.mjs` y se reconstruyen con `npm run build`. La exploración de viajes continúa en `/#viajes`. Los datos provisionales, consultas comerciales y recursos de marca permanecen intactos.
++
++El comprobador estático exige home, guía y las rutas derivadas de viajes, manteniendo las validaciones anteriores. `scripts/check-levels.mjs` añade navegador opcional con las mismas variables `LST_PLAYWRIGHT_MODULE`, `LST_CHROMIUM_PATH`, `LST_PREVIEW_URL` y `LST_QA_OUTPUT` de los comprobadores existentes. No añade dependencias.
++
++[Texto final, fuentes, capturas, pruebas y revisión independiente](docs/qa/2026-10-12-niveles/README.md).
+diff --git a/dist/app.js b/dist/app.js
+index 21c6118..c1e1917 100644
+--- a/dist/app.js
++++ b/dist/app.js
+@@ -40,10 +40,10 @@ mobileMenu.addEventListener('change', () => {
+ });
+ 
+ const levelData={
+-1:{name:'ROOKIES',title:'Estás empezando',description:'Estás aprendiendo a remar y a ponerte de pie, y empiezas a disfrutar en espumas y olas pequeñas.',url:'https://www.letsurftogether.com/rookies/'},
+-2:{name:'APRENDICES',title:'Ya recorres la pared',description:'Ya coges olas verdes y quieres ganar velocidad, trabajar tus primeros giros y sentir más control sobre la tabla.',url:'https://www.letsurftogether.com/nivel-ii-aprendices/'},
+-3:{name:'RIDERS',title:'Tienes autonomía en el agua',description:'Surfeas con autonomía y enlazas maniobras. Buscas afinar la técnica y sacar más partido a cada ola.',url:'https://www.letsurftogether.com/nivel-iii-rides/'},
+-4:{name:'SUPERCRACKS',title:'Quieres afinar tu técnica',description:'Tienes un surf sólido en olas con fuerza. Quieres perfeccionar tus giros, conectar maniobras y seguir puliendo tu técnica.',url:'https://www.letsurftogether.com/nivel-iv-supercracks/'}
++1:{name:'ROOKIES',title:'Estás empezando',description:'Estás aprendiendo a remar y a ponerte de pie, y empiezas a disfrutar en espumas y olas pequeñas.',url:'/niveles/#rookies'},
++2:{name:'APRENDICES',title:'Ya recorres la pared',description:'Ya coges olas verdes y quieres ganar velocidad, trabajar tus primeros giros y sentir más control sobre la tabla.',url:'/niveles/#aprendices'},
++3:{name:'RIDERS',title:'Tienes autonomía en el agua',description:'Surfeas con autonomía y enlazas maniobras. Buscas afinar la técnica y sacar más partido a cada ola.',url:'/niveles/#riders'},
++4:{name:'SUPERCRACKS',title:'Quieres afinar tu técnica',description:'Tienes un surf sólido en olas con fuerza. Quieres perfeccionar tus giros, conectar maniobras y seguir puliendo tu técnica.',url:'/niveles/#supercracks'}
+ };
+ const tabs=[...document.querySelectorAll('[data-level]')];
+ function setLevel(tab){const id=tab.dataset.level;const data=levelData[id];tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===tab));t.tabIndex=t===tab?0:-1});document.querySelector('#level-panel').setAttribute('aria-labelledby',tab.id);document.querySelector('#level-caption').textContent=`NIVEL ${['I','II','III','IV'][Number(id)-1]} / ${data.name}`;document.querySelector('#level-title').textContent=data.title;document.querySelector('#level-description').textContent=data.description;document.querySelector('#level-source').href=data.url;}
+diff --git a/dist/index.html b/dist/index.html
+index d9f5374..5833218 100644
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -11,7 +11,7 @@
+ <section class="journeys section-width section-space" id="viajes" aria-labelledby="trips-title">
+   <header class="journeys-heading">
+     <div><p class="journeys-eyebrow">CALENDARIO LST</p><h2 id="trips-title">Próximos viajes</h2></div>
+-    <a class="journeys-level-link" href="#niveles">¿Cuál es mi nivel?</a>
++    <a class="journeys-level-link" href="/niveles/">¿Cuál es mi nivel?</a>
+   </header>
+   <div class="departure-section-heading"><h3>Viajes con fecha</h3><p>Consulta el programa y pregunta por tu plaza.</p></div>
+   <div id="trip-content" class="departure-list">
+@@ -77,11 +77,11 @@
+  </div>
+ </section>
+ <section class="booking section-width section-space" id="reservar" aria-labelledby="booking-title"><div class="booking-intro"><p class="eyebrow">RESERVAS POR WHATSAPP</p><h2 id="booking-title">Cómo reservar</h2><p>Empieza por escribirnos por WhatsApp. Te explicamos el viaje y los pasos para apuntarte.</p><a class="button" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20un%20viaje%20de%20surf.%20%C2%BFPod%C3%A9is%20explicarme%20las%20fechas%20disponibles%20y%20c%C3%B3mo%20reservar%3F" target="_blank" rel="noopener noreferrer">Quiero consultar un viaje</a><p class="booking-reassurance">Puedes preguntar antes de decidirte.</p></div><ol class="booking-steps"><li><div class="step-number" aria-hidden="true">01</div><div><h3>Elige un viaje y escríbenos</h3><p>Dinos cuál te interesa, cómo surfeas y si vienes solo o acompañado.</p></div></li><li><div class="step-number" aria-hidden="true">02</div><div><h3>Revisamos los detalles contigo</h3><p>Comprobamos el nivel y la disponibilidad. Te contamos el programa, el alojamiento y qué incluye el precio.</p></div></li><li><div class="step-number" aria-hidden="true">03</div><div><h3>Confirmas tu plaza</h3><p>Cuando lo tengas claro, te indicamos cómo formalizar la reserva y las condiciones del viaje.</p></div></li></ol></section>
+-<section class="levels section-width section-space" id="niveles"><div class="section-heading"><div><p class="eyebrow">ANTES DE ELEGIR</p><h2>¿Qué nivel necesitas?</h2></div><p>Cada viaje indica los niveles que admite. Si tienes dudas, dinos qué olas coges y cómo te manejas en el agua.</p></div><div class="level-tabs" role="tablist" aria-label="Niveles de surf"><button role="tab" aria-selected="true" aria-controls="level-panel" id="level-1" data-level="1"><span class="level-number">I</span><span>Rookies</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-2" data-level="2"><span class="level-number">II</span><span>Aprendices</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-3" data-level="3"><span class="level-number">III</span><span>Riders</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-4" data-level="4"><span class="level-number">IV</span><span>Supercracks</span></button></div><div id="level-panel" class="level-panel" role="tabpanel" aria-labelledby="level-1" tabindex="0"><div><p class="eyebrow" id="level-caption">NIVEL I / ROOKIES</p><h3 id="level-title">Estás empezando</h3></div><div><p id="level-description">Estás aprendiendo a remar y a ponerte de pie, y empiezas a disfrutar en espumas y olas pequeñas.</p><p class="level-caution">Consulta siempre los niveles admitidos en cada salida. No todos los viajes están pensados para todos los niveles.</p><a id="level-source" class="text-link" href="https://www.letsurftogether.com/rookies/" target="_blank" rel="noopener">Conocer este nivel en LST</a></div></div><div class="level-help"><p>¿No tienes claro tu nivel?</p><a class="text-link" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20antes%20de%20elegir%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer">Preguntarlo por WhatsApp</a></div></section>
++<section class="levels section-width section-space" id="niveles"><div class="section-heading"><div><p class="eyebrow">ANTES DE ELEGIR</p><h2>¿Qué nivel necesitas?</h2></div><p>Cada viaje indica los niveles que admite. Si tienes dudas, dinos qué olas coges y cómo te manejas en el agua.</p></div><div class="level-tabs" role="tablist" aria-label="Niveles de surf"><button role="tab" aria-selected="true" aria-controls="level-panel" id="level-1" data-level="1"><span class="level-number">I</span><span>Rookies</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-2" data-level="2"><span class="level-number">II</span><span>Aprendices</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-3" data-level="3"><span class="level-number">III</span><span>Riders</span></button><button role="tab" aria-selected="false" tabindex="-1" aria-controls="level-panel" id="level-4" data-level="4"><span class="level-number">IV</span><span>Supercracks</span></button></div><div id="level-panel" class="level-panel" role="tabpanel" aria-labelledby="level-1" tabindex="0"><div><p class="eyebrow" id="level-caption">NIVEL I / ROOKIES</p><h3 id="level-title">Estás empezando</h3></div><div><p id="level-description">Estás aprendiendo a remar y a ponerte de pie, y empiezas a disfrutar en espumas y olas pequeñas.</p><p class="level-caution">Consulta siempre los niveles admitidos en cada salida. No todos los viajes están pensados para todos los niveles.</p><a id="level-source" class="text-link" href="/niveles/#rookies">Conocer este nivel en la guía</a></div></div><div class="level-help"><p>¿No tienes claro tu nivel?</p><a class="text-link" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20antes%20de%20elegir%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer">Preguntarlo por WhatsApp</a></div></section>
+ <section class="people" id="nosotros" aria-labelledby="people-title"><div class="section-width section-space"><div class="people-grid"><div class="people-copy"><p class="eyebrow">LET’S SURF TOGETHER</p><h2 id="people-title">Todo empezó<br>en Marruecos.</h2><p>Lucas propuso un viaje de surf a su comunidad. Aquel primer grupo y lo que vivieron allí dieron pie a LST.</p><p>Después de un año preparando el proyecto, Let's Surf Together arrancó a finales de 2024.</p><h3>Hoy, un equipo que viaja contigo.</h3><p>Quienes organizamos las salidas también estamos allí: compartimos las sesiones y el día a día del grupo. Antes de apuntarte, te ayudamos a entender el programa y los niveles de cada viaje.</p><div class="brand-signature">Nos vemos en el pico.<span>Lucas · Let’s Surf Together</span></div></div><figure class="people-photo"><img src="/assets/group.webp" alt="El grupo de Let's Surf Together reunido en la playa de Laga" width="1500" height="1000" loading="lazy"><figcaption>Laga, 2024.</figcaption></figure></div>
+  <div class="lst-respect" aria-labelledby="respect-title"><h3 id="respect-title">El lugar también importa.</h3><p>Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.</p></div>
+ </div></section>
+-<section class="faq section-width section-space" id="dudas" aria-labelledby="faq-title"><div><p class="eyebrow">ANTES DE APUNTARTE</p><h2 id="faq-title">Las dudas<br>de siempre</h2><p>Si falta la tuya, escríbenos.</p><a class="text-link" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div><div class="faq-list"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Sí. Muchos viajeros se apuntan por su cuenta. Te unirás al grupo para las sesiones, las comidas y las actividades del viaje.</p></details><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Mira los niveles indicados en la salida. Si no lo tienes claro, escríbenos y cuéntanos cómo surfeas. Te orientamos antes de reservar.</p></details><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un viaje y escríbenos por WhatsApp. Revisamos contigo el nivel y la disponibilidad, te explicamos las condiciones y te indicamos los pasos para confirmar la plaza.</p></details><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>Cada salida tiene su programa. Revisa los servicios incluidos y los gastos que van aparte. En El Salvador, por ejemplo, los vuelos y el seguro personal no están incluidos.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>El mensaje inicia la consulta. El equipo te explicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Dínoslo antes de reservar. Consultamos las opciones del alojamiento y te confirmamos lo que se puede adaptar en ese viaje.</p></details></div></section>
++<section class="faq section-width section-space" id="dudas" aria-labelledby="faq-title"><div><p class="eyebrow">ANTES DE APUNTARTE</p><h2 id="faq-title">Las dudas<br>de siempre</h2><p>Si falta la tuya, escríbenos.</p><a class="text-link" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a></div><div class="faq-list"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Sí. Muchos viajeros se apuntan por su cuenta. Te unirás al grupo para las sesiones, las comidas y las actividades del viaje.</p></details><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Mira los niveles indicados en la salida y nuestra <a href="/niveles/">guía de niveles</a>. Si no lo tienes claro, escríbenos y cuéntanos cómo surfeas. Te orientamos antes de reservar.</p></details><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un viaje y escríbenos por WhatsApp. Revisamos contigo el nivel y la disponibilidad, te explicamos las condiciones y te indicamos los pasos para confirmar la plaza.</p></details><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>Cada salida tiene su programa. Revisa los servicios incluidos y los gastos que van aparte. En El Salvador, por ejemplo, los vuelos y el seguro personal no están incluidos.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>El mensaje inicia la consulta. El equipo te explicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Dínoslo antes de reservar. Consultamos las opciones del alojamiento y te confirmamos lo que se puede adaptar en ese viaje.</p></details></div></section>
+ <section class="last-call"><div class="section-width"><div><p class="eyebrow">TU PRÓXIMO VIAJE</p><h2>¿Te apuntas?</h2></div><div><p>Si ya tienes un destino en mente, escríbenos. Te contamos las fechas, el programa y cómo reservar.</p><a class="button button-dark" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="closing-trips" href="#viajes">Volver a ver los viajes</a></div></div></section>
+ <footer class="site-footer section-width"><div class="footer-main"><a href="#" class="brand"><img src="/assets/brand/logo-black.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><div><a class="" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp · +34 648 18 92 57</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener">Instagram · @letsurftogether</a></div><a href="#reservar">Cómo reservar</a></div><div class="footer-bottom"><span>© 2026 LET’S SURF TOGETHER</span></div></footer>
+ 
+diff --git a/dist/viajes/asturias/index.html b/dist/viajes/asturias/index.html
+index 7031c4d..180e434 100644
+--- a/dist/viajes/asturias/index.html
++++ b/dist/viajes/asturias/index.html
+@@ -13,7 +13,7 @@
+ <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">03</span><span>Domingo: un último baño</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Volvemos al agua por la mañana y repasamos lo que hemos practicado. Después recogemos y volvemos a casa.</p></details></div></section>
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">Un vistazo a Asturias.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino"><figure><button class="gallery-photo" type="button" data-photo="0" aria-label="Ampliar foto 1: Una sesión de surf de LST en Asturias"><img src="/assets/asturias-surf.webp" alt="Una sesión de surf de LST en Asturias" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Surf en Asturias.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="1" aria-label="Ampliar foto 2: Viajeros de LST con sus tablas en una playa de Asturias"><img src="/assets/asturias.webp" alt="Viajeros de LST con sus tablas en una playa de Asturias" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>El grupo, entre sesiones.</figcaption></figure></div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/#niveles">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="asturias" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Asturias%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Asturias, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="asturias" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Asturias%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Asturias, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
+    <section id="incluye" class="trip-block"><p class="eyebrow">EL PRECIO, CLARO</p><h2>Qué incluye el viaje</h2><div class="inclusion-grid"><div class="inclusion-list" aria-labelledby="included-title"><h3 id="included-title">Incluido</h3><ul><li>2 noches en una surf house, en habitación compartida</li><li>Desayunos del sábado y del domingo</li><li>Sesiones de surf y coaching durante los dos días</li><li>Grabación y revisión de vídeos de las sesiones</li><li>Trabajo de movilidad antes de entrar al agua</li><li>Acompañamiento del equipo de LST</li></ul></div><div class="inclusion-list exclusion-list" aria-labelledby="excluded-title"><h3 id="excluded-title">No incluido</h3><ul><li>El viaje de ida y vuelta a Asturias</li><li>Comidas y cenas</li><li>Tabla y neopreno; alquiler a consultar</li><li>Seguro personal de viaje</li></ul></div></div><p class="fine-print">Precio por persona en habitación compartida. Si necesitas material o tienes dudas sobre la llegada, consúltanos antes de reservar.</p></section>
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>El equipo de LST, contigo.</h2><p>El equipo de LST acompaña al grupo durante el fin de semana. Compartimos los días de surf y los ratos entre sesiones.</p><a class="text-link" href="/#nosotros">La historia de LST</a></section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list"><details><summary>¿Puedo venir si estoy empezando?<span aria-hidden="true">+</span></summary><p>Sí. Este viaje admite todos los niveles. Cuéntanos qué experiencia tienes en el agua para orientarte antes de reservar.</p></details><details><summary>¿Puedo apuntarme sin conocer a nadie?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta o con amigos. Compartiremos alojamiento, sesiones y los ratos entre baños.</p></details><details><summary>¿Tengo que llevar tabla y neopreno?<span aria-hidden="true">+</span></summary><p>El material no está incluido. Puedes llevar el tuyo o consultar las opciones de alquiler antes de apuntarte.</p></details><details><summary>¿Cómo llego a Asturias?<span aria-hidden="true">+</span></summary><p>El desplazamiento de ida y vuelta corre por tu cuenta. Te indicamos el punto de encuentro y la hora de llegada antes del viaje.</p></details><details><summary>¿Cómo confirmo mi plaza?<span aria-hidden="true">+</span></summary><p>Elige una fecha y escríbenos por WhatsApp. Revisamos la disponibilidad, resolvemos tus dudas y te explicamos cómo formalizar la reserva.</p></details></div></section>
+diff --git a/dist/viajes/azores/index.html b/dist/viajes/azores/index.html
+index 35cd2e3..e3c26eb 100644
+--- a/dist/viajes/azores/index.html
++++ b/dist/viajes/azores/index.html
+@@ -14,7 +14,7 @@
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">Un vistazo a Azores.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino"><figure><button class="gallery-photo" type="button" data-photo="0" aria-label="Ampliar foto 1: Una surfista de LST sobre una ola en Azores"><img src="/assets/azores-coast.webp" alt="Una surfista de LST sobre una ola en Azores" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Una sesión de un viaje anterior a Azores.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="1" aria-label="Ampliar foto 2: El grupo de LST sentado en una playa de São Miguel"><img src="/assets/azores-surf.webp" alt="El grupo de LST sentado en una playa de São Miguel" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Una pausa en la playa. Viaje anterior.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="2" aria-label="Ampliar foto 3: El grupo frente a un lago volcánico de São Miguel"><img src="/assets/azores.webp" alt="El grupo frente a un lago volcánico de São Miguel" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>São Miguel, después de surfear.</figcaption></figure></div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/#niveles">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="azores" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Azores%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Azores, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="azores" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Azores%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Azores, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
+    <section id="incluye" class="trip-block pending-program"><p class="eyebrow">LA PRÓXIMA SALIDA</p><h2>El programa, cuando esté cerrado.</h2><p>Publicaremos aquí las fechas, el alojamiento, las sesiones y el precio de la nueva salida a Azores. También podrás ver qué incluye y qué gastos van aparte.</p><dl class="pending-facts"><div><dt>Alojamiento y comidas</dt><dd>Por confirmar</dd></div><div><dt>Sesiones y actividades</dt><dd>Por confirmar</dd></div><div><dt>Material y traslados</dt><dd>Por confirmar</dd></div><div><dt>Precio y condiciones</dt><dd>Por confirmar</dd></div></dl><p class="fine-print">Las experiencias y fotos de viajes anteriores no constituyen el programa de la próxima salida.</p></section>
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>Quién te acompañará.</h2><p>El próximo programa de Azores está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.</p><a class="text-link" href="/#nosotros">La historia de LST</a></section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list"><details><summary>¿Cuándo será la próxima salida?<span aria-hidden="true">+</span></summary><p>Las próximas fechas de Azores aún no se han anunciado. Puedes escribirnos para consultar qué tenemos previsto.</p></details><details><summary>¿Qué nivel necesito?<span aria-hidden="true">+</span></summary><p>Todos los niveles. Puedes consultar la guía de niveles y contarnos cómo surfeas; te orientamos antes de apuntarte.</p></details><details><summary>¿Puedo apuntarme por mi cuenta?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta o con amigos. Cuando se anuncie la salida, te explicaremos cómo se organiza el grupo.</p></details><details><summary>¿Qué incluirá el precio?<span aria-hidden="true">+</span></summary><p>El alojamiento, las comidas, las sesiones, el material y los traslados se detallarán en el nuevo programa. Lo que aparece del viaje anterior sirve para conocer el destino; no confirma servicios para la próxima salida.</p></details><details><summary>¿Puedo reservar ya?<span aria-hidden="true">+</span></summary><p>Todavía no hay una salida confirmada en esta página. Tu WhatsApp es una consulta al equipo, no una reserva ni una inscripción a avisos automáticos.</p></details></div></section>
+diff --git a/dist/viajes/cadiz/index.html b/dist/viajes/cadiz/index.html
+index b4e80e9..857e1c4 100644
+--- a/dist/viajes/cadiz/index.html
++++ b/dist/viajes/cadiz/index.html
+@@ -14,7 +14,7 @@
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">Un vistazo a Cádiz.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino"><figure><button class="gallery-photo" type="button" data-photo="0" aria-label="Ampliar foto 1: El grupo de LST observa una demostración de surfskate en Cádiz"><img src="/assets/learning.webp" alt="El grupo de LST observa una demostración de surfskate en Cádiz" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Surfskate en un viaje anterior a Cádiz.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="1" aria-label="Ampliar foto 2: Viajeros de LST realizando ejercicios de movilidad"><img src="/assets/cadiz-session.webp" alt="Viajeros de LST realizando ejercicios de movilidad" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Movilidad en un viaje anterior.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="2" aria-label="Ampliar foto 3: El grupo de LST en El Palmar"><img src="/assets/cadiz.webp" alt="El grupo de LST en El Palmar" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>El Palmar, con LST.</figcaption></figure></div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/#niveles">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="cadiz" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20C%C3%A1diz%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Cádiz, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="cadiz" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20C%C3%A1diz%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Cádiz, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
+    <section id="incluye" class="trip-block pending-program"><p class="eyebrow">LA PRÓXIMA SALIDA</p><h2>El programa, cuando esté cerrado.</h2><p>Publicaremos aquí las fechas, el alojamiento, las sesiones y el precio de la nueva salida a Cádiz. También podrás ver qué incluye y qué gastos van aparte.</p><dl class="pending-facts"><div><dt>Alojamiento y comidas</dt><dd>Por confirmar</dd></div><div><dt>Sesiones y actividades</dt><dd>Por confirmar</dd></div><div><dt>Material y traslados</dt><dd>Por confirmar</dd></div><div><dt>Precio y condiciones</dt><dd>Por confirmar</dd></div></dl><p class="fine-print">Las experiencias y fotos de viajes anteriores no constituyen el programa de la próxima salida.</p></section>
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>Quién te acompañará.</h2><p>El próximo programa de Cádiz está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.</p><a class="text-link" href="/#nosotros">La historia de LST</a></section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list"><details><summary>¿Cuándo será la próxima salida?<span aria-hidden="true">+</span></summary><p>Las próximas fechas de Cádiz aún no se han anunciado. Puedes escribirnos para consultar qué tenemos previsto.</p></details><details><summary>¿Qué nivel necesito?<span aria-hidden="true">+</span></summary><p>Todos los niveles. Puedes consultar la guía de niveles y contarnos cómo surfeas; te orientamos antes de apuntarte.</p></details><details><summary>¿Puedo apuntarme por mi cuenta?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta o con amigos. Cuando se anuncie la salida, te explicaremos cómo se organiza el grupo.</p></details><details><summary>¿Qué incluirá el precio?<span aria-hidden="true">+</span></summary><p>El alojamiento, las comidas, las sesiones, el material y los traslados se detallarán en el nuevo programa. Lo que aparece del viaje anterior sirve para conocer el destino; no confirma servicios para la próxima salida.</p></details><details><summary>¿Puedo reservar ya?<span aria-hidden="true">+</span></summary><p>Todavía no hay una salida confirmada en esta página. Tu WhatsApp es una consulta al equipo, no una reserva ni una inscripción a avisos automáticos.</p></details></div></section>
+diff --git a/dist/viajes/el-salvador/index.html b/dist/viajes/el-salvador/index.html
+index 85852a7..562ae74 100644
+--- a/dist/viajes/el-salvador/index.html
++++ b/dist/viajes/el-salvador/index.html
+@@ -14,7 +14,7 @@
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">El Sunzal, de cerca.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino"><figure><button class="gallery-photo" type="button" data-photo="0" aria-label="Ampliar foto 1: Un surfista gira sobre una ola en El Sunzal"><img src="/assets/salvador-17.webp" alt="Un surfista gira sobre una ola en El Sunzal" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Una de las sesiones en El Sunzal.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="1" aria-label="Ampliar foto 2: Olas y surfistas frente a la costa de El Sunzal"><img src="/assets/salvador-18.webp" alt="Olas y surfistas frente a la costa de El Sunzal" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>El Sunzal, el spot del intensivo.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="2" aria-label="Ampliar foto 3: Habitación de la surf house con vistas al mar"><img src="/assets/salvador-19.webp" alt="Habitación de la surf house con vistas al mar" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Imagen del alojamiento publicado por LST. Tipo de habitación a consultar.</figcaption></figure></div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Este viaje pide autonomía en el agua.</h2><p>Está dirigido a niveles II–III de LST. Debes poder entrar, remar y surfear por tu cuenta. El programa es un intensivo técnico; no es una salida de iniciación.</p><ul><li>Ya coges olas verdes y recorres la pared.</li><li>Te manejas con autonomía en el mar.</li><li>Quieres trabajar la lectura de la ola y las maniobras.</li></ul><a class="text-link" href="/#niveles">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="salvador" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Salvador%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · El Salvador, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Este viaje pide autonomía en el agua.</h2><p>Está dirigido a niveles II–III de LST. Debes poder entrar, remar y surfear por tu cuenta. El programa es un intensivo técnico; no es una salida de iniciación.</p><ul><li>Ya coges olas verdes y recorres la pared.</li><li>Te manejas con autonomía en el mar.</li><li>Quieres trabajar la lectura de la ola y las maniobras.</li></ul><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="salvador" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Salvador%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · El Salvador, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
+    <section class="trip-block stay-block"><p class="eyebrow">EL ALOJAMIENTO</p><h2>Dormimos frente a la ola.</h2><figure class="trip-figure"><img src="/assets/salvador-19.webp" alt="Habitación del alojamiento en El Sunzal con vistas al océano" loading="lazy" decoding="async" width="1000" height="600"><figcaption>Ola Surf House · El Sunzal</figcaption></figure><p>Siete noches en Ola Surf House, frente a El Sunzal. El alojamiento dispone de espacios para descansar, revisar los vídeos y trabajar la movilidad.</p><p class="fine-print">La tarifa de 1.499 € corresponde a habitación compartida. Habitaciones dobles o individuales: disponibilidad y suplemento a consultar.</p></section><section id="incluye" class="trip-block"><p class="eyebrow">EL PRECIO, CLARO</p><h2>Qué incluye el viaje</h2><div class="inclusion-grid"><div class="inclusion-list" aria-labelledby="included-title"><h3 id="included-title">Incluido</h3><ul><li>7 noches en Ola Surf House</li><li>Pensión completa, excepto tres cenas</li><li>Tres sesiones diarias de surf con corrección técnica</li><li>Grabación y análisis de vídeo de las sesiones</li><li>Sesiones diarias de movilidad y concentración</li><li>Transporte local y traslado de ida y vuelta al aeropuerto</li><li>Guías locales y coordinación de las sesiones</li></ul></div><div class="inclusion-list exclusion-list" aria-labelledby="excluded-title"><h3 id="excluded-title">No incluido</h3><ul><li>Vuelos internacionales</li><li>Material de surf; alquiler a consultar en destino</li><li>Seguro de viaje</li><li>Tres cenas libres</li></ul></div></div><p class="fine-print">La tarifa publicada es para habitación compartida. Revisa las condiciones y cualquier servicio adicional con el equipo antes de confirmar.</p></section>
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>LST y los guías locales.</h2><p>El equipo de LST coordina las sesiones y el seguimiento técnico. Los guías locales aportan su conocimiento del spot.</p><a class="text-link" href="/#nosotros">La historia de LST</a></section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list"><details><summary>¿Puedo ir sin conocer a nadie?<span aria-hidden="true">+</span></summary><p>Sí. Puedes apuntarte por tu cuenta o con amigos. Compartirás las sesiones y el resto del viaje con el grupo de LST.</p></details><details><summary>¿Es un viaje para empezar a surfear?<span aria-hidden="true">+</span></summary><p>Esta salida requiere niveles II–III y autonomía real en el agua. Si estás empezando, escríbenos para buscar otra salida adecuada a tu nivel.</p></details><details><summary>¿Tengo que llevar mi tabla?<span aria-hidden="true">+</span></summary><p>El material de surf no está incluido. Puedes llevar el tuyo o consultar las opciones de alquiler en destino antes de reservar.</p></details><details><summary>¿Los vuelos están incluidos?<span aria-hidden="true">+</span></summary><p>No. El programa incluye transporte local y los traslados de ida y vuelta al aeropuerto. Consulta con el equipo cómo coordinar la llegada antes de comprar tus vuelos.</p></details><details><summary>¿Hay otras opciones de habitación?<span aria-hidden="true">+</span></summary><p>La tarifa publicada es para habitación compartida. El equipo te confirmará la disponibilidad y el precio de una habitación doble o individual.</p></details><details><summary>¿Cómo confirmo mi plaza?<span aria-hidden="true">+</span></summary><p>Escríbenos por WhatsApp. Revisamos tu nivel, la disponibilidad y las condiciones del viaje, y te indicamos cómo formalizar la reserva. El mensaje por sí solo no confirma una plaza.</p></details></div></section>
+diff --git a/dist/viajes/euskadi/index.html b/dist/viajes/euskadi/index.html
+index 3fe359b..4eb9303 100644
+--- a/dist/viajes/euskadi/index.html
++++ b/dist/viajes/euskadi/index.html
+@@ -14,7 +14,7 @@
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">Un vistazo a Euskadi.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino"><figure><button class="gallery-photo" type="button" data-photo="0" aria-label="Ampliar foto 1: Una surfista en una sesión junto a la costa vasca"><img src="/assets/euskadi-coast.webp" alt="Una surfista en una sesión junto a la costa vasca" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Surf en un viaje anterior a Euskadi.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="1" aria-label="Ampliar foto 2: El grupo de LST reunido con una bandera del equipo"><img src="/assets/euskadi-stay.webp" alt="El grupo de LST reunido con una bandera del equipo" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>El grupo en una salida anterior.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="2" aria-label="Ampliar foto 3: Viajeros de LST en la playa de Laga con sus banderas"><img src="/assets/group.webp" alt="Viajeros de LST en la playa de Laga con sus banderas" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Laga, 2024. Un recuerdo de LST.</figcaption></figure></div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/#niveles">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="euskadi" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Euskadi%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Euskadi, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="euskadi" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Euskadi%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Euskadi, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
+    <section id="incluye" class="trip-block pending-program"><p class="eyebrow">LA PRÓXIMA SALIDA</p><h2>El programa, cuando esté cerrado.</h2><p>Publicaremos aquí las fechas, el alojamiento, las sesiones y el precio de la nueva salida a Euskadi. También podrás ver qué incluye y qué gastos van aparte.</p><dl class="pending-facts"><div><dt>Alojamiento y comidas</dt><dd>Por confirmar</dd></div><div><dt>Sesiones y actividades</dt><dd>Por confirmar</dd></div><div><dt>Material y traslados</dt><dd>Por confirmar</dd></div><div><dt>Precio y condiciones</dt><dd>Por confirmar</dd></div></dl><p class="fine-print">Las experiencias y fotos de viajes anteriores no constituyen el programa de la próxima salida.</p></section>
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>Quién te acompañará.</h2><p>El próximo programa de Euskadi está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.</p><a class="text-link" href="/#nosotros">La historia de LST</a></section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list"><details><summary>¿Cuándo será la próxima salida?<span aria-hidden="true">+</span></summary><p>Las próximas fechas de Euskadi aún no se han anunciado. Puedes escribirnos para consultar qué tenemos previsto.</p></details><details><summary>¿Qué nivel necesito?<span aria-hidden="true">+</span></summary><p>Todos los niveles. Puedes consultar la guía de niveles y contarnos cómo surfeas; te orientamos antes de apuntarte.</p></details><details><summary>¿Puedo apuntarme por mi cuenta?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta o con amigos. Cuando se anuncie la salida, te explicaremos cómo se organiza el grupo.</p></details><details><summary>¿Qué incluirá el precio?<span aria-hidden="true">+</span></summary><p>El alojamiento, las comidas, las sesiones, el material y los traslados se detallarán en el nuevo programa. Lo que aparece del viaje anterior sirve para conocer el destino; no confirma servicios para la próxima salida.</p></details><details><summary>¿Puedo reservar ya?<span aria-hidden="true">+</span></summary><p>Todavía no hay una salida confirmada en esta página. Tu WhatsApp es una consulta al equipo, no una reserva ni una inscripción a avisos automáticos.</p></details></div></section>
+diff --git a/dist/viajes/marruecos/index.html b/dist/viajes/marruecos/index.html
+index 76fdee8..fcef816 100644
+--- a/dist/viajes/marruecos/index.html
++++ b/dist/viajes/marruecos/index.html
+@@ -13,7 +13,7 @@
+ <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">03</span><span>Conocer la zona juntos</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>El viaje anterior incluyó una visita al zoco de Agadir y una excursión a Paradise Valley.</p></details></div><a class="text-link source-program" href="https://www.letsurftogether.com/sobre-lst/" target="_blank" rel="noopener noreferrer">Conocer más a LST</a></section>
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">Un vistazo a Marruecos.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino"><figure><button class="gallery-photo" type="button" data-photo="0" aria-label="Ampliar foto 1: Surfistas y viajeros al atardecer en las dunas de Marruecos"><img src="/assets/marruecos-day.webp" alt="Surfistas y viajeros al atardecer en las dunas de Marruecos" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>Un recuerdo de un viaje anterior a Marruecos.</figcaption></figure>
+ <figure><button class="gallery-photo" type="button" data-photo="1" aria-label="Ampliar foto 2: El grupo de LST reunido por la noche en Marruecos"><img src="/assets/marruecos.webp" alt="El grupo de LST reunido por la noche en Marruecos" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>El grupo, después de las sesiones.</figcaption></figure></div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/#niveles">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="marruecos" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Marruecos%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Marruecos, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>Todos los niveles son bienvenidos.</h2><p>Puedes venir tanto si estás empezando como si ya surfeas. Cuéntanos cómo te manejas en el agua y qué te gustaría practicar; te orientamos antes de apuntarte.</p><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="marruecos" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Marruecos%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · Marruecos, por WhatsApp">Consultar mi nivel <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></section>
+    <section id="incluye" class="trip-block pending-program"><p class="eyebrow">LA PRÓXIMA SALIDA</p><h2>El programa, cuando esté cerrado.</h2><p>Publicaremos aquí las fechas, el alojamiento, las sesiones y el precio de la nueva salida a Marruecos. También podrás ver qué incluye y qué gastos van aparte.</p><dl class="pending-facts"><div><dt>Alojamiento y comidas</dt><dd>Por confirmar</dd></div><div><dt>Sesiones y actividades</dt><dd>Por confirmar</dd></div><div><dt>Material y traslados</dt><dd>Por confirmar</dd></div><div><dt>Precio y condiciones</dt><dd>Por confirmar</dd></div></dl><p class="fine-print">Las experiencias y fotos de viajes anteriores no constituyen el programa de la próxima salida.</p></section>
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>Quién te acompañará.</h2><p>El próximo programa de Marruecos está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.</p><figure class="trip-quote"><p class="trip-quote-context">Laura recuerda conocer al grupo, probar la gastronomía y descubrir paisajes en un viaje anterior a Marruecos.</p><blockquote cite="https://www.letsurftogether.com/">“[…] y muchos de nosotros íbamos solos!”</blockquote><figcaption>Laura · Viajera de LST · Marruecos, viaje anterior<a href="https://www.letsurftogether.com/" target="_blank" rel="noopener">Leer su testimonio</a></figcaption></figure></section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list"><details><summary>¿Cuándo será la próxima salida?<span aria-hidden="true">+</span></summary><p>Las próximas fechas de Marruecos aún no se han anunciado. Puedes escribirnos para consultar qué tenemos previsto.</p></details><details><summary>¿Qué nivel necesito?<span aria-hidden="true">+</span></summary><p>Todos los niveles. Puedes consultar la guía de niveles y contarnos cómo surfeas; te orientamos antes de apuntarte.</p></details><details><summary>¿Puedo apuntarme por mi cuenta?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta o con amigos. Cuando se anuncie la salida, te explicaremos cómo se organiza el grupo.</p></details><details><summary>¿Qué incluirá el precio?<span aria-hidden="true">+</span></summary><p>El alojamiento, las comidas, las sesiones, el material y los traslados se detallarán en el nuevo programa. Lo que aparece del viaje anterior sirve para conocer el destino; no confirma servicios para la próxima salida.</p></details><details><summary>¿Puedo reservar ya?<span aria-hidden="true">+</span></summary><p>Todavía no hay una salida confirmada en esta página. Tu WhatsApp es una consulta al equipo, no una reserva ni una inscripción a avisos automáticos.</p></details></div></section>
+diff --git a/docs/content-inventory.json b/docs/content-inventory.json
+index bcac317..75ef183 100644
+--- a/docs/content-inventory.json
++++ b/docs/content-inventory.json
+@@ -396,5 +396,49 @@
+     "otherLegacyClaims": "No se trasladan charlas, formación ambiental, convenios locales, reducción de huella ni promesas de dejar cada lugar intacto: tampoco se acreditan como prácticas actuales.",
+     "dependencies": "Confirmaciones y documentación de LST; confirmación o acuerdo de Universal Plastic. Sin dependencias nuevas de código ni investigación comercial de viajes.",
+     "report": "docs/qa/2026-10-12-responsabilidad/README.md"
++  },
++  "levelsRevision20": {
++    "date": "2026-10-12",
++    "route": "/niveles/",
++    "scope": "Guía estática de orientación, enlaces de home y fichas; datos de viajes sin modificar ni investigar.",
++    "sources": [
++      {
++        "file": "dist/app.js",
++        "base": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
++        "use": "Definiciones y nombres actuales, conservados literalmente."
++      },
++      {
++        "url": "https://www.letsurftogether.com/rookies/",
++        "use": "Bases: remada, puesta en pie, espumas y pequeñas paredes; posición y confianza."
++      },
++      {
++        "url": "https://www.letsurftogether.com/nivel-ii-aprendices/",
++        "use": "Olas verdes, reconocimiento de pared, bombeo y giros básicos; postura y surfing de espaldas. Leída mediante HTTP directo tras 429 del navegador de fuentes."
++      },
++      {
++        "url": "https://www.letsurftogether.com/nivel-iii-rides/",
++        "use": "Autonomía de entrada y salida, lectura del mar, postura, maniobras y cambio de pesos."
++      },
++      {
++        "url": "https://www.letsurftogether.com/nivel-iv-supercracks/",
++        "use": "Surf sólido y fluido en olas con fuerza, elección de secciones, perfeccionamiento. Tubos y aéreos figuran como objetivos, no requisitos."
++      },
++      {
++        "file": "data/trips.json",
++        "fields": [
++          "levels",
++          "levelRequirement",
++          "levelTitle",
++          "levelText",
++          "levelChecks"
++        ],
++        "use": "El Salvador II–III con autonomía como ejemplo de requisito adicional; datos intactos y sin investigación comercial."
++      }
++    ],
++    "editorial": "La separación entre técnica y autonomía y la invitación a describir condiciones/ayuda son síntesis orientativa de las fuentes, no una nueva escala o evaluación. No se trasladan absolutos de seguridad ni exigencias numéricas.",
++    "navigation": "Anclas nativas para los cuatro niveles, home y fichas enlazadas; viajes en /#viajes.",
++    "contact": "WhatsApp existente; mensaje editable sobre nivel y encaje. Consultar no confirma plaza.",
++    "photo": "dist/assets/group.webp, Laga 2024, procedencia existente en docs/asset-provenance.json. Sin modificar bytes ni identificar personas.",
++    "report": "docs/qa/2026-10-12-niveles/README.md"
+   }
+ }
+diff --git a/docs/propuesta.md b/docs/propuesta.md
+index 5e33848..f4ae6ce 100644
+--- a/docs/propuesta.md
++++ b/docs/propuesta.md
+@@ -126,3 +126,12 @@ Las pruebas al 200 % justifican distribución flexible de tarjetas, fecha/nombre
+ Se contrasta la integración de las mejoras anteriores en home y seis destinos, con documentación, fuentes retenidas, pruebas del repositorio y navegador real. No se encuentran regresiones de producto que requieran corrección; se conservan diseño, identidad y datos provisionales. Se documentan las alertas descartadas con evidencia, los límites de la validación y los pendientes de lanzamiento sin implementarlos.
+ 
+ [Informe final de fase y evidencia](qa/2026-10-12-final/README.md). Sin commit, push, publicación, despliegue ni envío de mensajes.
++
++
++## Revisión 20 · niveles de surf
++
++Se añade `/niveles/` como guía de lectura estática. Una apertura breve explica su propósito, la foto documental de Laga mantiene el vínculo con LST y un índice permite saltar a cualquiera de los cuatro niveles. Cada bloque conserva la misma jerarquía: nombre, definición existente, situaciones reconocibles y qué trabajar. La autonomía tiene un bloque propio; una persona entre dos niveles recibe indicaciones para describir su experiencia al equipo.
++
++Las ampliaciones se contrastan con las cuatro páginas originales de niveles. Se conserva la denominación Riders del contenido actual, aunque la URL antigua usa `rides`. No se convierten tamaños de ola, tablas, años de práctica o maniobras avanzadas en requisitos de acceso. La guía no certifica ni sustituye la valoración de LST. El ejemplo de El Salvador usa exclusivamente los datos existentes y enlaza a su apartado de nivel.
++
++La home mantiene su resumen y enlaza a la guía; se actualiza la fuente común de las fichas y se regeneran sus HTML. «Ver viajes y fechas» lleva al calendario de la home hasta que exista `/viajes/`. WhatsApp inicia una consulta editable, sin confirmar plaza. Datos, marca y recursos sin cambios. [Entrega y evidencia](qa/2026-10-12-niveles/README.md).
+diff --git a/scripts/check.mjs b/scripts/check.mjs
+index e2c48a0..2b995a6 100644
+--- a/scripts/check.mjs
++++ b/scripts/check.mjs
+@@ -33,11 +33,26 @@ for(const [file,{html,ids}] of pages){
+  }
+ }
+ for(const file of files.filter(f=>f.endsWith('.css'))){const css=await readFile(file,'utf8');for(const m of css.matchAll(/url\(['"]?([^)'" ]+)/g)){if(m[1].startsWith('/'))try{await access(path.join(root,m[1]));}catch{errors.push(`Missing CSS asset ${m[1]}`)}}}
++// Route expectations grow with trip data; retain all per-page checks above.
++const routes=['/', '/niveles/', ...trips.map(t=>`/viajes/${t.slug}/`)];
++for(const route of routes){if(!pages.has(path.join(root,route,'index.html')))errors.push(`Missing expected route ${route}`);}
++const guide=pages.get(path.join(root,'niveles/index.html'));
++if(guide){
++ for(const level of ['rookies','aprendices','riders','supercracks']){
++  if(!guide.ids.has(level)||!guide.html.includes(`href="#${level}"`))errors.push(`Missing direct level navigation: ${level}`);
++ }
++ if(/role="tablist"|<input\b|<select\b/.test(guide.html))errors.push('Level guide must remain static and directly readable');
++ for(const anchor of ['autonomia','orientacion'])if(!guide.ids.has(anchor))errors.push(`Missing level guidance section ${anchor}`);
++ if(!guide.html.includes('href="/#viajes"'))errors.push('Level guide must explore through the home calendar');
++ if(!guide.html.includes('src="/app.js"'))errors.push('Level guide must use shared navigation');
++}
+ const home=pages.get(path.join(root,'index.html')).html;
++if(!home.includes('href="/niveles/"')||!home.includes('id="niveles"'))errors.push('Keep the home summary and link to the level guide');
+ for(const t of trips){
+  if(!home.includes(`href="/viajes/${t.slug}/"`))errors.push(`Home missing trip route ${t.slug}`);
+  const page=pages.get(path.join(root,'viajes',t.slug,'index.html'));
+  if(page){
++  if(!page.html.includes('href="/niveles/"'))errors.push(`Missing internal level guide ${t.slug}`);
+   if(!page.html.includes(levelLabel(t)))errors.push(`Missing configured level ${t.slug}`);
+   if(page.html.includes('trip-section-nav')||page.html.includes('Leer el programa completo'))errors.push(`Old detail navigation or dossier position ${t.slug}`);
+   if(t.dossier&&!page.html.includes('Descargar dossier'))errors.push(`Missing booking dossier ${t.slug}`);
+diff --git a/scripts/render-trips.mjs b/scripts/render-trips.mjs
+index 9823a13..5b26080 100644
+--- a/scripts/render-trips.mjs
++++ b/scripts/render-trips.mjs
+@@ -58,7 +58,7 @@ return `<!doctype html>
+    <section class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">LET’S SURF TOGETHER / SURFTRIP</p><h2 id="trip-summary-title">${escape(trip.tagline)}</h2><p>${escape(trip.intro)}</p><dl class="trip-facts">${allFacts.map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl><p class="trip-notice">${escape(trip.notice??'Próximas fechas por anunciar. Puedes consultar con el equipo qué tenemos previsto.')}</p>${mobileOptions}</section>
+    <section id="plan" class="trip-block"><p class="eyebrow">${escape(trip.storyLabel)}</p><h2>${escape(trip.storyTitle)}</h2><p>${escape(trip.storyIntro)}</p><div class="plan-list">${story}</div>${trip.pastSource&& !real?`<a class="text-link source-program" href="${trip.pastSource}" target="_blank" rel="noopener noreferrer">${trip.pastSource.endsWith("/sobre-lst/")?"Conocer más a LST":"Conocer el viaje anterior en LST"}</a>`:""}</section>
+    <section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">${trip.id==='salvador'?'El Sunzal, de cerca.':`Un vistazo a ${escape(trip.name)}.`}</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino">${gallery}</div></section>
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>${escape(trip.levelTitle)}</h2><p>${escape(trip.levelText)}</p>${trip.levelChecks?`<ul>${trip.levelChecks.map(s=>`<li>${escape(s)}</li>`).join('')}</ul>`:''}<a class="text-link" href="/#niveles">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>${escape(trip.levelTitle)}</h2><p>${escape(trip.levelText)}</p>${trip.levelChecks?`<ul>${trip.levelChecks.map(s=>`<li>${escape(s)}</li>`).join('')}</ul>`:''}<a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</section>
+    ${stay}${inclusions}
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>${escape(team?.title??'Quién te acompañará.')}</h2><p>${escape(team?.text??(real?'Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones de esta salida.':`El próximo programa de ${trip.name} está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.`))}</p>${trip.testimonial?`<figure class="trip-quote">${trip.testimonial.context?`<p class="trip-quote-context">${escape(trip.testimonial.context)}</p>`:""}<blockquote cite="${escape(trip.testimonial.source)}">“${escape(trip.testimonial.quote)}”</blockquote><figcaption>${escape(trip.testimonial.name)} · ${escape(trip.testimonial.trip)}<a href="${trip.testimonial.source}" target="_blank" rel="noopener">Leer su testimonio</a></figcaption></figure>`:`<a class="text-link" href="/#nosotros">La historia de LST</a>`}</section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list">${faqs(trip).map(([q,a])=>`<details><summary>${escape(q)}<span aria-hidden="true">+</span></summary><p>${escape(a)}</p></details>`).join('')}</div></section>
+diff --git a/dist/niveles/index.html b/dist/niveles/index.html
+new file mode 100644
+index 0000000..91a5c81
+--- /dev/null
++++ b/dist/niveles/index.html
+@@ -0,0 +1,55 @@
++<!doctype html>
++<html lang="es">
++<head>
++ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7">
++ <title>Niveles de surf · Rookies, Aprendices, Riders y Supercracks — Let’s Surf Together</title>
++ <meta name="description" content="Oriéntate entre los cuatro niveles de surf de LST, entiende la diferencia entre técnica y autonomía y consulta con el equipo qué viaje encaja contigo.">
++ <link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin>
++ <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/mobile.css"><link rel="stylesheet" href="/levels.css">
++</head>
++<body class="minimal-cover levels-page">
++<a class="skip-link" href="#contenido">Saltar al contenido</a>
++<header class="site-header"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126"></a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav aria-label="Navegación principal" id="main-nav"><a href="/#viajes">Viajes</a><a href="/niveles/" aria-current="page">Niveles</a><a href="/#reservar">Cómo reservar</a><a href="/#nosotros">LST</a><a class="button nav-whatsapp" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></nav><a class="button button-small header-cta" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp</a></header>
++<main id="contenido" tabindex="-1">
++ <section class="guide-intro section-width" aria-labelledby="guide-title">
++  <div><p class="eyebrow">GUÍA DE NIVELES / LET’S SURF TOGETHER</p><h1 id="guide-title">Encuentra tu<br>punto de partida.</h1><p class="guide-lead">¿Qué olas coges? ¿Cómo te manejas en el agua? Esta guía te ayuda a poner palabras a tu surf y a consultar qué viaje encaja contigo.</p><p class="guide-note">Orienta, no certifica tu nivel ni sustituye la valoración del equipo de LST.</p><a class="text-link" href="#orientacion">¿Dudas entre dos niveles?</a></div>
++  <figure class="guide-photo"><img src="/assets/group.webp" width="1500" height="1000" alt="El grupo de LST reunido con sus tablas y banderas en la playa de Laga" fetchpriority="high" decoding="async"><figcaption>Laga, 2024 · compartiendo días de surf con LST.</figcaption></figure>
++ </section>
++ <div class="guide-content section-width">
++  <nav class="guide-index" aria-label="Saltar a un nivel"><a href="#rookies"><span class="guide-index-number" aria-hidden="true">I</span><span><strong>Rookies</strong><small>Estás empezando</small></span><span aria-hidden="true">↓</span></a>
++<a href="#aprendices"><span class="guide-index-number" aria-hidden="true">II</span><span><strong>Aprendices</strong><small>Ya recorres la pared</small></span><span aria-hidden="true">↓</span></a>
++<a href="#riders"><span class="guide-index-number" aria-hidden="true">III</span><span><strong>Riders</strong><small>Tienes autonomía en el agua</small></span><span aria-hidden="true">↓</span></a>
++<a href="#supercracks"><span class="guide-index-number" aria-hidden="true">IV</span><span><strong>Supercracks</strong><small>Quieres afinar tu técnica</small></span><span aria-hidden="true">↓</span></a></nav>
++  <p class="guide-index-help">Empieza por el que te suene más cercano. Puedes leerlos todos, a tu ritmo.</p>
++  <section class="guide-level" id="rookies" aria-labelledby="rookies-title" tabindex="-1">
++ <div class="guide-level-heading"><p class="eyebrow">NIVEL I</p><h2 id="rookies-title">Rookies</h2><p class="guide-level-tagline">Estás empezando.</p></div>
++ <div class="guide-level-copy"><p class="guide-definition">Estás aprendiendo a remar y a ponerte de pie, y empiezas a disfrutar en espumas y olas pequeñas.</p><h3>Te puedes reconocer aquí</h3><ul><li>Practicas la remada y la puesta en pie; todavía estás afianzando esos movimientos.</li><li>Coges espumas y empiezas a deslizarte por pequeñas paredes.</li><li>Te concentras en colocarte sobre la tabla y ganar confianza en condiciones suaves.</li></ul><div class="guide-practice"><h3>Qué quieres trabajar</h3><p>Afianzar las bases: la posición en la tabla, la puesta en pie y el deslizamiento.</p></div><a class="guide-source" href="https://www.letsurftogether.com/rookies/" target="_blank" rel="noopener noreferrer">Definición original de LST: Rookies</a></div>
++</section>
++<section class="guide-level" id="aprendices" aria-labelledby="aprendices-title" tabindex="-1">
++ <div class="guide-level-heading"><p class="eyebrow">NIVEL II</p><h2 id="aprendices-title">Aprendices</h2><p class="guide-level-tagline">Ya recorres la pared.</p></div>
++ <div class="guide-level-copy"><p class="guide-definition">Ya coges olas verdes y quieres ganar velocidad, trabajar tus primeros giros y sentir más control sobre la tabla.</p><h3>Te puedes reconocer aquí</h3><ul><li>Coges olas que aún no han roto y reconoces la pared por la que seguir.</li><li>Intentas generar velocidad con el bombeo y probar algún giro básico, aunque aún te falta control.</li><li>Te encuentras a gusto en condiciones moderadas; cuando el mar tiene más fuerza, te falta confianza.</li></ul><div class="guide-practice"><h3>Qué quieres trabajar</h3><p>Mejorar la postura, reconocer las secciones de la ola y empezar a controlar los giros, también de espaldas a la pared.</p></div><a class="guide-source" href="https://www.letsurftogether.com/nivel-ii-aprendices/" target="_blank" rel="noopener noreferrer">Definición original de LST: Aprendices</a></div>
++</section>
++<section class="guide-level" id="riders" aria-labelledby="riders-title" tabindex="-1">
++ <div class="guide-level-heading"><p class="eyebrow">NIVEL III</p><h2 id="riders-title">Riders</h2><p class="guide-level-tagline">Tienes autonomía en el agua.</p></div>
++ <div class="guide-level-copy"><p class="guide-definition">Surfeas con autonomía y enlazas maniobras. Buscas afinar la técnica y sacar más partido a cada ola.</p><h3>Te puedes reconocer aquí</h3><ul><li>Lees el mar y puedes entrar y salir por tu cuenta.</li><li>Mantienes una postura sólida y enlazas giros en distintas partes de la ola.</li><li>Quieres entender mejor cuándo cambiar el peso y dónde iniciar cada maniobra.</li></ul><div class="guide-practice"><h3>Qué quieres trabajar</h3><p>Pulir la técnica de tus giros y reconocer qué puedes hacer en cada sección de la ola.</p></div><a class="guide-source" href="https://www.letsurftogether.com/nivel-iii-rides/" target="_blank" rel="noopener noreferrer">Definición original de LST: Riders</a></div>
++</section>
++<section class="guide-level" id="supercracks" aria-labelledby="supercracks-title" tabindex="-1">
++ <div class="guide-level-heading"><p class="eyebrow">NIVEL IV</p><h2 id="supercracks-title">Supercracks</h2><p class="guide-level-tagline">Quieres afinar tu técnica.</p></div>
++ <div class="guide-level-copy"><p class="guide-definition">Tienes un surf sólido en olas con fuerza. Quieres perfeccionar tus giros, conectar maniobras y seguir puliendo tu técnica.</p><h3>Te puedes reconocer aquí</h3><ul><li>Surfeas con velocidad y enlazas maniobras con fluidez en olas potentes y bien formadas.</li><li>Reconoces las secciones que te permiten sacar más partido a un giro.</li><li>Trabajas detalles de ejecución y buscas mayor precisión en cada maniobra.</li></ul><div class="guide-practice"><h3>Qué quieres trabajar</h3><p>Perfeccionar maniobras y la elección de secciones; seguir trabajando técnicas como los tubos o los aéreos.</p></div><a class="guide-source" href="https://www.letsurftogether.com/nivel-iv-supercracks/" target="_blank" rel="noopener noreferrer">Definición original de LST: Supercracks</a></div>
++</section>
++ </div>
++ <section class="guide-autonomy" id="autonomia" aria-labelledby="autonomy-title" tabindex="-1"><div class="section-width">
++  <p class="eyebrow">DOS COSAS QUE CONVIENE CONTAR</p><h2 id="autonomy-title">Tu técnica y tu autonomía.</h2>
++  <div class="guide-comparison"><div><h3>Lo que haces sobre la ola</h3><p>La puesta en pie, recorrer la pared, generar velocidad o enlazar giros describen tu nivel técnico: cómo surfeas y qué estás trabajando.</p></div><div><h3>Cómo te manejas en el mar</h3><p>La autonomía tiene que ver con leer el mar, entrar, remar, surfear y salir por tu cuenta. Cuenta también en qué condiciones lo haces y cuándo necesitas ayuda.</p></div></div>
++  <p class="guide-autonomy-note">Hacer una maniobra no cuenta toda la historia. Describe ambas cosas al equipo: tener autonomía no significa desenvolverte igual en cualquier estado del mar.</p>
++  <p class="guide-trip-example">Por ejemplo, la ficha de <a href="/viajes/el-salvador/#nivel">El Salvador indica niveles II–III y autonomía en el agua</a>. Reconocerte en Aprendices no basta por sí solo para confirmar que esa salida encaja contigo.</p>
++ </div></section>
++ <section class="guide-help section-width" id="orientacion" aria-labelledby="orientation-title" tabindex="-1">
++  <div><p class="eyebrow">SI ESTÁS ENTRE DOS NIVELES</p><h2 id="orientation-title">Cuéntanos cómo es<br>un baño para ti.</h2><p>No necesitas elegir una etiqueta exacta. Si te reconoces en partes de dos niveles, dinos cuáles y qué te genera dudas.</p></div>
++  <div><ol class="guide-help-list"><li><strong>Las olas que sueles coger</strong><p>Si son espumas o paredes, y cómo te encuentras cuando el mar cambia.</p></li><li><strong>Lo que haces y lo que te cuesta</strong><p>Por ejemplo: «Recorro la pared, pero todavía no controlo los giros».</p></li><li><strong>La ayuda que necesitas</strong><p>Cuéntanos si entras y sales por tu cuenta y qué viaje te interesa.</p></li></ol><a class="button" data-whatsapp="nivel" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer">Consultar mi nivel por WhatsApp</a><p class="guide-note">El equipo revisará contigo el nivel y las condiciones de la salida. Consultar no confirma una plaza.</p></div>
++ </section>
++ <section class="guide-next" aria-labelledby="next-title"><div class="section-width"><div><p class="eyebrow">EL SIGUIENTE PASO</p><h2 id="next-title">Ahora, mira los viajes.</h2><p>Cada ficha indica sus niveles. Revisa el programa y consulta con LST antes de apuntarte.</p></div><a class="button button-dark" href="/#viajes">Ver viajes y fechas</a></div></section>
++</main>
++<footer class="guide-footer section-width"><a class="brand" href="/"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together, inicio" width="774" height="126" loading="lazy"></a><a class="text-link" href="/#reservar">Cómo reservar</a><p>© 2026 LET’S SURF TOGETHER</p></footer>
++<script src="/app.js" type="module"></script>
++</body></html>
+diff --git a/dist/levels.css b/dist/levels.css
+new file mode 100644
+index 0000000..f239a58
+--- /dev/null
++++ b/dist/levels.css
+@@ -0,0 +1,77 @@
++/* Static guide; shared LST typography, navigation and brand tokens. */
++.levels-page .site-header{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
++.levels-page .site-header .brand-light{display:none}
++.levels-page .site-header .brand-dark{display:block}
++.levels-page .menu-toggle span{background:var(--ink)}
++.levels-page .site-header .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
++.levels-page .site-header .header-cta:hover{background:var(--ink);color:var(--paper)}
++.levels-page .site-header :is(a,button):focus-visible{outline-color:var(--ink)}
++.levels-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:6px}
++.levels-page main{padding-top:var(--home-header-height,70px)}
++.levels-page :is(main,section)[tabindex="-1"]:focus{outline:none;box-shadow:none}
++.guide-intro{padding-block:40px 32px;display:grid;gap:30px;align-items:center}
++.guide-intro h1{font:400 clamp(48px,12vw,80px)/1.02 var(--display);letter-spacing:-.02em;margin-bottom:24px}
++.guide-lead{font-size:18px;max-width:37em}
++.guide-note{font-size:14px;line-height:1.65;color:var(--muted);margin-block:18px}
++.guide-intro .text-link{display:inline-flex;align-items:center;min-height:44px}
++.guide-photo img{width:100%;height:auto}
++.guide-photo figcaption{font:400 12px/1.6 var(--mono);margin-top:12px;color:var(--muted)}
++.guide-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
++.guide-index a{display:flex;gap:12px;align-items:start;padding:18px 12px;min-height:110px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);text-decoration:none}
++.guide-index a:hover{background:var(--orange)}
++.guide-index-number{font:400 26px/1 var(--display)}
++.guide-index strong{display:block;font-size:16px;line-height:1.3}
++.guide-index small{display:block;font-size:13px;line-height:1.5;margin-top:7px}
++.guide-index a>span:last-child{margin-left:auto}
++.guide-index-help{font-size:14px;color:var(--muted);margin-top:14px}
++.guide-level{display:grid;gap:22px;padding-block:40px;border-bottom:1px solid var(--line)}
++.guide-level:last-child{border-bottom:0;padding-bottom:48px}
++.guide-level .eyebrow{margin-bottom:10px}
++.guide-level h2{font-size:48px}
++.guide-level-tagline{font-size:17px;margin-top:12px}
++.guide-definition{font-size:18px;margin-bottom:24px;max-width:42em}
++.guide-level h3,.guide-comparison h3{font-size:18px;letter-spacing:0;margin-bottom:12px}
++.guide-level ul{padding-left:20px;margin:0 0 24px}
++.guide-level li{padding-left:5px;margin-block:12px}
++.guide-level li::marker{color:var(--orange)}
++.guide-practice{padding-left:18px;border-left:3px solid var(--orange);margin-bottom:12px}
++.guide-practice h3{margin-bottom:6px}
++.guide-source{font-size:13px;color:var(--muted);text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
++.guide-autonomy{background:var(--ink);color:var(--paper);padding-block:44px}
++.guide-autonomy .eyebrow{color:#ff9c7f}
++.guide-autonomy h2,.guide-help h2,.guide-next h2{font-size:44px}
++.guide-comparison{display:grid;gap:28px;margin-top:32px}
++.guide-comparison p{color:var(--paper)}
++.guide-autonomy-note{border-top:1px solid #ffffff40;margin-top:28px;padding-top:24px}
++.guide-trip-example{margin-top:18px;font-size:15px}
++.guide-trip-example a{text-underline-offset:4px}
++.guide-help{padding-block:44px;display:grid;gap:28px}
++.guide-help h2{margin-bottom:20px}
++.guide-help-list{list-style:none;counter-reset:help;padding:0;margin:0 0 28px}
++.guide-help-list li{counter-increment:help;position:relative;padding-left:38px;margin-bottom:22px}
++.guide-help-list li::before{content:counter(help,decimal-leading-zero);position:absolute;left:0;top:2px;font:400 13px/1.6 var(--mono)}
++.guide-help-list strong{font-size:18px}
++.guide-help-list p{margin-top:6px}
++.guide-help .button{width:100%;text-align:center}
++.guide-next{background:var(--orange);padding-block:40px}
++.guide-next>.section-width{display:grid;gap:28px;align-items:center}
++.guide-next h2{margin-bottom:18px}
++.guide-next p:not(.eyebrow){max-width:38em}
++.guide-footer{display:flex;flex-wrap:wrap;gap:24px;align-items:center;padding-block:32px}
++.guide-footer .brand{width:210px}
++.guide-footer .text-link{min-height:44px;display:inline-flex;align-items:center}
++.guide-footer p{font:400 11px/1.6 var(--mono)}
++@media(min-width:760px){
++ .guide-intro{grid-template-columns:1.05fr 1fr;gap:40px;padding-block:56px 44px}
++ .guide-intro h1{font-size:clamp(54px,6vw,88px)}
++ .guide-index{grid-template-columns:repeat(4,minmax(0,1fr))}
++ .guide-index a{padding:22px 16px}
++ .guide-level{grid-template-columns:1fr 1.6fr;gap:48px;padding-block:56px}
++ .guide-level h2{font-size:56px}
++ .guide-autonomy,.guide-help{padding-block:64px}
++ .guide-comparison,.guide-help{grid-template-columns:1fr 1fr;gap:48px}
++ .guide-autonomy h2,.guide-help h2,.guide-next h2{font-size:56px}
++ .guide-next>.section-width{grid-template-columns:1fr auto;gap:48px}
++ .guide-footer p{margin-left:auto}
++}
++@media(min-width:1280px){.guide-intro{gap:72px;padding-block:64px 48px}.guide-index a{padding:24px}.guide-index strong{font-size:20px}.guide-level{grid-template-columns:1fr 1.35fr;gap:100px}.guide-level h2{font-size:72px}.guide-help .button{width:auto}.guide-photo{transform:rotate(2deg)}}
+diff --git a/scripts/check-levels.mjs b/scripts/check-levels.mjs
+new file mode 100644
+index 0000000..552f4b1
+--- /dev/null
++++ b/scripts/check-levels.mjs
+@@ -0,0 +1,91 @@
++// Optional real-browser coverage of the guide and every home/trip integration.
++// Uses the existing browser installation, like check-ux.mjs; no dependency added.
++import {createRequire} from 'node:module';
++import fs from 'node:fs';
++import path from 'node:path';
++import os from 'node:os';
++const require=createRequire(import.meta.url);
++const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
++const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
++const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-levels-verification');
++fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
++const trips=JSON.parse(fs.readFileSync('data/trips.json'));
++const slugs=['rookies','aprendices','riders','supercracks'];
++const report={checks:[],issues:[],errors:[],whatsapp:[],routes:['/','/niveles/',...trips.map(t=>`/viajes/${t.slug}/`)]};
++const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
++const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
++async function context(options){
++ const c=await browser.newContext({reducedMotion:'reduce',...options});
++ await c.route('https://**/*',async r=>{const u=new URL(r.request().url());if(u.hostname==='wa.me'){report.whatsapp.push(u.href);await r.fulfill({contentType:'text/plain',body:'Consulta interceptada localmente; no se envía ningún mensaje.'});}else await r.abort();});
++ c.on('page',p=>p.on('pageerror',e=>report.errors.push(e.message)));
++ return c;
++}
++const enlarge=async(p,zoom)=>{if(zoom===2){await p.evaluate(()=>{const els=[...document.querySelectorAll('body,body *')],sizes=els.map(e=>parseFloat(getComputedStyle(e).fontSize));els.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});await p.waitForTimeout(80);}};
++const geometry=async(p,selector)=>p.locator(selector).evaluate(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,header:document.querySelector('.site-header').getBoundingClientRect().bottom};});
++try{
++ for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1024,900,1],[1440,900,1],[320,320,1],[390,360,1],[320,740,2],[390,844,2],[768,1024,2],[1024,900,2],[1440,900,2]]){
++  const tag=`${width}x${height}-text${zoom*100}`;
++  const c=await context({viewport:{width,height}}),p=await c.newPage();
++  check(tag+' HTTP',(await p.goto(base+'/niveles/')).status()===200);
++  await p.evaluate(()=>document.fonts.ready);
++  await enlarge(p,zoom);
++  await p.waitForTimeout(80);
++  check(tag+' no horizontal overflow',await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
++  check(tag+' four levels visible without tabs',(await p.locator('.guide-level:visible').count())===4);
++  check(tag+' fixed header',await p.locator('.site-header').evaluate(e=>getComputedStyle(e).position==='fixed'));
++  const title=await geometry(p,'#guide-title');check(tag+' title below header',title.top>=title.header,title);
++  if(zoom===1&&[390,1440].includes(width)&&height>500){
++   await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-portada.png`)});
++   await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-completa.png`),fullPage:true});
++  }
++  for(const slug of slugs){
++   await p.locator(`.guide-index a[href="#${slug}"]`).click();
++   const rect=await geometry(p,`#${slug}`);check(tag+' anchor '+slug,rect.top>=rect.header-1&&rect.top<=rect.header+20,rect);
++   check(tag+' anchor focus '+slug,await p.evaluate(s=>document.activeElement.id===s,slug));
++  }
++  await p.goto(base+'/niveles/#aprendices');await p.evaluate(()=>document.fonts.ready);
++  let rect=await geometry(p,'#aprendices');check(`${width}x${height} direct URL anchor at default text size`,rect.top>=rect.header-1,rect);
++  await p.goto(base+'/niveles/');await p.evaluate(()=>document.fonts.ready);await enlarge(p,zoom);
++  if(width<1000){
++   await p.locator('.menu-toggle').focus();await p.keyboard.press('Enter');await p.keyboard.press('Tab');
++   check(tag+' menu first tab',await p.evaluate(()=>document.activeElement===document.querySelector('#main-nav a')));
++   await p.keyboard.press('Escape');check(tag+' Escape returns focus',await p.evaluate(()=>document.activeElement.matches('.menu-toggle')&&document.querySelector('.menu-toggle').getAttribute('aria-expanded')==='false'));
++   await p.keyboard.press('Enter');await p.locator('.nav-whatsapp').focus();
++   const opened=c.waitForEvent('page');await p.keyboard.press('Enter');const popup=await opened;await popup.waitForLoadState();await popup.close();
++   check(tag+' menu WhatsApp closes and restores focus',await p.evaluate(()=>document.activeElement.matches('.menu-toggle')&&!document.querySelector('#main-nav').classList.contains('is-open')));
++  }
++  await p.locator('.skip-link').focus();await p.keyboard.press('Enter');
++  check(tag+' skip link',await p.evaluate(()=>document.activeElement.id==='contenido'));
++  // Traverse the whole page by keyboard, including the guide and consultation.
++  for(let n=0;n<26;n++){
++   await p.keyboard.press('Tab');
++   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=e.matches('.skip-link')?0:document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:r.top>=h-1&&r.bottom<=innerHeight+1};});
++   if(focus)check(tag+' keyboard focus visible',focus.visible,focus);
++  }
++  const link=p.locator('#orientacion [data-whatsapp]');await link.focus();
++  const opened=c.waitForEvent('page');await p.keyboard.press('Enter');const popup=await opened;await popup.waitForLoadState();await popup.close();
++  check(tag+' level WhatsApp context',new URL(await link.getAttribute('href')).searchParams.get('text')==='¡Hola, LST! Quiero consultar mi nivel de surf y saber si encajo en un viaje. ¿Podéis orientarme?');
++  await p.locator('.guide-next a').click();
++  check(tag+' explore home calendar',new URL(p.url()).pathname==='/'&&new URL(p.url()).hash==='#viajes');
++  rect=await geometry(p,'#viajes');check(`${width}x${height} calendar below header at default text size`,rect.top>=rect.header-1,rect);
++  await c.close();
++ }
++ // Integration through every rendered route, including all four home tabs.
++ for(const width of [390,1440]){
++  const c=await context({viewport:{width,height:900}}),p=await c.newPage();
++  await p.goto(base+'/');await p.locator('.journeys-level-link').click();check(width+' calendar to guide',new URL(p.url()).pathname==='/niveles/');
++  await p.goto(base+'/#niveles');await p.locator('[data-level="1"]').focus();await p.keyboard.press('End');check(width+' home tabs End key',await p.locator('#level-source').getAttribute('href')==='/niveles/#supercracks');await p.keyboard.press('ArrowLeft');check(width+' home tabs ArrowLeft key',await p.locator('#level-source').getAttribute('href')==='/niveles/#riders');
++  for(const [i,slug] of slugs.entries()){
++   await p.goto(base+'/#niveles');await p.locator(`[data-level="${i+1}"]`).click();await p.locator('#level-source').click();
++   check(width+' home tab to '+slug,new URL(p.url()).pathname==='/niveles/'&&new URL(p.url()).hash==='#'+slug);
++  }
++  for(const trip of trips){await p.goto(base+`/viajes/${trip.slug}/`);await p.locator('.trip-level a[href="/niveles/"]').click();check(width+' '+trip.slug+' to guide',new URL(p.url()).pathname==='/niveles/');}
++  await c.close();
++ }
++ const c=await context({viewport:{width:390,height:844},javaScriptEnabled:false}),p=await c.newPage();
++ await p.goto(base+'/niveles/');check('static content without JS',await p.locator('.guide-level:visible').count()===4);await p.locator('.guide-index a[href="#riders"]').click();check('native anchor without JS',new URL(p.url()).hash==='#riders');check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);await c.close();
++ for(const href of report.whatsapp){const u=new URL(href);check('WhatsApp destination',u.origin==='https://wa.me'&&u.pathname==='/34648189257'&&!!u.searchParams.get('text'));}
++ check('shared script has no page errors',report.errors.length===0,report.errors);
++} finally {await browser.close();fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(report,null,2)+'\n');}
++console.log(JSON.stringify({checks:report.checks.length,issues:report.issues,errors:report.errors,whatsapp:report.whatsapp.length},null,2));
++if(report.issues.length)process.exitCode=1;

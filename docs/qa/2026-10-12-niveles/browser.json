@@ -1,0 +1,4479 @@
+{
+  "checks": [
+    {
+      "name": "320x740-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 167.78125,
+        "bottom": 314.640625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 908.53125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "bottom": 982.390625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83.390625,
+        "bottom": 884.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 968.21875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "bottom": 982.390625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 560.28125,
+        "bottom": 604.28125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 349.3125,
+        "bottom": 473.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 349.3125,
+        "bottom": 473.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 473.90625,
+        "bottom": 618,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 473.90625,
+        "bottom": 618,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 389.53125,
+        "bottom": 433.53125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 389.390625,
+        "bottom": 433.390625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 389.0625,
+        "bottom": 433.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 389.21875,
+        "bottom": 433.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 379.578125,
+        "bottom": 444.078125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 372.6875,
+        "bottom": 449.46875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 437.5625,
+        "bottom": 491.953125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 563.953125,
+        "bottom": 598.15625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 622.15625,
+        "bottom": 666.15625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 389.28125,
+        "bottom": 433.28125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 615.3125,
+        "bottom": 739.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 615.3125,
+        "bottom": 739.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 595.90625,
+        "bottom": 740,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 595.90625,
+        "bottom": 740,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 389.53125,
+        "bottom": 433.53125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 389.390625,
+        "bottom": 433.390625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 389.0625,
+        "bottom": 433.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "320x740 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 81.796875,
+        "bottom": 2544.53125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 147.390625,
+        "bottom": 245.296875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.234375,
+        "bottom": 831.21875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.21875,
+        "bottom": 856,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83,
+        "bottom": 806.1875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.1875,
+        "bottom": 866.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.21875,
+        "bottom": 856,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 463.046875,
+        "bottom": 507.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 733.5625,
+        "bottom": 843.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 733.5625,
+        "bottom": 843.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 720.5625,
+        "bottom": 843.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 720.5625,
+        "bottom": 843.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 441.21875,
+        "bottom": 485.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 441,
+        "bottom": 485,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 441.1875,
+        "bottom": 485.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 441.0625,
+        "bottom": 485.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 442.828125,
+        "bottom": 484.078125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 436.34375,
+        "bottom": 490.734375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 599.828125,
+        "bottom": 654.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 731.109375,
+        "bottom": 765.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 726.21875,
+        "bottom": 770.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 441.046875,
+        "bottom": 485.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 733.5625,
+        "bottom": 843.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 733.5625,
+        "bottom": 843.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 720.5625,
+        "bottom": 843.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 720.5625,
+        "bottom": 843.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 441.21875,
+        "bottom": 485.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 441,
+        "bottom": 485,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 441.1875,
+        "bottom": 485.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "390x844 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.46875,
+        "bottom": 2365.234375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 164.1875,
+        "bottom": 329.421875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.453125,
+        "bottom": 671.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.28125,
+        "bottom": 745.5,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.5,
+        "bottom": 670.328125,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.328125,
+        "bottom": 686.953125,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.28125,
+        "bottom": 745.5,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 547.171875,
+        "bottom": 591.171875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 636.171875,
+        "bottom": 768.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 636.171875,
+        "bottom": 768.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 636.171875,
+        "bottom": 768.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 636.171875,
+        "bottom": 768.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 531.28125,
+        "bottom": 575.28125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 531.5,
+        "bottom": 575.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 531.328125,
+        "bottom": 575.328125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 531.953125,
+        "bottom": 575.953125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 544.578125,
+        "bottom": 562.578125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 526.328125,
+        "bottom": 580.71875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 875.65625,
+        "bottom": 930.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 952.609375,
+        "bottom": 986.8125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 947.71875,
+        "bottom": 991.71875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 531.171875,
+        "bottom": 575.171875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 620.171875,
+        "bottom": 752.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 620.171875,
+        "bottom": 752.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 620.171875,
+        "bottom": 752.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 620.171875,
+        "bottom": 752.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 531.28125,
+        "bottom": 575.28125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 531.5,
+        "bottom": 575.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 531.328125,
+        "bottom": 575.328125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "768x1024 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82,
+        "bottom": 2027.421875,
+        "header": 71
+      }
+    },
+    {
+      "name": "1024x900-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 186.1875,
+        "bottom": 311.5,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 104.84375,
+        "bottom": 639.984375,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 104.984375,
+        "bottom": 664.921875,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 104.921875,
+        "bottom": 640.0625,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 105.0625,
+        "bottom": 656,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 104.984375,
+        "bottom": 664.921875,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 501.359375,
+        "bottom": 545.359375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 590.359375,
+        "bottom": 702.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 590.359375,
+        "bottom": 702.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 590.359375,
+        "bottom": 702.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 590.359375,
+        "bottom": 702.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 480.984375,
+        "bottom": 524.984375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 480.921875,
+        "bottom": 524.921875,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 480.0625,
+        "bottom": 524.0625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 480,
+        "bottom": 524,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 493.03125,
+        "bottom": 511.03125,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 474.984375,
+        "bottom": 529.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 770.984375,
+        "bottom": 825.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 828.703125,
+        "bottom": 862.90625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 823.8125,
+        "bottom": 867.8125,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 480.359375,
+        "bottom": 524.359375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 569.359375,
+        "bottom": 681.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 569.359375,
+        "bottom": 681.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 569.359375,
+        "bottom": 681.15625,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1024x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 104,
+        "bottom": 1488.40625,
+        "header": 93
+      }
+    },
+    {
+      "name": "1440x900-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 223.25,
+        "bottom": 399.5,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 115.125,
+        "bottom": 575.875,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 114.875,
+        "bottom": 650.015625,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 115.015625,
+        "bottom": 575.765625,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 114.765625,
+        "bottom": 616.109375,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 114.875,
+        "bottom": 650.015625,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 538.375,
+        "bottom": 582.375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 650.4375,
+        "bottom": 760.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 650.4375,
+        "bottom": 760.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 650.4375,
+        "bottom": 760.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 650.4375,
+        "bottom": 760.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 485.875,
+        "bottom": 529.875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 485.015625,
+        "bottom": 529.015625,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 485.765625,
+        "bottom": 529.765625,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 485.109375,
+        "bottom": 529.109375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 498.546875,
+        "bottom": 516.546875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 845.859375,
+        "bottom": 900.25,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 641.859375,
+        "bottom": 696.25,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 828.578125,
+        "bottom": 862.78125,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 823.6875,
+        "bottom": 867.6875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 485.375,
+        "bottom": 529.375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 597.4375,
+        "bottom": 707.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 597.4375,
+        "bottom": 707.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 597.4375,
+        "bottom": 707.4375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1440x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 114,
+        "bottom": 1583.0625,
+        "header": 103
+      }
+    },
+    {
+      "name": "320x320-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 167.78125,
+        "bottom": 314.640625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 908.53125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "bottom": 982.390625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83.390625,
+        "bottom": 884.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 968.21875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x320 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "bottom": 982.390625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 179.28125,
+        "bottom": 223.28125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 139.3125,
+        "bottom": 263.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 139.3125,
+        "bottom": 263.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 175.90625,
+        "bottom": 320,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 175.90625,
+        "bottom": 320,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 179.53125,
+        "bottom": 223.53125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 179.390625,
+        "bottom": 223.390625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 179.0625,
+        "bottom": 223.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 179.21875,
+        "bottom": 223.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 169.578125,
+        "bottom": 234.078125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 162.6875,
+        "bottom": 239.46875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 174.5625,
+        "bottom": 228.953125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 285.953125,
+        "bottom": 320.15625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 202.15625,
+        "bottom": 246.15625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 179.28125,
+        "bottom": 223.28125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 139.3125,
+        "bottom": 263.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 139.3125,
+        "bottom": 263.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 175.90625,
+        "bottom": 320,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 175.90625,
+        "bottom": 320,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 179.53125,
+        "bottom": 223.53125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 179.390625,
+        "bottom": 223.390625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 179.0625,
+        "bottom": 223.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "320x320 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.375,
+        "bottom": 2545.109375,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 147.390625,
+        "bottom": 245.296875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.234375,
+        "bottom": 831.21875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.21875,
+        "bottom": 856,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83,
+        "bottom": 806.1875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.1875,
+        "bottom": 866.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x360 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.21875,
+        "bottom": 856,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 199.046875,
+        "bottom": 243.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 166.5625,
+        "bottom": 276.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 166.5625,
+        "bottom": 276.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 236.5625,
+        "bottom": 359.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 236.5625,
+        "bottom": 359.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 199.21875,
+        "bottom": 243.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 199,
+        "bottom": 243,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 199.1875,
+        "bottom": 243.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 199.0625,
+        "bottom": 243.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 200.828125,
+        "bottom": 242.078125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 194.34375,
+        "bottom": 248.734375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 193.828125,
+        "bottom": 248.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 325.109375,
+        "bottom": 359.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 316.21875,
+        "bottom": 360.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 199.046875,
+        "bottom": 243.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 166.5625,
+        "bottom": 276.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 166.5625,
+        "bottom": 276.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 236.5625,
+        "bottom": 359.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 236.5625,
+        "bottom": 359.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 199.21875,
+        "bottom": 243.21875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 199,
+        "bottom": 243,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 199.1875,
+        "bottom": 243.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "390x360 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 81.78125,
+        "bottom": 2340.375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 249.390625,
+        "bottom": 836.828125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.265625,
+        "bottom": 2524.59375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.59375,
+        "bottom": 2926.875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.875,
+        "bottom": 2374.03125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.03125,
+        "bottom": 2890.921875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.59375,
+        "bottom": 2926.875,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 364.546875,
+        "bottom": 457.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 189.375,
+        "bottom": 633.75,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 189.375,
+        "bottom": 633.75,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 95.75,
+        "bottom": 740.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 95.75,
+        "bottom": 740.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 371,
+        "bottom": 451.59375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 371.28125,
+        "bottom": 451.875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 371.4375,
+        "bottom": 452.03125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 371.328125,
+        "bottom": 451.921875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 300.96875,
+        "bottom": 521.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 328.734375,
+        "bottom": 495.125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 351.109375,
+        "bottom": 472.703125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 544.703125,
+        "bottom": 578.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 602.90625,
+        "bottom": 649.40625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 143.1875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 364.546875,
+        "bottom": 457.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 189.375,
+        "bottom": 633.75,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 189.375,
+        "bottom": 633.75,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 95.75,
+        "bottom": 740.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 95.75,
+        "bottom": 740.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 371,
+        "bottom": 451.59375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 371.28125,
+        "bottom": 451.875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 371.4375,
+        "bottom": 452.03125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "320x740 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 81.796875,
+        "bottom": 2544.53125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 208.59375,
+        "bottom": 600.21875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.96875,
+        "bottom": 2057.96875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.96875,
+        "bottom": 2415.8125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.8125,
+        "bottom": 2060.90625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 82.90625,
+        "bottom": 2432.046875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.96875,
+        "bottom": 2415.8125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 417.34375,
+        "bottom": 510.34375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 300.84375,
+        "bottom": 625.625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 300.84375,
+        "bottom": 625.625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 441.625,
+        "bottom": 844.40625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 441.625,
+        "bottom": 844.40625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 423.375,
+        "bottom": 503.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 423.21875,
+        "bottom": 503.8125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 423.3125,
+        "bottom": 503.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 423.453125,
+        "bottom": 504.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 399.484375,
+        "bottom": 527.484375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 402.671875,
+        "bottom": 524.265625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 464.0625,
+        "bottom": 540.859375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 612.859375,
+        "bottom": 647.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 671.0625,
+        "bottom": 717.5625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 417.34375,
+        "bottom": 510.34375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 300.84375,
+        "bottom": 625.625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 300.84375,
+        "bottom": 625.625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 441.625,
+        "bottom": 844.40625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 441.625,
+        "bottom": 844.40625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 423.375,
+        "bottom": 503.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 423.21875,
+        "bottom": 503.8125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 423.3125,
+        "bottom": 503.90625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "390x844 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.46875,
+        "bottom": 2365.234375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 221.78125,
+        "bottom": 772.5625,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.84375,
+        "bottom": 1547.71875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.71875,
+        "bottom": 1801.765625,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.765625,
+        "bottom": 1603.4375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.4375,
+        "bottom": 1793.484375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.71875,
+        "bottom": 1801.765625,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 506.6875,
+        "bottom": 599.6875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 513.125,
+        "bottom": 593.71875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 513.171875,
+        "bottom": 593.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 512.84375,
+        "bottom": 593.4375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 512.890625,
+        "bottom": 593.484375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 513.09375,
+        "bottom": 594.59375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 470.1875,
+        "bottom": 636.578125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 515.203125,
+        "bottom": 592,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 892.828125,
+        "bottom": 927.03125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 886.6875,
+        "bottom": 933.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 506.6875,
+        "bottom": 599.6875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 571.6875,
+        "bottom": 1024.0625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 513.125,
+        "bottom": 593.71875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 513.171875,
+        "bottom": 593.765625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 512.84375,
+        "bottom": 593.4375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "768x1024 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83,
+        "bottom": 2028.421875,
+        "header": 71
+      }
+    },
+    {
+      "name": "1024x900-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 300.78125,
+        "bottom": 802.09375,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 162,
+        "bottom": 1288.90625,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 161.90625,
+        "bottom": 1487.1875,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 162.1875,
+        "bottom": 1289.09375,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 162.09375,
+        "bottom": 1434.984375,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 161.90625,
+        "bottom": 1487.1875,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 507.4375,
+        "bottom": 553.9375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 509.46875,
+        "bottom": 553.46875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 508.75,
+        "bottom": 552.75,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 508.65625,
+        "bottom": 552.65625,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 508.546875,
+        "bottom": 552.546875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 490.21875,
+        "bottom": 571.71875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 470.640625,
+        "bottom": 592.234375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 492.125,
+        "bottom": 568.921875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 841.203125,
+        "bottom": 875.40625,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 835.0625,
+        "bottom": 881.5625,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 507.4375,
+        "bottom": 553.9375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 600.03125,
+        "bottom": 852.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1024x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 104,
+        "bottom": 1488.40625,
+        "header": 93
+      }
+    },
+    {
+      "name": "1440x900-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 241.390625,
+        "bottom": 946.390625,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 132.9375,
+        "bottom": 1104.859375,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 132.859375,
+        "bottom": 1203.96875,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 132.96875,
+        "bottom": 1104.890625,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 132.890625,
+        "bottom": 1201.203125,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 132.859375,
+        "bottom": 1203.96875,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 492.953125,
+        "bottom": 539.453125,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksQuieres afinar tu técnica↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Rookies",
+        "top": 494.421875,
+        "bottom": 538.421875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Aprendices",
+        "top": 494.53125,
+        "bottom": 538.53125,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Riders",
+        "top": 494.453125,
+        "bottom": 538.453125,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Definición original de LST: Supercracks",
+        "top": 494.765625,
+        "bottom": 538.765625,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "El Salvador indica niveles II–III y autonomía en el agua",
+        "top": 498.5,
+        "bottom": 533.5,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 477.953125,
+        "bottom": 554.75,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 503.65625,
+        "bottom": 580.453125,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 827.9375,
+        "bottom": 862.140625,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 821.796875,
+        "bottom": 868.296875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "¿Dudas entre dos niveles?",
+        "top": 492.953125,
+        "bottom": 539.453125,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstás empezando↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa recorres la pared↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersTienes autonomía en el agua↓",
+        "top": 589.546875,
+        "bottom": 827.546875,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1440x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 114,
+        "bottom": 1583.0625,
+        "header": 103
+      }
+    },
+    {
+      "name": "390 calendar to guide",
+      "pass": true
+    },
+    {
+      "name": "390 home tabs End key",
+      "pass": true
+    },
+    {
+      "name": "390 home tabs ArrowLeft key",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to rookies",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to aprendices",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to riders",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to supercracks",
+      "pass": true
+    },
+    {
+      "name": "390 el-salvador to guide",
+      "pass": true
+    },
+    {
+      "name": "390 asturias to guide",
+      "pass": true
+    },
+    {
+      "name": "390 azores to guide",
+      "pass": true
+    },
+    {
+      "name": "390 euskadi to guide",
+      "pass": true
+    },
+    {
+      "name": "390 marruecos to guide",
+      "pass": true
+    },
+    {
+      "name": "390 cadiz to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 calendar to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 home tabs End key",
+      "pass": true
+    },
+    {
+      "name": "1440 home tabs ArrowLeft key",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to rookies",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to riders",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440 el-salvador to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 asturias to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 azores to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 euskadi to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 marruecos to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 cadiz to guide",
+      "pass": true
+    },
+    {
+      "name": "static content without JS",
+      "pass": true
+    },
+    {
+      "name": "native anchor without JS",
+      "pass": true
+    },
+    {
+      "name": "contact without JS",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "shared script has no page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "whatsapp": [
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F"
+  ],
+  "routes": [
+    "/",
+    "/niveles/",
+    "/viajes/el-salvador/",
+    "/viajes/asturias/",
+    "/viajes/azores/",
+    "/viajes/euskadi/",
+    "/viajes/marruecos/",
+    "/viajes/cadiz/"
+  ]
+}

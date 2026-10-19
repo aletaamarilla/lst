@@ -1,6 +1,6 @@
 # Let's Surf Together — home y viajes
 
-Proyecto independiente de Travelhood. Web estática con la home y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
+Proyecto independiente de Travelhood. Web estática con la home, Conócenos, la guía de niveles y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
 
 ## Ejecutar y editar
 
@@ -16,7 +16,14 @@ Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-
 
 ## Estructura
 
-- dist/index.html: home, calendario y guía de niveles.
+- dist/index.html: home, calendario y resumen de niveles.
+- dist/conocenos/index.html: presentación, historia y forma de viajar de LST.
+- dist/about.css: composición responsive de Conócenos, con cabecera y navegación compartidas.
+- scripts/check-about.mjs: comprobaciones opcionales de navegador para Conócenos y sus entradas.
+- dist/niveles/index.html: guía estática de los cuatro niveles, autonomía y orientación.
+- dist/levels.css: estilos de la guía; reutiliza la cabecera y los tokens compartidos.
+- dist/levels.js: destacado manual del nivel, filtros de viajes e historial.
+- scripts/render-level-trips.mjs: bloque de destinos de la guía generado desde el JSON de viajes.
 - dist/styles.css: estilos y tokens originales compartidos.
 - dist/mobile.css: composición de la home desde teléfono, con mejoras para pantallas mayores.
 - dist/app.js: menú móvil y pestañas de nivel.
@@ -33,6 +40,10 @@ Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-
 - docs/propuesta.md: decisiones de diseño de cada revisión.
 
 ## Rutas
+
+- /conocenos/
+
+- /niveles/
 
 - /viajes/el-salvador/
 - /viajes/asturias/
@@ -69,7 +80,7 @@ Se conserva +34 648 18 92 57, el teléfono publicado por LST, pendiente de confi
 
 La home ofrece tarjetas más compactas, acciones de al menos 44 px y niveles distribuidos en dos columnas en teléfono. Los detalles muestran destino, fecha y nivel en la portada de la salida confirmada; el precio y la consulta se mantienen accesibles en la barra inferior. El contenido sigue en una columna, con programa y dudas desplegables, galería deslizable y fotos ampliables. La zona inferior respeta safe-area-inset-bottom. A partir de 1000 px se usa una ficha lateral de consulta.
 
-npm test comprueba niveles por defecto, restricciones explícitas, fechas únicas y múltiples, precios y mensajes de consulta. npm run check valida las siete páginas, enlaces locales entre páginas y anclas, imágenes y fuentes, contactos contextuales, contenido de demo y estados pendientes, noindex y sintaxis de JavaScript. La revisión 10 se comprobó en navegador a 320, 390, 768, 1024 y 1440 px, con navegación home–viaje–calendario, menú, niveles, galería, retorno del foco y dudas.
+npm test comprueba niveles por defecto, restricciones explícitas, fechas únicas y múltiples, precios y mensajes de consulta. npm run check valida las nueve páginas, enlaces locales entre páginas y anclas, imágenes y fuentes, contactos contextuales, contenido de demo y estados pendientes, noindex y sintaxis de JavaScript. La revisión 10 se comprobó en navegador a 320, 390, 768, 1024 y 1440 px, con navegación home–viaje–calendario, menú, niveles, galería, retorno del foco y dudas.
 
 La revisión 11 se comprobó en navegador a 320, 390, 768 y 1440 px: gesto horizontal real en la galería móvil, botones y teclado, retorno del foco, apertura y cierre de varias fechas, dos enlaces de WhatsApp independientes interceptados sin contactar al equipo, niveles, posición del dossier y ausencia de desbordamiento horizontal.
 
@@ -124,3 +135,88 @@ Revisada la home y las seis fichas sobre la candidata anterior sin commit. No se
 La cabecera de la home permanece fija en móvil y escritorio. Conserva la transparencia al inicio de la portada y muestra fondo crema, logo oscuro y acceso de WhatsApp naranja desde el primer desplazamiento. La separación de las anclas se calcula con la altura real de la cabecera para mantener visibles las secciones con texto ampliado.
 
 Validación sobre la base `d9b7201`: build, tests y check pasan. Chromium comprobó 16 vistas entre 320 y 1440 px, incluida pantalla baja y texto al 200 %, primer scroll, anclas, menú móvil y regreso arriba. Revisión independiente del diff final sin bloqueos. No se alteran las fichas, los datos de viajes ni sus consultas.
+
+
+## Revisión 20 · guía de niveles
+
+`/niveles/` se edita directamente en `dist/niveles/index.html`. Presenta Rookies, Aprendices, Riders y Supercracks con anclas nativas, situaciones reconocibles y objetivos de trabajo; distingue técnica y autonomía y orienta a quien duda. No puntúa ni asigna niveles. Reutiliza la cabecera fija y `app.js` sin requerir pestañas en la nueva página.
+
+El calendario y la duda de nivel en la home enlazan a la guía. Su resumen conserva las pestañas y lleva al ancla correspondiente. Las seis fichas actualizan el enlace desde `scripts/render-trips.mjs` y se reconstruyen con `npm run build`. La exploración de viajes continúa en `/#viajes`. Los datos provisionales, consultas comerciales y recursos de marca permanecen intactos.
+
+El comprobador estático exige home, guía y las rutas derivadas de viajes, manteniendo las validaciones anteriores. `scripts/check-levels.mjs` añade navegador opcional con las mismas variables `LST_PLAYWRIGHT_MODULE`, `LST_CHROMIUM_PATH`, `LST_PREVIEW_URL` y `LST_QA_OUTPUT` de los comprobadores existentes. No añade dependencias.
+
+[Texto final, fuentes, capturas, pruebas y revisión independiente](docs/qa/2026-10-12-niveles/README.md).
+
+
+## Revisión 21 · guía de niveles como página definitiva
+
+La guía se rediseña desde móvil: acceso a los cuatro niveles en la primera pantalla, fichas comparables con «En el agua», «Tu surf» y «Tu siguiente paso», fotografía de surf y una consulta explicada con un ejemplo. Se elimina toda navegación a las páginas antiguas; las fuentes quedan solo en la documentación interna. La técnica y la autonomía se explican por separado, sin asignar niveles ni añadir requisitos de viaje.
+
+Se conservan los enlaces de entrada desde home y fichas, el calendario como exploración y WhatsApp como consulta. El comprobador impide introducir enlaces a contenido externo en esta guía. La evidencia anterior pertenece a la primera versión; [texto, capturas y validación de la versión actual](docs/qa/2026-10-12-niveles-redesign/README.md).
+
+
+## Revisión 22 · navegación y viajes por nivel
+
+«Niveles» aparece en las cabeceras de home, guía y seis fichas; en teléfono hay un acceso directo visible. Las anclas de nivel destacan la ficha y el índice. La selección describe qué está explorando el visitante, sin evaluar su surf ni asignarle un nivel. Se conserva el destacado nativo sin JavaScript y se respeta movimiento reducido.
+
+Cada nivel enlaza al bloque «Viajes de surf por nivel» o a una consulta contextual por WhatsApp. `npm run build` genera el bloque entre `<!-- level-trips:start -->` y `<!-- level-trips:end -->` desde `data/trips.json`. No editar manualmente ese bloque: fechas, estados, niveles y autonomía siguen las mismas fuentes que las fichas. El resto de la guía se edita directamente en su HTML.
+
+El filtro muestra destinos que declaran el nivel elegido, separando salidas con fecha de destinos por anunciar. El requisito adicional de autonomía queda visible. La selección se guarda únicamente en la URL y funciona al volver atrás o recargar; los enlaces de destino están en el HTML original. Para explorar todas las salidas sigue disponible el calendario de la home.
+
+[Capturas, decisiones de SEO/conversión, pruebas y revisión de la versión actual](docs/qa/2026-10-12-niveles-conversion/README.md). Se conservan datos provisionales y noindex; sin publicación ni push.
+
+
+## Revisión 23 · tarjetas y jerarquía de consulta
+
+Las tarjetas de nivel separan identidad, descripción, situaciones y siguiente paso. WhatsApp deja de ser un enlace discreto: las cuatro tarjetas ofrecen un botón de contraste alto, icono y etiqueta explícita, junto a la exploración de viajes. El nivel elegido mantiene su destacado también al recibir foco.
+
+Los viajes con fecha quedan visibles; los destinos pendientes pasan a «Otros destinos por anunciar», un desplegable nativo accesible con teclado y sin JavaScript. Su contador sigue el filtro elegido. La ayuda se unifica en el bloque final «¿Encaja tu nivel? Lo vemos contigo», que conserva el contexto del nivel para WhatsApp. [Capturas y validación de la versión actual](docs/qa/2026-10-12-niveles-ajustes/README.md).
+
+
+## Revisión 24 · destacado breve y acciones compactas
+
+Al activar un nivel del índice, su cabecera se destaca durante 1,1 segundos después de llegar con el scroll y recupera su aspecto habitual. El filtro de viajes conserva su contexto, sin mantener ninguna tarjeta coloreada. Los botones «Ver viajes» y «WhatsApp» comparten fila desde 320 px con áreas de pulsación de al menos 44 px; al ampliar el texto pueden apilarse para conservar legibilidad.
+
+El desplegable «Otros destinos por anunciar» aísla sus estilos de las preguntas frecuentes: título y contador permanecen horizontales y solo gira el icono. [Capturas y comprobaciones de esta revisión](docs/qa/2026-10-13-niveles-pulido/README.md).
+
+
+## Revisión 25 · tarjetas de viajes de la home
+
+Las seis tarjetas de `/#viajes` muestran fotografía sin etiquetas, destino, fecha o «Próximamente», duración y nivel cuando corresponde. El Salvador conserva la autonomía exigida. Cada tarjeta es un único enlace nativo al detalle con acción de botón naranja y foco de teclado. Se retiran del resumen los precios, descripciones y notas de disponibilidad; permanecen en las fichas.
+
+La home sigue editándose directamente en `dist/index.html`. `dist/home-cards.css` se carga solo allí y limita sus reglas a las tarjetas de `#viajes`; no cambia la portada, la guía con filtros ni las fichas generadas. Las filas móviles de destinos pendientes se apilan al ampliar el texto. `scripts/check-home-cards.mjs` añade validación opcional de navegador con el runtime externo ya utilizado por los otros comprobadores.
+
+[Comparación a 390 y 1440 px, comprobaciones a 320 y 768 px, evidencia y límites](docs/qa/2026-10-13-tarjetas-home/README.md). Se conserva el trabajo previo, incluidos niveles y páginas nuevas. Sin commit, push, publicación ni despliegue.
+
+
+## Revisión 26 · Conócenos
+
+`/conocenos/` desarrolla la presentación de LST, el viaje de prueba que Lucas propuso a su comunidad en Marruecos, la forma de viajar, el acompañamiento y el respeto al lugar. Se edita directamente en `dist/conocenos/index.html`. Conserva Aura, Work Sans, Space Mono, logos y fotografía documental; usa `styles.css`, `mobile.css` y `app.js`, con estilos propios en `about.css`.
+
+La home conserva un resumen y enlaza desde su presentación, cabecera y pie. La guía de niveles incluye Conócenos en su menú. Las seis fichas enlazan desde acompañamiento y pie; la ficha de Marruecos conserva su testimonio. La antigua referencia general a Sobre LST pasa a la ruta nueva. Los enlaces históricos de destinos se conservan.
+
+No se identifican caras ni se publican cargos o credenciales sin respaldo. La firma de Lucas pasa al relato completo. Recogidas de plásticos, Universal Plastic y 3 % siguen pendientes de confirmación en el inventario. No cambian los datos de viajes, las consultas de WhatsApp ni `noindex,nofollow`.
+
+[Texto final, fuentes, archivos, capturas, comprobaciones y pendientes](docs/qa/2026-10-13-conocenos/README.md). Sin publicación, despliegue ni push.
+
+
+## Catálogo de viajes · 13/10/2026
+
+`/viajes/` reúne los seis destinos con filtros inmediatos por nivel (Todos, I · Rookies, II · Aprendices, III · Riders, IV · Supercracks) y estado (Todos, Con fecha, Próximamente). Combina ambos filtros, muestra el número de destinos, permite limpiar y ofrece consulta por WhatsApp si no hay resultados. «Con fecha» no indica disponibilidad de plazas.
+
+El HTML de la página se edita en `dist/viajes/index.html`, excepto el bloque `<!-- catalog:start -->` / `<!-- catalog:end -->`, generado por `scripts/render-catalog.mjs` desde `data/trips.json`. Usa `levelsFor` y `tripFacts` del modelo existente: no hay otra lista manual de destinos ni cálculo de disponibilidad. `dist/catalog-filter.js` contiene la lógica pura compartida con los tests; `dist/catalog.js` aplica el filtro sobre los valores resueltos del HTML. `dist/catalog.css` limita sus estilos a esta página.
+
+`?nivel=1`, `2`, `3` o `4` preselecciona el nivel; un valor inválido equivale a Todos. Los cambios guardan nivel y estado (`estado=confirmed` / `upcoming`) en la URL para recarga e historial. Sin JavaScript, los seis destinos y sus enlaces siguen en el HTML; los controles de filtrado se ocultan.
+
+La home conserva su calendario y añade «Ver todos los viajes». Niveles conserva su contenido, anclas, orientación y bloque de destinos; sus cuatro botones «Ver viajes» abren el catálogo con el nivel numérico correspondiente. Conócenos enlaza al catálogo. Las rutas de detalle y la lógica de selección de fechas se mantienen. Los cambios concurrentes de FAQs/navegación se conservan y se distinguen en el informe.
+
+`npm run build`, `npm test` y `npm run check` incluyen generación, pruebas de filtrado y detección de catálogo desactualizado. `scripts/check-catalog.mjs` es una suite opcional de navegador con el runtime externo existente, sin dependencias añadidas. [Archivos, capturas, versión, casos y límites](docs/qa/2026-10-13-catalogo/README.md).
+
+
+## Preguntas frecuentes · 13/10/2026
+
+`/preguntas-frecuentes/` agrupa ocho dudas existentes en cuatro temas. La home conserva tres y enlaza a la página completa. Las condiciones que dependen del destino remiten a `/viajes/` y sus fichas; la orientación enlaza a `/niveles/` y la forma de viajar a `/conocenos/`. Las seis fichas conservan sus preguntas específicas y los datos comerciales provisionales.
+
+La página se edita en `dist/preguntas-frecuentes/index.html`, con estilos acotados en `dist/faq.css`. Los desplegables nativos permiten abrir varias respuestas; solo carga el `app.js` compartido. La cabecera ofrece Viajes, Niveles, Conócenos y FAQs, y el logo lleva a Inicio. La experiencia y Cómo reservar siguen accesibles en home y pie. Al desactivar JavaScript se muestra navegación nativa adicional y la cabecera permanece arriba mediante `sticky`, conservando su altura en el flujo.
+
+`scripts/check-faqs.mjs` comprueba la página y la integración en navegador usando el mismo runtime externo opcional del proyecto. `npm run check` incluye las once rutas, las entradas a FAQs, enlaces y noindex. [Preguntas finales, fuentes, archivos, capturas, resultados y pendientes](docs/qa/2026-10-13-faqs/README.md). Sin publicación, despliegue ni push.

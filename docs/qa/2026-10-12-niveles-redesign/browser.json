@@ -1,0 +1,4287 @@
+{
+  "checks": [
+    {
+      "name": "320x740-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 131.6875,
+        "bottom": 225.75,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x740-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.1875,
+        "bottom": 738.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 809.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.9375,
+        "bottom": 763.40625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.40625,
+        "bottom": 738.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 809.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 370.125,
+        "bottom": 453.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 370.125,
+        "bottom": 453.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 461.3125,
+        "bottom": 544.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 461.3125,
+        "bottom": 544.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 384.125,
+        "bottom": 438.125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 499.1875,
+        "bottom": 553.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 618.1875,
+        "bottom": 648.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 668.3125,
+        "bottom": 712.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 370.125,
+        "bottom": 453.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 370.125,
+        "bottom": 453.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 461.3125,
+        "bottom": 544.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 461.3125,
+        "bottom": 544.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 384.125,
+        "bottom": 438.125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 499.1875,
+        "bottom": 553.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 618.1875,
+        "bottom": 648.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 668.3125,
+        "bottom": 712.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 370.125,
+        "bottom": 453.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 370.125,
+        "bottom": 453.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "320x740 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.796875,
+        "bottom": 2545.53125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 131.6875,
+        "bottom": 231.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x844-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 photographs loaded",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "bottom": 689.40625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.40625,
+        "bottom": 762.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83.28125,
+        "bottom": 688.5625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 82.5625,
+        "bottom": 663.84375,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.40625,
+        "bottom": 762.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 349.84375,
+        "bottom": 415.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 349.84375,
+        "bottom": 415.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 423.84375,
+        "bottom": 489.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 423.84375,
+        "bottom": 489.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 436.515625,
+        "bottom": 490.515625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 617.359375,
+        "bottom": 671.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 743.296875,
+        "bottom": 773.421875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 736.359375,
+        "bottom": 780.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 349.84375,
+        "bottom": 415.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 349.84375,
+        "bottom": 415.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 423.84375,
+        "bottom": 489.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 423.84375,
+        "bottom": 489.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 436.515625,
+        "bottom": 490.515625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 617.359375,
+        "bottom": 671.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 743.296875,
+        "bottom": 773.421875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 736.359375,
+        "bottom": 780.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 349.84375,
+        "bottom": 415.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 349.84375,
+        "bottom": 415.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "390x844 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.46875,
+        "bottom": 2365.234375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 140.59375,
+        "bottom": 258.1875,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768x1024-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.5625,
+        "bottom": 761.4375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.5625,
+        "bottom": 761.4375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83.4375,
+        "bottom": 714.3125,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.4375,
+        "bottom": 714.3125,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.5625,
+        "bottom": 761.4375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 376.96875,
+        "bottom": 442.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 376.96875,
+        "bottom": 442.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 450.96875,
+        "bottom": 516.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 450.96875,
+        "bottom": 516.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 577.234375,
+        "bottom": 631.234375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 802.046875,
+        "bottom": 856.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 959.203125,
+        "bottom": 989.328125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 952.265625,
+        "bottom": 996.265625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 376.96875,
+        "bottom": 442.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 376.96875,
+        "bottom": 442.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 450.96875,
+        "bottom": 516.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 450.96875,
+        "bottom": 516.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 577.234375,
+        "bottom": 631.234375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 802.046875,
+        "bottom": 856.046875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 959.203125,
+        "bottom": 989.328125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 952.265625,
+        "bottom": 996.265625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 376.96875,
+        "bottom": 442.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 376.96875,
+        "bottom": 442.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "768x1024 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82,
+        "bottom": 2027.421875,
+        "header": 71
+      }
+    },
+    {
+      "name": "1024x900-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 162.59375,
+        "bottom": 280.1875,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024x900-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 104.96875,
+        "bottom": 686.25,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 104.96875,
+        "bottom": 686.25,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 105.25,
+        "bottom": 638.53125,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 105.25,
+        "bottom": 638.53125,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 104.96875,
+        "bottom": 686.25,
+        "header": 93
+      }
+    },
+    {
+      "name": "1024x900-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 373.375,
+        "bottom": 439.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 373.375,
+        "bottom": 439.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 447.375,
+        "bottom": 513.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 447.375,
+        "bottom": 513.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 475.859375,
+        "bottom": 529.859375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 701.09375,
+        "bottom": 755.09375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 858.25,
+        "bottom": 888.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 851.3125,
+        "bottom": 895.3125,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 373.375,
+        "bottom": 439.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 373.375,
+        "bottom": 439.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 447.375,
+        "bottom": 513.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 447.375,
+        "bottom": 513.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 475.859375,
+        "bottom": 529.859375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 701.09375,
+        "bottom": 755.09375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 858.25,
+        "bottom": 888.375,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 851.3125,
+        "bottom": 895.3125,
+        "header": 93,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1024x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 105,
+        "bottom": 1489.40625,
+        "header": 93
+      }
+    },
+    {
+      "name": "1440x900-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 184.59375,
+        "bottom": 353.125,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440x900-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 photographs loaded",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 115.3125,
+        "bottom": 641.40625,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 115.3125,
+        "bottom": 641.40625,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 115.40625,
+        "bottom": 617.5,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 115.40625,
+        "bottom": 617.5,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 115.3125,
+        "bottom": 641.40625,
+        "header": 103
+      }
+    },
+    {
+      "name": "1440x900-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 456.71875,
+        "bottom": 528.515625,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 456.71875,
+        "bottom": 528.515625,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 540.515625,
+        "bottom": 612.3125,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 540.515625,
+        "bottom": 612.3125,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 480.171875,
+        "bottom": 534.171875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 766.484375,
+        "bottom": 820.484375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 834.921875,
+        "bottom": 865.046875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 827.984375,
+        "bottom": 871.984375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 456.71875,
+        "bottom": 528.515625,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 456.71875,
+        "bottom": 528.515625,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 540.515625,
+        "bottom": 612.3125,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 540.515625,
+        "bottom": 612.3125,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 480.171875,
+        "bottom": 534.171875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 766.484375,
+        "bottom": 820.484375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 834.921875,
+        "bottom": 865.046875,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 827.984375,
+        "bottom": 871.984375,
+        "header": 103,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1440x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 114,
+        "bottom": 1583.0625,
+        "header": 103
+      }
+    },
+    {
+      "name": "320x320-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 131.6875,
+        "bottom": 225.75,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x320-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.1875,
+        "bottom": 738.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 809.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.9375,
+        "bottom": 763.40625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.40625,
+        "bottom": 738.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x320 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 809.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x320-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 160.125,
+        "bottom": 243.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 160.125,
+        "bottom": 243.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 236.3125,
+        "bottom": 319.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 236.3125,
+        "bottom": 319.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 174.125,
+        "bottom": 228.125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 174.1875,
+        "bottom": 228.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 290.1875,
+        "bottom": 320.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 248.3125,
+        "bottom": 292.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 160.125,
+        "bottom": 243.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 160.125,
+        "bottom": 243.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 236.3125,
+        "bottom": 319.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 236.3125,
+        "bottom": 319.5,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 174.125,
+        "bottom": 228.125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 174.1875,
+        "bottom": 228.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 290.1875,
+        "bottom": 320.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 248.3125,
+        "bottom": 292.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 160.125,
+        "bottom": 243.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 160.125,
+        "bottom": 243.3125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "320x320 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.375,
+        "bottom": 2545.109375,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 HTTP",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 fixed header",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 title below header",
+      "pass": true,
+      "detail": {
+        "top": 131.6875,
+        "bottom": 231.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x360-text100 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "bottom": 689.40625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.40625,
+        "bottom": 762.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83.28125,
+        "bottom": 688.5625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 82.5625,
+        "bottom": 663.84375,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x360 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.40625,
+        "bottom": 762.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x360-text100 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 skip link",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 293.84375,
+        "bottom": 359.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 293.84375,
+        "bottom": 359.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 188.84375,
+        "bottom": 254.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 188.84375,
+        "bottom": 254.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 194.515625,
+        "bottom": 248.515625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 194.359375,
+        "bottom": 248.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 320.296875,
+        "bottom": 350.421875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 313.359375,
+        "bottom": 357.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 188.84375,
+        "bottom": 254.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 188.84375,
+        "bottom": 254.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 262.84375,
+        "bottom": 328.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 262.84375,
+        "bottom": 328.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 194.515625,
+        "bottom": 248.515625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 194.359375,
+        "bottom": 248.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 320.296875,
+        "bottom": 350.421875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 313.359375,
+        "bottom": 357.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 68.796875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 188.84375,
+        "bottom": 254.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 188.84375,
+        "bottom": 254.84375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x360-text100 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "390x360-text100 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "390x360 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.78125,
+        "bottom": 2341.375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 187.78125,
+        "bottom": 564.09375,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x740-text200 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 83.328125,
+        "bottom": 2041.015625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.015625,
+        "bottom": 2328.703125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.703125,
+        "bottom": 1952.390625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 83.390625,
+        "bottom": 1989.890625,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.015625,
+        "bottom": 2328.703125,
+        "header": 71
+      }
+    },
+    {
+      "name": "320x740-text200 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 306.59375,
+        "bottom": 516.375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 306.59375,
+        "bottom": 516.375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 493.375,
+        "bottom": 739.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 493.375,
+        "bottom": 739.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 333.9375,
+        "bottom": 489.9375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 353.328125,
+        "bottom": 469.328125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 534.328125,
+        "bottom": 564.453125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 584.453125,
+        "bottom": 628.453125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 143.1875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 306.59375,
+        "bottom": 516.375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 306.59375,
+        "bottom": 516.375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 493.375,
+        "bottom": 739.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 493.375,
+        "bottom": 739.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 333.9375,
+        "bottom": 489.9375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 353.328125,
+        "bottom": 469.328125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 534.328125,
+        "bottom": 564.453125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 584.453125,
+        "bottom": 628.453125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 143.1875,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 306.59375,
+        "bottom": 516.375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 306.59375,
+        "bottom": 516.375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "320x740 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.796875,
+        "bottom": 2545.53125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 187.78125,
+        "bottom": 585.28125,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x844-text200 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.75,
+        "bottom": 1599.0625,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 1899.375,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 83.375,
+        "bottom": 1551.6875,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 82.6875,
+        "bottom": 1687,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 83.0625,
+        "bottom": 1899.375,
+        "header": 71
+      }
+    },
+    {
+      "name": "390x844-text200 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 376.40625,
+        "bottom": 550.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 376.40625,
+        "bottom": 550.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 558.1875,
+        "bottom": 767.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 558.1875,
+        "bottom": 767.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 406.546875,
+        "bottom": 520.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 530.421875,
+        "bottom": 604.421875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 669.421875,
+        "bottom": 699.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 719.546875,
+        "bottom": 763.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 376.40625,
+        "bottom": 550.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 376.40625,
+        "bottom": 550.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 558.1875,
+        "bottom": 767.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 558.1875,
+        "bottom": 767.96875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 406.546875,
+        "bottom": 520.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 530.421875,
+        "bottom": 604.421875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 669.421875,
+        "bottom": 699.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 719.546875,
+        "bottom": 763.546875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 376.40625,
+        "bottom": 550.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 376.40625,
+        "bottom": 550.1875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "390x844 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.46875,
+        "bottom": 2365.234375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 193.375,
+        "bottom": 663.75,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768x1024-text200 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 82.625,
+        "bottom": 1942.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 82.625,
+        "bottom": 1942.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 82.9375,
+        "bottom": 1703.25,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 82.9375,
+        "bottom": 1703.25,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82.625,
+        "bottom": 1942.9375,
+        "header": 71
+      }
+    },
+    {
+      "name": "768x1024-text200 menu first tab",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 menu WhatsApp closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 849.875,
+        "bottom": 1023.65625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 849.875,
+        "bottom": 1023.65625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 448.65625,
+        "bottom": 658.4375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 448.65625,
+        "bottom": 658.4375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 496.078125,
+        "bottom": 610.078125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 593.171875,
+        "bottom": 667.171875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 907.234375,
+        "bottom": 937.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 900.296875,
+        "bottom": 944.296875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 466.875,
+        "bottom": 640.65625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 466.875,
+        "bottom": 640.65625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 648.65625,
+        "bottom": 858.4375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 648.65625,
+        "bottom": 858.4375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 496.078125,
+        "bottom": 610.078125,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 593.171875,
+        "bottom": 667.171875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 907.234375,
+        "bottom": 937.359375,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 900.296875,
+        "bottom": 944.296875,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 466.875,
+        "bottom": 640.65625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 466.875,
+        "bottom": 640.65625,
+        "header": 71,
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "768x1024 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 82,
+        "bottom": 2027.421875,
+        "header": 71
+      }
+    },
+    {
+      "name": "1024x900-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 237.1875,
+        "bottom": 589.96875,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024x900-text200 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 161.6875,
+        "bottom": 1479.625,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 161.6875,
+        "bottom": 1479.625,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 161.625,
+        "bottom": 1423.5625,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 161.625,
+        "bottom": 1423.5625,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 161.6875,
+        "bottom": 1479.625,
+        "header": 149.375
+      }
+    },
+    {
+      "name": "1024x900-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 762.71875,
+        "bottom": 900.109375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 762.71875,
+        "bottom": 900.109375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 462.109375,
+        "bottom": 599.5,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 462.109375,
+        "bottom": 599.5,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 474.21875,
+        "bottom": 588.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 825.6875,
+        "bottom": 899.6875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 835.3125,
+        "bottom": 865.4375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 828.375,
+        "bottom": 872.375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 462.71875,
+        "bottom": 600.109375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 462.71875,
+        "bottom": 600.109375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 608.109375,
+        "bottom": 745.5,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 608.109375,
+        "bottom": 745.5,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 474.21875,
+        "bottom": 588.21875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 825.6875,
+        "bottom": 899.6875,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 835.3125,
+        "bottom": 865.4375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 828.375,
+        "bottom": 872.375,
+        "header": 149.375,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1024x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 105,
+        "bottom": 1489.40625,
+        "header": 93
+      }
+    },
+    {
+      "name": "1440x900-text200 HTTP",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 four levels visible without tabs",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 fixed header",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 title below header",
+      "pass": true,
+      "detail": {
+        "top": 220.1875,
+        "bottom": 894.375,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 no legacy or external content links",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440x900-text200 level numerals stay on one line",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 132.9375,
+        "bottom": 1314.3125,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 132.9375,
+        "bottom": 1314.3125,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 133.3125,
+        "bottom": 1218.6875,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 133.3125,
+        "bottom": 1218.6875,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 anchor focus supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900 direct URL anchor at default text size",
+      "pass": true,
+      "detail": {
+        "top": 132.9375,
+        "bottom": 1314.3125,
+        "header": 120.1875
+      }
+    },
+    {
+      "name": "1440x900-text200 skip link",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 460.75,
+        "bottom": 571.34375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 460.75,
+        "bottom": 571.34375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 583.34375,
+        "bottom": 693.9375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 583.34375,
+        "bottom": 693.9375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 480.65625,
+        "bottom": 552.65625,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 826.4375,
+        "bottom": 900.4375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 835.375,
+        "bottom": 865.5,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 828.4375,
+        "bottom": 872.4375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IRookiesEstoy empezando",
+        "top": 460.75,
+        "bottom": 571.34375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIAprendicesYa cojo la pared",
+        "top": 460.75,
+        "bottom": 571.34375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IIIRidersEnlazo maniobras",
+        "top": 583.34375,
+        "bottom": 693.9375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "IVSupercracksBusco perfeccionar",
+        "top": 583.34375,
+        "bottom": 693.9375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Consultar mi nivel por WhatsApp",
+        "top": 480.65625,
+        "bottom": 552.65625,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Ver viajes y fechas",
+        "top": 826.4375,
+        "bottom": 900.4375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "",
+        "top": 835.375,
+        "bottom": 865.5,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Cómo reservar",
+        "top": 828.4375,
+        "bottom": 872.4375,
+        "header": 120.1875,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 keyboard focus visible",
+      "pass": true,
+      "detail": {
+        "text": "Saltar al contenido",
+        "top": 16,
+        "bottom": 93.59375,
+        "header": 0,
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 level WhatsApp context",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 explore home calendar",
+      "pass": true
+    },
+    {
+      "name": "1440x900 calendar below header at default text size",
+      "pass": true,
+      "detail": {
+        "top": 114,
+        "bottom": 1583.0625,
+        "header": 103
+      }
+    },
+    {
+      "name": "390 calendar to guide",
+      "pass": true
+    },
+    {
+      "name": "390 home tabs End key",
+      "pass": true
+    },
+    {
+      "name": "390 home tabs ArrowLeft key",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to rookies",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to aprendices",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to riders",
+      "pass": true
+    },
+    {
+      "name": "390 home tab to supercracks",
+      "pass": true
+    },
+    {
+      "name": "390 el-salvador to guide",
+      "pass": true
+    },
+    {
+      "name": "390 asturias to guide",
+      "pass": true
+    },
+    {
+      "name": "390 azores to guide",
+      "pass": true
+    },
+    {
+      "name": "390 euskadi to guide",
+      "pass": true
+    },
+    {
+      "name": "390 marruecos to guide",
+      "pass": true
+    },
+    {
+      "name": "390 cadiz to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 calendar to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 home tabs End key",
+      "pass": true
+    },
+    {
+      "name": "1440 home tabs ArrowLeft key",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to rookies",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to riders",
+      "pass": true
+    },
+    {
+      "name": "1440 home tab to supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440 el-salvador to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 asturias to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 azores to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 euskadi to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 marruecos to guide",
+      "pass": true
+    },
+    {
+      "name": "1440 cadiz to guide",
+      "pass": true
+    },
+    {
+      "name": "static content without JS",
+      "pass": true
+    },
+    {
+      "name": "native anchor without JS",
+      "pass": true
+    },
+    {
+      "name": "contact without JS",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "WhatsApp destination",
+      "pass": true
+    },
+    {
+      "name": "shared script has no page errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "whatsapp": [
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F"
+  ],
+  "routes": [
+    "/",
+    "/niveles/",
+    "/viajes/el-salvador/",
+    "/viajes/asturias/",
+    "/viajes/azores/",
+    "/viajes/euskadi/",
+    "/viajes/marruecos/",
+    "/viajes/cadiz/"
+  ]
+}

@@ -30,20 +30,22 @@ let browser;
    check(tag+' reduced motion',dimensions.rootBehavior==='auto'&&dimensions.transition==='0s',dimensions);
    if(slug==='home'){
     check(tag+' exploration CTA',(await page.locator('.hero-primary').getAttribute('href'))==='#viajes');
-    check(tag+' destinations',JSON.stringify(await page.locator('.destination-preview-action').allTextContents()).includes('Ver destino')&&!(await page.locator('.destination-preview-action').allTextContents()).some(t=>t.includes('Me interesa')));
+    check(tag+' destinations',JSON.stringify(await page.locator('.home-trip-pending .home-trip-action').allTextContents()).includes('Ver destino')&&!(await page.locator('.home-trip-pending .home-trip-action').allTextContents()).some(t=>t.includes('Me interesa')));
     if(width<1000){
      await page.locator('.menu-toggle').focus();await page.keyboard.press('Enter');await page.keyboard.press('Tab');
      check(tag+' first tab enters menu',await page.evaluate(()=>document.activeElement===document.querySelector('#main-nav a')));
-     for(let i=0;i<4;i++)await page.keyboard.press('Tab');
+     for(let i=1;i<await page.locator('#main-nav a').count();i++)await page.keyboard.press('Tab');
      check(tag+' menu WhatsApp focus',await page.evaluate(()=>document.activeElement.matches('.nav-whatsapp')));
      const popupPromise=context.waitForEvent('page');await page.keyboard.press('Enter');const popup=await popupPromise;await popup.waitForLoadState();await popup.close();
      check(tag+' WhatsApp closes menu, restores focus',await page.evaluate(()=>document.activeElement.matches('.menu-toggle')&&!document.querySelector('#main-nav').classList.contains('is-open')));
      await page.keyboard.press('Enter');await page.keyboard.press('Escape');
      check(tag+' Escape',await page.locator('.menu-toggle').getAttribute('aria-expanded')==='false');
-     await page.keyboard.press('Enter');for(let i=0;i<6;i++)await page.keyboard.press('Tab');
+     await page.keyboard.press('Enter');for(let i=0;i<(await page.locator('#main-nav a').count())+1;i++)await page.keyboard.press('Tab');
      check(tag+' Tab exits disclosure',await page.evaluate(()=>document.activeElement.matches('.hero-primary')&&!document.querySelector('#main-nav').classList.contains('is-open')));
-     await page.locator('.menu-toggle').click();await page.locator('#main-nav a[href="#viajes"]').click();
+     await page.locator('.menu-toggle').click();await page.locator('#main-nav a[href="/viajes/"]').click();await page.waitForURL(baseURL+'/viajes/');
      check(tag+' navigation closes menu',await page.locator('.menu-toggle').getAttribute('aria-expanded')==='false');
+     await page.goto(baseURL+'/');
+     if(zoom===2)await page.evaluate(()=>{const els=[...document.querySelectorAll('body,body *')];const sizes=els.map(e=>parseFloat(getComputedStyle(e).fontSize));els.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});
     } else {
      check(tag+' desktop WhatsApp visible',await page.locator('.header-cta').isVisible());
     }

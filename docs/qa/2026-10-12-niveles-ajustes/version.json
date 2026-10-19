@@ -1,0 +1,22 @@
+{
+  "base": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+  "candidate": "uncommitted",
+  "files": {
+    "dist/niveles/index.html": "5cdfd61314f27dcf028ef27bbf61110e90e03ab0c357644ca5686f47287b3eab",
+    "dist/levels.css": "2594af04828b037f64a037692086efecf909d79b1423637c9cb1c1f2db19d1ec",
+    "dist/levels.js": "de2574fd8def5019f74d36f535e8a13605fd299c59f97506bd8042070b0e4196",
+    "scripts/render-level-trips.mjs": "8226122800ae67b5e0343a41d36753fc2364090d5242f7a452d422fffabb540e",
+    "scripts/check-levels.mjs": "deec7cacb4282b2cd071b48b3b59a1403f10f8f83b73bc9204e1aa09cbe26c12",
+    "README.md": "0e68f9692691254c6096e094f0dd0a55abc83465fdfa978b8c4a787e2060402a",
+    "docs/propuesta.md": "6c98e585aad61ba2b499da7e383d8a8e48652b88e9342e063f491ec05d073fe3",
+    "docs/content-inventory.json": "6788bc168df36d895b1c303bb6ab39a35c9bd432c92b2409e051f63494fcfe4d"
+  },
+  "matchesIndependentReview": {
+    "dist/niveles/index.html": true,
+    "dist/levels.css": true,
+    "dist/levels.js": true,
+    "scripts/render-level-trips.mjs": true,
+    "scripts/check-levels.mjs": true,
+    "data/trips.json": true
+  }
+}

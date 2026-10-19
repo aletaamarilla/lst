@@ -1,0 +1,1165 @@
+{
+  "checks": [
+    {
+      "name": "all protected files identical to iteration baseline",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320 no-preference initial cards unhighlighted",
+      "pass": true
+    },
+    {
+      "name": "320 no-preference supercracks arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 84.40625,
+        "offset": 83,
+        "focused": true
+      }
+    },
+    {
+      "name": "320 no-preference supercracks cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "320 no-preference supercracks arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 85.40625,
+        "offset": 83,
+        "focused": true
+      }
+    },
+    {
+      "name": "320 no-preference supercracks cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "320 no-preference rookies arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 81.1875,
+        "offset": 83,
+        "focused": true
+      }
+    },
+    {
+      "name": "320 no-preference rookies cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "320 no-preference each activation followed by ~1100ms removal",
+      "pass": true,
+      "detail": [
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 342.30000000074506,
+          "top": 901.1875,
+          "offset": 83
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 343.5,
+          "top": 1640.0625,
+          "offset": 83
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 343.5,
+          "top": 2450.9375,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 343.5,
+          "top": 3215.40625,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": true,
+          "at": 1253.3999999985099,
+          "top": 84.40625,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 2353.60000000149,
+          "top": 83.40625,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 2605.300000000745,
+          "top": -2230.8125,
+          "offset": 83
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 2605.800000000745,
+          "top": -1491.9375,
+          "offset": 83
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 2605.800000000745,
+          "top": -681.0625,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 2605.800000000745,
+          "top": 83.40625,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": true,
+          "at": 2620,
+          "top": 85.40625,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 3720,
+          "top": 85.40625,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 3972.300000000745,
+          "top": -2228.8125,
+          "offset": 83
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 3972.89999999851,
+          "top": -1489.9375,
+          "offset": 83
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 3972.89999999851,
+          "top": -679.0625,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 3972.89999999851,
+          "top": 85.40625,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": true,
+          "at": 4753.300000000745,
+          "top": 81.1875,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 5853.5,
+          "top": 83.1875,
+          "offset": 83
+        }
+      ]
+    },
+    {
+      "name": "320 no-preference compact buttons share row with usable touch targets",
+      "pass": true,
+      "detail": [
+        [
+          {
+            "top": 743.0625,
+            "bottom": 787.0625,
+            "left": 41,
+            "right": 156,
+            "height": 44,
+            "label": "Ver viajes para Rookies",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 743.0625,
+            "bottom": 787.0625,
+            "left": 164,
+            "right": 279,
+            "height": 44,
+            "label": "Consultar el nivel Rookies por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 1553.9375,
+            "bottom": 1597.9375,
+            "left": 41,
+            "right": 156,
+            "height": 44,
+            "label": "Ver viajes para Aprendices",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 1553.9375,
+            "bottom": 1597.9375,
+            "left": 164,
+            "right": 279,
+            "height": 44,
+            "label": "Consultar el nivel Aprendices por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 2318.40625,
+            "bottom": 2362.40625,
+            "left": 41,
+            "right": 156,
+            "height": 44,
+            "label": "Ver viajes para Riders",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 2318.40625,
+            "bottom": 2362.40625,
+            "left": 164,
+            "right": 279,
+            "height": 44,
+            "label": "Consultar el nivel Riders por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 3057.28125,
+            "bottom": 3101.28125,
+            "left": 41,
+            "right": 156,
+            "height": 44,
+            "label": "Ver viajes para Supercracks",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 3057.28125,
+            "bottom": 3101.28125,
+            "left": 164,
+            "right": 279,
+            "height": 44,
+            "label": "Consultar el nivel Supercracks por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ]
+      ]
+    },
+    {
+      "name": "320 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320 no-preference CTA filters without highlight",
+      "pass": true
+    },
+    {
+      "name": "320 no-preference CTA context and focus",
+      "pass": true
+    },
+    {
+      "name": "320 no-preference disclosure label/count upright and font stable",
+      "pass": true,
+      "detail": {
+        "before": [
+          {
+            "size": "15px",
+            "transform": "none"
+          },
+          {
+            "size": "12px",
+            "transform": "none"
+          }
+        ],
+        "after": [
+          {
+            "size": "15px",
+            "transform": "none"
+          },
+          {
+            "size": "12px",
+            "transform": "none"
+          },
+          {
+            "size": "22px",
+            "transform": "matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "320 no-preference only plus rotates",
+      "pass": true,
+      "detail": {
+        "size": "22px",
+        "transform": "matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)"
+      }
+    },
+    {
+      "name": "320 no-preference Space closes pending destinations",
+      "pass": true
+    },
+    {
+      "name": "320 text200 buttons reflow without clipping",
+      "pass": true,
+      "detail": [
+        [
+          {
+            "top": 2022.375,
+            "bottom": 2078.765625,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          },
+          {
+            "top": 2086.765625,
+            "bottom": 2143.15625,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          }
+        ],
+        [
+          {
+            "top": 4419.40625,
+            "bottom": 4475.796875,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          },
+          {
+            "top": 4483.796875,
+            "bottom": 4540.1875,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          }
+        ],
+        [
+          {
+            "top": 6528.4375,
+            "bottom": 6584.828125,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          },
+          {
+            "top": 6592.828125,
+            "bottom": 6649.21875,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          }
+        ],
+        [
+          {
+            "top": 8685.5625,
+            "bottom": 8741.953125,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          },
+          {
+            "top": 8749.953125,
+            "bottom": 8806.34375,
+            "height": 56.390625,
+            "scroll": 236,
+            "client": 236
+          }
+        ]
+      ]
+    },
+    {
+      "name": "390 reduce initial cards unhighlighted",
+      "pass": true
+    },
+    {
+      "name": "390 reduce supercracks arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 82.9375,
+        "offset": 83,
+        "focused": true
+      }
+    },
+    {
+      "name": "390 reduce supercracks cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "390 reduce supercracks arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 82.9375,
+        "offset": 83,
+        "focused": true
+      }
+    },
+    {
+      "name": "390 reduce supercracks cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "390 reduce rookies arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 82.53125,
+        "offset": 83,
+        "focused": true
+      }
+    },
+    {
+      "name": "390 reduce rookies cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "390 reduce each activation followed by ~1100ms removal",
+      "pass": true,
+      "detail": [
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 108,
+          "top": 846.53125,
+          "offset": 83
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 108.69999999925494,
+          "top": 1543.53125,
+          "offset": 83
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 108.69999999925494,
+          "top": 2312.53125,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 108.69999999925494,
+          "top": 3007.9375,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": true,
+          "at": 110.5,
+          "top": 82.9375,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 1210.699999999255,
+          "top": 82.9375,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 1460.699999999255,
+          "top": 846.53125,
+          "offset": 83
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 1461.199999999255,
+          "top": 1543.53125,
+          "offset": 83
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 1461.199999999255,
+          "top": 2312.53125,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 1461.199999999255,
+          "top": 3007.9375,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": true,
+          "at": 1475.4000000022352,
+          "top": 82.9375,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 2575.400000002235,
+          "top": 82.9375,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 2824.199999999255,
+          "top": 846.53125,
+          "offset": 83
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 2824.699999999255,
+          "top": 1543.53125,
+          "offset": 83
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 2824.699999999255,
+          "top": 2312.53125,
+          "offset": 83
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 2824.699999999255,
+          "top": 3007.9375,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": true,
+          "at": 2826,
+          "top": 82.53125,
+          "offset": 83
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 3926.10000000149,
+          "top": 82.53125,
+          "offset": 83
+        }
+      ]
+    },
+    {
+      "name": "390 reduce compact buttons share row with usable touch targets",
+      "pass": true,
+      "detail": [
+        [
+          {
+            "top": 700.53125,
+            "bottom": 744.53125,
+            "left": 41,
+            "right": 191,
+            "height": 44,
+            "label": "Ver viajes para Rookies",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 700.53125,
+            "bottom": 744.53125,
+            "left": 199,
+            "right": 349,
+            "height": 44,
+            "label": "Consultar el nivel Rookies por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 1469.53125,
+            "bottom": 1513.53125,
+            "left": 41,
+            "right": 191,
+            "height": 44,
+            "label": "Ver viajes para Aprendices",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 1469.53125,
+            "bottom": 1513.53125,
+            "left": 199,
+            "right": 349,
+            "height": 44,
+            "label": "Consultar el nivel Aprendices por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 2164.9375,
+            "bottom": 2208.9375,
+            "left": 41,
+            "right": 191,
+            "height": 44,
+            "label": "Ver viajes para Riders",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 2164.9375,
+            "bottom": 2208.9375,
+            "left": 199,
+            "right": 349,
+            "height": 44,
+            "label": "Consultar el nivel Riders por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 2836.34375,
+            "bottom": 2880.34375,
+            "left": 41,
+            "right": 191,
+            "height": 44,
+            "label": "Ver viajes para Supercracks",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 2836.34375,
+            "bottom": 2880.34375,
+            "left": 199,
+            "right": 349,
+            "height": 44,
+            "label": "Consultar el nivel Supercracks por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ]
+      ]
+    },
+    {
+      "name": "390 reduce no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390 reduce CTA filters without highlight",
+      "pass": true
+    },
+    {
+      "name": "390 reduce CTA context and focus",
+      "pass": true
+    },
+    {
+      "name": "390 reduce disclosure label/count upright and font stable",
+      "pass": true,
+      "detail": {
+        "before": [
+          {
+            "size": "15px",
+            "transform": "none"
+          },
+          {
+            "size": "12px",
+            "transform": "none"
+          }
+        ],
+        "after": [
+          {
+            "size": "15px",
+            "transform": "none"
+          },
+          {
+            "size": "12px",
+            "transform": "none"
+          },
+          {
+            "size": "22px",
+            "transform": "matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "390 reduce only plus rotates",
+      "pass": true,
+      "detail": {
+        "size": "22px",
+        "transform": "matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)"
+      }
+    },
+    {
+      "name": "390 reduce Space closes pending destinations",
+      "pass": true
+    },
+    {
+      "name": "1440 no-preference initial cards unhighlighted",
+      "pass": true
+    },
+    {
+      "name": "1440 no-preference supercracks arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 117.296875,
+        "offset": 115,
+        "focused": true
+      }
+    },
+    {
+      "name": "1440 no-preference supercracks cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "1440 no-preference supercracks arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 115.296875,
+        "offset": 115,
+        "focused": true
+      }
+    },
+    {
+      "name": "1440 no-preference supercracks cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "1440 no-preference rookies arrival at destination and focused",
+      "pass": true,
+      "detail": {
+        "top": 113.3125,
+        "offset": 115,
+        "focused": true
+      }
+    },
+    {
+      "name": "1440 no-preference rookies cue expires with focus retained",
+      "pass": true,
+      "detail": {
+        "focused": true,
+        "bg": "rgb(27, 27, 27)",
+        "border": "rgb(204, 197, 176)"
+      }
+    },
+    {
+      "name": "1440 no-preference each activation followed by ~1100ms removal",
+      "pass": true,
+      "detail": [
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 113.89999999850988,
+          "top": 748.3125,
+          "offset": 115
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 114.59999999776483,
+          "top": 748.3125,
+          "offset": 115
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 114.59999999776483,
+          "top": 1384.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 114.59999999776483,
+          "top": 1384.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": true,
+          "at": 674.0999999977648,
+          "top": 117.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 1774.3999999985099,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 2022.5,
+          "top": -520.6875,
+          "offset": 115
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 2023,
+          "top": -520.6875,
+          "offset": 115
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 2023,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 2023,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": true,
+          "at": 2024.2999999970198,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 3124.5,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 3372.599999997765,
+          "top": -520.6875,
+          "offset": 115
+        },
+        {
+          "id": "aprendices",
+          "active": false,
+          "at": 3373.099999997765,
+          "top": -520.6875,
+          "offset": 115
+        },
+        {
+          "id": "riders",
+          "active": false,
+          "at": 3373.099999997765,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "supercracks",
+          "active": false,
+          "at": 3373.099999997765,
+          "top": 115.296875,
+          "offset": 115
+        },
+        {
+          "id": "rookies",
+          "active": true,
+          "at": 3757.2999999970198,
+          "top": 113.3125,
+          "offset": 115
+        },
+        {
+          "id": "rookies",
+          "active": false,
+          "at": 4857.5,
+          "top": 115.3125,
+          "offset": 115
+        }
+      ]
+    },
+    {
+      "name": "1440 no-preference compact buttons share row with usable touch targets",
+      "pass": true,
+      "detail": [
+        [
+          {
+            "top": 664.296875,
+            "bottom": 708.296875,
+            "left": 95,
+            "right": 382,
+            "height": 44,
+            "label": "Ver viajes para Rookies",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 664.296875,
+            "bottom": 708.296875,
+            "left": 390,
+            "right": 677,
+            "height": 44,
+            "label": "Consultar el nivel Rookies por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 664.296875,
+            "bottom": 708.296875,
+            "left": 763,
+            "right": 1050,
+            "height": 44,
+            "label": "Ver viajes para Aprendices",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 664.296875,
+            "bottom": 708.296875,
+            "left": 1058,
+            "right": 1345,
+            "height": 44,
+            "label": "Consultar el nivel Aprendices por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 1276.28125,
+            "bottom": 1320.28125,
+            "left": 95,
+            "right": 382,
+            "height": 44,
+            "label": "Ver viajes para Riders",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 1276.28125,
+            "bottom": 1320.28125,
+            "left": 390,
+            "right": 677,
+            "height": 44,
+            "label": "Consultar el nivel Riders por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ],
+        [
+          {
+            "top": 1276.28125,
+            "bottom": 1320.28125,
+            "left": 763,
+            "right": 1050,
+            "height": 44,
+            "label": "Ver viajes para Supercracks",
+            "text": "Ver viajes",
+            "overflow": false
+          },
+          {
+            "top": 1276.28125,
+            "bottom": 1320.28125,
+            "left": 1058,
+            "right": 1345,
+            "height": 44,
+            "label": "Consultar el nivel Supercracks por WhatsApp",
+            "text": "WhatsApp",
+            "overflow": false
+          }
+        ]
+      ]
+    },
+    {
+      "name": "1440 no-preference no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 no-preference CTA filters without highlight",
+      "pass": true
+    },
+    {
+      "name": "1440 no-preference CTA context and focus",
+      "pass": true
+    },
+    {
+      "name": "1440 no-preference disclosure label/count upright and font stable",
+      "pass": true,
+      "detail": {
+        "before": [
+          {
+            "size": "15px",
+            "transform": "none"
+          },
+          {
+            "size": "12px",
+            "transform": "none"
+          }
+        ],
+        "after": [
+          {
+            "size": "15px",
+            "transform": "none"
+          },
+          {
+            "size": "12px",
+            "transform": "none"
+          },
+          {
+            "size": "22px",
+            "transform": "matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "1440 no-preference only plus rotates",
+      "pass": true,
+      "detail": {
+        "size": "22px",
+        "transform": "matrix(0.707107, 0.707107, -0.707107, 0.707107, 0, 0)"
+      }
+    },
+    {
+      "name": "1440 no-preference Space closes pending destinations",
+      "pass": true
+    },
+    {
+      "name": "deep link restores logical state without highlight",
+      "pass": true
+    },
+    {
+      "name": "Ctrl-click preserves original URL and logical state",
+      "pass": true
+    },
+    {
+      "name": "reload preserves travel filter without cue",
+      "pass": true
+    },
+    {
+      "name": "back restores previous travel filter",
+      "pass": true
+    },
+    {
+      "name": "forward restores travel filter",
+      "pass": true
+    },
+    {
+      "name": "logical state persists in help WhatsApp",
+      "pass": true
+    },
+    {
+      "name": "rookies WhatsApp keeps context/autonomy",
+      "pass": true
+    },
+    {
+      "name": "aprendices WhatsApp keeps context/autonomy",
+      "pass": true
+    },
+    {
+      "name": "riders WhatsApp keeps context/autonomy",
+      "pass": true
+    },
+    {
+      "name": "supercracks WhatsApp keeps context/autonomy",
+      "pass": true
+    },
+    {
+      "name": "all removes contextual filtering and leaves no highlight",
+      "pass": true
+    },
+    {
+      "name": "noJS native anchor, static guide and no persistent cue",
+      "pass": true
+    },
+    {
+      "name": "noJS disclosure remains usable and text upright",
+      "pass": true
+    },
+    {
+      "name": "noJS all six trip destinations and contextual links available",
+      "pass": true
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "four WhatsApp navigations intercepted locally",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "whatsapp": [
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20I%20%28Rookies%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20II%20%28Aprendices%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20III%20%28Riders%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F",
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20reconozco%20en%20el%20nivel%20IV%20%28Supercracks%29%20y%20quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo.%20%C2%BFPodemos%20revisar%20mi%20experiencia%20y%20autonom%C3%ADa%20en%20el%20agua%3F"
+  ]
+}

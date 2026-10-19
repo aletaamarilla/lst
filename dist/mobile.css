@@ -162,3 +162,29 @@ html:has(.minimal-cover){scroll-padding-top:calc(var(--home-header-height,70px) 
 .minimal-cover .departure-price strong{white-space:nowrap}
 @media(min-width:640px){.minimal-cover .departure-photo{min-height:270px}}
 @media(min-width:1000px){.minimal-cover .departure-photo{min-height:295px}}
+
+/* Keep the level guide reachable across the home and guide on phones. */
+.minimal-cover .header-levels{display:none}
+@media(min-width:1000px){.minimal-cover .site-header{flex-wrap:wrap}.minimal-cover .site-header nav{min-width:0;flex-wrap:wrap}}
+@media(max-width:999px){
+ .minimal-cover .site-header{gap:10px;flex-wrap:wrap}
+ .minimal-cover .site-header .brand{width:155px;flex-shrink:1;min-width:100px}
+ .minimal-cover .header-levels{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 4px;margin-left:auto;font-size:13px;font-weight:600;text-underline-offset:5px}
+ .minimal-cover .menu-toggle{margin-left:0}
+ .minimal-cover .site-header nav{max-height:calc(100dvh - var(--home-header-height,70px))}
+}
+
+/* Four destinations fit the primary menu; supporting home sections remain below. */
+.minimal-cover .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:6px}
+.minimal-cover .static-navigation{display:flex;flex-wrap:wrap;gap:8px 20px;padding-block:16px;border-bottom:1px solid var(--line)}
+.static-navigation a{display:inline-flex;align-items:center;min-height:44px;font-weight:600;font-size:15px;text-underline-offset:5px}
+
+/* Without JavaScript the native fallback sits below a header that stays in flow.
+   Sticky positioning keeps it at the top without guessing its rendered height. */
+.minimal-cover:has(.static-navigation) .site-header{position:sticky;background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+.minimal-cover:has(.static-navigation) main{padding-top:0}
+.minimal-cover:has(.static-navigation) .site-header .brand-light{display:none}
+.minimal-cover:has(.static-navigation) .site-header .brand-dark{display:block}
+.minimal-cover:has(.static-navigation) .site-header :is(.menu-toggle,.header-levels){display:none}
+.minimal-cover:has(.static-navigation) .site-header .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
+.minimal-cover:has(.static-navigation) .site-header :is(a,button):focus-visible{outline-color:var(--ink)}

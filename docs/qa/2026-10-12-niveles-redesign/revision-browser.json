@@ -1,0 +1,179 @@
+{
+  "checks": [
+    {
+      "name": "320 no overflow",
+      "pass": true
+    },
+    {
+      "name": "320 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 88.1875,
+        "header": 71,
+        "focus": "rookies"
+      }
+    },
+    {
+      "name": "320 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 88.0625,
+        "header": 71,
+        "focus": "aprendices"
+      }
+    },
+    {
+      "name": "320 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 89.9375,
+        "header": 71,
+        "focus": "riders"
+      }
+    },
+    {
+      "name": "320 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 88.40625,
+        "header": 71,
+        "focus": "supercracks"
+      }
+    },
+    {
+      "name": "320 text200 caption fits",
+      "pass": true,
+      "detail": {
+        "photo": {
+          "x": 20,
+          "y": 1503.546875,
+          "width": 280,
+          "height": 190,
+          "top": 1503.546875,
+          "right": 300,
+          "bottom": 1693.546875,
+          "left": 20
+        },
+        "caption": {
+          "x": 38,
+          "y": 1520.796875,
+          "width": 244,
+          "height": 156.75,
+          "top": 1520.796875,
+          "right": 282,
+          "bottom": 1677.546875,
+          "left": 38
+        }
+      }
+    },
+    {
+      "name": "320 text200 no overflow",
+      "pass": true
+    },
+    {
+      "name": "320 text200 keyboard menu starts with first link",
+      "pass": true
+    },
+    {
+      "name": "320 text200 menu Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "700 no overflow",
+      "pass": true
+    },
+    {
+      "name": "700 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 90.9375,
+        "header": 71,
+        "focus": "rookies"
+      }
+    },
+    {
+      "name": "700 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 90.9375,
+        "header": 71,
+        "focus": "aprendices"
+      }
+    },
+    {
+      "name": "700 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 87.8125,
+        "header": 71,
+        "focus": "riders"
+      }
+    },
+    {
+      "name": "700 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 87.8125,
+        "header": 71,
+        "focus": "supercracks"
+      }
+    },
+    {
+      "name": "1440 no overflow",
+      "pass": true
+    },
+    {
+      "name": "1440 anchor rookies",
+      "pass": true,
+      "detail": {
+        "top": 121.3125,
+        "header": 103,
+        "focus": "rookies"
+      }
+    },
+    {
+      "name": "1440 anchor aprendices",
+      "pass": true,
+      "detail": {
+        "top": 121.3125,
+        "header": 103,
+        "focus": "aprendices"
+      }
+    },
+    {
+      "name": "1440 anchor riders",
+      "pass": true,
+      "detail": {
+        "top": 122.40625,
+        "header": 103,
+        "focus": "riders"
+      }
+    },
+    {
+      "name": "1440 anchor supercracks",
+      "pass": true,
+      "detail": {
+        "top": 122.40625,
+        "header": 103,
+        "focus": "supercracks"
+      }
+    },
+    {
+      "name": "WhatsApp opens expected consultation",
+      "pass": true
+    },
+    {
+      "name": "calendar navigation",
+      "pass": true
+    },
+    {
+      "name": "no JS errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F"
+  ]
+}

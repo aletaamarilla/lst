@@ -1,0 +1,18 @@
+{
+  "repo": "https://github.com/aletaamarilla/lst",
+  "checkout": "/home/amfernandez/personalProjects/letsurftogethersystem",
+  "baseCommit": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+  "date": "2026-10-13",
+  "committed": false,
+  "taskFiles": {
+    "dist/niveles/index.html": "ed615332212ba4f96fd016ba1909e02eaf4db0b9b1f2087506cc2adc9f5ac997",
+    "dist/levels.css": "92b45157970f9944c8891c5ae898e8b85cb3b4df98e4ae5df4c6566ee67317cb",
+    "dist/levels.js": "b71761ab91b3d3738076d97a8b7ad9cbc6d29692f5e528b71c219fa325cff24b",
+    "scripts/check-levels.mjs": "02bdeb204c8ba8ac553af77224de6db6fafba4ffe271c40ffb085d7dcc8565cf",
+    "README.md": "f4f034272382dc91405551c1baef17bdab7ddc00896a16b98eea3a9a4b02c81b",
+    "docs/propuesta.md": "ed7720bff9745b57c9840a5d68f3b17a4939b2b03ec2f48a9814f510c4ef76c9",
+    "docs/content-inventory.json": "5bc59dace19e5b6b35feccf0c70045f19a925e2892326ac8e26d15e8777697c3"
+  },
+  "newEvidenceDirectory": "docs/qa/2026-10-13-niveles-pulido",
+  "gitStatus": " M README.md\n M dist/app.js\n M dist/index.html\n M dist/mobile.css\n M dist/trip.css\n M dist/viajes/asturias/index.html\n M dist/viajes/azores/index.html\n M dist/viajes/cadiz/index.html\n M dist/viajes/el-salvador/index.html\n M dist/viajes/euskadi/index.html\n M dist/viajes/marruecos/index.html\n M docs/content-inventory.json\n M docs/propuesta.md\n M package.json\n M scripts/check-ux.mjs\n M scripts/check.mjs\n M scripts/render-trips.mjs\n?? dist/levels.css\n?? dist/levels.js\n?? dist/niveles/\n?? docs/qa/2026-10-12-niveles-ajustes/\n?? docs/qa/2026-10-12-niveles-conversion/\n?? docs/qa/2026-10-12-niveles-redesign/\n?? docs/qa/2026-10-12-niveles/\n?? docs/qa/2026-10-13-niveles-pulido/\n?? scripts/check-levels.mjs\n?? scripts/render-level-trips.mjs\n"
+}

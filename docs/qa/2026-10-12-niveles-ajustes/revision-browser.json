@@ -1,0 +1,628 @@
+{
+  "checks": [
+    {
+      "name": "pending initially closed",
+      "pass": true
+    },
+    {
+      "name": "Rookies only dated Asturias visible",
+      "pass": true
+    },
+    {
+      "name": "pending expands by keyboard",
+      "pass": true
+    },
+    {
+      "name": "pending closes by keyboard",
+      "pass": true
+    },
+    {
+      "name": "Rookies excludes restricted Salvador",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#rookies",
+        "selected": [
+          "rookies"
+        ],
+        "targets": [
+          "rookies"
+        ],
+        "visuallySelected": [
+          "rookies"
+        ],
+        "trips": [
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "rookies",
+        "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+        "focus": "",
+        "overflow": false
+      }
+    },
+    {
+      "name": "choice moves focus to trips",
+      "pass": true
+    },
+    {
+      "name": "exactly one visual selection after filter",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/?nivel=riders#viajes-por-nivel",
+        "selected": [
+          "riders"
+        ],
+        "targets": [
+          "rookies"
+        ],
+        "visuallySelected": [
+          "riders"
+        ],
+        "trips": [
+          "El Salvador",
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "riders",
+        "whatsapp": "¡Hola, LST! Me reconozco en el nivel III (Riders) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+        "focus": "",
+        "overflow": false
+      }
+    },
+    {
+      "name": "Riders includes restricted Salvador",
+      "pass": true
+    },
+    {
+      "name": "clear filter clears visual selection",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/#viajes-por-nivel",
+        "selected": [],
+        "targets": [
+          "rookies"
+        ],
+        "visuallySelected": [],
+        "trips": [
+          "El Salvador",
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "",
+        "whatsapp": "¡Hola, LST! Quiero consultar mi nivel de surf y saber si encajo en un viaje. ¿Podéis orientarme?",
+        "focus": "",
+        "overflow": false
+      }
+    },
+    {
+      "name": "back restores Riders",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/?nivel=riders#viajes-por-nivel",
+        "selected": [
+          "riders"
+        ],
+        "targets": [],
+        "visuallySelected": [
+          "riders"
+        ],
+        "trips": [
+          "El Salvador",
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "riders",
+        "whatsapp": "¡Hola, LST! Me reconozco en el nivel III (Riders) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+        "focus": "viajes-por-nivel",
+        "overflow": false
+      }
+    },
+    {
+      "name": "back restores Rookies",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#viajes-por-nivel",
+        "selected": [
+          "rookies"
+        ],
+        "targets": [],
+        "visuallySelected": [
+          "rookies"
+        ],
+        "trips": [
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "rookies",
+        "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+        "focus": "viajes-por-nivel",
+        "overflow": false
+      }
+    },
+    {
+      "name": "reload keeps query selection",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#viajes-por-nivel",
+        "selected": [
+          "rookies"
+        ],
+        "targets": [],
+        "visuallySelected": [
+          "rookies"
+        ],
+        "trips": [
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "rookies",
+        "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+        "focus": "",
+        "overflow": false
+      }
+    },
+    {
+      "name": "modified click leaves current context unchanged",
+      "pass": true,
+      "detail": {
+        "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#rookies",
+        "selected": [
+          "rookies"
+        ],
+        "targets": [
+          "rookies"
+        ],
+        "visuallySelected": [
+          "rookies"
+        ],
+        "trips": [
+          "Asturias",
+          "Azores",
+          "Euskadi",
+          "Marruecos",
+          "Cádiz"
+        ],
+        "pressed": "rookies",
+        "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+        "focus": "",
+        "overflow": false
+      }
+    },
+    {
+      "name": "reduced motion disables highlight animation",
+      "pass": true
+    },
+    {
+      "name": "320 / header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 70
+      }
+    },
+    {
+      "name": "320 /niveles/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 71
+      }
+    },
+    {
+      "name": "320 /viajes/asturias/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 72
+      }
+    },
+    {
+      "name": "390 / header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 70
+      }
+    },
+    {
+      "name": "390 /niveles/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 71
+      }
+    },
+    {
+      "name": "390 /viajes/asturias/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 72
+      }
+    },
+    {
+      "name": "768 / header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 70
+      }
+    },
+    {
+      "name": "768 /niveles/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 71
+      }
+    },
+    {
+      "name": "768 /viajes/asturias/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 72
+      }
+    },
+    {
+      "name": "1024 / header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 92
+      }
+    },
+    {
+      "name": "1024 /niveles/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 93
+      }
+    },
+    {
+      "name": "1024 /viajes/asturias/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 81
+      }
+    },
+    {
+      "name": "1440 / header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 102
+      }
+    },
+    {
+      "name": "1440 /niveles/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 103
+      }
+    },
+    {
+      "name": "1440 /viajes/asturias/ header levels and no overflow",
+      "pass": true,
+      "detail": {
+        "overflow": false,
+        "levels": true,
+        "h": 81
+      }
+    },
+    {
+      "name": "320 text200 selected card no clipping",
+      "pass": true,
+      "detail": [
+        {
+          "text": "IVNivel que estás explorandoCada detalle cuentaSupercracks",
+          "left": 21,
+          "right": 299,
+          "scroll": 278,
+          "width": 278,
+          "within": true
+        },
+        {
+          "text": "IV",
+          "left": 41,
+          "right": 95,
+          "scroll": 54,
+          "width": 54,
+          "within": true
+        },
+        {
+          "text": "Nivel que estás explorandoCada detalle cuentaSupercracks",
+          "left": 111,
+          "right": 279,
+          "scroll": 168,
+          "width": 168,
+          "within": true
+        },
+        {
+          "text": "Supercracks",
+          "left": 111,
+          "right": 279,
+          "scroll": 168,
+          "width": 168,
+          "within": true
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "left": 41,
+          "right": 279,
+          "scroll": 236,
+          "width": 236,
+          "within": true
+        }
+      ]
+    },
+    {
+      "name": "no JS native highlight retained",
+      "pass": true
+    },
+    {
+      "name": "no JS only dated trips initially visible",
+      "pass": true
+    },
+    {
+      "name": "no JS pending expands by keyboard",
+      "pass": true
+    },
+    {
+      "name": "no JS pending closes by keyboard",
+      "pass": true
+    },
+    {
+      "name": "no JS errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "deep rookies",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#rookies",
+      "selected": [
+        "rookies"
+      ],
+      "targets": [
+        "rookies"
+      ],
+      "visuallySelected": [
+        "rookies"
+      ],
+      "trips": [
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "rookies",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "",
+      "overflow": false
+    },
+    {
+      "name": "rookies choice",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#viajes-por-nivel",
+      "selected": [
+        "rookies"
+      ],
+      "targets": [
+        "rookies"
+      ],
+      "visuallySelected": [
+        "rookies"
+      ],
+      "trips": [
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "rookies",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "viajes-por-nivel",
+      "overflow": false
+    },
+    {
+      "name": "riders filter",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=riders#viajes-por-nivel",
+      "selected": [
+        "riders"
+      ],
+      "targets": [
+        "rookies"
+      ],
+      "visuallySelected": [
+        "riders"
+      ],
+      "trips": [
+        "El Salvador",
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "riders",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel III (Riders) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "",
+      "overflow": false
+    },
+    {
+      "name": "all filter",
+      "url": "http://127.0.0.1:4175/niveles/#viajes-por-nivel",
+      "selected": [],
+      "targets": [
+        "rookies"
+      ],
+      "visuallySelected": [],
+      "trips": [
+        "El Salvador",
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "",
+      "whatsapp": "¡Hola, LST! Quiero consultar mi nivel de surf y saber si encajo en un viaje. ¿Podéis orientarme?",
+      "focus": "",
+      "overflow": false
+    },
+    {
+      "name": "back to riders",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=riders#viajes-por-nivel",
+      "selected": [
+        "riders"
+      ],
+      "targets": [],
+      "visuallySelected": [
+        "riders"
+      ],
+      "trips": [
+        "El Salvador",
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "riders",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel III (Riders) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "viajes-por-nivel",
+      "overflow": false
+    },
+    {
+      "name": "back to rookies choice",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#viajes-por-nivel",
+      "selected": [
+        "rookies"
+      ],
+      "targets": [],
+      "visuallySelected": [
+        "rookies"
+      ],
+      "trips": [
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "rookies",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "viajes-por-nivel",
+      "overflow": false
+    },
+    {
+      "name": "reload rookies choice",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#viajes-por-nivel",
+      "selected": [
+        "rookies"
+      ],
+      "targets": [],
+      "visuallySelected": [
+        "rookies"
+      ],
+      "trips": [
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "rookies",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "",
+      "overflow": false
+    },
+    {
+      "name": "before modified click",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#rookies",
+      "selected": [
+        "rookies"
+      ],
+      "targets": [
+        "rookies"
+      ],
+      "visuallySelected": [
+        "rookies"
+      ],
+      "trips": [
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "rookies",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "rookies",
+      "overflow": false
+    },
+    {
+      "name": "after modified click",
+      "url": "http://127.0.0.1:4175/niveles/?nivel=rookies#rookies",
+      "selected": [
+        "rookies"
+      ],
+      "targets": [
+        "rookies"
+      ],
+      "visuallySelected": [
+        "rookies"
+      ],
+      "trips": [
+        "Asturias",
+        "Azores",
+        "Euskadi",
+        "Marruecos",
+        "Cádiz"
+      ],
+      "pressed": "rookies",
+      "whatsapp": "¡Hola, LST! Me reconozco en el nivel I (Rookies) y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?",
+      "focus": "",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

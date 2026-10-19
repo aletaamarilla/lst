@@ -1,0 +1,175 @@
+/* The home phone composition is the base. Larger screens regain the wide layout. */
+.minimal-cover{font-size:16px}
+html:has(.minimal-cover){scroll-padding-top:calc(var(--home-header-height,70px) + 12px)}
+.minimal-cover .section-width{width:calc(100% - 40px)}
+.minimal-cover .section-space{padding-block:44px}
+.minimal-cover .site-header{position:fixed;min-height:70px;padding:13px 20px}
+.minimal-cover .site-header .brand{width:185px}
+.minimal-cover .site-header nav{top:70px;padding:16px 20px;gap:0}
+.minimal-cover .site-header nav a{display:flex;align-items:center;min-height:48px;padding:8px 0}
+.minimal-cover .site-header .header-cta{display:none}
+.minimal-cover .menu-toggle{min-height:44px}
+.minimal-cover .hero.cover-hero,.minimal-cover .cover-content{min-height:min(790px,92svh)}
+.minimal-cover .cover-content{width:calc(100% - 40px);padding:100px 0 35px}
+.minimal-cover .hero.cover-hero h1{font-size:clamp(40px,13.2vw,95px);margin-bottom:26px}
+.minimal-cover .cover-label{font-size:10px;margin-bottom:18px}
+.minimal-cover .cover-hero .hero-primary{min-height:54px;font-size:15px;width:min(300px,100%);padding-inline:19px}
+.minimal-cover .journeys{padding-top:36px;padding-bottom:40px}
+.minimal-cover .journeys-heading{margin-bottom:18px}
+.minimal-cover .journeys-heading h2{font-size:44px}
+.minimal-cover .journeys-level-link{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:6px 0}
+.minimal-cover .departure-section-heading{margin-bottom:16px}
+.minimal-cover .departure-section-heading h3{font-size:17px}
+.minimal-cover .departure-list{gap:22px}
+.minimal-cover .departure-photo>img{height:215px}
+.minimal-cover .departure-photo-title{left:18px;bottom:18px}
+.minimal-cover .departure-photo-title h3{font-size:44px}
+.minimal-cover .departure-photo-title p{font-size:12px}
+.minimal-cover .departure-date{left:14px;top:14px;padding:8px 10px;gap:10px}
+.minimal-cover .departure-date>span{font-size:13px}
+.minimal-cover .departure-date strong{font-size:12px;padding-left:10px}
+.minimal-cover .departure-body{padding:15px 17px 17px}
+.minimal-cover .departure-topline{min-height:27px;margin-bottom:9px}
+.minimal-cover .departure-description{font-size:15px;line-height:1.55}
+.minimal-cover .departure-facts{display:flex;flex-wrap:wrap;font-size:14px;gap:6px 14px;margin:14px 0 17px}
+.minimal-cover .departure-facts span+span{flex-basis:auto;border:0;margin:0;padding:0}
+.minimal-cover .departure-facts span:last-child{flex-basis:100%}
+.minimal-cover .departure-booking{flex-direction:column;align-items:stretch;min-height:0;padding-top:15px;gap:13px}
+.minimal-cover .departure-price{max-width:none;flex-direction:row;align-items:center;justify-content:space-between}
+.minimal-cover .departure-price strong{font-size:28px}
+.minimal-cover .departure-price>span{font-size:13px;max-width:10em;text-align:right}
+.minimal-cover .departure-price-pending strong{font-size:19px}
+.minimal-cover .departure-cta{min-height:48px;font-size:14px;min-width:126px;width:100%;padding:12px 17px}
+.minimal-cover .departure-note{font-size:13px;margin-top:11px}
+.minimal-cover .destination-collection{margin-top:27px;padding-top:25px}
+.minimal-cover .destination-collection-heading h3{font-size:22px}
+.minimal-cover .destination-collection-heading>p{font-size:13px}
+.minimal-cover .destination-list{grid-template-columns:1fr;gap:14px}
+.minimal-cover .destination-preview{display:grid;grid-template-columns:42% minmax(0,1fr);background:#fffdf5}
+.minimal-cover .destination-preview-photo img{height:100%;min-height:145px;aspect-ratio:auto}
+.minimal-cover .destination-preview-copy{padding:16px 14px;display:block}
+.minimal-cover .destination-preview-copy h4{font-size:32px}
+.minimal-cover .destination-preview-copy p{font-size:13px}
+.minimal-cover .destination-preview-action{min-height:44px;font-size:14px;margin-top:5px}
+.minimal-cover .destination-status{font-size:12px;left:7px;top:8px}
+.minimal-cover .destination-collection-note{font-size:13px}
+.minimal-cover .section-heading h2,.minimal-cover .booking-intro h2,.minimal-cover .levels .section-heading h2,.minimal-cover .people-copy h2,.minimal-cover .faq h2{font-size:42px}
+.minimal-cover .experience-copy p,.minimal-cover .people-copy>p:not(.eyebrow),.minimal-cover .booking-steps p{font-size:15px;line-height:1.65}
+.minimal-cover .experience-copy h3,.minimal-cover .booking-steps h3{font-size:18px}
+.minimal-cover .booking-intro>.button{width:100%}
+.minimal-cover .level-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+.minimal-cover .level-tabs button{min-height:66px;flex-direction:row;gap:13px;justify-content:flex-start;padding:17px 15px;border:0;border-bottom:1px solid var(--ink)}
+.minimal-cover .level-tabs button:nth-child(odd){border-right:1px solid var(--ink)}
+.minimal-cover .level-tabs button:nth-child(n+3){border-bottom:0}
+.minimal-cover .level-tabs button>span:last-child{font-size:13px}
+.minimal-cover .level-panel{padding:22px 18px}
+.minimal-cover .level-panel h3{font-size:23px}
+.minimal-cover .level-panel p{font-size:15px}
+.minimal-cover .level-help a,.minimal-cover .faq .text-link,.minimal-cover .closing-trips{min-height:44px;display:inline-flex;align-items:center}
+.minimal-cover summary{min-height:58px;font-size:15px;line-height:1.5}
+.minimal-cover details>p{font-size:15px}
+.minimal-cover .last-call .button{width:100%}
+.minimal-cover .last-call .closing-trips{margin:12px 0 0}
+.minimal-cover .footer-main>div{gap:3px}
+.minimal-cover .footer-main a:not(.brand){min-height:44px;display:flex;align-items:center}
+@media(min-width:375px){.minimal-cover .departure-booking{flex-direction:row;align-items:center;gap:14px}.minimal-cover .departure-price{flex-direction:column;align-items:start;gap:4px}.minimal-cover .departure-price>span{text-align:left;max-width:13em}.minimal-cover .departure-cta{width:auto}.minimal-cover .departure-price-pending strong{font-size:18px}}
+@media(min-width:640px){.minimal-cover .section-width{width:calc(100% - 64px)}.minimal-cover .destination-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.minimal-cover .destination-preview{display:block}.minimal-cover .destination-preview-photo img{width:100%;height:auto;min-height:0;aspect-ratio:1.5}.minimal-cover .destination-preview-copy{padding:16px}.minimal-cover .departure-photo>img{height:270px}.minimal-cover .departure-body{padding:20px 22px}.minimal-cover .departure-description{font-size:16px}.minimal-cover .journeys-heading h2{font-size:52px}.minimal-cover .level-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}.minimal-cover .level-tabs button{border-bottom:0;justify-content:center;flex-direction:column}.minimal-cover .level-tabs button:not(:last-child){border-right:1px solid var(--ink)}}
+@media(min-width:761px){.minimal-cover .site-header{min-height:88px;padding:24px 32px}.minimal-cover .site-header .brand{width:215px}.minimal-cover .site-header nav{padding:0;gap:20px}.minimal-cover .site-header nav a{padding:0;min-height:44px}.minimal-cover .hero.cover-hero,.minimal-cover .cover-content{min-height:100svh}.minimal-cover .cover-content{width:calc(100% - 64px);padding:145px 0 54px}.minimal-cover .hero.cover-hero h1{font-size:clamp(76px,10vw,130px);margin-bottom:32px}.minimal-cover .cover-label{font-size:12px;margin-bottom:22px}.minimal-cover .hero-primary{width:auto}.minimal-cover .section-space{padding-block:65px}.minimal-cover .journeys-heading{margin-bottom:28px}.minimal-cover .journeys-level-link{margin:0}.minimal-cover .departure-description{font-size:16px}.minimal-cover .departure-booking{flex-direction:column;align-items:stretch}.minimal-cover .departure-cta{width:100%}.minimal-cover .departure-price strong{font-size:32px}.minimal-cover .departure-price-pending strong{font-size:23px}.minimal-cover .departure-facts{font-size:13px}.minimal-cover .booking-intro>.button,.minimal-cover .last-call .button{width:auto}.minimal-cover .last-call .closing-trips{margin-left:16px}.minimal-cover .level-tabs button{flex-direction:row;gap:13px}.minimal-cover .section-heading h2,.minimal-cover .booking-intro h2,.minimal-cover .levels .section-heading h2,.minimal-cover .people-copy h2,.minimal-cover .faq h2{font-size:50px}.minimal-cover .experience-copy h3,.minimal-cover .booking-steps h3{font-size:21px}}
+@media(min-width:1000px){.minimal-cover .site-header .header-cta{display:inline-flex}.minimal-cover .destination-list{grid-template-columns:repeat(4,minmax(0,1fr))}.minimal-cover .destination-preview{background:transparent}.minimal-cover .destination-preview-copy{padding:18px 0 0}.minimal-cover .destination-preview-copy h4{font-size:37px}.minimal-cover .departure-photo>img{height:295px}.minimal-cover .departure-description{font-size:17px}.minimal-cover .departure-body{padding:21px 25px 22px}.minimal-cover .departure-booking{flex-direction:row;align-items:center}.minimal-cover .departure-cta{width:auto}.minimal-cover .departure-photo-title h3{font-size:54px}.minimal-cover .departure-price>span{font-size:13px;max-width:13.7em}.minimal-cover .journeys-heading h2{font-size:64px}}
+@media(min-width:1280px){.minimal-cover .site-header{padding:29px 56px}.minimal-cover .site-header .brand{width:242px}.minimal-cover .section-width,.minimal-cover .cover-content{width:min(1312px,calc(100% - 112px))}.minimal-cover .section-space{padding-block:78px}.minimal-cover .hero.cover-hero h1{font-size:clamp(120px,9.3vw,166px)}.minimal-cover .cover-content{padding-bottom:58px}.minimal-cover .cover-label{font-size:13px}.minimal-cover .section-heading h2,.minimal-cover .booking-intro h2,.minimal-cover .people-copy h2{font-size:56px}}
+
+/* Keep fixed navigation readable while scrolling at every screen width. */
+.minimal-cover .site-header.is-scrolled,.minimal-cover .site-header:has(nav.is-open){background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+.minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) .brand-light{display:none}
+.minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) .brand-dark{display:block}
+.minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) .menu-toggle span{background:var(--ink)}
+.minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--ink)}
+.minimal-cover .site-header.is-scrolled .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
+.minimal-cover .site-header.is-scrolled .header-cta:hover{background:var(--ink);color:var(--paper)}
+
+/* Keep the contact in the disclosure until the full header fits. */
+.minimal-cover .site-header nav .nav-whatsapp{display:none}
+@media(max-width:999px){
+ .minimal-cover .site-header{position:fixed;min-height:70px;padding:13px 20px;gap:16px}
+ .minimal-cover .site-header .brand{width:185px}
+ .minimal-cover .menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:6px;border:0;background:none;width:44px;min-height:44px;padding:8px;margin-left:auto;flex-shrink:0}
+ .minimal-cover .menu-toggle span{width:27px;height:2px;background:var(--paper)}
+ .minimal-cover .site-header nav{display:none;position:absolute;top:100%;inset-inline:0;margin:0;padding:12px 20px 20px;gap:0;flex-direction:column;background:var(--paper);color:var(--ink);border-bottom:1px solid var(--ink);max-height:calc(100dvh - 70px);overflow-y:auto;overscroll-behavior:contain}
+ .minimal-cover .site-header nav.is-open{display:flex}
+ .minimal-cover .site-header nav a{min-height:48px;padding:10px 0;font-size:16px;white-space:normal}
+ .minimal-cover .site-header nav .nav-whatsapp{display:flex;margin-top:12px;padding:12px 16px;text-align:center}
+}
+/* Allow enlarged text to reflow instead of forcing columns wider. */
+.minimal-cover{overflow-wrap:anywhere}
+.minimal-cover .level-tabs button{min-width:0;flex-wrap:wrap}
+.minimal-cover .departure-booking{flex-wrap:wrap}
+.minimal-cover .departure-price{min-width:0}
+.minimal-cover .destination-status{max-width:calc(100% - 14px)}
+
+/* Presentation: a short introduction and a clear bridge from the origin to LST today. */
+.minimal-cover .hero.cover-hero h1{margin-bottom:18px}
+.minimal-cover .cover-intro{max-width:34rem;font-size:16px;line-height:1.5;margin:0 0 24px;text-wrap:pretty}
+.minimal-cover .people-copy h3{font:600 20px/1.35 var(--body);margin:26px 0 12px;max-width:440px}
+@media(min-width:761px){
+ .minimal-cover .cover-intro{font-size:18px;margin-bottom:28px}
+ .minimal-cover .people-copy h3{font-size:22px}
+}
+
+/* Community: two distinct memories within the existing experience section. */
+.minimal-cover .community-voices{margin-top:30px;padding-top:25px;border-top:1px solid #ffffff35}
+.minimal-cover .community-voices h3{font:400 13px/1.6 var(--mono);color:#ff9c7f;margin-bottom:22px}
+.minimal-cover .community-voices-grid{display:grid;gap:24px}
+.minimal-cover .community-voices .testimonial{display:block;margin:0;padding:0;border:0;min-width:0}
+.minimal-cover .community-voices .quote-context{font-size:14px;line-height:1.5;color:#eee8d6;margin-bottom:10px}
+.minimal-cover .community-voices blockquote{font-size:24px;line-height:1.45}
+.minimal-cover .community-voices figcaption{margin-top:13px;font-size:13px}
+.minimal-cover .community-voices figcaption span{margin:4px 0 0}
+.minimal-cover .community-source{display:inline-flex;align-items:center;min-height:44px;margin-top:17px;padding-block:10px;font-size:13px;line-height:1.5;color:var(--paper);text-underline-offset:4px}
+@media(min-width:761px){
+ .minimal-cover .community-voices-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px}
+ .minimal-cover .community-voices blockquote{font-size:26px;max-width:28ch}
+ .minimal-cover .community-voices .testimonial+ .testimonial{border-left:1px solid #ffffff35;padding-left:38px}
+}
+
+/* Responsibility: brand principles within the existing LST presentation. */
+.minimal-cover .lst-respect{display:grid;gap:12px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.minimal-cover .lst-respect h3{font:600 20px/1.35 var(--body);letter-spacing:-.03em}
+.minimal-cover .lst-respect p{font-size:15px;line-height:1.65;max-width:65ch}
+@media(min-width:761px){
+ .minimal-cover .lst-respect{grid-template-columns:1fr 1.25fr;gap:40px}
+ .minimal-cover .lst-respect h3{font-size:22px}
+}
+@media(min-width:1201px){.minimal-cover .lst-respect{gap:64px}}
+
+/* Keep documentary groups and the learning scene in their original frame. */
+.minimal-cover .experience-grid{align-items:center}
+.minimal-cover .experience-photo img{height:auto;aspect-ratio:auto}
+@media(max-width:639px){
+ .minimal-cover .destination-preview{display:flex;flex-wrap:wrap;align-items:center}
+ .minimal-cover .destination-preview-photo{flex:1 1 38%;min-width:0;padding:14px 0 14px 14px}
+ .minimal-cover .destination-preview-copy{flex:2 1 8em;min-width:0}
+ .minimal-cover .destination-preview-copy h4{font-size:clamp(28px,8.3vw,32px)}
+ .minimal-cover .destination-preview-photo img{height:auto;min-height:0;aspect-ratio:auto}
+ .minimal-cover .destination-status{position:static;display:block;padding:7px 0 0;background:transparent;max-width:none}
+}
+
+/* Dates, destination and price keep their own space when text grows. */
+.minimal-cover .departure-photo{display:grid;grid-template-rows:auto minmax(1em,1fr) auto;min-height:215px}
+.minimal-cover .departure-photo>img{position:absolute;inset:0;height:100%}
+.minimal-cover .departure-date{position:relative;grid-row:1;justify-self:start;align-self:start;left:auto;top:auto;margin:14px;max-width:calc(100% - 28px);flex-wrap:wrap}
+.minimal-cover .departure-photo-title{position:relative;grid-row:3;inset:auto;margin:0 18px 18px}
+.minimal-cover .departure-price{flex-wrap:wrap;gap:6px 12px}
+.minimal-cover .departure-price strong{white-space:nowrap}
+@media(min-width:640px){.minimal-cover .departure-photo{min-height:270px}}
+@media(min-width:1000px){.minimal-cover .departure-photo{min-height:295px}}
+
+/* Keep the level guide reachable across the home and guide on phones. */
+.minimal-cover .header-levels{display:none}
+@media(min-width:1000px){.minimal-cover .site-header{flex-wrap:wrap}.minimal-cover .site-header nav{min-width:0;flex-wrap:wrap}}
+@media(max-width:999px){
+ .minimal-cover .site-header{gap:10px;flex-wrap:wrap}
+ .minimal-cover .site-header .brand{width:155px;flex-shrink:1;min-width:100px}
+ .minimal-cover .header-levels{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 4px;margin-left:auto;font-size:13px;font-weight:600;text-underline-offset:5px}
+ .minimal-cover .menu-toggle{margin-left:0}
+ .minimal-cover .site-header nav{max-height:calc(100dvh - var(--home-header-height,70px))}
+}

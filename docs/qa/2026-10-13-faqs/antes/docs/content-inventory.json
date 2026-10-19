@@ -1,0 +1,551 @@
+{
+  "checkedAt": "2026-09-30",
+  "brand": {
+    "name": "Let's Surf Together",
+    "logoOrange": "#EA5934",
+    "legacyWebOrange": "#FE582C",
+    "cream": "#FFFAE7",
+    "ink": "#1B1B1B"
+  },
+  "trips": [
+    {
+      "slug": "salvador",
+      "title": "El Salvador",
+      "location": "El Sunzal",
+      "departure": "2026-10-25",
+      "return": "2026-11-01",
+      "nights": 7,
+      "levels": [
+        2,
+        3
+      ],
+      "levelRequirement": "Autonomía total en el agua",
+      "price": 1499,
+      "currency": "EUR",
+      "priceBasis": "Habitación compartida",
+      "availability": null,
+      "source": "https://www.letsurftogether.com/producto/el-salvador-25-oct-1-nov/",
+      "dossier": "https://www.letsurftogether.com/wp-content/uploads/2026/07/LST-EL-SALVADOR-SURFTRIP-25-OCT-5-NOV-1.pdf"
+    }
+  ],
+  "destinationsAwaitingNewDates": [
+    "Azores",
+    "Euskadi",
+    "Marruecos",
+    "Cádiz"
+  ],
+  "pending": [
+    "Fechas futuras de los demás destinos",
+    "Disponibilidad actual de El Salvador",
+    "Armonizar naranja SVG #EA5934 y naranja web #FE582C",
+    "Material adicional del Drive y retratos del equipo identificados",
+    "Validar permisos de reutilización de fotografías y tipografías para el lanzamiento",
+    "CMS, CRM, consentimiento y textos legales de producción fuera de esta fase"
+  ],
+  "designScenario": {
+    "datedDepartures": 2,
+    "upcomingDestinations": 4,
+    "note": "Client-requested presentation demo. Asturias dates, prices and programme appear as confirmed, without sample labels; replace demoData before commercial launch.",
+    "clientDemoDepartures": [
+      {
+        "slug": "asturias",
+        "departure": "2026-11-06",
+        "return": "2026-11-08",
+        "verifiedCommercialDeparture": false,
+        "presentationState": "confirmed",
+        "price": 349
+      },
+      {
+        "slug": "asturias",
+        "departure": "2026-11-20",
+        "return": "2026-11-22",
+        "verifiedCommercialDeparture": false,
+        "presentationState": "confirmed",
+        "price": 349
+      }
+    ],
+    "includes": "Two nights shared surf house, breakfasts, coaching, video review, mobility and LST accompaniment; internal demo content."
+  },
+  "contact": {
+    "channel": "whatsapp",
+    "phone": "34648189257",
+    "source": "https://www.letsurftogether.com/contacto/",
+    "checkedAt": "2026-10-02",
+    "note": "Uses the existing published contact number, pending user confirmation of the WhatsApp recipient. Links prefill text; no automated messages or lead collection."
+  },
+  "bookingFlow": {
+    "channel": "whatsapp",
+    "steps": [
+      "Consultar viaje y nivel",
+      "Comprobar disponibilidad, programa e inclusiones",
+      "Formalizar la reserva según las condiciones facilitadas por el equipo"
+    ],
+    "source": "User instruction: all booking enquiries through WhatsApp. Actual confirmation is handled by LST.",
+    "notSpecified": [
+      "payment method",
+      "deposit applicable to all trips",
+      "response time",
+      "cancellation policy"
+    ]
+  },
+  "detailPages": {
+    "dataSource": "data/trips.json",
+    "routes": [
+      "/viajes/el-salvador/",
+      "/viajes/asturias/",
+      "/viajes/azores/",
+      "/viajes/euskadi/",
+      "/viajes/marruecos/",
+      "/viajes/cadiz/"
+    ],
+    "realProgrammeCheckedAt": "2026-10-09",
+    "states": [
+      "confirmed",
+      "upcoming"
+    ],
+    "note": "Salvador has verified upcoming information. Asturias uses client-authorized demonstration information tracked internally in demoData. Other four destinations retain pending dates/programme.",
+    "levels": {
+      "default": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "el-salvador": [
+        2,
+        3
+      ],
+      "asturias": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "azores": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "euskadi": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "marruecos": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "cadiz": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source": "User instruction on 2026-10-09: levels always configured; default all levels. Verified Salvador restriction retained."
+    },
+    "multipleDates": "One accessible dialog with internal scroll, mobile bottom sheet and desktop centered window; independent enquiry for each departure."
+  },
+  "presentationRevision14": {
+    "date": "2026-10-12",
+    "scope": "Home opening, experience, LST origin/present and trip team blocks; no commercial data changes.",
+    "sources": [
+      {
+        "id": "brand-questionnaire",
+        "document": "Cuestionario_Marca_Web_LST.pdf",
+        "access": "Local client PDF read on 2026-10-12; no personal legal data copied.",
+        "references": {
+          "experience": "Page 1, questions 1–3: surf learning, community, adventure and local culture.",
+          "accompaniment": "Page 1, question 4: organisers participate in and accompany trips.",
+          "voiceAndSignature": "Page 2, questions 6–9: personality, tone, Lucas signature and identity.",
+          "origin": "Page 3, question 14: first Morocco trip offered by Lucas, preparation year, launch in late 2024.",
+          "levelGuidance": "Page 5, FAQ note: refer to each trip’s levels."
+        }
+      },
+      {
+        "id": "legacy-about",
+        "url": "https://www.letsurftogether.com/sobre-lst/",
+        "checkedAt": "2026-10-12",
+        "use": "Group experience, surf learning, local food and discovery; not a source of universal activities or services for new trips."
+      },
+      {
+        "id": "salvador-team",
+        "file": "data/trips.json",
+        "fields": [
+          "el-salvador.storyIntro",
+          "el-salvador.story[0]",
+          "el-salvador.includes"
+        ],
+        "use": "New team text summarises existing coordination, technical follow-up and local-guide roles.",
+        "publicProgramme": "https://www.letsurftogether.com/producto/el-salvador-25-oct-1-nov/",
+        "note": "Public page and dossier re-read on 2026-10-12. Pages 6 and 8 identify local guides and session coordination; pages 2 and 5 describe technical follow-up. No additional services or commercial conditions transferred.",
+        "dossier": "https://www.letsurftogether.com/wp-content/uploads/2026/07/LST-EL-SALVADOR-SURFTRIP-25-OCT-5-NOV-1.pdf",
+        "dossierPages": [
+          2,
+          5,
+          6,
+          8
+        ],
+        "dossierSha256": "1ee72d793a44368fb727f057b95fb3aaa5c22b2f8321224446c45123ff005879"
+      },
+      {
+        "id": "asturias-team",
+        "file": "data/trips.json",
+        "fields": [
+          "asturias.includes",
+          "asturias.demoData"
+        ],
+        "use": "Summarises existing LST accompaniment in the authorised demonstration. No new service or verified departure is claimed."
+      }
+    ],
+    "teamCopy": {
+      "confirmed": "Optional team.title/team.text describe only roles supported by that trip’s programme or authorised demo.",
+      "upcoming": "Template asks who will accompany the next group; it does not inherit a previous team or the confirmed-trip copy.",
+      "identity": "Lucas is identified only by the sourced origin and existing signature. No face is identified as Lucas or a named team member."
+    },
+    "pending": [
+      "Names and public roles of the current LST team and which departures each person accompanies.",
+      "Lucas’s current role beyond organising the first trip; do not assume he coaches or attends every departure.",
+      "Identified portraits of Lucas and any team members, with correspondence between person and image and reuse permission.",
+      "Team and accompaniment details for Azores, Euskadi, Morocco and Cadiz when their new programmes are announced."
+    ]
+  },
+  "communityRevision15": {
+    "date": "2026-10-12",
+    "scope": "Existing home experience section and Morocco testimonial only; travel scenarios not verified or modified.",
+    "sources": [
+      {
+        "url": "https://www.letsurftogether.com/",
+        "checkedAt": "2026-10-12",
+        "use": "Six published voices reviewed; literal substrings checked against fetched HTML. Laura supports solo travel and culture/landscapes; Ainhoa supports shared video feedback."
+      },
+      {
+        "url": "https://www.letsurftogether.com/sobre-lst/",
+        "checkedAt": "2026-10-12",
+        "use": "Context for group meals, local culture and learning. Broad promises not transferred to future programmes."
+      },
+      {
+        "document": "Cuestionario_Marca_Web_LST.pdf",
+        "pages": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "use": "Independent travellers, predominantly female audience, close direct tone, shared activities, preserve identity and consult each departure’s levels."
+      }
+    ],
+    "selectedVoices": [
+      {
+        "name": "Laura",
+        "destination": "Marruecos",
+        "placements": [
+          "home experience",
+          "Morocco testimonial"
+        ],
+        "answers": "Can I join when travelling on my own?",
+        "context": "Past trip, no review date stated. Local culture and landscapes are memories, not future inclusions."
+      },
+      {
+        "name": "Ainhoa",
+        "destination": null,
+        "placements": [
+          "home experience"
+        ],
+        "answers": "What does shared learning look like?",
+        "context": "Video feedback; destination absent from the published review. Not placed in any destination detail."
+      }
+    ],
+    "otherVoicesReviewed": [
+      {
+        "name": "Blanca",
+        "decision": "Group meals and bonding overlap the selected community account; no additional testimonial."
+      },
+      {
+        "name": "Hermi",
+        "decision": "Morocco organisation and level-adapted sessions; not added because consultation flow and learning already answer these doubts."
+      },
+      {
+        "name": "Borja",
+        "decision": "Meeting and sharing with the group overlaps Laura; less direct on travelling independently."
+      },
+      {
+        "name": "Alberto",
+        "decision": "Hospitality and organisation overlap existing content; destination not stated in review."
+      }
+    ],
+    "quoteHandling": "Literal contiguous endings; leading omissions marked with […]. Source link and attribution preserved. No stars, scores, traveller counts, review portraits or inferred review dates.",
+    "photoContext": "Existing learning.webp: surfskate in Cadiz, 2024. Caption marks past trip; image is not identified as either reviewer. All asset bytes and uses preserved.",
+    "report": "docs/qa/2026-10-12-comunidad/README.md"
+  },
+  "responsibilityRevision16": {
+    "date": "2026-10-12",
+    "scope": "Un único bloque de principios dentro de #nosotros en la home; sin cambios en fichas ni datos de viajes.",
+    "sources": [
+      {
+        "id": "legacy-home",
+        "url": "https://www.letsurftogether.com/",
+        "checkedAt": "2026-10-12",
+        "sections": [
+          "CONOCENOS UN POCO",
+          "CUIDAMOS DE NUESTROS OCEANOS"
+        ],
+        "evidence": "Publicación del respeto local y de las afirmaciones sobre recogida, colaboración y 3 %. La presencia actual del texto no demuestra vigencia ni ejecución.",
+        "sha256": "ad53b44d654a193f04809eae13fbda6da100504fc3ffa5cce0881b0200524230"
+      },
+      {
+        "id": "legacy-about",
+        "url": "https://www.letsurftogether.com/sobre-lst/",
+        "checkedAt": "2026-10-12",
+        "sections": [
+          "Respeto a los Surfistas Locales",
+          "CUIDAMOS DE NUESTROS OCEANOS"
+        ],
+        "evidence": "Principios de humildad y respeto a surfistas locales y costumbres; repite las afirmaciones ambientales de la home. No es confirmación independiente de ejecución.",
+        "sha256": "571ed36cd50e21e825d59a2721e437b9e01f9ac8f3365363b23f679ed58c6e90"
+      },
+      {
+        "id": "brand-questionnaire",
+        "document": "Cuestionario_Marca_Web_LST.pdf",
+        "checkedAt": "2026-10-12",
+        "pages": 5,
+        "references": "P. 1, preguntas 1 y 4: cultura local y honestidad; p. 2, preguntas 6–9: tono e identidad; p. 3, pregunta 14: pasión compartida por el océano.",
+        "evidence": "Revisión de las cinco páginas: sin confirmación de recogidas actuales, colaboración con Universal Plastic ni aportación del 3 %. No se copian los datos legales o personales.",
+        "sha256": "741bfdfd395f87cff1b2b2a55ff0aa4db8c845cd7757225ee108762dea21ad5a"
+      },
+      {
+        "id": "checkout",
+        "files": [
+          "README.md",
+          "docs/propuesta.md",
+          "docs/content-inventory.json",
+          "docs/asset-provenance.json",
+          "data/trips.json"
+        ],
+        "evidence": "Los registros previos y datos disponibles no aportan respaldo de vigencia o ejecución de estas tres acciones. Se conservan las revisiones anteriores y todos los datos provisionales."
+      }
+    ],
+    "principles": {
+      "status": "implemented",
+      "sourceIds": [
+        "legacy-home",
+        "legacy-about",
+        "brand-questionnaire"
+      ],
+      "heading": "El lugar también importa.",
+      "copy": "Para LST, el surf va de la mano del respeto al océano, al lugar y a quienes surfean allí. La humildad ante la comunidad local y sus costumbres forma parte de nuestra manera de compartir las olas.",
+      "location": "dist/index.html, #nosotros > .section-width > .lst-respect",
+      "meaning": "Declaración de valores; no describe un protocolo operativo ni garantiza un resultado ambiental."
+    },
+    "documentedActions": {
+      "status": "publication-only",
+      "finding": "Está documentado que LST publicó estas iniciativas. No se ha encontrado evidencia suficiente de ejecución, pagos o continuidad actual en las fuentes revisadas. No se presentan como acciones realizadas ni vigentes."
+    },
+    "pendingCommitments": [
+      {
+        "id": "plastic-collection",
+        "status": "pending-current-evidence",
+        "sourceIds": [
+          "legacy-home",
+          "legacy-about"
+        ],
+        "publicUI": false,
+        "reviewCopy": "Durante nuestros viajes recogemos plásticos de las playas.",
+        "requires": [
+          "Confirmación fechada del responsable de LST de que la actividad continúa y a qué viajes se aplica.",
+          "Registro reciente de una recogida identificable (fecha, lugar y actividad) y confirmación de su inclusión en las salidas a las que se atribuya."
+        ],
+        "publicationRule": "No publicar como actividad general si solo se confirma para algunas salidas; adaptar el texto al alcance acreditado."
+      },
+      {
+        "id": "universal-plastic",
+        "status": "pending-current-evidence",
+        "sourceIds": [
+          "legacy-home",
+          "legacy-about"
+        ],
+        "publicUI": false,
+        "reviewCopy": "Colaboramos con Universal Plastic en proyectos de recogida de plásticos.",
+        "requires": [
+          "Confirmación fechada de ambas partes o acuerdo vigente con periodo, entidad y proyecto identificados.",
+          "Precisar en qué consiste la colaboración actual; una mención antigua o un logo no acredita actividad."
+        ],
+        "publicationRule": "Publicar solo si está activa y el alcance coincide con la redacción; no añadir logo ni resultados."
+      },
+      {
+        "id": "three-percent",
+        "status": "pending-current-evidence",
+        "sourceIds": [
+          "legacy-home",
+          "legacy-about"
+        ],
+        "publicUI": false,
+        "reviewCopy": "Destinamos el 3 % de cada reserva a proyectos de recogida de plásticos en colaboración con Universal Plastic.",
+        "requires": [
+          "Confirmación fechada de que sigue vigente el 3 % y del conjunto de reservas al que se aplica.",
+          "Definir la base de cálculo (importe bruto o neto, impuestos y conceptos incluidos), el tratamiento de cancelaciones y reembolsos, y desde cuándo se aplica.",
+          "Identificar destinatario, proyectos, periodicidad y mecanismo de aportación; aportar justificantes recientes de transferencias o liquidaciones.",
+          "Confirmar la colaboración vigente con Universal Plastic antes de vincularla a la aportación."
+        ],
+        "publicationRule": "No publicar sin respaldo del porcentaje, alcance y ejecución. Si el alcance confirmado es distinto, reescribir y revisar antes de incorporar a la interfaz."
+      }
+    ],
+    "otherLegacyClaims": "No se trasladan charlas, formación ambiental, convenios locales, reducción de huella ni promesas de dejar cada lugar intacto: tampoco se acreditan como prácticas actuales.",
+    "dependencies": "Confirmaciones y documentación de LST; confirmación o acuerdo de Universal Plastic. Sin dependencias nuevas de código ni investigación comercial de viajes.",
+    "report": "docs/qa/2026-10-12-responsabilidad/README.md"
+  },
+  "levelsRevision20": {
+    "date": "2026-10-12",
+    "route": "/niveles/",
+    "scope": "Guía estática de orientación, enlaces de home y fichas; datos de viajes sin modificar ni investigar.",
+    "sources": [
+      {
+        "file": "dist/app.js",
+        "base": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+        "use": "Definiciones y nombres actuales, conservados literalmente."
+      },
+      {
+        "url": "https://www.letsurftogether.com/rookies/",
+        "use": "Bases: remada, puesta en pie, espumas y pequeñas paredes; posición y confianza."
+      },
+      {
+        "url": "https://www.letsurftogether.com/nivel-ii-aprendices/",
+        "use": "Olas verdes, reconocimiento de pared, bombeo y giros básicos; postura y surfing de espaldas. Leída mediante HTTP directo tras 429 del navegador de fuentes."
+      },
+      {
+        "url": "https://www.letsurftogether.com/nivel-iii-rides/",
+        "use": "Autonomía de entrada y salida, lectura del mar, postura, maniobras y cambio de pesos."
+      },
+      {
+        "url": "https://www.letsurftogether.com/nivel-iv-supercracks/",
+        "use": "Surf sólido y fluido en olas con fuerza, elección de secciones, perfeccionamiento. Tubos y aéreos figuran como objetivos, no requisitos."
+      },
+      {
+        "file": "data/trips.json",
+        "fields": [
+          "levels",
+          "levelRequirement",
+          "levelTitle",
+          "levelText",
+          "levelChecks"
+        ],
+        "use": "El Salvador II–III con autonomía como ejemplo de requisito adicional; datos intactos y sin investigación comercial."
+      }
+    ],
+    "editorial": "La separación entre técnica y autonomía y la invitación a describir condiciones/ayuda son síntesis orientativa de las fuentes, no una nueva escala o evaluación. No se trasladan absolutos de seguridad ni exigencias numéricas.",
+    "navigation": "Anclas nativas para los cuatro niveles, home y fichas enlazadas; viajes en /#viajes.",
+    "contact": "WhatsApp existente; mensaje editable sobre nivel y encaje. Consultar no confirma plaza.",
+    "photo": "dist/assets/group.webp, Laga 2024, procedencia existente en docs/asset-provenance.json. Sin modificar bytes ni identificar personas.",
+    "report": "docs/qa/2026-10-12-niveles/README.md"
+  },
+  "levelsRevision21": {
+    "date": "2026-10-12",
+    "route": "/niveles/",
+    "supersedesUI": "levelsRevision20",
+    "purpose": "Página definitiva de niveles, sin derivación a contenido antiguo.",
+    "sources": "Mismas cuatro páginas originales y definiciones existentes revisadas en levelsRevision20; fuentes solo en documentación interna. No se investigan datos de viajes.",
+    "copy": "Reescritura orientativa en tres claves: En el agua, Tu surf y Tu siguiente paso. Conserva significado, sin requisitos, tablas obligatorias, titulaciones, altura de ola ni clasificación automática.",
+    "mobile": "Índice antes de la fotografía; cuatro tarjetas en una columna, dos por dos en escritorio. Cabecera fija, navegación nativa y lectura sin JS.",
+    "photography": [
+      {
+        "file": "dist/assets/surf-session.webp",
+        "use": "Apertura con surfista sobre una ola; no se atribuye un nivel concreto."
+      },
+      {
+        "file": "dist/assets/after-surf.webp",
+        "use": "Grupo de LST fuera del agua; sin nombres ni atribución de roles."
+      }
+    ],
+    "contact": "Solo WhatsApp como contacto externo. Se conservan navegación interna, calendario y avisos de orientación/no confirmación.",
+    "report": "docs/qa/2026-10-12-niveles-redesign/README.md"
+  },
+  "levelsRevision22": {
+    "date": "2026-10-12",
+    "purpose": "Navegación consistente, feedback de nivel explorado y paso directo a viajes/WhatsApp.",
+    "selection": "Manual; no cuestionario ni clasificación automática. Foco, hash, query e historial conservan contexto.",
+    "tripSource": "data/trips.json a través de scripts/trip-model.mjs; sin editar datos ni consultar fuentes comerciales nuevas.",
+    "tripPresentation": "Un bloque generado con salidas con fecha y destinos por anunciar; niveles y requisito de autonomía visibles. Matching orienta la exploración, el equipo verifica encaje y disponibilidad.",
+    "seoSources": [
+      {
+        "url": "https://developers.google.com/search/docs/crawling-indexing/links-crawlable",
+        "use": "Enlaces HTML con href y textos descriptivos; enlazado interno que ayude a usuarios y buscadores."
+      },
+      {
+        "url": "https://developers.google.com/search/docs/appearance/ai-features",
+        "use": "Fundamentos SEO aplicables a funciones de IA de Google; no necesidad de esquema especial, ni garantía de aparición. Requiere indexación."
+      }
+    ],
+    "seoScope": "HTML estático enlazable sin JS; se conserva noindex,nofollow. No se afirma optimización universal para todos los motores de IA ni mejora medida de ventas.",
+    "report": "docs/qa/2026-10-12-niveles-conversion/README.md"
+  },
+  "levelsRevision23": {
+    "date": "2026-10-12",
+    "purpose": "Aplicar jerarquía de viajes, ayuda única y tarjetas/WhatsApp más visibles.",
+    "cards": "Identidad oscura, descripción, situaciones y siguiente paso separados; selección naranja y botón WhatsApp completo de contraste alto. Definiciones intactas.",
+    "trips": "Salidas con fecha visibles primero, destinos pendientes en details nativo inicialmente cerrado. Contadores siguen el nivel explorado.",
+    "help": "Se elimina guide-trips-help; data-guide-enquiry pertenece al bloque de orientación final y conserva el nivel/mensaje seleccionado.",
+    "preserved": "Datos provisionales, autonomía, disponibilidad por consultar, consulta no confirma plaza, rutas, filtros e historial.",
+    "report": "docs/qa/2026-10-12-niveles-ajustes/README.md"
+  },
+  "levelsRevision24": {
+    "date": "2026-10-13",
+    "purpose": "Destacado breve al navegar, botones compactos en una fila y desplegable estable.",
+    "feedback": "Al activar el índice, destacado de 1,1 s una vez llegado al nivel; no persiste al filtrar, recargar o navegar por historial.",
+    "actions": "Ver viajes / WhatsApp; mensajes y etiquetas accesibles mantienen el nivel. Misma fila desde 320 px a tamaño normal; reflujo al ampliar texto.",
+    "disclosure": "Título y contador sin transformación; solo gira el icono. Estilos acotados a la guía.",
+    "preserved": "Definiciones, fuentes previas, datos provisionales, fotografía, marca, autonomía, consulta sin confirmación de plaza y rutas.",
+    "report": "docs/qa/2026-10-13-niveles-pulido/README.md"
+  },
+  "aboutRevision26": {
+    "date": "2026-10-13",
+    "route": "/conocenos/",
+    "scope": "Página Conócenos, resumen de home y enlaces de navegación/fichas. Sin cambiar datos ni programas de viajes.",
+    "sources": [
+      {
+        "id": "brand-questionnaire",
+        "document": "Cuestionario_Marca_Web_LST.pdf",
+        "access": "PDF local leído el 13/10/2026; no incorporado al repositorio ni copiados datos legales privados. Huella SHA-256 en el informe.",
+        "references": {
+          "presentation": "p. 1, preguntas 1–3: progreso, cultura local, aventura, comunidad, viajar solo.",
+          "accompaniment": "p. 1, pregunta 4: quienes organizan viajan y acompañan.",
+          "voice": "p. 2, preguntas 6–9: cercanía, diversión, claridad, identidad; firma de Lucas.",
+          "origin": "p. 3, pregunta 14: viaje de prueba a Marruecos, Lucas y su comunidad, año de preparación, arranque a finales de 2024.",
+          "level": "p. 5, nota FAQ: atender a los niveles del viaje concreto."
+        }
+      },
+      {
+        "id": "legacy-about",
+        "url": "https://www.letsurftogether.com/sobre-lst/",
+        "access": "Texto consultado el 13/10/2026; publicación histórica, no confirmación de vigencia de prestaciones.",
+        "use": "Comidas y conversaciones compartidas; descubrimiento de gastronomía, paisajes y vida local; respeto a surfistas locales y costumbres. Ningún servicio universal ni compromiso ambiental cuantificado."
+      },
+      {
+        "id": "documentary-photos",
+        "file": "docs/asset-provenance.json",
+        "use": "Escenas de comunidad, surfskate y recuerdos, con sus pies de contexto. No identifican a Lucas, viajeros por nombre ni miembros del equipo."
+      },
+      {
+        "id": "reviewed-home",
+        "file": "dist/index.html",
+        "baseline": "docs/qa/2026-10-13-conocenos/antes/dist/index.html",
+        "use": "Desarrolla presentación y respeto de revisiones 14–16, conserva experiencia y reseñas. La firma completa pasa a la nueva página; el resumen invita a ampliar."
+      }
+    ],
+    "editorial": "El nuevo titular y las transiciones expresan la personalidad, sin garantía de progreso, amistad, seguridad o repetición. La escena de surfskate describe la imagen documental de Cádiz. El atardecer de Marruecos se presenta como recuerdo de 2025, fuera del bloque del origen, sin vincularlo al primer viaje ni incluir la actividad en una nueva salida.",
+    "people": "Solo Lucas por su vínculo con el origen y su firma. Sin cargos actuales, credenciales o retratos atribuidos. Acompañamiento descrito de forma general con respaldo del cuestionario; equipo y servicios concretos remiten a cada ficha.",
+    "environment": "responsibilityRevision16 sigue vigente sin cambios: recogidas de plásticos, Universal Plastic y 3 % pendientes de evidencia actual; excluidos de la interfaz.",
+    "pending": [
+      "Nombres, funciones públicas y salidas que acompaña cada persona del equipo actual.",
+      "Función actual de Lucas, más allá de su papel documentado en el origen.",
+      "Retratos identificados y autorización de uso; no atribuir caras de las fotos de grupo.",
+      "Programa y acompañantes de los cuatro destinos pendientes, antes de confirmar su próxima salida.",
+      "Vigencia y alcance de recogidas de plásticos, colaboración con Universal Plastic y 3 % según responsibilityRevision16.",
+      "Confirmación del teléfono como receptor definitivo: se mantiene el contacto existente."
+    ],
+    "preserved": "data/trips.json, marca, bytes de fotografías/fuentes/logos, escenarios provisionales, consultas y noindex. No se revalida ni actualiza oferta comercial.",
+    "report": "docs/qa/2026-10-13-conocenos/README.md"
+  }
+}

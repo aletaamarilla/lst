@@ -1,0 +1,29 @@
+{
+  "base": "351576d508314ff4bdf2cb8421f600dcc0c8d3de",
+  "candidate": "uncommitted",
+  "iterationFiles": {
+    "dist/niveles/index.html": "83ca20f6fe1a674cf3adf56dd5233030ca36fffee2c960db0112479c074259a7",
+    "dist/levels.css": "5d3edb7d103052cdc110d85e5d7d9d53fdde8e3f7b7312637ab7047d412fd139",
+    "scripts/check.mjs": "9da0ce99293533ae809cb343fbc9d96d6ebb40887b15f7f6da6ca99216a1e504",
+    "scripts/check-levels.mjs": "be899f904dc54d6345c538ea0927d04e29238a7fbf685bac8183d31754bacf37",
+    "README.md": "77f4cc1f04f1dc1f58e4c65e1c6692731e24e791567973d06925ea2a183a0977",
+    "docs/propuesta.md": "eed3bae0efadaa0451c79c2ae419a9b3dd66b48caecf547aa3dd77f5543a7785",
+    "docs/content-inventory.json": "4b0bd9117bb060a90b76777b81d457d3ddfa5d2f720b1e699f9d6f574193cadb"
+  },
+  "matchesIndependentReview": {
+    "dist/niveles/index.html": true,
+    "dist/levels.css": true,
+    "dist/app.js": true,
+    "dist/index.html": true,
+    "scripts/render-trips.mjs": true,
+    "scripts/check.mjs": true,
+    "scripts/check-levels.mjs": true,
+    "data/trips.json": true,
+    "dist/viajes/asturias/index.html": true,
+    "dist/viajes/azores/index.html": true,
+    "dist/viajes/cadiz/index.html": true,
+    "dist/viajes/el-salvador/index.html": true,
+    "dist/viajes/euskadi/index.html": true,
+    "dist/viajes/marruecos/index.html": true
+  }
+}

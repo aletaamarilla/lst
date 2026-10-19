@@ -1,0 +1,285 @@
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -1,5 +1,5 @@
+ <!doctype html>
+-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Viajes de surf en grupo con Let's Surf Together. Consulta destinos, fechas y niveles. Te explicamos cómo reservar por WhatsApp."><meta name="theme-color" content="#FFFAE7"><title>Let's Surf Together — Surf, viajes y buena gente</title><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/mobile.css"></head>
++<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Viajes de surf en grupo con Let's Surf Together. Consulta destinos, fechas y niveles. Te explicamos cómo reservar por WhatsApp."><meta name="theme-color" content="#FFFAE7"><title>Let's Surf Together — Surf, viajes y buena gente</title><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/mobile.css"><link rel="stylesheet" href="/home-cards.css"></head>
+ <body class="minimal-cover"><a class="skip-link" href="#contenido">Saltar al contenido</a>
+ <header class="site-header"><a class="brand" href="#" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126"></a><a class="header-levels" href="/niveles/">Niveles</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav aria-label="Navegación principal" id="main-nav"><a href="#viajes">Viajes</a><a href="/niveles/">Niveles</a><a href="#experiencia">La experiencia</a><a href="#reservar">Cómo reservar</a><a href="#nosotros">LST</a><a class="button nav-whatsapp" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></nav><a class="button button-small header-cta" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp</a></header>
+ <main id="contenido">
+@@ -14,45 +14,78 @@
+     <a class="journeys-level-link" href="/niveles/">¿Cuál es mi nivel?</a>
+   </header>
+   <div class="departure-section-heading"><h3>Viajes con fecha</h3><p>Consulta el programa y pregunta por tu plaza.</p></div>
+-  <div id="trip-content" class="departure-list">
+-    <article class="departure-feature" aria-labelledby="trip-salvador-title">
+-      <div class="departure-photo">
+-        <img src="/assets/el-salvador.webp" alt="Una sesión de surf en la ola de El Sunzal, El Salvador" width="1000" height="600" loading="lazy">
+-        <p class="departure-date"><span>25 OCT — 1 NOV</span><strong>2026</strong></p>
+-        <div class="departure-photo-title"><p>EL SUNZAL · PACÍFICO</p><h3 id="trip-salvador-title">El Salvador</h3></div>
+-      </div>
+-      <div class="departure-body">
+-        <div class="departure-topline"><p class="departure-status">Fechas confirmadas</p></div>
+-        <p class="departure-description">Sesiones de surf y análisis de vídeo en El Sunzal, con alojamiento frente a la ola.</p>
+-        <div class="departure-facts"><span>7 noches</span><span>Nivel II–III</span><span>Autonomía en el agua</span></div>
+-        <div class="departure-booking"><p class="departure-price"><strong>1.499 <small>€</small></strong><span>Por persona · habitación compartida</span></p><a class="button departure-cta" href="/viajes/el-salvador/" aria-label="Ver el viaje a El Salvador">Ver viaje <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+-        <p class="departure-note">Disponibilidad a consultar con el equipo.</p>
+-      </div>
++  <div id="trip-content" class="home-trip-grid">
++    <article class="home-trip" aria-labelledby="trip-salvador-title">
++      <a class="home-trip-link" href="/viajes/el-salvador/" aria-labelledby="trip-salvador-action trip-salvador-title">
++        <img class="home-trip-photo" src="/assets/el-salvador.webp" alt="Una sesión de surf en la ola de El Sunzal, El Salvador" width="1000" height="600" loading="lazy">
++        <div class="home-trip-copy">
++          <h3 id="trip-salvador-title">El Salvador</h3>
++          <p class="home-trip-date">25 oct — 1 nov 2026</p>
++          <p class="home-trip-meta">7 noches · Nivel II–III con autonomía</p>
++          <span class="home-trip-action" id="trip-salvador-action">Ver viaje <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++        </div>
++      </a>
+     </article>
+-    <article class="departure-feature" aria-labelledby="trip-asturias-title">
+-      <div class="departure-photo">
+-        <img src="/assets/asturias-surf.webp" alt="Una surfista en una sesión de LST en Asturias" width="1500" height="1000" loading="lazy">
+-        <p class="departure-date"><span>NOVIEMBRE</span><strong>2026</strong></p>
+-        <div class="departure-photo-title"><p>NORTE DE ESPAÑA</p><h3 id="trip-asturias-title">Asturias</h3></div>
+-      </div>
+-      <div class="departure-body">
+-        <div class="departure-topline"><p class="departure-status">Fechas confirmadas</p></div>
+-        <p class="departure-description">Un fin de semana de surf y coaching en la costa asturiana. Elige entre dos salidas en noviembre.</p>
+-        <div class="departure-facts"><span>2 noches</span><span>Todos los niveles</span></div>
+-        <div class="departure-booking"><p class="departure-price"><strong>349 <small>€</small></strong><span>Por persona · habitación compartida</span></p><a class="button departure-cta" href="/viajes/asturias/" aria-label="Ver el viaje a Asturias">Ver viaje <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div>
+-        <p class="departure-note">Consulta las fechas y la disponibilidad en el detalle del viaje.</p>
+-      </div>
++    <article class="home-trip" aria-labelledby="trip-asturias-title">
++      <a class="home-trip-link" href="/viajes/asturias/" aria-labelledby="trip-asturias-action trip-asturias-title">
++        <img class="home-trip-photo" src="/assets/asturias-surf.webp" alt="Una surfista en una sesión de LST en Asturias" width="1500" height="1000" loading="lazy">
++        <div class="home-trip-copy">
++          <h3 id="trip-asturias-title">Asturias</h3>
++          <p class="home-trip-date">Noviembre 2026</p>
++          <p class="home-trip-meta">2 noches · Todos los niveles</p>
++          <span class="home-trip-action" id="trip-asturias-action">Ver viaje <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++        </div>
++      </a>
+     </article>
+   </div>
+   <section class="destination-collection" aria-labelledby="more-destinations-title">
+     <div class="destination-collection-heading"><div><p class="journeys-eyebrow">PRÓXIMAMENTE</p><h3 id="more-destinations-title">Próximos viajes por anunciar</h3></div><p>Estamos preparando las próximas fechas.</p></div>
+-    <div class="destination-list">
+-      <article class="destination-preview" aria-labelledby="trip-azores-title"><div class="destination-preview-photo"><img src="/assets/azores.webp" alt="El grupo de LST junto a un lago volcánico en Azores" width="1000" height="600" loading="lazy"><span class="destination-status">Próximamente</span></div><div class="destination-preview-copy"><div><h4 id="trip-azores-title">Azores</h4><p>Portugal</p></div><a class="destination-preview-action" href="/viajes/azores/" aria-label="Ver destino: Azores">Ver destino <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></article>
+-      <article class="destination-preview" aria-labelledby="trip-euskadi-title"><div class="destination-preview-photo"><img src="/assets/euskadi.webp" alt="Un grupo de LST en la playa de Laga, Euskadi" width="1500" height="1000" loading="lazy"><span class="destination-status">Próximamente</span></div><div class="destination-preview-copy"><div><h4 id="trip-euskadi-title">Euskadi</h4><p>Norte de España</p></div><a class="destination-preview-action" href="/viajes/euskadi/" aria-label="Ver destino: Euskadi">Ver destino <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></article>
+-      <article class="destination-preview" aria-labelledby="trip-marruecos-title"><div class="destination-preview-photo"><img src="/assets/marruecos.webp" alt="Un recuerdo del grupo de LST durante un viaje a Marruecos" width="1200" height="800" loading="lazy"><span class="destination-status">Próximamente</span></div><div class="destination-preview-copy"><div><h4 id="trip-marruecos-title">Marruecos</h4><p>Taghazout</p></div><a class="destination-preview-action" href="/viajes/marruecos/" aria-label="Ver destino: Marruecos">Ver destino <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></article>
+-      <article class="destination-preview" aria-labelledby="trip-cadiz-title"><div class="destination-preview-photo"><img src="/assets/cadiz.webp" alt="El grupo de LST en El Palmar, Cádiz, con sus banderas" width="1200" height="800" loading="lazy"><span class="destination-status">Próximamente</span></div><div class="destination-preview-copy"><div><h4 id="trip-cadiz-title">Cádiz</h4><p>El Palmar</p></div><a class="destination-preview-action" href="/viajes/cadiz/" aria-label="Ver destino: Cádiz">Ver destino <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></article>
++    <div class="home-trip-grid home-trip-grid-pending">
++      <article class="home-trip home-trip-pending" aria-labelledby="trip-azores-title">
++        <a class="home-trip-link" href="/viajes/azores/" aria-labelledby="trip-azores-action trip-azores-title">
++          <img class="home-trip-photo" src="/assets/azores.webp" alt="El grupo de LST junto a un lago volcánico en Azores" width="1000" height="600" loading="lazy">
++          <div class="home-trip-copy">
++            <h4 id="trip-azores-title">Azores</h4>
++            <p class="home-trip-date">Próximamente</p>
++            <p class="home-trip-meta">Todos los niveles</p>
++            <span class="home-trip-action" id="trip-azores-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++          </div>
++        </a>
++      </article>
++      <article class="home-trip home-trip-pending" aria-labelledby="trip-euskadi-title">
++        <a class="home-trip-link" href="/viajes/euskadi/" aria-labelledby="trip-euskadi-action trip-euskadi-title">
++          <img class="home-trip-photo" src="/assets/euskadi.webp" alt="Un grupo de LST en la playa de Laga, Euskadi" width="1500" height="1000" loading="lazy">
++          <div class="home-trip-copy">
++            <h4 id="trip-euskadi-title">Euskadi</h4>
++            <p class="home-trip-date">Próximamente</p>
++            <p class="home-trip-meta">Todos los niveles</p>
++            <span class="home-trip-action" id="trip-euskadi-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++          </div>
++        </a>
++      </article>
++      <article class="home-trip home-trip-pending" aria-labelledby="trip-marruecos-title">
++        <a class="home-trip-link" href="/viajes/marruecos/" aria-labelledby="trip-marruecos-action trip-marruecos-title">
++          <img class="home-trip-photo" src="/assets/marruecos.webp" alt="Un recuerdo del grupo de LST durante un viaje a Marruecos" width="1200" height="800" loading="lazy">
++          <div class="home-trip-copy">
++            <h4 id="trip-marruecos-title">Marruecos</h4>
++            <p class="home-trip-date">Próximamente</p>
++            <p class="home-trip-meta">Todos los niveles</p>
++            <span class="home-trip-action" id="trip-marruecos-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++          </div>
++        </a>
++      </article>
++      <article class="home-trip home-trip-pending" aria-labelledby="trip-cadiz-title">
++        <a class="home-trip-link" href="/viajes/cadiz/" aria-labelledby="trip-cadiz-action trip-cadiz-title">
++          <img class="home-trip-photo" src="/assets/cadiz.webp" alt="El grupo de LST en El Palmar, Cádiz, con sus banderas" width="1200" height="800" loading="lazy">
++          <div class="home-trip-copy">
++            <h4 id="trip-cadiz-title">Cádiz</h4>
++            <p class="home-trip-date">Próximamente</p>
++            <p class="home-trip-meta">Todos los niveles</p>
++            <span class="home-trip-action" id="trip-cadiz-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++          </div>
++        </a>
++      </article>
+     </div>
+-    <p class="destination-collection-note">Todos los niveles. Fechas y programa por anunciar. Entra en cada destino para conocerlo.</p>
+   </section>
+ </section>
+ <section class="experience" id="experiencia" aria-labelledby="experience-title">
+--- /dev/null
++++ b/dist/home-cards.css
+@@ -0,0 +1,37 @@
++/* Home invitations only: detail pages and the level catalogue keep their own styles. */
++#viajes .home-trip-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
++#viajes .home-trip{min-width:0}
++#viajes .home-trip-link{display:flex;flex-direction:column;height:100%;color:var(--ink);text-decoration:none;scroll-margin-block:calc(var(--home-header-height,70px) + 16px) 24px}
++#viajes .home-trip-photo{width:100%;height:auto;aspect-ratio:1.8;object-fit:cover;object-position:50% 54%}
++#viajes .home-trip-copy{display:flex;flex-direction:column;align-items:flex-start;flex:1;min-width:0;padding:16px 0 0}
++#viajes .home-trip-copy :is(h3,h4){font:400 40px/1.12 var(--display);letter-spacing:-.015em;overflow-wrap:anywhere}
++#viajes .home-trip-date{margin-top:8px;font:400 14px/1.6 var(--mono)}
++#viajes .home-trip-meta{margin-top:6px;font:400 15px/1.5 var(--body)}
++#viajes .home-trip-action{display:inline-flex;align-items:center;gap:16px;min-height:44px;margin:8px 0 0;border:0;font:600 15px/1.4 var(--body);text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:6px}
++#viajes .home-trip-action svg{flex:none}
++#viajes .home-trip-link:focus-visible{outline:3px solid var(--ink);outline-offset:6px;box-shadow:0 0 0 9px var(--paper)}
++#viajes .home-trip-link:is(:hover,:focus-visible) .home-trip-action{text-decoration-color:var(--ink)}
++#viajes .home-trip-grid-pending{gap:24px}
++#viajes .home-trip-pending .home-trip-link{flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px}
++#viajes .home-trip-pending .home-trip-photo{flex:1 1 38%;min-width:0;width:38%;aspect-ratio:auto;object-fit:contain}
++#viajes .home-trip-pending .home-trip-copy{flex:1 1 9em;padding:0}
++#viajes .home-trip-pending h4{font-size:32px}
++#viajes .home-trip-pending .home-trip-date{margin-top:5px}
++#viajes .home-trip-pending .home-trip-meta{margin-top:4px}
++#viajes .home-trip-pending .home-trip-action{margin-top:4px}
++@media(min-width:700px){
++ #viajes .home-trip-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
++ #viajes .home-trip-copy{padding-top:18px}
++ #viajes .home-trip-action{margin-top:auto;padding-top:12px;min-height:56px}
++ #viajes .home-trip-pending .home-trip-link{flex-direction:column;flex-wrap:nowrap;gap:0;align-items:stretch}
++ #viajes .home-trip-pending .home-trip-photo{flex:none;width:100%;aspect-ratio:1.5;object-fit:cover}
++ #viajes .home-trip-pending:first-child .home-trip-photo{object-position:77% 50%}
++ #viajes .home-trip-pending .home-trip-copy{flex:1;padding-top:16px}
++ #viajes .home-trip-pending .home-trip-action{margin-top:auto}
++}
++@media(min-width:1100px){
++ #viajes .home-trip-photo{aspect-ratio:2.2}
++ #viajes .home-trip-copy :is(h3,h4){font-size:48px}
++ #viajes .home-trip-grid-pending{grid-template-columns:repeat(4,minmax(0,1fr))}
++ #viajes .home-trip-pending h4{font-size:36px}
++}
+--- /dev/null
++++ b/scripts/check-home-cards.mjs
+@@ -0,0 +1,80 @@
++// Optional browser acceptance checks. Reuses the project's external Playwright runtime.
++import {createRequire} from 'node:module';
++import fs from 'node:fs';
++import path from 'node:path';
++import os from 'node:os';
++import {departuresFor,levelLabel} from './trip-model.mjs';
++const require=createRequire(import.meta.url);
++const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
++const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
++const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-home-cards');
++fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
++const trips=JSON.parse(fs.readFileSync('data/trips.json'));
++const report={checks:[],issues:[],errors:[],measurements:[]};
++const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
++const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
++try{
++ for(const width of [320,390,768,1440]){
++  for(const mode of ['normal','text200','no-js']){
++   const tag=`${width}-${mode}`;
++   const context=await browser.newContext({viewport:{width,height:width===1440?1000:844},reducedMotion:'reduce',javaScriptEnabled:mode!=='no-js',hasTouch:width<700});
++   await context.route('https://**/*',r=>r.abort());
++   const page=await context.newPage();page.on('pageerror',e=>report.errors.push({tag,error:e.message}));
++   await page.goto(base);await page.evaluate(()=>document.fonts.ready);
++   await page.locator('#viajes img').evaluateAll(async imgs=>await Promise.all(imgs.map(i=>{i.loading='eager';return i.decode()})));
++   if(mode==='text200')await page.evaluate(()=>{const es=[...document.querySelectorAll('body,body *')],sizes=es.map(e=>getComputedStyle(e).fontSize);es.forEach((e,i)=>e.style.fontSize=parseFloat(sizes[i])*2+'px');});
++   check(tag+' no horizontal page overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
++   const cards=page.locator('#viajes .home-trip');
++   check(tag+' six cards',await cards.count()===trips.length);
++   for(const trip of trips){
++    const card=cards.filter({has:page.locator(`a[href="/viajes/${trip.slug}/"]`)});
++    check(tag+' '+trip.slug+' unique main link',await card.locator('a').count()===1&&await card.locator('button,input,[tabindex]').count()===0);
++    await card.locator('img').evaluate(async img=>{img.loading='eager';await img.decode();});
++    const text=await card.innerText();
++    check(tag+' '+trip.slug+' destination and level',text.includes(trip.name)&&text.includes(levelLabel(trip).replace(/^Niveles? /,'')));
++    const departures=departuresFor(trip);
++    check(tag+' '+trip.slug+' date state',departures.length? !text.includes('Próximamente')&&text.includes(departures[0].duration):text.includes('Próximamente'));
++    if(trip.slug==='el-salvador')check(tag+' autonomy retained',text.includes('autonomía'));
++    check(tag+' '+trip.slug+' expanded commercial info stays in detail',!await card.locator('.departure-booking,.departure-note,.departure-description').count()&&!/€|disponibilidad|Fechas confirmadas/i.test(text));
++    const metrics=await card.evaluate(e=>{const r=e.getBoundingClientRect(),a=e.querySelector('a'),ar=a.getBoundingClientRect(),img=e.querySelector('img');return {width:r.width,height:r.height,linkWidth:ar.width,linkHeight:ar.height,overflow:[e,...e.querySelectorAll('*')].filter(n=>n.scrollWidth>n.clientWidth+1).map(n=>n.className),photoLoaded:img.complete&&img.naturalWidth>0,fonts:[...e.querySelectorAll('p,.home-trip-action')].map(n=>parseFloat(getComputedStyle(n).fontSize))};});
++    check(tag+' '+trip.slug+' legibility and complete hit area',metrics.photoLoaded&&metrics.linkWidth>=metrics.width-1&&metrics.linkHeight>=metrics.height-1&&Math.min(...metrics.fonts)>=14&&metrics.overflow.length===0,metrics);
++    if(mode==='normal'){
++     report.measurements.push({viewport:width,slug:trip.slug,...metrics});
++     // The photograph itself is an entry point, including on touch devices.
++     await card.locator('img').click();await page.waitForURL(base+`/viajes/${trip.slug}/`);
++     check(tag+' '+trip.slug+' photo opens correct detail',(await page.locator('h1').innerText()).includes(trip.name));
++     await page.goBack();await page.waitForURL(base+'/');
++    }
++   }
++   if(mode==='normal'){
++    // Tab from the preceding guide link traverses exactly one stop per card.
++    await page.locator('.journeys-level-link').focus();
++    for(const trip of trips){
++     await page.keyboard.press('Tab');
++     const focus=await page.evaluate(()=>{const a=document.activeElement,r=a.getBoundingClientRect(),s=getComputedStyle(a);return {href:a.getAttribute('href'),visible:a.matches(':focus-visible'),outline:s.outlineStyle,outlineWidth:parseFloat(s.outlineWidth),top:r.top,bottom:r.bottom,header:document.querySelector('.site-header').getBoundingClientRect().bottom};});
++     check(tag+' '+trip.slug+' keyboard focus visible',focus.href===`/viajes/${trip.slug}/`&&focus.visible&&focus.outline!=='none'&&focus.outlineWidth>=3&&focus.top>=focus.header-1&&focus.bottom<= (width===1440?1000:844)+1,focus);
++    }
++    await page.keyboard.press('Enter');await page.waitForURL(base+`/viajes/${trips.at(-1).slug}/`);
++    check(tag+' Enter opens detail',page.url().endsWith(`/viajes/${trips.at(-1).slug}/`));
++    await page.goBack();
++    if(width>=700){
++     const alignment=await page.locator('.home-trip-grid').evaluateAll(grids=>grids.map(g=>{const es=[...g.children];const rows=Map.groupBy(es,e=>Math.round(e.getBoundingClientRect().top));return [...rows.values()].map(row=>['h3,h4','.home-trip-date','.home-trip-action'].map(sel=>row.map(e=>e.querySelector(sel).getBoundingClientRect().top)));}));
++     check(tag+' titles dates and actions align by row',alignment.flat().every(row=>row.every(ys=>Math.max(...ys)-Math.min(...ys)<2)),alignment);
++    }
++    await page.locator('#viajes').screenshot({style:'.site-header,.skip-link{visibility:hidden!important}',path:path.join(out,'capturas',`despues-${width}.png`)});
++    await page.locator('.home-trip-link').first().focus();
++    await page.screenshot({path:path.join(out,'capturas',`foco-${width}.png`)});
++   }
++   if(mode==='text200')await page.locator('#viajes').screenshot({style:'.site-header,.skip-link{visibility:hidden!important}',path:path.join(out,'capturas',`texto200-${width}.png`)});
++   if(mode==='no-js'){
++    await page.locator('.home-trip-link').first().click();await page.waitForURL(base+`/viajes/${trips[0].slug}/`);
++    check(tag+' navigates without JavaScript',page.url().endsWith(`/viajes/${trips[0].slug}/`));
++   }
++   await context.close();
++  }
++ }
++ check('no JavaScript errors',report.errors.length===0,report.errors);
++ fs.writeFileSync(path.join(out,'browser-home.json'),JSON.stringify(report,null,2));
++ console.log(JSON.stringify({checks:report.checks.length,issues:report.issues,errors:report.errors},null,2));
++ if(report.issues.length)process.exitCode=1;
++}finally{await browser.close();}
+--- a/scripts/check-ux.mjs
++++ b/scripts/check-ux.mjs
+@@ -30,7 +30,7 @@
+    check(tag+' reduced motion',dimensions.rootBehavior==='auto'&&dimensions.transition==='0s',dimensions);
+    if(slug==='home'){
+     check(tag+' exploration CTA',(await page.locator('.hero-primary').getAttribute('href'))==='#viajes');
+-    check(tag+' destinations',JSON.stringify(await page.locator('.destination-preview-action').allTextContents()).includes('Ver destino')&&!(await page.locator('.destination-preview-action').allTextContents()).some(t=>t.includes('Me interesa')));
++    check(tag+' destinations',JSON.stringify(await page.locator('.home-trip-pending .home-trip-action').allTextContents()).includes('Ver destino')&&!(await page.locator('.home-trip-pending .home-trip-action').allTextContents()).some(t=>t.includes('Me interesa')));
+     if(width<1000){
+      await page.locator('.menu-toggle').focus();await page.keyboard.press('Enter');await page.keyboard.press('Tab');
+      check(tag+' first tab enters menu',await page.evaluate(()=>document.activeElement===document.querySelector('#main-nav a')));
+--- a/README.md
++++ b/README.md
+@@ -173,3 +173,12 @@
+ Al activar un nivel del índice, su cabecera se destaca durante 1,1 segundos después de llegar con el scroll y recupera su aspecto habitual. El filtro de viajes conserva su contexto, sin mantener ninguna tarjeta coloreada. Los botones «Ver viajes» y «WhatsApp» comparten fila desde 320 px con áreas de pulsación de al menos 44 px; al ampliar el texto pueden apilarse para conservar legibilidad.
+ 
+ El desplegable «Otros destinos por anunciar» aísla sus estilos de las preguntas frecuentes: título y contador permanecen horizontales y solo gira el icono. [Capturas y comprobaciones de esta revisión](docs/qa/2026-10-13-niveles-pulido/README.md).
++
++
++## Revisión 25 · tarjetas de viajes de la home
++
++Las seis tarjetas de `/#viajes` muestran fotografía sin etiquetas, destino, fecha o «Próximamente», duración y nivel cuando corresponde. El Salvador conserva la autonomía exigida. Cada tarjeta es un único enlace nativo al detalle con acción visible y foco de teclado. Se retiran del resumen los precios, descripciones y notas de disponibilidad; permanecen en las fichas.
++
++La home sigue editándose directamente en `dist/index.html`. `dist/home-cards.css` se carga solo allí y limita sus reglas a las tarjetas de `#viajes`; no cambia la portada, la guía con filtros ni las fichas generadas. Las filas móviles de destinos pendientes se apilan al ampliar el texto. `scripts/check-home-cards.mjs` añade validación opcional de navegador con el runtime externo ya utilizado por los otros comprobadores.
++
++[Comparación a 390 y 1440 px, comprobaciones a 320 y 768 px, evidencia y límites](docs/qa/2026-10-13-tarjetas-home/README.md). Se conserva el trabajo previo, incluidos niveles y páginas nuevas. Sin commit, push, publicación ni despliegue.
+--- a/docs/propuesta.md
++++ b/docs/propuesta.md
+@@ -167,3 +167,12 @@
+ El destacado deja de representar una selección permanente: sirve únicamente para localizar durante un instante el nivel al que se acaba de saltar. La exploración de viajes y el mensaje contextual de WhatsApp siguen guardando el nivel elegido.
+ 
+ Las tarjetas ofrecen dos acciones breves en la misma fila, «Ver viajes» y «WhatsApp», con nombres accesibles que incluyen el nivel. Se conserva el botón de consulta explícito de la ayuda final. En el desplegable de próximos destinos se corrige la herencia de la regla de FAQ que giraba todos los spans, incluido el título. [Evidencia](qa/2026-10-13-niveles-pulido/README.md).
++
++
++## Revisión 25 · tarjetas como acceso al viaje
++
++La fotografía documental queda libre de rótulos, degradados y fechas superpuestas. El título en Aura precede a la fecha en Space Mono y a una línea de duración/nivel en Work Sans. Un «Ver viaje» o «Ver destino» subrayado en naranja deja clara la navegación; foto, contenido y acción forman un solo enlace. No hay reserva ni precio protagonista dentro de las tarjetas. El contenido ampliado y todos los valores comerciales siguen en las fichas sin modificaciones.
++
++La referencia local de Travelhood pudo consultarse en navegador: se adopta la rapidez de lectura de imagen, destino y datos breves, conservando la personalidad y los recursos de LST. Los viajes con fecha forman dos columnas desde 700 px. Los destinos pendientes se presentan como filas compactas en móvil y cuadrícula en pantallas mayores, con reflujo al ampliar el texto. Las fotografías de grupo conservan el encuadre móvil completo; en cuadrícula se mantiene el recorte 3:2 utilizado previamente y el foco de Azores.
++
++La implementación se limita al bloque de tarjetas de la home y a una hoja exclusiva. Catálogo por niveles, filtros, detalles, fuentes, marca, datos y portada se contrastan con el estado inicial mediante hashes y recorridos de navegador. [Entrega, antes/después y revisión independiente](qa/2026-10-13-tarjetas-home/README.md).

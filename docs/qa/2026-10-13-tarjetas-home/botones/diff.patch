@@ -1,0 +1,86 @@
+--- a/dist/index.html
++++ b/dist/index.html
+@@ -22,7 +22,7 @@
+           <h3 id="trip-salvador-title">El Salvador</h3>
+           <p class="home-trip-date">25 oct — 1 nov 2026</p>
+           <p class="home-trip-meta">7 noches · Nivel II–III con autonomía</p>
+-          <span class="home-trip-action" id="trip-salvador-action">Ver viaje <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++          <span class="button home-trip-action" id="trip-salvador-action">Ver viaje <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+         </div>
+       </a>
+     </article>
+@@ -33,7 +33,7 @@
+           <h3 id="trip-asturias-title">Asturias</h3>
+           <p class="home-trip-date">Noviembre 2026</p>
+           <p class="home-trip-meta">2 noches · Todos los niveles</p>
+-          <span class="home-trip-action" id="trip-asturias-action">Ver viaje <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++          <span class="button home-trip-action" id="trip-asturias-action">Ver viaje <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+         </div>
+       </a>
+     </article>
+@@ -48,7 +48,7 @@
+             <h4 id="trip-azores-title">Azores</h4>
+             <p class="home-trip-date">Próximamente</p>
+             <p class="home-trip-meta">Todos los niveles</p>
+-            <span class="home-trip-action" id="trip-azores-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++            <span class="button home-trip-action" id="trip-azores-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+           </div>
+         </a>
+       </article>
+@@ -59,7 +59,7 @@
+             <h4 id="trip-euskadi-title">Euskadi</h4>
+             <p class="home-trip-date">Próximamente</p>
+             <p class="home-trip-meta">Todos los niveles</p>
+-            <span class="home-trip-action" id="trip-euskadi-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++            <span class="button home-trip-action" id="trip-euskadi-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+           </div>
+         </a>
+       </article>
+@@ -70,7 +70,7 @@
+             <h4 id="trip-marruecos-title">Marruecos</h4>
+             <p class="home-trip-date">Próximamente</p>
+             <p class="home-trip-meta">Todos los niveles</p>
+-            <span class="home-trip-action" id="trip-marruecos-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++            <span class="button home-trip-action" id="trip-marruecos-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+           </div>
+         </a>
+       </article>
+@@ -81,7 +81,7 @@
+             <h4 id="trip-cadiz-title">Cádiz</h4>
+             <p class="home-trip-date">Próximamente</p>
+             <p class="home-trip-meta">Todos los niveles</p>
+-            <span class="home-trip-action" id="trip-cadiz-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
++            <span class="button home-trip-action" id="trip-cadiz-action">Ver destino <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+           </div>
+         </a>
+       </article>
+--- a/dist/home-cards.css
++++ b/dist/home-cards.css
+@@ -7,10 +7,10 @@
+ #viajes .home-trip-copy :is(h3,h4){font:400 40px/1.12 var(--display);letter-spacing:-.015em;overflow-wrap:anywhere}
+ #viajes .home-trip-date{margin-top:8px;font:400 14px/1.6 var(--mono)}
+ #viajes .home-trip-meta{margin-top:6px;font:400 15px/1.5 var(--body)}
+-#viajes .home-trip-action{display:inline-flex;align-items:center;gap:16px;min-height:44px;margin:8px 0 0;border:0;font:600 15px/1.4 var(--body);text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:6px}
++#viajes .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;max-width:100%;min-height:44px;margin:12px 0 0;padding:10px 12px;font:600 15px/1.4 var(--body);text-decoration:none}
+ #viajes .home-trip-action svg{flex:none}
+ #viajes .home-trip-link:focus-visible{outline:3px solid var(--ink);outline-offset:6px;box-shadow:0 0 0 9px var(--paper)}
+-#viajes .home-trip-link:is(:hover,:focus-visible) .home-trip-action{text-decoration-color:var(--ink)}
++#viajes .home-trip-link:is(:hover,:focus-visible) .home-trip-action{background:var(--ink);color:var(--paper)}
+ #viajes .home-trip-grid-pending{gap:24px}
+ #viajes .home-trip-pending .home-trip-link{flex-direction:row;flex-wrap:wrap;align-items:center;gap:16px}
+ #viajes .home-trip-pending .home-trip-photo{flex:1 1 38%;min-width:0;width:38%;aspect-ratio:auto;object-fit:contain}
+@@ -18,11 +18,12 @@
+ #viajes .home-trip-pending h4{font-size:32px}
+ #viajes .home-trip-pending .home-trip-date{margin-top:5px}
+ #viajes .home-trip-pending .home-trip-meta{margin-top:4px}
+-#viajes .home-trip-pending .home-trip-action{margin-top:4px}
++#viajes .home-trip-pending .home-trip-action{margin-top:10px}
+ @media(min-width:700px){
+  #viajes .home-trip-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+  #viajes .home-trip-copy{padding-top:18px}
+- #viajes .home-trip-action{margin-top:auto;padding-top:12px;min-height:56px}
++ #viajes .home-trip-meta{margin-bottom:12px}
++ #viajes .home-trip-action{margin-top:auto}
+  #viajes .home-trip-pending .home-trip-link{flex-direction:column;flex-wrap:nowrap;gap:0;align-items:stretch}
+  #viajes .home-trip-pending .home-trip-photo{flex:none;width:100%;aspect-ratio:1.5;object-fit:cover}
+  #viajes .home-trip-pending:first-child .home-trip-photo{object-position:77% 50%}

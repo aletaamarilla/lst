@@ -1,0 +1,77 @@
+/* Static guide; shared LST typography, navigation and brand tokens. */
+.levels-page .site-header{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+.levels-page .site-header .brand-light{display:none}
+.levels-page .site-header .brand-dark{display:block}
+.levels-page .menu-toggle span{background:var(--ink)}
+.levels-page .site-header .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
+.levels-page .site-header .header-cta:hover{background:var(--ink);color:var(--paper)}
+.levels-page .site-header :is(a,button):focus-visible{outline-color:var(--ink)}
+.levels-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:6px}
+.levels-page main{padding-top:var(--home-header-height,70px)}
+.levels-page :is(main,section)[tabindex="-1"]:focus{outline:none;box-shadow:none}
+.guide-intro{padding-block:40px 32px;display:grid;gap:30px;align-items:center}
+.guide-intro h1{font:400 clamp(48px,12vw,80px)/1.02 var(--display);letter-spacing:-.02em;margin-bottom:24px}
+.guide-lead{font-size:18px;max-width:37em}
+.guide-note{font-size:14px;line-height:1.65;color:var(--muted);margin-block:18px}
+.guide-intro .text-link{display:inline-flex;align-items:center;min-height:44px}
+.guide-photo img{width:100%;height:auto}
+.guide-photo figcaption{font:400 12px/1.6 var(--mono);margin-top:12px;color:var(--muted)}
+.guide-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.guide-index a{display:flex;gap:12px;align-items:start;padding:18px 12px;min-height:110px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);text-decoration:none}
+.guide-index a:hover{background:var(--orange)}
+.guide-index-number{font:400 26px/1 var(--display)}
+.guide-index strong{display:block;font-size:16px;line-height:1.3}
+.guide-index small{display:block;font-size:13px;line-height:1.5;margin-top:7px}
+.guide-index a>span:last-child{margin-left:auto}
+.guide-index-help{font-size:14px;color:var(--muted);margin-top:14px}
+.guide-level{display:grid;gap:22px;padding-block:40px;border-bottom:1px solid var(--line)}
+.guide-level:last-child{border-bottom:0;padding-bottom:48px}
+.guide-level .eyebrow{margin-bottom:10px}
+.guide-level h2{font-size:48px}
+.guide-level-tagline{font-size:17px;margin-top:12px}
+.guide-definition{font-size:18px;margin-bottom:24px;max-width:42em}
+.guide-level h3,.guide-comparison h3{font-size:18px;letter-spacing:0;margin-bottom:12px}
+.guide-level ul{padding-left:20px;margin:0 0 24px}
+.guide-level li{padding-left:5px;margin-block:12px}
+.guide-level li::marker{color:var(--orange)}
+.guide-practice{padding-left:18px;border-left:3px solid var(--orange);margin-bottom:12px}
+.guide-practice h3{margin-bottom:6px}
+.guide-source{font-size:13px;color:var(--muted);text-underline-offset:4px;display:inline-flex;align-items:center;min-height:44px}
+.guide-autonomy{background:var(--ink);color:var(--paper);padding-block:44px}
+.guide-autonomy .eyebrow{color:#ff9c7f}
+.guide-autonomy h2,.guide-help h2,.guide-next h2{font-size:44px}
+.guide-comparison{display:grid;gap:28px;margin-top:32px}
+.guide-comparison p{color:var(--paper)}
+.guide-autonomy-note{border-top:1px solid #ffffff40;margin-top:28px;padding-top:24px}
+.guide-trip-example{margin-top:18px;font-size:15px}
+.guide-trip-example a{text-underline-offset:4px}
+.guide-help{padding-block:44px;display:grid;gap:28px}
+.guide-help h2{margin-bottom:20px}
+.guide-help-list{list-style:none;counter-reset:help;padding:0;margin:0 0 28px}
+.guide-help-list li{counter-increment:help;position:relative;padding-left:38px;margin-bottom:22px}
+.guide-help-list li::before{content:counter(help,decimal-leading-zero);position:absolute;left:0;top:2px;font:400 13px/1.6 var(--mono)}
+.guide-help-list strong{font-size:18px}
+.guide-help-list p{margin-top:6px}
+.guide-help .button{width:100%;text-align:center}
+.guide-next{background:var(--orange);padding-block:40px}
+.guide-next>.section-width{display:grid;gap:28px;align-items:center}
+.guide-next h2{margin-bottom:18px}
+.guide-next p:not(.eyebrow){max-width:38em}
+.guide-footer{display:flex;flex-wrap:wrap;gap:24px;align-items:center;padding-block:32px}
+.guide-footer .brand{width:210px}
+.guide-footer .text-link{min-height:44px;display:inline-flex;align-items:center}
+.guide-footer p{font:400 11px/1.6 var(--mono)}
+@media(min-width:760px){
+ .guide-intro{grid-template-columns:1.05fr 1fr;gap:40px;padding-block:56px 44px}
+ .guide-intro h1{font-size:clamp(54px,6vw,88px)}
+ .guide-index{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .guide-index a{padding:22px 16px}
+ .guide-level{grid-template-columns:1fr 1.6fr;gap:48px;padding-block:56px}
+ .guide-level h2{font-size:56px}
+ .guide-autonomy,.guide-help{padding-block:64px}
+ .guide-comparison,.guide-help{grid-template-columns:1fr 1fr;gap:48px}
+ .guide-autonomy h2,.guide-help h2,.guide-next h2{font-size:56px}
+ .guide-next>.section-width{grid-template-columns:1fr auto;gap:48px}
+ .guide-footer p{margin-left:auto}
+}
+@media(min-width:1280px){.guide-intro{gap:72px;padding-block:64px 48px}.guide-index a{padding:24px}.guide-index strong{font-size:20px}.guide-level{grid-template-columns:1fr 1.35fr;gap:100px}.guide-level h2{font-size:72px}.guide-help .button{width:auto}.guide-photo{transform:rotate(2deg)}}

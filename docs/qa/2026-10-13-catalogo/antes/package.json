@@ -1,0 +1,13 @@
+{
+  "name": "lets-surf-together-home",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/render-trips.mjs && node scripts/render-level-trips.mjs",
+    "test": "node --test scripts/trip-model.test.mjs"
+  }
+}

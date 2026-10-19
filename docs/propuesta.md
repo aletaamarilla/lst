@@ -126,3 +126,82 @@ Las pruebas al 200 % justifican distribución flexible de tarjetas, fecha/nombre
 Se contrasta la integración de las mejoras anteriores en home y seis destinos, con documentación, fuentes retenidas, pruebas del repositorio y navegador real. No se encuentran regresiones de producto que requieran corrección; se conservan diseño, identidad y datos provisionales. Se documentan las alertas descartadas con evidencia, los límites de la validación y los pendientes de lanzamiento sin implementarlos.
 
 [Informe final de fase y evidencia](qa/2026-10-12-final/README.md). Sin commit, push, publicación, despliegue ni envío de mensajes.
+
+
+## Revisión 20 · niveles de surf
+
+Se añade `/niveles/` como guía de lectura estática. Una apertura breve explica su propósito, la foto documental de Laga mantiene el vínculo con LST y un índice permite saltar a cualquiera de los cuatro niveles. Cada bloque conserva la misma jerarquía: nombre, definición existente, situaciones reconocibles y qué trabajar. La autonomía tiene un bloque propio; una persona entre dos niveles recibe indicaciones para describir su experiencia al equipo.
+
+Las ampliaciones se contrastan con las cuatro páginas originales de niveles. Se conserva la denominación Riders del contenido actual, aunque la URL antigua usa `rides`. No se convierten tamaños de ola, tablas, años de práctica o maniobras avanzadas en requisitos de acceso. La guía no certifica ni sustituye la valoración de LST. El ejemplo de El Salvador usa exclusivamente los datos existentes y enlaza a su apartado de nivel.
+
+La home mantiene su resumen y enlaza a la guía; se actualiza la fuente común de las fichas y se regeneran sus HTML. «Ver viajes y fechas» lleva al calendario de la home hasta que exista `/viajes/`. WhatsApp inicia una consulta editable, sin confirmar plaza. Datos, marca y recursos sin cambios. [Entrega y evidencia](qa/2026-10-12-niveles/README.md).
+
+
+## Revisión 21 · diseño y lectura desde móvil
+
+`/niveles/` sustituye al contenido de niveles de la web antigua. No deriva al lector a definiciones externas: la explicación completa está en esta página. El índice se adelanta a la fotografía y a las fichas para permitir saltar a cualquier nivel desde la apertura móvil.
+
+Cuatro fichas con la misma jerarquía facilitan comparar olas, técnica y objetivos. En teléfono se leen en una columna; en escritorio forman una cuadrícula de dos por dos. Se reescriben las situaciones con lenguaje directo, explicando «bombeo» y evitando repetir titular, descripción y lista. El bloque de autonomía se separa de la técnica; la ayuda incluye un ejemplo de cómo describir un baño al equipo. Las fotografías son archivos documentales existentes, sin atribuir a las personas un nivel o un rol.
+
+Se conserva la cabecera fija, la marca y la consulta comercial. El aviso de orientación se sitúa junto a WhatsApp. Fuentes solo en el inventario y documentación interna. [Entrega actual](qa/2026-10-12-niveles-redesign/README.md).
+
+
+## Revisión 22 · del nivel a la consulta de viaje
+
+Se hace consistente el acceso a la guía en todas las cabeceras y se añade un destacado persistente al nivel elegido. El color naranja y «Nivel que estás explorando» señalan el punto de lectura al terminar el salto; no indican una valoración del visitante. Se evita un control fijo adicional que tape contenido en móvil.
+
+Cada ficha ofrece dos siguientes pasos: explorar sus viajes o preguntar por ese nivel. Un único bloque de destinos mantiene legible la guía y evita repetir seis tarjetas bajo cada nivel. Su filtrado usa exclusivamente `levelsFor` y los campos existentes; las salidas con fecha y los destinos pendientes se presentan en grupos distintos. Los requisitos adicionales y la disponibilidad se revisan con LST antes de reservar. El mensaje de consulta conserva el nivel explorado.
+
+El HTML contiene enlaces descriptivos a las seis fichas y los datos del JSON. La mejora se plantea como un recorrido útil para el visitante y una estructura de enlaces internos coherente, sin prometer posicionamiento ni aumento de ventas. La guía continúa con noindex y sus datos provisionales: el lanzamiento y la indexación siguen fuera de esta tarea. [Evidencia actual](qa/2026-10-12-niveles-conversion/README.md).
+
+
+## Revisión 23 · jerarquía de niveles y próximos destinos
+
+Las fichas de nivel ganan una cabecera oscura con nombre y numeral, una zona de lectura clara y acciones separadas. Al elegir un nivel la cabecera pasa a naranja y el destacado se conserva con foco de teclado. La consulta de WhatsApp utiliza un botón completo oscuro con icono y texto, visible en teléfono.
+
+En el bloque de viajes se priorizan las salidas con fecha. Los destinos por anunciar permanecen en el HTML y se exploran desde un único desplegable nativo. Los filtros actualizan tanto el número de viajes con fecha como el de destinos pendientes, sin alterar sus condiciones comerciales. Se elimina el bloque de consulta repetido de la lista; la ayuda final recibe el nivel explorado y su mensaje contextual. [Evidencia actual](qa/2026-10-12-niveles-ajustes/README.md).
+
+
+## Revisión 24 · ajustes de interacción móvil
+
+El destacado deja de representar una selección permanente: sirve únicamente para localizar durante un instante el nivel al que se acaba de saltar. La exploración de viajes y el mensaje contextual de WhatsApp siguen guardando el nivel elegido.
+
+Las tarjetas ofrecen dos acciones breves en la misma fila, «Ver viajes» y «WhatsApp», con nombres accesibles que incluyen el nivel. Se conserva el botón de consulta explícito de la ayuda final. En el desplegable de próximos destinos se corrige la herencia de la regla de FAQ que giraba todos los spans, incluido el título. [Evidencia](qa/2026-10-13-niveles-pulido/README.md).
+
+
+## Revisión 25 · tarjetas como acceso al viaje
+
+La fotografía documental queda libre de rótulos, degradados y fechas superpuestas. El título en Aura precede a la fecha en Space Mono y a una línea de duración/nivel en Work Sans. Un «Ver viaje» o «Ver destino» con apariencia de botón naranja deja clara la navegación; foto, contenido y acción forman un solo enlace. No hay reserva ni precio protagonista dentro de las tarjetas. El contenido ampliado y todos los valores comerciales siguen en las fichas sin modificaciones.
+
+La referencia local de Travelhood pudo consultarse en navegador: se adopta la rapidez de lectura de imagen, destino y datos breves, conservando la personalidad y los recursos de LST. Los viajes con fecha forman dos columnas desde 700 px. Los destinos pendientes se presentan como filas compactas en móvil y cuadrícula en pantallas mayores, con reflujo al ampliar el texto. Las fotografías de grupo conservan el encuadre móvil completo; en cuadrícula se mantiene el recorte 3:2 utilizado previamente y el foco de Azores.
+
+La implementación se limita al bloque de tarjetas de la home y a una hoja exclusiva. Catálogo por niveles, filtros, detalles, fuentes, marca, datos y portada se contrastan con el estado inicial mediante hashes y recorridos de navegador. [Entrega, antes/después y revisión independiente](qa/2026-10-13-tarjetas-home/README.md).
+
+
+## Revisión 26 · la historia completa de LST
+
+Conócenos tiene una apertura editorial con foto de grupo completa, una franja naranja para el origen y la firma de Lucas, escenas documentales junto a la forma de viajar, acompañamiento sobre fondo oscuro, respeto al lugar y un cierre con viajes/WhatsApp. En móvil el texto y las imágenes se suceden sin superposiciones; en escritorio comparten columnas. Las cuatro fotos conservan su proporción original en todos los anchos.
+
+El contenido se apoya en el cuestionario leído de nuevo, el texto histórico de Sobre LST y el inventario previo. El surfskate de Cádiz y el atardecer de Marruecos concretan la experiencia sin prometer actividades para futuros programas. La foto junto al acompañamiento es de participantes, sin atribuir identidades o cargos. El origen no se ilustra con una foto posterior como si perteneciera al primer viaje.
+
+La home reduce su relato y añade una entrada visible a Conócenos; conserva comunidad, reseñas y el bloque de respeto. Las fichas mantienen intacto su texto de equipo y suman el enlace a la explicación general. WhatsApp sigue iniciando consultas, y los viajes se exploran a través del calendario existente. No se añade JavaScript específico, dependencias, stack, publicación o cambios comerciales.
+
+[Entrega y evidencia](qa/2026-10-13-conocenos/README.md).
+
+
+## Catálogo por nivel y estado · 13/10/2026
+
+La nueva ruta `/viajes/` abre con una introducción breve, dos selectores nativos y el conjunto de destinos. Conserva Aura, Work Sans, Space Mono, la fotografía documental y los colores de LST. Las tarjetas muestran estado, destino, fecha/duración cuando existen, nivel y autonomía cuando corresponde. La acción naranja abre el detalle; precios, programa y consulta de fechas siguen en las fichas.
+
+La cuadrícula pasa de una columna en teléfono a dos desde 700 px y tres desde 1100 px. Las fotos de grupo conservan el encuadre completo. El contador es una región de estado con anuncio cortés; cambiar filtros conserva el foco y «Limpiar filtros» recupera el conjunto. No hay botón de envío, ordenación ni filtros adicionales. El estado comercial se toma del JSON, sin inferir plazas por fechas, precio o datos de demostración.
+
+Se mantienen el calendario destacado y los bloques previos de la guía; sus acciones principales llevan al catálogo y transmiten el nivel. Los seis destinos están en el HTML y funcionan sin JavaScript. Las pruebas de cero resultados usan una respuesta local aislada: los datos actuales siempre producen al menos un destino para las combinaciones disponibles. No se modifica ni investiga la oferta provisional, y no se publica ni hace push. [Entrega y evidencia](qa/2026-10-13-catalogo/README.md).
+
+
+## Preguntas frecuentes · 13/10/2026
+
+Una apertura breve sitúa las dudas generales y remite a la ficha cuando la respuesta depende del destino. El índice nativo lleva a cuatro temas: viajar por tu cuenta, nivel, preparación y consulta/confirmación. En móvil las preguntas siguen a cada título; en escritorio los títulos y las respuestas comparten dos columnas. No se añaden imágenes, servicios, políticas o garantías.
+
+Los ocho desplegables permiten varias respuestas abiertas. El cierre «¿Te queda alguna duda?» ofrece consulta por WhatsApp y recuerda que la plaza se confirma con el equipo. La home conserva tres preguntas y enlaza a todas. Se unifica la cabecera de las páginas nuevas con cuatro destinos de navegación, conservando la experiencia y la reserva en home/pie y una alternativa nativa sin JavaScript. El catálogo concurrente de Viajes se integra sin duplicarlo.
+
+[Texto respaldado, selección, capturas y validación](qa/2026-10-13-faqs/README.md).
