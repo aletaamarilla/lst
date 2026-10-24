@@ -17,7 +17,7 @@ function showResults() {
   empty.hidden = visible.size !== 0;
   const context = [level, state].filter(select => select.value)
     .map(select => select.selectedOptions[0].textContent);
-  status.textContent = `${visible.size} de ${trips.length} destinos${context.length ? ` · ${context.join(' · ')}` : ''}.`;
+  status.textContent = !trips.length ? 'No hay viajes publicados en este momento.' : `${visible.size} de ${trips.length} destinos${context.length ? ` · ${context.join(' · ')}` : ''}.`;
 }
 
 function syncFromUrl() {

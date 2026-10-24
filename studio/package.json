@@ -1,0 +1,30 @@
+{
+  "name": "lets-surf-together-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "start": "sanity start",
+    "deploy": "sanity deploy",
+    "check": "tsc --noEmit",
+    "schema:extract": "sanity schema extract --force"
+  },
+  "dependencies": {
+    "@sanity/vision": "6.19.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "6.19.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.9.0"
+  }
+}

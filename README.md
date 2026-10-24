@@ -1,5 +1,7 @@
 # Let's Surf Together — home y viajes
 
+Estado operativo 24/10/2026: web estática Node en Vercel `lts-laura-moreno-ferre/lst`, salida `dist/`; Sanity `q5bj2rn2/production`. [Guía actual de edición y publicación](docs/guia-cliente.md). Los apartados de revisiones siguientes conservan el historial; sus pendientes antiguos no describen necesariamente el estado actual.
+
 Proyecto independiente de Travelhood. Web estática con la home, Conócenos, la guía de niveles y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
 
 ## Ejecutar y editar
@@ -12,7 +14,7 @@ npm run check
 npm run dev
 ```
 
-Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-Type. La home se edita en dist/index.html. Las páginas de viaje se generan desde data/trips.json y scripts/render-trips.mjs con npm run build. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
+Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-Type. La home se edita en dist/index.html. Las páginas de viaje, catálogo, niveles y tarjetas de home se generan desde Sanity publicado mediante `scripts/build.mjs` con `npm run build`. `data/trips.json` se conserva como fixture de compatibilidad; la demo exige salida local explícita fuera de `dist/`. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
 
 ## Estructura
 
@@ -86,7 +88,7 @@ La revisión 11 se comprobó en navegador a 320, 390, 768 y 1440 px: gesto horiz
 
 La revisión 12 se comprueba a 320, 390, 768 y 1440 px: popup, foco y teclado, retorno a la posición de lectura, lista larga de fechas, consulta independiente de cada fecha, gesto horizontal de fotos, etiquetas sin flechas en móvil e inclusiones fijas. WhatsApp se intercepta durante las pruebas, sin contactar al equipo.
 
-El efecto sobre ventas requiere medición en producción. La propuesta permanece privada y con noindex,nofollow. No se añaden todavía CMS, automatizaciones ni políticas legales, y no se trasladan datos legales privados del cuestionario.
+El efecto sobre ventas requiere medición en producción. La propuesta permanece privada y con noindex,nofollow. Esta fase inicial no añadía CMS, automatizaciones ni políticas legales, y no se trasladan datos legales privados del cuestionario.
 
 ## Revisión 13 · WhatsApp y legibilidad móvil
 
@@ -220,3 +222,42 @@ La home conserva su calendario y añade «Ver todos los viajes». Niveles conser
 La página se edita en `dist/preguntas-frecuentes/index.html`, con estilos acotados en `dist/faq.css`. Los desplegables nativos permiten abrir varias respuestas; solo carga el `app.js` compartido. La cabecera ofrece Viajes, Niveles, Conócenos y FAQs, y el logo lleva a Inicio. La experiencia y Cómo reservar siguen accesibles en home y pie. Al desactivar JavaScript se muestra navegación nativa adicional y la cabecera permanece arriba mediante `sticky`, conservando su altura en el flujo.
 
 `scripts/check-faqs.mjs` comprueba la página y la integración en navegador usando el mismo runtime externo opcional del proyecto. `npm run check` incluye las once rutas, las entradas a FAQs, enlaces y noindex. [Preguntas finales, fuentes, archivos, capturas, resultados y pendientes](docs/qa/2026-10-13-faqs/README.md). Sin publicación, despliegue ni push.
+
+
+## Sanity Studio · LTS
+
+Studio publicado en https://lets-surf-together.sanity.studio/, con código independiente en `studio/`, conectado al proyecto **LTS** (`q5bj2rn2`), dataset **production**, organización `oCsOalTXP`. Requiere Node.js >=22.12.
+
+```sh
+npm --prefix studio ci
+npm run studio:dev
+```
+
+Abrir http://localhost:3333 e iniciar sesión con una cuenta que tenga acceso al proyecto de Sanity. El esquema inicial «Viajes de surf» permite editar destino, portada, niveles, salidas, precios, inclusiones, exclusiones, preguntas frecuentes y dossier. Las salidas no tienen precios ni niveles comerciales predeterminados.
+
+```sh
+npm run studio:check
+npm run studio:build
+npm run studio:deploy
+```
+
+`studio:deploy` publica el Studio en Sanity Hosting y lo registra en el proyecto. La CLI utiliza la sesión local de `sanity login`; para CI, configurar `SANITY_AUTH_TOKEN` como secreto, nunca en el código ni en variables públicas. El identificador de la aplicación desplegada queda en `studio/sanity.cli.ts`.
+
+La web se genera desde contenido publicado de Sanity. El adaptador convierte imágenes, salidas y objetos editoriales al modelo de los componentes existentes. Las ocho salidas permanecen en preparación local; no se han importado. El catálogo publicado vacío no utiliza las demostraciones como respaldo. Consulta [operación e importación](docs/sanity/2026-10-23/implementation/README.md) y [validación de esta implementación](docs/qa/2026-10-23-sanity/README.md).
+
+Administración: https://www.sanity.io/manage/project/q5bj2rn2
+
+## Catálogo Sanity · 23/10/2026
+
+`npm run build` consulta una sola vez `q5bj2rn2/production` con perspectiva publicada y valida antes de sustituir `dist/`. Un error aborta conservando la salida anterior; un catálogo vacío se muestra explícitamente, conservando las URLs anteriores con un aviso de contenido no publicado. `npm run check` valida el snapshot público generado, rutas, enlaces y coherencia de las cuatro vistas.
+
+```sh
+npm test
+npm run build
+npm run check
+npm run sanity:import
+```
+
+La última orden solo simula y valida las ocho salidas locales. La comprobación remota de colisiones requiere credencial privada con lectura de borradores; ningún borrador se crea sin `--check-remote --apply`. No se ha ejecutado esa combinación. La lectura de producción usa exclusivamente `SANITY_READ_TOKEN` si hace falta; la importación usa `SANITY_IMPORT_TOKEN`, independiente y solo disponible en el proceso de importación. Nunca usar prefijos públicos ni colocar credenciales en `dist/`, Studio o Git.
+
+Para repetir la presentación anterior de forma aislada: `npm run build:demo -- --out=/tmp/lst-demo` y `node scripts/check.mjs --dir=/tmp/lst-demo --demo`. Esta opción no puede escribir la demo en `dist/`.

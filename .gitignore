@@ -3,3 +3,11 @@ node_modules/
 .env*
 *.log
 artifacts/
+
+# Sanity Studio build output
+studio/dist/
+studio/.sanity/
+studio/schema.json
+
+# Local deployment identity and private CLI state
+.vercel/

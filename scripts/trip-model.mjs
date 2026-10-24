@@ -33,7 +33,7 @@ export function departuresFor(trip) {
     const result = {
       ...departure,
       duration: departure.duration ?? trip.duration ?? 'Por confirmar',
-      price: departure.price ?? trip.price ?? null,
+      price: Object.hasOwn(departure, 'price') ? departure.price : trip.price ?? null,
       state: departure.state ?? trip.state,
     };
     if (result.price !== null && (!Number.isFinite(result.price) || result.price <= 0)) {
@@ -68,7 +68,7 @@ export function tripFacts(trip) {
   ];
 }
 
-export const formatPrice = value => `${new Intl.NumberFormat('es-ES', {maximumFractionDigits: 0, useGrouping: 'always'}).format(value)} €`;
+export const formatPrice = value => `${new Intl.NumberFormat('es-ES', {maximumFractionDigits: 2, useGrouping: 'always'}).format(value)} €`;
 
 export function tripPrice(trip) {
   const departures = departuresFor(trip);
@@ -77,3 +77,7 @@ export function tripPrice(trip) {
   const from = new Set(prices).size > 1 || prices.length < departures.length;
   return `${from ? 'Desde ' : ''}${formatPrice(Math.min(...prices))}`;
 }
+
+// Zero is an explicit commercial value; missing availability remains by enquiry.
+export const isFull = trip => trip.availability ? trip.availability === 'full' : trip.capacity?.available === 0;
+export const availabilityLabel = trip => isFull(trip) ? 'Completo' : trip.availability === 'last_places' ? 'Últimas plazas' : trip.availability === 'available' || (!trip.availability && trip.capacity?.available > 0) ? 'Plazas disponibles' : 'Consultar disponibilidad';

@@ -2,17 +2,24 @@ import {readFile,access,readdir,stat} from 'node:fs/promises';
 import path from 'node:path';
 import {departuresFor, departureMessage, levelLabel} from './trip-model.mjs';
 import {execFileSync} from 'node:child_process';
-const root=path.resolve('dist');
-const trips=JSON.parse(await readFile('data/trips.json','utf8'));
+import {renderTrip} from './render-trips.mjs';
+import {renderCatalog} from './render-catalog.mjs';
+import {renderLevelTrips} from './render-level-trips.mjs';
+import {renderHomeTrips} from './render-home-trips.mjs';
+const root=path.resolve(process.argv.find(a=>a.startsWith('--dir='))?.slice(6)??'dist');
+const demo=process.argv.includes('--demo');
+const trips=demo?JSON.parse(await readFile('data/trips.json','utf8')):JSON.parse(await readFile(path.join(root,'catalog-snapshot.json'),'utf8')).trips;
 const errors=[];
-execFileSync(process.execPath,['--check','dist/app.js']);
-execFileSync(process.execPath,['--check','dist/trip.js']);
-execFileSync(process.execPath,['--check','dist/levels.js']);
-execFileSync(process.execPath,['--check','dist/catalog.js']);
-execFileSync(process.execPath,['--check','dist/catalog-filter.js']);
-execFileSync(process.execPath,['scripts/render-catalog.mjs','--check'],{stdio:'inherit'});
-execFileSync(process.execPath,['scripts/render-level-trips.mjs','--check'],{stdio:'inherit'});
-execFileSync(process.execPath,['scripts/render-trips.mjs','--check'],{stdio:'inherit'});
+execFileSync(process.execPath,['--check',root+'/app.js']);
+execFileSync(process.execPath,['--check',root+'/trip.js']);
+execFileSync(process.execPath,['--check',root+'/levels.js']);
+execFileSync(process.execPath,['--check',root+'/catalog.js']);
+execFileSync(process.execPath,['--check',root+'/catalog-filter.js']);
+for(const [file,render] of [['index.html',renderHomeTrips],['viajes/index.html',renderCatalog],['niveles/index.html',renderLevelTrips]]){
+ const current=await readFile(path.join(root,file),'utf8');
+ if(render(current,trips)!==current)errors.push(`Generated view out of date: ${file}`);
+}
+for(const t of trips){const current=await readFile(path.join(root,'viajes',t.slug,'index.html'),'utf8');if(current!==renderTrip(t,trips))errors.push(`Trip page out of date: ${t.slug}`);}
 async function walk(dir){const files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else files.push(p);}return files;}
 const files=await walk(root);
 const pages=new Map();
@@ -79,7 +86,7 @@ for(const t of trips){
    if(!page.html.includes('id="departure-dialog"')||page.html.includes('data-date-picker'))errors.push(`Date popup missing or old inline dates ${t.slug}`);
    for(const d of departures){
     const links=[...page.html.matchAll(/data-whatsapp="[^"]+" href="([^"]+)" data-departure="([^"]+)"/g)].filter(m=>m[2]===d.id);
-    if(links.length!==1||links.some(m=>new URL(m[1]).searchParams.get('text')!==departureMessage(t,d)))errors.push(`Incorrect dated enquiry ${t.slug}/${d.id}`);
+    if(!t.booking?.applicationUrl&&(links.length!==1||links.some(m=>new URL(m[1]).searchParams.get('text')!==departureMessage(t,d))))errors.push(`Incorrect dated enquiry ${t.slug}/${d.id}`);
    }
   }else if(page.html.includes('data-open-dates'))errors.push(`Unexpected multiple-date action ${t.slug}`);
  }
@@ -90,7 +97,7 @@ for(const [file,{html}] of pages){
  if(/salidas? de ejemplo|fechas? de muestra|fechas? ficticias?|MAQUETA/i.test(html))errors.push(`Old sample labels in client demo: ${file}`);
  if(/<details class="inclusion-list/.test(html))errors.push(`Inclusions should always remain visible: ${file}`);
 }
-if(trips.some(t=>t.state==='confirmed'&&!t.source&&!t.demoData?.clientPresentation))errors.push('Commercial data needs a verified source or an explicit internal demo record');
+if(trips.some(t=>t.state==='confirmed'&&!t.cms&&!t.source&&!t.demoData?.clientPresentation))errors.push('Commercial data needs a verified source or an explicit internal demo record');
 const faq=pages.get(path.join(root,'preguntas-frecuentes/index.html'));
 if(faq){
  for(const id of ['grupo','nivel','preparacion','reserva'])if(!faq.ids.has(id))errors.push(`Missing FAQ topic ${id}`);
@@ -107,4 +114,4 @@ for(const route of ['/niveles/','/conocenos/','/viajes/','/preguntas-frecuentes/
 const homeFaq=home.match(/<section class="faq\b[\s\S]*?<\/section>/)?.[0]??'';
 if(!homeFaq.includes('href="/preguntas-frecuentes/"')||(homeFaq.match(/<details>/g)??[]).length>3)errors.push('Keep a short home FAQ summary with a link to all questions');
 if(errors.length)throw Error(errors.join('\n'));
-console.log(`PASS: ${pages.size} pages, independent routes, all local links/anchors/assets, contextual WhatsApp, client demo and pending states, modal dates and fixed inclusions, JavaScript and noindex.`);
+console.log(`PASS: ${pages.size} pages, independent routes, all local links/anchors/assets, contextual WhatsApp, published catalogue, optional data and pending states, modal dates and fixed inclusions, JavaScript and noindex.`);
