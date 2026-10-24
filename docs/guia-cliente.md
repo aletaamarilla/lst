@@ -2,7 +2,7 @@
 
 Studio: https://lets-surf-together.sanity.studio/ (requiere tu cuenta con acceso). Web: https://lst-sepia.vercel.app/viajes/.
 
-1. **Cambiar un precio:** abre el viaje → «Fechas y niveles» → «Salidas» → precio por persona. Revisa condiciones de tarifa, señal y PDF para que coincidan. Pulsa **Publicar**.
+1. **Cambiar un precio:** abre el viaje → «Fechas y niveles» → «Salidas» → precio por persona. Revisa condiciones de tarifa, señal, PDF y formulario externo para que coincidan. Pulsa **Publicar**.
 2. **Marcar completo:** cambia «Disponibilidad» a **Completo** y publica. Se conserva la ficha con sus fechas/precios y se retira la solicitud de plaza. También puedes elegir **Plazas disponibles**, **Últimas plazas** o **Consultar disponibilidad**. No se usa un contador de plazas libres.
 3. **Sustituir el PDF:** en «Programa» → **PDF del viaje**, sube el archivo aprobado y publica. Este archivo tiene prioridad sobre la URL anterior del dossier. Comprueba el enlace «Descargar dossier» en la web.
 4. **Nueva salida:** crea o duplica un viaje; usa una URL nueva y estable, nombre/fecha/niveles/precio correctos, disponibilidad, programa/inclusiones/exclusiones, fotos con descripción y PDF revisados. Si usas formulario, revisa «Enlace de solicitud aprobado» (vacío usa WhatsApp). Confirma las condiciones comerciales y publica solo cuando esté completo; mientras tanto déjalo en borrador.

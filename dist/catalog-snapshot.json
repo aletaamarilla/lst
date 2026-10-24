@@ -1,4 +1,925 @@
 {
   "source": "sanity-published",
-  "trips": []
+  "trips": [
+    {
+      "id": "el-palmar-2026-12-04",
+      "slug": "el-palmar-2026-12-04",
+      "name": "El Palmar",
+      "place": "Vejer de la Frontera · Cádiz",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "levelRequirement": "Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).",
+      "departures": [
+        {
+          "id": "el-palmar-2026-12-04",
+          "date": "4 dic 2026 — 8 dic 2026",
+          "start": "2026-12-04",
+          "end": "2026-12-08",
+          "duration": "4 noches",
+          "price": 699,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+      "heroAlt": "El Palmar · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "El Palmar",
+      "intro": "Let’s Surf Together\nEn Let’s Surf Together creemos que un surftrip no es solo surfear.\nEs compartir, aprender y vivir una experiencia que se queda contigo mucho\ndespués de volver a casa \nEste puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con\nmás ambiente surfero del sur, y queremos que formes parte de ello.\nSerán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel,\nvideocorrecciones para pulir cada detalle de tu técnica, surfskate en pista\nprivada y Animal Flow para sentirte ágil dentro y fuera del agua.\nY fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche\ncon fiesta temática de los 80 y 90 \nEs el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve\nencantadaaaa.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "4 clases de sábado a martes; tres grupos y videocorrecciones. Material y seguro de escuela local."
+        ],
+        [
+          "Programa 2",
+          "Surfskate con horarios por grupo; Animal Flow y movilidad diarios."
+        ],
+        [
+          "Programa 3",
+          "Visita a Conil, ping pong, juegos y barbacoa."
+        ],
+        [
+          "Programa 4",
+          "Viernes: bienvenida. Sábado: ambiente y posiblemente música en directo. Domingo: juegos en casa. Lunes: fiesta 80/90; planes opcionales y respeto al descanso."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+          "El Palmar · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).",
+      "levelChecks": [],
+      "includes": [
+        "4 noches en Nexo Surfhouse, a 200 m de la playa",
+        "Pensión completa: cena del viernes a comida del martes",
+        "4 clases de surf en 3 grupos según nivel",
+        "Material y seguro de la escuela local",
+        "Videocorrecciones por grupos",
+        "Surfskate en pista privada",
+        "Animal Flow y movilidad",
+        "Visita a Conil",
+        "Barbacoa, juegos y actividades de grupo",
+        "Fiesta temática de los 80 y 90"
+      ],
+      "excludes": [
+        "Transporte (coches compartidos)"
+      ],
+      "inclusionsNote": "",
+      "faqs": [],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/ad258244540fb13e8f973c889ce1a56013e6f6fc.pdf",
+      "booking": {
+        "applicationUrl": "https://forms.gle/Gmej3QWiKTHbuTo98"
+      },
+      "payment": {
+        "depositAmount": 250,
+        "terms": "Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 30,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa El Palmar. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Nexo Surfhouse, 200 m de playa; habitaciones dobles/triples, jardín, azotea, pista de surfskate, ping pong, barbacoa, comedor, cafetería y parking. Petición de compartir habitación en formulario.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "fuerteventura-2027-02-12",
+      "slug": "fuerteventura-2027-02-12",
+      "name": "Fuerteventura",
+      "place": "Canarias · España",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        1,
+        2
+      ],
+      "levelRequirement": "Iniciación e intermedio; 2 grupos según nivel.",
+      "departures": [
+        {
+          "id": "fuerteventura-2027-02-12",
+          "date": "12 feb 2027 — 16 feb 2027",
+          "start": "2027-02-12",
+          "end": "2027-02-16",
+          "duration": "4 noches",
+          "price": 699,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044.jpg",
+      "heroAlt": "Fuerteventura · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Fuerteventura",
+      "intro": "Let’s Surf Together\nESCÁPATE DEL INVIERNO A SURFEAR\n¿Te imaginas escaparte del invierno a surfear con sol, buen clima y olas en una\nde las islas más bonitas de Canarias? \nEste surftrip está pensado tanto para quienes quieren dar sus primeros pasos en\nel surf como para quienes ya se defienden y quieren seguir aprendiendo cosas\nnuevas.\nSerán 5 días llenos de surf, volcanes, dunas, atardeceres y momentos\ncompartidos con un grupo reducido de 12 personas con la misma pasión.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "4 clases de sábado a martes, material incluido; 2 grupos y 3 videoanálisis; Animal Flow todas las mañanas."
+        ],
+        [
+          "Programa 2",
+          "Día orientativo: movilidad, clase, comida, videoanálisis y plan de tarde; no constituye itinerario cerrado."
+        ],
+        [
+          "Programa 3",
+          "Dunas de Corralejo, volcán Calderón Hondo, noche de estrellas, surfskate y paseo por Corralejo; sorpresas sin concretar."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044.jpg",
+          "Fuerteventura · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Iniciación e intermedio; 2 grupos según nivel.",
+      "levelChecks": [],
+      "includes": [
+        "4 noches en casa para el grupo",
+        "Desayunos y comidas todos los días y 2 cenas en casa",
+        "4 clases de surf adaptadas al nivel con material",
+        "3 sesiones de videoanálisis por grupos",
+        "Animal Flow y movilidad todas las mañanas",
+        "Actividades de tarde: dunas, volcán, estrellas, surfskate y sorpresas",
+        "Transfers: aeropuerto, surf y actividades",
+        "Fotos y vídeos del viaje y acompañamiento 24h",
+        "Asesoría de vuelos y descuento en seguro"
+      ],
+      "excludes": [
+        "Vuelos",
+        "2 cenas libres en el pueblo",
+        "Seguro de viaje"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Y si no he surfeado nunca?",
+          "¡Perfecto! El grupo de iniciación empieza desde cero, con técnica básica, espumas y mucha confianza en el agua."
+        ],
+        [
+          "¿Y si ya tengo algo de nivel?",
+          "Irás al grupo intermedio, a coger paredes y seguir la línea de la ola, con videoanálisis para seguir aprendiendo."
+        ],
+        [
+          "¿Tengo que llevar material?",
+          "No: tabla y neopreno están incluidos en las clases. Si tienes tu propio neopreno, puedes traerlo."
+        ],
+        [
+          "¿Cómo llego hasta allí?",
+          "En avión. Te asesoramos con los vuelos y crearemos un grupo para volar juntos. Desde el aeropuerto, todos los traslados están incluidos."
+        ],
+        [
+          "¿Qué comidas están incluidas?",
+          "Desayunos y comidas todos los días y 2 cenas en casa. Las otras 2 cenas son libres en el pueblo."
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b49d95e5b29c389a69dfe1de2cdd082acc32f2fc.pdf",
+      "booking": {
+        "applicationUrl": "https://forms.gle/pY8QksJYRBTKV3hY8"
+      },
+      "payment": {
+        "depositAmount": 250,
+        "terms": "Señal fija de 250 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 12,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Fuerteventura. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Casa para el grupo sin nombre; no se especifica distribución de habitaciones.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "hossegor-2026-11-20",
+      "slug": "hossegor-2026-11-20",
+      "name": "Hossegor",
+      "place": "Landas · Francia",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        2,
+        3
+      ],
+      "levelRequirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
+      "departures": [
+        {
+          "id": "hossegor-2026-11-20",
+          "date": "20 nov 2026 — 22 nov 2026",
+          "start": "2026-11-20",
+          "end": "2026-11-22",
+          "duration": "2 noches",
+          "price": 399,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+      "heroAlt": "Hossegor · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Hossegor",
+      "intro": "Let’s Surf Together\nUN FINDE PARA SUBIR DE NIVEL\nUn finde para dar un salto de calidad en tu surf en una de las mecas del surf\neuropeo \nNos vamos a Hossegor con un grupo muy reducido de solo 6 personas, para\nque Lucas pueda hacer un seguimiento individualizado de cada uno durante\ntodo el fin de semana.\nAnalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de\nverdad necesitas para mejorar: dentro del agua, en vídeo y en la teoría del mar.\nY todo con el ambiente de siempre de LST: surf, buena comida y buen rollo en\nuna surfhouse con muy buena energía.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo. Consulta las condiciones con el equipo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "Coaching en todas las sesiones con Lucas; grabación, videoanálisis grupal e individual, Animal Flow y estiramientos."
+        ],
+        [
+          "Programa 2",
+          "Teoría del mar: swell y periodo, viento y mareas, elección de pico."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+          "Hossegor · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
+      "levelChecks": [],
+      "includes": [
+        "2 noches en surfhouse",
+        "Pensión completa: cena del viernes a desayuno del domingo",
+        "Coaching en todas las sesiones con seguimiento individual de Lucas",
+        "Vídeos de todas las sesiones",
+        "Videoanálisis grupal e individual",
+        "Animal Flow y estiramientos",
+        "Teoría del mar, condiciones y forecast"
+      ],
+      "excludes": [
+        "Material de surf (alquiler posible)",
+        "Transporte (coches compartidos)",
+        "Seguro de viaje"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Qué nivel necesito?",
+          "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
+        ],
+        [
+          "¿Tengo que llevar mi material?",
+          "Sí: cada uno trae su tabla y su neopreno. Si te falta algo, allí podrás alquilarlo."
+        ],
+        [
+          "¿Cómo llego hasta allí?",
+          "En coche. Crearemos un grupo de WhatsApp con las personas que reserven para compartir coche y gastos desde cada ciudad."
+        ],
+        [
+          "¿Qué pasa si no hay olas buenas?",
+          "Si las condiciones no son buenas para el viaje, lo cancelamos y puedes elegir entre reembolso o bono para otro viaje."
+        ],
+        [
+          "¿El seguro de viaje es obligatorio?",
+          "Sí. Con nuestro enlace de IATI Seguros tienes un 5 % de descuento; te lo pasamos al confirmar la plaza."
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e488fd20ae30f867a6a1f162b67ada09d267d015.pdf",
+      "booking": {
+        "applicationUrl": "https://forms.gle/sserHWdhwvDMVxYQ6"
+      },
+      "payment": {
+        "depositAmount": 200,
+        "terms": "Señal fija de 200 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 6,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Hossegor. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Surfhouse con jardín; nombre y habitaciones no indicados.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "maldivas-2027-03-21",
+      "slug": "maldivas-2027-03-21",
+      "name": "Maldivas · Semana Santa",
+      "place": "Thulusdhoo · Atolón de Malé Norte",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        2,
+        3
+      ],
+      "levelRequirement": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+      "departures": [
+        {
+          "id": "maldivas-2027-03-21",
+          "date": "21 mar 2027 — 28 mar 2027",
+          "start": "2027-03-21",
+          "end": "2027-03-28",
+          "duration": "7 noches",
+          "price": 1499,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
+      "heroAlt": "Maldivas · Semana Santa · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Maldivas · Semana Santa",
+      "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "Surf en barco 2 veces al día según condiciones; coaching Lucas; fotos/vídeos; videoanálisis cada tarde y Animal Flow cada mañana."
+        ],
+        [
+          "Programa 2",
+          "Plan B opcional si no hay olas o el grupo quiere descansar: snorkel en arrecife; animales no garantizados, delfines con suerte; paseos, playa y sunsets."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
+          "Maldivas · Semana Santa · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+      "levelChecks": [],
+      "includes": [
+        "7 noches en hotel en primera línea de playa",
+        "Pensión completa: desayuno, comida y cena",
+        "Surf en barco 2 veces al día",
+        "Coaching en todas las sesiones con seguimiento individual de Lucas",
+        "Fotos y vídeos profesionales",
+        "Videoanálisis grupal e individual",
+        "Animal Flow cada mañana",
+        "Transfers aeropuerto–isla–aeropuerto y a los spots",
+        "Actividades de grupo y snorkel opcional",
+        "Wifi, acompañamiento 24h y asesoría de vuelos",
+        "Descuento en seguro de viaje"
+      ],
+      "excludes": [
+        "Vuelos"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Qué nivel necesito?",
+          "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
+        ],
+        [
+          "¿Están incluidos los vuelos?",
+          "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra."
+        ],
+        [
+          "¿Puedo llegar antes o quedarme más días?",
+          "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos."
+        ],
+        [
+          "¿Cómo se paga?",
+          "500 € para reservar tu plaza y el resto un mes antes del viaje."
+        ],
+        [
+          "¿Y si no hay olas?",
+          "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional."
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d5614a40b8754b05890d82ae0dc6a0f42bc85817.pdf",
+      "booking": {
+        "applicationUrl": "https://forms.gle/nDxuYXFPq4XZx6B2A"
+      },
+      "payment": {
+        "depositAmount": 500,
+        "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 10,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Maldivas · Semana Santa. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Hotel sin nombre, primera línea de playa en Thulusdhoo; habitaciones dobles/triples, wifi.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "maldivas-2027-03-28",
+      "slug": "maldivas-2027-03-28",
+      "name": "Maldivas · Pascua",
+      "place": "Thulusdhoo · Atolón de Malé Norte",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        2,
+        3
+      ],
+      "levelRequirement": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+      "departures": [
+        {
+          "id": "maldivas-2027-03-28",
+          "date": "28 mar 2027 — 4 abr 2027",
+          "start": "2027-03-28",
+          "end": "2027-04-04",
+          "duration": "7 noches",
+          "price": 1499,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
+      "heroAlt": "Maldivas · Pascua · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Maldivas · Pascua",
+      "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "Surf en barco 2 veces al día según condiciones; coaching Lucas; fotos/vídeos; videoanálisis cada tarde y Animal Flow cada mañana."
+        ],
+        [
+          "Programa 2",
+          "Plan B opcional si no hay olas o el grupo quiere descansar: snorkel en arrecife; animales no garantizados, delfines con suerte; paseos, playa y sunsets."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
+          "Maldivas · Pascua · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+      "levelChecks": [],
+      "includes": [
+        "7 noches en hotel en primera línea de playa",
+        "Pensión completa: desayuno, comida y cena",
+        "Surf en barco 2 veces al día",
+        "Coaching en todas las sesiones con seguimiento individual de Lucas",
+        "Fotos y vídeos profesionales",
+        "Videoanálisis grupal e individual",
+        "Animal Flow cada mañana",
+        "Transfers aeropuerto–isla–aeropuerto y a los spots",
+        "Actividades de grupo y snorkel opcional",
+        "Wifi, acompañamiento 24h y asesoría de vuelos",
+        "Descuento en seguro de viaje"
+      ],
+      "excludes": [
+        "Vuelos"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Qué nivel necesito?",
+          "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
+        ],
+        [
+          "¿Están incluidos los vuelos?",
+          "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra."
+        ],
+        [
+          "¿Puedo llegar antes o quedarme más días?",
+          "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos."
+        ],
+        [
+          "¿Cómo se paga?",
+          "500 € para reservar tu plaza y el resto un mes antes del viaje."
+        ],
+        [
+          "¿Y si no hay olas?",
+          "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional."
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/cccb17697b4a3d97c57525bf6d7f224ca6e26d1e.pdf",
+      "booking": {
+        "applicationUrl": "https://forms.gle/ps3zG2BRLwK8UkB3A"
+      },
+      "payment": {
+        "depositAmount": 500,
+        "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 10,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Maldivas · Pascua. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Hotel sin nombre, primera línea de playa en Thulusdhoo; habitaciones dobles/triples, wifi.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "marruecos-2027-01-17",
+      "slug": "marruecos-2027-01-17",
+      "name": "Marruecos · nivel 1–2",
+      "place": "Agadir · Marruecos",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        1,
+        2
+      ],
+      "levelRequirement": "Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.",
+      "departures": [
+        {
+          "id": "marruecos-2027-01-17",
+          "date": "17 ene 2027 — 24 ene 2027",
+          "start": "2027-01-17",
+          "end": "2027-01-24",
+          "duration": "7 noches",
+          "price": 899,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+      "heroAlt": "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Marruecos · nivel 1–2",
+      "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: con el pie en la arena y la tabla en el\nagua \nDespués de un 2026 lleno de viajes y surftrips increíbles, toca volver a las raíces.\nA recordar por qué nos enamoramos del surf, a conectar con nuestra primera ola\ny con esa sensación de libertad que solo el mar te da.\nEste surftrip está diseñado para quienes quieren dar sus primeros pasos en el\nsurf o mejorar su base, coger confianza en el agua y empezar a disfrutar de las\nprimeras paredes y maniobras sencillas.\nSerá una semana llena de surf, cultura marroquí y momentos compartidos con\nun grupo reducido de personas con la misma pasión.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "Clases y coaching de lunes a sábado; videoanálisis grupal e individual, Animal Flow diario, material de iniciación y neoprenos. Evolutivas/shortboards no incluidos; posible alquiler."
+        ],
+        [
+          "Programa 2",
+          "Dunas de Tamri, Zoco de Agadir, mercados locales, surf day en Imsouane y jornada en Paradise Valley."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.",
+      "levelChecks": [],
+      "includes": [
+        "7 noches en Surf House",
+        "Pensión completa: desayuno, comida y cena",
+        "Clases y coaching adaptados al nivel",
+        "Material de iniciación y neoprenos",
+        "Videoanálisis grupal e individual",
+        "Animal Flow y estiramientos",
+        "Excursiones y visitas culturales",
+        "Transfers: aeropuerto, spots y actividades",
+        "Fotos y vídeos del viaje",
+        "Acompañamiento 24h",
+        "Asesoría de vuelos y descuento en seguro"
+      ],
+      "excludes": [
+        "Vuelos",
+        "Seguro de viaje",
+        "Tablas evolutivas y shortboards: alquiler aparte (p. 5)"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Y si no sé nada de surf?",
+          "No te preocupes. Estarás acompañado en todo momento por monitores y el equipo de Let’s Surf Together, y adaptaremos tu progresión a tu nivel."
+        ],
+        [
+          "¿Y si tengo más nivel que el resto?",
+          "¡Sin problema! Haremos videocorrecciones para tu nivel y nos preocuparemos de que aprendas las pautas para llevar tu surfing al siguiente nivel."
+        ],
+        [
+          "¿Cómo llego hasta allí?",
+          "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos."
+        ],
+        [
+          "¿Puedo llevar mi tabla?",
+          "Sí, pero allí tienes todo el material de iniciación, y además puedes alquilar tablas de mayor nivel."
+        ],
+        [
+          "¿Qué pasa si cambian las condiciones del mar?",
+          "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)"
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/74619b7a61bfd57cdd564c3c7d6b66f498a1f2e4.pdf",
+      "booking": {
+        "applicationUrl": ""
+      },
+      "payment": {
+        "depositAmount": 270,
+        "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 15,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Marruecos · nivel 1–2. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "marruecos-2027-01-24",
+      "slug": "marruecos-2027-01-24",
+      "name": "Marruecos · nivel 3",
+      "place": "Agadir · Marruecos",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        3
+      ],
+      "levelRequirement": "Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.",
+      "departures": [
+        {
+          "id": "marruecos-2027-01-24",
+          "date": "24 ene 2027 — 31 ene 2027",
+          "start": "2027-01-24",
+          "end": "2027-01-31",
+          "duration": "7 noches",
+          "price": 899,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+      "heroAlt": "Marruecos · nivel 3 · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Marruecos · nivel 3",
+      "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: entrenando duro en el agua y buscando\nnuevos retos \nDespués de un 2026 lleno de olas, aprendizajes y surftrips épicos, toca dar el\nsiguiente paso: que tu surf deje de ser solo coger olas y empiece a fluir.\nPara ganar velocidad y control en la pared, aprender a bombear, colocarte\nmejor en la ola y soltar tus primeros giros con buena técnica. Para sentir que de\nverdad progresas, sesión a sesión.\nUna semana enfocada en progresar en tu surf, con sesiones intensivas, análisis\nen detalle y tiempo para disfrutar de la cultura marroquí.",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "Coaching con Lucas de lunes a sábado; hasta 2 sesiones al día si las condiciones acompañan; vídeos diarios y 4 videocorrecciones; Animal Flow y movilidad. Tabla propia o alquiler."
+        ],
+        [
+          "Programa 2",
+          "Spots anunciados: Imsouane, Anchor Point, Desert Point, Banana y Camel según condiciones. Si el mar descansa o el grupo lo pide, Zoco de Agadir y actividades locales."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "Marruecos · nivel 3 · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.",
+      "levelChecks": [],
+      "includes": [
+        "7 noches en Surf House",
+        "Pensión completa: desayuno, comida y cena",
+        "Surf coaching intensivo con Lucas",
+        "Vídeos todos los días",
+        "4 sesiones de videocorrecciones",
+        "Animal Flow y estiramientos",
+        "Excursiones y visitas culturales",
+        "Transfers: aeropuerto, spots y actividades",
+        "Fotos y vídeos del viaje",
+        "Acompañamiento 24h",
+        "Asesoría de vuelos y descuento en seguro"
+      ],
+      "excludes": [
+        "Vuelos",
+        "Seguro de viaje",
+        "Tabla propia o alquiler en destino (p. 5; no consta incluido)"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Y si todavía no voy por la pared?",
+          "Entonces te encajará mejor el viaje del 17 al 24 de enero, pensado para iniciación e intermedio bajo."
+        ],
+        [
+          "¿Qué nivel necesito?",
+          "Nivel 3: ser independiente en el agua y pillar tus paredes con tabla corta. Si ya haces maniobras y quieres pulirlas, también es tu viaje."
+        ],
+        [
+          "¿Cómo llego hasta allí?",
+          "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos."
+        ],
+        [
+          "¿Puedo llevar mi tabla?",
+          "Sí, de hecho lo recomendamos en este viaje. Si lo prefieres, también puedes alquilar allí."
+        ],
+        [
+          "¿Qué pasa si cambian las condiciones del mar?",
+          "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos."
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b34680337a58903344c224ebaac131396dde9cee.pdf",
+      "booking": {
+        "applicationUrl": ""
+      },
+      "payment": {
+        "depositAmount": 270,
+        "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 10,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Marruecos · nivel 3. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales.",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    },
+    {
+      "id": "senegal-2027-02-28",
+      "slug": "senegal-2027-02-28",
+      "name": "Senegal",
+      "place": "Dakar · Senegal",
+      "state": "confirmed",
+      "availability": "available",
+      "levels": [
+        2
+      ],
+      "levelRequirement": "Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.",
+      "departures": [
+        {
+          "id": "senegal-2027-02-28",
+          "date": "28 feb 2027 — 7 mar 2027",
+          "start": "2027-02-28",
+          "end": "2027-03-07",
+          "duration": "7 noches",
+          "price": 1299,
+          "state": "confirmed"
+        }
+      ],
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044.jpg",
+      "heroAlt": "Senegal · fotografía del dossier de LST",
+      "heroPosition": "50% 50%",
+      "tagline": "Senegal",
+      "intro": "Let’s Surf Together\nUNA AVENTURA DE SURF EN ÁFRICA\nHay viajes que se recuerdan toda la vida, y este es uno de ellos \nNos vamos a Senegal, al punto más occidental de África, a surfear olas atlánticas\ncon sol, en un país lleno de color, ritmo y energía.\nSerá una semana para mejorar tu surf en las olas de Senegal, vivir una aventura\nen el desierto de Lompoul, ver el Lago Rosa y descubrir la Isla de Gorée.\nTodo con un grupo reducido de 12 personas con la misma pasión, con el estilo de\nsiempre de LST: surf, coaching, buen rollo y momentos que no se olvidan.\nLa familia LST en un viaje anterior",
+      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "storyTitle": "El programa.",
+      "storyLabel": "EL VIAJE",
+      "storyIntro": "",
+      "story": [
+        [
+          "Programa 1",
+          "Surf diario con clases o guiding según condiciones; material todo el día; videoanálisis, Animal Flow y fotos/vídeos."
+        ],
+        [
+          "Programa 2",
+          "Lompoul, Lago Rosa, Gorée con barco/entrada/guía, Almadies y mercado; transfers incluidos."
+        ],
+        [
+          "Programa 3",
+          "Una noche en tiendas en Lompoul, atardecer, cena y desayuno; bebidas de la cena excluidas. Lago Rosa al volver."
+        ]
+      ],
+      "gallery": [
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044.jpg",
+          "Senegal · fotografía del dossier de LST",
+          "Fotografía del dossier de LST."
+        ]
+      ],
+      "levelTitle": "Tu nivel de surf.",
+      "levelText": "Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.",
+      "levelChecks": [],
+      "includes": [
+        "7 noches de alojamiento, una en el desierto",
+        "Desayuno y cena todos los días",
+        "Surf todos los días con clases o surf guiding",
+        "Material de surf",
+        "Videoanálisis grupal e individual",
+        "Animal Flow y estiramientos",
+        "Desierto de Lompoul y Lago Rosa",
+        "Isla de Gorée con barco, entrada y guía",
+        "Almadies y mercado artesanal",
+        "Transfers: aeropuerto y excursiones",
+        "Fotos y vídeos del viaje y acompañamiento 24h",
+        "Asesoría de vuelos y descuento en seguro"
+      ],
+      "excludes": [
+        "Vuelos",
+        "Comidas del mediodía",
+        "Bebidas de la cena del desierto",
+        "Seguro de viaje"
+      ],
+      "inclusionsNote": "",
+      "faqs": [
+        [
+          "¿Qué nivel necesito?",
+          "Nivel 2: ponerte de pie con soltura, coger tus propias olas y empezar a surfear paredes. Si estás empezando, este no es tu viaje, pero tenemos otros pensados para ti."
+        ],
+        [
+          "¿Cómo llego hasta allí?",
+          "Hay vuelos a Dakar a muy buen precio desde España. Te asesoramos y crearemos un grupo de WhatsApp para coordinarnos y volar juntos. Desde el aeropuerto, todos los traslados están incluidos."
+        ],
+        [
+          "¿Tengo que llevar mi tabla?",
+          "No hace falta: el material está incluido todo el día. Si prefieres surfear con tu tabla, también puedes traerla."
+        ],
+        [
+          "¿Y las comidas del mediodía?",
+          "No están incluidas, pero hay opciones locales muy ricas y económicas. Desayuno y cena sí van incluidos todos los días."
+        ],
+        [
+          "¿Qué pasa si cambian las condiciones del mar?",
+          "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)"
+        ]
+      ],
+      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/1c6585b5e6d9da48c203406925a1d34569699475.pdf",
+      "booking": {
+        "applicationUrl": ""
+      },
+      "payment": {
+        "depositAmount": 325,
+        "terms": "Señal fija de 325 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+      },
+      "capacity": {
+        "total": 12,
+        "available": null
+      },
+      "message": "¡Hola, LST! Me interesa Senegal. ¿Podemos consultar las próximas salidas?",
+      "cms": true,
+      "stay": {
+        "title": "",
+        "name": "",
+        "text": "Surf camp sin nombre; habitaciones compartidas, mosquiteras, taquilla, jardín, comedor, coworking, rooftop, wifi y agua potable. Una noche en tiendas en Lompoul (p. 7).",
+        "note": "",
+        "image": "",
+        "alt": ""
+      }
+    }
+  ]
 }
