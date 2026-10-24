@@ -84,13 +84,13 @@ try {
     assert.equal(await page.locator('[data-open-gallery]:focus').count(), 1); checks++;
     await page.screenshot({path: path.join(output, `detail-${width}.png`), fullPage: true});
     await page.goto(base + '/viajes/solicitud-prueba/');
-    assert.equal(await page.locator('[data-application]').count(), 4); checks++;
-    assert.match(await page.locator('.trip-reserve').innerText(), /solicitud.*confirmar/s); checks++;
+    assert.equal(await page.locator('[data-application]').count(), 0); checks++;
+    assert.match(await page.locator('.trip-reserve').innerText(), /WhatsApp/); checks++;
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true); checks++;
     await page.close();
   }
   assert.deepEqual(errors, []);
-  console.log(`PASS: ${checks} browser assertions at 390/1440px; empty catalogue, URLs, filters/history, dates, gallery/focus, optional images, application and noindex. No external submissions.`);
+  console.log(`PASS: ${checks} browser assertions at 390/1440px; empty catalogue, URLs, filters/history, dates, gallery/focus, optional images, legacy form removal, WhatsApp and noindex. No external submissions.`);
 } finally {
   await browser.close();
   await new Promise(resolve => server.close(resolve));

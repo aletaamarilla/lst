@@ -114,9 +114,6 @@ export const trip = defineType({
     defineField({name: 'capacity', title: 'Capacidad y disponibilidad manual', type: 'object', group: 'departures', fields: [
       defineField({name: 'total', title: 'Capacidad total', type: 'number', validation: r => r.integer().min(1)}),
     ]}),
-    defineField({name: 'booking', title: 'Solicitud de plaza', type: 'object', group: 'departures', fields: [
-      defineField({name: 'applicationUrl', title: 'Enlace de solicitud aprobado', type: 'url', description: 'Vacío conserva WhatsApp. Completar solo tras aprobar canal, destinatario y vigencia. Una solicitud no confirma la plaza.', validation: r => r.uri({scheme: ['https']})}),
-    ]}),
     defineField({name: 'editorialNotes', title: 'Fuentes y pendientes internos', type: 'text', group: 'program', description: 'Solo Studio; no se publica en la web.'}),
     defineField({name: 'source', title: 'Fuente de los datos', type: 'url', group: 'program', validation: r => r.uri({scheme: ['https']})}),
     defineField({name: 'checkedAt', title: 'Fecha de revisión de los datos', type: 'date', group: 'program'}),

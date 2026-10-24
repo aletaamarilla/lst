@@ -26,7 +26,7 @@ export function prepareDrafts(inventory) {
       payment: {_type: 'payment', depositAmount: payment.depositAmount, terms},
       notice: 'Consulta la disponibilidad con el equipo antes de organizar tu viaje.',
       // No active price, availability, images, dossier URL or channel switch is inferred.
-      editorialNotes: `BORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: ${d.source.file}; SHA256 ${d.source.sha256}; ${d.source.pageCount} páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (${d.id}).\nTarifas del PDF, vigencia NO confirmada:\n${tariffs}\nFormulario extraído, canal aún NO aprobado: ${httpsUrl(d.booking.formUrl, 'formUrl')}\n${(d.pending ?? []).join('\n')}\nConfirmar señal, fotos autorizadas y URL pública del PDF. La fecha de revisión documental no acredita vigencia comercial.`,
+      editorialNotes: `BORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: ${d.source.file}; SHA256 ${d.source.sha256}; ${d.source.pageCount} páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (${d.id}).\nTarifas del PDF, vigencia NO confirmada:\n${tariffs}\nCanal de consulta: WhatsApp. No se importan enlaces de formulario.\n${(d.pending ?? []).join('\n')}\nConfirmar señal, fotos autorizadas y URL pública del PDF. La fecha de revisión documental no acredita vigencia comercial.`,
     };
     adaptTrip({...document, _id: document._id.slice(7)}); // Same data validation as the production reader.
     return document;

@@ -66,7 +66,6 @@ test('adapter rejects drafts/releases, invalid business data, unsafe URLs and du
     {state: 'booked'}, {capacity: {total: 10, available: 11}}, {capacity: {available: -1}},
     {departures: []}, {departures: [{_key: 'a', start: '2027-02-30', end: '2027-03-02'}]},
     {departures: [{...published(0).departures[0], price: -1}]}, {dossier: 'javascript:alert(1)'},
-    {booking: {applicationUrl: 'https://user:password@example.com/'}},
   ]) assert.throws(() => adaptTrip({...published(0), ...change}));
   assert.throws(() => adaptTrips([published(0), {...published(0), _id: 'other'}]), /duplicados/);
 });
@@ -101,20 +100,22 @@ test('optional content is omitted without fake services, photos or undefined mar
   assert.doesNotMatch(html, /data-application/);
 });
 
-test('approved application URL changes all booking placements and dated choices, while help retains WhatsApp', () => {
+test('legacy application URLs are discarded and every booking placement uses contextual WhatsApp', () => {
   const doc = published(0);
-  doc.booking = {applicationUrl: 'https://forms.gle/approved'};
+  doc.booking = {applicationUrl: 'https://forms.gle/obsolete'};
   const trip = adaptTrip(doc);
-  let html = renderTrip(trip);
-  assert.equal((html.match(/data-application=/g) ?? []).length, 4);
-  assert.match(html, /no confirma|no confirma|confirmación se acuerda/);
-  assert.match(html, /Consultar mi nivel/);
-  assert.match(html, /data-whatsapp=/);
+  assert.equal(trip.booking, undefined);
+  let html = renderTrip({...trip, booking: doc.booking});
+  assert.doesNotMatch(html, /data-application|forms.gle|formulario/);
+  assert.equal((html.match(/data-whatsapp=/g) ?? []).length, 5);
   doc.departures.push({...doc.departures[0], _key: 'second', start: '2026-12-01', end: '2026-12-03', price: 500});
   html = renderTrip(adaptTrip(doc));
   assert.match(html, /id="departure-dialog"/);
-  assert.equal((html.match(/data-application=/g) ?? []).length, 2);
   assert.match(html, /data-departure="second"/);
+  assert.doesNotMatch(html, /data-application|forms.gle|formulario/);
+  const links = [...html.matchAll(/href="(https:\/\/wa.me[^" ]+)" data-departure="([^"]+)"/g)];
+  assert.equal(links.length, 2);
+  assert.ok(new URL(links[1][1]).searchParams.get('text').includes('1 dic 2026'));
 });
 
 test('public snapshot whitelists fields and strips internal notes and unknown nested metadata', () => {
@@ -279,7 +280,7 @@ test('a full trip remains visible with dates/prices, suppresses applications and
     assert.match(renderLevelTrips(await readFile('dist/niveles/index.html', 'utf8'), [trip]), /Completo/);
   }
   doc.capacity.available = 1;
-  assert.match(renderTrip(adaptTrip(doc)), /data-application/);
+  assert.match(renderTrip(adaptTrip(doc)), /data-whatsapp/);
 });
 
 
@@ -292,7 +293,8 @@ test('manual availability labels have no free-place counts and override obsolete
     const html = renderTrip(adaptTrip(doc));
     assert.ok(html.includes(label));
     assert.doesNotMatch(html, /0 plazas disponibles|\d+ plazas disponibles/);
-    assert.equal(html.includes('data-application'), availability !== 'full');
+    assert.equal(html.includes('data-application'), false);
+    assert.match(html, /data-whatsapp/);
   }
   doc.availability = 'invented';
   assert.throws(() => adaptTrip(doc), /Disponibilidad inválida/);

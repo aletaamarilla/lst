@@ -58,7 +58,6 @@ export function adaptTrip(doc) {
   for (const key of ['total', 'available']) if (capacity[key] != null && (!Number.isInteger(capacity[key]) || capacity[key] < (key === 'total' ? 1 : 0))) throw Error(`Capacidad inválida: ${slug}`);
   if (capacity.available != null && capacity.total != null && capacity.available > capacity.total) throw Error(`Disponibilidad superior a capacidad: ${slug}`);
   const depositAmount = positive(doc.payment?.depositAmount, 'depositAmount');
-  const applicationUrl = httpsUrl(doc.booking?.applicationUrl, 'applicationUrl');
   const result = {id: slug, slug, name: text(doc.name, 'name', true), place: text(doc.place, 'place'), state: doc.state,
     availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : doc.capacity?.available > 0 ? 'available' : 'enquiry'),
     levels: doc.levels, levelRequirement: text(doc.levelRequirement, 'levelRequirement'), departures,
@@ -72,7 +71,7 @@ export function adaptTrip(doc) {
     levelTitle: text(doc.levelTitle, 'levelTitle') || 'Tu nivel de surf.', levelText: text(doc.levelText, 'levelText') || text(doc.levelRequirement, 'levelRequirement'),
     levelChecks: strings(doc.levelChecks, 'levelChecks'), includes: strings(doc.includes, 'includes'), excludes: strings(doc.excludes, 'excludes'),
     inclusionsNote: text(doc.inclusionsNote, 'inclusionsNote'), faqs: pairs(doc.faqs, 'question', 'answer', 'faqs'),
-    dossier: httpsUrl(doc.dossier, 'dossier'), booking: {applicationUrl},
+    dossier: httpsUrl(doc.dossier, 'dossier'),
     payment: {depositAmount, terms: text(doc.payment?.terms, 'payment.terms')}, capacity,
     message: `¡Hola, LST! Me interesa ${doc.name}. ¿Podemos consultar las próximas salidas?`, cms: true,
   };

@@ -1,6 +1,6 @@
 # Let's Surf Together — home y viajes
 
-Estado operativo 24/10/2026: web estática Node en Vercel `lts-laura-moreno-ferre/lst`, salida `dist/`; Sanity `q5bj2rn2/production`. [Guía actual de edición y publicación](docs/guia-cliente.md). Los apartados de revisiones siguientes conservan el historial; sus pendientes antiguos no describen necesariamente el estado actual.
+Estado operativo 24/10/2026: web estática Node en Vercel `lts-laura-moreno-ferre/lst`, salida `dist/`; Sanity `q5bj2rn2/production`. [Guía actual de edición y publicación](docs/guia-cliente.md). Canal comercial actual: solo WhatsApp; Google Forms retirado de la web, los PDF activos y Studio. Los apartados de revisiones siguientes conservan el historial; sus pendientes antiguos no describen necesariamente el estado actual.
 
 Proyecto independiente de Travelhood. Web estática con la home, Conócenos, la guía de niveles y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
 
