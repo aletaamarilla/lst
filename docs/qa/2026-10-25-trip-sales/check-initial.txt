@@ -1,0 +1,26 @@
+
+> lets-surf-together-home@0.1.0 check
+> node scripts/check.mjs
+
+file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/check.mjs:123
+if(errors.length)throw Error(errors.join('\n'));
+                       ^
+
+Error: Trip page out of date: el-palmar
+Trip page out of date: el-palmar-2026-12-04
+Trip page out of date: fuerteventura
+Trip page out of date: fuerteventura-2027-02-12
+Trip page out of date: hossegor
+Trip page out of date: hossegor-2026-11-20
+Trip page out of date: maldivas
+Trip page out of date: maldivas-2027-03-21
+Trip page out of date: maldivas-2027-03-28
+Trip page out of date: marruecos
+Trip page out of date: marruecos-2027-01-17
+Trip page out of date: marruecos-avanzado
+Trip page out of date: marruecos-2027-01-24
+Trip page out of date: senegal
+Trip page out of date: senegal-2027-02-28
+    at file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/check.mjs:123:24
+
+Node.js v22.16.0

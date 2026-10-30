@@ -1,0 +1,21 @@
+{
+  "editor": "Local Studio, same deployed source/schema; authenticated CLI account against q5bj2rn2/production",
+  "beforeEdit": "2026-10-24T11:08:24.624Z",
+  "changedField": "notice",
+  "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo. Consulta las condiciones con el equipo.",
+  "requests": [
+    {
+      "path": "/v2025-02-19/data/actions/production",
+      "status": 200
+    },
+    {
+      "path": "/v2025-02-19/data/actions/production",
+      "status": 200
+    }
+  ],
+  "draftMessages": 0,
+  "publicTripsBeforePublish": 0,
+  "anonymousDrafts": 0,
+  "afterPublish": "2026-10-24T11:08:47.132Z",
+  "visibleStatus": "ondiciones de la tarifa\nAviso de disponibilidad\nTítulo del nivel\nExplicación del nivel\nRequisitos del nivel\nNo items\nAdd item\nSeñal y condiciones\nSeñal fija (€)\nImporte manual. No se calcula desde porcentajes o tarifas.\nCondiciones de pago\nTexto editorial aprobado; aclarar contradicciones antes de publicar.\nCapacidad y disponibilidad manual\nCapacidad total\nSolicitud de plaza\nEnlace de solicitud aprobado\nVacío conserva WhatsApp. Completar solo tras aprobar canal, destinatario y vigencia. Una solicitud no confirma la plaza.\nLast published just now\nPublish\nHossegor was published\nWhat's new in October\nMCP asset uploads, SAML enforcement, and more"
+}

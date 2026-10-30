@@ -1,0 +1,22 @@
+{
+  "repository": "aletaamarilla/lst",
+  "commit": "22e4b0d529a288da2f6b610b72ec1469614bed30",
+  "deploymentId": "dpl_7kciA7WucUNzvC2Ud6WW6ygfwCVz",
+  "deploymentState": "READY",
+  "sanity": {
+    "projectId": "q5bj2rn2",
+    "dataset": "production",
+    "publishedRevision": "2D42OFpIbrkQoZrdHVJ2Zy",
+    "count": 8
+  },
+  "uncommittedTaskFiles": "docs/qa/2026-10-24-publicacion/ (operational evidence only); earlier untracked documentation preserved as listed in initial-status.txt",
+  "sha256": {
+    "published-readback.json": "9ab6e02c9f3a07a219415e5f20b8e12059ef35df7cd255a941947520e3178a7d",
+    "published-raw.json": "2405961a81f3244e13ef8b3b637eea320a6dfa1034b108b65aac26819095f6cc",
+    "live-browser.json": "499b50f1de8a7fc9618a8e595f13054326a4a0044c15412394f15236c34c47b5",
+    "live-verification.json": "dd8089eeeb8aeb90a720908ef311134a9d43f6144d2bd3c2981b5a0785b8387f",
+    "final-deployed-bytes.json": "d367871baa040b3a43561cbb5726009ab0af800e1bcd9dbd6f7ee44aed8e3ce7",
+    "revision-independiente.md": "996382eeafe598e57a40c1a7cca3fa16315dc812641ae678ddf978f104dba274",
+    "README.md": "993cf06aabb2a70dff454a298b8b8d6ae3796707a667ff5a9b485fd7a8a911c4"
+  }
+}

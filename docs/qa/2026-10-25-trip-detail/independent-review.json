@@ -1,0 +1,142 @@
+{
+  "base": "58f338661fc4705364fea08727c836e79b3f2048",
+  "files": {
+    "scripts/render-trips.mjs": "1c7ff266eb965366f0241c4fdee7a72bba652b39c56c3552e355f5c908602843",
+    "dist/trip-detail.css": "a152f63a177d608e597bede0c1d22daf02f54b30eee1e8c26e0926bdb429b46d",
+    "scripts/trip-detail.test.mjs": "a64c537fb82bea82344c335e2a9027b62be418b8df95fc75786523392dec21f9",
+    "dist/trip.css": "234d33645809254b0092ea1baf699f47f1e91094600dff8872533488db4da08a",
+    "dist/trip.js": "478a2efabef466859b7c0952e75ec034f4331009e8660ba0fac8d3b05d1e1b09"
+  },
+  "tests": {
+    "independentlyExecuted": true,
+    "command": "node --test scripts/*.test.mjs",
+    "pass": 80,
+    "fail": 0
+  },
+  "check": {
+    "independentlyExecuted": true,
+    "command": "node scripts/check.mjs",
+    "pages": 24,
+    "pass": true
+  },
+  "finalDelta": [
+    "Nombre largo: CSS añadido para móvil, manteniendo overflow-wrap:anywhere.",
+    "Títulos Programa N: solo cambia los genéricos de destinos conocidos; títulos propios y textos se conservan.",
+    "Alojamiento sin título: encabezado Aquí recargamos.",
+    "FAQs vacías: enlace interno útil al FAQ general.",
+    "El programa. genérico: Así se vive el viaje."
+  ],
+  "latestGeometry": [
+    {
+      "width": 320,
+      "zoom": 1,
+      "right": 270.5,
+      "left": 20,
+      "textWidth": 250.5,
+      "viewport": 320,
+      "font": "48px",
+      "height": 45.109375,
+      "pass": true
+    },
+    {
+      "width": 320,
+      "zoom": 2,
+      "right": 289.125,
+      "left": 20,
+      "textWidth": 269.125,
+      "viewport": 320,
+      "font": "96px",
+      "height": 180.46875,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "zoom": 1,
+      "right": 325.296875,
+      "left": 20,
+      "textWidth": 305.296875,
+      "viewport": 390,
+      "font": "58.5px",
+      "height": 54.984375,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "zoom": 2,
+      "right": 348,
+      "left": 20,
+      "textWidth": 328,
+      "viewport": 390,
+      "font": "117px",
+      "height": 219.9375,
+      "pass": true
+    },
+    {
+      "width": 599,
+      "zoom": 1,
+      "right": 468.796875,
+      "left": 20,
+      "textWidth": 448.796875,
+      "viewport": 599,
+      "font": "86px",
+      "height": 80.828125,
+      "pass": true
+    },
+    {
+      "width": 599,
+      "zoom": 2,
+      "right": 571.984375,
+      "left": 20,
+      "textWidth": 551.984375,
+      "viewport": 599,
+      "font": "172px",
+      "height": 323.34375,
+      "pass": true
+    },
+    {
+      "width": 600,
+      "zoom": 1,
+      "right": 522.546875,
+      "left": 32,
+      "textWidth": 490.546875,
+      "viewport": 600,
+      "font": "94px",
+      "height": 88.359375,
+      "pass": true
+    },
+    {
+      "width": 600,
+      "zoom": 2,
+      "right": 559.046875,
+      "left": 32,
+      "textWidth": 527.046875,
+      "viewport": 600,
+      "font": "188px",
+      "height": 353.4375,
+      "pass": true
+    }
+  ],
+  "blockingCodeFindings": [],
+  "suiteEvidenceObserved": {
+    "independentlyRead": true,
+    "independentlyExecuted": false,
+    "checks": 667,
+    "resultCount": 667,
+    "allResultsPass": true,
+    "failed": [],
+    "errors": [],
+    "sha256": "4575ff0bbfd2c8c2737645e26febdaac188f69eb86e82937e6db5fcdbd2c2f19",
+    "resourceScope": "Imágenes locales eager comprobadas en navegador; imágenes lazy cubiertas por el comprobador estático de rutas/recursos (24 páginas).",
+    "previousFailure": "Resuelto en la aserción de pruebas; sin cambio de producto."
+  },
+  "limitations": [
+    "Revisión geométrica aislada en Chrome con fuentes reales, CSS incrustado y sin JS ni fotos externas.",
+    "Sin Safari/iOS físico ni conversión comercial medida.",
+    "La suite integral se contrastó leyendo sus667 resultados; su ejecución corresponde al implementador."
+  ],
+  "realScreenshotsInspected": [
+    "real-el-palmar-1440.png",
+    "real-el-palmar-390.png",
+    "real-fuerteventura-320.png"
+  ]
+}

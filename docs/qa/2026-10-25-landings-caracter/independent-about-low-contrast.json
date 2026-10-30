@@ -1,0 +1,180 @@
+{
+  "views": [
+    {
+      "kind": "about",
+      "width": 390,
+      "mode": "normal",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    }
+  ],
+  "errors": [],
+  "issues": [],
+  "contrasts": [
+    {
+      "kind": "about",
+      "width": 390,
+      "lowCount": 382,
+      "lowest": [
+        {
+          "x": 65,
+          "y": 262,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            155,
+            136,
+            113
+          ],
+          "ratio": 1.0295806152956775
+        },
+        {
+          "x": 65,
+          "y": 261,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            151,
+            129,
+            111
+          ],
+          "ratio": 1.0512740906667961
+        },
+        {
+          "x": 64,
+          "y": 261,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            151,
+            128,
+            112
+          ],
+          "ratio": 1.0602256661978242
+        },
+        {
+          "x": 64,
+          "y": 260,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            162,
+            136,
+            123
+          ],
+          "ratio": 1.0613899557561963
+        },
+        {
+          "x": 63,
+          "y": 263,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            149,
+            130,
+            91
+          ],
+          "ratio": 1.063143015710132
+        },
+        {
+          "x": 91,
+          "y": 250,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            148,
+            128,
+            112
+          ],
+          "ratio": 1.0709939136856053
+        },
+        {
+          "x": 65,
+          "y": 260,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            150,
+            126,
+            113
+          ],
+          "ratio": 1.0828727594832386
+        },
+        {
+          "x": 64,
+          "y": 262,
+          "fg": [
+            234,
+            89,
+            52
+          ],
+          "bg": [
+            162,
+            141,
+            116
+          ],
+          "ratio": 1.103963916455341
+        }
+      ],
+      "pixels": 8735,
+      "min": 1.0295806152956775,
+      "p05": 3.238667610057696,
+      "max": 5.446874324459513
+    }
+  ],
+  "hashes": [
+    {
+      "file": "dist/landing.css",
+      "sha256": "c9947f40265905c7bba19c65042d49939e6f1adf2d6864645c6701daa63c36ea"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "c9b789a549e05f7c8d46e9213a3f11ca866b4f39d7fd9ec83dd4aace36b0d167"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "0b3c0fb9969fc2277e661178946a70067fbd260bf150d90374fa0aa2720b5686"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "8364fddaa8bf2972c3d4824d3a91b558973517f7ac2e33cc6e9704d6e98c2984"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "002662ade0c79aa7c8047747fdb547b6b25e088d74b0b0d8553075245f4197bf"
+    }
+  ],
+  "sameFaqQuestions": true,
+  "sameFaqAnswerTargets": true
+}

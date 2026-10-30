@@ -1,0 +1,375 @@
+{
+  "views": [
+    {
+      "client": 305,
+      "headerHeight": 78,
+      "overflow": [],
+      "scroll": 305,
+      "scrollY": 312,
+      "titleDocumentTop": 167,
+      "width": 320
+    },
+    {
+      "client": 375,
+      "headerHeight": 78,
+      "overflow": [],
+      "scroll": 375,
+      "scrollY": 312,
+      "titleDocumentTop": 179,
+      "width": 390
+    },
+    {
+      "client": 753,
+      "headerHeight": 78,
+      "overflow": [],
+      "scroll": 753,
+      "scrollY": 312,
+      "titleDocumentTop": 263.59375,
+      "width": 768
+    },
+    {
+      "client": 1009,
+      "headerHeight": 88,
+      "overflow": [],
+      "scroll": 1009,
+      "scrollY": 267,
+      "titleDocumentTop": 229.078125,
+      "width": 1024
+    },
+    {
+      "client": 1425,
+      "headerHeight": 88,
+      "overflow": [],
+      "scroll": 1425,
+      "scrollY": 267,
+      "titleDocumentTop": 204.6875,
+      "width": 1440
+    }
+  ],
+  "checks": [
+    {
+      "name": "Ocho aperturas por teclado",
+      "width": 320,
+      "answers": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Claro. Puedes venir por tu cuenta o con "
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Cuéntanos cómo surfeas: qué olas coges y"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "En cada ficha tienes el programa, el alo"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Antes de llenar la mochila, mira qué mat"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Primero hablamos; después, los billetes."
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Dínoslo antes de reservar. Lo consultamo"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Elige un viaje y escríbenos por WhatsApp"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Todavía no. Escribirnos abre la conversa"
+        }
+      ],
+      "count": 8,
+      "focus": "rgb(255, 250, 231)",
+      "questionsFont": "\"Work Sans\", Arial, sans-serif",
+      "scroll": 305
+    },
+    {
+      "name": "Cerrar una conserva siete",
+      "width": 320,
+      "count": 7
+    },
+    {
+      "name": "Ocho aperturas por teclado",
+      "width": 390,
+      "answers": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Claro. Puedes venir por tu cuenta o con "
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Cuéntanos cómo surfeas: qué olas coges y"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "En cada ficha tienes el programa, el alo"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Antes de llenar la mochila, mira qué mat"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Primero hablamos; después, los billetes."
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Dínoslo antes de reservar. Lo consultamo"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Elige un viaje y escríbenos por WhatsApp"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Todavía no. Escribirnos abre la conversa"
+        }
+      ],
+      "count": 8,
+      "focus": "rgb(255, 250, 231)",
+      "questionsFont": "\"Work Sans\", Arial, sans-serif",
+      "scroll": 375
+    },
+    {
+      "name": "Cerrar una conserva siete",
+      "width": 390,
+      "count": 7
+    },
+    {
+      "name": "Ocho aperturas por teclado",
+      "width": 768,
+      "answers": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Claro. Puedes venir por tu cuenta o con "
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Cuéntanos cómo surfeas: qué olas coges y"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "En cada ficha tienes el programa, el alo"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Antes de llenar la mochila, mira qué mat"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Primero hablamos; después, los billetes."
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Dínoslo antes de reservar. Lo consultamo"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Elige un viaje y escríbenos por WhatsApp"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Todavía no. Escribirnos abre la conversa"
+        }
+      ],
+      "count": 8,
+      "focus": "rgb(255, 250, 231)",
+      "questionsFont": "\"Work Sans\", Arial, sans-serif",
+      "scroll": 753
+    },
+    {
+      "name": "Cerrar una conserva siete",
+      "width": 768,
+      "count": 7
+    },
+    {
+      "name": "Ocho aperturas por teclado",
+      "width": 1024,
+      "answers": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Claro. Puedes venir por tu cuenta o con "
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Cuéntanos cómo surfeas: qué olas coges y"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "En cada ficha tienes el programa, el alo"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Antes de llenar la mochila, mira qué mat"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Primero hablamos; después, los billetes."
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Dínoslo antes de reservar. Lo consultamo"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Elige un viaje y escríbenos por WhatsApp"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Todavía no. Escribirnos abre la conversa"
+        }
+      ],
+      "count": 8,
+      "focus": "rgb(255, 250, 231)",
+      "questionsFont": "\"Work Sans\", Arial, sans-serif",
+      "scroll": 1009
+    },
+    {
+      "name": "Cerrar una conserva siete",
+      "width": 1024,
+      "count": 7
+    },
+    {
+      "name": "Ocho aperturas por teclado",
+      "width": 1440,
+      "answers": [
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Claro. Puedes venir por tu cuenta o con "
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Cuéntanos cómo surfeas: qué olas coges y"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "En cada ficha tienes el programa, el alo"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Antes de llenar la mochila, mira qué mat"
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Primero hablamos; después, los billetes."
+        },
+        {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgba(27, 27, 27, 0.73)",
+          "lineHeight": "29.6px",
+          "text": "Dínoslo antes de reservar. Lo consultamo"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Elige un viaje y escríbenos por WhatsApp"
+        },
+        {
+          "background": "rgb(27, 27, 27)",
+          "color": "rgb(228, 223, 207)",
+          "lineHeight": "29.6px",
+          "text": "Todavía no. Escribirnos abre la conversa"
+        }
+      ],
+      "count": 8,
+      "focus": "rgb(255, 250, 231)",
+      "questionsFont": "\"Work Sans\", Arial, sans-serif",
+      "scroll": 1425
+    },
+    {
+      "name": "Cerrar una conserva siete",
+      "width": 1440,
+      "count": 7
+    },
+    {
+      "name": "Ancla de reserva bajo cabecera 320",
+      "header": 78,
+      "title": 135.796875
+    }
+  ],
+  "issues": [],
+  "notes": [
+    "El reload conserva el scroll de la interacción anterior; la separación inicial del titular se mide en coordenadas del documento."
+  ]
+}

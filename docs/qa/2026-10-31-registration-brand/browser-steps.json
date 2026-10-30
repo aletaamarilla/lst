@@ -1,0 +1,836 @@
+[
+  {
+    "kind": "required-block",
+    "width": 320,
+    "current": "0",
+    "focus": "NOMBRE"
+  },
+  {
+    "kind": "email-block",
+    "width": 320,
+    "current": "0",
+    "focus": "EMAIL"
+  },
+  {
+    "step": 0,
+    "current": "0",
+    "focused": "EMAIL",
+    "heading": "Solicita tu plaza.",
+    "height": 568,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 320
+  },
+  {
+    "kind": "birthdate-block",
+    "width": 320,
+    "current": "1",
+    "focus": "FECHADENACIMIENTO",
+    "valid": false
+  },
+  {
+    "step": 1,
+    "current": "1",
+    "focused": "PAIS",
+    "heading": "Tus datos personales.",
+    "height": 568,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 320
+  },
+  {
+    "kind": "radio-focus",
+    "width": 320,
+    "background": "rgb(27, 27, 27)",
+    "name": "MATERIAL",
+    "outline": "rgb(27, 27, 27) solid 3px"
+  },
+  {
+    "step": 2,
+    "current": "2",
+    "focused": "INPUT",
+    "heading": "Tu nivel y tu material.",
+    "height": 568,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 320
+  },
+  {
+    "step": 3,
+    "current": "3",
+    "focused": "INPUT",
+    "heading": "Tu grupo y tu talla.",
+    "height": 568,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 320
+  },
+  {
+    "step": 4,
+    "current": "4",
+    "focused": "INPUT",
+    "heading": "Antes de enviar.",
+    "height": 568,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 320
+  },
+  {
+    "kind": "back",
+    "width": 320,
+    "current": "3"
+  },
+  {
+    "kind": "values-preserved",
+    "width": 320,
+    "current": "0",
+    "date": "1",
+    "email": "<redacted>",
+    "hasStorageScripts": [
+      "/registration.js"
+    ],
+    "level": "2",
+    "name": "Prueba"
+  },
+  {
+    "kind": "required-block",
+    "width": 390,
+    "current": "0",
+    "focus": "NOMBRE"
+  },
+  {
+    "kind": "email-block",
+    "width": 390,
+    "current": "0",
+    "focus": "EMAIL"
+  },
+  {
+    "step": 0,
+    "current": "0",
+    "focused": "EMAIL",
+    "heading": "Solicita tu plaza.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 390
+  },
+  {
+    "kind": "birthdate-block",
+    "width": 390,
+    "current": "1",
+    "focus": "FECHADENACIMIENTO",
+    "valid": false
+  },
+  {
+    "step": 1,
+    "current": "1",
+    "focused": "PAIS",
+    "heading": "Tus datos personales.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 390
+  },
+  {
+    "kind": "radio-focus",
+    "width": 390,
+    "background": "rgb(27, 27, 27)",
+    "name": "MATERIAL",
+    "outline": "rgb(27, 27, 27) solid 3px"
+  },
+  {
+    "step": 2,
+    "current": "2",
+    "focused": "INPUT",
+    "heading": "Tu nivel y tu material.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 390
+  },
+  {
+    "step": 3,
+    "current": "3",
+    "focused": "INPUT",
+    "heading": "Tu grupo y tu talla.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 62,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 390
+  },
+  {
+    "step": 4,
+    "current": "4",
+    "focused": "INPUT",
+    "heading": "Antes de enviar.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 26
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 62,
+        "label": "Paso 4: El grupo",
+        "numberLines": 26
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 71.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 26
+      }
+    ],
+    "width": 390
+  },
+  {
+    "kind": "back",
+    "width": 390,
+    "current": "3"
+  },
+  {
+    "kind": "values-preserved",
+    "width": 390,
+    "current": "0",
+    "date": "1",
+    "email": "<redacted>",
+    "hasStorageScripts": [
+      "/registration.js"
+    ],
+    "level": "2",
+    "name": "Prueba"
+  },
+  {
+    "kind": "required-block",
+    "width": 1440,
+    "current": "0",
+    "focus": "NOMBRE"
+  },
+  {
+    "kind": "email-block",
+    "width": 1440,
+    "current": "0",
+    "focus": "EMAIL"
+  },
+  {
+    "step": 0,
+    "current": "0",
+    "focused": "EMAIL",
+    "heading": "Solicita tu plaza.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 30
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "kind": "birthdate-block",
+    "width": 1440,
+    "current": "1",
+    "focus": "FECHADENACIMIENTO",
+    "valid": false
+  },
+  {
+    "step": 1,
+    "current": "1",
+    "focused": "PAIS",
+    "heading": "Tus datos personales.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 30
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 30
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "kind": "radio-focus",
+    "width": 1440,
+    "background": "rgb(27, 27, 27)",
+    "name": "MATERIAL",
+    "outline": "rgb(27, 27, 27) solid 3px"
+  },
+  {
+    "step": 2,
+    "current": "2",
+    "focused": "INPUT",
+    "heading": "Tu nivel y tu material.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 30
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 30
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "step": 3,
+    "current": "3",
+    "focused": "INPUT",
+    "heading": "Tu grupo y tu talla.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 30
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": true,
+        "height": 81.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 30
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "step": 4,
+    "current": "4",
+    "focused": "INPUT",
+    "heading": "Antes de enviar.",
+    "height": 900,
+    "invalid": [],
+    "overflow": false,
+    "progress": [
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 1: Tu viaje",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 2: Tus datos",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 3: Tu surf",
+        "numberLines": 30
+      },
+      {
+        "current": null,
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 4: El grupo",
+        "numberLines": 30
+      },
+      {
+        "current": "step",
+        "disabled": false,
+        "height": 81.796875,
+        "label": "Paso 5: Últimos detalles",
+        "numberLines": 30
+      }
+    ],
+    "width": 1440
+  },
+  {
+    "kind": "back",
+    "width": 1440,
+    "current": "3"
+  },
+  {
+    "kind": "values-preserved",
+    "width": 1440,
+    "current": "0",
+    "date": "1",
+    "email": "<redacted>",
+    "hasStorageScripts": [
+      "/registration.js"
+    ],
+    "level": "2",
+    "name": "Prueba"
+  }
+]

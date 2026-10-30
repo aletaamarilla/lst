@@ -1,78 +1,103 @@
-/* Conócenos: documentary images retain their full frame; shared brand and menu. */
-.about-page .site-header{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
-.about-page .site-header .brand-light{display:none}
-.about-page .site-header .brand-dark{display:block}
-.about-page .menu-toggle span{background:var(--ink)}
-.about-page .site-header .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
-.about-page .site-header .header-cta:hover{background:var(--ink);color:var(--paper)}
-.about-page .site-header :is(a,button):focus-visible{outline-color:var(--ink)}
-.about-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:6px}
-.about-page main{padding-top:var(--home-header-height,70px)}
-.about-page main[tabindex="-1"]:focus{outline:none;box-shadow:none}
-.about-page .eyebrow{font-size:11px;letter-spacing:.05em;margin-bottom:14px}
-.about-page h2{font-size:clamp(38px,10vw,52px);line-height:1.06;margin-bottom:22px}
-.about-page h3{font-size:20px;line-height:1.3;letter-spacing:-.02em;margin-bottom:10px}
-.about-page p{line-height:1.65}
-.about-page .text-link{display:inline-flex;align-items:center;min-height:44px;margin-top:12px;font-size:15px}
-.about-section{padding-block:44px}
-.about-intro{display:grid;gap:26px;padding-block:32px 38px}
-.about-intro h1{font:400 clamp(54px,15vw,76px)/.98 var(--display);letter-spacing:-.025em;margin-bottom:22px}
-.about-intro-copy>p:not(.eyebrow){max-width:37em;margin-bottom:14px}
-.about-intro-copy .about-lead{font-size:18px}
-.about-intro-copy>.text-link{margin-top:0}
-.about-photo img{width:100%;height:auto}
-.about-photo figcaption{font-size:12px;line-height:1.6;color:var(--muted);padding-top:11px;max-width:65ch}
-.about-origin{background:var(--orange);padding-block:38px}
-.about-origin-layout{display:grid;gap:4px}
-.about-prose>p:not(.eyebrow)+p{margin-top:16px}
-.about-origin .brand-signature{border-top:1px solid var(--ink);padding-top:22px;margin-top:24px;font-size:18px}
-.about-origin .brand-signature span{font-size:14px}
-.about-section-heading{max-width:44em;margin-bottom:28px}
-.about-section-heading>p:last-child{max-width:34em}
-.about-way-grid{display:grid;gap:30px;align-items:start}
-.about-moments article{display:grid;grid-template-columns:28px minmax(0,1fr);gap:14px;border-top:1px solid var(--line);padding-top:22px;margin-top:22px}
-.about-moments article:first-child{margin-top:0}
-.about-number{font:400 12px/1.6 var(--mono);padding-top:4px}
-.about-memory{margin-top:32px}
-.about-team{background:var(--ink);color:var(--paper);padding-block:40px}
-.about-team-layout{display:grid;gap:30px;align-items:center}
-.about-team .eyebrow{color:var(--paper)}
-.about-team .about-photo figcaption{color:var(--paper)}
-.about-team .text-link:hover{color:var(--paper);text-decoration-thickness:3px}
-.about-team a:focus-visible{outline-color:var(--paper);box-shadow:none}
-.about-respect{display:grid;gap:2px}
-.about-next{background:var(--orange);border-block:1px solid var(--ink);padding-block:38px}
-.about-next-layout{display:grid;gap:2px}
-.about-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
-.about-actions .button{flex:1 1 14em;padding-inline:16px;text-align:center}
-.about-actions .button-dark{background:var(--ink);color:var(--paper)}
-.about-actions .button-dark:hover{background:var(--paper);color:var(--ink)}
-.about-next .about-note{font-size:13px;line-height:1.6;margin-top:16px}
-@media(min-width:700px){
- .about-intro{grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding-block:44px}
- .about-intro h1{font-size:clamp(60px,7.7vw,92px)}
- .about-origin-layout,.about-respect,.about-next-layout{grid-template-columns:1fr 1.2fr;gap:40px}
- .about-origin,.about-team,.about-next{padding-block:48px}
- .about-section{padding-block:52px}
- .about-way-grid{grid-template-columns:1fr 1fr;gap:32px}
- .about-moments article{grid-template-columns:24px minmax(0,1fr);gap:12px}
- .about-memory{width:70%;margin-top:36px;margin-left:auto}
- .about-team-layout{grid-template-columns:1.1fr 1fr;gap:40px}
+/* LST's voice: direct, sociable and grounded in its own trips. */
+.about-hero .landing-hero-photo img{object-position:53% 42%}
+body.about-page .landing-hero h1{max-width:980px;font-size:clamp(78px,20vw,110px);line-height:.94;letter-spacing:-.015em;text-wrap:initial}
+body.about-page h2 em{font-style:normal;color:var(--lst-orange)}
+body.about-page .landing-hero-description{max-width:360px;font-size:16px;line-height:1.75}
+.about-welcome{padding-block:40px;background:var(--lst-ink);color:var(--lst-paper)}
+.about-welcome-layout{position:relative;display:grid;gap:24px}
+body.about-page .about-welcome h2{margin-top:14px;font-size:48px;line-height:1}
+.about-welcome-copy{max-width:540px}
+.about-welcome-copy p{font-size:16px;line-height:1.8}
+.about-welcome-copy p+p{margin-top:14px!important}
+.about-welcome-copy strong{font-weight:600}
+body.about-page .about-welcome-symbol{width:64px;height:auto;margin-top:4px}
+.about-origin{padding-block:48px}
+.about-origin-layout{display:grid;gap:28px}
+body.about-page .about-photo img{width:100%;height:auto;border-radius:4px}
+.about-photo figcaption{padding-top:10px;font-size:11px;line-height:1.6;color:var(--lst-muted)}
+body.about-page h2{font-size:44px;line-height:1.02;letter-spacing:-.01em}
+.about-prose h2{margin-block:14px 24px!important}
+.about-prose>p:not(.eyebrow){font-size:16px;line-height:1.8}
+.about-prose>p:not(.eyebrow)+p{margin-top:14px}
+.about-origin .brand-signature{display:flex;flex-direction:column;gap:8px;margin-top:24px;padding-left:18px;border-left:3px solid var(--lst-orange);font:400 32px/1.15 var(--lst-display)}
+.about-origin .brand-signature span{font:400 11px/1.7 var(--mono);color:var(--lst-muted)}
+.about-way{padding-block:40px 48px;border-top:1px solid var(--lst-line)}
+.about-section-heading{margin-bottom:28px}
+.about-section-heading h2{margin-top:14px!important}
+.about-section-heading>p:last-child{margin-top:18px!important;max-width:480px;font-size:15px;line-height:1.8}
+.about-moments{display:grid;gap:36px}
+.about-moments article{min-width:0}
+.about-moment-copy{padding-top:20px}
+.about-moment-index{display:block;margin-bottom:12px;font:400 10px/1.7 var(--mono)}
+body.about-page .about-moments h3{font:400 37px/1.02 var(--lst-display);letter-spacing:-.01em}
+.about-moments p{margin-top:14px!important;font-size:15px;line-height:1.8}
+body.about-page .about-moments .lst-link{justify-content:flex-start;gap:14px;padding:8px 0;margin-top:10px;border:0;border-radius:0;font-size:13px;text-decoration:underline;text-underline-offset:5px}
+body.about-page .about-moments .lst-link:hover{background:transparent;color:var(--lst-ink)}
+body.about-page .about-program-note{margin-top:28px;padding-top:18px;border-top:1px solid var(--lst-line);max-width:720px;font-size:12px;line-height:1.8;color:var(--lst-muted)}
+body.about-page .about-program-note a{text-decoration:underline;text-underline-offset:4px}
+.about-team{padding-block:40px 48px;border-top:1px solid var(--lst-line)}
+.about-team-layout{display:grid;gap:26px}
+.about-team-heading h2{margin-top:14px!important}
+.about-team-points{display:grid;gap:24px}
+body.about-page .about-team h3{font:600 17px/1.4 var(--body);letter-spacing:-.015em;margin-bottom:8px}
+.about-team-points p{font-size:15px;line-height:1.8}
+body.about-page .about-team .lst-link{justify-self:start;font-size:13px;background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper)}
+body.about-page .about-team .lst-link:hover{background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink)}
+.about-respect{display:grid;gap:22px;padding-block:32px 48px;border-top:3px solid var(--lst-orange)}
+body.about-page .about-respect h2{font:400 40px/1.04 var(--lst-display);letter-spacing:-.01em}
+.about-respect p{max-width:560px;font-size:15px;line-height:1.8}
+body.about-page .about-next h2 em{font-style:normal;color:var(--lst-paper)}
+@media(max-width:760px){
+ .about-moments article:nth-child(2){display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+ .about-moments article:nth-child(2)>.about-photo{flex:1 1 8em;min-width:0}
+ .about-moments article:nth-child(2)>.about-moment-copy{flex:1.3 1 11em;min-width:0;padding-top:0}
 }
-@media(min-width:1100px){
- .about-intro{grid-template-columns:.85fr 1.15fr;gap:64px;padding-block:56px}
- .about-intro h1{font-size:100px}
- .about-intro-copy .about-lead{font-size:20px}
- .about-page h2{font-size:60px}
- .about-page h3{font-size:22px}
- .about-page .eyebrow{font-size:12px}
- .about-page main p:not(.eyebrow):not(.about-note){font-size:17px}
- .about-page main p.about-lead{font-size:20px}
- .about-section{padding-block:72px}
- .about-origin,.about-team,.about-next{padding-block:64px}
- .about-origin-layout,.about-respect,.about-next-layout{gap:80px}
- .about-section-heading{margin-bottom:36px}
- .about-way-grid{grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}
- .about-memory{width:60%;margin-top:48px}
- .about-team-layout{gap:72px}
+@media(min-width:761px){
+ .about-hero{min-height:660px}
+ .about-hero .landing-hero-photo img{object-position:50% 48%}
+ body.about-page .landing-hero h1{font-size:clamp(112px,10.5vw,156px)}
+ body.about-page .landing-hero-description{max-width:440px;font-size:17px}
+ .about-welcome{padding-block:52px}
+ .about-welcome-layout{grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding-right:90px}
+ body.about-page .about-welcome h2{font-size:64px}
+ body.about-page .about-welcome-symbol{position:absolute;right:0;top:50%;margin:0;transform:translateY(-50%)}
+ .about-origin{padding-block:80px}
+ .about-origin-layout{grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+ body.about-page h2{font-size:clamp(52px,4.7vw,68px)}
+ .about-way{padding-block:64px 72px}
+ .about-section-heading{display:grid;grid-template-columns:1fr 1fr;gap:0 80px;margin-bottom:40px}
+ .about-section-heading .eyebrow{grid-column:1}
+ .about-section-heading h2{grid-column:1;grid-row:2}
+ .about-section-heading>p:last-child{grid-column:2;grid-row:2;align-self:center}
+ .about-moments{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+ body.about-page .about-moments h3{font-size:44px}
+ .about-moments article:nth-child(2){padding-top:48px}
+ .about-team{padding-block:64px 72px}
+ .about-team-layout{grid-template-columns:1fr 1fr;gap:80px}
+ .about-team-points{padding-top:8px;max-width:530px}
+ .about-respect{grid-template-columns:1fr 1fr;gap:80px;padding-block:40px 64px}
+ body.about-page .about-respect h2{font-size:52px}
 }
+@media(min-width:761px) and (max-width:1000px){
+ .about-origin-layout,.about-team-layout,.about-section-heading,.about-respect{column-gap:36px}
+ .about-welcome-layout{gap:32px;padding-right:0}
+ body.about-page .about-welcome-symbol{display:none}
+ .about-moments{grid-template-columns:minmax(0,1fr);gap:36px}
+ .about-moments article{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+ .about-moments article:nth-child(2){padding-top:0}
+ .about-moment-copy{padding-top:0}
+}
+
+/* Practical team information uses the same line icons as the travel plan. */
+.about-team-points>div{position:relative;padding-left:48px}
+.about-team-points .lst-line-icon{position:absolute;left:0;top:0}
+body.about-page .landing-contact h2{color:var(--lst-paper)}
+
+/* The story ends as an invitation on paper, with a last piece of poster type. */
+body.about-page .about-next{background:var(--lst-paper);color:var(--lst-ink);border-top:1px solid var(--lst-ink)}
+body.about-page .about-next h2{color:var(--lst-ink)}
+body.about-page .about-next h2 em{display:inline-block;padding:0 .09em .06em;margin-top:7px;background:var(--lst-ink);color:var(--lst-paper);transform:rotate(-2deg)}
+body.about-page .about-next .lst-link{border-color:var(--lst-ink);color:var(--lst-ink)}
+body.about-page .about-next .lst-link:hover{background:var(--lst-ink);color:var(--lst-paper)}
+body.about-page .about-next .landing-contact-note{color:var(--lst-muted)}
+body.about-page .about-next :is(a,button):focus-visible{outline-color:var(--lst-ink)}

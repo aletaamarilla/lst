@@ -1,0 +1,52 @@
+{
+  "mutations": [
+    {
+      "patch": {
+        "id": "lst-marruecos-2027-01-17",
+        "ifRevisionID": "L3ZrvhdiWtwAlFI8eP7TeH",
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/5c6db16bd916a52f50354b5f50aac1bb98b84c69.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-5c6db16bd916a52f50354b5f50aac1bb98b84c69-pdf"
+            }
+          }
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-marruecos-2027-01-24",
+        "ifRevisionID": "L3ZrvhdiWtwAlFI8eP7TeH",
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/2c75a88174e3071f85f59b20c8684fffdcca10f1.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-2c75a88174e3071f85f59b20c8684fffdcca10f1-pdf"
+            }
+          }
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-senegal-2027-02-28",
+        "ifRevisionID": "L3ZrvhdiWtwAlFI8eP7TeH",
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/0265db128ef6c50005e0754e1437cd11aa3957fd.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-0265db128ef6c50005e0754e1437cd11aa3957fd-pdf"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

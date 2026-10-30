@@ -1,0 +1,62 @@
+[
+  {
+    "version": "base",
+    "kind": "about",
+    "caption": {
+      "top": 1395.4375,
+      "bottom": 1455.4375,
+      "height": 60
+    },
+    "copy": {
+      "top": 126,
+      "bottom": 1408.4375,
+      "height": 1282.4375
+    },
+    "overlap": 13
+  },
+  {
+    "version": "base",
+    "kind": "faq",
+    "caption": {
+      "top": 767.125,
+      "bottom": 827.125,
+      "height": 60
+    },
+    "copy": {
+      "top": 126,
+      "bottom": 788.125,
+      "height": 662.125
+    },
+    "overlap": 21
+  },
+  {
+    "version": "candidate",
+    "kind": "about",
+    "caption": {
+      "top": 1542.90625,
+      "bottom": 1602.90625,
+      "height": 60
+    },
+    "copy": {
+      "top": 155,
+      "bottom": 1491.90625,
+      "height": 1336.90625
+    },
+    "overlap": 0
+  },
+  {
+    "version": "candidate",
+    "kind": "faq",
+    "caption": {
+      "top": 974.96875,
+      "bottom": 1034.96875,
+      "height": 60
+    },
+    "copy": {
+      "top": 155,
+      "bottom": 939.96875,
+      "height": 784.96875
+    },
+    "overlap": 0
+  }
+]

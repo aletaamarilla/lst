@@ -1,0 +1,153 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "nativeFaq": true,
+      "focus": {
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px",
+        "offset": "5px",
+        "rect": {
+          "left": 37,
+          "right": 167.75,
+          "top": 691.609375,
+          "bottom": 735.609375
+        },
+        "details": {
+          "left": 18,
+          "right": 302,
+          "top": 460.671875,
+          "bottom": 754.609375
+        }
+      },
+      "computed": {
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgb(27, 27, 27)",
+        "outline": "rgb(255, 250, 231)",
+        "offset": "-6px"
+      },
+      "booking": {
+        "bg": "rgb(234, 89, 52)",
+        "color": "rgb(27, 27, 27)",
+        "steps": 3,
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf."
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "nativeFaq": true,
+      "focus": {
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px",
+        "offset": "5px",
+        "rect": {
+          "left": 41,
+          "right": 171.75,
+          "top": 666.359375,
+          "bottom": 710.359375
+        },
+        "details": {
+          "left": 22,
+          "right": 368,
+          "top": 460.609375,
+          "bottom": 729.359375
+        }
+      },
+      "computed": {
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgb(27, 27, 27)",
+        "outline": "rgb(255, 250, 231)",
+        "offset": "-6px"
+      },
+      "booking": {
+        "bg": "rgb(234, 89, 52)",
+        "color": "rgb(27, 27, 27)",
+        "steps": 3,
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf."
+      },
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "nativeFaq": true,
+      "focus": {
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px",
+        "offset": "5px",
+        "rect": {
+          "left": 55,
+          "right": 193.1875,
+          "top": 628.171875,
+          "bottom": 672.171875
+        },
+        "details": {
+          "left": 32,
+          "right": 736,
+          "top": 459.171875,
+          "bottom": 695.171875
+        }
+      },
+      "computed": {
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgb(27, 27, 27)",
+        "outline": "rgb(255, 250, 231)",
+        "offset": "-6px"
+      },
+      "booking": {
+        "bg": "rgb(234, 89, 52)",
+        "color": "rgb(27, 27, 27)",
+        "steps": 3,
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf."
+      },
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "nativeFaq": true,
+      "focus": {
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px",
+        "offset": "5px",
+        "rect": {
+          "left": 654.1875,
+          "right": 792.375,
+          "top": 628.109375,
+          "bottom": 672.109375
+        },
+        "details": {
+          "left": 631.1875,
+          "right": 1332,
+          "top": 459.109375,
+          "bottom": 695.109375
+        }
+      },
+      "computed": {
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgb(27, 27, 27)",
+        "outline": "rgb(255, 250, 231)",
+        "offset": "-6px"
+      },
+      "booking": {
+        "bg": "rgb(234, 89, 52)",
+        "color": "rgb(27, 27, 27)",
+        "steps": 3,
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf."
+      },
+      "overflow": false
+    }
+  ],
+  "contrasts": {
+    "paperInk": 16.469911608431392,
+    "orangeInk": 4.902406414379292,
+    "paperOrange": 3.359556555760728
+  }
+}

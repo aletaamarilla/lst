@@ -44,12 +44,12 @@ test('pending destinations keep all levels and do not manufacture dates or price
   assert.equal(tripPrice(trip), 'Fechas por anunciar');
 });
 
-test('client demo dates use the normal dated enquiry and configured period', () => {
-  const trip = {name: 'Asturias', state: 'confirmed', dateLabel: 'Noviembre 2026', demoData: {clientPresentation: true}, departures: [
-    {id: 'nov-6', date: '6 — 8 nov 2026'}, {id: 'nov-20', date: '20 — 22 nov 2026'},
-  ]};
-  assert.equal(tripFacts(trip)[0][1], 'Noviembre 2026');
-  const message = departureMessage(trip, departuresFor(trip)[1]);
-  assert.match(message, /Asturias del 20 — 22 nov 2026/);
-  assert.doesNotMatch(message, /ejemplo|muestra|fictici/);
+test('obsolete top-level dates and prices never supply a departure', () => {
+  const trip = {state: 'upcoming', date: 'old date', duration: 'old duration', price: 349};
+  assert.deepEqual(departuresFor(trip), []);
+  assert.equal(tripPrice(trip), 'Fechas por anunciar');
+  const dated = {...trip, state: 'confirmed', departures: [{id: 'new', date: 'published date'}]};
+  assert.equal(departuresFor(dated)[0].price, null);
+  assert.equal(departuresFor(dated)[0].duration, 'Por confirmar');
+  assert.equal(tripPrice(dated), 'Precio por confirmar');
 });

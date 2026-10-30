@@ -1,0 +1,200 @@
+[
+  {
+    "_id": "_.groups.access-manager",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.administrator",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.blueprints-deployer",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.create-session",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.public",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.read",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.contributor",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.developer",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.editor",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.viewer",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.write",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.retention._maximum_project",
+    "_rev": "qRSMy2xPay8q031dK9ZPu9",
+    "_type": "system.retention",
+    "slug": null
+  },
+  {
+    "_id": "_.schemas.lets-surf-together",
+    "_rev": "pXCl9ERODuTwGU6A0Z6CHP",
+    "_type": "system.schema",
+    "slug": null
+  },
+  {
+    "_id": "drafts.lst-el-palmar-2026-12-04",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "el-palmar-2026-12-04"
+    }
+  },
+  {
+    "_id": "drafts.lst-fuerteventura-2027-02-12",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "fuerteventura-2027-02-12"
+    }
+  },
+  {
+    "_id": "drafts.lst-hossegor-2026-11-20",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "hossegor-2026-11-20"
+    }
+  },
+  {
+    "_id": "drafts.lst-maldivas-2027-03-21",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "maldivas-2027-03-21"
+    }
+  },
+  {
+    "_id": "drafts.lst-maldivas-2027-03-28",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "maldivas-2027-03-28"
+    }
+  },
+  {
+    "_id": "drafts.lst-marruecos-2027-01-17",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "marruecos-2027-01-17"
+    }
+  },
+  {
+    "_id": "drafts.lst-marruecos-2027-01-24",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "marruecos-2027-01-24"
+    }
+  },
+  {
+    "_id": "drafts.lst-senegal-2027-02-28",
+    "_rev": "L3ZrvhdiWtwAlFI8eM8C0J",
+    "_type": "trip",
+    "slug": {
+      "_type": "slug",
+      "current": "senegal-2027-02-28"
+    }
+  },
+  {
+    "_id": "file-ad258244540fb13e8f973c889ce1a56013e6f6fc-pdf",
+    "_rev": "L3ZrvhdiWtwAlFI8eM7yur",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-b49d95e5b29c389a69dfe1de2cdd082acc32f2fc-pdf",
+    "_rev": "Cm2SmoGHqV8qVMDrb3JFAo",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-c5d34e8474d7f8552d55575797af32c8f9e4bcd3-pdf",
+    "_rev": "L3ZrvhdiWtwAlFI8eM7zJp",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-cccb17697b4a3d97c57525bf6d7f224ca6e26d1e-pdf",
+    "_rev": "Cm2SmoGHqV8qVMDrb3JHx0",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-d2899332fdb948bd8192747a8c81266548aa9433-pdf",
+    "_rev": "2D42OFpIbrkQoZrdHTSnzy",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-d2dda39badca876f59d9c14e60fe5daab2c0a218-pdf",
+    "_rev": "2D42OFpIbrkQoZrdHTSoNC",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-d5614a40b8754b05890d82ae0dc6a0f42bc85817-pdf",
+    "_rev": "2D42OFpIbrkQoZrdHTSp7e",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  },
+  {
+    "_id": "file-e488fd20ae30f867a6a1f162b67ada09d267d015-pdf",
+    "_rev": "L3ZrvhdiWtwAlFI8eM7xm7",
+    "_type": "sanity.fileAsset",
+    "slug": null
+  }
+]

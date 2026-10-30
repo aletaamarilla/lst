@@ -1,0 +1,66 @@
+[
+  {
+    "id": "marruecos-2027-01-17",
+    "path": "/tmp/lst-media/marruecos-2027-01-17-senal-fija.pdf",
+    "sha256": "c237d41f95649e0beee9374b8c19ab2888edeb6e85e003114a2a78547fa798a6",
+    "changes": [
+      {
+        "page": 11,
+        "removedPercentageEquivalences": [
+          "(70 %)",
+          "30 %"
+        ]
+      },
+      {
+        "page": 13,
+        "removedPercentageEquivalences": [
+          "(30 %)"
+        ]
+      }
+    ],
+    "purpose": "Preserve approved fixed euro deposit; remove inaccurate percentage equivalences. Original unchanged."
+  },
+  {
+    "id": "marruecos-2027-01-24",
+    "path": "/tmp/lst-media/marruecos-2027-01-24-senal-fija.pdf",
+    "sha256": "d1266000d056ae3ae089c5cc832b600d6fec1244566982ed910dc6160f68da5e",
+    "changes": [
+      {
+        "page": 11,
+        "removedPercentageEquivalences": [
+          "(70 %)",
+          "30 %"
+        ]
+      },
+      {
+        "page": 13,
+        "removedPercentageEquivalences": [
+          "(30 %)"
+        ]
+      }
+    ],
+    "purpose": "Preserve approved fixed euro deposit; remove inaccurate percentage equivalences. Original unchanged."
+  },
+  {
+    "id": "senegal-2027-02-28",
+    "path": "/tmp/lst-media/senegal-2027-02-28-senal-fija.pdf",
+    "sha256": "28721acdd42bec7c15300bae56492271c1d50e1c996d21e137119cd06e099d04",
+    "changes": [
+      {
+        "page": 12,
+        "removedPercentageEquivalences": [
+          "25 %",
+          "25 %",
+          "75 %"
+        ]
+      },
+      {
+        "page": 14,
+        "removedPercentageEquivalences": [
+          "(25 %)"
+        ]
+      }
+    ],
+    "purpose": "Preserve approved fixed euro deposit; remove inaccurate percentage equivalences. Original unchanged."
+  }
+]

@@ -1,0 +1,25 @@
+--- docs/qa/2026-10-30-trip-closing-steps/before/trip-conversion.css	2026-10-30 20:46:11.214171548 +0100
++++ dist/trip-conversion.css	2026-10-30 20:46:28.430172008 +0100
+@@ -402,10 +402,10 @@
+ .trip-designed .trip-reserve .reserve-whatsapp{border-color:#1b1b1b80;color:var(--ink)}
+ .trip-designed .trip-reserve .reserve-whatsapp:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+ .trip-designed .trip-reserve .request-steps{gap:12px;margin-top:32px;padding:0;border:0}
+-.trip-designed .request-steps li{padding:20px 18px;background:var(--paper);border-radius:4px 18px 4px 4px}
+-.trip-designed .request-steps li>span{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #1b1b1b50;border-radius:50%;margin-bottom:16px;color:var(--ink);font-size:11px}
++.trip-designed .request-steps li{padding:20px 0 0;background:transparent;border-top:1px solid #1b1b1b66;border-radius:0}
++.trip-designed .request-steps li>span{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--ink);background:var(--ink);border-radius:50%;margin-bottom:16px;color:var(--orange);font-size:11px}
+ .trip-designed .request-steps strong{font-size:14px}
+-.trip-designed .request-steps p{font-size:14px;color:#514b40}
++.trip-designed .request-steps p{font-size:14px;color:var(--ink)}
+ .trip-designed .trip-reserve .reserve-note{font-size:13px;line-height:1.7;margin-top:26px}
+ .trip-designed .trip-reserve .reserve-conditions-link{color:var(--ink);font-size:13px}
+ .trip-designed .trip-reserve :is(a,button,summary):focus-visible{outline-color:var(--ink)}
+@@ -441,7 +441,7 @@
+  .trip-designed .trip-faq{padding-top:12px}
+  .trip-designed .trip-reserve{padding:32px 22px;margin-top:20px}
+  .trip-designed .trip-reserve .reserve-layout{gap:26px}
+- .trip-designed .request-steps li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:4px 14px;padding:18px}
++ .trip-designed .request-steps li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:4px 14px;padding:20px 0 12px}
+  .trip-designed .request-steps li>span{grid-row:1 / 3;margin:0}
+  .trip-designed .request-steps p{grid-column:2}
+ }

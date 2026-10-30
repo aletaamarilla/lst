@@ -1,0 +1,25 @@
+Iteración: personalidad surf en la cabecera y los filtros de /viajes/.
+Base: main, HEAD 58f338661fc4705364fea08727c836e79b3f2048. Cambios sin commit, sobre el árbol con trabajos previos conservados.
+Versión anterior exacta: before/. Alcance completo de esta iteración: task.patch. Versión revisada: candidate.sha256.
+
+Cambios de producto:
+- Apertura naranja de la marca con tipografía Aura grande y rótulo oscuro inclinado para «el agua».
+- Foto real local /assets/surf-session.webp presentada como postal, con marco crema, sombra de tinta y símbolo original de LST.
+- Cabecera de navegación integrada en el naranja; conserva fondo crema al desplazarse y al abrir el menú.
+- Panel de filtros oscuro y solapado con la apertura: etiquetas numeradas, campos crema estables y limpieza naranja. Sigue habiendo solo Nivel y Fecha.
+- Las inclinaciones afectan únicamente a elementos decorativos, nunca a los controles.
+- Composición adaptada a móvil, tablet y escritorio; controles apilados hasta 600px, texto a 16px, foco visible en crema sobre el panel.
+
+Validación:
+- check.txt: comprobador de las 24 páginas aprobado, incluyendo sintaxis y coincidencia de HTML generado con los renderizadores.
+- filter-tests.txt: 11 pruebas de filtros aprobadas; no se cambia lógica ni contrato de las consultas.
+- browser.txt: Pasada final aprobada a 320, 390, 481, 768, 1024 y 1440px (recuento en browser.txt): filtros combinados, historial, fechas, teclado, menú, enlaces inválidos/antiguos, ausencia de JavaScript, texto aumentado y ausencia de desbordamiento.
+- browser/viajes-ANCHO-opening.png: apertura final; browser/viajes-ANCHO.png: página final completa. before-390.png y before-1440.png permiten comparar.
+- En la primera pasada, el sello de la postal salía 7px a 768px. Ajustado su espacio lateral; la repetición final pasa en los cinco anchos. overflow-768.* conserva únicamente el diagnóstico anterior a la corrección.
+- preserved-before.txt y preserved-after.txt coinciden: no cambian home, home.css, catalog.js, catalog-filter.js ni render-catalog.mjs.
+- revision-independiente.md: revisión de diseño, responsive y compatibilidad.
+
+Archivos de producto modificados: dist/catalog.css y dist/viajes/index.html (solo apertura). scripts/check-catalog-browser.mjs incorpora selección de baseline, capturas de viewport y diagnóstico de desbordamiento.
+No se añaden imágenes ni dependencias; se reutilizan la foto y la marca existentes. No se hace commit, push ni despliegue.
+
+La revisión identificó posible recorte de opciones a 481px por el reparto en dos columnas. Se amplió el apilamiento hasta 600px y se añadió 481px a la pasada final de navegador; campos legibles y anchura completa comprobados.

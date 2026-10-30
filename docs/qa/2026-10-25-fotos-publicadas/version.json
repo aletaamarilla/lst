@@ -1,0 +1,32 @@
+{
+  "base": "58f338661fc4705364fea08727c836e79b3f2048",
+  "candidateHash": "9496580d0d08936267877be958cbb8eabb5d7ec5030f887cecdf8921aa24d170",
+  "publicationScriptSha256": "3298340cf22c5e2d98b69d198bc7dfb4b5cd827943a6a0cfc47ea00beed32e29",
+  "transaction": "L3ZrvhdiWtwAlFI8eU2z2L",
+  "applicationSourceChanges": false,
+  "commitCreated": false,
+  "generatedOutputHashes": {
+    "dist/index.html": "070d8895058ff38d8eb34f01e52f8eec7302488564e27dd1d14a614e84a7c523",
+    "dist/viajes/index.html": "0d113e08ea44a2f19b36a9608abe29642e0ed438f2e40cbf9e6fe20500ab58b6",
+    "dist/niveles/index.html": "d146d2ce283ce7ffeac0a5cfc48c32877a82e242210282acbb02334a9e675e13",
+    "dist/catalog-snapshot.json": "5bd9afaeca360a48a09baaad4da015ec9687e61876d4458b3d6efcbb433517f9",
+    "dist/viajes/el-palmar/index.html": "3fc78b4798f70785cfa5763a4aa1549c845c9fbd147ed27c1afc9452cbc90be7",
+    "dist/viajes/fuerteventura/index.html": "ae37185848fbb5fb767e3981d898e279a9912487db9e8cec3c4e021a347dbf3f",
+    "dist/viajes/hossegor/index.html": "a814a19e22f3b6a44c77afefec2857e578b063f89be1188b438e3f419ee1a8a5",
+    "dist/viajes/maldivas/index.html": "b97d4a241ce751bba04dc0b996e970d8768a12abaad45527b4f5aadd7e6c9e1a",
+    "dist/viajes/marruecos/index.html": "5c3fdcde85db9b98bf1f8252e1acb75a36b6916dde2e8784fd3f652b900e75ac",
+    "dist/viajes/senegal/index.html": "cb689fdf678971c06e77974eb5951cb01b409781433902f7c51fffda34dd29c0",
+    "dist/viajes/el-palmar-2026-12-04/index.html": "3fc78b4798f70785cfa5763a4aa1549c845c9fbd147ed27c1afc9452cbc90be7",
+    "dist/viajes/fuerteventura-2027-02-12/index.html": "ae37185848fbb5fb767e3981d898e279a9912487db9e8cec3c4e021a347dbf3f",
+    "dist/viajes/hossegor-2026-11-20/index.html": "a814a19e22f3b6a44c77afefec2857e578b063f89be1188b438e3f419ee1a8a5",
+    "dist/viajes/maldivas-2027-03-21/index.html": "b97d4a241ce751bba04dc0b996e970d8768a12abaad45527b4f5aadd7e6c9e1a",
+    "dist/viajes/maldivas-2027-03-28/index.html": "b97d4a241ce751bba04dc0b996e970d8768a12abaad45527b4f5aadd7e6c9e1a",
+    "dist/viajes/marruecos-2027-01-17/index.html": "5c3fdcde85db9b98bf1f8252e1acb75a36b6916dde2e8784fd3f652b900e75ac",
+    "dist/viajes/marruecos-2027-01-24/index.html": "5c3fdcde85db9b98bf1f8252e1acb75a36b6916dde2e8784fd3f652b900e75ac",
+    "dist/viajes/senegal-2027-02-28/index.html": "cb689fdf678971c06e77974eb5951cb01b409781433902f7c51fffda34dd29c0"
+  },
+  "localServers": {
+    "web": "http://localhost:4175",
+    "studio": "http://localhost:3333"
+  }
+}

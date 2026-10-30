@@ -1,0 +1,1354 @@
+{
+  "projectId": "q5bj2rn2",
+  "dataset": "production",
+  "createdAt": "2026-10-25T17:39:43.821Z",
+  "candidateHash": "9496580d0d08936267877be958cbb8eabb5d7ec5030f887cecdf8921aa24d170",
+  "acceptance": {
+    "photoFieldsOnly": true,
+    "maxGalleryPhotos": 6,
+    "preservePricesDatesLevels": true,
+    "newTrips": false
+  },
+  "changes": [
+    {
+      "id": "lst-el-palmar-2026-12-04",
+      "folder": "EL PALMAR- CADIZ",
+      "revision": "L3ZrvhdiWtwAlFI8eP7TeH",
+      "set": {
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000-jpg"
+          },
+          "alt": "Foto de grupo junto a una bandera de LST en El Palmar, 2024."
+        },
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-deb7fa1d519b0a5b",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000-jpg"
+            },
+            "alt": "Grupo junto a la playa con una bandera de LST en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-3bad9d0c89c3c4e7",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000-jpg"
+            },
+            "alt": "Práctica de surfskate en grupo en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-7a70ee0d509adc02",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000-jpg"
+            },
+            "alt": "Sesión de estiramientos sobre una terraza en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-738ab4859b5ced99",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000-jpg"
+            },
+            "alt": "Foto de grupo junto a una bandera de LST en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-75c8c25011c079de",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000-jpg"
+            },
+            "alt": "Explicación de surf en la playa de El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-6ed3ea3bbf2e52a8",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000-jpg"
+            },
+            "alt": "Surfista deslizándose en una ola en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          }
+        ]
+      },
+      "after": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-el-palmar-2026-12-04",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7TeH",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:31:30Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 30
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "el-palmar-2026-12-04",
+            "_type": "departure",
+            "duration": "4 noches",
+            "end": "2026-12-08",
+            "price": 699,
+            "start": "2026-12-04"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-60afab26acc133e104425a4ee00eac97e85ffd73-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 5. LST_EL_PALMAR_SURFTRIP_-_PUENTE_DE_DICIEMBRE.pdf; SHA256 8cf425e8b13cfbfbbba426095507b5d546be3ad7fa97771a68e2f36606987fc1. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Transporte (coches compartidos)"
+        ],
+        "faqs": [],
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-deb7fa1d519b0a5b",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000-jpg"
+            },
+            "alt": "Grupo junto a la playa con una bandera de LST en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-3bad9d0c89c3c4e7",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000-jpg"
+            },
+            "alt": "Práctica de surfskate en grupo en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-7a70ee0d509adc02",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000-jpg"
+            },
+            "alt": "Sesión de estiramientos sobre una terraza en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-738ab4859b5ced99",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000-jpg"
+            },
+            "alt": "Foto de grupo junto a una bandera de LST en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-75c8c25011c079de",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000-jpg"
+            },
+            "alt": "Explicación de surf en la playa de El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-6ed3ea3bbf2e52a8",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000-jpg"
+            },
+            "alt": "Surfista deslizándose en una ola en El Palmar, 2024.",
+            "caption": "Recuerdo de un viaje de LST a El Palmar en 2024."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000-jpg"
+          },
+          "alt": "Foto de grupo junto a una bandera de LST en El Palmar, 2024."
+        },
+        "includes": [
+          "4 noches en Nexo Surfhouse, a 200 m de la playa",
+          "Pensión completa: cena del viernes a comida del martes",
+          "4 clases de surf en 3 grupos según nivel",
+          "Material y seguro de la escuela local",
+          "Videocorrecciones por grupos",
+          "Surfskate en pista privada",
+          "Animal Flow y movilidad",
+          "Visita a Conil",
+          "Barbacoa, juegos y actividades de grupo",
+          "Fiesta temática de los 80 y 90"
+        ],
+        "intro": "Let’s Surf Together\nEn Let’s Surf Together creemos que un surftrip no es solo surfear.\nEs compartir, aprender y vivir una experiencia que se queda contigo mucho\ndespués de volver a casa \nEste puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con\nmás ambiente surfero del sur, y queremos que formes parte de ello.\nSerán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel,\nvideocorrecciones para pulir cada detalle de tu técnica, surfskate en pista\nprivada y Animal Flow para sentirte ágil dentro y fuera del agua.\nY fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche\ncon fiesta temática de los 80 y 90 \nEs el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve\nencantadaaaa.",
+        "levelRequirement": "Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).",
+        "levels": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "name": "El Palmar",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 250,
+          "terms": "Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Vejer de la Frontera · Cádiz",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "el-palmar-2026-12-04"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Nexo Surfhouse, 200 m de playa; habitaciones dobles/triples, jardín, azotea, pista de surfskate, ping pong, barbacoa, comedor, cafetería y parking. Petición de compartir habitación por WhatsApp."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "4 clases de sábado a martes; tres grupos y videocorrecciones. Material y seguro de escuela local.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Surfskate con horarios por grupo; Animal Flow y movilidad diarios.",
+            "title": "Programa 2"
+          },
+          {
+            "_key": "program-3",
+            "_type": "storyItem",
+            "text": "Visita a Conil, ping pong, juegos y barbacoa.",
+            "title": "Programa 3"
+          },
+          {
+            "_key": "program-4",
+            "_type": "storyItem",
+            "text": "Viernes: bienvenida. Sábado: ambiente y posiblemente música en directo. Domingo: juegos en casa. Lunes: fiesta 80/90; planes opcionales y respeto al descanso.",
+            "title": "Programa 4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-hossegor-2026-11-20",
+      "folder": "FRANCIA",
+      "revision": "L3ZrvhdiWtwAlFI8eP7TeH",
+      "set": {
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000-jpg"
+          },
+          "alt": "Grupo de LST con su bandera entre los árboles en Francia, 2024."
+        },
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-a5fd08cab9db37c6",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000-jpg"
+            },
+            "alt": "Grupo de LST con su bandera entre los árboles en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-0b9d183d743517ae",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-0b9d183d743517ae3c606bb3f8670590a6343261-6000x4000-jpg"
+            },
+            "alt": "Grupo con tablas observando el mar en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-8fe534bb806e50d5",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-8fe534bb806e50d5162bafb968fdfd740d9a7cf5-2000x1333-jpg"
+            },
+            "alt": "Grupo conversando al aire libre en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-19a26fe3a9233a36",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-19a26fe3a9233a36ad79c03048859a4582178a4d-2000x1333-jpg"
+            },
+            "alt": "Surfistas caminando hacia la playa al atardecer en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-b1c437b2ec42f515",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-b1c437b2ec42f515b154a43399de8dd6defd1e07-2000x3000-jpg"
+            },
+            "alt": "Práctica de surfskate en una rampa en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-7bfa91884842d1d8",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-7bfa91884842d1d8400cbb3d5913774ccc17ebb9-2000x1333-png"
+            },
+            "alt": "Surfista descendiendo una ola en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          }
+        ]
+      },
+      "after": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-hossegor-2026-11-20",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7TeH",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:31:30Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 6
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "hossegor-2026-11-20",
+            "_type": "departure",
+            "duration": "2 noches",
+            "end": "2026-11-22",
+            "price": 399,
+            "start": "2026-11-20"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/43061e730eef28c167ef8029233ecba7745bbba0.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-43061e730eef28c167ef8029233ecba7745bbba0-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Material de surf (alquiler posible)",
+          "Transporte (coches compartidos)",
+          "Seguro de viaje"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Sí: cada uno trae su tabla y su neopreno. Si te falta algo, allí podrás alquilarlo.",
+            "question": "¿Tengo que llevar mi material?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "En coche. Crearemos un grupo de WhatsApp con las personas que reserven para compartir coche y gastos desde cada ciudad.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Si las condiciones no son buenas para el viaje, lo cancelamos y puedes elegir entre reembolso o bono para otro viaje.",
+            "question": "¿Qué pasa si no hay olas buenas?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Sí. Con nuestro enlace de IATI Seguros tienes un 5 % de descuento; te lo pasamos al confirmar la plaza.",
+            "question": "¿El seguro de viaje es obligatorio?"
+          }
+        ],
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-a5fd08cab9db37c6",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000-jpg"
+            },
+            "alt": "Grupo de LST con su bandera entre los árboles en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-0b9d183d743517ae",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-0b9d183d743517ae3c606bb3f8670590a6343261-6000x4000-jpg"
+            },
+            "alt": "Grupo con tablas observando el mar en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-8fe534bb806e50d5",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-8fe534bb806e50d5162bafb968fdfd740d9a7cf5-2000x1333-jpg"
+            },
+            "alt": "Grupo conversando al aire libre en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-19a26fe3a9233a36",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-19a26fe3a9233a36ad79c03048859a4582178a4d-2000x1333-jpg"
+            },
+            "alt": "Surfistas caminando hacia la playa al atardecer en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-b1c437b2ec42f515",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-b1c437b2ec42f515b154a43399de8dd6defd1e07-2000x3000-jpg"
+            },
+            "alt": "Práctica de surfskate en una rampa en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-7bfa91884842d1d8",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-7bfa91884842d1d8400cbb3d5913774ccc17ebb9-2000x1333-png"
+            },
+            "alt": "Surfista descendiendo una ola en Francia, 2024.",
+            "caption": "Recuerdo de un viaje de LST a Francia en 2024."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000-jpg"
+          },
+          "alt": "Grupo de LST con su bandera entre los árboles en Francia, 2024."
+        },
+        "includes": [
+          "2 noches en surfhouse",
+          "Pensión completa: cena del viernes a desayuno del domingo",
+          "Coaching en todas las sesiones con seguimiento individual de Lucas",
+          "Vídeos de todas las sesiones",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Teoría del mar, condiciones y forecast"
+        ],
+        "intro": "Let’s Surf Together\nUN FINDE PARA SUBIR DE NIVEL\nUn finde para dar un salto de calidad en tu surf en una de las mecas del surf\neuropeo \nNos vamos a Hossegor con un grupo muy reducido de solo 6 personas, para\nque Lucas pueda hacer un seguimiento individualizado de cada uno durante\ntodo el fin de semana.\nAnalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de\nverdad necesitas para mejorar: dentro del agua, en vídeo y en la teoría del mar.\nY todo con el ambiente de siempre de LST: surf, buena comida y buen rollo en\nuna surfhouse con muy buena energía.",
+        "levelRequirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
+        "levels": [
+          2,
+          3
+        ],
+        "name": "Hossegor",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo. Consulta las condiciones con el equipo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 200,
+          "terms": "Señal fija de 200 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Landas · Francia",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "hossegor-2026-11-20"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surfhouse con jardín; nombre y habitaciones no indicados."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Coaching en todas las sesiones con Lucas; grabación, videoanálisis grupal e individual, Animal Flow y estiramientos.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Teoría del mar: swell y periodo, viento y mareas, elección de pico.",
+            "title": "Programa 2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-marruecos-2027-01-17",
+      "folder": "MARRUECOS",
+      "revision": "L3ZrvhdiWtwAlFI8eP7jYV",
+      "set": {
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000-jpg"
+          },
+          "alt": "Grupo reunido junto a tablas de surf en Marruecos, 2025."
+        },
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-4e9025ec236429f5",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-4e9025ec236429f5e20ff15c5f598f9cda61e3c7-6000x4000-jpg"
+            },
+            "alt": "Sesión de estiramientos en una terraza de Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-3f73b920974bfe6f",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-3f73b920974bfe6f9d03ca929564cfb7ed601a39-4000x6000-jpg"
+            },
+            "alt": "Puesto de zumo de naranja en un mercado de Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-8c7026876e036835",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-8c7026876e036835899029696897ef10116e4299-6000x4000-jpg"
+            },
+            "alt": "Excursión con camellos junto a las dunas en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-0ada88f03268779e",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000-jpg"
+            },
+            "alt": "Grupo reunido junto a tablas de surf en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-4c20dc1dfadca90a",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-4c20dc1dfadca90a6723cea9311f588a662a3fc2-6000x4000-jpg"
+            },
+            "alt": "Surfista sobre una ola al atardecer en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-788359c1354ae26e",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-788359c1354ae26e16b6a9523e640cc6af2c0d5d-6000x4000-jpg"
+            },
+            "alt": "Barcas en la playa al atardecer en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          }
+        ]
+      },
+      "after": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-marruecos-2027-01-17",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7jYV",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:36:25Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 15
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "marruecos-2027-01-17",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-01-24",
+            "price": 899,
+            "start": "2027-01-17"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/5c6db16bd916a52f50354b5f50aac1bb98b84c69.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-5c6db16bd916a52f50354b5f50aac1bb98b84c69-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Vuelos",
+          "Seguro de viaje",
+          "Tablas evolutivas y shortboards: alquiler aparte (p. 5)"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "No te preocupes. Estarás acompañado en todo momento por monitores y el equipo de Let’s Surf Together, y adaptaremos tu progresión a tu nivel.",
+            "question": "¿Y si no sé nada de surf?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "¡Sin problema! Haremos videocorrecciones para tu nivel y nos preocuparemos de que aprendas las pautas para llevar tu surfing al siguiente nivel.",
+            "question": "¿Y si tengo más nivel que el resto?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, pero allí tienes todo el material de iniciación, y además puedes alquilar tablas de mayor nivel.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-4e9025ec236429f5",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-4e9025ec236429f5e20ff15c5f598f9cda61e3c7-6000x4000-jpg"
+            },
+            "alt": "Sesión de estiramientos en una terraza de Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-3f73b920974bfe6f",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-3f73b920974bfe6f9d03ca929564cfb7ed601a39-4000x6000-jpg"
+            },
+            "alt": "Puesto de zumo de naranja en un mercado de Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-8c7026876e036835",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-8c7026876e036835899029696897ef10116e4299-6000x4000-jpg"
+            },
+            "alt": "Excursión con camellos junto a las dunas en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-0ada88f03268779e",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000-jpg"
+            },
+            "alt": "Grupo reunido junto a tablas de surf en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-4c20dc1dfadca90a",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-4c20dc1dfadca90a6723cea9311f588a662a3fc2-6000x4000-jpg"
+            },
+            "alt": "Surfista sobre una ola al atardecer en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-788359c1354ae26e",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-788359c1354ae26e16b6a9523e640cc6af2c0d5d-6000x4000-jpg"
+            },
+            "alt": "Barcas en la playa al atardecer en Marruecos, 2025.",
+            "caption": "Recuerdo de un viaje de LST a Marruecos en 2025."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000-jpg"
+          },
+          "alt": "Grupo reunido junto a tablas de surf en Marruecos, 2025."
+        },
+        "includes": [
+          "7 noches en Surf House",
+          "Pensión completa: desayuno, comida y cena",
+          "Clases y coaching adaptados al nivel",
+          "Material de iniciación y neoprenos",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Excursiones y visitas culturales",
+          "Transfers: aeropuerto, spots y actividades",
+          "Fotos y vídeos del viaje",
+          "Acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: con el pie en la arena y la tabla en el\nagua \nDespués de un 2026 lleno de viajes y surftrips increíbles, toca volver a las raíces.\nA recordar por qué nos enamoramos del surf, a conectar con nuestra primera ola\ny con esa sensación de libertad que solo el mar te da.\nEste surftrip está diseñado para quienes quieren dar sus primeros pasos en el\nsurf o mejorar su base, coger confianza en el agua y empezar a disfrutar de las\nprimeras paredes y maniobras sencillas.\nSerá una semana llena de surf, cultura marroquí y momentos compartidos con\nun grupo reducido de personas con la misma pasión.",
+        "levelRequirement": "Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.",
+        "levels": [
+          1,
+          2
+        ],
+        "name": "Marruecos · nivel 1–2",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 270,
+          "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Agadir · Marruecos",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "marruecos-2027-01-17"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Clases y coaching de lunes a sábado; videoanálisis grupal e individual, Animal Flow diario, material de iniciación y neoprenos. Evolutivas/shortboards no incluidos; posible alquiler.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Dunas de Tamri, Zoco de Agadir, mercados locales, surf day en Imsouane y jornada en Paradise Valley.",
+            "title": "Programa 2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-marruecos-2027-01-24",
+      "folder": "MARRUECOS NIVEL 3",
+      "revision": "L3ZrvhdiWtwAlFI8eP7jYV",
+      "set": {
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg"
+          },
+          "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025."
+        },
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-b7e831800babc917",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-b7e831800babc91734e05475f7a2015bf686238b-6000x4000-jpg"
+            },
+            "alt": "Surfista girando sobre una ola en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-f0a6564c0b3e0ba8",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg"
+            },
+            "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-6fff07dd36b9a850",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000-jpg"
+            },
+            "alt": "Surfista sobre una ola vista desde la playa en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-59896744c750b6b4",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000-jpg"
+            },
+            "alt": "Surfista al pie de una ola rompiendo en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-71bd33e6c12fc642",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000-jpg"
+            },
+            "alt": "Surfista deslizándose junto a la espuma de una ola en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          }
+        ]
+      },
+      "after": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-marruecos-2027-01-24",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7jYV",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:36:25Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 10
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "marruecos-2027-01-24",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-01-31",
+            "price": 899,
+            "start": "2027-01-24"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/2c75a88174e3071f85f59b20c8684fffdcca10f1.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-2c75a88174e3071f85f59b20c8684fffdcca10f1-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf; SHA256 db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Vuelos",
+          "Seguro de viaje",
+          "Tabla propia o alquiler en destino (p. 5; no consta incluido)"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Entonces te encajará mejor el viaje del 17 al 24 de enero, pensado para iniciación e intermedio bajo.",
+            "question": "¿Y si todavía no voy por la pared?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Nivel 3: ser independiente en el agua y pillar tus paredes con tabla corta. Si ya haces maniobras y quieres pulirlas, también es tu viaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, de hecho lo recomendamos en este viaje. Si lo prefieres, también puedes alquilar allí.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos.",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-b7e831800babc917",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-b7e831800babc91734e05475f7a2015bf686238b-6000x4000-jpg"
+            },
+            "alt": "Surfista girando sobre una ola en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-f0a6564c0b3e0ba8",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg"
+            },
+            "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-6fff07dd36b9a850",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000-jpg"
+            },
+            "alt": "Surfista sobre una ola vista desde la playa en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-59896744c750b6b4",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000-jpg"
+            },
+            "alt": "Surfista al pie de una ola rompiendo en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-71bd33e6c12fc642",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000-jpg"
+            },
+            "alt": "Surfista deslizándose junto a la espuma de una ola en Marruecos, 2025.",
+            "caption": "Sesión de surf de un viaje de LST a Marruecos en 2025."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg"
+          },
+          "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025."
+        },
+        "includes": [
+          "7 noches en Surf House",
+          "Pensión completa: desayuno, comida y cena",
+          "Surf coaching intensivo con Lucas",
+          "Vídeos todos los días",
+          "4 sesiones de videocorrecciones",
+          "Animal Flow y estiramientos",
+          "Excursiones y visitas culturales",
+          "Transfers: aeropuerto, spots y actividades",
+          "Fotos y vídeos del viaje",
+          "Acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: entrenando duro en el agua y buscando\nnuevos retos \nDespués de un 2026 lleno de olas, aprendizajes y surftrips épicos, toca dar el\nsiguiente paso: que tu surf deje de ser solo coger olas y empiece a fluir.\nPara ganar velocidad y control en la pared, aprender a bombear, colocarte\nmejor en la ola y soltar tus primeros giros con buena técnica. Para sentir que de\nverdad progresas, sesión a sesión.\nUna semana enfocada en progresar en tu surf, con sesiones intensivas, análisis\nen detalle y tiempo para disfrutar de la cultura marroquí.",
+        "levelRequirement": "Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.",
+        "levels": [
+          3
+        ],
+        "name": "Marruecos · nivel 3",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 270,
+          "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Agadir · Marruecos",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "marruecos-2027-01-24"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Coaching con Lucas de lunes a sábado; hasta 2 sesiones al día si las condiciones acompañan; vídeos diarios y 4 videocorrecciones; Animal Flow y movilidad. Tabla propia o alquiler.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Spots anunciados: Imsouane, Anchor Point, Desert Point, Banana y Camel según condiciones. Si el mar descansa o el grupo lo pide, Zoco de Agadir y actividades locales.",
+            "title": "Programa 2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-senegal-2027-02-28",
+      "folder": "SENEGAL",
+      "revision": "L3ZrvhdiWtwAlFI8eP7jYV",
+      "set": {
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366-jpg"
+          },
+          "alt": "Surfista girando sobre una ola del archivo de Senegal."
+        },
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-38e9a54e13339cbf",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366-jpg"
+            },
+            "alt": "Surfista girando sobre una ola del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-f0522a1426f8736e",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-f0522a1426f8736e0e609789f08dca9aac9ae73f-2048x1536-jpg"
+            },
+            "alt": "Interior colorido con una tabla de surf del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-1c429d93b9c8a112",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-1c429d93b9c8a11219a7dfd27f5bf476013ff6fe-900x500-jpg"
+            },
+            "alt": "Campamento de tiendas junto a las dunas del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-05230a10d2d244b0",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-05230a10d2d244b033278cf34da40f1844c0aafa-5013x3342-jpg"
+            },
+            "alt": "Olas llegando a la costa del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-c17942ddd74bcb99",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-c17942ddd74bcb99148ac7cdac3db7c1c49ac739-2428x3237-jpg"
+            },
+            "alt": "Calle de un mercado del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-eb0b5ad1c26d0778",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-eb0b5ad1c26d077834f63dc7619de4368bfab6e9-1885x2828-jpg"
+            },
+            "alt": "Barcas de pesca decoradas del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          }
+        ]
+      },
+      "after": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-senegal-2027-02-28",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7jYV",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:36:25Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 12
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "senegal-2027-02-28",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-03-07",
+            "price": 1299,
+            "start": "2027-02-28"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/0265db128ef6c50005e0754e1437cd11aa3957fd.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-0265db128ef6c50005e0754e1437cd11aa3957fd-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf; SHA256 1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Vuelos",
+          "Comidas del mediodía",
+          "Bebidas de la cena del desierto",
+          "Seguro de viaje"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2: ponerte de pie con soltura, coger tus propias olas y empezar a surfear paredes. Si estás empezando, este no es tu viaje, pero tenemos otros pensados para ti.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Hay vuelos a Dakar a muy buen precio desde España. Te asesoramos y crearemos un grupo de WhatsApp para coordinarnos y volar juntos. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "No hace falta: el material está incluido todo el día. Si prefieres surfear con tu tabla, también puedes traerla.",
+            "question": "¿Tengo que llevar mi tabla?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "No están incluidas, pero hay opciones locales muy ricas y económicas. Desayuno y cena sí van incluidos todos los días.",
+            "question": "¿Y las comidas del mediodía?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_type": "image",
+            "_key": "photo-38e9a54e13339cbf",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366-jpg"
+            },
+            "alt": "Surfista girando sobre una ola del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-f0522a1426f8736e",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-f0522a1426f8736e0e609789f08dca9aac9ae73f-2048x1536-jpg"
+            },
+            "alt": "Interior colorido con una tabla de surf del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-1c429d93b9c8a112",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-1c429d93b9c8a11219a7dfd27f5bf476013ff6fe-900x500-jpg"
+            },
+            "alt": "Campamento de tiendas junto a las dunas del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-05230a10d2d244b0",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-05230a10d2d244b033278cf34da40f1844c0aafa-5013x3342-jpg"
+            },
+            "alt": "Olas llegando a la costa del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-c17942ddd74bcb99",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-c17942ddd74bcb99148ac7cdac3db7c1c49ac739-2428x3237-jpg"
+            },
+            "alt": "Calle de un mercado del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          },
+          {
+            "_type": "image",
+            "_key": "photo-eb0b5ad1c26d0778",
+            "asset": {
+              "_type": "reference",
+              "_ref": "image-eb0b5ad1c26d077834f63dc7619de4368bfab6e9-1885x2828-jpg"
+            },
+            "alt": "Barcas de pesca decoradas del archivo de Senegal.",
+            "caption": "Fotografía del archivo de Senegal facilitado a LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "asset": {
+            "_type": "reference",
+            "_ref": "image-38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366-jpg"
+          },
+          "alt": "Surfista girando sobre una ola del archivo de Senegal."
+        },
+        "includes": [
+          "7 noches de alojamiento, una en el desierto",
+          "Desayuno y cena todos los días",
+          "Surf todos los días con clases o surf guiding",
+          "Material de surf",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Desierto de Lompoul y Lago Rosa",
+          "Isla de Gorée con barco, entrada y guía",
+          "Almadies y mercado artesanal",
+          "Transfers: aeropuerto y excursiones",
+          "Fotos y vídeos del viaje y acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nUNA AVENTURA DE SURF EN ÁFRICA\nHay viajes que se recuerdan toda la vida, y este es uno de ellos \nNos vamos a Senegal, al punto más occidental de África, a surfear olas atlánticas\ncon sol, en un país lleno de color, ritmo y energía.\nSerá una semana para mejorar tu surf en las olas de Senegal, vivir una aventura\nen el desierto de Lompoul, ver el Lago Rosa y descubrir la Isla de Gorée.\nTodo con un grupo reducido de 12 personas con la misma pasión, con el estilo de\nsiempre de LST: surf, coaching, buen rollo y momentos que no se olvidan.\nLa familia LST en un viaje anterior",
+        "levelRequirement": "Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.",
+        "levels": [
+          2
+        ],
+        "name": "Senegal",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 325,
+          "terms": "Señal fija de 325 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Dakar · Senegal",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "senegal-2027-02-28"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf camp sin nombre; habitaciones compartidas, mosquiteras, taquilla, jardín, comedor, coworking, rooftop, wifi y agua potable. Una noche en tiendas en Lompoul (p. 7)."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Surf diario con clases o guiding según condiciones; material todo el día; videoanálisis, Animal Flow y fotos/vídeos.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Lompoul, Lago Rosa, Gorée con barco/entrada/guía, Almadies y mercado; transfers incluidos.",
+            "title": "Programa 2"
+          },
+          {
+            "_key": "program-3",
+            "_type": "storyItem",
+            "text": "Una noche en tiendas en Lompoul, atardecer, cena y desayuno; bebidas de la cena excluidas. Lago Rosa al volver.",
+            "title": "Programa 3"
+          }
+        ]
+      }
+    }
+  ],
+  "untouchedTrips": [
+    "lst-fuerteventura-2027-02-12",
+    "lst-maldivas-2027-03-21",
+    "lst-maldivas-2027-03-28"
+  ],
+  "libraryOnlyFolders": [
+    "ASTURIAS",
+    "CANTABRIA",
+    "EUSKADI"
+  ],
+  "displayNote": "La web local consolida Marruecos usando la galería de la primera fecha; las 5 fotos de nivel 3 se publican en su documento Sanity.",
+  "publicDestinations": [
+    {
+      "slug": "el-palmar",
+      "galleryPhotos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"
+    },
+    {
+      "slug": "fuerteventura",
+      "galleryPhotos": 1,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044.jpg"
+    },
+    {
+      "slug": "hossegor",
+      "galleryPhotos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000.jpg"
+    },
+    {
+      "slug": "maldivas",
+      "galleryPhotos": 1,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg"
+    },
+    {
+      "slug": "marruecos",
+      "galleryPhotos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000.jpg"
+    },
+    {
+      "slug": "senegal",
+      "galleryPhotos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366.jpg"
+    }
+  ]
+}

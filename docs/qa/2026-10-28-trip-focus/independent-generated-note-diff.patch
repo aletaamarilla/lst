@@ -1,0 +1,43 @@
+--- previous-reviewed/scripts/render-trips.mjs
++++ scripts/render-trips.mjs
+@@ -64,6 +64,11 @@
+  const saving = Math.round((departure.regularPrice - departure.price) * 100) / 100;
+  return `<div class="trip-offer${compact?' trip-offer-compact':''}"><p class="trip-offer-label">${escape(promotion.label)}${compact?'':` <strong>${escape(formatPrice(saving))} de descuento</strong>`}</p><p class="trip-offer-condition">${escape(promotionCondition(promotion))}</p>${date ? `<p class="trip-offer-date">Tarifa para el ${escape(departure.date)}</p>` : ''}</div>`;
+ }
++// Match the exact summary produced by update-trip-promotions.mjs; never strip custom additions.
++function generatedTariffNote(trip) {
++ const conditions=departuresFor(trip).filter(d=>d.promotions?.length&&d.regularPrice!=null).map(d=>`${d.promotions.map(p=>`${p.label}: ${formatPrice(p.price)} (${promotionCondition(p).toLocaleLowerCase('es')})`).join('; ')}. Tarifa general: ${formatPrice(d.regularPrice)}.`);
++ return conditions.length?`${[...new Set(conditions)].join(' ')} Precios por persona. La consulta no confirma la reserva.`:null;
++}
+ function fareMarkup(trip, departure, {from = false} = {}) {
+  const offer = trip.state === 'confirmed' && !isFull(trip) && !isFull(departure ?? {}) && departure?.promotion;
+  return `${offer ? `<del><span class="visually-hidden">Precio general: </span>${escape(formatPrice(departure.regularPrice))}</del> ` : ''}<strong>${from && departure?.price != null ? 'Desde ' : ''}${escape(departure?.price != null ? formatPrice(departure.price) : departure ? 'Consultar precio' : price(trip))}</strong>`;
+@@ -129,7 +134,7 @@
+ const deposit=tripDeposit(trip);
+ const bookingTone=isFull(trip)?'quiet':availabilityLabel(trip)==='Plazas disponibles'?'available':availabilityLabel(trip)==='Últimas plazas'?'limited':'quiet';
+ // Condense only the known generic note; keep any custom commercial wording.
+-const sidebarPriceNote=!summaryPrice(trip)||summaryPrice(trip)==='Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.'?'por persona':summaryPrice(trip);
++const sidebarPriceNote=!summaryPrice(trip)||summaryPrice(trip)==='Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.'||summaryPrice(trip)===generatedTariffNote(trip)?'por persona':summaryPrice(trip);
+ 
+ const showLucasPortrait=real&&(!team||['Lucas va contigo.','Lucas va contigo'].includes(team.title?.trim()));
+ // Only this unchanged introductory copy duplicates the beginner level cards; other CMS requirements remain visible.
+--- previous-reviewed/scripts/trip-focus.test.mjs
++++ scripts/trip-focus.test.mjs
+@@ -30,3 +30,17 @@
+   assert.doesNotMatch(custom,/<individual>/);
+  }
+ });
++
++test('the exact generated tariff summary is condensed, but any additional commercial condition remains visible',()=>{
++ const base=trips.find(t=>t.slug==='el-palmar');
++ const note='Early bird: 599 € (primeras 8 plazas); Segundo tramo: 649 € (plazas 9–20). Tarifa general: 699 €. Precios por persona. La consulta no confirma la reserva.';
++ const trip={...base,priceNote:note,departures:base.departures.map(d=>({...d,promotions:[{label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true},{label:'Segundo tramo',price:649,firstPlace:9,lastPlace:20,active:false}]}))};
++ const card=sidebar(renderTrip(trip,trips));
++ assert.match(card,/booking-card-price-note">por persona<\/p>/);
++ assert.match(card,/Early bird/);assert.match(card,/Primeras 8 plazas/);
++ assert.doesNotMatch(card,/Segundo tramo|La consulta no confirma la reserva/);
++ const extra=' Suplemento individual obligatorio de 80 €.';
++ const custom=sidebar(renderTrip({...trip,priceNote:note+extra},trips));
++ assert(custom.includes(extra.trim()));
++ assert(custom.includes('Segundo tramo'));
++});

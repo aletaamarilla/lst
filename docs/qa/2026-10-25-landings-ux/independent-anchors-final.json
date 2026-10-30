@@ -1,0 +1,103 @@
+{
+  "results": [
+    {
+      "kind": "about",
+      "id": "origen",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 519.828125,
+      "sectionTop": 126.9375,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    },
+    {
+      "kind": "about",
+      "id": "acompanamiento",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 216.171875,
+      "sectionTop": 127.171875,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    },
+    {
+      "kind": "about",
+      "id": "respeto",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 158.109375,
+      "sectionTop": 127.109375,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    },
+    {
+      "kind": "faq",
+      "id": "grupo",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 127.125,
+      "sectionTop": 127.125,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    },
+    {
+      "kind": "faq",
+      "id": "nivel",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 127.125,
+      "sectionTop": 127.125,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    },
+    {
+      "kind": "faq",
+      "id": "preparacion",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 127.125,
+      "sectionTop": 127.125,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    },
+    {
+      "kind": "faq",
+      "id": "reserva",
+      "headerHeight": 107,
+      "headerBottom": 107,
+      "titleTop": 127.125,
+      "sectionTop": 127.125,
+      "landingHeight": "107px",
+      "scrollWidth": 320,
+      "clear": true
+    }
+  ],
+  "hashes": [
+    {
+      "file": "dist/landing.css",
+      "sha256": "c9947f40265905c7bba19c65042d49939e6f1adf2d6864645c6701daa63c36ea"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "af08ed46ba3b00f6078d8aa888f33016a77bdfc91a4f26aaf346392942073e15"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "51a60b23907d599b83b120393c9cc32da28736b1c679702df3cf25d7043378f3"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "f8e67e7563cf4625224e458a391615c376a74a48ce57e65180c89a852dcdb426"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "4679136a94ca46976a9e4d92bfcfc6ffceaebcebcb3481e3c9e45c52bdc00b91"
+    }
+  ]
+}

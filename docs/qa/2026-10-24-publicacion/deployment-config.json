@@ -1,0 +1,30 @@
+{
+  "vercel": {
+    "projectId": "prj_i6WTjAdr8wXdaYklifDfTkrM5NO3",
+    "teamId": "team_UzFwoVvvcedZRcQlIxyacNUV",
+    "ref": "main"
+  },
+  "sanity": {
+    "id": "LsfQarW4qshczsep",
+    "type": "document",
+    "name": "LST production published trips → Vercel",
+    "description": "Rebuild aletaamarilla/lst main in Vercel production. No draft or release events.",
+    "dataset": "production",
+    "apiVersion": "v2025-02-19",
+    "httpMethod": "POST",
+    "includeDrafts": false,
+    "includeAllVersions": false,
+    "isDisabledByUser": false,
+    "rule": {
+      "on": [
+        "create",
+        "update",
+        "delete"
+      ],
+      "filter": "(before()._type == \"trip\" || after()._type == \"trip\") && !(coalesce(after()._id, before()._id) in path(\"drafts.**\")) && !(coalesce(after()._id, before()._id) in path(\"versions.**\"))",
+      "projection": "{\"id\": coalesce(after()._id, before()._id), \"operation\": delta::operation(), \"projectId\": sanity::projectId(), \"dataset\": sanity::dataset()}"
+    },
+    "isDisabled": false
+  },
+  "phase": "Enabled after verified production source deployment 7adcb4e"
+}

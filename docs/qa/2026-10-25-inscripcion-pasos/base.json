@@ -1,0 +1,11 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "sha256": {
+    "scripts/render-registration.mjs": "64c3ce622607d87cf6312d9010f478527d20dcfc80c006e553c3a36de85d35df",
+    "dist/registration.js": "32b6091dd54bb05f8f2de9acfa0d3aafbfa2651f848093fe8ce0ea3874b2b0d1",
+    "dist/registration.css": "be81272279b1402f63420b3c236c45ca217cde95b09fb7e8a310bce14e15e5bc",
+    "scripts/registration.test.mjs": "5b77906ff5acea3d87b7c148fa020004fc69b48d4574fc8160b9c3701dfa243a",
+    "scripts/check-registration-browser.mjs": "bed674678ea1b3a296ee65508fd0e4fd485dd50b1b4cd90c87a8cef9407d3b29",
+    "dist/catalog-snapshot.json": "4a071bc42617a9b963a6306be7b40713c29c86bb7e6fd0d18c169ca1ca486b89"
+  }
+}

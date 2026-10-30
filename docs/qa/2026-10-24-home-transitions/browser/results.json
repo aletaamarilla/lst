@@ -1,0 +1,2738 @@
+{
+  "checks": 234,
+  "errors": [],
+  "imageResults": [
+    {
+      "width": 320,
+      "images": [
+        {
+          "src": "http://127.0.0.1:37741/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "images": [
+        {
+          "src": "http://127.0.0.1:37741/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "images": [
+        {
+          "src": "http://127.0.0.1:37741/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "images": [
+        {
+          "src": "http://127.0.0.1:37741/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "images": [
+        {
+          "src": "http://127.0.0.1:37741/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
+          "loaded": true
+        },
+        {
+          "src": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    }
+  ],
+  "layoutResults": [
+    {
+      "label": "normal 320",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 897.59375,
+            "bottom": 1116.59375,
+            "left": 29,
+            "right": 291,
+            "height": 219
+          },
+          "title": {
+            "top": 1049.59375,
+            "bottom": 1116.59375,
+            "left": 29,
+            "right": 291,
+            "height": 67
+          },
+          "panel": {
+            "top": 969.09375,
+            "bottom": 1005.890625,
+            "left": 39,
+            "right": 239.390625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 912.59375,
+            "bottom": 945.984375,
+            "left": 43,
+            "right": 129.53125,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1323.578125,
+            "bottom": 1542.578125,
+            "left": 29,
+            "right": 291,
+            "height": 219
+          },
+          "title": {
+            "top": 1475.578125,
+            "bottom": 1542.578125,
+            "left": 29,
+            "right": 291,
+            "height": 67
+          },
+          "panel": {
+            "top": 1395.078125,
+            "bottom": 1431.875,
+            "left": 39,
+            "right": 216.265625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1338.578125,
+            "bottom": 1371.96875,
+            "left": 43,
+            "right": 155.1875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 1749.5625,
+            "bottom": 1968.5625,
+            "left": 29,
+            "right": 291,
+            "height": 219
+          },
+          "title": {
+            "top": 1901.5625,
+            "bottom": 1968.5625,
+            "left": 29,
+            "right": 291,
+            "height": 67
+          },
+          "panel": {
+            "top": 1821.0625,
+            "bottom": 1888.5625,
+            "left": 39,
+            "right": 240.0625,
+            "height": 67.5
+          },
+          "level": {
+            "top": 1764.5625,
+            "bottom": 1813.34375,
+            "left": 43,
+            "right": 171,
+            "height": 48.78125
+          },
+          "status": null,
+          "scrollHeight": 117,
+          "clientHeight": 68,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 2277.546875,
+            "bottom": 2543.546875,
+            "left": 29,
+            "right": 291,
+            "height": 266
+          },
+          "title": {
+            "top": 2429.546875,
+            "bottom": 2543.546875,
+            "left": 29,
+            "right": 291,
+            "height": 114
+          },
+          "panel": {
+            "top": 2349.046875,
+            "bottom": 2385.84375,
+            "left": 39,
+            "right": 235.359375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 2292.546875,
+            "bottom": 2325.9375,
+            "left": 43,
+            "right": 122.875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 2750.53125,
+            "bottom": 2969.53125,
+            "left": 29,
+            "right": 291,
+            "height": 219
+          },
+          "title": {
+            "top": 2902.53125,
+            "bottom": 2969.53125,
+            "left": 29,
+            "right": 291,
+            "height": 67
+          },
+          "panel": {
+            "top": 2822.03125,
+            "bottom": 2858.828125,
+            "left": 39,
+            "right": 231.921875,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 2765.53125,
+            "bottom": 2798.921875,
+            "left": 43,
+            "right": 99.65625,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 3176.515625,
+            "bottom": 3395.515625,
+            "left": 29,
+            "right": 291,
+            "height": 219
+          },
+          "title": {
+            "top": 3328.515625,
+            "bottom": 3395.515625,
+            "left": 29,
+            "right": 291,
+            "height": 67
+          },
+          "panel": {
+            "top": 3248.015625,
+            "bottom": 3315.515625,
+            "left": 39,
+            "right": 244.1875,
+            "height": 67.5
+          },
+          "level": {
+            "top": 3191.515625,
+            "bottom": 3224.90625,
+            "left": 43,
+            "right": 129.53125,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 71,
+          "clientHeight": 68,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 320",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 1714.40625,
+            "bottom": 2226.40625,
+            "left": 29,
+            "right": 291,
+            "height": 512
+          },
+          "title": {
+            "top": 2018.40625,
+            "bottom": 2226.40625,
+            "left": 29,
+            "right": 291,
+            "height": 208
+          },
+          "panel": {
+            "top": 1857.40625,
+            "bottom": 1956.59375,
+            "left": 39,
+            "right": 281,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 1729.40625,
+            "bottom": 1809,
+            "left": 43,
+            "right": 171,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 2641.578125,
+            "bottom": 3247.578125,
+            "left": 29,
+            "right": 291,
+            "height": 606
+          },
+          "title": {
+            "top": 2945.578125,
+            "bottom": 3247.578125,
+            "left": 29,
+            "right": 291,
+            "height": 302
+          },
+          "panel": {
+            "top": 2784.578125,
+            "bottom": 2883.765625,
+            "left": 39,
+            "right": 281,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 2656.578125,
+            "bottom": 2736.171875,
+            "left": 43,
+            "right": 171,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 3662.75,
+            "bottom": 4174.75,
+            "left": 29,
+            "right": 291,
+            "height": 512
+          },
+          "title": {
+            "top": 3966.75,
+            "bottom": 4174.75,
+            "left": 29,
+            "right": 291,
+            "height": 208
+          },
+          "panel": {
+            "top": 3805.75,
+            "bottom": 3940.75,
+            "left": 39,
+            "right": 281,
+            "height": 135
+          },
+          "level": {
+            "top": 3677.75,
+            "bottom": 3788.140625,
+            "left": 43,
+            "right": 171,
+            "height": 110.390625
+          },
+          "status": null,
+          "scrollHeight": 280,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 4765.3125,
+            "bottom": 5371.3125,
+            "left": 29,
+            "right": 291,
+            "height": 606
+          },
+          "title": {
+            "top": 5069.3125,
+            "bottom": 5371.3125,
+            "left": 29,
+            "right": 291,
+            "height": 302
+          },
+          "panel": {
+            "top": 4908.3125,
+            "bottom": 5007.5,
+            "left": 39,
+            "right": 281,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 4780.3125,
+            "bottom": 4859.90625,
+            "left": 43,
+            "right": 171,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 5786.484375,
+            "bottom": 6298.484375,
+            "left": 29,
+            "right": 291,
+            "height": 512
+          },
+          "title": {
+            "top": 6090.484375,
+            "bottom": 6298.484375,
+            "left": 29,
+            "right": 291,
+            "height": 208
+          },
+          "panel": {
+            "top": 5929.484375,
+            "bottom": 6028.671875,
+            "left": 39,
+            "right": 281,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 5801.484375,
+            "bottom": 5850.28125,
+            "left": 43,
+            "right": 136.296875,
+            "height": 48.796875
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 6713.65625,
+            "bottom": 7225.65625,
+            "left": 29,
+            "right": 291,
+            "height": 512
+          },
+          "title": {
+            "top": 7017.65625,
+            "bottom": 7225.65625,
+            "left": 29,
+            "right": 291,
+            "height": 208
+          },
+          "panel": {
+            "top": 6856.65625,
+            "bottom": 6991.65625,
+            "left": 39,
+            "right": 281,
+            "height": 135
+          },
+          "level": {
+            "top": 6728.65625,
+            "bottom": 6808.25,
+            "left": 43,
+            "right": 171,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 195,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 390",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 901.90625,
+            "bottom": 1161.09375,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 1094.09375,
+            "bottom": 1161.09375,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 973.40625,
+            "bottom": 1010.203125,
+            "left": 43,
+            "right": 243.390625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 916.90625,
+            "bottom": 950.296875,
+            "left": 47,
+            "right": 133.53125,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1368.078125,
+            "bottom": 1627.265625,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 1560.265625,
+            "bottom": 1627.265625,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 1439.578125,
+            "bottom": 1476.375,
+            "left": 43,
+            "right": 220.265625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1383.078125,
+            "bottom": 1416.46875,
+            "left": 47,
+            "right": 159.1875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 1834.25,
+            "bottom": 2093.4375,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 2026.4375,
+            "bottom": 2093.4375,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 1905.75,
+            "bottom": 2013.4375,
+            "left": 43,
+            "right": 244.0625,
+            "height": 107.6875
+          },
+          "level": {
+            "top": 1849.25,
+            "bottom": 1882.640625,
+            "left": 47,
+            "right": 175.09375,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 117,
+          "clientHeight": 108,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 2402.421875,
+            "bottom": 2661.609375,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 2594.609375,
+            "bottom": 2661.609375,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 2473.921875,
+            "bottom": 2510.71875,
+            "left": 43,
+            "right": 239.359375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 2417.421875,
+            "bottom": 2450.8125,
+            "left": 47,
+            "right": 126.875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 2868.59375,
+            "bottom": 3127.78125,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 3060.78125,
+            "bottom": 3127.78125,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 2940.09375,
+            "bottom": 2976.890625,
+            "left": 43,
+            "right": 235.921875,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 2883.59375,
+            "bottom": 2916.984375,
+            "left": 47,
+            "right": 103.65625,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 3334.765625,
+            "bottom": 3593.953125,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 3526.953125,
+            "bottom": 3593.953125,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 3406.265625,
+            "bottom": 3476.859375,
+            "left": 43,
+            "right": 248.1875,
+            "height": 70.59375
+          },
+          "level": {
+            "top": 3349.765625,
+            "bottom": 3383.15625,
+            "left": 47,
+            "right": 133.53125,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 71,
+          "clientHeight": 71,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 390",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 1535.046875,
+            "bottom": 2047.046875,
+            "left": 33,
+            "right": 357,
+            "height": 512
+          },
+          "title": {
+            "top": 1839.046875,
+            "bottom": 2047.046875,
+            "left": 33,
+            "right": 357,
+            "height": 208
+          },
+          "panel": {
+            "top": 1678.046875,
+            "bottom": 1777.234375,
+            "left": 43,
+            "right": 347,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 1550.046875,
+            "bottom": 1598.84375,
+            "left": 47,
+            "right": 200.078125,
+            "height": 48.796875
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 2462.21875,
+            "bottom": 2974.21875,
+            "left": 33,
+            "right": 357,
+            "height": 512
+          },
+          "title": {
+            "top": 2766.21875,
+            "bottom": 2974.21875,
+            "left": 33,
+            "right": 357,
+            "height": 208
+          },
+          "panel": {
+            "top": 2605.21875,
+            "bottom": 2704.40625,
+            "left": 43,
+            "right": 347,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 2477.21875,
+            "bottom": 2556.8125,
+            "left": 47,
+            "right": 237,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 3389.390625,
+            "bottom": 3901.390625,
+            "left": 33,
+            "right": 357,
+            "height": 512
+          },
+          "title": {
+            "top": 3693.390625,
+            "bottom": 3901.390625,
+            "left": 33,
+            "right": 357,
+            "height": 208
+          },
+          "panel": {
+            "top": 3532.390625,
+            "bottom": 3667.390625,
+            "left": 43,
+            "right": 347,
+            "height": 135
+          },
+          "level": {
+            "top": 3404.390625,
+            "bottom": 3483.984375,
+            "left": 47,
+            "right": 237,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 280,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 4491.953125,
+            "bottom": 5003.953125,
+            "left": 33,
+            "right": 357,
+            "height": 512
+          },
+          "title": {
+            "top": 4795.953125,
+            "bottom": 5003.953125,
+            "left": 33,
+            "right": 357,
+            "height": 208
+          },
+          "panel": {
+            "top": 4634.953125,
+            "bottom": 4734.140625,
+            "left": 43,
+            "right": 347,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 4506.953125,
+            "bottom": 4555.75,
+            "left": 47,
+            "right": 186.734375,
+            "height": 48.796875
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 5419.125,
+            "bottom": 5931.125,
+            "left": 33,
+            "right": 357,
+            "height": 512
+          },
+          "title": {
+            "top": 5723.125,
+            "bottom": 5931.125,
+            "left": 33,
+            "right": 357,
+            "height": 208
+          },
+          "panel": {
+            "top": 5562.125,
+            "bottom": 5661.3125,
+            "left": 43,
+            "right": 347,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 5434.125,
+            "bottom": 5482.921875,
+            "left": 47,
+            "right": 140.296875,
+            "height": 48.796875
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 6346.296875,
+            "bottom": 6858.296875,
+            "left": 33,
+            "right": 357,
+            "height": 512
+          },
+          "title": {
+            "top": 6650.296875,
+            "bottom": 6858.296875,
+            "left": 33,
+            "right": 357,
+            "height": 208
+          },
+          "panel": {
+            "top": 6489.296875,
+            "bottom": 6624.296875,
+            "left": 43,
+            "right": 347,
+            "height": 135
+          },
+          "level": {
+            "top": 6361.296875,
+            "bottom": 6410.09375,
+            "left": 47,
+            "right": 200.078125,
+            "height": 48.796875
+          },
+          "status": null,
+          "scrollHeight": 195,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 768",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 875.546875,
+            "bottom": 1086.546875,
+            "left": 43,
+            "right": 242.328125,
+            "height": 211
+          },
+          "title": {
+            "top": 1027.546875,
+            "bottom": 1086.546875,
+            "left": 43,
+            "right": 242.328125,
+            "height": 59
+          },
+          "panel": {
+            "top": 947.046875,
+            "bottom": 1004.640625,
+            "left": 53,
+            "right": 232.328125,
+            "height": 57.59375
+          },
+          "level": {
+            "top": 888.546875,
+            "bottom": 916.546875,
+            "left": 53,
+            "right": 129.484375,
+            "height": 28
+          },
+          "status": null,
+          "scrollHeight": 58,
+          "clientHeight": 58,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 875.546875,
+            "bottom": 1086.546875,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 211
+          },
+          "title": {
+            "top": 1027.546875,
+            "bottom": 1086.546875,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 59
+          },
+          "panel": {
+            "top": 947.046875,
+            "bottom": 983.84375,
+            "left": 294.328125,
+            "right": 471.59375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 888.546875,
+            "bottom": 930.546875,
+            "left": 294.328125,
+            "right": 381.65625,
+            "height": 42
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 875.546875,
+            "bottom": 1125.546875,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 250
+          },
+          "title": {
+            "top": 1027.546875,
+            "bottom": 1125.546875,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 98
+          },
+          "panel": {
+            "top": 947.046875,
+            "bottom": 1014.546875,
+            "left": 535.65625,
+            "right": 714.984375,
+            "height": 67.5
+          },
+          "level": {
+            "top": 888.546875,
+            "bottom": 930.546875,
+            "left": 535.65625,
+            "right": 622.984375,
+            "height": 42
+          },
+          "status": null,
+          "scrollHeight": 159,
+          "clientHeight": 68,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 1483.53125,
+            "bottom": 1733.53125,
+            "left": 43,
+            "right": 242.328125,
+            "height": 250
+          },
+          "title": {
+            "top": 1635.53125,
+            "bottom": 1733.53125,
+            "left": 43,
+            "right": 242.328125,
+            "height": 98
+          },
+          "panel": {
+            "top": 1555.03125,
+            "bottom": 1612.625,
+            "left": 53,
+            "right": 232.328125,
+            "height": 57.59375
+          },
+          "level": {
+            "top": 1496.53125,
+            "bottom": 1524.53125,
+            "left": 53,
+            "right": 123.4375,
+            "height": 28
+          },
+          "status": null,
+          "scrollHeight": 58,
+          "clientHeight": 58,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 1483.53125,
+            "bottom": 1694.53125,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 211
+          },
+          "title": {
+            "top": 1635.53125,
+            "bottom": 1694.53125,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 59
+          },
+          "panel": {
+            "top": 1555.03125,
+            "bottom": 1612.625,
+            "left": 294.328125,
+            "right": 473.65625,
+            "height": 57.59375
+          },
+          "level": {
+            "top": 1496.53125,
+            "bottom": 1524.53125,
+            "left": 294.328125,
+            "right": 343.65625,
+            "height": 28
+          },
+          "status": null,
+          "scrollHeight": 58,
+          "clientHeight": 58,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 1483.53125,
+            "bottom": 1694.53125,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 211
+          },
+          "title": {
+            "top": 1635.53125,
+            "bottom": 1694.53125,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 59
+          },
+          "panel": {
+            "top": 1555.03125,
+            "bottom": 1622.53125,
+            "left": 535.65625,
+            "right": 714.984375,
+            "height": 67.5
+          },
+          "level": {
+            "top": 1496.53125,
+            "bottom": 1524.53125,
+            "left": 535.65625,
+            "right": 612.140625,
+            "height": 28
+          },
+          "status": null,
+          "scrollHeight": 112,
+          "clientHeight": 68,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 768",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 1120.234375,
+            "bottom": 1600.234375,
+            "left": 43,
+            "right": 242.328125,
+            "height": 480
+          },
+          "title": {
+            "top": 1424.234375,
+            "bottom": 1600.234375,
+            "left": 43,
+            "right": 242.328125,
+            "height": 176
+          },
+          "panel": {
+            "top": 1263.234375,
+            "bottom": 1398.234375,
+            "left": 53,
+            "right": 232.328125,
+            "height": 135
+          },
+          "level": {
+            "top": 1133.234375,
+            "bottom": 1203.234375,
+            "left": 53,
+            "right": 140.328125,
+            "height": 70
+          },
+          "status": null,
+          "scrollHeight": 141,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1120.234375,
+            "bottom": 1678.234375,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 558
+          },
+          "title": {
+            "top": 1424.234375,
+            "bottom": 1678.234375,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 254
+          },
+          "panel": {
+            "top": 1263.234375,
+            "bottom": 1398.234375,
+            "left": 294.328125,
+            "right": 473.65625,
+            "height": 135
+          },
+          "level": {
+            "top": 1133.234375,
+            "bottom": 1231.234375,
+            "left": 294.328125,
+            "right": 381.65625,
+            "height": 98
+          },
+          "status": null,
+          "scrollHeight": 141,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 1120.234375,
+            "bottom": 1678.234375,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 558
+          },
+          "title": {
+            "top": 1424.234375,
+            "bottom": 1678.234375,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 254
+          },
+          "panel": {
+            "top": 1263.234375,
+            "bottom": 1398.234375,
+            "left": 535.65625,
+            "right": 714.984375,
+            "height": 135
+          },
+          "level": {
+            "top": 1133.234375,
+            "bottom": 1259.234375,
+            "left": 535.65625,
+            "right": 622.984375,
+            "height": 126
+          },
+          "status": null,
+          "scrollHeight": 363,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 2278.390625,
+            "bottom": 2836.390625,
+            "left": 43,
+            "right": 242.328125,
+            "height": 558
+          },
+          "title": {
+            "top": 2582.390625,
+            "bottom": 2836.390625,
+            "left": 43,
+            "right": 242.328125,
+            "height": 254
+          },
+          "panel": {
+            "top": 2421.390625,
+            "bottom": 2556.390625,
+            "left": 53,
+            "right": 232.328125,
+            "height": 135
+          },
+          "level": {
+            "top": 2291.390625,
+            "bottom": 2361.390625,
+            "left": 53,
+            "right": 140.328125,
+            "height": 70
+          },
+          "status": null,
+          "scrollHeight": 141,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 2278.390625,
+            "bottom": 2758.390625,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 480
+          },
+          "title": {
+            "top": 2582.390625,
+            "bottom": 2758.390625,
+            "left": 284.328125,
+            "right": 483.65625,
+            "height": 176
+          },
+          "panel": {
+            "top": 2421.390625,
+            "bottom": 2556.390625,
+            "left": 294.328125,
+            "right": 473.65625,
+            "height": 135
+          },
+          "level": {
+            "top": 2291.390625,
+            "bottom": 2333.390625,
+            "left": 294.328125,
+            "right": 376.96875,
+            "height": 42
+          },
+          "status": null,
+          "scrollHeight": 141,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2278.390625,
+            "bottom": 2758.390625,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 480
+          },
+          "title": {
+            "top": 2582.390625,
+            "bottom": 2758.390625,
+            "left": 525.65625,
+            "right": 724.984375,
+            "height": 176
+          },
+          "panel": {
+            "top": 2421.390625,
+            "bottom": 2556.390625,
+            "left": 535.65625,
+            "right": 714.984375,
+            "height": 135
+          },
+          "level": {
+            "top": 2291.390625,
+            "bottom": 2361.390625,
+            "left": 535.65625,
+            "right": 622.984375,
+            "height": 70
+          },
+          "status": null,
+          "scrollHeight": 279,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 1024",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 878.8125,
+            "bottom": 1115.53125,
+            "left": 43,
+            "right": 322.328125,
+            "height": 236.71875
+          },
+          "title": {
+            "top": 1056.625,
+            "bottom": 1115.53125,
+            "left": 43,
+            "right": 322.328125,
+            "height": 58.90625
+          },
+          "panel": {
+            "top": 950.3125,
+            "bottom": 987.109375,
+            "left": 53,
+            "right": 253.390625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 892.8125,
+            "bottom": 922.8125,
+            "left": 57,
+            "right": 137.484375,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 878.8125,
+            "bottom": 1115.53125,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 236.71875
+          },
+          "title": {
+            "top": 1056.625,
+            "bottom": 1115.53125,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 58.90625
+          },
+          "panel": {
+            "top": 950.3125,
+            "bottom": 987.109375,
+            "left": 382.328125,
+            "right": 559.59375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 892.8125,
+            "bottom": 922.8125,
+            "left": 386.328125,
+            "right": 490.140625,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 878.8125,
+            "bottom": 1115.53125,
+            "left": 701.65625,
+            "right": 981,
+            "height": 236.71875
+          },
+          "title": {
+            "top": 1056.625,
+            "bottom": 1115.53125,
+            "left": 701.65625,
+            "right": 981,
+            "height": 58.90625
+          },
+          "panel": {
+            "top": 950.3125,
+            "bottom": 1043.625,
+            "left": 711.65625,
+            "right": 912.71875,
+            "height": 93.3125
+          },
+          "level": {
+            "top": 892.8125,
+            "bottom": 922.8125,
+            "left": 715.65625,
+            "right": 833.921875,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 117,
+          "clientHeight": 93,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 1427.71875,
+            "bottom": 1664.4375,
+            "left": 43,
+            "right": 322.328125,
+            "height": 236.71875
+          },
+          "title": {
+            "top": 1605.53125,
+            "bottom": 1664.4375,
+            "left": 43,
+            "right": 322.328125,
+            "height": 58.90625
+          },
+          "panel": {
+            "top": 1499.21875,
+            "bottom": 1536.015625,
+            "left": 53,
+            "right": 249.359375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1441.71875,
+            "bottom": 1471.71875,
+            "left": 57,
+            "right": 131.4375,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 1427.71875,
+            "bottom": 1664.4375,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 236.71875
+          },
+          "title": {
+            "top": 1605.53125,
+            "bottom": 1664.4375,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 58.90625
+          },
+          "panel": {
+            "top": 1499.21875,
+            "bottom": 1536.015625,
+            "left": 382.328125,
+            "right": 575.25,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1441.71875,
+            "bottom": 1471.71875,
+            "left": 386.328125,
+            "right": 439.65625,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 1427.71875,
+            "bottom": 1664.4375,
+            "left": 701.65625,
+            "right": 981,
+            "height": 236.71875
+          },
+          "title": {
+            "top": 1605.53125,
+            "bottom": 1664.4375,
+            "left": 701.65625,
+            "right": 981,
+            "height": 58.90625
+          },
+          "panel": {
+            "top": 1499.21875,
+            "bottom": 1569.8125,
+            "left": 711.65625,
+            "right": 916.84375,
+            "height": 70.59375
+          },
+          "level": {
+            "top": 1441.71875,
+            "bottom": 1471.71875,
+            "left": 715.65625,
+            "right": 796.140625,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 71,
+          "clientHeight": 71,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 1024",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 1402.8125,
+            "bottom": 1882.46875,
+            "left": 43,
+            "right": 322.328125,
+            "height": 479.65625
+          },
+          "title": {
+            "top": 1706.8125,
+            "bottom": 1882.46875,
+            "left": 43,
+            "right": 322.328125,
+            "height": 175.65625
+          },
+          "panel": {
+            "top": 1545.8125,
+            "bottom": 1645,
+            "left": 53,
+            "right": 312.328125,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 1416.8125,
+            "bottom": 1460.8125,
+            "left": 57,
+            "right": 197.96875,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1402.8125,
+            "bottom": 1882.46875,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 479.65625
+          },
+          "title": {
+            "top": 1706.8125,
+            "bottom": 1882.46875,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 175.65625
+          },
+          "panel": {
+            "top": 1545.8125,
+            "bottom": 1645,
+            "left": 382.328125,
+            "right": 641.65625,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 1416.8125,
+            "bottom": 1488.8125,
+            "left": 386.328125,
+            "right": 541.65625,
+            "height": 72
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 1402.8125,
+            "bottom": 1882.46875,
+            "left": 701.65625,
+            "right": 981,
+            "height": 479.65625
+          },
+          "title": {
+            "top": 1706.8125,
+            "bottom": 1882.46875,
+            "left": 701.65625,
+            "right": 981,
+            "height": 175.65625
+          },
+          "panel": {
+            "top": 1545.8125,
+            "bottom": 1680.8125,
+            "left": 711.65625,
+            "right": 971,
+            "height": 135
+          },
+          "level": {
+            "top": 1416.8125,
+            "bottom": 1488.8125,
+            "left": 715.65625,
+            "right": 871,
+            "height": 72
+          },
+          "status": null,
+          "scrollHeight": 280,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 2413.4375,
+            "bottom": 2893.09375,
+            "left": 43,
+            "right": 322.328125,
+            "height": 479.65625
+          },
+          "title": {
+            "top": 2717.4375,
+            "bottom": 2893.09375,
+            "left": 43,
+            "right": 322.328125,
+            "height": 175.65625
+          },
+          "panel": {
+            "top": 2556.4375,
+            "bottom": 2655.625,
+            "left": 53,
+            "right": 312.328125,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 2427.4375,
+            "bottom": 2471.4375,
+            "left": 57,
+            "right": 185.859375,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 2413.4375,
+            "bottom": 2815.265625,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 401.828125
+          },
+          "title": {
+            "top": 2717.4375,
+            "bottom": 2815.265625,
+            "left": 372.328125,
+            "right": 651.65625,
+            "height": 97.828125
+          },
+          "panel": {
+            "top": 2556.4375,
+            "bottom": 2655.625,
+            "left": 382.328125,
+            "right": 641.65625,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 2427.4375,
+            "bottom": 2471.4375,
+            "left": 386.328125,
+            "right": 472.96875,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2413.4375,
+            "bottom": 2893.09375,
+            "left": 701.65625,
+            "right": 981,
+            "height": 479.65625
+          },
+          "title": {
+            "top": 2717.4375,
+            "bottom": 2893.09375,
+            "left": 701.65625,
+            "right": 981,
+            "height": 175.65625
+          },
+          "panel": {
+            "top": 2556.4375,
+            "bottom": 2691.4375,
+            "left": 711.65625,
+            "right": 971,
+            "height": 135
+          },
+          "level": {
+            "top": 2427.4375,
+            "bottom": 2471.4375,
+            "left": 715.65625,
+            "right": 856.625,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 195,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 1440",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 900.03125,
+            "bottom": 1211.3125,
+            "left": 119,
+            "right": 486.328125,
+            "height": 311.28125
+          },
+          "title": {
+            "top": 1140.3125,
+            "bottom": 1211.3125,
+            "left": 119,
+            "right": 486.328125,
+            "height": 71
+          },
+          "panel": {
+            "top": 971.53125,
+            "bottom": 1008.328125,
+            "left": 129,
+            "right": 329.390625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 914.03125,
+            "bottom": 944.03125,
+            "left": 133,
+            "right": 213.484375,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 900.03125,
+            "bottom": 1211.3125,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 311.28125
+          },
+          "title": {
+            "top": 1140.3125,
+            "bottom": 1211.3125,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 71
+          },
+          "panel": {
+            "top": 971.53125,
+            "bottom": 1008.328125,
+            "left": 546.328125,
+            "right": 723.59375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 914.03125,
+            "bottom": 944.03125,
+            "left": 550.328125,
+            "right": 654.140625,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 900.03125,
+            "bottom": 1211.328125,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 311.296875
+          },
+          "title": {
+            "top": 1140.328125,
+            "bottom": 1211.328125,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 71
+          },
+          "panel": {
+            "top": 971.53125,
+            "bottom": 1088.5,
+            "left": 963.65625,
+            "right": 1164.71875,
+            "height": 116.96875
+          },
+          "level": {
+            "top": 914.03125,
+            "bottom": 944.03125,
+            "left": 967.65625,
+            "right": 1085.921875,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 117,
+          "clientHeight": 117,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 1523.515625,
+            "bottom": 1834.796875,
+            "left": 119,
+            "right": 486.328125,
+            "height": 311.28125
+          },
+          "title": {
+            "top": 1763.796875,
+            "bottom": 1834.796875,
+            "left": 119,
+            "right": 486.328125,
+            "height": 71
+          },
+          "panel": {
+            "top": 1595.015625,
+            "bottom": 1631.8125,
+            "left": 129,
+            "right": 325.359375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1537.515625,
+            "bottom": 1567.515625,
+            "left": 133,
+            "right": 207.4375,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 1523.515625,
+            "bottom": 1834.796875,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 311.28125
+          },
+          "title": {
+            "top": 1763.796875,
+            "bottom": 1834.796875,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 71
+          },
+          "panel": {
+            "top": 1595.015625,
+            "bottom": 1631.8125,
+            "left": 546.328125,
+            "right": 739.25,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1537.515625,
+            "bottom": 1567.515625,
+            "left": 550.328125,
+            "right": 603.65625,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 1523.515625,
+            "bottom": 1834.8125,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 311.296875
+          },
+          "title": {
+            "top": 1763.8125,
+            "bottom": 1834.8125,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 71
+          },
+          "panel": {
+            "top": 1595.015625,
+            "bottom": 1665.609375,
+            "left": 963.65625,
+            "right": 1168.84375,
+            "height": 70.59375
+          },
+          "level": {
+            "top": 1537.515625,
+            "bottom": 1567.515625,
+            "left": 967.65625,
+            "right": 1048.140625,
+            "height": 30
+          },
+          "status": null,
+          "scrollHeight": 71,
+          "clientHeight": 71,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 1440",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 1935.578125,
+            "bottom": 2463.578125,
+            "left": 119,
+            "right": 486.328125,
+            "height": 528
+          },
+          "title": {
+            "top": 2239.578125,
+            "bottom": 2463.578125,
+            "left": 119,
+            "right": 486.328125,
+            "height": 224
+          },
+          "panel": {
+            "top": 2078.578125,
+            "bottom": 2177.765625,
+            "left": 129,
+            "right": 476.328125,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 1949.578125,
+            "bottom": 1993.578125,
+            "left": 133,
+            "right": 273.96875,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1935.578125,
+            "bottom": 2463.578125,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 528
+          },
+          "title": {
+            "top": 2239.578125,
+            "bottom": 2463.578125,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 224
+          },
+          "panel": {
+            "top": 2078.578125,
+            "bottom": 2136.171875,
+            "left": 546.328125,
+            "right": 876.84375,
+            "height": 57.59375
+          },
+          "level": {
+            "top": 1949.578125,
+            "bottom": 1993.578125,
+            "left": 550.328125,
+            "right": 737.953125,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 58,
+          "clientHeight": 58,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 1935.578125,
+            "bottom": 2463.578125,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 528
+          },
+          "title": {
+            "top": 2239.578125,
+            "bottom": 2463.578125,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 224
+          },
+          "panel": {
+            "top": 2078.578125,
+            "bottom": 2213.578125,
+            "left": 963.65625,
+            "right": 1311,
+            "height": 135
+          },
+          "level": {
+            "top": 1949.578125,
+            "bottom": 1993.578125,
+            "left": 967.65625,
+            "right": 1184.1875,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 280,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 2994.546875,
+            "bottom": 3522.546875,
+            "left": 119,
+            "right": 486.328125,
+            "height": 528
+          },
+          "title": {
+            "top": 3298.546875,
+            "bottom": 3522.546875,
+            "left": 119,
+            "right": 486.328125,
+            "height": 224
+          },
+          "panel": {
+            "top": 3137.546875,
+            "bottom": 3236.734375,
+            "left": 129,
+            "right": 476.328125,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 3008.546875,
+            "bottom": 3052.546875,
+            "left": 133,
+            "right": 261.859375,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 2994.546875,
+            "bottom": 3420.546875,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 426
+          },
+          "title": {
+            "top": 3298.546875,
+            "bottom": 3420.546875,
+            "left": 536.328125,
+            "right": 903.65625,
+            "height": 122
+          },
+          "panel": {
+            "top": 3137.546875,
+            "bottom": 3236.734375,
+            "left": 546.328125,
+            "right": 893.65625,
+            "height": 99.1875
+          },
+          "level": {
+            "top": 3008.546875,
+            "bottom": 3052.546875,
+            "left": 550.328125,
+            "right": 636.96875,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 99,
+          "clientHeight": 99,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2994.546875,
+            "bottom": 3522.546875,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 528
+          },
+          "title": {
+            "top": 3298.546875,
+            "bottom": 3522.546875,
+            "left": 953.65625,
+            "right": 1321,
+            "height": 224
+          },
+          "panel": {
+            "top": 3137.546875,
+            "bottom": 3272.546875,
+            "left": 963.65625,
+            "right": 1311,
+            "height": 135
+          },
+          "level": {
+            "top": 3008.546875,
+            "bottom": 3052.546875,
+            "left": 967.65625,
+            "right": 1108.625,
+            "height": 44
+          },
+          "status": null,
+          "scrollHeight": 195,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "18 departures on touch",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 442.21875,
+            "bottom": 701.40625,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 634.40625,
+            "bottom": 701.40625,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 513.71875,
+            "bottom": 621.40625,
+            "left": 43,
+            "right": 257.125,
+            "height": 107.6875
+          },
+          "level": {
+            "top": 457.21875,
+            "bottom": 490.609375,
+            "left": 47,
+            "right": 159.1875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 611,
+          "clientHeight": 108,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 320 text 100%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 897.59375,
+            "bottom": 1116.59375,
+            "left": 29,
+            "right": 291,
+            "height": 219
+          },
+          "title": {
+            "top": 1049.59375,
+            "bottom": 1116.59375,
+            "left": 29,
+            "right": 291,
+            "height": 67
+          },
+          "panel": {
+            "top": 969.09375,
+            "bottom": 1036.59375,
+            "left": 39,
+            "right": 253.125,
+            "height": 67.5
+          },
+          "level": {
+            "top": 912.59375,
+            "bottom": 945.984375,
+            "left": 43,
+            "right": 155.1875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 611,
+          "clientHeight": 68,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 320 text 200%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1714.40625,
+            "bottom": 2320.40625,
+            "left": 29,
+            "right": 291,
+            "height": 606
+          },
+          "title": {
+            "top": 2018.40625,
+            "bottom": 2320.40625,
+            "left": 29,
+            "right": 291,
+            "height": 302
+          },
+          "panel": {
+            "top": 1857.40625,
+            "bottom": 1992.40625,
+            "left": 39,
+            "right": 281,
+            "height": 135
+          },
+          "level": {
+            "top": 1729.40625,
+            "bottom": 1809,
+            "left": 43,
+            "right": 171,
+            "height": 79.59375
+          },
+          "status": null,
+          "scrollHeight": 1734,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 768 text 100%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 875.546875,
+            "bottom": 1086.546875,
+            "left": 43,
+            "right": 242.328125,
+            "height": 211
+          },
+          "title": {
+            "top": 1027.546875,
+            "bottom": 1086.546875,
+            "left": 43,
+            "right": 242.328125,
+            "height": 59
+          },
+          "panel": {
+            "top": 947.046875,
+            "bottom": 1014.546875,
+            "left": 53,
+            "right": 232.328125,
+            "height": 67.5
+          },
+          "level": {
+            "top": 888.546875,
+            "bottom": 930.546875,
+            "left": 53,
+            "right": 140.328125,
+            "height": 42
+          },
+          "status": null,
+          "scrollHeight": 986,
+          "clientHeight": 68,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 768 text 200%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1120.234375,
+            "bottom": 1678.234375,
+            "left": 43,
+            "right": 242.328125,
+            "height": 558
+          },
+          "title": {
+            "top": 1424.234375,
+            "bottom": 1678.234375,
+            "left": 43,
+            "right": 242.328125,
+            "height": 254
+          },
+          "panel": {
+            "top": 1263.234375,
+            "bottom": 1398.234375,
+            "left": 53,
+            "right": 232.328125,
+            "height": 135
+          },
+          "level": {
+            "top": 1133.234375,
+            "bottom": 1231.234375,
+            "left": 53,
+            "right": 140.328125,
+            "height": 98
+          },
+          "status": null,
+          "scrollHeight": 2483,
+          "clientHeight": 135,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "native dates without JavaScript",
+      "cards": [
+        {
+          "name": "Hossegor",
+          "media": {
+            "top": 447.21875,
+            "bottom": 706.40625,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 639.40625,
+            "bottom": 706.40625,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 518.71875,
+            "bottom": 555.515625,
+            "left": 43,
+            "right": 243.390625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 462.21875,
+            "bottom": 495.609375,
+            "left": 47,
+            "right": 133.53125,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 913.390625,
+            "bottom": 1172.578125,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 1105.578125,
+            "bottom": 1172.578125,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 984.890625,
+            "bottom": 1021.6875,
+            "left": 43,
+            "right": 220.265625,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 928.390625,
+            "bottom": 961.78125,
+            "left": 47,
+            "right": 159.1875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Marruecos",
+          "media": {
+            "top": 1379.5625,
+            "bottom": 1638.75,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 1571.75,
+            "bottom": 1638.75,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 1451.0625,
+            "bottom": 1558.75,
+            "left": 43,
+            "right": 244.0625,
+            "height": 107.6875
+          },
+          "level": {
+            "top": 1394.5625,
+            "bottom": 1427.953125,
+            "left": 47,
+            "right": 175.09375,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 117,
+          "clientHeight": 108,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Fuerteventura",
+          "media": {
+            "top": 1947.734375,
+            "bottom": 2206.921875,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 2139.921875,
+            "bottom": 2206.921875,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 2019.234375,
+            "bottom": 2056.03125,
+            "left": 43,
+            "right": 239.359375,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 1962.734375,
+            "bottom": 1996.125,
+            "left": 47,
+            "right": 126.875,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Senegal",
+          "media": {
+            "top": 2413.90625,
+            "bottom": 2673.09375,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 2606.09375,
+            "bottom": 2673.09375,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 2485.40625,
+            "bottom": 2522.203125,
+            "left": 43,
+            "right": 235.921875,
+            "height": 36.796875
+          },
+          "level": {
+            "top": 2428.90625,
+            "bottom": 2462.296875,
+            "left": 47,
+            "right": 103.65625,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 37,
+          "clientHeight": 37,
+          "horizontalOverflow": false
+        },
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2880.078125,
+            "bottom": 3139.265625,
+            "left": 33,
+            "right": 357,
+            "height": 259.1875
+          },
+          "title": {
+            "top": 3072.265625,
+            "bottom": 3139.265625,
+            "left": 33,
+            "right": 357,
+            "height": 67
+          },
+          "panel": {
+            "top": 2951.578125,
+            "bottom": 3022.171875,
+            "left": 43,
+            "right": 248.1875,
+            "height": 70.59375
+          },
+          "level": {
+            "top": 2895.078125,
+            "bottom": 2928.46875,
+            "left": 47,
+            "right": 133.53125,
+            "height": 33.390625
+          },
+          "status": null,
+          "scrollHeight": 71,
+          "clientHeight": 71,
+          "horizontalOverflow": false
+        }
+      ]
+    }
+  ]
+}

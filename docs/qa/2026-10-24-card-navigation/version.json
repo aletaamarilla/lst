@@ -1,0 +1,166 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "newSourceFiles": [
+    "scripts/render-departure-rows.mjs"
+  ],
+  "scope": "Listed source/templates/assets and generated views; previous work preserved",
+  "files": [
+    {
+      "path": "scripts/render-departure-rows.mjs",
+      "sha256": "8de4a27f038a0901daad27444a53a182fab789a1fd5fcaa8e8d07ea077c0efe3"
+    },
+    {
+      "path": "scripts/render-home-trips.mjs",
+      "sha256": "686eaa931be366f60b57393812dbcdb6bbe53af15974f56e4b0045dba9f63615"
+    },
+    {
+      "path": "scripts/render-catalog.mjs",
+      "sha256": "24907b210199646185b967c740c7c2464b1833ef2e37d0d4a511d990b3ac09be"
+    },
+    {
+      "path": "scripts/render-level-trips.mjs",
+      "sha256": "f38271e9632b81f50db4bdb7ad3a479eefd25d4e17c1f81d61908471be755b97"
+    },
+    {
+      "path": "scripts/render-trips.mjs",
+      "sha256": "3e9deb8c17b8d2a385831a3516b1d4f3c734799e4812a3a7243a49aeea2de45d"
+    },
+    {
+      "path": "scripts/home-trips.test.mjs",
+      "sha256": "1217df8ce3ef273f6f518abcee354ebb8e266b062967d1ed6af49e209c265287"
+    },
+    {
+      "path": "scripts/check-home-browser.mjs",
+      "sha256": "2fa84f9a86905611000b14ff7a024ae025a93a37db8041e98c446f2402897747"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "0e22dc9fd3d848ed0d27bf52f841f446f3d67fafcd34d22c5dfecb560ef6d7d7"
+    },
+    {
+      "path": "dist/home.css",
+      "sha256": "5d0671eb4f3b44231b3fc219524a4835011977b433c423075ccfb40c5be76a6f"
+    },
+    {
+      "path": "dist/home.js",
+      "sha256": "4fe0c5c5a0f3d88216da7a7dda1b454a2c08375d8e220924d97d763f78fa2c91"
+    },
+    {
+      "path": "dist/styles.css",
+      "sha256": "93a80d643d1d88b366f1e2c8a2011edde989ea980ba3f53acefa919d133990c7"
+    },
+    {
+      "path": "dist/mobile.css",
+      "sha256": "7fb0639a7fff177d6e12f91066ec4843045c9a572b1eab5906a4672d3d14f83a"
+    },
+    {
+      "path": "dist/catalog.css",
+      "sha256": "4f52e4f99e765620a5d9972282e9a8f7fda498531d7def0a1ebb3dc163ceffee"
+    },
+    {
+      "path": "dist/about.css",
+      "sha256": "5c4e05d9ab720b2c3a1173096ec559db9c6a474feccc4f2f7835a9771e498ff9"
+    },
+    {
+      "path": "dist/faq.css",
+      "sha256": "a91513ed07a4c57468bfe86d412d2f6f009e54cd011f274750de15ef8ba5fa66"
+    },
+    {
+      "path": "dist/levels.css",
+      "sha256": "68a9f92d6eb12b1cd4b8938ce46c73287d9d5c741801ffccc169ff8ecad453df"
+    },
+    {
+      "path": "dist/trip.css",
+      "sha256": "234d33645809254b0092ea1baf699f47f1e91094600dff8872533488db4da08a"
+    },
+    {
+      "path": "dist/catalog-snapshot.json",
+      "sha256": "e68265fb86ac95666b33336f099b916d4bf5f41a4517f354800160c5d471f25a"
+    },
+    {
+      "path": "dist/viajes/index.html",
+      "sha256": "08ebb0fa13c89279e19af4cd42bc202b755e98dc5c21e6c5228c147b8cd11cd9"
+    },
+    {
+      "path": "dist/niveles/index.html",
+      "sha256": "60caebc05dc2bf2977ebe43be79a7d0600b344752dc5e15f39e1eeb9e12340a5"
+    },
+    {
+      "path": "dist/viajes/asturias/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "dist/viajes/azores/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "dist/viajes/cadiz/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "dist/viajes/el-palmar/index.html",
+      "sha256": "d6c552008fee99e8124b3c0bd04f5aa03e4051b74d4c93c36039c8ed64271817"
+    },
+    {
+      "path": "dist/viajes/el-palmar-2026-12-04/index.html",
+      "sha256": "d6c552008fee99e8124b3c0bd04f5aa03e4051b74d4c93c36039c8ed64271817"
+    },
+    {
+      "path": "dist/viajes/el-salvador/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "dist/viajes/euskadi/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "dist/viajes/fuerteventura/index.html",
+      "sha256": "05eadde847358284b003293d743f95cd61c9fb4973dd43409f76c8ba52b64c56"
+    },
+    {
+      "path": "dist/viajes/fuerteventura-2027-02-12/index.html",
+      "sha256": "05eadde847358284b003293d743f95cd61c9fb4973dd43409f76c8ba52b64c56"
+    },
+    {
+      "path": "dist/viajes/hossegor/index.html",
+      "sha256": "d0db6c8da244a5de810efad4e96081fba0afb29f1a54c0a45876c974bbc25aa7"
+    },
+    {
+      "path": "dist/viajes/hossegor-2026-11-20/index.html",
+      "sha256": "d0db6c8da244a5de810efad4e96081fba0afb29f1a54c0a45876c974bbc25aa7"
+    },
+    {
+      "path": "dist/viajes/maldivas/index.html",
+      "sha256": "d9d75e9282d84b5282ae08041ac2f20fe283ada76fa8c81db63a76c87fae1628"
+    },
+    {
+      "path": "dist/viajes/maldivas-2027-03-21/index.html",
+      "sha256": "d9d75e9282d84b5282ae08041ac2f20fe283ada76fa8c81db63a76c87fae1628"
+    },
+    {
+      "path": "dist/viajes/maldivas-2027-03-28/index.html",
+      "sha256": "d9d75e9282d84b5282ae08041ac2f20fe283ada76fa8c81db63a76c87fae1628"
+    },
+    {
+      "path": "dist/viajes/marruecos/index.html",
+      "sha256": "25a602ce1c5a2394e48dccca8281c0fd9c2bb0cc50bb32d1adf5cec0f7068cda"
+    },
+    {
+      "path": "dist/viajes/marruecos-2027-01-17/index.html",
+      "sha256": "25a602ce1c5a2394e48dccca8281c0fd9c2bb0cc50bb32d1adf5cec0f7068cda"
+    },
+    {
+      "path": "dist/viajes/marruecos-2027-01-24/index.html",
+      "sha256": "25a602ce1c5a2394e48dccca8281c0fd9c2bb0cc50bb32d1adf5cec0f7068cda"
+    },
+    {
+      "path": "dist/viajes/senegal/index.html",
+      "sha256": "70be7d3f8d8132a2a3cad397e08315b52e778e934b185bc170bcdeaa999677e6"
+    },
+    {
+      "path": "dist/viajes/senegal-2027-02-28/index.html",
+      "sha256": "70be7d3f8d8132a2a3cad397e08315b52e778e934b185bc170bcdeaa999677e6"
+    }
+  ]
+}

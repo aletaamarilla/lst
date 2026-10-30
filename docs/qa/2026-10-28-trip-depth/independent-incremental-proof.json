@@ -1,0 +1,17 @@
+{
+  "scripts/render-trips.mjs": {
+    "reconstructedPreviousSha256": "f171783d8cb4144efb14edb07acbaa89e76488733319a97734e1f3b417eaf818",
+    "previousReviewedSha256": "f171783d8cb4144efb14edb07acbaa89e76488733319a97734e1f3b417eaf818",
+    "matches": true
+  },
+  "dist/trip-detail.css": {
+    "reconstructedPreviousSha256": "3c8561727fa1b358f29f6b3517e3aff5dd3fe77aa51263c69eb65e8a89ff31df",
+    "previousReviewedSha256": "3c8561727fa1b358f29f6b3517e3aff5dd3fe77aa51263c69eb65e8a89ff31df",
+    "matches": true
+  },
+  "scripts/trip-depth.test.mjs": {
+    "reconstructedPreviousSha256": "be6a70bb4ab6a4ff7e113039e9c213df804876135ba27739634693d85caf77cd",
+    "previousReviewedSha256": "be6a70bb4ab6a4ff7e113039e9c213df804876135ba27739634693d85caf77cd",
+    "matches": true
+  }
+}

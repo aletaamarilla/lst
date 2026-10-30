@@ -1,0 +1,22 @@
+--- before/dist/home.css
++++ candidate/dist/home.css
+@@ -83,7 +83,7 @@
+ body.home-modern .home-trip-dates[open] .dates-label-open{display:inline}
+ body.home-modern .home-trip-dates[open] .dates-label-closed{display:none}
+ body.home-modern .home-trip-dates-panel{position:absolute;z-index:3;top:5.5em;left:10px;width:calc(100% - 20px);max-width:calc(100% - 20px);max-height:calc(100% - 6.5em);overflow:auto;overscroll-behavior:contain;overflow-wrap:anywhere;padding:0;border:0;border-radius:10px;background:rgba(255,250,231,.78);backdrop-filter:blur(8px);color:var(--lst-ink);font-size:13px;font-variant-numeric:tabular-nums;line-height:1.6;pointer-events:auto}
+-body.home-modern .home-trip-departures{margin:0;padding:0;list-style:none}
++body.home-modern .home-trip-departures{margin:0;padding:0;border:0;list-style:none}
+ body.home-modern .home-trip-departures li{display:grid;grid-template-columns:minmax(0,1fr) fit-content(42%);align-items:center;gap:12px;padding-block:9px;border-top:0}
+ body.home-modern .home-trip-departures li>span:last-child{font-weight:500}
+ body.home-modern .home-more-trips{margin-top:30px;border-block:1px solid var(--lst-line)}
+--- before/scripts/check-home-browser.mjs
++++ candidate/scripts/check-home-browser.mjs
+@@ -84,7 +84,7 @@
+   ok(await page.locator('.home-trip-dates-panel').evaluateAll(es=>es.every(e=>e.children.length===1&&e.firstElementChild.matches('a.home-trip-dates-link')&&!!e.querySelector('ul')&&!e.textContent.includes('€'))),'date overlays contain only the departure list');
+   ok(await page.locator('.lst-whatsapp').evaluate(e=>e.href.startsWith('https://wa.me/34648189257?')&&e.querySelector('svg')?.getAttribute('aria-hidden')==='true'&&e.textContent.includes('Escríbenos al')),'level help goes directly to WhatsApp with a decorative icon');
+   ok(await page.locator('main a:not(.home-trip-link):not(.home-trip-dates-link):not(.lst-level-card)').evaluateAll(es=>es.every(e=>{const s=getComputedStyle(e);return parseFloat(s.borderTopWidth)>0&&parseFloat(s.minHeight)>=44&&!s.textDecorationLine.includes('underline');})),'text action targets remain at least 44px');
+-  ok(await page.locator('.home-trip-departures li').evaluateAll(es=>es.every(e=>parseFloat(getComputedStyle(e).borderTopWidth)===0)),'trip departure lists have no separator lines');
++  ok(await page.locator('.home-trip-departures,.home-trip-departures li').evaluateAll(es=>es.length>0&&es.every(e=>{const s=getComputedStyle(e);return ['borderTopWidth','borderBottomWidth','borderLeftWidth','borderRightWidth'].every(side=>parseFloat(s[side])===0);})), 'trip departure lists and their rows have no borders');
+   ok(await page.locator('.lst-level-cta').evaluateAll(es=>es.length===4&&es.every(e=>getComputedStyle(e).backgroundColor==='rgb(27, 27, 27)'&&e.querySelector('[aria-hidden=true]'))),'level trip actions have a solid primary treatment and decorative direction icons');
+   const focusFailures=await page.evaluate(()=>{const details=[...document.querySelectorAll('.lst-faq-list details')],states=details.map(e=>e.open);details.forEach(e=>e.open=true);const failures=[...document.querySelectorAll('.lst-levels a,.faq a,.faq summary')].map(e=>{e.focus();const s=getComputedStyle(e);return {text:e.textContent.slice(0,50),visibleFocus:e.matches(':focus-visible'),active:e===document.activeElement,color:s.outlineColor,expected:e.closest('.lst-level-intro')||e.matches('.lst-faq-list summary')?'rgb(255, 250, 231)':'rgb(27, 27, 27)',width:s.outlineWidth};}).filter(s=>!s.visibleFocus||!s.active||s.color!==s.expected||parseFloat(s.width)<3);details.forEach((e,i)=>e.open=states[i]);return failures;});
+   ok(focusFailures.length===0,'photographic and ink headings retain a readable keyboard focus: '+JSON.stringify(focusFailures));

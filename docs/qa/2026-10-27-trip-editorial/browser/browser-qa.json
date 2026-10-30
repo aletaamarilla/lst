@@ -1,0 +1,189 @@
+{
+  "sizes": [
+    {
+      "slug": "marruecos",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 390,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 1024,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 1440,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 1440,
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "interactions": [
+    "native touch swipe on activities",
+    "spots and stay keyboard scrolling",
+    "mobile registration route",
+    "date PDFs, Escape and focus return",
+    "cover last slide retains keyboard focus",
+    "photo modal focus return",
+    "no-JS dates and native fallback"
+  ]
+}

@@ -84,8 +84,8 @@ html:has(.minimal-cover){scroll-padding-top:calc(var(--home-header-height,70px) 
 .minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) .brand-dark{display:block}
 .minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) .menu-toggle span{background:var(--ink)}
 .minimal-cover .site-header:is(.is-scrolled,:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--ink)}
-.minimal-cover .site-header.is-scrolled .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
-.minimal-cover .site-header.is-scrolled .header-cta:hover{background:var(--ink);color:var(--paper)}
+
+
 
 /* Keep the contact in the disclosure until the full header fits. */
 .minimal-cover .site-header nav .nav-whatsapp{display:none}
@@ -97,7 +97,7 @@ html:has(.minimal-cover){scroll-padding-top:calc(var(--home-header-height,70px) 
  .minimal-cover .site-header nav{display:none;position:absolute;top:100%;inset-inline:0;margin:0;padding:12px 20px 20px;gap:0;flex-direction:column;background:var(--paper);color:var(--ink);border-bottom:1px solid var(--ink);max-height:calc(100dvh - 70px);overflow-y:auto;overscroll-behavior:contain}
  .minimal-cover .site-header nav.is-open{display:flex}
  .minimal-cover .site-header nav a{min-height:48px;padding:10px 0;font-size:16px;white-space:normal}
- .minimal-cover .site-header nav .nav-whatsapp{display:flex;margin-top:12px;padding:12px 16px;text-align:center}
+ .minimal-cover .site-header nav .nav-whatsapp{display:flex;justify-content:flex-start;margin-top:12px;padding:10px 0;text-align:left}
 }
 /* Allow enlarged text to reflow instead of forcing columns wider. */
 .minimal-cover{overflow-wrap:anywhere}
@@ -186,5 +186,5 @@ html:has(.minimal-cover){scroll-padding-top:calc(var(--home-header-height,70px) 
 .minimal-cover:has(.static-navigation) .site-header .brand-light{display:none}
 .minimal-cover:has(.static-navigation) .site-header .brand-dark{display:block}
 .minimal-cover:has(.static-navigation) .site-header :is(.menu-toggle,.header-levels){display:none}
-.minimal-cover:has(.static-navigation) .site-header .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
+
 .minimal-cover:has(.static-navigation) .site-header :is(a,button):focus-visible{outline-color:var(--ink)}

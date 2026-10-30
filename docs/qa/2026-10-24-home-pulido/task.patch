@@ -1,0 +1,381 @@
+diff --git a/docs/qa/2026-10-24-home-pulido/before/index.html b/dist/index.html
+index ec0c04e..72ef047 100644
+--- a/docs/qa/2026-10-24-home-pulido/before/index.html
++++ b/dist/index.html
+@@ -1,68 +1,64 @@
+ <!doctype html>
+ <html lang="es"><head>
+-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Viajes de surf en grupo para aprender, descubrir lugares y compartir el camino. Encuentra tu próxima salida con Let's Surf Together."><meta name="theme-color" content="#FFFAE7"><title>Let's Surf Together — Vas por las olas. Vuelves por la gente.</title>
++<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Viajes de surf en grupo para aprender, descubrir lugares y compartir el camino. Encuentra tu próxima salida con Let's Surf Together."><meta name="theme-color" content="#FFFAE7"><title>Let's Surf Together — ¿Te vienes a surfear?</title>
+ <link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"></head>
+ <body class="home-modern"><a class="skip-link" href="#contenido">Saltar al contenido</a>
+ <header class="site-header lst-width"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="#viajes">Ver viajes <span aria-hidden="true">↗</span></a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos <span aria-hidden="true">↗</span></a></nav></header>
+ <noscript><nav class="static-navigation lst-width" aria-label="Navegación sin JavaScript"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav></noscript>
+ <main id="contenido">
+-<section class="lst-hero" aria-labelledby="hero-title"><img class="lst-hero-photo" src="/assets/home/francia-atardecer.webp" width="1500" height="1000" alt="Dos personas bajan hacia el mar con sus tablas en un viaje de LST a Francia" fetchpriority="high" decoding="async"><div class="lst-hero-shade" aria-hidden="true"></div><div class="lst-hero-copy lst-width"><p class="lst-eyebrow">Viajes de surf. Gente como tú.</p><h1 id="hero-title">Vas por las olas.<br>Vuelves por<br><em>la gente.</em></h1><p class="lst-hero-description">Viajes de surf en grupo para progresar, descubrir el lugar y compartir la aventura. Ven por tu cuenta; el grupo te espera.</p><div class="lst-hero-actions"><a class="lst-button" href="#viajes">Ver próximos viajes <span aria-hidden="true">↗</span></a><a class="lst-link" href="#experiencia">Así viajamos <span aria-hidden="true">↓</span></a></div></div><div class="lst-hero-meta lst-width"><span>Francia · un recuerdo de LST.</span><span>Nos vemos en el pico.</span></div></section>
+-<div class="lst-manifesto lst-width"><span>Un viaje de surf, a nuestra manera.</span><p>Aprender en el agua. Compartir fuera. Respetar el lugar.</p><img class="lst-manifesto-symbol" src="/assets/brand/symbol-orange.svg" width="72" height="45" alt="" aria-hidden="true"></div>
+-<section class="lst-trips lst-width lst-section" id="viajes" aria-labelledby="trips-title"><header class="lst-section-header"><div><p class="lst-eyebrow">El próximo baño empieza aquí</p><h2 id="trips-title">¿Dónde nos vemos?</h2></div><a class="lst-link" href="/viajes/">Todos los viajes <span aria-hidden="true">↗</span></a></header><p class="lst-section-intro">Próximas salidas. Encuentra tu destino, tus fechas y tu nivel.</p>
++<section class="lst-hero" aria-labelledby="hero-title"><img class="lst-hero-photo" src="/assets/home/francia-atardecer.webp" width="1500" height="1000" alt="Dos personas bajan hacia el mar con sus tablas en un viaje de LST a Francia" fetchpriority="high" decoding="async"><div class="lst-hero-shade" aria-hidden="true"></div><div class="lst-hero-copy lst-width"><p class="lst-eyebrow">Viajes de surf en grupo</p><h1 id="hero-title">¿Te vienes<br>a surfear?</h1><div class="lst-hero-actions"><a class="lst-button" href="#viajes">Ver viajes <span aria-hidden="true">↗</span></a></div></div><div class="lst-hero-meta lst-width"><span>Francia · un recuerdo de LST.</span></div></section>
++<section class="lst-trips lst-width lst-section" id="viajes" aria-labelledby="trips-title"><header class="lst-section-header"><div><h2 id="trips-title">Próximos destinos</h2></div><a class="lst-link" href="/viajes/">Todos los viajes <span aria-hidden="true">↗</span></a></header><p class="lst-section-intro">Consulta las fechas, el precio y los niveles de cada viaje.</p>
+ <!-- home-trips:start -->
+ <div id="trip-content" class="home-trip-grid"><article class="home-trip" aria-labelledby="trip-hossegor-2026-11-20-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg" alt="Hossegor · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Niveles II–III</span><h3 id="trip-hossegor-2026-11-20-title">Hossegor</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Hossegor"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Hossegor"><p class="home-trip-dates-title">Hossegor</p><ul class="home-trip-departures"><li><span>20 nov 2026 — 22 nov 2026</span><span>399 €</span></li></ul><p class="home-trip-requirement">Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-hossegor-2026-11-20-facts">20 nov 2026 — 22 nov 2026<small>Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.</small></p><a class="home-trip-link" aria-describedby="trip-hossegor-2026-11-20-facts" href="/viajes/hossegor-2026-11-20/" aria-labelledby="trip-hossegor-2026-11-20-action trip-hossegor-2026-11-20-title"><span class="home-trip-action" id="trip-hossegor-2026-11-20-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">399 €<small>por persona</small></span></a></article>
++</div><p class="home-trip-preview" id="trip-hossegor-2026-11-20-facts">20 nov 2026 — 22 nov 2026</p><a class="home-trip-link" aria-describedby="trip-hossegor-2026-11-20-facts" href="/viajes/hossegor-2026-11-20/" aria-labelledby="trip-hossegor-2026-11-20-action trip-hossegor-2026-11-20-title"><span class="home-trip-action" id="trip-hossegor-2026-11-20-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">399 €<small>por persona</small></span></a></article>
+ <article class="home-trip" aria-labelledby="trip-el-palmar-2026-12-04-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg" alt="El Palmar · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Todos los niveles</span><h3 id="trip-el-palmar-2026-12-04-title">El Palmar</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de El Palmar"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de El Palmar"><p class="home-trip-dates-title">El Palmar</p><ul class="home-trip-departures"><li><span>4 dic 2026 — 8 dic 2026</span><span>699 €</span></li></ul><p class="home-trip-requirement">Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-el-palmar-2026-12-04-facts">4 dic 2026 — 8 dic 2026<small>Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).</small></p><a class="home-trip-link" aria-describedby="trip-el-palmar-2026-12-04-facts" href="/viajes/el-palmar-2026-12-04/" aria-labelledby="trip-el-palmar-2026-12-04-action trip-el-palmar-2026-12-04-title"><span class="home-trip-action" id="trip-el-palmar-2026-12-04-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">699 €<small>por persona</small></span></a></article>
++</div><p class="home-trip-preview" id="trip-el-palmar-2026-12-04-facts">4 dic 2026 — 8 dic 2026</p><a class="home-trip-link" aria-describedby="trip-el-palmar-2026-12-04-facts" href="/viajes/el-palmar-2026-12-04/" aria-labelledby="trip-el-palmar-2026-12-04-action trip-el-palmar-2026-12-04-title"><span class="home-trip-action" id="trip-el-palmar-2026-12-04-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">699 €<small>por persona</small></span></a></article>
+ <article class="home-trip" aria-labelledby="trip-marruecos-2027-01-17-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg" alt="Marruecos · nivel 1–2 · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Niveles I–II</span><h3 id="trip-marruecos-2027-01-17-title">Marruecos · nivel 1–2</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Marruecos · nivel 1–2"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Marruecos · nivel 1–2"><p class="home-trip-dates-title">Marruecos · nivel 1–2</p><ul class="home-trip-departures"><li><span>17 ene 2027 — 24 ene 2027</span><span>899 €</span></li></ul><p class="home-trip-requirement">Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-marruecos-2027-01-17-facts">17 ene 2027 — 24 ene 2027<small>Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.</small></p><a class="home-trip-link" aria-describedby="trip-marruecos-2027-01-17-facts" href="/viajes/marruecos-2027-01-17/" aria-labelledby="trip-marruecos-2027-01-17-action trip-marruecos-2027-01-17-title"><span class="home-trip-action" id="trip-marruecos-2027-01-17-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">899 €<small>por persona</small></span></a></article></div><details class="home-more-trips"><summary>Más viajes <span>5 viajes <span aria-hidden="true">↓</span></span></summary><div class="home-trip-grid"><article class="home-trip" aria-labelledby="trip-marruecos-2027-01-24-title">
++</div><p class="home-trip-preview" id="trip-marruecos-2027-01-17-facts">17 ene 2027 — 24 ene 2027</p><a class="home-trip-link" aria-describedby="trip-marruecos-2027-01-17-facts" href="/viajes/marruecos-2027-01-17/" aria-labelledby="trip-marruecos-2027-01-17-action trip-marruecos-2027-01-17-title"><span class="home-trip-action" id="trip-marruecos-2027-01-17-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">899 €<small>por persona</small></span></a></article></div><details class="home-more-trips"><summary>Más viajes <span>5 viajes <span aria-hidden="true">↓</span></span></summary><div class="home-trip-grid"><article class="home-trip" aria-labelledby="trip-marruecos-2027-01-24-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg" alt="Marruecos · nivel 3 · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Nivel III</span><h3 id="trip-marruecos-2027-01-24-title">Marruecos · nivel 3</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Marruecos · nivel 3"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Marruecos · nivel 3"><p class="home-trip-dates-title">Marruecos · nivel 3</p><ul class="home-trip-departures"><li><span>24 ene 2027 — 31 ene 2027</span><span>899 €</span></li></ul><p class="home-trip-requirement">Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-marruecos-2027-01-24-facts">24 ene 2027 — 31 ene 2027<small>Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.</small></p><a class="home-trip-link" aria-describedby="trip-marruecos-2027-01-24-facts" href="/viajes/marruecos-2027-01-24/" aria-labelledby="trip-marruecos-2027-01-24-action trip-marruecos-2027-01-24-title"><span class="home-trip-action" id="trip-marruecos-2027-01-24-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">899 €<small>por persona</small></span></a></article>
++</div><p class="home-trip-preview" id="trip-marruecos-2027-01-24-facts">24 ene 2027 — 31 ene 2027</p><a class="home-trip-link" aria-describedby="trip-marruecos-2027-01-24-facts" href="/viajes/marruecos-2027-01-24/" aria-labelledby="trip-marruecos-2027-01-24-action trip-marruecos-2027-01-24-title"><span class="home-trip-action" id="trip-marruecos-2027-01-24-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">899 €<small>por persona</small></span></a></article>
+ <article class="home-trip" aria-labelledby="trip-fuerteventura-2027-02-12-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044.jpg" alt="Fuerteventura · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Niveles I–II</span><h3 id="trip-fuerteventura-2027-02-12-title">Fuerteventura</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Fuerteventura"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Fuerteventura"><p class="home-trip-dates-title">Fuerteventura</p><ul class="home-trip-departures"><li><span>12 feb 2027 — 16 feb 2027</span><span>699 €</span></li></ul><p class="home-trip-requirement">Iniciación e intermedio; 2 grupos según nivel.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-fuerteventura-2027-02-12-facts">12 feb 2027 — 16 feb 2027<small>Iniciación e intermedio; 2 grupos según nivel.</small></p><a class="home-trip-link" aria-describedby="trip-fuerteventura-2027-02-12-facts" href="/viajes/fuerteventura-2027-02-12/" aria-labelledby="trip-fuerteventura-2027-02-12-action trip-fuerteventura-2027-02-12-title"><span class="home-trip-action" id="trip-fuerteventura-2027-02-12-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">699 €<small>por persona</small></span></a></article>
++</div><p class="home-trip-preview" id="trip-fuerteventura-2027-02-12-facts">12 feb 2027 — 16 feb 2027</p><a class="home-trip-link" aria-describedby="trip-fuerteventura-2027-02-12-facts" href="/viajes/fuerteventura-2027-02-12/" aria-labelledby="trip-fuerteventura-2027-02-12-action trip-fuerteventura-2027-02-12-title"><span class="home-trip-action" id="trip-fuerteventura-2027-02-12-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">699 €<small>por persona</small></span></a></article>
+ <article class="home-trip" aria-labelledby="trip-senegal-2027-02-28-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044.jpg" alt="Senegal · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Nivel II</span><h3 id="trip-senegal-2027-02-28-title">Senegal</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Senegal"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Senegal"><p class="home-trip-dates-title">Senegal</p><ul class="home-trip-departures"><li><span>28 feb 2027 — 7 mar 2027</span><span>1.299 €</span></li></ul><p class="home-trip-requirement">Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-senegal-2027-02-28-facts">28 feb 2027 — 7 mar 2027<small>Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.</small></p><a class="home-trip-link" aria-describedby="trip-senegal-2027-02-28-facts" href="/viajes/senegal-2027-02-28/" aria-labelledby="trip-senegal-2027-02-28-action trip-senegal-2027-02-28-title"><span class="home-trip-action" id="trip-senegal-2027-02-28-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">1.299 €<small>por persona</small></span></a></article>
++</div><p class="home-trip-preview" id="trip-senegal-2027-02-28-facts">28 feb 2027 — 7 mar 2027</p><a class="home-trip-link" aria-describedby="trip-senegal-2027-02-28-facts" href="/viajes/senegal-2027-02-28/" aria-labelledby="trip-senegal-2027-02-28-action trip-senegal-2027-02-28-title"><span class="home-trip-action" id="trip-senegal-2027-02-28-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">1.299 €<small>por persona</small></span></a></article>
+ <article class="home-trip" aria-labelledby="trip-maldivas-2027-03-21-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg" alt="Maldivas · Semana Santa · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Niveles II–III</span><h3 id="trip-maldivas-2027-03-21-title">Maldivas · Semana Santa</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Maldivas · Semana Santa"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Maldivas · Semana Santa"><p class="home-trip-dates-title">Maldivas · Semana Santa</p><ul class="home-trip-departures"><li><span>21 mar 2027 — 28 mar 2027</span><span>1.499 €</span></li></ul><p class="home-trip-requirement">Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-maldivas-2027-03-21-facts">21 mar 2027 — 28 mar 2027<small>Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.</small></p><a class="home-trip-link" aria-describedby="trip-maldivas-2027-03-21-facts" href="/viajes/maldivas-2027-03-21/" aria-labelledby="trip-maldivas-2027-03-21-action trip-maldivas-2027-03-21-title"><span class="home-trip-action" id="trip-maldivas-2027-03-21-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">1.499 €<small>por persona</small></span></a></article>
++</div><p class="home-trip-preview" id="trip-maldivas-2027-03-21-facts">21 mar 2027 — 28 mar 2027</p><a class="home-trip-link" aria-describedby="trip-maldivas-2027-03-21-facts" href="/viajes/maldivas-2027-03-21/" aria-labelledby="trip-maldivas-2027-03-21-action trip-maldivas-2027-03-21-title"><span class="home-trip-action" id="trip-maldivas-2027-03-21-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">1.499 €<small>por persona</small></span></a></article>
+ <article class="home-trip" aria-labelledby="trip-maldivas-2027-03-28-title">
+ <div class="home-trip-media"><img class="home-trip-photo" src="https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg" alt="Maldivas · Pascua · fotografía del dossier de LST" width="1000" height="600" loading="lazy" decoding="async">
+ <span class="home-trip-level">Niveles II–III</span><h3 id="trip-maldivas-2027-03-28-title">Maldivas · Pascua</h3>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Maldivas · Pascua"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de Maldivas · Pascua"><p class="home-trip-dates-title">Maldivas · Pascua</p><ul class="home-trip-departures"><li><span>28 mar 2027 — 4 abr 2027</span><span>1.499 €</span></li></ul><p class="home-trip-requirement">Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.</p><p class="home-trip-date-note">Plazas disponibles · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-maldivas-2027-03-28-facts">28 mar 2027 — 4 abr 2027<small>Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.</small></p><a class="home-trip-link" aria-describedby="trip-maldivas-2027-03-28-facts" href="/viajes/maldivas-2027-03-28/" aria-labelledby="trip-maldivas-2027-03-28-action trip-maldivas-2027-03-28-title"><span class="home-trip-action" id="trip-maldivas-2027-03-28-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">1.499 €<small>por persona</small></span></a></article></div></details>
++</div><p class="home-trip-preview" id="trip-maldivas-2027-03-28-facts">28 mar 2027 — 4 abr 2027</p><a class="home-trip-link" aria-describedby="trip-maldivas-2027-03-28-facts" href="/viajes/maldivas-2027-03-28/" aria-labelledby="trip-maldivas-2027-03-28-action trip-maldivas-2027-03-28-title"><span class="home-trip-action" id="trip-maldivas-2027-03-28-action">Ver viaje <span aria-hidden="true">↗</span></span><span class="home-trip-price">1.499 €<small>por persona</small></span></a></article></div></details>
+ <!-- home-trips:end -->
+ <p class="lst-trip-note">El programa, las inclusiones y las condiciones de cada salida están en su ficha.</p></section>
+-<section class="lst-experience lst-section" id="experiencia" aria-labelledby="experience-title"><div class="lst-width"><div class="lst-experience-heading"><p class="lst-eyebrow">La forma LST de viajar</p><h2 id="experience-title">Puedes venir por tu cuenta.<br><em>El plan lo compartimos.</em></h2><p>Un grupo que empieza sin conocerse. Conversaciones entre baños. Y ganas de volver al agua al día siguiente.</p></div><div class="lst-experience-layout"><figure class="lst-memory lst-memory-main"><img src="/assets/home/cantabria-sesion.webp" width="900" height="600" alt="Una instructora y el grupo practican la puesta en pie sobre sus tablas en la arena" loading="lazy" decoding="async"><figcaption>Aprendiendo juntos · Cantabria, viaje anterior</figcaption></figure><div class="lst-experience-copy"><article><span class="lst-small-index">01 / EN EL AGUA</span><h3>Cada uno, desde su punto.</h3><p>Hay viajes para empezar y viajes para seguir progresando. Elegimos contigo el que encaja con tu surf.</p></article><article><span class="lst-small-index">02 / ENTRE BAÑOS</span><h3>También se viaja fuera del mar.</h3><p>Compartir mesa, descubrir el entorno y alargar la charla. Esos ratos también hacen el viaje.</p></article><article><span class="lst-small-index">03 / EN CADA LUGAR</span><h3>Somos invitados.</h3><p>Respeto al océano, a quienes surfean allí y a las costumbres del lugar. Dentro y fuera del agua.</p></article><a class="lst-link" href="/conocenos/#asi-viajamos">Más sobre nuestra forma de viajar <span aria-hidden="true">↗</span></a></div></div></div></section>
+-<section class="lst-testimonials lst-width lst-section" id="opiniones" aria-labelledby="reviews-title"><header class="lst-section-header"><div><p class="lst-eyebrow">Voces de quienes ya han viajado</p><h2 id="reviews-title">Ya se han venido.</h2></div></header><div class="lst-quote-grid"><figure><span class="lst-small-index">LLEGAR POR TU CUENTA</span><blockquote><p>«[…] y muchos de nosotros íbamos solos!»</p></blockquote><figcaption><strong>Laura</strong><span>Marruecos · viaje anterior</span></figcaption></figure><figure><span class="lst-small-index">APRENDER CON EL GRUPO</span><blockquote><p>«[…] ver los fallos y aprender entre todos.»</p></blockquote><figcaption><strong>Ainhoa</strong><span>Viajera de LST</span></figcaption></figure></div><p class="lst-reviews-note">Extractos de experiencias anteriores. <a href="https://www.letsurftogether.com/" target="_blank" rel="noopener noreferrer">Ver las opiniones publicadas en LST <span aria-hidden="true">↗</span></a></p></section>
+-<section class="lst-levels lst-width lst-section" id="niveles" aria-labelledby="levels-title"><header class="lst-section-header"><div><p class="lst-eyebrow">Hay un punto de partida para cada uno</p><h2 id="levels-title">Tu surf tiene su sitio.</h2></div><a class="lst-link" href="/niveles/">Ver la guía de niveles <span aria-hidden="true">↗</span></a></header><p class="lst-section-intro">Desde tu primera espuma hasta afinar tus giros. Cada viaje indica para qué niveles está pensado.</p><div class="lst-level-grid">
++<section class="lst-experience lst-section" id="experiencia" aria-labelledby="experience-title"><div class="lst-width"><div class="lst-experience-heading"><p class="lst-eyebrow">Viajar con LST</p><h2 id="experience-title">Surfear y pasar<br>unos días juntos.</h2><p>Te puedes apuntar aunque no conozcas a nadie. Compartimos las sesiones, las comidas y los ratos libres del viaje. Es una buena forma de ir conociendo al grupo.</p></div><div class="lst-experience-layout"><figure class="lst-memory lst-memory-main"><img src="/assets/home/cantabria-sesion.webp" width="900" height="600" alt="Una instructora y el grupo practican la puesta en pie sobre sus tablas en la arena" loading="lazy" decoding="async"><figcaption>Aprendiendo juntos · Cantabria, viaje anterior</figcaption></figure><div class="lst-experience-copy"><article><h3>Surf según tu nivel.</h3><p>Hay salidas para empezar y otras para quienes ya tienen experiencia. Si no tienes claro cuál te conviene, lo hablamos contigo.</p></article><article><h3>Tiempo para conocernos.</h3><p>Entre una sesión y otra comemos juntos, charlamos y hacemos los planes del viaje. Cada destino tiene su propio programa.</p></article><article><h3>Respeto dentro y fuera del agua.</h3><p>Nos adaptamos a las costumbres del lugar y respetamos a la gente que surfea allí.</p></article><a class="lst-link" href="/conocenos/#asi-viajamos">Conoce LST <span aria-hidden="true">↗</span></a></div></div></div></section>
++<section class="lst-testimonials lst-section" id="opiniones" aria-labelledby="reviews-title"><div class="lst-width"><header class="lst-section-header"><div><h2 id="reviews-title">Lo que opina la gente que ha viajado</h2></div></header><div class="lst-quote-grid"><figure><span class="lst-small-index">Viajar por tu cuenta</span><blockquote><p>«[…] y muchos de nosotros íbamos solos!»</p></blockquote><figcaption><strong>Laura</strong><span>Marruecos · viaje anterior</span></figcaption></figure><figure><span class="lst-small-index">Aprender en grupo</span><blockquote><p>«[…] ver los fallos y aprender entre todos.»</p></blockquote><figcaption><strong>Ainhoa</strong><span>Viajera de LST</span></figcaption></figure></div><p class="lst-reviews-note">Extractos de experiencias anteriores. <a href="https://www.letsurftogether.com/" target="_blank" rel="noopener noreferrer">Ver las opiniones publicadas en LST <span aria-hidden="true">↗</span></a></p></div></section>
++<section class="lst-levels lst-section" id="niveles" aria-labelledby="levels-title"><div class="lst-width"><div class="lst-level-intro"><div><p class="lst-eyebrow">Niveles de surf</p><h2 id="levels-title">¿Cómo te manejas en el agua?</h2><p class="lst-section-intro">Mira qué nivel se parece más a tu forma de surfear. En cada viaje indicamos los niveles del grupo y si necesitas autonomía en el agua.</p><a class="lst-link" href="/niveles/">Guía de niveles <span aria-hidden="true">↗</span></a></div><figure class="lst-level-photo"><img src="/assets/surf-session.webp" width="1600" height="1066" alt="Una surfista de LST practica en una ola cerca de la orilla" loading="lazy" decoding="async"><figcaption>Una sesión de un viaje anterior de LST.</figcaption></figure></div><div class="lst-level-grid">
+ <a class="lst-level-card" href="/viajes/?nivel=1"><span class="lst-level-top"><span>NIVEL I</span><span aria-hidden="true">↗</span></span><h3>Rookies</h3><p>Empiezas en espumas y olas pequeñas.</p><span class="lst-level-cta">Ver viajes para empezar</span></a>
+ <a class="lst-level-card" href="/viajes/?nivel=2"><span class="lst-level-top"><span>NIVEL II</span><span aria-hidden="true">↗</span></span><h3>Aprendices</h3><p>Ya coges olas verdes y recorres la pared.</p><span class="lst-level-cta">Ver viajes para progresar</span></a>
+ <a class="lst-level-card" href="/viajes/?nivel=3"><span class="lst-level-top"><span>NIVEL III</span><span aria-hidden="true">↗</span></span><h3>Riders</h3><p>Tienes autonomía y enlazas maniobras.</p><span class="lst-level-cta">Ver viajes para tu surf</span></a>
+-<a class="lst-level-card" href="/viajes/?nivel=4"><span class="lst-level-top"><span>NIVEL IV</span><span aria-hidden="true">↗</span></span><h3>Supercracks</h3><p>Surfeas olas con fuerza y pules tu técnica.</p><span class="lst-level-cta">Ver viajes para afinar</span></a></div><p class="lst-level-note">¿Entre dos niveles? La técnica y la autonomía no son lo mismo. <a href="/niveles/#orientacion">Te ayudamos a ubicarte <span aria-hidden="true">↗</span></a></p></section>
+-<section class="people" id="nosotros" aria-labelledby="people-title"><div class="lst-people-layout lst-width lst-section"><div class="lst-people-copy"><p class="lst-eyebrow">Lucas · el origen de LST</p><h2 id="people-title">Antes de conocernos<br>en la playa.</h2><p>El primer viaje fue una prueba a Marruecos que Lucas propuso a su comunidad. Un año de preparación después, LST empezó a funcionar a finales de 2024.</p><p>Quienes organizamos los viajes también los vivimos con el grupo. Compartimos los días de surf y los ratos entre sesiones.</p><p>En cada ficha puedes ver el acompañamiento previsto y consultar quién irá contigo antes de apuntarte.</p><a class="lst-link" href="/conocenos/">Conoce nuestra historia <span aria-hidden="true">↗</span></a><span class="lst-signature">Nos vemos en el pico.</span></div><figure class="lst-people-photo"><img src="/assets/home/marruecos-comunidad.webp" width="1400" height="933" alt="El grupo de LST comparte un momento durante un viaje a Marruecos" loading="lazy" decoding="async"><figcaption>Marruecos, 2025. Un recuerdo con el grupo.</figcaption></figure></div></section>
+-<section class="lst-booking lst-width lst-section" id="reservar" aria-labelledby="booking-title"><div class="lst-booking-intro"><p class="lst-eyebrow">Cómo te vienes</p><h2 id="booking-title">De «me apetece»<br>a «me voy».</h2><p>Primero lo hablamos. Queremos que sepas qué vas a vivir y que el viaje encaje contigo.</p><a class="lst-button" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp <span aria-hidden="true">↗</span></a></div><ol class="lst-booking-steps"><li><span aria-hidden="true">01</span><div><h3>Encuentra tu viaje.</h3><p>Mira las fechas, el nivel, el programa y lo que incluye en la ficha del destino.</p></div></li><li><span aria-hidden="true">02</span><div><h3>Lo vemos contigo.</h3><p>Escríbenos por WhatsApp. Resolvemos tus dudas y consultamos la disponibilidad.</p></div></li><li><span aria-hidden="true">03</span><div><h3>Formaliza tu reserva.</h3><p>El equipo te indica los pasos y las condiciones de tu salida. La plaza queda confirmada con el equipo.</p></div></li></ol></section>
+-<section class="faq lst-width lst-section" id="dudas" aria-labelledby="home-faq-title"><div class="lst-faq-intro"><p class="lst-eyebrow">Antes de hacer la mochila</p><h2 id="home-faq-title">Es normal<br>tener dudas.</h2><a class="lst-link" href="/preguntas-frecuentes/">Todas las preguntas <span aria-hidden="true">↗</span></a></div><div class="lst-faq-list"><details><summary>¿Puedo ir sin conocer a nadie?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta. Las sesiones, las comidas y los ratos entre baños dan pie a empezar a conocerse.</p></details><details><summary>¿Y si mi nivel no encaja?<span aria-hidden="true">+</span></summary><p>Cada salida indica los niveles a los que se dirige y si requiere autonomía en el agua. Consulta <a href="/niveles/">la guía de niveles</a> y cuéntanos cómo surfeas: lo revisamos contigo antes de reservar.</p></details><details><summary>¿Qué está incluido en el precio?<span aria-hidden="true">+</span></summary><p>Depende del viaje. En cada ficha encontrarás el programa, las inclusiones, las exclusiones y las condiciones. Revisa tu salida en <a href="/viajes/">todos los viajes</a> antes de formalizar la reserva.</p></details></div></section>
+-<section class="lst-closing" aria-labelledby="closing-title"><div class="lst-width"><p class="lst-eyebrow">El siguiente recuerdo está por hacer</p><h2 id="closing-title">Menos «algún día».<br><em>Más «¿te vienes?»</em></h2><a class="lst-button" href="#viajes">Encuentra tu próximo viaje <span aria-hidden="true">↗</span></a><p>¿No sabes por dónde empezar? <a data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos por WhatsApp <span aria-hidden="true">↗</span></a></p></div></section>
+-</main><footer class="lst-footer"><div class="lst-width"><div class="lst-footer-top"><a class="lst-footer-brand" href="/" aria-label="Let's Surf Together, inicio"><img src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><span>Surf. Viajes. Lo que pasa entre medias.</span></div><div class="lst-footer-bottom"><span>© 2026 Let's Surf Together</span><nav class="lst-footer-links" aria-label="Enlaces de pie de página"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="#reservar">Cómo reservar</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></nav></div></div></footer><script src="/app.js" type="module"></script><script src="/home.js" type="module"></script></body></html>
+-
+-
+-
++<a class="lst-level-card" href="/viajes/?nivel=4"><span class="lst-level-top"><span>NIVEL IV</span><span aria-hidden="true">↗</span></span><h3>Supercracks</h3><p>Surfeas olas con fuerza y pules tu técnica.</p><span class="lst-level-cta">Ver viajes para afinar</span></a></div><p class="lst-level-note">Si dudas entre dos niveles, cuéntanos cómo surfeas. <a href="/niveles/#orientacion">Te ayudamos a ubicarte <span aria-hidden="true">↗</span></a></p></div></section>
++<section class="people" id="nosotros" aria-labelledby="people-title"><div class="lst-people-layout lst-width lst-section"><div class="lst-people-copy"><p class="lst-eyebrow">Lucas</p><h2 id="people-title">Quién está detrás de LST</h2><p>El primer viaje fue una prueba a Marruecos que Lucas propuso a su comunidad. Un año de preparación después, LST empezó a funcionar a finales de 2024.</p><p>Quienes organizamos los viajes también los vivimos con el grupo. Compartimos los días de surf y los ratos entre sesiones.</p><p>En cada ficha puedes ver el acompañamiento previsto y consultar quién irá contigo antes de apuntarte.</p><a class="lst-link" href="/conocenos/">Conoce nuestra historia <span aria-hidden="true">↗</span></a><span class="lst-signature">Nos vemos en el pico.</span></div><figure class="lst-people-photo"><img src="/assets/home/marruecos-comunidad.webp" width="1400" height="933" alt="El grupo de LST comparte un momento durante un viaje a Marruecos" loading="lazy" decoding="async"><figcaption>Marruecos, 2025. Un recuerdo con el grupo.</figcaption></figure></div></section>
++<section class="lst-booking lst-width lst-section" id="reservar" aria-labelledby="booking-title"><div class="lst-booking-intro"><p class="lst-eyebrow">Reservas</p><h2 id="booking-title">¿Cómo se reserva?</h2><p>Elige una salida y escríbenos por WhatsApp. Te contamos cómo reservar y resolvemos las dudas que tengas antes de apuntarte.</p><a class="lst-button" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablar por WhatsApp <span aria-hidden="true">↗</span></a></div><ol class="lst-booking-steps"><li><span aria-hidden="true">01</span><div><h3>Elige destino y fecha.</h3><p>En la ficha tienes el programa, los niveles del grupo y lo que incluye el precio.</p></div></li><li><span aria-hidden="true">02</span><div><h3>Escríbenos.</h3><p>Cuéntanos qué salida te interesa. Revisamos la disponibilidad y las dudas sobre tu nivel.</p></div></li><li><span aria-hidden="true">03</span><div><h3>Confirma tu plaza con el equipo.</h3><p>Te indicamos los pasos y las condiciones de esa salida para formalizar la reserva.</p></div></li></ol></section>
++<section class="faq lst-width lst-section" id="dudas" aria-labelledby="home-faq-title"><div class="lst-faq-intro"><h2 id="home-faq-title">Preguntas frecuentes</h2><a class="lst-link" href="/preguntas-frecuentes/">Todas las preguntas <span aria-hidden="true">↗</span></a></div><div class="lst-faq-list"><details><summary>¿Puedo ir sin conocer a nadie?<span aria-hidden="true">+</span></summary><p>Sí. Puedes venir por tu cuenta. Las sesiones, las comidas y los ratos entre baños dan pie a empezar a conocerse.</p></details><details><summary>¿Y si mi nivel no encaja?<span aria-hidden="true">+</span></summary><p>Cada salida indica los niveles a los que se dirige y si requiere autonomía en el agua. Consulta <a href="/niveles/">la guía de niveles</a> y cuéntanos cómo surfeas: lo revisamos contigo antes de reservar.</p></details><details><summary>¿Qué está incluido en el precio?<span aria-hidden="true">+</span></summary><p>Depende del viaje. En cada ficha encontrarás el programa, las inclusiones, las exclusiones y las condiciones. Revisa tu salida en <a href="/viajes/">todos los viajes</a> antes de formalizar la reserva.</p></details></div></section>
++<section class="lst-closing" aria-labelledby="closing-title"><div class="lst-width"><p class="lst-eyebrow">El siguiente recuerdo está por hacer</p><h2 id="closing-title">Nos vemos en el pico.</h2><a class="lst-button" href="#viajes">Ver próximos viajes <span aria-hidden="true">↗</span></a><p>Si tienes dudas, <a data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos por WhatsApp <span aria-hidden="true">↗</span></a></p></div></section>
++</main><footer class="lst-footer"><div class="lst-width"><div class="lst-footer-top"><a class="lst-footer-brand" href="/" aria-label="Let's Surf Together, inicio"><img src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><span>Viajes de surf en grupo.</span></div><div class="lst-footer-bottom"><span>© 2026 Let's Surf Together</span><nav class="lst-footer-links" aria-label="Enlaces de pie de página"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="#reservar">Cómo reservar</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></nav></div></div></footer><script src="/app.js" type="module"></script><script src="/home.js" type="module"></script></body></html>
+diff --git a/docs/qa/2026-10-24-home-pulido/before/home.css b/dist/home.css
+index e1d753d..7feef02 100644
+--- a/docs/qa/2026-10-24-home-pulido/before/home.css
++++ b/dist/home.css
+@@ -19,12 +19,13 @@ body.home-modern .lst-button:hover{background:var(--lst-ink);color:var(--lst-pap
+ body.home-modern .lst-link{display:inline-flex;align-items:center;gap:18px;min-height:44px;font-size:14px;font-weight:500;line-height:1.5;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+ body.home-modern .lst-link>span{font-size:20px;line-height:1}
+ body.home-modern .lst-link:hover{text-decoration-thickness:2px}
+-/* The cover continues behind the navigation. The header changes only after scrolling. */
+-body.home-modern .site-header{position:fixed;inset:0 0 auto;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:30px;width:100%;min-height:var(--home-header-height);margin:0;padding:16px max(48px,calc((100% - 1224px)/2));border:0;background:transparent;color:var(--lst-paper);transition:background .2s,color .2s}
++/* The original photograph stays light; the brand uses ink on the open sky. */
++body.home-modern .site-header{position:fixed;inset:0 0 auto;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:30px;width:100%;min-height:var(--home-header-height);margin:0;padding:16px max(48px,calc((100% - 1224px)/2));border:0;background:transparent;color:var(--lst-ink);transition:background .2s,color .2s}
+ body.home-modern .site-header.lst-width{width:100%;margin-inline:0}
+ body.home-modern .site-header:before{display:none}
+ body.home-modern .site-header .brand{width:205px;margin:0;flex:0 0 auto}
+-body.home-modern .site-header .brand-dark{display:none}
++body.home-modern .site-header .brand-light{display:none}
++body.home-modern .site-header .brand-dark{display:block}
+ body.home-modern .site-header nav{position:static;display:flex;flex-direction:row;align-items:center;gap:28px;margin:0 0 0 auto;padding:0;border:0;background:transparent}
+ body.home-modern .site-header nav a{display:inline-flex;align-items:center;gap:18px;min-height:44px;padding:0;color:inherit;font-size:13px;font-weight:500;white-space:nowrap}
+ body.home-modern .site-header nav a:hover{text-decoration:underline;text-underline-offset:5px}
+@@ -37,47 +38,43 @@ body.home-modern .static-navigation{position:relative;z-index:35;display:flex;fl
+ body.home-modern .static-navigation a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+ body.home-modern .skip-link{background:var(--lst-ink);color:var(--lst-paper)}
+ body.home-modern .skip-link:focus{z-index:100}
+-body.home-modern .lst-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;width:100%;min-height:620px;height:min(78svh,760px);padding:calc(var(--home-header-height) + 44px) 0 24px;background:var(--lst-ink);color:var(--lst-paper)}
++body.home-modern .lst-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-start;width:100%;height:auto;min-height:clamp(650px,76svh,720px);padding:calc(var(--home-header-height) + 64px) 0 24px;background:var(--lst-paper);color:var(--lst-ink)}
+ body.home-modern .lst-hero-photo{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:60% 64%}
+-body.home-modern .lst-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(27,27,27,.78) 0%,rgba(27,27,27,.65) 34%,rgba(27,27,27,.18) 70%,rgba(27,27,27,.05)),linear-gradient(180deg,rgba(27,27,27,.45),transparent 32%,transparent 72%,rgba(27,27,27,.38))}
++body.home-modern .lst-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(255,250,231,.14),rgba(255,250,231,0) 62%)}
+ body.home-modern .lst-hero-copy{position:relative;min-width:0;padding-block:0}
+-body.home-modern .lst-hero h1{max-width:710px;margin-top:18px;font:400 clamp(70px,7.2vw,104px)/.94 var(--lst-display);letter-spacing:-.012em}
++body.home-modern .lst-hero h1{max-width:710px;margin-top:20px;font:400 clamp(86px,8.4vw,122px)/.94 var(--lst-display);letter-spacing:-.012em}
+ body.home-modern .lst-hero h1 em{font-style:normal;color:inherit}
+ body.home-modern .lst-hero-description{max-width:410px;margin-top:24px;color:var(--lst-paper);font-size:16px;line-height:1.65}
+ body.home-modern .lst-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px 28px;margin-top:26px}
+ body.home-modern .lst-hero-actions .lst-button:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
+-body.home-modern .lst-hero :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+-body.home-modern .lst-hero-meta{position:static;display:flex;margin-top:40px;align-items:center;justify-content:space-between;gap:18px;font:400 10px/1.5 'Space Mono',monospace}
+-body.home-modern .lst-hero-meta>span:last-child{text-transform:uppercase;letter-spacing:.04em;text-align:right}
+-body.home-modern .lst-manifesto{display:grid;grid-template-columns:1fr 2.05fr auto;align-items:center;gap:32px;min-height:110px;padding-block:24px;border-bottom:1px solid var(--lst-line)}
+-body.home-modern .lst-manifesto>span:first-child{font:400 10px/1.6 'Space Mono',monospace;max-width:180px}
+-body.home-modern .lst-manifesto p{max-width:620px;font-size:19px;font-weight:500;line-height:1.4;letter-spacing:-.025em}
+-body.home-modern .lst-manifesto-symbol{width:48px;height:48px;object-fit:contain}
++body.home-modern .lst-hero :is(a,button):focus-visible{outline-color:var(--lst-ink)}
++body.home-modern .lst-hero-meta{position:static;display:flex;margin-top:auto;padding-top:70px;align-items:center;justify-content:space-between;gap:18px;color:var(--lst-paper);font:400 10px/1.5 'Space Mono',monospace}
++body.home-modern .lst-hero-meta>span:last-child{text-align:left}
+ body.home-modern .lst-trips{padding-top:74px}
+ body.home-modern .lst-section-header{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:20px}
+ body.home-modern .lst-section-header .lst-eyebrow{margin-bottom:12px}
+ body.home-modern .lst-section-header>.lst-link{flex-shrink:0}
+ body.home-modern .lst-section-intro{max-width:650px;color:var(--lst-muted);font-size:16px;line-height:1.6;margin-bottom:30px}
+-/* CMS cards keep dates, requirements and prices visible before the enquiry. */
++/* A quiet lift separates each departure; the next action is always clear. */
+ body.home-modern .home-trip-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+-body.home-modern .home-trip{min-width:0}
+-body.home-modern .home-trip-media{position:relative;isolation:isolate;width:100%;min-width:0;aspect-ratio:1.18;border-radius:24px 24px 4px 4px;background:var(--lst-ink);color:var(--lst-on-photo)}
+-body.home-modern .home-trip-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:24px 24px 4px 4px}
+-body.home-modern .home-trip-media:after{content:'';position:absolute;inset:25% 0 0;z-index:0;pointer-events:none;border-radius:0 0 4px 4px;background:linear-gradient(0deg,rgba(27,27,27,.83),rgba(27,27,27,0))}
++body.home-modern .home-trip{display:flex;flex-direction:column;min-width:0;padding:10px;border:1px solid rgba(27,27,27,.14);border-radius:28px;background:var(--lst-paper);box-shadow:0 2px 3px rgba(27,27,27,.035),0 13px 30px rgba(27,27,27,.055)}
++body.home-modern .home-trip-media{position:relative;isolation:isolate;width:100%;min-width:0;aspect-ratio:1.18;border-radius:19px;background:var(--lst-ink);color:var(--lst-on-photo)}
++body.home-modern .home-trip-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:19px}
++body.home-modern .home-trip-media:after{content:'';position:absolute;inset:25% 0 0;z-index:0;pointer-events:none;border-radius:0 0 19px 19px;background:linear-gradient(0deg,rgba(27,27,27,.83),rgba(27,27,27,0))}
+ body.home-modern .home-trip-placeholder{height:100%;min-height:260px;display:grid;place-items:center;padding:30px;font:400 48px/1.1 var(--lst-display)}
+ body.home-modern .home-trip-level,body.home-modern .home-trip-status{position:absolute;top:14px;left:14px;z-index:1;max-width:calc(100% - 124px);padding:8px 10px;border-radius:100px;background:var(--lst-paper);color:var(--lst-ink);font-size:10px;line-height:1.4;font-weight:500}
+ body.home-modern .home-trip-status{top:54px;max-width:calc(100% - 28px);background:var(--lst-ink);color:var(--lst-paper)}
+ body.home-modern .home-trip :is(h3,h4){position:absolute;bottom:20px;left:20px;right:20px;z-index:1;font:400 clamp(37px,3.8vw,51px)/1 var(--lst-display);letter-spacing:-.01em;overflow-wrap:anywhere}
+-body.home-modern .home-trip-preview{margin-top:15px;color:var(--lst-ink);font-size:13px;line-height:1.6}
++body.home-modern .home-trip-preview{margin-top:17px;padding-inline:10px;color:var(--lst-muted);font-size:13px;line-height:1.6}
+ body.home-modern .home-trip-preview small{display:block;margin-top:6px;color:var(--lst-muted);font-size:12px;line-height:1.65}
+-body.home-modern .home-trip-link{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:70px;margin-top:5px;padding-block:8px;border-radius:4px}
+-body.home-modern .home-trip-action{display:inline-flex;align-items:center;gap:15px;min-height:44px;font-size:14px;font-weight:500}
+-body.home-modern .home-trip-action>span{font-size:21px}
+-body.home-modern .home-trip-link:hover .home-trip-action{text-decoration:underline;text-underline-offset:5px}
+-body.home-modern .home-trip-price{font:400 34px/1.1 var(--lst-display);letter-spacing:-.01em;text-align:right;overflow-wrap:anywhere}
++body.home-modern .home-trip-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;min-height:76px;margin-top:auto;padding:15px 10px 7px;border-radius:4px}
++body.home-modern .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:46px;max-width:100%;padding:12px 17px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:14px;font-weight:600;line-height:1.4;transition:background .18s,color .18s,border-color .18s}
++body.home-modern .home-trip-action>span{flex-shrink:0;font-size:21px}
++body.home-modern .home-trip-link:hover .home-trip-action{background:var(--lst-ink);color:var(--lst-paper);border-color:var(--lst-ink)}
++body.home-modern .home-trip-price{margin-left:auto;font:400 34px/1.1 var(--lst-display);letter-spacing:-.01em;text-align:right;overflow-wrap:anywhere}
+ body.home-modern .home-trip-price small{display:block;margin-top:3px;color:var(--lst-muted);font:400 11px/1.5 'Work Sans',sans-serif;letter-spacing:0}
+ body.home-modern .home-trip-dates{position:absolute;inset:0;z-index:2;border:0}
+-body.home-modern .home-trip-dates>summary{position:absolute;inset:0;display:block;min-height:44px;padding:0;border-radius:24px 24px 4px 4px;list-style:none;cursor:pointer}
++body.home-modern .home-trip-dates>summary{position:absolute;inset:0;display:block;min-height:44px;padding:0;border-radius:19px;list-style:none;cursor:pointer}
+ body.home-modern .home-trip-dates>summary:after,body.home-modern .home-trip-dates>summary::-webkit-details-marker{display:none}
+ body.home-modern .home-trip-dates>summary>span{transform:none}
+ body.home-modern .home-trip-dates-label{position:absolute;top:10px;right:10px;display:grid;place-items:center;min-height:44px;padding:10px 12px;border-radius:100px;background:var(--lst-ink);color:var(--lst-paper);font-size:10px;font-weight:500;line-height:1.4}
+@@ -103,34 +100,34 @@ body.home-modern .destination-collection{margin-top:32px;padding-top:25px;border
+ body.home-modern .destination-collection>h3{font:400 38px/1.1 var(--lst-display);letter-spacing:-.01em}
+ body.home-modern .destination-collection>p{margin-block:12px 23px;color:var(--lst-muted);font-size:14px}
+ /* A change of pace, with real images and the original colours. */
+-body.home-modern .lst-experience{background:var(--lst-ink);color:var(--lst-paper);border-radius:36px 36px 0 0}
++body.home-modern .lst-experience{background:var(--lst-paper);color:var(--lst-ink);border-radius:0}
+ body.home-modern .lst-experience-heading{display:grid;grid-template-columns:1.6fr 1fr;column-gap:70px;align-items:end}
+ body.home-modern .lst-experience-heading>*{min-width:0}
+ body.home-modern .lst-experience-heading .lst-eyebrow{grid-column:1/-1;margin-bottom:20px}
+ body.home-modern .lst-experience-heading h2{font-size:clamp(48px,4.6vw,66px)}
+ body.home-modern .lst-experience-heading h2 em{font-style:normal;color:var(--lst-orange)}
+-body.home-modern .lst-experience-heading>p:last-child{max-width:350px;padding-bottom:3px;color:rgba(255,250,231,.85);font-size:15px;line-height:1.75}
++body.home-modern .lst-experience-heading>p:last-child{max-width:350px;padding-bottom:3px;color:var(--lst-muted);font-size:15px;line-height:1.75}
+ body.home-modern .lst-experience-layout{display:grid;grid-template-columns:1.2fr 1fr;align-items:start;gap:76px;margin-top:48px}
+ body.home-modern .lst-memory img{height:auto;aspect-ratio:1.45;object-fit:cover;object-position:53% 50%;border-radius:4px 4px 72px 4px}
+-body.home-modern .lst-memory figcaption{margin-top:14px;color:rgba(255,250,231,.78);font-size:11px;line-height:1.6}
+-body.home-modern .lst-experience-copy article{padding-block:23px;border-top:1px solid rgba(255,250,231,.25)}
++body.home-modern .lst-memory figcaption{margin-top:14px;color:var(--lst-muted);font-size:11px;line-height:1.6}
++body.home-modern .lst-experience-copy article{padding-block:23px;border-top:1px solid var(--lst-line)}
+ body.home-modern .lst-experience-copy article:first-child{padding-top:0;border-top:0}
+ body.home-modern .lst-small-index{display:block;color:var(--lst-orange);font:400 11px/1.6 'Space Mono',monospace}
+-body.home-modern .lst-experience-copy h3{margin-top:8px;font:400 33px/1.1 var(--lst-display);letter-spacing:-.01em}
+-body.home-modern .lst-experience-copy p{max-width:420px;margin-top:10px;color:rgba(255,250,231,.85);font-size:15px;line-height:1.75}
+-body.home-modern .lst-experience-copy .lst-link{color:var(--lst-paper);margin-top:2px}
++body.home-modern .lst-experience-copy h3{margin-top:0;font:400 33px/1.1 var(--lst-display);letter-spacing:-.01em}
++body.home-modern .lst-experience-copy p{max-width:420px;margin-top:12px;color:var(--lst-muted);font-size:15px;line-height:1.75}
++body.home-modern .lst-experience-copy .lst-link{color:var(--lst-ink);margin-top:2px}
+ body.home-modern .lst-experience-copy .lst-link:hover{color:var(--lst-orange)}
+ /* Traveller accounts are short, attributed and connected to the original source. */
+-body.home-modern .lst-testimonials{border-bottom:1px solid var(--lst-line)}
++body.home-modern .lst-testimonials{background:var(--lst-ink);color:var(--lst-paper);border-radius:32px 32px 0 0}
+ body.home-modern .lst-quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;margin-top:35px}
+-body.home-modern .lst-quote-grid figure{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding-top:26px;border-top:1px solid var(--lst-line)}
++body.home-modern .lst-quote-grid figure{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding-top:26px;border-top:1px solid rgba(255,250,231,.28)}
+ body.home-modern .lst-quote-grid blockquote{margin:0 0 25px;font:400 clamp(19px,1.75vw,24px)/1.6 'Work Sans',sans-serif;letter-spacing:-.025em}
+-body.home-modern .lst-quote-grid figcaption{margin-top:auto;color:var(--lst-muted);font-size:13px;line-height:1.6}
+-body.home-modern .lst-quote-grid figcaption strong{display:block;color:var(--lst-ink);font-weight:600}
++body.home-modern .lst-quote-grid figcaption{margin-top:auto;color:rgba(255,250,231,.8);font-size:13px;line-height:1.6}
++body.home-modern .lst-quote-grid figcaption strong{display:block;color:var(--lst-paper);font-weight:600}
+ body.home-modern .lst-quote-grid figcaption span{display:block;margin-top:3px}
+ body.home-modern .lst-quote-grid figcaption a,body.home-modern .lst-quote-source{display:inline-flex;align-items:center;min-height:44px;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+ body.home-modern .lst-level-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+-body.home-modern .lst-level-card{display:flex;flex-direction:column;min-width:0;padding:22px 20px 12px;border:1px solid var(--lst-line);border-radius:4px 28px 4px 4px;background:transparent;transition:border-color .18s,background .18s}
++body.home-modern .lst-level-card{display:flex;flex-direction:column;min-width:0;padding:22px 20px 12px;border:1px solid rgba(27,27,27,.24);border-radius:4px 28px 4px 4px;background:var(--lst-paper);box-shadow:0 2px 3px rgba(27,27,27,.025),0 11px 25px rgba(27,27,27,.045);transition:border-color .18s,background .18s}
+ body.home-modern .lst-level-card:hover{border-color:var(--lst-ink);background:rgba(234,89,52,.08)}
+ body.home-modern .lst-level-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:24px;font:400 11px/1.5 'Space Mono',monospace}
+ body.home-modern .lst-level-top>span:last-child{font-size:23px;font-weight:400;color:var(--lst-orange)}
+@@ -191,7 +188,7 @@ body.home-modern .lst-footer-links{display:flex;flex-wrap:wrap;align-items:cente
+ body.home-modern .lst-footer-links a{display:inline-flex;align-items:center;gap:5px;min-height:44px}
+ body.home-modern .lst-footer-links a:hover{text-decoration:underline;text-underline-offset:5px}
+ /* Min-height allows enlarged text to grow the cover instead of clipping it. */
+-body.home-modern .lst-hero{height:auto;min-height:max(620px,min(78svh,760px))}
++
+ @media(max-width:1100px){
+  body.home-modern .lst-width{width:calc(100% - 64px)}
+  body.home-modern .site-header{padding-inline:32px;gap:22px}
+@@ -218,8 +215,6 @@ body.home-modern .lst-hero{height:auto;min-height:max(620px,min(78svh,760px))}
+  body.home-modern .lst-hero{padding-top:calc(var(--home-header-height) + 58px)}
+  body.home-modern .lst-hero h1{font-size:clamp(73px,10vw,92px);max-width:640px}
+  body.home-modern .lst-hero-description{max-width:400px}
+- body.home-modern .lst-manifesto{grid-template-columns:1fr 2fr auto;gap:24px}
+- body.home-modern .lst-manifesto p{font-size:18px}
+  body.home-modern .home-trip-grid{gap:20px}
+  body.home-modern .home-trip-media{aspect-ratio:1}
+  body.home-modern .home-trip :is(h3,h4){left:16px;right:16px;font-size:39px}
+@@ -243,20 +238,16 @@ body.home-modern .lst-hero{height:auto;min-height:max(620px,min(78svh,760px))}
+  body.home-modern .site-header nav{padding-inline:22px}
+  body.home-modern .lst-section{padding-block:60px}
+  body.home-modern h2{font-size:49px}
+- body.home-modern .lst-hero{min-height:100svh;padding:calc(var(--home-header-height) + 60px) 0 24px;justify-content:center}
++ body.home-modern .lst-hero{min-height:clamp(560px,78svh,670px);padding:calc(var(--home-header-height) + 46px) 0 24px;justify-content:flex-start}
+  body.home-modern .lst-hero h1{max-width:540px;margin-top:19px;font-size:clamp(64px,11.4vw,85px);line-height:.96;letter-spacing:-.015em}
+  body.home-modern .lst-hero-description{max-width:370px;margin-top:22px;font-size:15px;line-height:1.75}
+  body.home-modern .lst-hero-actions{margin-top:26px;gap:12px 23px}
+  body.home-modern .lst-hero-photo{object-position:67% 65%}
+- body.home-modern .lst-hero-shade{background:linear-gradient(90deg,rgba(27,27,27,.74),rgba(27,27,27,.46) 70%,rgba(27,27,27,.24)),linear-gradient(180deg,rgba(27,27,27,.25),transparent 40%,rgba(27,27,27,.16) 75%,rgba(27,27,27,.43))}
++ body.home-modern .lst-hero-shade{background:linear-gradient(180deg,rgba(255,250,231,.14),rgba(255,250,231,0) 62%)}
+  body.home-modern .lst-hero-meta{font-size:9px;align-items:flex-end}
+  body.home-modern .lst-hero-meta>span:first-child{max-width:180px}
+  body.home-modern .lst-button{min-height:54px;padding:14px 22px;font-size:14px;gap:28px}
+  body.home-modern .lst-link{font-size:13px;gap:14px}
+- body.home-modern .lst-manifesto{grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;min-height:0;padding-block:25px}
+- body.home-modern .lst-manifesto>span:first-child{grid-column:1;font-size:10px;max-width:none}
+- body.home-modern .lst-manifesto p{grid-column:1;font-size:17px;line-height:1.5;max-width:460px}
+- body.home-modern .lst-manifesto-symbol{grid-column:2;grid-row:1/3;width:43px;height:43px}
+  body.home-modern .lst-trips{padding-top:48px}
+  body.home-modern .lst-section-header{align-items:flex-start;gap:14px;margin-bottom:18px}
+  body.home-modern .lst-section-header .lst-eyebrow{margin-bottom:13px}
+@@ -277,7 +268,7 @@ body.home-modern .lst-hero{height:auto;min-height:max(620px,min(78svh,760px))}
+  body.home-modern .home-trip-dates-panel .home-trip-requirement{font-size:13px}
+  body.home-modern .home-more-trips{margin-top:25px}
+  body.home-modern .lst-trip-note{margin-top:19px;font-size:12px}
+- body.home-modern .lst-experience{border-radius:27px 27px 0 0}
++ body.home-modern .lst-experience{border-radius:0}
+  body.home-modern .lst-experience-heading{grid-template-columns:1fr;gap:0}
+  body.home-modern .lst-experience-heading .lst-eyebrow{margin-bottom:18px}
+  body.home-modern .lst-experience-heading h2{font-size:49px;line-height:1.03}
+@@ -374,5 +365,38 @@ body.home-modern:has(.static-navigation) .menu-toggle,body.home-modern:has(.stat
+ body.home-modern:has(.static-navigation) .static-navigation{position:static;z-index:auto;padding:12px 24px}
+ 
+ 
+-/* Small captions use brand ink on cream for readable contrast. */
+-body.home-modern .lst-testimonials .lst-small-index{color:var(--lst-ink)}
++/* Attribution keeps its original wording and a readable contrast. */
++body.home-modern .lst-testimonials .lst-small-index{color:var(--lst-orange)}
++
++/* Human stories and surf levels have distinct rhythms within the same identity. */
++body.home-modern .lst-testimonials h2{max-width:850px}
++body.home-modern .lst-testimonials .lst-small-index{margin-bottom:18px;color:var(--lst-orange)}
++body.home-modern .lst-reviews-note{max-width:760px;margin-top:35px;color:rgba(255,250,231,.8);font-size:12px;line-height:1.8}
++body.home-modern .lst-reviews-note a{display:inline-block;min-height:44px;padding-block:10px;color:var(--lst-paper);text-decoration:underline;text-underline-offset:5px}
++body.home-modern .lst-testimonials :is(a,button):focus-visible{outline-color:var(--lst-paper)}
++body.home-modern .lst-levels{background:var(--lst-paper)}
++body.home-modern .lst-level-intro{display:grid;grid-template-columns:1.3fr .85fr;align-items:center;gap:88px;margin-bottom:47px}
++body.home-modern .lst-level-intro>div{min-width:0}
++body.home-modern .lst-level-intro .lst-eyebrow{margin-bottom:18px}
++body.home-modern .lst-level-intro h2{max-width:650px}
++body.home-modern .lst-level-intro .lst-section-intro{max-width:540px;margin-top:22px;margin-bottom:12px}
++body.home-modern .lst-level-photo{min-width:0;width:100%;max-width:410px;justify-self:end}
++body.home-modern .lst-level-photo img{width:100%;aspect-ratio:1.62;object-fit:cover;border-radius:64px 5px 5px 5px;box-shadow:0 4px 15px rgba(27,27,27,.07)}
++body.home-modern .lst-level-photo figcaption{margin-top:11px;color:var(--lst-muted);font-size:11px;line-height:1.6}
++body.home-modern .lst-level-card{border-top:3px solid var(--lst-orange)}
++@media(max-width:999px){
++ body.home-modern .lst-level-intro{grid-template-columns:1.2fr 1fr;gap:36px}
++ body.home-modern .home-trip-action{padding-inline:14px}
++}
++@media(max-width:760px){
++ body.home-modern .lst-testimonials{border-radius:27px 27px 0 0}
++ body.home-modern .lst-reviews-note{margin-top:29px;font-size:12px}
++ body.home-modern .lst-level-intro{grid-template-columns:1fr;gap:27px;margin-bottom:32px}
++ body.home-modern .lst-level-intro .lst-section-intro{margin-top:21px}
++ body.home-modern .lst-level-photo{max-width:460px;justify-self:start}
++ body.home-modern .lst-level-photo img{aspect-ratio:2.05;border-top-left-radius:46px}
++ body.home-modern .home-trip-action{padding-inline:17px}
++}
++@media(max-width:359px){
++ body.home-modern .home-trip-action{padding-inline:14px;font-size:14px;gap:11px}
++}
+diff --git a/docs/qa/2026-10-24-home-pulido/before/render-home-trips.mjs b/scripts/render-home-trips.mjs
+index c329cb3..a452a65 100644
+--- a/docs/qa/2026-10-24-home-pulido/before/render-home-trips.mjs
++++ b/scripts/render-home-trips.mjs
+@@ -17,7 +17,7 @@ export function renderHomeTrips(current, trips) {
+ <div class="home-trip-media">${trip.hero ? `<img class="home-trip-photo" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt || trip.name)}" width="1000" height="600" loading="lazy" decoding="async">` : '<div class="home-trip-placeholder" aria-hidden="true">LST</div>'}
+ <span class="home-trip-level">${escape(levelLabel(trip))}</span>${status}<${heading} id="trip-${id}-title">${escape(trip.name)}</${heading}>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de ${escape(trip.name)}"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas y precios de ${escape(trip.name)}"><p class="home-trip-dates-title">${escape(trip.name)}</p>${dates}${trip.levelRequirement ? `<p class="home-trip-requirement">${escape(trip.levelRequirement)}</p>` : ''}<p class="home-trip-date-note">${escape(availability)} · Consulta el programa en la ficha.</p></div></details>
+-</div><p class="home-trip-preview" id="trip-${id}-facts">${escape(preview)}${trip.levelRequirement ? `<small>${escape(trip.levelRequirement)}</small>` : ''}</p><a class="home-trip-link" aria-describedby="trip-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="trip-${id}-action trip-${id}-title"><span class="home-trip-action" id="trip-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'} <span aria-hidden="true">↗</span></span><span class="home-trip-price">${escape(tripPrice(trip))}${departures.some(d => d.price !== null) ? '<small>por persona</small>' : ''}</span></a></article>`;
++</div><p class="home-trip-preview" id="trip-${id}-facts">${escape(preview)}</p><a class="home-trip-link" aria-describedby="trip-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="trip-${id}-action trip-${id}-title"><span class="home-trip-action" id="trip-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'} <span aria-hidden="true">↗</span></span><span class="home-trip-price">${escape(tripPrice(trip))}${departures.some(d => d.price !== null) ? '<small>por persona</small>' : ''}</span></a></article>`;
+   };
+   // Start with the nearest departure. Keep all published trips in the HTML,
+   // including destinations without dates and the native expandable collection.
+diff --git a/docs/qa/2026-10-24-home-pulido/before/home-trips.test.mjs b/scripts/home-trips.test.mjs
+index 9406e1e..d2fe731 100644
+--- a/docs/qa/2026-10-24-home-pulido/before/home-trips.test.mjs
++++ b/scripts/home-trips.test.mjs
+@@ -49,16 +49,16 @@ test('full, pending, missing photographs, unusual names and empty catalogue stay
+   assert.throws(() => renderHomeTrips('', []), /Missing home trip/);
+ });
+ 
+-test('visible summary shows the earliest configured date and preserves the exact level requirement before opening details', () => {
++test('visible summary shows dates without extra requirements; exact level conditions remain in details', () => {
+   const html = renderHomeTrips(shell, [trip('independent', {levelRequirement: 'Independencia en el agua: remontar solo.', departures: [departure('later', '2027-02-01', 450), departure('first', '2027-01-01', 399)]})]);
+   const preview = html.match(/<p class="home-trip-preview"[^>]*>([\s\S]*?)<\/p>/)[1];
+   assert.match(preview, /2027-01-01 — fin · 2 fechas/);
+-  assert.match(preview, /Independencia en el agua: remontar solo./);
++  assert.doesNotMatch(preview, /Independencia|<small>/);
+   assert.match(html, /aria-describedby="trip-independent-facts"/);
+   assert.match(html, /home-trip-requirement">Independencia en el agua: remontar solo\./);
+   assert.doesNotMatch(renderHomeTrips(shell, [trip('beginner')]).match(/<p class="home-trip-preview"[^>]*>([\s\S]*?)<\/p>/)[1], /<small>/);
+   const negative = renderHomeTrips(shell, [trip('supported', {levelRequirement:'No se requiere autonomía.'})]);
+-  assert.match(negative, /<small>No se requiere autonomía.<\/small>/);
++  assert.match(negative, /home-trip-requirement">No se requiere autonomía.<\/p>/);
+   assert.doesNotMatch(negative, /Requiere autonomía en el agua/);
+ });
+ 
+diff --git a/docs/qa/2026-10-24-home-pulido/before/check-home-browser.mjs b/scripts/check-home-browser.mjs
+index 722841e..3b95937 100644
+--- a/docs/qa/2026-10-24-home-pulido/before/check-home-browser.mjs
++++ b/scripts/check-home-browser.mjs
+@@ -36,7 +36,11 @@ try{
+   ok(await page.locator('body').evaluate(e=>getComputedStyle(e).fontFamily.includes('Work Sans')),'original body font');
+   ok(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(255, 250, 231)'),'original cream');
+   ok(await page.locator('.lst-hero-photo').evaluate(e=>{const p=e.closest('.lst-hero').getBoundingClientRect(),r=e.getBoundingClientRect();return Math.abs(r.left)<1&&Math.abs(r.width-innerWidth)<1&&Math.abs(r.height-p.height)<1&&getComputedStyle(e).objectFit==='cover'}),'photograph fills the complete hero');
+-  ok(await page.locator('.brand-light').isVisible(),'original light logo on cover');
++  ok(await page.locator('.brand-dark').isVisible(),'original dark logo on the clean cover');
++  assert.equal(await page.locator('.lst-hero h1').innerText(),'¿Te vienes\na surfear?');checks++;
++  assert.equal(await page.locator('.home-trip-preview small').count(),0);checks++;
++  ok(await page.locator('.home-trip-action').first().evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(234, 89, 52)'&&e.getBoundingClientRect().height>=44),'trip action is visible and has a touch sized target');
++  ok(await page.evaluate(()=>getComputedStyle(document.querySelector('.lst-testimonials')).backgroundColor!==getComputedStyle(document.querySelector('.lst-levels')).backgroundColor),'opinions and levels have distinct backgrounds');
+   assert.equal(await page.locator('.lst-quote-grid blockquote').count(),2);checks++;
+   await page.locator('#viajes').scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>document.querySelector('.site-header').classList.contains('is-scrolled'));
+@@ -48,7 +52,7 @@ try{
+   ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`overflow ${width}: ${JSON.stringify(await overflow(page))}`);
+   assert.equal(await page.locator('.home-trip-link').count(),trips.length);checks++;
+   imageResults.push({width,images:await page.locator('.lst-hero-photo,.home-trip-photo').evaluateAll(imgs=>imgs.map(i=>({src:i.currentSrc,loaded:i.complete&&i.naturalWidth>0})))});
+-  for (const img of await page.locator('.lst-memory img,.lst-people-photo img,.lst-footer-brand img').all()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(i=>i.decode()); }
++  for (const img of await page.locator('.lst-memory img,.lst-level-photo img,.lst-people-photo img,.lst-footer-brand img').all()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(i=>i.decode()); }
+   ok(await page.locator('.lst-memory-main img').evaluate(e=>Math.abs(e.clientWidth/e.clientHeight-(innerWidth<=620?1.3:1.45))<.02),'community photo keeps designed ratio');
+   await page.evaluate(()=>scrollTo(0,0));
+   await page.screenshot({path:path.join(output,`home-${width}.png`),fullPage:true});

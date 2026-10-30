@@ -1,0 +1,35 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
++   '/viajes/hossegor/',
+-   '/viajes/hossegor-2026-11-20/',
+    '/viajes/qa-full/',
+    '/viajes/qa-pending/',
+    '/viajes/solicitud-prueba/'
+  ]
+
+    at file://wsl$/Ubuntu/tmp/lst-viajes-home-baseline/scripts/check-sanity-browser.mjs:73:14 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: [
+    '/viajes/hossegor/',
+    '/viajes/qa-full/',
+    '/viajes/qa-pending/',
+    '/viajes/solicitud-prueba/'
+  ],
+  expected: [
+    '/viajes/hossegor-2026-11-20/',
+    '/viajes/qa-full/',
+    '/viajes/qa-pending/',
+    '/viajes/solicitud-prueba/'
+  ],
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

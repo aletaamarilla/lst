@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-25T17:46:26.551Z",
+  "base": "https://lst-sepia.vercel.app",
+  "checks": [
+    {
+      "url": "https://lst-sepia.vercel.app/viajes/el-palmar-2026-12-04/",
+      "photos": 6,
+      "heroMatches": true,
+      "galleryMatches": true,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://lst-sepia.vercel.app/viajes/hossegor-2026-11-20/",
+      "photos": 6,
+      "heroMatches": true,
+      "galleryMatches": true,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://lst-sepia.vercel.app/viajes/marruecos-2027-01-17/",
+      "photos": 6,
+      "heroMatches": true,
+      "galleryMatches": true,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://lst-sepia.vercel.app/viajes/marruecos-2027-01-24/",
+      "photos": 5,
+      "heroMatches": true,
+      "galleryMatches": true,
+      "httpStatus": 200
+    },
+    {
+      "url": "https://lst-sepia.vercel.app/viajes/senegal-2027-02-28/",
+      "photos": 6,
+      "heroMatches": true,
+      "galleryMatches": true,
+      "httpStatus": 200
+    }
+  ]
+}

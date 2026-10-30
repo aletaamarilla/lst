@@ -1,0 +1,116 @@
+[
+  {
+    "width": 320,
+    "contrast": {
+      "pixels": 9671,
+      "min": {
+        "contrast": 2.7947967240052414,
+        "x": 45,
+        "y": 162,
+        "background": [
+          172,
+          151,
+          132
+        ]
+      },
+      "p05": {
+        "contrast": 3.2670100170470464,
+        "x": 203,
+        "y": 171,
+        "background": [
+          158,
+          139,
+          122
+        ]
+      },
+      "median": {
+        "contrast": 4.130452885595304,
+        "x": 119,
+        "y": 189,
+        "background": [
+          135,
+          123,
+          109
+        ]
+      },
+      "below3": 60,
+      "method": "Opaque white glyph pixels compared with same rendered background after making only foreground fill transparent; explicit text shadow is retained."
+    }
+  },
+  {
+    "width": 390,
+    "contrast": {
+      "pixels": 12778,
+      "min": {
+        "contrast": 2.760675858973036,
+        "x": 75,
+        "y": 163,
+        "background": [
+          173,
+          152,
+          133
+        ]
+      },
+      "p05": {
+        "contrast": 3.3726830888242216,
+        "x": 72,
+        "y": 170,
+        "background": [
+          157,
+          136,
+          120
+        ]
+      },
+      "median": {
+        "contrast": 4.170708615582422,
+        "x": 252,
+        "y": 239,
+        "background": [
+          132,
+          123,
+          109
+        ]
+      },
+      "below3": 68,
+      "method": "Opaque white glyph pixels compared with same rendered background after making only foreground fill transparent; explicit text shadow is retained."
+    }
+  },
+  {
+    "width": 1440,
+    "contrast": {
+      "pixels": 46161,
+      "min": {
+        "contrast": 2.455346616395422,
+        "x": 428,
+        "y": 209,
+        "background": [
+          186,
+          161,
+          138
+        ]
+      },
+      "p05": {
+        "contrast": 3.0309436866947275,
+        "x": 446,
+        "y": 244,
+        "background": [
+          167,
+          144,
+          125
+        ]
+      },
+      "median": {
+        "contrast": 3.859436188886729,
+        "x": 358,
+        "y": 328,
+        "background": [
+          140,
+          128,
+          113
+        ]
+      },
+      "below3": 1951,
+      "method": "Opaque white glyph pixels compared with same rendered background after making only foreground fill transparent; explicit text shadow is retained."
+    }
+  }
+]

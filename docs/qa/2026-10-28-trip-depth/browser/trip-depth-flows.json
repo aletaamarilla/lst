@@ -1,0 +1,28 @@
+{
+  "dates": [
+    {
+      "date": "21 mar 2027 — 28 mar 2027",
+      "deposit": "Reserva con 500 €",
+      "pdf": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+      "registration": "/inscripciones/maldivas/?salida=maldivas-2027-03-21"
+    },
+    {
+      "date": "28 mar 2027 — 4 abr 2027",
+      "deposit": "Reserva con 500 €",
+      "pdf": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
+      "registration": "/inscripciones/maldivas/?salida=maldivas-2027-03-28"
+    }
+  ],
+  "paymentTerms": "Reserva con 500 €\n\nCondiciones de pago\n\nSeñal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva.",
+  "escape": {
+    "closed": true,
+    "focus": "button dock-cta"
+  },
+  "registration": {
+    "url": "http://127.0.0.1:4179/inscripciones/maldivas/?salida=maldivas-2027-03-28",
+    "selectedDates": [
+      "28 mar 2027 — 4 abr 2027Niveles II–III · 7 noches"
+    ]
+  },
+  "consoleErrors": []
+}

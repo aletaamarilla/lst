@@ -1,0 +1,33 @@
+Tarea: /viajes/ con la dirección visual de la home y únicamente filtros Nivel y Fecha.
+Base Git: main, 58f338661fc4705364fea08727c836e79b3f2048. Sin commit de esta tarea.
+Había cambios extensos previos. Copias exactas de los archivos afectados antes de editar: before/.
+
+Alcance propio:
+- dist/viajes/index.html: navegación y pie de la home, introducción, dos filtros y catálogo sin grupos por estado ni bloque adicional de ayuda.
+- dist/catalog.css: identidad, cuadrícula y filtros, apilados hasta 480px para leer las opciones completas.
+- scripts/render-catalog.mjs: reutiliza tarjetas de home; meses generados desde las fechas publicadas y niveles por salida.
+- scripts/render-home-trips.mjs: exportar renderHomeTrip y permitir h2/prefijo catalog. El HTML de home era idéntico en esa extracción inicial.
+- dist/home.css: únicamente ampliar los selectores de encabezado de tarjeta a h2.
+- dist/catalog-filter.js y dist/catalog.js: nivel + mes coincidentes en una misma salida; solapamientos entre meses; filtros, historial, limpieza y estados vacíos.
+- scripts/catalog-filter.test.mjs: comportamientos de filtros, límites de calendario y generación.
+- Nuevo scripts/check-catalog-browser.mjs: pruebas responsive, navegación, accesibilidad básica y capturas.
+- scripts/check-sanity-browser.mjs: adaptar consulta a fecha, rutas canónicas y dos enlaces de las tarjetas compartidas.
+
+Criterios y evidencia final:
+- Misma identidad: tarjetas reutilizadas, crema #FFFAE7, tinta #1B1B1B, naranja #EA5934, Aura/Work Sans, cabecera/pie de home. Capturas browser/viajes-{320,390,768,1024,1440}.png.
+- Solo Nivel y Fecha: comprobado con navegador y tests; no Estado, Con fecha, Próximamente ni agrupaciones por estado en el catálogo.
+- Compatibilidad: URLs nivel=1..4 conservadas, nueva fecha=YYYY-MM, estado antiguo ignorado y retirado al cambiar filtros; otros parámetros conservados. AND sobre una misma salida y viajes entre meses comprobados.
+- 70/70 pruebas Node pasan en la última versión conjunta (tests.txt). Base original: 75/75 en baseline-linux-tests.txt; candidata inicial de esta tarea 66/66 y una versión intermedia conjunta 77/77. Las variaciones posteriores corresponden al trabajo concurrente en precios.
+- check.txt: 24 páginas PASS, enlaces/anclas/assets, contratos generados y sintaxis.
+- browser.txt: 473 comprobaciones, 5 anchos de 320 a 1440px, historial, teclado, móvil, filtros combinados, texto aumentado y sin JavaScript. Imágenes reales cargadas en images.json.
+- integration.txt: 220 comprobaciones de navegador y generación aislada, fechas/fichas/galerías/consultas. El fallo previo de la expectativa de slug canónico fue reproducido con los archivos originales en baseline-integration.txt antes de actualizar el test.
+- build-windows.txt y build-windows-check.txt: compilación aislada desde Sanity publicado, 6 destinos, y check 24 páginas PASS. La primera ejecución Linux no conectó a Sanity (build.txt); no se sustituyó el catálogo por esa ejecución fallida.
+- revision-independiente.md: revisión independiente y hallazgo visual de selects recortados resuelto apilándolos en móvil.
+
+Concurrencia:
+Durante el cierre otro trabajo modificó precios/ofertas, render-home-trips.mjs, trip-model, home.css, tests y regeneró páginas. Se conservaron esas ediciones. La versión conjunta final vuelve a pasar check y las 70 pruebas. Esta tarea no es responsable de la funcionalidad compact/ofertas añadida por ese trabajo.
+Identificación exacta de los 11 archivos propios/compartidos y dependencias revisados: candidate.sha256. Estado Git conjunto: git-final.txt.
+No se hizo commit, push ni despliegue. La comprobación del sitio no implica revisión completa de los cambios ajenos.
+
+Corrección final de fechas: se conserva el estado nativo al ocultar una tarjeta para no desincronizar pinned/open en home.js. El control responde a la primera pulsación al recuperar la tarjeta, comprobado en los cinco anchos. La prueba mueve el puntero fuera de la cuadrícula antes de filtrar para separar la pulsación del comportamiento hover. No se modificó home.js desde esta tarea; el helper closeTripDates añadido externamente permanece sin uso en catálogo.
+

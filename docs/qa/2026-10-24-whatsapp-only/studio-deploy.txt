@@ -1,0 +1,20 @@
+
+> lets-surf-together-home@0.1.0 studio:deploy
+> npm --prefix studio run deploy -- --no-build --yes --schema-required
+
+
+> lets-surf-together-studio@1.0.0 deploy
+> sanity deploy --no-build --yes --schema-required
+
+- Checking project info
+✔ Checking project info
+- Verifying local content...
+✔ Verifying local content...
+- Generating studio manifest
+✔ Deployed 1/1 schemas
+✔ Generated studio manifest
+↳ List deployed schemas with: sanity schema list
+- Deploying to sanity.studio
+✔ Deploying to sanity.studio
+
+Success! Studio deployed to https://lets-surf-together.sanity.studio/ — "Let's Surf Together"

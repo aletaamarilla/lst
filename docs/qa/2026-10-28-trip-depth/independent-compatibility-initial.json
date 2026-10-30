@@ -1,0 +1,184 @@
+{
+  "manifestMatches": true,
+  "checks": [
+    {
+      "source": "published",
+      "slug": "el-palmar",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 250,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "fuerteventura",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 250,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "hossegor",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 200,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "maldivas",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 500,
+        "multiple": true
+      },
+      "generatedAliases": 2
+    },
+    {
+      "source": "published",
+      "slug": "marruecos",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 270,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "marruecos-avanzado",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 270,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "senegal",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 325,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "el-palmar",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 250,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "fuerteventura",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 250,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "hossegor",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 200,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "maldivas",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 500,
+        "multiple": true
+      },
+      "generatedAliases": 2
+    },
+    {
+      "source": "local",
+      "slug": "marruecos",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 270,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "marruecos-avanzado",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 270,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "senegal",
+      "linksIdenticalIgnoringRemovedSectionExplorer": true,
+      "allInclusions": true,
+      "paymentTermsPreserved": true,
+      "deposit": {
+        "amount": 325,
+        "multiple": false
+      },
+      "generatedAliases": 1
+    }
+  ],
+  "protectedMatches": {
+    "dist/catalog-snapshot.json": true,
+    "artifacts/local-trip-preview.json": true,
+    "scripts/trip-model.mjs": true,
+    "scripts/sanity-trips.mjs": true,
+    "scripts/trip-groups.mjs": true,
+    "scripts/brevo.mjs": true,
+    "dist/trip.js": true,
+    "dist/styles.css": true,
+    "dist/home.css": true
+  }
+}

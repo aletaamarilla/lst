@@ -1,0 +1,115 @@
+✔ level all AND state all preserve compatible destinations (1.7441ms)
+✔ level all AND state confirmed preserve compatible destinations (0.1632ms)
+✔ level all AND state upcoming preserve compatible destinations (0.0882ms)
+✔ level 1 AND state all preserve compatible destinations (0.0751ms)
+✔ level 1 AND state confirmed preserve compatible destinations (0.0937ms)
+✔ level 1 AND state upcoming preserve compatible destinations (0.0993ms)
+✔ level 2 AND state all preserve compatible destinations (0.0634ms)
+✔ level 2 AND state confirmed preserve compatible destinations (0.0959ms)
+✔ level 2 AND state upcoming preserve compatible destinations (0.0863ms)
+✔ level 3 AND state all preserve compatible destinations (0.136ms)
+✔ level 3 AND state confirmed preserve compatible destinations (0.0942ms)
+✔ level 3 AND state upcoming preserve compatible destinations (0.0984ms)
+✔ level 4 AND state all preserve compatible destinations (0.1459ms)
+✔ level 4 AND state confirmed preserve compatible destinations (0.0662ms)
+✔ level 4 AND state upcoming preserve compatible destinations (0.1108ms)
+✔ each valid numeric URL level is recognised exactly; invalid values mean all (0.3231ms)
+✔ missing, null and empty levels use the existing model defaults for every filter (5.6302ms)
+✔ non-consecutive multiple levels match once each; defaults do not widen explicit restrictions (0.7864ms)
+✔ state follows the existing commercial state, independent of availability (0.1045ms)
+✔ zero matches, no trips, clearing and repeated changes are reversible without mutating data (0.1787ms)
+✔ home date panel contains only departures, while price and one direct trip link stay outside (19.8247ms)
+✔ missing and mixed prices never inherit an obsolete trip price (0.763ms)
+✔ all published trips remain reachable, with three chronological highlights (1.4539ms)
+✔ full, pending, missing photographs, unusual names and empty catalogue stay honest and safe (0.8023ms)
+✔ preview labels the earliest departure and preserves its direct-link description (0.4929ms)
+✔ pending cards keep the next-date label without inventing a departure (0.3262ms)
+✔ date text is escaped in the panel and preview (0.3768ms)
+✔ published next dates compact on the card without changing full departure dates (1.0462ms)
+✔ established LST milestones identify foundations, wall, linked turns and fluid surfing with power (1.3841ms)
+✔ occasional or assisted walls are a transition, never a consolidated level II (0.2411ms)
+✔ support, familiarity or uncertainty about autonomy cannot reduce declared advanced technique to first turns (0.2021ms)
+✔ independence alone never promotes a beginner or implies advanced manoeuvres (0.1064ms)
+✔ contradictory bases and manoeuvres require clarification, never an arbitrary minimum or average (0.1495ms)
+✔ explicit clarification corrects the contradictory evidence, or leaves the result open (0.1613ms)
+✔ not knowing a skill is uncertainty, never a fabricated beginner result (0.1221ms)
+✔ all answer combinations preserve distinct autonomy, produce valid states and do not mutate responses (0.771ms)
+✔ missing or invalid data cannot produce an estimate (0.2732ms)
+✔ production explicitly requests published perspective, fixed target and separate private reader (1.6018ms)
+✔ an importer token is never reused as a production reader; failures do not leak credentials or bodies (0.671ms)
+✔ raw inspection uses importer token only; mutation is create-only and draft-only (0.7311ms)
+✔ adapter rejects drafts/releases, invalid business data, unsafe URLs and duplicate routes (1.6274ms)
+✔ manual price, deposit and availability stay independent; decimals are not rounded to euros (4.8047ms)
+✔ optional content is omitted without fake services, photos or undefined markup; default request stays contextual WhatsApp (0.7953ms)
+✔ legacy application URLs are discarded and every booking placement uses contextual WhatsApp (2.2055ms)
+✔ public snapshot whitelists fields and strips internal notes and unknown nested metadata (0.4932ms)
+✔ editorial tariff text is escaped instead of executing markup in a published card (0.8067ms)
+✔ exclusions and conditions remain visible independently of optional included services (1.1002ms)
+✖ one read supplies home, catalogue, levels and details; stale demo content disappears and routes stay reachable (2618.6379ms)
+✔ reading/validation/render errors preserve the last output (9.6712ms)
+✔ specific eight-draft mapping keeps unknown prices/availability, source distinctions and fixed deposits (1.8049ms)
+✔ collision detection covers IDs, slugs, drafts, published and release versions; existing manual edits are skipped (0.5318ms)
+✔ remote preflight includes a different document type without slug occupying a reserved ID (2.6771ms)
+✔ dry run has zero writes; full validation and authenticated collision checks precede a single transaction (10.7016ms)
+✔ a full trip remains visible with dates/prices, suppresses applications and date choices, and can reopen (42.2319ms)
+✔ manual availability labels have no free-place counts and override obsolete quantities (2.0273ms)
+✔ old documents without manual status retain enquiry when no availability was confirmed (0.4003ms)
+✔ editorial destination names exclude levels and seasonal date labels (1.1329ms)
+✔ six destinations consolidate eight documents without changing the source or losing date PDFs (26.6095ms)
+✔ Morocco defaults to I-II and its later date overrides to III, retaining distinct programmes (3.2642ms)
+✔ level overrides inherit when absent or cleared, and replace rather than widen the default (2.371ms)
+✔ home, catalogue and guide render one Morocco with dates linked to effective levels (4.0223ms)
+✔ grouped departure status and capacity stay separate, including full versus available (2.977ms)
+✖ canonical and old date URLs survive consolidation and withdrawal without stale content (2637.6117ms)
+✔ a single CMS document inherits its default PDF per date and an available override reopens the selector (2.0401ms)
+✔ pending destinations never become full and mixed state dates share one stable route (1.4119ms)
+✔ clearing a date autonomy requirement restores the trip default (1.3905ms)
+✔ levels default to all four; explicit restrictions remain configured (1.9414ms)
+✔ single departure retains its date, duration, price and enquiry context (14.4828ms)
+✔ multiple departures retain distinct dates, prices and WhatsApp messages (1.5529ms)
+✔ pending destinations keep all levels and do not manufacture dates or prices (0.2557ms)
+✔ obsolete top-level dates and prices never supply a departure (0.2768ms)
+✔ accompaniment reuses exact services from its own confirmed departure without borrowing staff (1.5676ms)
+✔ pending programmes and explicit editorial team text retain their own authority (0.2068ms)
+✔ rendered accompaniment is escaped and its enquiry retains destination and existing WhatsApp channel (6.1333ms)
+✔ a destination without confirmed staff keeps a candid enquiry without asserting named people (0.7289ms)
+ℹ tests 75
+ℹ suites 0
+ℹ pass 73
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3685.4269
+
+✖ failing tests:
+
+test at scripts\sanity.test.mjs:161:1
+✖ one read supplies home, catalogue, levels and details; stale demo content disappears and routes stay reachable (2618.6379ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\Antonio Fernandez\AppData\Local\Packages\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\AC\Temp\lst-integration-VaVZmj\site.stage-53660' -> 'C:\Users\Antonio Fernandez\AppData\Local\Packages\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\AC\Temp\lst-integration-VaVZmj\site'
+      at async rename (node:internal/fs/promises:842:10)
+      at async buildSite (file://wsl$/Ubuntu/home/amfernandez/personalProjects/letsurftogethersystem/scripts/build.mjs:51:11)
+      at async TestContext.<anonymous> (file://wsl$/Ubuntu/home/amfernandez/personalProjects/letsurftogethersystem/scripts/sanity.test.mjs:166:5)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\Antonio Fernandez\\AppData\\Local\\Packages\\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\\AC\\Temp\\lst-integration-VaVZmj\\site.stage-53660',
+    dest: 'C:\\Users\\Antonio Fernandez\\AppData\\Local\\Packages\\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\\AC\\Temp\\lst-integration-VaVZmj\\site'
+  }
+
+test at scripts\trip-groups.test.mjs:129:1
+✖ canonical and old date URLs survive consolidation and withdrawal without stale content (2637.6117ms)
+  Error: EPERM: operation not permitted, rename 'C:\Users\Antonio Fernandez\AppData\Local\Packages\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\AC\Temp\lst-unified-gQClA1\site.stage-49548' -> 'C:\Users\Antonio Fernandez\AppData\Local\Packages\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\AC\Temp\lst-unified-gQClA1\site'
+      at async rename (node:internal/fs/promises:842:10)
+      at async buildSite (file://wsl$/Ubuntu/home/amfernandez/personalProjects/letsurftogethersystem/scripts/build.mjs:51:11)
+      at async TestContext.<anonymous> (file://wsl$/Ubuntu/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-groups.test.mjs:134:3)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    errno: -4048,
+    code: 'EPERM',
+    syscall: 'rename',
+    path: 'C:\\Users\\Antonio Fernandez\\AppData\\Local\\Packages\\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\\AC\\Temp\\lst-unified-gQClA1\\site.stage-49548',
+    dest: 'C:\\Users\\Antonio Fernandez\\AppData\\Local\\Packages\\sandbox.{96755f6e-b4ce-4b36-bce3-fbeda012da48}\\AC\\Temp\\lst-unified-gQClA1\\site'
+  }

@@ -1,0 +1,13 @@
+import {readFile,writeFile,copyFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const root='docs/qa/2026-10-30-trip-audit';
+const sources=['scripts/render-trips.mjs','scripts/render-registration.mjs','scripts/trip-decision.mjs','dist/trip-conversion.css','dist/registration.css','dist/registration.js','scripts/trip-decision.test.mjs','scripts/trip-depth.test.mjs','scripts/trip-experience.test.mjs','scripts/trip-refinement.test.mjs'];
+const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
+const pages=trips.flatMap(trip=>[trip.slug,...(trip.aliases??[])]).flatMap(slug=>[`dist/viajes/${slug}/index.html`,`dist/inscripciones/${slug}/index.html`]);
+const hashes={};
+for(const file of [...sources,...pages])hashes[file]=createHash('sha256').update(await readFile(file)).digest('hex');
+await writeFile(`${root}/candidate-hashes.json`,JSON.stringify({base:'58f338661fc4705364fea08727c836e79b3f2048',uncommitted:true,sources,generatedPages:pages,sha256:hashes},null,2)+'\n');
+const screenshots='C:/Users/Antonio Fernandez/.codex/visualizations/2026/10/30/01a18d96-5a3d-7e83-92e8-08e6cbf772d7';
+await mkdir(`${root}/browser`,{recursive:true});
+for(const file of ['viaje-desktop.png','viaje-mobile.png','fechas-mobile.png','solicitud-mobile.png','programa-desktop.png','browser-audit.json'])await copyFile(`${screenshots}/${file}`,`${root}/browser/${file}`);
+console.log(`Recorded ${sources.length} source/test hashes, ${pages.length} generated pages and browser evidence.`);

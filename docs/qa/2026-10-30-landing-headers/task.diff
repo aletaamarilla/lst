@@ -1,0 +1,549 @@
+diff --git a/artifacts/landing-headers-before/dist/catalog.css b/dist/catalog.css
+index dab0474..218998d 100644
+--- a/artifacts/landing-headers-before/dist/catalog.css
++++ b/dist/catalog.css
+@@ -1,42 +1,21 @@
+-/* Catalogue shares the home identity, navigation, footer and trip cards. */
+-body.catalog-page .site-header{background:var(--lst-paper);border-bottom:1px solid var(--lst-line)}
+-body.catalog-page .site-header.is-scrolled,body.catalog-page .site-header:has(nav.is-open){background:var(--lst-paper)}
+-body.catalog-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+-body.catalog-page .site-header nav .lst-nav-contact{padding:9px 18px;border-radius:100px;background:var(--lst-ink);color:var(--lst-paper)}
+-body.catalog-page .site-header nav .lst-nav-contact:hover{background:var(--lst-paper);color:var(--lst-ink);text-decoration:none}
+-body.catalog-page .site-header:not(.is-scrolled) nav [aria-current=page]{text-decoration-color:var(--lst-ink)}
+-body.catalog-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:7px}
+-body.catalog-page main{padding-top:var(--home-header-height)}
++/* The catalogue uses the same photographic entry and navigation as the landings. */
++body.catalog-page main{padding-top:0}
+ body.catalog-page main[tabindex="-1"]:focus{outline:none;box-shadow:none}
+-/* A surf poster on cream: angled type, a printed memory and an orange edge. */
+-body.catalog-page .catalog-intro{position:relative;isolation:isolate;padding-block:44px 96px;background:var(--lst-paper)}
+-
+-body.catalog-page .catalog-intro-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:56px}
+-body.catalog-page .catalog-intro-content{position:relative;z-index:1;min-width:0}
+-body.catalog-page .catalog-intro .lst-eyebrow{max-width:32em;margin-bottom:26px;font-size:10px;letter-spacing:.035em}
+-body.catalog-page .catalog-intro h1{max-width:760px;font:400 clamp(64px,6.4vw,92px)/1.02 var(--lst-display);letter-spacing:-.015em}
+-body.catalog-page .catalog-intro h1 em{display:inline-block;margin-top:8px;padding:0 .12em .07em;background:var(--lst-ink);color:var(--lst-paper);font-style:normal;transform:rotate(-3deg)}
+-body.catalog-page .catalog-intro-copy{max-width:32em;margin-top:28px;color:var(--lst-ink);font-size:15px;line-height:1.65}
+-body.catalog-page .catalog-postcard{position:relative;width:100%;max-width:385px;margin:0 10px 0 auto;padding:11px 11px 16px;background:var(--lst-paper);border:1px solid var(--lst-ink);border-radius:0;box-shadow:9px 10px 0 var(--lst-ink);transform:rotate(4deg)}
+-body.catalog-page .catalog-postcard-photo{overflow:hidden;aspect-ratio:1.08}
+-body.catalog-page .catalog-postcard-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 64%}
+-body.catalog-page .catalog-postcard figcaption{padding:14px 4px 0;font:400 clamp(24px,2.4vw,33px)/1.1 var(--lst-display)}
+-body.catalog-page .catalog-stamp{position:absolute;top:-26px;right:-20px;display:grid;place-items:center;width:92px;aspect-ratio:1;border:2px solid var(--lst-ink);border-radius:50%;background:var(--lst-orange);transform:rotate(-14deg)}
+-body.catalog-page .catalog-stamp img{width:65px;height:auto}
+-/* Controls are steady and readable inside a contrasting, offset printed panel. */
+-body.catalog-page .catalog-filters{position:relative;z-index:2;display:flex;align-items:end;flex-wrap:wrap;gap:18px 28px;margin-top:-42px;padding:28px 32px 32px;border:0;border-radius:4px 28px 4px 4px;background:var(--lst-ink);color:var(--lst-paper);box-shadow:5px 5px 0 var(--lst-orange)}
+-body.catalog-page .catalog-field{flex:1 1 260px;min-width:0}
+-body.catalog-page .catalog-field label{display:flex;align-items:baseline;gap:12px;margin:0 0 12px;color:var(--lst-paper);font:400 32px/1.1 var(--lst-display)}
+-body.catalog-page .catalog-field label:before{content:'01 /';color:var(--lst-orange);font:400 11px/1.5 'Space Mono',monospace}
+-body.catalog-page .catalog-field:nth-child(2) label:before{content:'02 /'}
+-body.catalog-page .catalog-field select{width:100%;min-width:0;min-height:54px;padding:13px 42px 13px 16px;border:2px solid var(--lst-paper);border-radius:4px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.5 'Work Sans',Arial,sans-serif;cursor:pointer;transition:border-color .18s}
++body.catalog-page .catalog-intro .landing-hero-photo img{object-position:60% 62%}
++body.catalog-page .catalog-intro h1 em{display:inline-block;margin-top:7px;transform:rotate(-2deg)}
++body.catalog-page .catalog-intro-copy{max-width:430px}
++/* A single, readable level control keeps the printed-panel character. */
++body.catalog-page .catalog-filters{position:relative;display:flex;align-items:center;gap:24px;margin-top:28px;padding:24px 28px;border:0;border-radius:4px 28px 4px 4px;background:var(--lst-ink);color:var(--lst-paper);box-shadow:4px 4px 0 var(--lst-orange)}
++body.catalog-page .catalog-field{display:flex;align-items:center;gap:24px;flex:1;min-width:0}
++body.catalog-page .catalog-field label{flex-shrink:0;margin:0;color:var(--lst-paper);font:400 32px/1.1 var(--lst-display)}
++body.catalog-page .catalog-field select{width:100%;max-width:650px;min-width:0;min-height:54px;padding:13px 42px 13px 16px;border:2px solid var(--lst-paper);border-radius:4px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.5 'Work Sans',Arial,sans-serif;cursor:pointer;transition:border-color .18s}
+ body.catalog-page .catalog-field select:hover{border-color:var(--lst-orange)}
+ body.catalog-page .catalog-field select:focus-visible{outline:3px solid var(--lst-paper);outline-offset:5px;border-color:var(--lst-orange)}
+-body.catalog-page .catalog-clear{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;margin-left:4px;padding:12px 18px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:13px;font-weight:500;cursor:pointer;transition:background .18s,border-color .18s}
++body.catalog-page .catalog-clear{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:48px;padding:11px 18px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:13px;font-weight:500;white-space:nowrap;cursor:pointer;transition:background .18s,border-color .18s}
+ body.catalog-page .catalog-clear span{font-size:21px;line-height:1}
+ body.catalog-page .catalog-clear:hover{background:var(--lst-paper);border-color:var(--lst-paper)}
+ body.catalog-page .catalog-filters button:focus-visible{outline-color:var(--lst-paper)}
+-body.catalog-page .catalog-status{margin-block:26px 22px;color:var(--lst-muted);font-size:12px;line-height:1.7}
++body.catalog-page .catalog-status{margin-block:28px 22px;color:var(--lst-muted);font-size:12px;line-height:1.7}
+ body.catalog-page .catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+ body.catalog-page .catalog-card[hidden],body.catalog-page [hidden]{display:none!important}
+ body.catalog-page .catalog-card h2{max-width:none;font-size:clamp(37px,3.8vw,51px)}
+@@ -47,32 +26,13 @@ body.catalog-page .catalog-empty .lst-button{margin-top:24px}
+ body.catalog-page .catalog-note{margin-block:20px;color:var(--lst-muted);font-size:14px}
+ body.catalog-page .catalog{padding-bottom:64px}
+ body.catalog-page .lst-footer{border-top:1px solid var(--lst-line)}
+-@media(max-width:1100px){
+- body.catalog-page .catalog-intro-layout{gap:40px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+- body.catalog-page .catalog-postcard{width:calc(100% - 30px);max-width:320px;margin-right:20px}
+- body.catalog-page .catalog-intro h1{font-size:clamp(61px,7.2vw,78px)}
+- body.catalog-page .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+- body.catalog-page .catalog-field{flex-basis:220px}
+- body.catalog-page .catalog-filters{gap:20px;padding:26px}
+- body.catalog-page .catalog-clear{margin-left:0}
+-}
++@media(max-width:1100px){body.catalog-page .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+ @media(max-width:760px){
+- body.catalog-page .catalog-intro{padding-block:30px 76px}
+- body.catalog-page .catalog-intro-layout{grid-template-columns:minmax(0,1fr);gap:30px}
+- body.catalog-page .catalog-intro .lst-eyebrow{margin-bottom:18px;font-size:9px}
+- body.catalog-page .catalog-intro h1{font-size:clamp(53px,9.4vw,74px)}
++ body.catalog-page .catalog-intro h1{font-size:clamp(58px,14.5vw,78px)}
+  body.catalog-page .catalog-intro h1 em{margin-top:5px}
+- body.catalog-page .catalog-intro-copy{margin-top:20px;font-size:14px}
+- body.catalog-page .catalog-postcard{width:80%;max-width:330px;margin:0 12px 0 auto;padding:8px 8px 12px;box-shadow:6px 7px 0 var(--lst-ink);transform:rotate(4deg)}
+- body.catalog-page .catalog-postcard-photo{aspect-ratio:1.8}
+- body.catalog-page .catalog-postcard figcaption{padding-top:10px;font-size:25px}
+- body.catalog-page .catalog-stamp{top:-19px;right:-14px;width:68px}
+- body.catalog-page .catalog-stamp img{width:48px}
+- body.catalog-page .catalog-filters{gap:22px 18px;margin-top:-28px;padding:24px 22px;border-radius:4px 24px 4px 4px;box-shadow:4px 4px 0 var(--lst-orange)}
+- body.catalog-page .catalog-field{flex:1 1 calc(50% - 9px)}
+- body.catalog-page .catalog-field label{margin-bottom:10px;font-size:30px}
+- body.catalog-page .catalog-clear{min-height:44px;margin-left:auto;padding-block:9px}
+- body.catalog-page .catalog-status{margin-block:26px 18px}
++ body.catalog-page .catalog-filters{gap:18px;padding:22px;border-radius:4px 24px 4px 4px}
++ body.catalog-page .catalog-field{gap:18px}
++ body.catalog-page .catalog-field label{font-size:30px}
+  body.catalog-page .catalog-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+  body.catalog-page .catalog-card h2{font-size:39px}
+  body.catalog-page .catalog{padding-bottom:44px}
+@@ -80,10 +40,10 @@ body.catalog-page .lst-footer{border-top:1px solid var(--lst-line)}
+  body.catalog-page .catalog-empty h2{font-size:36px}
+ }
+ @media(max-width:600px){
+- body.catalog-page .catalog-field{flex-basis:100%}
++ body.catalog-page .catalog-filters{flex-wrap:wrap}
++ body.catalog-page .catalog-field{display:block;flex-basis:100%}
++ body.catalog-page .catalog-field label{margin-bottom:12px}
+  body.catalog-page .catalog-field select{padding-right:34px}
+- body.catalog-page .catalog-postcard{width:84%}
+-}
+-@media(prefers-reduced-motion:reduce){
+- body.catalog-page .catalog-filters :is(select,button){transition:none}
++ body.catalog-page .catalog-clear{margin-left:auto}
+ }
++@media(prefers-reduced-motion:reduce){body.catalog-page .catalog-filters :is(select,button){transition:none}}
+diff --git a/artifacts/landing-headers-before/dist/levels.css b/dist/levels.css
+index 1f36cf4..6a1da58 100644
+--- a/artifacts/landing-headers-before/dist/levels.css
++++ b/dist/levels.css
+@@ -1,9 +1,8 @@
+ /* The levels guide shares the home typography, spacing, navigation and controls. */
+ html:has(.levels-page){scroll-padding-top:calc(var(--home-header-height,88px) + 12px)}
+ body.levels-page .section-width{width:min(1224px,calc(100% - 96px));margin-inline:auto}
+-body.levels-page .site-header{background:var(--lst-paper);border-bottom:1px solid var(--lst-line)}
+ body.levels-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:7px}
+-body.levels-page main{padding-top:calc(var(--home-header-height,88px) + 30px)}
++body.levels-page main{padding-top:0}
+ body.levels-page .eyebrow{font:400 11px/1.65 var(--mono);letter-spacing:.035em;margin-bottom:16px}
+ body.levels-page :is(main,section,div)[tabindex="-1"]:focus{outline:none;box-shadow:none}
+ body.levels-page .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 18px;border-radius:100px;background:var(--lst-orange);border:1px solid var(--lst-orange);font:500 13px/1.5 var(--body);text-align:center}
+@@ -11,13 +10,13 @@ body.levels-page .button:hover{background:var(--lst-ink);color:var(--lst-paper);
+ 
+ /* A travel journal, with one short, photographic story per level. */
+ .guide-intro{padding-bottom:64px}
+-.guide-intro-visual{position:relative;isolation:isolate;display:flex;align-items:center;min-height:500px;padding:48px 52px 56px;background:var(--ink);color:var(--paper);border-radius:32px 32px 0 0;overflow:hidden}
+-.guide-intro-visual:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(27,27,27,.74),rgba(27,27,27,.35) 65%,rgba(27,27,27,.12))}
+-.guide-photo{position:absolute;inset:0;z-index:-2}
++
++
++
+ body.levels-page .guide-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 52%}
+-.guide-photo figcaption{position:absolute;right:28px;bottom:18px;font:400 9px/1.6 var(--mono);color:var(--paper)}
++
+ .guide-intro-copy{max-width:690px}
+-.guide-intro h1{font:400 clamp(86px,9vw,128px)/.91 var(--display);letter-spacing:-.015em}
++
+ .guide-lead{font-size:15px;line-height:1.7;max-width:365px;margin-top:24px!important}
+ 
+ 
+@@ -114,11 +113,11 @@ body.levels-page .guide-help-photo img{aspect-ratio:1.25;object-fit:cover;object
+ body.levels-page .guide-next h2{font-size:40px;line-height:1.03}
+ .guide-next>.button{flex-shrink:0}
+ @media(hover:hover){.guide-level:hover .guide-level-photo{transform:scale(1.035)}}
+-@media(max-width:1100px){.guide-intro-visual{padding-inline:38px}.guide-stamp{right:36px;width:130px;height:130px}.guide-stamp strong{font-size:29px}.guide-index a{padding-inline:12px;gap:9px}.guide-index-number{font-size:12px;flex-basis:22px}.guide-level-body,.guide-level-media{padding-inline:24px}.guide-level-actions,.guide-practice{padding-inline:24px}.guide-help-layout{gap:36px}}
++@media(max-width:1100px){.guide-stamp{right:36px;width:130px;height:130px}.guide-stamp strong{font-size:29px}.guide-index a{padding-inline:12px;gap:9px}.guide-index-number{font-size:12px;flex-basis:22px}.guide-level-body,.guide-level-media{padding-inline:24px}.guide-level-actions,.guide-practice{padding-inline:24px}.guide-help-layout{gap:36px}}
+ @media(max-width:760px){
+  body.levels-page .section-width{width:calc(100% - 40px)}
+- body.levels-page main{padding-top:calc(var(--home-header-height,70px) + 18px)}
+- .guide-intro{padding-bottom:40px}.guide-intro-visual{padding:30px 24px 132px;min-height:440px;border-radius:26px 26px 0 0;align-items:flex-start}.guide-intro h1{font-size:clamp(68px,15vw,98px)}.guide-lead{font-size:14px;max-width:260px}.guide-stamp{width:94px;height:94px;right:18px;bottom:22px;padding:10px;gap:5px}.guide-stamp span{font-size:5px}.guide-stamp strong{font-size:21px}.guide-stamp svg{width:40px;height:14px}.guide-photo figcaption{left:24px;right:120px;bottom:24px;font-size:8px}
++ body.levels-page main{padding-top:0}
++ .guide-intro{padding-bottom:40px}.guide-lead{font-size:14px;max-width:260px}.guide-stamp{width:94px;height:94px;right:18px;bottom:22px;padding:10px;gap:5px}.guide-stamp span{font-size:5px}.guide-stamp strong{font-size:21px}.guide-stamp svg{width:40px;height:14px}
+  .guide-index{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 8px;border-radius:0 0 24px 24px}.guide-index a{display:grid;grid-template-columns:minmax(0,1fr) 16px;min-height:84px;padding:15px 10px;gap:7px 8px}.guide-index a:nth-child(3){border-left:0}.guide-index a:nth-child(n+3){border-top:1px solid rgba(255,250,231,.28)}.guide-index-number{font-size:10px;max-width:none;grid-column:1;grid-row:1}.guide-index strong{font:600 16px/1.35 var(--body);grid-column:1;grid-row:2}.guide-index-arrow{font-size:16px;grid-column:2;grid-row:1/3;align-self:center;margin-left:0}
+  .guide-section-intro{display:block;padding-bottom:22px}.guide-section-intro>p{max-width:none;margin-top:14px!important;padding:0;font-size:13px}body.levels-page .guide-section-intro h2{font-size:48px}.guide-section-intro .eyebrow{font-size:9px}
+  .guide-levels-grid{grid-template-columns:1fr;gap:22px}.guide-level:nth-child(even){margin-top:0}.guide-level-media{min-height:220px;padding:24px 22px}.guide-level-number{font-size:84px;top:16px;right:22px}.guide-level-heading .eyebrow{font-size:9px}body.levels-page .guide-level h2{font-size:60px}.guide-level-body{padding:22px 22px 0}body.levels-page .guide-level-hook{font-size:30px;margin-bottom:16px}.guide-definition{font-size:14px;line-height:1.75}.guide-practice{margin-top:18px;padding:18px 22px}.guide-practice p{font-size:13px}.guide-level-actions{padding:0 22px 22px;gap:8px}.guide-reading-note{font-size:11px}
+@@ -127,7 +126,7 @@ body.levels-page .guide-next h2{font-size:40px;line-height:1.03}
+  .guide-help{padding:32px 0}.guide-help-layout{grid-template-columns:1fr;gap:26px}body.levels-page .guide-help h2{font-size:60px}.guide-help-copy>p:not(.eyebrow){font-size:14px}body.levels-page .guide-help-photo img{aspect-ratio:1.5;border-top-left-radius:44px}.guide-help .guide-contact{max-width:100%;text-align:center}
+  .guide-next{gap:20px;padding-block:26px}body.levels-page .guide-next h2{font-size:33px}.guide-next>.button{font-size:12px;padding-inline:14px}
+ }
+-@media(max-width:359px){body.levels-page .section-width{width:calc(100% - 36px)}.guide-intro-visual{padding-inline:20px}.guide-intro h1{font-size:64px}.guide-index{padding-inline:6px}.guide-index a{padding-inline:8px;gap:7px}.guide-index-number{flex-basis:20px;font-size:11px}.guide-index strong{font-size:14px}.guide-index-arrow{font-size:14px}.guide-level-body,.guide-level-media,.guide-practice,.guide-level-actions{padding-inline:18px}body.levels-page .guide-level h2{font-size:46px}.guide-autonomy{padding-inline:20px}.guide-help{padding-inline:0}.guide-next{flex-direction:column;align-items:flex-start}.guide-next>.button{width:100%}}
++@media(max-width:359px){body.levels-page .section-width{width:calc(100% - 36px)}.guide-index{padding-inline:6px}.guide-index a{padding-inline:8px;gap:7px}.guide-index-number{flex-basis:20px;font-size:11px}.guide-index strong{font-size:14px}.guide-index-arrow{font-size:14px}.guide-level-body,.guide-level-media,.guide-practice,.guide-level-actions{padding-inline:18px}body.levels-page .guide-level h2{font-size:46px}.guide-autonomy{padding-inline:20px}.guide-help{padding-inline:0}.guide-next{flex-direction:column;align-items:flex-start}.guide-next>.button{width:100%}}
+ @media(prefers-reduced-motion:reduce){.guide-level-photo{transition:none}.guide-level:hover .guide-level-photo{transform:none}}
+ 
+ /* Each level keeps its own rhythm; colour is a chapter accent. */
+@@ -140,3 +139,16 @@ body.levels-page .guide-help-heading .eyebrow{color:var(--paper)}
+ body.levels-page .guide-help h2{margin-bottom:0}
+ body.levels-page .guide-help h2 em{font-style:normal;color:var(--orange)}
+ @media(max-width:760px){.guide-help-heading{padding:28px 24px}}
++
++/* Full-width entry, shared with the other photographic landings. */
++body.levels-page.landing-page section[id]{scroll-margin-top:0}
++body.levels-page .guide-intro-visual{border-radius:0}
++body.levels-page .guide-intro-visual .landing-hero-copy{position:relative;z-index:1}
++body.levels-page .guide-intro-visual .landing-hero-photo img{object-position:50% 52%}
++body.levels-page .guide-stamp{right:max(48px,calc((100% - 1224px)/2));bottom:70px}
++@media(max-width:760px){
++ body.levels-page .guide-intro-visual{min-height:570px;padding-bottom:132px}
++ body.levels-page .guide-intro-visual:after{background:linear-gradient(90deg,rgba(15,19,17,.55),rgba(15,19,17,.12)),linear-gradient(180deg,rgba(15,19,17,.38),rgba(15,19,17,.12) 28%,rgba(15,19,17,.38) 52%,rgba(15,19,17,.86))}
++ body.levels-page .guide-stamp{right:24px;bottom:24px}
++ body.levels-page .guide-photo figcaption{right:130px;left:22px;bottom:24px}
++}
+diff --git a/artifacts/landing-headers-before/dist/viajes/index.html b/dist/viajes/index.html
+index fd1111f..cbbdd0a 100644
+--- a/artifacts/landing-headers-before/dist/viajes/index.html
++++ b/dist/viajes/index.html
+@@ -1,27 +1,17 @@
+ <!doctype html>
+ <html lang="es"><head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7">
+-<title>Viajes de surf por nivel y fecha — Let’s Surf Together</title><meta name="description" content="Encuentra tu próximo viaje de surf con LST. Filtra por nivel y fecha y consulta el programa de cada salida.">
+-<link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/catalog.css">
+-</head><body class="home-modern catalog-page"><a class="skip-link" href="#contenido">Saltar al contenido</a>
++<title>Viajes de surf por nivel — Let’s Surf Together</title><meta name="description" content="Encuentra tu próximo viaje de surf con LST. Filtra por nivel, consulta las fechas y descubre el programa de cada salida.">
++<link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/landing.css"><link rel="stylesheet" href="/catalog.css">
++</head><body class="home-modern landing-page catalog-page"><a class="skip-link" href="#contenido">Saltar al contenido</a>
+ <header class="site-header"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/" aria-current="page">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos</a></nav></header>
+ <noscript><nav class="static-navigation lst-width" aria-label="Navegación sin JavaScript"><a href="/viajes/" aria-current="page">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav></noscript>
+ <main id="contenido" tabindex="-1">
+- <section class="catalog-intro" aria-labelledby="catalog-title">
+-  <div class="catalog-intro-layout lst-width">
+-   <div class="catalog-intro-content">
+-    <p class="lst-eyebrow">Viajes de surf en grupo</p>
+-    <h1 id="catalog-title">Busca tu<br><em>próxima ola.</em></h1>
+-    <p class="catalog-intro-copy">Mira qué viajes encajan con tu nivel y cuándo puedes venir.</p>
+-   </div>
+-   <figure class="catalog-postcard"><div class="catalog-postcard-photo"><img src="/assets/surf-session.webp" alt="Una surfista de LST recorre una ola cerca de la orilla" width="1600" height="1066" fetchpriority="high" decoding="async"></div><figcaption>Un baño con el grupo.</figcaption><span class="catalog-stamp" aria-hidden="true"><img src="/assets/brand/symbol-black.svg" alt="" width="72" height="45"></span></figure>
+-  </div>
+- </section>
++ <section class="landing-hero catalog-intro" aria-labelledby="catalog-title"><figure class="landing-hero-photo"><img src="/assets/surf-session.webp" alt="Una surfista de LST recorre una ola cerca de la orilla" width="1600" height="1066" fetchpriority="high" decoding="async"><figcaption>Un baño con el grupo. Un recuerdo de LST.</figcaption></figure><div class="landing-hero-copy lst-width"><p class="eyebrow">Viajes de surf en grupo</p><h1 id="catalog-title">Busca tu<br><em>próxima ola.</em></h1><p class="landing-hero-description catalog-intro-copy">Mira qué viajes encajan con tu nivel y cuándo puedes venir.</p></div></section>
+  <section class="catalog lst-width" aria-label="Catálogo de viajes">
+-  <div class="catalog-filters" data-catalog-filters role="group" aria-label="Filtrar viajes" hidden>
++  <div class="catalog-filters" data-catalog-filters role="group" aria-label="Filtrar viajes por nivel" hidden>
+    <div class="catalog-field"><label for="catalog-level">Nivel</label><select id="catalog-level" aria-controls="catalog-results"><option value="">Todos los niveles</option><option value="1">I · Rookies</option><option value="2">II · Aprendices</option><option value="3">III · Riders</option><option value="4">IV · Supercracks</option></select></div>
+-   <div class="catalog-field"><label for="catalog-date">Fecha</label><select id="catalog-date" aria-controls="catalog-results"><option value="">Cualquier fecha</option><!-- catalog-dates:start --><option value="2026-11">Noviembre de 2026</option><option value="2026-12">Diciembre de 2026</option><option value="2027-01">Enero de 2027</option><option value="2027-02">Febrero de 2027</option><option value="2027-03">Marzo de 2027</option><option value="2027-04">Abril de 2027</option><!-- catalog-dates:end --></select></div>
+-   <button class="catalog-clear" type="button" data-catalog-clear>Limpiar filtros <span aria-hidden="true">×</span></button>
++   <button class="catalog-clear" type="button" data-catalog-clear>Ver todos <span aria-hidden="true">×</span></button>
+   </div>
+   <noscript><p class="catalog-note">Consulta las fechas y los niveles de cada viaje en su ficha.</p></noscript>
+   <!-- catalog:start -->
+@@ -62,7 +52,7 @@
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de Maldivas"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas de Maldivas"><a class="home-trip-dates-link" href="/viajes/maldivas/" aria-label="Ver viaje de Maldivas"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">21 mar 2027 — 28 mar 2027</span></li><li class="departure-row"><span class="departure-row-date">28 mar 2027 — 4 abr 2027</span></li></ul></a></div></details>
+ </div><p class="home-trip-preview" id="catalog-maldivas-facts"><span class="home-trip-preview-label">Próx. fecha</span><span class="home-trip-preview-date">21–28 mar 2027</span><span class="home-trip-duration">7 noches</span></p><div class="home-trip-booking"><a class="home-trip-link catalog-card-link" aria-describedby="catalog-maldivas-facts" href="/viajes/maldivas/" aria-labelledby="catalog-maldivas-action catalog-maldivas-title"><span class="home-trip-price">1.499 €<small>por persona</small></span><span class="home-trip-action" id="catalog-maldivas-action">Ver viaje</span></a></div></article></div>
+ <!-- catalog:end -->
+-  <div class="catalog-empty" id="catalog-empty" hidden><h2>No hay viajes con estos filtros.</h2><p>Prueba con otro nivel o fecha.</p><button class="lst-button" type="button" data-catalog-clear>Limpiar filtros <span aria-hidden="true">↗</span></button></div>
++  <div class="catalog-empty" id="catalog-empty" hidden><h2>No hay viajes para este nivel.</h2><p>Prueba con otro nivel o consulta todos los viajes.</p><button class="lst-button" type="button" data-catalog-clear>Ver todos <span aria-hidden="true">↗</span></button></div>
+  </section>
+ </main>
+ <footer class="lst-footer"><div class="lst-width"><div class="lst-footer-top"><a class="lst-footer-brand" href="/" aria-label="Let's Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><span>Viajes de surf en grupo.</span></div><div class="lst-footer-bottom"><span>© 2026 Let's Surf Together</span><nav class="lst-footer-links" aria-label="Enlaces de pie de página"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#reservar">Cómo reservar</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">Instagram</a></nav></div></div></footer>
+diff --git a/artifacts/landing-headers-before/dist/niveles/index.html b/dist/niveles/index.html
+index a9b831e..36b590b 100644
+--- a/artifacts/landing-headers-before/dist/niveles/index.html
++++ b/dist/niveles/index.html
+@@ -5,19 +5,19 @@
+  <title>Niveles de surf · Rookies, Aprendices, Riders y Supercracks — Let’s Surf Together</title>
+  <meta name="description" content="Oriéntate entre los cuatro niveles de surf de LST, entiende la diferencia entre técnica y autonomía y consulta con el equipo qué viaje encaja contigo.">
+  <link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin>
+- <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/levels.css">
++ <link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/landing.css"><link rel="stylesheet" href="/levels.css">
+ </head>
+-<body class="home-modern levels-page">
++<body class="home-modern landing-page levels-page">
+ <a class="skip-link" href="#contenido">Saltar al contenido</a>
+-<header class="site-header"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip header-levels" href="/niveles/" aria-current="page">Niveles</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/" aria-current="page">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact nav-whatsapp" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos</a></nav></header>
++<header class="site-header"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip header-levels" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/" aria-current="page">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact nav-whatsapp" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos</a></nav></header>
+ <main id="contenido" tabindex="-1">
+ <noscript><nav class="static-navigation section-width" aria-label="Navegación sin JavaScript"><a href="/viajes/">Viajes</a><a href="/niveles/" aria-current="page">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav></noscript>
+- <section class="guide-intro section-width" aria-labelledby="guide-title">
+-  <div class="guide-intro-visual"><figure class="guide-photo"><img src="/assets/marruecos-day.webp" width="1500" height="1000" alt="Personas con tablas y camellos al atardecer en Marruecos" fetchpriority="high" decoding="async"><figcaption>Marruecos. Un recuerdo de LST.</figcaption></figure>
+-   <div class="guide-intro-copy"><p class="eyebrow">NIVELES DE SURF</p><h1 id="guide-title">¿En qué ola<br>estás tú?</h1><p class="guide-lead">De la primera espuma a ese giro que persigues. Encuentra tu nivel y vente al agua.</p></div>
++ <section class="guide-intro" aria-labelledby="guide-title">
++  <div class="landing-hero guide-intro-visual"><figure class="landing-hero-photo guide-photo"><img src="/assets/marruecos-day.webp" width="1500" height="1000" alt="Personas con tablas y camellos al atardecer en Marruecos" fetchpriority="high" decoding="async"><figcaption>Marruecos. Un recuerdo de LST.</figcaption></figure>
++   <div class="landing-hero-copy lst-width"><div class="guide-intro-copy"><p class="eyebrow">NIVELES DE SURF</p><h1 id="guide-title">¿En qué ola<br>estás tú?</h1><p class="landing-hero-description guide-lead">De la primera espuma a ese giro que persigues. Encuentra tu nivel y vente al agua.</p></div></div>
+    <div class="guide-stamp" aria-hidden="true"><span>EL SIGUIENTE BAÑO</span><strong>EN GRUPO</strong><svg viewBox="0 0 60 20" width="60" height="20" fill="none"><path d="M1 12q7-12 14 0t14 0 14 0 14 0" stroke="currentColor" stroke-width="2"/></svg></div>
+   </div>
+-  <nav class="guide-index" aria-label="Saltar a un nivel">
++  <nav class="guide-index section-width" aria-label="Saltar a un nivel">
+    <a href="#rookies"><span class="guide-index-number" aria-label="Nivel I">I</span><strong>Rookies</strong><span class="guide-index-arrow" aria-hidden="true">↗</span></a>
+    <a href="#aprendices"><span class="guide-index-number" aria-label="Nivel II">II</span><strong>Apren<wbr>dices</strong><span class="guide-index-arrow" aria-hidden="true">↗</span></a>
+    <a href="#riders"><span class="guide-index-number" aria-label="Nivel III">III</span><strong>Riders</strong><span class="guide-index-arrow" aria-hidden="true">↗</span></a>
+diff --git a/artifacts/landing-headers-before/dist/catalog.js b/dist/catalog.js
+index 47d0472..7581032 100644
+--- a/artifacts/landing-headers-before/dist/catalog.js
++++ b/dist/catalog.js
+@@ -2,52 +2,45 @@ import {catalogFilters, filterCatalog} from './catalog-filter.js';
+ 
+ const controls = document.querySelector('[data-catalog-filters]');
+ const level = document.querySelector('#catalog-level');
+-const date = document.querySelector('#catalog-date');
+ const status = document.querySelector('#catalog-status');
+ const empty = document.querySelector('#catalog-empty');
+ const trips = [...document.querySelectorAll('[data-catalog-trip]')].map(card => ({
+   card,
+   levels: card.dataset.levels.split(' ').map(Number),
+-  departures: JSON.parse(card.dataset.departures),
+ }));
+ 
+ function showResults() {
+-  const visible = new Set(filterCatalog(trips, level.value, date.value));
++  const visible = new Set(filterCatalog(trips, level.value));
+   trips.forEach(trip => {
+     trip.card.hidden = !visible.has(trip);
+   });
+   empty.hidden = visible.size !== 0 || !trips.length;
+-  const context = [level, date].filter(select => select.value)
+-    .map(select => select.selectedOptions[0].textContent);
+-  status.textContent = !trips.length ? 'No hay viajes publicados en este momento.' : `${visible.size} de ${trips.length} viajes${context.length ? ` · ${context.join(' · ')}` : ''}.`;
++  const context = level.value ? ' · ' + level.selectedOptions[0].textContent : '';
++  status.textContent = !trips.length ? 'No hay viajes publicados en este momento.' : visible.size + ' de ' + trips.length + ' viajes' + context + '.';
+ }
+ 
+ function syncFromUrl() {
+   const params = new URLSearchParams(location.search);
+-  const filters = catalogFilters(params.get('nivel'), params.get('fecha'));
++  // Older date links still open the catalogue, with only the level applied.
++  const filters = catalogFilters(params.get('nivel'));
+   level.value = filters.level === null ? '' : String(filters.level);
+-  // Unknown months cannot be selected; treat old or malformed links as unfiltered.
+-  date.value = [...date.options].some(option => option.value === filters.date) ? filters.date : '';
+   showResults();
+ }
+ 
+ function updateFilters() {
+   const url = new URL(location.href);
+   url.searchParams.delete('estado');
+-  for (const [name, value] of [['nivel', level.value], ['fecha', date.value]]) {
+-    if (value) url.searchParams.set(name, value);
+-    else url.searchParams.delete(name);
+-  }
++  url.searchParams.delete('fecha');
++  if (level.value) url.searchParams.set('nivel', level.value);
++  else url.searchParams.delete('nivel');
+   if (url.href !== location.href) history.pushState(null, '', url);
+   showResults();
+ }
+ 
+ level.addEventListener('change', updateFilters);
+-date.addEventListener('change', updateFilters);
+ document.querySelectorAll('[data-catalog-clear]').forEach(button => {
+   button.addEventListener('click', () => {
+     level.value = '';
+-    date.value = '';
+     if (empty.contains(button)) level.focus({preventScroll: true});
+     updateFilters();
+   });
+diff --git a/artifacts/landing-headers-before/scripts/render-catalog.mjs b/scripts/render-catalog.mjs
+index 98116da..56a3321 100644
+--- a/artifacts/landing-headers-before/scripts/render-catalog.mjs
++++ b/scripts/render-catalog.mjs
+@@ -1,6 +1,5 @@
+ import {renderHomeTrip} from './render-home-trips.mjs';
+ import {levelsFor, departuresFor} from './trip-model.mjs';
+-import {departureMonths} from '../dist/catalog-filter.js';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({
+   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+@@ -15,16 +14,9 @@ export function renderCatalog(current, trips) {
+       .replace('<article class="home-trip', `<article data-catalog-trip data-levels="${levelsFor(trip).join(' ')}" data-departures="${escape(JSON.stringify(departures))}" class="catalog-card home-trip`)
+       .replace('class="home-trip-link"', 'class="home-trip-link catalog-card-link"');
+   }).join('\n');
+-  const months = [...new Set(trips.flatMap(trip => departuresFor(trip).flatMap(departureMonths)))].sort();
+-  const dateOptions = months.map(month => {
+-    const label = new Intl.DateTimeFormat('es-ES', {month: 'long', year: 'numeric', timeZone: 'UTC'}).format(new Date(`${month}-01T00:00:00Z`));
+-    return `<option value="${month}">${escape(label[0].toLocaleUpperCase('es') + label.slice(1))}</option>`;
+-  }).join('');
+   const markers = /<!-- catalog:start -->[\s\S]*?<!-- catalog:end -->/;
+   if (!markers.test(current)) throw Error('Missing catalog generation markers');
+   const content = `<p class="catalog-status" id="catalog-status" role="status" aria-live="polite" aria-atomic="true">${trips.length ? `${trips.length} de ${trips.length} viajes.` : 'No hay viajes publicados en este momento.'}</p>
+ <div class="catalog-grid home-trip-grid" id="catalog-results">${cards}</div>`;
+-  return current.replace(markers, `<!-- catalog:start -->\n${content}\n<!-- catalog:end -->`)
+-    .replace(/<!-- catalog-dates:start -->[\s\S]*?<!-- catalog-dates:end -->/,
+-      `<!-- catalog-dates:start -->${dateOptions}<!-- catalog-dates:end -->`);
++  return current.replace(markers, `<!-- catalog:start -->\n${content}\n<!-- catalog:end -->`);
+ }
+diff --git a/artifacts/landing-headers-before/scripts/catalog-filter.test.mjs b/scripts/catalog-filter.test.mjs
+index e65df2e..d06e7b1 100644
+--- a/artifacts/landing-headers-before/scripts/catalog-filter.test.mjs
++++ b/scripts/catalog-filter.test.mjs
+@@ -66,14 +66,14 @@ test('filtering, empty results and clearing never mutate trips', () => {
+   assert.equal(JSON.stringify(trips), before);
+ });
+ 
+-test('catalogue renders every trip once, shared home cards and generated month options', async () => {
++test('catalogue renders every trip once with shared cards and no date control', async () => {
+   const {trips: published} = JSON.parse(await readFile('dist/catalog-snapshot.json', 'utf8'));
+-  const template = '<!-- catalog-dates:start --><!-- catalog-dates:end --><!-- catalog:start --><!-- catalog:end -->';
++  const template = '<!-- catalog:start --><!-- catalog:end -->';
+   const html = renderCatalog(template, published);
+   assert.equal((html.match(/data-catalog-trip/g) || []).length, published.length);
+   assert.equal((html.match(/<h2 /g) || []).length, published.length);
+   assert.equal((html.match(/class="home-trip-link catalog-card-link"/g) || []).length, published.length);
+-  assert.match(html, /<option value="2027-04">Abril de 2027<\/option>/);
++  assert.doesNotMatch(html, /<option|catalog-date/);
+   assert.doesNotMatch(html, /data-state|catalog-card-state|Con fecha|Próximamente/);
+   assert.equal(renderCatalog(html, published), html);
+   assert.match(renderCatalog(template, []), /No hay viajes publicados/);
+diff --git a/artifacts/landing-headers-before/scripts/check-catalog-browser.mjs b/scripts/check-catalog-browser.mjs
+index 27ef402..1f7bad5 100644
+--- a/artifacts/landing-headers-before/scripts/check-catalog-browser.mjs
++++ b/scripts/check-catalog-browser.mjs
+@@ -47,9 +47,9 @@ try{
+    await page.screenshot({path:path.join(output,`before-${width}.png`),fullPage:true});baseline=false;
+   }
+   await page.goto(base+'/viajes/');await page.evaluate(()=>document.fonts.ready);
+-  eq(await page.locator('.catalog-field label').allTextContents(),['Nivel','Fecha'],'exactly two requested filters');
+-  eq(await page.locator('select').count(),2,'two select controls');
+-  if(width<=600) ok(await page.locator('#catalog-date').evaluate(e=>{const level=document.querySelector('#catalog-level').getBoundingClientRect(),date=e.getBoundingClientRect();return date.top>=level.bottom&&date.width>=230;}),'narrow filters stack with room for full text');
++  eq(await page.locator('.catalog-field label').allTextContents(),['Nivel'],'only the requested level filter');
++  eq(await page.locator('select').count(),1,'one select control');
++  eq(await page.locator('#catalog-date').count(),0,'date filter removed');
+   eq(await page.locator('#catalog-state,.catalog-card-state,.destination-collection,.home-more-trips,.catalog-help').count(),0,'no state controls, groups or extra help sections');
+   ok(!/Con fecha|Próximamente/.test(await page.locator('main').innerText()),'obsolete state wording absent');
+   eq(await page.locator('[data-catalog-trip]:visible').count(),trips.length,'every destination visible');
+@@ -63,12 +63,9 @@ try{
+   ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow');
+   for(const level of ['','1','2','3','4']){
+    await page.selectOption('#catalog-level',level);
+-   for(const date of ['',...await page.locator('#catalog-date option').evaluateAll(es=>es.filter(e=>e.value).map(e=>e.value))]){
+-    await page.selectOption('#catalog-date',date);
+-    const expected=filterCatalog(model,level,date).length;
+-    eq(await page.locator('[data-catalog-trip]:visible').count(),expected,`matches ${level}/${date}/${width}`);
+-    eq(await page.locator('#catalog-empty').isVisible(),expected===0,'empty status');
+-   }
++   const expected=filterCatalog(model,level).length;
++   eq(await page.locator('[data-catalog-trip]:visible').count(),expected,'matches level '+level+'/'+width);
++   eq(await page.locator('#catalog-empty').isVisible(),expected===0,'empty status');
+   }
+   await page.locator('[data-catalog-clear]:visible').first().click();
+   eq(await page.locator('[data-catalog-trip]:visible').count(),trips.length,'clear restores all');
+@@ -95,9 +92,10 @@ try{
+   await page.screenshot({path:path.join(output,`viajes-${width}-opening.png`)});
+   await page.screenshot({path:path.join(output,`viajes-${width}.png`),fullPage:true});
+   await page.goto(base+'/viajes/?nivel=3&fecha=2027-03&estado=upcoming&source=qa');
+-  eq(await page.locator('#catalog-date').inputValue(),'2027-03','month deep link');
++  eq(await page.locator('[data-catalog-trip]:visible').count(),filterCatalog(model,'3').length,'legacy date ignored while level applies');
+   await page.selectOption('#catalog-level','1');
+   ok(!new URL(page.url()).searchParams.has('estado'),'obsolete state removed on change');
++  ok(!new URL(page.url()).searchParams.has('fecha'),'obsolete date removed on change');
+   eq(new URL(page.url()).searchParams.get('source'),'qa','other query parameters retained');
+   await page.goBack();eq(await page.locator('#catalog-level').inputValue(),'3','back restores level');
+   await page.goForward();eq(await page.locator('#catalog-level').inputValue(),'1','forward restores level');
+@@ -112,8 +110,8 @@ try{
+  await page.locator('#catalog-empty [data-catalog-clear]').click();
+  eq(await page.locator('#catalog-level').evaluate(e=>e===document.activeElement),true,'empty clear restores visible focus');
+  eq(await page.locator('[data-catalog-trip]:visible').count(),2,'pending destination survives clear');
+- await page.selectOption('#catalog-date','2027-02');
+- eq(await page.locator('[data-catalog-trip]:visible').count(),1,'cross-month departure matches February');
++ await page.selectOption('#catalog-level','2');
++ eq(await page.locator('[data-catalog-trip]:visible').count(),1,'level applies to every departure');
+  await page.selectOption('#catalog-level','3');
+  eq(await page.locator('[data-catalog-trip]:visible').count(),0,'trip range applies to every departure');
+  await page.close();fixture=false;
+@@ -123,7 +121,7 @@ try{
+  const enlarged=await browser.newPage({viewport:{width:320,height:568}});await enlarged.goto(base+'/viajes/');await enlarged.addStyleTag({content:'html{font-size:200%} body{font-size:200%} select,button{font-size:inherit!important}'});ok(await enlarged.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'enlarged text narrow viewport no overflow');await enlarged.screenshot({path:path.join(output,'viajes-320-text200.png'),fullPage:true});await enlarged.close();
+  eq(errors,[],'no browser exceptions');
+  await writeFile(path.join(output,'images.json'),JSON.stringify(results,null,2));
+- console.log(`PASS: ${checks} browser assertions; 320, 390, 481, 768, 1024, 1440px, level/month combinations, fixed-range matching, month boundaries, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.`);
++ console.log(`PASS: ${checks} browser assertions; 320, 390, 481, 768, 1024, 1440px, level combinations, fixed-range matching, legacy date links, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.`);
+ }finally{await browser.close();await new Promise(r=>server.close(r));}
+ 
+ 
+diff --git a/scripts/catalog-ui.test.mjs b/scripts/catalog-ui.test.mjs
+new file mode 100644
+index 0000000..91a92dd
+--- /dev/null
++++ b/scripts/catalog-ui.test.mjs
+@@ -0,0 +1,96 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++
++let instance = 0;
++async function catalogue(t, query = '', cards = ['1 2', '3', '4']) {
++  const original = Object.fromEntries(['document', 'location', 'history', 'window'].map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
++  t.after(() => {
++    for (const [key, descriptor] of Object.entries(original)) {
++      if (descriptor) Object.defineProperty(globalThis, key, descriptor);
++      else delete globalThis[key];
++    }
++  });
++  let url = new URL('https://lst.test/viajes/' + query);
++  const events = new Map();
++  const element = extra => Object.defineProperties({hidden: false, addEventListener(type, fn) { events.set(this.id + ':' + type, fn); }}, Object.getOwnPropertyDescriptors(extra));
++  const labels = {'': 'Todos los niveles', 1: 'I · Rookies', 2: 'II · Aprendices', 3: 'III · Riders', 4: 'IV · Supercracks'};
++  const level = element({id: 'level', value: '', get selectedOptions() { return [{textContent: labels[this.value]}]; }, focus(options) { this.focused = options; }});
++  const clear = element({id: 'clear'});
++  const emptyClear = element({id: 'empty-clear'});
++  const empty = element({contains: button => button === emptyClear});
++  const controls = element({hidden: true});
++  const status = element({textContent: ''});
++  const trips = cards.map(levels => element({dataset: {levels}}));
++  const elements = {'[data-catalog-filters]': controls, '#catalog-level': level, '#catalog-status': status, '#catalog-empty': empty};
++  const entries = [url.href];
++  let cursor = 0, popstate;
++  Object.assign(globalThis, {
++    document: {querySelector: selector => elements[selector] || null, querySelectorAll: selector => selector === '[data-catalog-trip]' ? trips : [clear, emptyClear]},
++    location: {get search() { return url.search; }, get href() { return url.href; }},
++    history: {pushState(_state, _title, next) { url = new URL(next); entries.splice(++cursor); entries.push(url.href); }},
++    window: {addEventListener(type, fn) { if (type === 'popstate') popstate = fn; }},
++  });
++  await import('../dist/catalog.js?ui-test=' + ++instance);
++  return {level, empty, controls, status, trips, entries,
++    visible: () => trips.filter(card => !card.hidden),
++    url: () => url,
++    change(value) { level.value = value; events.get('level:change')(); },
++    clear(fromEmpty = false) { events.get((fromEmpty ? 'empty-clear' : 'clear') + ':click')(); },
++    back() { url = new URL(entries[--cursor]); popstate(); },
++    forward() { url = new URL(entries[++cursor]); popstate(); },
++  };
++}
++
++test('catalogue boots with only the level control; old date links do not hide trips', async t => {
++  const ui = await catalogue(t, '?fecha=2027-02&estado=upcoming');
++  assert.equal(ui.controls.hidden, false);
++  assert.equal(ui.visible().length, 3);
++  assert.equal(ui.status.textContent, '3 de 3 viajes.');
++  assert.equal(ui.empty.hidden, true);
++  assert.equal(ui.entries.length, 1);
++});
++
++test('level links and changes preserve unrelated query and hash, with back and forward', async t => {
++  const ui = await catalogue(t, '?nivel=3&fecha=2027-02&estado=upcoming&source=qa#catalog-results');
++  assert.equal(ui.visible().length, 1);
++  assert.equal(ui.level.value, '3');
++  ui.change('1');
++  assert.equal(ui.url().searchParams.get('nivel'), '1');
++  assert.equal(ui.url().searchParams.get('source'), 'qa');
++  assert.equal(ui.url().hash, '#catalog-results');
++  assert.equal(ui.url().searchParams.has('fecha'), false);
++  assert.equal(ui.url().searchParams.has('estado'), false);
++  assert.equal(ui.status.textContent, '1 de 3 viajes · I · Rookies.');
++  ui.back();
++  assert.equal(ui.level.value, '3');
++  assert.equal(ui.visible().length, 1);
++  ui.forward();
++  assert.equal(ui.level.value, '1');
++  ui.clear();
++  assert.equal(ui.visible().length, 3);
++  assert.equal(ui.url().search, '?source=qa');
++});
++
++test('empty state clear restores all trips and focus to the visible select', async t => {
++  const ui = await catalogue(t, '?nivel=4&fecha=2027-02', ['1 2', '3']);
++  assert.equal(ui.visible().length, 0);
++  assert.equal(ui.empty.hidden, false);
++  ui.clear(true);
++  assert.equal(ui.level.value, '');
++  assert.equal(ui.visible().length, 2);
++  assert.equal(ui.empty.hidden, true);
++  assert.deepEqual(ui.level.focused, {preventScroll: true});
++  assert.equal(ui.url().search, '');
++});
++
++test('invalid level links fall back to all trips', async t => {
++  const ui = await catalogue(t, '?nivel=oops&fecha=2027-99');
++  assert.equal(ui.level.value, '');
++  assert.equal(ui.visible().length, 3);
++});
++
++test('a catalogue without published trips has a clear status and no filter empty state', async t => {
++  const ui = await catalogue(t, '?nivel=1', []);
++  assert.equal(ui.status.textContent, 'No hay viajes publicados en este momento.');
++  assert.equal(ui.empty.hidden, true);
++});

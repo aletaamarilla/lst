@@ -1,0 +1,45 @@
+{
+  "base": "58f338661fc4705364fea08727c836e79b3f2048",
+  "scope": "Independent review against artifacts/single-programme-before; preserved preexisting dirty tree.",
+  "result": "No remaining blocking findings in reviewed implementation.",
+  "resolved": [
+    {
+      "severity": "P2",
+      "finding": "Removed levelTitle remained editable and split identical Maldives programmes without being rendered.",
+      "evidence": "Changing only the second source levelTitle initially split Maldives into dated routes; after removal of the field from schema, adapter and grouping, adapTrips returns one maldivas trip with two dates."
+    },
+    {
+      "severity": "P3",
+      "finding": "Advanced Morocco inherited generic tagline Marruecos and bypassed its new cover slogan.",
+      "evidence": "Final advanced tagline equals advanced name; renderTrip contains Más olas. Más intención en cada giro."
+    }
+  ],
+  "verified": [
+    "Independently ran 98 tests and static check of 40 pages before final fixes; pass.",
+    "After final fixes, reproduced both findings: resolved.",
+    "Compared all eight published source dates with candidate dates, general fares, dossiers, includes and excludes: preserved.",
+    "Brevo category mapping remains 3 for basic Morocco, 4 for advanced, 7 and 8 for Maldives.",
+    "Historical Morocco date aliases point to their corresponding product.",
+    "Final incremental review: distinct per-date deposits/terms remain isolated and escaped in the date selector and native no-JavaScript fallback; semantic details requires no JS.",
+    "Reviewed final trip-detail PDF/details CSS and full-width departure-row cleanup in styles.css; no remaining blockers found.",
+    "Independently reran the final regenerated candidate: 100/100 tests and static check of 40 pages PASS. Logs: artifacts/single-programme-review-tests-final.txt and artifacts/single-programme-review-check-final.txt."
+  ],
+  "limits": [
+    "Browser/layout QA handled by parent; no independent browser session.",
+    "No external form submission or deployment performed."
+  ],
+  "hashes": {
+    "scripts/trip-groups.mjs": "4596f1c7955a3fdfcf2abb189b66b79f8d670d9da773da7b4f1989d716d27e14",
+    "scripts/trip-model.mjs": "6a138b14737b0a1ce718f5546b762514ef6340b43b32acd456a817c037f71f83",
+    "scripts/sanity-trips.mjs": "dceff79548ebc7f988036da707b33be06046bb87438eaae5c390d7e8f4aaec81",
+    "scripts/render-trips.mjs": "2acdfa511b6cd61f312ce8e07bae1611bbe9d2311b7f81390432233400c77799",
+    "scripts/render-registration.mjs": "64c3ce622607d87cf6312d9010f478527d20dcfc80c006e553c3a36de85d35df",
+    "scripts/brevo.mjs": "b4df059499071b6ceca56189272b74c7eef35a0d3a9e09f317e5589109110432",
+    "studio/schemaTypes/trip.ts": "a13bceb618ed2d433560296f5d7e86ae180f41dd565fe51c15a3f4dc6ae546de",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13",
+    "dist/trip.css": "33dac1753c28bec33ddbe35ad5c735c3ea0cf1677f2ba179c11c557d0bf19a48",
+    "dist/trip-detail.css": "fafa3380caeed76a02b7cb6290c33ecdc37f4cc8f187aa1ae8dc07fca8ab6c7a",
+    "dist/catalog-filter.js": "a747c8c1f1b26129f8dd6394da2568ffd5b531d7ca23a76f51e90c44430b0d66",
+    "dist/styles.css": "2af83f3e169b7bce4e6879edbade6706e61e82d2d46d8514d5d11e31696ef3df"
+  }
+}

@@ -1,0 +1,871 @@
+[
+  {
+    "width": 320,
+    "scale": 1,
+    "focuses": [
+      {
+        "tag": "A",
+        "text": "Guía de niveles ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL I↗RookiesEmpiezas en espumas y olas peq",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL II↗AprendicesYa coges olas verdes y rec",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL III↗RidersTienes autonomía y enlazas ma",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Te ayudamos a ubicarte ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Todas las preguntas ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Puedo ir sin conocer a nadie?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Y si mi nivel no encaja?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "la guía de niveles",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Qué está incluido en el precio?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "todos los viajes",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      }
+    ],
+    "overflow": 0,
+    "levels": [
+      {
+        "text": "Rookies",
+        "html": "Rookies",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Rookies"
+        ]
+      },
+      {
+        "text": "Aprendices",
+        "html": "Apren<wbr>dices",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Apren",
+          "dices"
+        ]
+      },
+      {
+        "text": "Riders",
+        "html": "Riders",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Riders"
+        ]
+      },
+      {
+        "text": "Supercracks",
+        "html": "Super<wbr>cracks",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Super",
+          "cracks"
+        ]
+      }
+    ]
+  },
+  {
+    "width": 320,
+    "scale": 2,
+    "focuses": [
+      {
+        "tag": "A",
+        "text": "Guía de niveles ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL I↗RookiesEmpiezas en espumas y olas peq",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL II↗AprendicesYa coges olas verdes y rec",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL III↗RidersTienes autonomía y enlazas ma",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Te ayudamos a ubicarte ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Todas las preguntas ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Puedo ir sin conocer a nadie?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Y si mi nivel no encaja?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "la guía de niveles",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Qué está incluido en el precio?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "todos los viajes",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      }
+    ],
+    "overflow": 0,
+    "levels": [
+      {
+        "text": "Rookies",
+        "html": "Rookies",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Rook",
+          "ies"
+        ]
+      },
+      {
+        "text": "Aprendices",
+        "html": "Apren<wbr style=\"font-size: 58px;\">dices",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Apre",
+          "n",
+          "dice",
+          "s"
+        ]
+      },
+      {
+        "text": "Riders",
+        "html": "Riders",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Ride",
+          "rs"
+        ]
+      },
+      {
+        "text": "Supercracks",
+        "html": "Super<wbr style=\"font-size: 58px;\">cracks",
+        "width": 109,
+        "scroll": 109,
+        "lines": [
+          "Supe",
+          "r",
+          "crac",
+          "ks"
+        ]
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "scale": 1,
+    "focuses": [
+      {
+        "tag": "A",
+        "text": "Guía de niveles ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL I↗RookiesEmpiezas en espumas y olas peq",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL II↗AprendicesYa coges olas verdes y rec",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL III↗RidersTienes autonomía y enlazas ma",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Te ayudamos a ubicarte ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Todas las preguntas ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Puedo ir sin conocer a nadie?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Y si mi nivel no encaja?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "la guía de niveles",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Qué está incluido en el precio?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "todos los viajes",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      }
+    ],
+    "overflow": 0,
+    "levels": [
+      {
+        "text": "Rookies",
+        "html": "Rookies",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Rookies"
+        ]
+      },
+      {
+        "text": "Aprendices",
+        "html": "Apren<wbr>dices",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Apren",
+          "dices"
+        ]
+      },
+      {
+        "text": "Riders",
+        "html": "Riders",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Riders"
+        ]
+      },
+      {
+        "text": "Supercracks",
+        "html": "Super<wbr>cracks",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Super",
+          "cracks"
+        ]
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "scale": 2,
+    "focuses": [
+      {
+        "tag": "A",
+        "text": "Guía de niveles ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL I↗RookiesEmpiezas en espumas y olas peq",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL II↗AprendicesYa coges olas verdes y rec",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL III↗RidersTienes autonomía y enlazas ma",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Te ayudamos a ubicarte ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Todas las preguntas ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Puedo ir sin conocer a nadie?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Y si mi nivel no encaja?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "la guía de niveles",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Qué está incluido en el precio?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "todos los viajes",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      }
+    ],
+    "overflow": 0,
+    "levels": [
+      {
+        "text": "Rookies",
+        "html": "Rookies",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Rook",
+          "ies"
+        ]
+      },
+      {
+        "text": "Aprendices",
+        "html": "Apren<wbr style=\"font-size: 64px;\">dices",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Apre",
+          "n",
+          "dice",
+          "s"
+        ]
+      },
+      {
+        "text": "Riders",
+        "html": "Riders",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Ride",
+          "rs"
+        ]
+      },
+      {
+        "text": "Supercracks",
+        "html": "Super<wbr style=\"font-size: 64px;\">cracks",
+        "width": 132,
+        "scroll": 132,
+        "lines": [
+          "Supe",
+          "r",
+          "crac",
+          "ks"
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "scale": 1,
+    "focuses": [
+      {
+        "tag": "A",
+        "text": "Guía de niveles ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL I↗RookiesEmpiezas en espumas y olas peq",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL II↗AprendicesYa coges olas verdes y rec",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL III↗RidersTienes autonomía y enlazas ma",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Te ayudamos a ubicarte ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Todas las preguntas ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Puedo ir sin conocer a nadie?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Y si mi nivel no encaja?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "la guía de niveles",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Qué está incluido en el precio?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "todos los viajes",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      }
+    ],
+    "overflow": 0,
+    "levels": [
+      {
+        "text": "Rookies",
+        "html": "Rookies",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Rookies"
+        ]
+      },
+      {
+        "text": "Aprendices",
+        "html": "Apren<wbr>dices",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Aprendices"
+        ]
+      },
+      {
+        "text": "Riders",
+        "html": "Riders",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Riders"
+        ]
+      },
+      {
+        "text": "Supercracks",
+        "html": "Super<wbr>cracks",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Supercracks"
+        ]
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "scale": 2,
+    "focuses": [
+      {
+        "tag": "A",
+        "text": "Guía de niveles ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL I↗RookiesEmpiezas en espumas y olas peq",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL II↗AprendicesYa coges olas verdes y rec",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL III↗RidersTienes autonomía y enlazas ma",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Te ayudamos a ubicarte ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "Todas las preguntas ↗",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Puedo ir sin conocer a nadie?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Y si mi nivel no encaja?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "la guía de niveles",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "SUMMARY",
+        "text": "¿Qué está incluido en el precio?+",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      },
+      {
+        "tag": "A",
+        "text": "todos los viajes",
+        "active": true,
+        "visible": true,
+        "outline": "rgb(27, 27, 27)",
+        "width": "3px"
+      }
+    ],
+    "overflow": 0,
+    "levels": [
+      {
+        "text": "Rookies",
+        "html": "Rookies",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Rookie",
+          "s"
+        ]
+      },
+      {
+        "text": "Aprendices",
+        "html": "Apren<wbr style=\"font-size: 84px;\">dices",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Apren",
+          "dices"
+        ]
+      },
+      {
+        "text": "Riders",
+        "html": "Riders",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Riders"
+        ]
+      },
+      {
+        "text": "Supercracks",
+        "html": "Super<wbr style=\"font-size: 84px;\">cracks",
+        "width": 251,
+        "scroll": 251,
+        "lines": [
+          "Super",
+          "cracks"
+        ]
+      }
+    ]
+  }
+]

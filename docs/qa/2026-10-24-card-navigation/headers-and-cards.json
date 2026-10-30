@@ -1,0 +1,470 @@
+{
+  "checks": 31,
+  "errors": [],
+  "headers": [
+    {
+      "width": 390,
+      "route": "/",
+      "links": [
+        {
+          "text": "Ver viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Ver viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 49
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 49
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 49
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 49
+        },
+        {
+          "text": "Hablamos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 46.390625
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/viajes/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/niveles/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/conocenos/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/preguntas-frecuentes/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        },
+        {
+          "text": "Consultar por WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 48
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "route": "/viajes/marruecos/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "links": [
+        {
+          "text": "Ver viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Hablamos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/viajes/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/niveles/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/conocenos/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/preguntas-frecuentes/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Conócenos",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "FAQs",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "WhatsApp",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "route": "/viajes/marruecos/",
+      "links": [
+        {
+          "text": "Viajes",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Niveles",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        },
+        {
+          "text": "Elegir fecha",
+          "background": "rgba(0, 0, 0, 0)",
+          "border": "0px",
+          "radius": "0px",
+          "height": 44
+        }
+      ]
+    }
+  ]
+}

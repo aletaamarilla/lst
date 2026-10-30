@@ -1,0 +1,43 @@
+{
+  "signup": {
+    "url": "http://127.0.0.1:4179/inscripciones/marruecos/",
+    "heading": [
+      "Marruecos.",
+      "Vamos a por ese viaje."
+    ],
+    "forms": 1,
+    "submitted": false
+  },
+  "dialog": {
+    "title": "Fechas.",
+    "links": [
+      {
+        "href": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+        "label": "PDF Ver programa "
+      },
+      {
+        "href": "/inscripciones/maldivas/?salida=maldivas-2027-03-21",
+        "label": "Inscribirme en esta fecha"
+      },
+      {
+        "href": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Maldivas%20del%2021%20mar%202027%20%E2%80%94%2028%20mar%202027.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F",
+        "label": "Tengo una duda"
+      },
+      {
+        "href": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
+        "label": "PDF Ver programa "
+      },
+      {
+        "href": "/inscripciones/maldivas/?salida=maldivas-2027-03-28",
+        "label": "Inscribirme en esta fecha"
+      },
+      {
+        "href": "https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20Maldivas%20del%2028%20mar%202027%20%E2%80%94%204%20abr%202027.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F",
+        "label": "Tengo una duda"
+      }
+    ]
+  },
+  "escapeClosed": true,
+  "focusReturned": true,
+  "noFormSubmitted": true
+}

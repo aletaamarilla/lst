@@ -1,0 +1,27 @@
+{
+  "base": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "files": [
+    {
+      "file": "dist/index.html",
+      "before": "4fa061f744100ca999585f4228b6bc68ffc08cbe8d984360978a03e54cd32c1f",
+      "candidate": "d029b875557e4cff28f5766cbe90010d3a37e596814dcbbd73564ab17ec863a9"
+    },
+    {
+      "file": "dist/home.css",
+      "before": "066ce59e3e50164a95102fdb09d2992be813a30d426f3e8d8892412141328bca",
+      "candidate": "d1b3c290a514a17e32f246039072ad22a168e7517961c18c935d92ad50e84489"
+    },
+    {
+      "file": "scripts/render-home-trips.mjs",
+      "before": "3b5aaaac16bc673a04ec6f987071f66bbfc6b104ebb2470a1b97ad087a7d035d",
+      "candidate": "2d88e7e821e3f77e82cf2c083291d206b01519bcdc41e28764428bfa9b7d12ce"
+    },
+    {
+      "file": "scripts/home-trips.test.mjs",
+      "before": "761e846902856a4ed9c0aad271bfe7eb1bade4e14373bd1d8f9ac27148b888bc",
+      "candidate": "47f5b70f21845cc4f8756f17628b516e1f18fa2eac683bb77256cfb18a8bc334"
+    }
+  ],
+  "homeJsUnchanged": true
+}

@@ -1,0 +1,185 @@
+{
+  "layouts": [
+    {
+      "actionBottom": 616.46875,
+      "actionHeight": 48,
+      "essentialListScroll": [
+        0,
+        0
+      ],
+      "height": 740,
+      "overflow": 0,
+      "url": "/viajes/marruecos/",
+      "width": 320
+    },
+    {
+      "actionBottom": 616.46875,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 740,
+      "overflow": 0,
+      "url": "/viajes/maldivas/",
+      "width": 320
+    },
+    {
+      "actionBottom": 604.0625,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 740,
+      "overflow": 0,
+      "url": "/viajes/hossegor/",
+      "width": 320
+    },
+    {
+      "actionBottom": 591.3125,
+      "actionHeight": 48,
+      "essentialListScroll": [
+        0,
+        0
+      ],
+      "height": 844,
+      "overflow": 0,
+      "url": "/viajes/marruecos/",
+      "width": 390
+    },
+    {
+      "actionBottom": 620.0625,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 844,
+      "overflow": 0,
+      "url": "/viajes/maldivas/",
+      "width": 390
+    },
+    {
+      "actionBottom": 620.0625,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 844,
+      "overflow": 0,
+      "url": "/viajes/hossegor/",
+      "width": 390
+    },
+    {
+      "actionBottom": 598.078125,
+      "actionHeight": 48,
+      "essentialListScroll": [
+        0,
+        0
+      ],
+      "height": 1024,
+      "overflow": 0,
+      "url": "/viajes/marruecos/",
+      "width": 768
+    },
+    {
+      "actionBottom": 642.453125,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 1024,
+      "overflow": 0,
+      "url": "/viajes/maldivas/",
+      "width": 768
+    },
+    {
+      "actionBottom": 535.796875,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 1024,
+      "overflow": 0,
+      "url": "/viajes/hossegor/",
+      "width": 768
+    },
+    {
+      "actionBottom": 628.078125,
+      "actionHeight": 48,
+      "essentialListScroll": [
+        0,
+        0
+      ],
+      "height": 900,
+      "overflow": 0,
+      "url": "/viajes/marruecos/",
+      "width": 1440
+    },
+    {
+      "actionBottom": 653.765625,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 900,
+      "overflow": 0,
+      "url": "/viajes/maldivas/",
+      "width": 1440
+    },
+    {
+      "actionBottom": 565.796875,
+      "actionHeight": 48,
+      "essentialListScroll": [],
+      "height": 900,
+      "overflow": 0,
+      "url": "/viajes/hossegor/",
+      "width": 1440
+    }
+  ],
+  "contrast": [
+    {
+      "background": "rgb(234, 89, 52)",
+      "color": "rgb(27, 27, 27)",
+      "contrast": 4.9,
+      "selector": ".overview-cta"
+    },
+    {
+      "background": "rgb(255, 250, 231)",
+      "color": "rgb(27, 27, 27)",
+      "contrast": 16.47,
+      "selector": ".offer-promise"
+    },
+    {
+      "background": "rgb(255, 250, 231)",
+      "color": "rgb(83, 89, 80)",
+      "contrast": 6.89,
+      "selector": ".offer-facts dt"
+    }
+  ],
+  "interactions": [
+    {
+      "test": "gallery-keyboard-and-return-focus",
+      "passed": true
+    },
+    {
+      "focus": "Cerrar ×",
+      "open": true,
+      "pdfCount": 2,
+      "registrationLinks": [
+        "/inscripciones/maldivas/?salida=maldivas-2027-03-21",
+        "/inscripciones/maldivas/?salida=maldivas-2027-03-28"
+      ],
+      "test": "multi-date-dialog"
+    },
+    {
+      "closed": true,
+      "returned": true,
+      "test": "date-dialog-return-focus"
+    },
+    {
+      "focus": "NOMBRE",
+      "step": "0",
+      "test": "native-required-validation",
+      "valueMissing": true
+    },
+    {
+      "test": "mobile-menu",
+      "opened": true,
+      "closed": true
+    },
+    {
+      "dockVisibility": "visible",
+      "globalOverflow": 0,
+      "headerBottom": 78,
+      "headingY": 181.125,
+      "pdfVisible": true,
+      "singlePaymentTerms": true,
+      "test": "price-anchor-and-mobile-dossier-final"
+    }
+  ]
+}

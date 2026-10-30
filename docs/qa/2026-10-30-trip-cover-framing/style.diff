@@ -1,0 +1,48 @@
+--- docs/qa/2026-10-30-trip-cover-framing/before/dist/trip-conversion.css	2026-10-30 21:12:59.046250634 +0100
++++ dist/trip-conversion.css	2026-10-30 21:42:47.506319115 +0100
+@@ -318,14 +318,24 @@
+ body.trip-designed .site-header{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+ body.trip-designed .site-header .brand-light{display:none}
+ body.trip-designed .site-header .brand-dark{display:block}
+-body.trip-designed:has(.trip-cover:not([data-cover-empty])) .site-header:not(.is-scrolled):not(:has(nav.is-open)){background:linear-gradient(180deg,#1b1b1bb3,#1b1b1b00);color:var(--paper);border-bottom:0}
++body.trip-designed:has(.trip-cover:not([data-cover-empty])) .site-header:not(.is-scrolled):not(:has(nav.is-open)){background:linear-gradient(180deg,#1b1b1bd9,#1b1b1bb3 78%,#1b1b1b00);color:var(--paper);border-bottom:0}
+ body.trip-designed:has(.trip-cover:not([data-cover-empty])) .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-light{display:block}
+ body.trip-designed:has(.trip-cover:not([data-cover-empty])) .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-dark{display:none}
+ .trip-designed .trip-opening-gallery{padding-top:0;background:var(--paper)}
+ .trip-designed .trip-opening-gallery:has([data-cover-empty]){padding-top:var(--home-header-height,88px)}
+-.trip-designed .trip-cover{display:block;width:100%;max-width:none;margin:0;height:clamp(380px,54svh,560px);min-height:0;aspect-ratio:auto;max-height:none;background:var(--ink);border-radius:0;overflow:hidden}
++.trip-designed .trip-cover{--cover-height:clamp(420px,60svh,640px);display:block;width:100%;max-width:none;margin:0;height:var(--cover-height);min-height:0;aspect-ratio:auto;max-height:none;background:var(--ink);border-radius:0;overflow:hidden}
+ .trip-designed .trip-cover[data-cover-empty]{height:0;aspect-ratio:auto}
+-.trip-designed .cover-carousel-slide .trip-cover-image{object-fit:cover;object-position:center 55%}
++.trip-designed .cover-carousel-track{gap:0;align-items:center}
++.trip-designed .cover-carousel-slide{flex:0 0 100%;scroll-snap-align:start}
++.trip-designed .cover-image-button{position:relative;isolation:isolate;overflow:hidden;background:var(--ink)}
++.trip-designed .cover-carousel-slide .trip-cover-image{position:relative;z-index:1;object-fit:contain;object-position:center;max-width:var(--cover-photo-max-width,100%);margin-inline:auto}
++.trip-designed .cover-photo-backdrop{position:absolute;z-index:0;inset:-30px;width:calc(100% + 60px);height:calc(100% + 60px);max-width:none;object-fit:cover;filter:blur(30px);opacity:.22;pointer-events:none}
++.trip-designed .cover-gallery-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px max(20px,calc((100% - 1180px)/2));background:var(--ink);color:var(--paper)}
++.trip-designed .cover-gallery-bar .cover-carousel-controls{position:static;display:flex;align-items:center;gap:12px;color:var(--paper)}
++.trip-designed .cover-gallery-bar .rail-controls{display:flex}
++.trip-designed .cover-gallery-bar .rail-controls button{width:44px;height:44px;border-color:#fffae76b;color:var(--paper)}
++.trip-designed .cover-gallery-bar .cover-gallery-open{position:static;margin-left:auto;min-height:44px;padding:9px 15px;background:var(--paper);color:var(--ink)}
++.trip-designed .cover-gallery-bar :is(a,button):focus-visible{outline-color:var(--paper)}
+ .trip-designed .cover-gallery-open{top:auto;bottom:20px;right:24px;min-height:44px;border:1px solid #1b1b1b20;background:var(--paper);color:var(--ink);backdrop-filter:none}
+ .trip-designed .trip-essentials{padding-block:22px 30px;border-bottom:1px solid var(--line)}
+ .trip-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:8px;color:var(--muted);font-size:12px;line-height:1.5;margin-bottom:10px}
+@@ -417,7 +427,8 @@
+  .community-moment:after{content:'Nos vemos en el pico.';display:block;margin-top:32px;color:var(--orange);font:400 38px/1.1 var(--display);max-width:10ch}
+ }
+ @media(max-width:599px){
+- .trip-designed .trip-cover{height:auto;aspect-ratio:var(--trip-cover-ratio,3 / 2);max-height:360px}
++ .trip-designed .trip-cover{--cover-height:clamp(260px,74vw,340px);height:var(--cover-height);aspect-ratio:auto;max-height:none}
++ .trip-designed .cover-gallery-bar{padding:4px 16px}
+  .trip-designed .trip-essentials{padding-block:16px 24px}
+  .trip-heading-row{gap:12px}
+  .trip-identity{gap:10px 12px}
+@@ -498,6 +509,7 @@
+  .trip-designed .trip-dock .dock-whatsapp:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+ }
+ @media(max-width:359px){
++ .trip-designed .cover-gallery-open>span{display:none}
+  .trip-designed .trip-dock .dock-cta{font-size:11px;letter-spacing:-.015em}
+  .trip-designed .trip-dock .dock-price strong{font-size:26px}
+  .trip-designed .trip-dock .dock-details>strong{font-size:16px}

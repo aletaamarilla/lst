@@ -1,0 +1,16 @@
+
+> lets-surf-together-home@0.1.0 studio:build
+> npm --prefix studio run build --
+
+
+> lets-surf-together-studio@1.0.0 build
+> sanity build
+
+[34mℹ[39m Building with auto-updates enabled
+    Error: Failed to fetch remote version for https://sanity-cdn.com/v1/module
+    s/by-app/jcegzkyow71llyc9jting9xd/t1793129309/%5E6.19.0/sanity: fetch 
+    failed
+    Caused by: TypeError: fetch failed
+    Caused by: ConnectTimeoutError: Connect Timeout Error (attempted address: 
+    sanity-cdn.com:443, timeout: 10000ms)
+    Code: UND_ERR_CONNECT_TIMEOUT

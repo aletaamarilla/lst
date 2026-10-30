@@ -1,0 +1,36 @@
+{
+  "source": "sanity-local-preview",
+  "desktopPrices": [
+    {
+      "top": 1295,
+      "text": "399 €por personaVer viaje"
+    },
+    {
+      "top": 1260,
+      "text": "699 €599 €por personaVer viaje"
+    },
+    {
+      "top": 1260,
+      "text": "899 €860 €por personaVer viaje"
+    }
+  ],
+  "screens": [],
+  "senegal": {
+    "text": "1.269 €",
+    "whiteSpace": "nowrap",
+    "lines": 1,
+    "inside": true
+  },
+  "mobile": {
+    "pageHeight": 7399,
+    "width": 390,
+    "scrollWidth": 390,
+    "levelsHeight": 1170,
+    "bookingHeight": 659
+  },
+  "desktopPriceTops": [
+    1260,
+    1260,
+    1260
+  ]
+}

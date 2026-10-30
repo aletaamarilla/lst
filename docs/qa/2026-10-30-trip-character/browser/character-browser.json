@@ -1,0 +1,211 @@
+{
+  "layouts": [
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 740,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/marruecos/",
+      "width": 320
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 740,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/maldivas/",
+      "width": 320
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 740,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/hossegor/",
+      "width": 320
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 844,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/marruecos/",
+      "width": 390
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 844,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/maldivas/",
+      "width": 390
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 844,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/hossegor/",
+      "width": 390
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 1024,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/marruecos/",
+      "width": 768
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 1024,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/maldivas/",
+      "width": 768
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "flex",
+      "height": 1024,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/hossegor/",
+      "width": 768
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "none",
+      "height": 900,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/marruecos/",
+      "width": 1440
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "none",
+      "height": 900,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/maldivas/",
+      "width": 1440
+    },
+    {
+      "background": "rgb(255, 255, 255)",
+      "dock": "none",
+      "height": 900,
+      "navHeight": 0,
+      "navHidden": true,
+      "overflow": 0,
+      "summaryCount": 0,
+      "url": "/viajes/hossegor/",
+      "width": 1440
+    }
+  ],
+  "desktopAnchors": [
+    {
+      "active": "#nivel",
+      "hash": "#nivel",
+      "hidden": false,
+      "navBottom": 156,
+      "overflow": 0,
+      "position": "fixed",
+      "targetTop": 190
+    },
+    {
+      "active": "#alojamiento",
+      "hash": "#alojamiento",
+      "hidden": false,
+      "navBottom": 156,
+      "overflow": 0,
+      "position": "fixed",
+      "targetTop": 190
+    },
+    {
+      "active": "#incluye",
+      "hash": "#incluye",
+      "hidden": false,
+      "navBottom": 156,
+      "overflow": 0,
+      "position": "fixed",
+      "targetTop": 190
+    },
+    {
+      "active": "#dudas",
+      "hash": "#dudas",
+      "hidden": false,
+      "navBottom": 156,
+      "overflow": 0,
+      "position": "fixed",
+      "targetTop": 190
+    },
+    {
+      "active": "#plan",
+      "hash": "#plan",
+      "hidden": false,
+      "navBottom": 156,
+      "overflow": 0,
+      "position": "fixed",
+      "targetTop": 190
+    }
+  ],
+  "mobileAnchor": {
+    "active": "#dudas",
+    "hash": "#dudas",
+    "hidden": false,
+    "navBottom": 146,
+    "overflow": 0,
+    "position": "fixed",
+    "targetTop": 180
+  },
+  "observed": [
+    "summary removed; initial menu hidden with zero height",
+    "floating menu below actual header on desktop and mobile",
+    "all five desktop links land below navigation and mark active section",
+    "last mobile link scrolls into view and marks Dudas",
+    "keyboard focus is 3px cream on black and deep green",
+    "global mobile menu hides the floating menu; Escape restores it",
+    "date dialog hides floating menu; Escape restores focus and scroll position",
+    "floating menu hides after content at footer and on returning to top",
+    "320×568: no overflow; floating navigation and booking dock remain available"
+  ],
+  "contrast": {
+    "levelText": 11.56,
+    "orangeOnInk": 4.9,
+    "teamText": 7.74,
+    "activityTextAfterFix": 4.9,
+    "priceSecondary": 12.73,
+    "activeNavigation": 4.9
+  }
+}

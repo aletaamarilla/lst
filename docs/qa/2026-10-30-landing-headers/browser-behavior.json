@@ -1,0 +1,408 @@
+[
+  {
+    "kind": "level-filter",
+    "width": 320,
+    "expected": 7,
+    "retired": false,
+    "status": "7 de 7 viajes.",
+    "value": "",
+    "visible": 7
+  },
+  {
+    "kind": "level-filter",
+    "width": 320,
+    "expected": 3,
+    "retired": false,
+    "status": "3 de 7 viajes · I · Rookies.",
+    "value": "1",
+    "visible": 3
+  },
+  {
+    "kind": "level-filter",
+    "width": 320,
+    "expected": 6,
+    "retired": false,
+    "status": "6 de 7 viajes · II · Aprendices.",
+    "value": "2",
+    "visible": 6
+  },
+  {
+    "kind": "level-filter",
+    "width": 320,
+    "expected": 4,
+    "retired": false,
+    "status": "4 de 7 viajes · III · Riders.",
+    "value": "3",
+    "visible": 4
+  },
+  {
+    "kind": "level-filter",
+    "width": 320,
+    "expected": 1,
+    "retired": false,
+    "status": "1 de 7 viajes · IV · Supercracks.",
+    "value": "4",
+    "visible": 1
+  },
+  {
+    "kind": "dates-open",
+    "width": 320,
+    "open": true,
+    "panel": {
+      "bottom": 526.78125,
+      "height": 44,
+      "left": 37,
+      "right": 268,
+      "top": 482.78125,
+      "width": 231,
+      "x": 37,
+      "y": 482.78125
+    },
+    "titleTop": 614.78125
+  },
+  {
+    "kind": "dates-escape",
+    "width": 320,
+    "closed": true
+  },
+  {
+    "kind": "select-focus",
+    "width": 320,
+    "boxShadow": "none",
+    "height": 54,
+    "id": "catalog-level",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "menu-open",
+    "route": "viajes",
+    "width": 320,
+    "bg": "rgb(255, 250, 231)",
+    "expanded": "true",
+    "nav": {
+      "bottom": 378.390625,
+      "height": 301.390625,
+      "left": 0,
+      "right": 305,
+      "top": 77,
+      "width": 305,
+      "x": 0,
+      "y": 77
+    }
+  },
+  {
+    "kind": "menu-escape",
+    "route": "viajes",
+    "width": 320,
+    "expanded": "false",
+    "focus": "menu-toggle",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "menu-open",
+    "route": "niveles",
+    "width": 320,
+    "bg": "rgb(255, 250, 231)",
+    "expanded": "true",
+    "nav": {
+      "bottom": 378.390625,
+      "height": 301.390625,
+      "left": 0,
+      "right": 305,
+      "top": 77,
+      "width": 305,
+      "x": 0,
+      "y": 77
+    }
+  },
+  {
+    "kind": "menu-escape",
+    "route": "niveles",
+    "width": 320,
+    "expanded": "false",
+    "focus": "menu-toggle",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "level-filter",
+    "width": 390,
+    "expected": 7,
+    "retired": false,
+    "status": "7 de 7 viajes.",
+    "value": "",
+    "visible": 7
+  },
+  {
+    "kind": "level-filter",
+    "width": 390,
+    "expected": 3,
+    "retired": false,
+    "status": "3 de 7 viajes · I · Rookies.",
+    "value": "1",
+    "visible": 3
+  },
+  {
+    "kind": "level-filter",
+    "width": 390,
+    "expected": 6,
+    "retired": false,
+    "status": "6 de 7 viajes · II · Aprendices.",
+    "value": "2",
+    "visible": 6
+  },
+  {
+    "kind": "level-filter",
+    "width": 390,
+    "expected": 4,
+    "retired": false,
+    "status": "4 de 7 viajes · III · Riders.",
+    "value": "3",
+    "visible": 4
+  },
+  {
+    "kind": "level-filter",
+    "width": 390,
+    "expected": 1,
+    "retired": false,
+    "status": "1 de 7 viajes · IV · Supercracks.",
+    "value": "4",
+    "visible": 1
+  },
+  {
+    "kind": "dates-open",
+    "width": 390,
+    "open": true,
+    "panel": {
+      "bottom": 526.78125,
+      "height": 44,
+      "left": 41,
+      "right": 334,
+      "top": 482.78125,
+      "width": 293,
+      "x": 41,
+      "y": 482.78125
+    },
+    "titleTop": 614.78125
+  },
+  {
+    "kind": "dates-escape",
+    "width": 390,
+    "closed": true
+  },
+  {
+    "kind": "select-focus",
+    "width": 390,
+    "boxShadow": "none",
+    "height": 54,
+    "id": "catalog-level",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "menu-open",
+    "route": "viajes",
+    "width": 390,
+    "bg": "rgb(255, 250, 231)",
+    "expanded": "true",
+    "nav": {
+      "bottom": 378.390625,
+      "height": 301.390625,
+      "left": 0,
+      "right": 375,
+      "top": 77,
+      "width": 375,
+      "x": 0,
+      "y": 77
+    }
+  },
+  {
+    "kind": "menu-escape",
+    "route": "viajes",
+    "width": 390,
+    "expanded": "false",
+    "focus": "menu-toggle",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "menu-open",
+    "route": "niveles",
+    "width": 390,
+    "bg": "rgb(255, 250, 231)",
+    "expanded": "true",
+    "nav": {
+      "bottom": 378.390625,
+      "height": 301.390625,
+      "left": 0,
+      "right": 375,
+      "top": 77,
+      "width": 375,
+      "x": 0,
+      "y": 77
+    }
+  },
+  {
+    "kind": "menu-escape",
+    "route": "niveles",
+    "width": 390,
+    "expanded": "false",
+    "focus": "menu-toggle",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "level-filter",
+    "width": 1440,
+    "expected": 7,
+    "retired": false,
+    "status": "7 de 7 viajes.",
+    "value": "",
+    "visible": 7
+  },
+  {
+    "kind": "level-filter",
+    "width": 1440,
+    "expected": 3,
+    "retired": false,
+    "status": "3 de 7 viajes · I · Rookies.",
+    "value": "1",
+    "visible": 3
+  },
+  {
+    "kind": "level-filter",
+    "width": 1440,
+    "expected": 6,
+    "retired": false,
+    "status": "6 de 7 viajes · II · Aprendices.",
+    "value": "2",
+    "visible": 6
+  },
+  {
+    "kind": "level-filter",
+    "width": 1440,
+    "expected": 4,
+    "retired": false,
+    "status": "4 de 7 viajes · III · Riders.",
+    "value": "3",
+    "visible": 4
+  },
+  {
+    "kind": "level-filter",
+    "width": 1440,
+    "expected": 1,
+    "retired": false,
+    "status": "1 de 7 viajes · IV · Supercracks.",
+    "value": "4",
+    "visible": 1
+  },
+  {
+    "kind": "dates-open",
+    "width": 1440,
+    "open": true,
+    "panel": {
+      "bottom": 527.390625,
+      "height": 44,
+      "left": 119.5,
+      "right": 470.828125,
+      "top": 483.390625,
+      "width": 351.328125,
+      "x": 119.5,
+      "y": 483.390625
+    },
+    "titleTop": 615.390625
+  },
+  {
+    "kind": "dates-escape",
+    "width": 1440,
+    "closed": true
+  },
+  {
+    "kind": "select-focus",
+    "width": 1440,
+    "boxShadow": "none",
+    "height": 54,
+    "id": "catalog-level",
+    "outline": "rgb(255, 250, 231) solid 3px"
+  },
+  {
+    "kind": "header-scroll",
+    "route": "viajes",
+    "width": 320,
+    "bg": "rgb(255, 250, 231)",
+    "color": "rgb(27, 27, 27)",
+    "dark": "block",
+    "scrollY": 1800
+  },
+  {
+    "kind": "header-scroll",
+    "route": "niveles",
+    "width": 320,
+    "bg": "rgb(255, 250, 231)",
+    "color": "rgb(27, 27, 27)",
+    "dark": "block",
+    "scrollY": 1800
+  },
+  {
+    "kind": "level-anchor",
+    "width": 320,
+    "cardTop": 90.015625,
+    "current": "#rookies",
+    "flash": true,
+    "focus": null,
+    "offset": "90px",
+    "outline": "rgb(27, 27, 27) none 3px"
+  },
+  {
+    "kind": "header-scroll",
+    "route": "viajes",
+    "width": 390,
+    "bg": "rgb(255, 250, 231)",
+    "color": "rgb(27, 27, 27)",
+    "dark": "block",
+    "scrollY": 1800
+  },
+  {
+    "kind": "header-scroll",
+    "route": "niveles",
+    "width": 390,
+    "bg": "rgb(255, 250, 231)",
+    "color": "rgb(27, 27, 27)",
+    "dark": "block",
+    "scrollY": 1800
+  },
+  {
+    "kind": "level-anchor",
+    "width": 390,
+    "cardTop": 89.578125,
+    "current": "#rookies",
+    "flash": true,
+    "focus": null,
+    "offset": "90px",
+    "outline": "rgb(27, 27, 27) none 3px"
+  },
+  {
+    "kind": "header-scroll",
+    "route": "viajes",
+    "width": 1440,
+    "bg": "rgb(255, 250, 231)",
+    "color": "rgb(27, 27, 27)",
+    "dark": "block",
+    "scrollY": 1533
+  },
+  {
+    "kind": "header-scroll",
+    "route": "niveles",
+    "width": 1440,
+    "bg": "rgb(255, 250, 231)",
+    "color": "rgb(27, 27, 27)",
+    "dark": "block",
+    "scrollY": 1800
+  },
+  {
+    "kind": "level-anchor",
+    "width": 1440,
+    "cardTop": 100.140625,
+    "current": "#rookies",
+    "flash": true,
+    "focus": null,
+    "offset": "100px",
+    "outline": "rgb(27, 27, 27) none 3px"
+  }
+]

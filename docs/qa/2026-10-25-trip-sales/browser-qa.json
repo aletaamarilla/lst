@@ -1,0 +1,50 @@
+{
+  "preview": "http://localhost:4175",
+  "dataSource": "sanity-local-preview (private draft promotions)",
+  "responsiveMaldives": [
+    {
+      "width": 320,
+      "overflow": false,
+      "heroFillsCover": true,
+      "photoBehindHeader": true
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "heroFillsCover": true,
+      "photoBehindHeader": true
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "heroFillsCover": true,
+      "photoBehindHeader": true
+    },
+    {
+      "width": 1440,
+      "overflow": false,
+      "heroFillsCover": true,
+      "photoBehindHeader": true
+    }
+  ],
+  "destinations320": [
+    "el-palmar",
+    "hossegor",
+    "fuerteventura",
+    "marruecos",
+    "marruecos-avanzado",
+    "senegal",
+    "maldivas"
+  ],
+  "allDestinationsOverflow": false,
+  "menu": "opened complete menu, Escape closes",
+  "dates": "Maldives mobile + desktop opens; two independent PDF links and date-specific registration URLs; Escape closes; focus restored",
+  "gallery": "El Palmar 320px: next updates counter 2 / 6; Escape closes; focus restored",
+  "anchor": "El Palmar programme top128px with fixed header bottom88px",
+  "consoleErrors": [],
+  "limitations": [
+    "No registration submitted, no WhatsApp message sent",
+    "No sales conversion measurement",
+    "Browser used local draft promotions; dist retains published snapshot"
+  ]
+}

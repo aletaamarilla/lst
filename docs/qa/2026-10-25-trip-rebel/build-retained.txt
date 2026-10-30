@@ -1,0 +1,12 @@
+Equivalencia profunda confirmada: 8 documentos publicados / 6 destinos. Sin lectura de borradores para dist.
+{
+  source: 'sanity-published',
+  count: 6,
+  out: '/home/amfernandez/personalProjects/letsurftogethersystem/dist'
+}
+Previsualización local aislada de promociones retenidas; ninguna escritura remota.
+{
+  source: 'sanity-published',
+  count: 6,
+  out: '/home/amfernandez/personalProjects/letsurftogethersystem/artifacts/trip-detail-2026-10-25/preview'
+}

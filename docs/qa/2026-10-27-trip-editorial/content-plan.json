@@ -1,0 +1,750 @@
+{
+  "mutations": [
+    {
+      "patch": {
+        "id": "drafts.lst-marruecos-2027-01-17",
+        "ifRevisionID": "5d64b709-ba04-45aa-a450-8e11c0162b3f",
+        "setIfMissing": {
+          "destinationFacts": [
+            "Costa atlántica",
+            "7 noches de surf y cultura"
+          ],
+          "stay.gallery": [
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-a71c2001f22226c628c84105014e2e638bbc3496-1440x960-webp"
+              },
+              "alt": "Ejemplo de terraza de una surf house marroquí.",
+              "caption": "Una terraza para desconectar.",
+              "_key": "stay-1"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-2a1acb5b9a7cb85bdb464ac72a7f85dc8fe59c15-1440x960-webp"
+              },
+              "alt": "Ejemplo de habitación compartida en una surf house.",
+              "caption": "Descanso después de las olas.",
+              "_key": "stay-2"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-d191c109756ef3cb85f0dae931a5794f054f60be-1440x960-webp"
+              },
+              "alt": "Ejemplo de salón de una surf house marroquí.",
+              "caption": "La vida en la casa.",
+              "_key": "stay-3"
+            }
+          ],
+          "stay.galleryNote": "Imágenes de ejemplo generadas para mostrar el ambiente. Las fotos del alojamiento definitivo se actualizarán aquí.",
+          "destinationDescription": "Una tierra de colores, sonidos y sabores, donde el desierto se encuentra con el Atlántico. Una semana entre el azul del océano y el ocre de las montañas para empezar a surfear, descubrir la cultura marroquí y compartir la experiencia con un grupo con las mismas ganas de aprender.",
+          "audience": {
+            "_type": "object",
+            "text": "Para quien quiere empezar o consolidar su base en el surf, ganar confianza en el agua y disfrutar de sus primeras paredes y maniobras sencillas.",
+            "profiles": [
+              {
+                "_key": "item-1",
+                "_type": "audienceProfile",
+                "title": "Nivel I · Iniciación",
+                "text": "Tus primeros pasos: espumas, ponerte de pie y entender cómo funciona el océano."
+              },
+              {
+                "_key": "item-2",
+                "_type": "audienceProfile",
+                "title": "Nivel II · Intermedio bajo",
+                "text": "Ya te pones de pie y quieres coger paredes, seguir la línea de la ola y hacer tus primeras maniobras."
+              }
+            ],
+            "objective": "Sentirte seguro, entender el océano y disfrutar de tus primeras olas con confianza."
+          },
+          "activities": [
+            {
+              "_key": "tamri",
+              "_type": "visualCard",
+              "title": "Dunas de Tamri",
+              "text": "Atardecer entre dunas frente al Atlántico.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-8b73781cb2124591349bcf9ba8a6a4e9fc915e7b-556x524-webp"
+                },
+                "alt": "Grupo de LST contemplando las dunas de Tamri."
+              }
+            },
+            {
+              "_key": "zoco",
+              "_type": "visualCard",
+              "title": "Zoco de Agadir",
+              "text": "Colores, especias y vida local.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-ea21d6a8eddd052bbc5e50e8e9c556efc0f2c60b-556x524-webp"
+                },
+                "alt": "Puestos del zoco de Agadir, fotografía del dossier de LST."
+              }
+            },
+            {
+              "_key": "mercados",
+              "_type": "visualCard",
+              "title": "Mercados locales",
+              "text": "Para vivir el Marruecos más auténtico.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524-webp"
+                },
+                "alt": "Grupo de LST junto a puestos locales en Marruecos."
+              }
+            },
+            {
+              "_key": "imsouane",
+              "_type": "visualCard",
+              "title": "Surf day en Imsouane",
+              "text": "Un día de surf para seguir aprendiendo y compartir las olas.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-87d2fc5a007de4b3bcfed09677e81639f0b0f2e0-556x524-webp"
+                },
+                "alt": "Surf al atardecer, fotografía del programa de Imsouane."
+              }
+            },
+            {
+              "_key": "paradise",
+              "_type": "visualCard",
+              "title": "Paradise Valley",
+              "text": "Una jornada entre montañas, palmeras y piscinas naturales."
+            }
+          ],
+          "spots": [
+            {
+              "_key": "imsouane",
+              "_type": "visualCard",
+              "title": "Imsouane",
+              "text": "Una jornada para aprender y disfrutar de sus paredes, si las condiciones acompañan.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-87d2fc5a007de4b3bcfed09677e81639f0b0f2e0-556x524-webp"
+                },
+                "alt": "Surf al atardecer en una fotografía del dossier de Marruecos."
+              }
+            },
+            {
+              "_key": "agadir",
+              "_type": "visualCard",
+              "title": "Costa de Agadir",
+              "text": "Nos movemos por la costa buscando olas que encajen con el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524-webp"
+                },
+                "alt": "Una jornada del grupo de LST junto a la costa marroquí."
+              }
+            }
+          ],
+          "spotsNote": "El spot de cada sesión se elige según el mar y el nivel del grupo. Fotografías del dossier y de viajes anteriores.",
+          "surfPlan": [
+            {
+              "_key": "item-1",
+              "_type": "surfPlanItem",
+              "title": "Clases y coaching",
+              "text": "De lunes a sábado, adaptados a tu nivel y con monitores y el equipo de LST."
+            },
+            {
+              "_key": "item-2",
+              "_type": "surfPlanItem",
+              "title": "Videoanálisis",
+              "text": "Correcciones grupales e individuales para entender tu progreso."
+            },
+            {
+              "_key": "item-3",
+              "_type": "surfPlanItem",
+              "title": "Animal Flow y estiramientos",
+              "text": "Cada día preparamos cuerpo y mente antes de entrar al agua."
+            },
+            {
+              "_key": "item-4",
+              "_type": "surfPlanItem",
+              "title": "Material y neopreno",
+              "text": "Material de iniciación incluido. Evolutivas y shortboards: alquiler aparte."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "drafts.lst-marruecos-2027-01-24",
+        "ifRevisionID": "5d64b709-ba04-45aa-a450-8e11c0162b3f",
+        "setIfMissing": {
+          "destinationFacts": [
+            "Costa atlántica",
+            "7 noches de surf y cultura"
+          ],
+          "stay.gallery": [
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-a71c2001f22226c628c84105014e2e638bbc3496-1440x960-webp"
+              },
+              "alt": "Ejemplo de terraza de una surf house marroquí.",
+              "caption": "Una terraza para desconectar.",
+              "_key": "stay-1"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-2a1acb5b9a7cb85bdb464ac72a7f85dc8fe59c15-1440x960-webp"
+              },
+              "alt": "Ejemplo de habitación compartida en una surf house.",
+              "caption": "Descanso después de las olas.",
+              "_key": "stay-2"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-d191c109756ef3cb85f0dae931a5794f054f60be-1440x960-webp"
+              },
+              "alt": "Ejemplo de salón de una surf house marroquí.",
+              "caption": "La vida en la casa.",
+              "_key": "stay-3"
+            }
+          ],
+          "stay.galleryNote": "Imágenes de ejemplo generadas para mostrar el ambiente. Las fotos del alojamiento definitivo se actualizarán aquí.",
+          "destinationDescription": "Una semana entre el Atlántico y la cultura marroquí para dar el siguiente paso en tu surf. Sesiones intensivas, análisis en detalle y tiempo para descubrir Agadir con un grupo que comparte las mismas ganas de progresar.",
+          "audience": {
+            "text": "Necesitas independencia en el agua: remontar solo, coger tus propias olas y recorrer la pared con tabla corta. A partir de esa base, trabajaremos velocidad, control y primeras maniobras.",
+            "profiles": [
+              {
+                "_key": "item-1",
+                "_type": "audienceProfile",
+                "title": "Nivel III · Riders",
+                "text": "Ya surfeas la pared con autonomía y quieres que tus giros empiecen a fluir."
+              }
+            ],
+            "objective": "Ganar velocidad y control en la pared, colocarte mejor y pulir tu técnica."
+          },
+          "activities": [
+            {
+              "_key": "zoco",
+              "_type": "visualCard",
+              "title": "Zoco de Agadir",
+              "text": "Si el mar descansa o el grupo lo pide, nos acercamos a sus colores y sabores.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-ea21d6a8eddd052bbc5e50e8e9c556efc0f2c60b-556x524-webp"
+                },
+                "alt": "Puestos del zoco de Agadir, fotografía del dossier de LST."
+              }
+            },
+            {
+              "_key": "local",
+              "_type": "visualCard",
+              "title": "Vida local",
+              "text": "Tiempo para descubrir Marruecos entre sesiones, según el ritmo del grupo.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524-webp"
+                },
+                "alt": "Grupo de LST en la costa de Marruecos."
+              }
+            }
+          ],
+          "spots": [
+            {
+              "_key": "spot-0",
+              "_type": "visualCard",
+              "title": "Imsouane",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista girando sobre una ola en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-b7e831800babc91734e05475f7a2015bf686238b-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-1",
+              "_type": "visualCard",
+              "title": "Anchor Point",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-2",
+              "_type": "visualCard",
+              "title": "Desert Point",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista sobre una ola vista desde la playa en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-3",
+              "_type": "visualCard",
+              "title": "Banana",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista al pie de una ola rompiendo en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-4",
+              "_type": "visualCard",
+              "title": "Camel",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista deslizándose junto a la espuma de una ola en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            }
+          ],
+          "spotsNote": "Spots previstos, sujetos a las condiciones del mar. Las fotografías muestran sesiones anteriores de LST en Marruecos; no identifican cada spot.",
+          "surfPlan": [
+            {
+              "_key": "item-1",
+              "_type": "surfPlanItem",
+              "title": "Coaching con Lucas",
+              "text": "De lunes a sábado, con acompañamiento en el agua."
+            },
+            {
+              "_key": "item-2",
+              "_type": "surfPlanItem",
+              "title": "Hasta dos sesiones al día",
+              "text": "Siempre que las condiciones acompañen."
+            },
+            {
+              "_key": "item-3",
+              "_type": "surfPlanItem",
+              "title": "Vídeos y correcciones",
+              "text": "Vídeos diarios y cuatro sesiones de videocorrecciones grupales e individuales."
+            },
+            {
+              "_key": "item-4",
+              "_type": "surfPlanItem",
+              "title": "Movilidad y material",
+              "text": "Animal Flow cada mañana. Trae tu tabla; también puedes alquilar en destino."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-marruecos-2027-01-17",
+        "ifRevisionID": "L3ZrvhdiWtwAlFI8eU2z2L",
+        "setIfMissing": {
+          "destinationFacts": [
+            "Costa atlántica",
+            "7 noches de surf y cultura"
+          ],
+          "stay.gallery": [
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-a71c2001f22226c628c84105014e2e638bbc3496-1440x960-webp"
+              },
+              "alt": "Ejemplo de terraza de una surf house marroquí.",
+              "caption": "Una terraza para desconectar.",
+              "_key": "stay-1"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-2a1acb5b9a7cb85bdb464ac72a7f85dc8fe59c15-1440x960-webp"
+              },
+              "alt": "Ejemplo de habitación compartida en una surf house.",
+              "caption": "Descanso después de las olas.",
+              "_key": "stay-2"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-d191c109756ef3cb85f0dae931a5794f054f60be-1440x960-webp"
+              },
+              "alt": "Ejemplo de salón de una surf house marroquí.",
+              "caption": "La vida en la casa.",
+              "_key": "stay-3"
+            }
+          ],
+          "stay.galleryNote": "Imágenes de ejemplo generadas para mostrar el ambiente. Las fotos del alojamiento definitivo se actualizarán aquí.",
+          "destinationDescription": "Una tierra de colores, sonidos y sabores, donde el desierto se encuentra con el Atlántico. Una semana entre el azul del océano y el ocre de las montañas para empezar a surfear, descubrir la cultura marroquí y compartir la experiencia con un grupo con las mismas ganas de aprender.",
+          "audience": {
+            "_type": "object",
+            "text": "Para quien quiere empezar o consolidar su base en el surf, ganar confianza en el agua y disfrutar de sus primeras paredes y maniobras sencillas.",
+            "profiles": [
+              {
+                "_key": "item-1",
+                "_type": "audienceProfile",
+                "title": "Nivel I · Iniciación",
+                "text": "Tus primeros pasos: espumas, ponerte de pie y entender cómo funciona el océano."
+              },
+              {
+                "_key": "item-2",
+                "_type": "audienceProfile",
+                "title": "Nivel II · Intermedio bajo",
+                "text": "Ya te pones de pie y quieres coger paredes, seguir la línea de la ola y hacer tus primeras maniobras."
+              }
+            ],
+            "objective": "Sentirte seguro, entender el océano y disfrutar de tus primeras olas con confianza."
+          },
+          "activities": [
+            {
+              "_key": "tamri",
+              "_type": "visualCard",
+              "title": "Dunas de Tamri",
+              "text": "Atardecer entre dunas frente al Atlántico.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-8b73781cb2124591349bcf9ba8a6a4e9fc915e7b-556x524-webp"
+                },
+                "alt": "Grupo de LST contemplando las dunas de Tamri."
+              }
+            },
+            {
+              "_key": "zoco",
+              "_type": "visualCard",
+              "title": "Zoco de Agadir",
+              "text": "Colores, especias y vida local.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-ea21d6a8eddd052bbc5e50e8e9c556efc0f2c60b-556x524-webp"
+                },
+                "alt": "Puestos del zoco de Agadir, fotografía del dossier de LST."
+              }
+            },
+            {
+              "_key": "mercados",
+              "_type": "visualCard",
+              "title": "Mercados locales",
+              "text": "Para vivir el Marruecos más auténtico.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524-webp"
+                },
+                "alt": "Grupo de LST junto a puestos locales en Marruecos."
+              }
+            },
+            {
+              "_key": "imsouane",
+              "_type": "visualCard",
+              "title": "Surf day en Imsouane",
+              "text": "Un día de surf para seguir aprendiendo y compartir las olas.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-87d2fc5a007de4b3bcfed09677e81639f0b0f2e0-556x524-webp"
+                },
+                "alt": "Surf al atardecer, fotografía del programa de Imsouane."
+              }
+            },
+            {
+              "_key": "paradise",
+              "_type": "visualCard",
+              "title": "Paradise Valley",
+              "text": "Una jornada entre montañas, palmeras y piscinas naturales."
+            }
+          ],
+          "spots": [
+            {
+              "_key": "imsouane",
+              "_type": "visualCard",
+              "title": "Imsouane",
+              "text": "Una jornada para aprender y disfrutar de sus paredes, si las condiciones acompañan.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-87d2fc5a007de4b3bcfed09677e81639f0b0f2e0-556x524-webp"
+                },
+                "alt": "Surf al atardecer en una fotografía del dossier de Marruecos."
+              }
+            },
+            {
+              "_key": "agadir",
+              "_type": "visualCard",
+              "title": "Costa de Agadir",
+              "text": "Nos movemos por la costa buscando olas que encajen con el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524-webp"
+                },
+                "alt": "Una jornada del grupo de LST junto a la costa marroquí."
+              }
+            }
+          ],
+          "spotsNote": "El spot de cada sesión se elige según el mar y el nivel del grupo. Fotografías del dossier y de viajes anteriores.",
+          "surfPlan": [
+            {
+              "_key": "item-1",
+              "_type": "surfPlanItem",
+              "title": "Clases y coaching",
+              "text": "De lunes a sábado, adaptados a tu nivel y con monitores y el equipo de LST."
+            },
+            {
+              "_key": "item-2",
+              "_type": "surfPlanItem",
+              "title": "Videoanálisis",
+              "text": "Correcciones grupales e individuales para entender tu progreso."
+            },
+            {
+              "_key": "item-3",
+              "_type": "surfPlanItem",
+              "title": "Animal Flow y estiramientos",
+              "text": "Cada día preparamos cuerpo y mente antes de entrar al agua."
+            },
+            {
+              "_key": "item-4",
+              "_type": "surfPlanItem",
+              "title": "Material y neopreno",
+              "text": "Material de iniciación incluido. Evolutivas y shortboards: alquiler aparte."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-marruecos-2027-01-24",
+        "ifRevisionID": "L3ZrvhdiWtwAlFI8eU2z2L",
+        "setIfMissing": {
+          "destinationFacts": [
+            "Costa atlántica",
+            "7 noches de surf y cultura"
+          ],
+          "stay.gallery": [
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-a71c2001f22226c628c84105014e2e638bbc3496-1440x960-webp"
+              },
+              "alt": "Ejemplo de terraza de una surf house marroquí.",
+              "caption": "Una terraza para desconectar.",
+              "_key": "stay-1"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-2a1acb5b9a7cb85bdb464ac72a7f85dc8fe59c15-1440x960-webp"
+              },
+              "alt": "Ejemplo de habitación compartida en una surf house.",
+              "caption": "Descanso después de las olas.",
+              "_key": "stay-2"
+            },
+            {
+              "_type": "image",
+              "asset": {
+                "_type": "reference",
+                "_ref": "image-d191c109756ef3cb85f0dae931a5794f054f60be-1440x960-webp"
+              },
+              "alt": "Ejemplo de salón de una surf house marroquí.",
+              "caption": "La vida en la casa.",
+              "_key": "stay-3"
+            }
+          ],
+          "stay.galleryNote": "Imágenes de ejemplo generadas para mostrar el ambiente. Las fotos del alojamiento definitivo se actualizarán aquí.",
+          "destinationDescription": "Una semana entre el Atlántico y la cultura marroquí para dar el siguiente paso en tu surf. Sesiones intensivas, análisis en detalle y tiempo para descubrir Agadir con un grupo que comparte las mismas ganas de progresar.",
+          "audience": {
+            "text": "Necesitas independencia en el agua: remontar solo, coger tus propias olas y recorrer la pared con tabla corta. A partir de esa base, trabajaremos velocidad, control y primeras maniobras.",
+            "profiles": [
+              {
+                "_key": "item-1",
+                "_type": "audienceProfile",
+                "title": "Nivel III · Riders",
+                "text": "Ya surfeas la pared con autonomía y quieres que tus giros empiecen a fluir."
+              }
+            ],
+            "objective": "Ganar velocidad y control en la pared, colocarte mejor y pulir tu técnica."
+          },
+          "activities": [
+            {
+              "_key": "zoco",
+              "_type": "visualCard",
+              "title": "Zoco de Agadir",
+              "text": "Si el mar descansa o el grupo lo pide, nos acercamos a sus colores y sabores.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-ea21d6a8eddd052bbc5e50e8e9c556efc0f2c60b-556x524-webp"
+                },
+                "alt": "Puestos del zoco de Agadir, fotografía del dossier de LST."
+              }
+            },
+            {
+              "_key": "local",
+              "_type": "visualCard",
+              "title": "Vida local",
+              "text": "Tiempo para descubrir Marruecos entre sesiones, según el ritmo del grupo.",
+              "image": {
+                "_type": "image",
+                "asset": {
+                  "_type": "reference",
+                  "_ref": "image-604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524-webp"
+                },
+                "alt": "Grupo de LST en la costa de Marruecos."
+              }
+            }
+          ],
+          "spots": [
+            {
+              "_key": "spot-0",
+              "_type": "visualCard",
+              "title": "Imsouane",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista girando sobre una ola en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-b7e831800babc91734e05475f7a2015bf686238b-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-1",
+              "_type": "visualCard",
+              "title": "Anchor Point",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-2",
+              "_type": "visualCard",
+              "title": "Desert Point",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista sobre una ola vista desde la playa en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-3",
+              "_type": "visualCard",
+              "title": "Banana",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista al pie de una ola rompiendo en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            },
+            {
+              "_key": "spot-4",
+              "_type": "visualCard",
+              "title": "Camel",
+              "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+              "image": {
+                "_type": "image",
+                "alt": "Surfista deslizándose junto a la espuma de una ola en Marruecos, 2025.",
+                "asset": {
+                  "_ref": "image-71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000-jpg",
+                  "_type": "reference"
+                }
+              }
+            }
+          ],
+          "spotsNote": "Spots previstos, sujetos a las condiciones del mar. Las fotografías muestran sesiones anteriores de LST en Marruecos; no identifican cada spot.",
+          "surfPlan": [
+            {
+              "_key": "item-1",
+              "_type": "surfPlanItem",
+              "title": "Coaching con Lucas",
+              "text": "De lunes a sábado, con acompañamiento en el agua."
+            },
+            {
+              "_key": "item-2",
+              "_type": "surfPlanItem",
+              "title": "Hasta dos sesiones al día",
+              "text": "Siempre que las condiciones acompañen."
+            },
+            {
+              "_key": "item-3",
+              "_type": "surfPlanItem",
+              "title": "Vídeos y correcciones",
+              "text": "Vídeos diarios y cuatro sesiones de videocorrecciones grupales e individuales."
+            },
+            {
+              "_key": "item-4",
+              "_type": "surfPlanItem",
+              "title": "Movilidad y material",
+              "text": "Animal Flow cada mañana. Trae tu tabla; también puedes alquilar en destino."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

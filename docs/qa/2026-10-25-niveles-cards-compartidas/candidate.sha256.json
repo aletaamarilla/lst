@@ -1,0 +1,27 @@
+{
+  "repository": "aletaamarilla/lst",
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "files": {
+    "dist/niveles/index.html": "8ce0a6c2782da4223aeab04a004d47546ac0abd20a75b6aaf67e977b8edd9e7c",
+    "dist/levels.css": "d3841c0e864722b734fac87dfabdfe83355e2e7f0e07d2a4c43e9203b1f3b302",
+    "dist/levels.js": "c2e0adb430255050b4a9e58c24297df4f56d2df98cb2ff06e6e29b3df4f556fa",
+    "dist/home.js": "7530344c799ad91702c825984942c7004cd9aa4060fdb8a09de2916fdf62bd4a",
+    "scripts/render-level-trips.mjs": "195457782af6bc4a4b364c55a973b88d8c1d24de6f51e5200c2397eebd543b11",
+    "scripts/home-trips.test.mjs": "74b75c229c5da35da4fee03927b162d9bd786e1201d29f7f29ad382baf3306de",
+    "scripts/check.mjs": "52215acee1f2007e8f8ee304504be5f705f164e03ebd1f9b9ae35536f12747c5",
+    "scripts/check-levels.mjs": "3e563f144271b29a84cdd9730f576f1ef7729f12ffa257995de686435507ba92",
+    "scripts/check-sanity-browser.mjs": "e9f7b8bbd5df1564a1da6cf0815ae5782a90b2ac7f1ec9432446e59db4e16808",
+    "scripts/check-shared-trips.mjs": "57b75fcaaa402617a40c5df3073c80c6671d26ebe70f42eb50ae648ab44c5d4b"
+  },
+  "deleted": [
+    "dist/level-quiz.js",
+    "scripts/level-quiz.test.mjs",
+    "scripts/check-level-quiz.mjs"
+  ],
+  "sharedRenderer": {
+    "path": "scripts/render-home-trips.mjs",
+    "sha256": "44c453cddf07c9ebe513975c191bc8149d9f50fedf31805c4d9bdd8d8b11efc7",
+    "unchanged": true
+  }
+}

@@ -1,0 +1,1 @@
+Base: 58f338661fc4705364fea08727c836e79b3f2048 with existing uncommitted changes. Before implementation: node --test --test-reporter=dot scripts/*.test.mjs passed (153 tests) with sandbox escalation. Restricted baseline failed on localhost EACCES and temporary rename EPERM; same source passes outside those restrictions.

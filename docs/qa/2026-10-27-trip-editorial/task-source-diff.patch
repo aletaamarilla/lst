@@ -1,0 +1,416 @@
+--- before/scripts/render-trips.mjs
++++ after/scripts/render-trips.mjs
+@@ -17,8 +17,12 @@
+ const url=trip=>`/viajes/${trip.slug}/`;
+ const wa=(trip,message=tripMessage(trip))=>`https://wa.me/34648189257?text=${encodeURIComponent(message)}`;
+ const arrow=(direction='external')=>`<svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="${direction==='left'?'M20 12H4m6-6-6 6 6 6':direction==='down'?'M12 4v16m-6-6 6 6 6-6':direction==='right'?'M4 12h16m-6-6 6 6-6 6':'M6 18 18 6M6 6h12v12'}"/></svg>`;
++const whatsappIcon = '<svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg>';
++const withWhatsApp = html => html.replace(/<a\b([^>]*\bdata-whatsapp=[^>]*)>([\s\S]*?)<\/a>/g, (_, attrs, label) => `<a${attrs}>${whatsappIcon}<span>${label}</span></a>`);
++const railControls = label => `<div class="rail-controls"><button type="button" data-carousel-prev aria-label="${escape(label)}: anterior">${arrow('left')}</button><button type="button" data-carousel-next aria-label="${escape(label)}: siguiente">${arrow('right')}</button></div>`;
++const visualRail = (items, id, title, label, note = '') => items?.length ? `<section id="${id}" class="trip-block visual-section" data-carousel><div class="section-heading"><div><p class="eyebrow">${escape(label)}</p><h2>${title}</h2></div>${railControls(title)}</div><div class="visual-track" data-carousel-track tabindex="0" role="region" aria-label="${escape(title)}; desplazamiento horizontal">${items.map((item,i) => `<article class="visual-card">${item.image ? `<img src="${escape(photoSource(item.image,900))}" alt="${escape(item.alt)}" loading="lazy" decoding="async" width="800" height="1000">` : ''}<div class="visual-card-copy"><span class="visual-card-index">0${i+1}</span><h3>${escape(item.title)}</h3><p>${escape(publicDetail(item.text))}</p></div></article>`).join('')}</div>${note ? `<p class="fine-print rail-note">${escape(note)}</p>` : ''}</section>` : '';
++const photoSource = (source, width = 1600) => source.startsWith('https://cdn.sanity.io/images/') ? `${source}${source.includes('?')?'&':'?'}w=${width}&fit=max&auto=format` : source;
+ const contact=(trip,label,classes='button',message)=>`<a class="${classes}" data-whatsapp="${trip.id}" href="${wa(trip,message)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(label)} · ${escape(trip.name)}, por WhatsApp">${escape(label)}</a>`;
+-const figure=(img,alt,caption)=>`<figure class="trip-figure"><img src="${escape(img)}" alt="${escape(alt)}" loading="lazy" decoding="async" width="1000" height="600"><figcaption>${escape(caption)}</figcaption></figure>`;
+ const facts=tripFacts;
+ const status=trip=>availabilityLabel(trip).toLocaleUpperCase('es');
+ const price=tripPrice;
+@@ -95,7 +99,6 @@
+ const pricing=tripPriceDetails(trip);
+ const shownDeparture=pricing.departure;
+ const offer=real&&!isFull(trip)&&shownDeparture?.promotion;
+-const summaryTitle=trip.tagline && trip.tagline!==trip.name ? trip.tagline : real ? detailTitles[trip.slug]??'Tu próximo viaje empieza en el agua.' : trip.name;
+ const pitch=salesPitch(trip);
+ const practical=practicalDetails(trip);
+ const extraFaqs=salesFaqs(trip);
+@@ -111,46 +114,47 @@
+ const durationLabel=allFacts.find(([label])=>label==='Duración')[1];
+ const mobileOptions=!multiple&&(trip.dossier||departures.some(d=>d.dossier))?`<div class="mobile-booking-options">${dossier(trip)}</div>`:"";
+ const commercial=`<dl class="trip-facts">${trip.payment?.depositAmount!=null?`<div><dt>Señal</dt><dd>${formatPrice(trip.payment.depositAmount)}</dd></div>`:''}${trip.capacity?.total!=null?`<div><dt>Capacidad total</dt><dd>${trip.capacity.total} personas</dd></div>`:''}<div><dt>Disponibilidad</dt><dd>${escape(availabilityLabel(trip))}</dd></div></dl>${trip.payment?.terms?`<p class="fine-print">${escape(trip.payment.terms)}</p>`:''}<p class="fine-print">${canRegister?'La inscripción es una solicitud de plaza. El equipo revisa la disponibilidad y te indica cómo confirmar la reserva.':'La disponibilidad y las condiciones se confirman con el equipo antes de reservar.'}</p>`;
+-const photoSlides=trip.gallery.map(([img,alt,caption],i)=>`<figure class="photo-slide" aria-label="Foto ${i+1} de ${trip.gallery.length}"><img src="${escape(img)}" alt="${escape(alt)}" width="1000" height="600" loading="lazy" decoding="async"><figcaption>${escape(caption)}</figcaption></figure>`).join("\n");
+-const gallery=trip.gallery.map(([img,alt,caption],i)=>`<figure><button class="gallery-photo" type="button" data-photo="${i}" aria-label="Ampliar foto ${i+1}: ${escape(alt)}"><img src="${escape(img)}" alt="${escape(alt)}" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>${escape(caption)}</figcaption></figure>`).join('\n');
++const coverImages = [...(trip.hero ? [[trip.hero, trip.heroAlt, '']] : []), ...trip.gallery.filter(([img]) => img !== trip.hero)];
++const coverCarousel = `<div class="cover-carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Fotos de ${escape(trip.name)}; desliza para ver más">${coverImages.map(([img,alt],i) => `<figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="${i}" type="button" aria-label="Ampliar foto ${i+1}: ${escape(alt)}"><img class="trip-cover-image" src="${escape(photoSource(img))}" alt="${escape(alt)}" width="1600" height="1000" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} decoding="async"></button></figure>`).join('')}</div>`;
++const sectionLinks = `<a href="#destino">El destino</a><a href="#nivel">Para quién</a>${trip.activities?.length ? '<a href="#actividades">Actividades</a>' : ''}${trip.spots?.length ? '<a href="#spots">Spots</a>' : ''}<a href="#plan">Plan de surf</a>${trip.stay ? '<a href="#alojamiento">Alojamiento</a>' : ''}<a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a>`;
++const photoSlides=coverImages.map(([img,alt,caption],i)=>`<figure class="photo-slide" aria-label="Foto ${i+1} de ${coverImages.length}"><img src="${escape(img)}" alt="${escape(alt)}" width="1000" height="600" loading="lazy" decoding="async"><figcaption>${escape(caption)}</figcaption></figure>`).join("\n");
+ const story=trip.story.map(([title,copy],i)=>`<details class="plan-item"${i===0?' open':''}><summary><span class="plan-number" aria-hidden="true">0${i+1}</span><span>${escape(programmeTitle(trip,title,i))}</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>${escape(publicDetail(copy))}</p></details>`).join('\n');
+ const inclusions=(trip.includes?.length||trip.excludes?.length||trip.inclusionsNote)?`<section id="incluye" class="trip-block trip-costs"><p class="eyebrow">EL PRECIO, AL DETALLE</p><h2>Incluido y no incluido.</h2><div class="inclusion-grid">${trip.includes?.length?`<div class="inclusion-list" aria-labelledby="included-title"><h3 id="included-title"><span aria-hidden="true">✓</span> Incluido</h3><div class="inclusion-groups">${groupedInclusions(trip.includes.map(publicDetail))}</div></div>`:''}${trip.excludes?.length?`<div class="inclusion-list exclusion-list" aria-labelledby="excluded-title"><h3 id="excluded-title"><span aria-hidden="true">↗</span> No incluido</h3><ul>${trip.excludes.map(item=>`<li>${escape(publicDetail(item))}</li>`).join('')}</ul></div>`:''}</div>${trip.inclusionsNote?`<p class="fine-print">${escape(trip.inclusionsNote)}</p>`:''}</section>`:`<section id="incluye" class="trip-block pending-program"><p class="eyebrow">LA PRÓXIMA SALIDA</p><h2>El programa, cuando esté cerrado.</h2><p>Publicaremos aquí las fechas, el alojamiento, las sesiones y el precio de la nueva salida a ${escape(trip.name)}. También podrás ver qué incluye y qué gastos van aparte.</p><dl class="pending-facts"><div><dt>Alojamiento y comidas</dt><dd>Por confirmar</dd></div><div><dt>Sesiones y actividades</dt><dd>Por confirmar</dd></div><div><dt>Material y traslados</dt><dd>Por confirmar</dd></div><div><dt>Precio y condiciones</dt><dd>Por confirmar</dd></div></dl><p class="fine-print">Las experiencias y fotos de viajes anteriores no constituyen el programa de la próxima salida.</p></section>`;
+-const stay=trip.stay?`<section id="alojamiento" class="trip-block stay-block${trip.stay.image?'':' stay-compact'}"><p class="eyebrow">EL ALOJAMIENTO</p><h2>${escape(trip.stay.title||'Dónde nos quedamos.')}</h2>${trip.stay.image?figure(trip.stay.image,trip.stay.alt,trip.stay.name):""}<p>${escape(stayCopy(trip.stay.text))}</p>${trip.stay.note?`<p class="fine-print">${escape(trip.stay.note)}</p>`:''}</section>`:'';
++const stayPhotos = trip.stay?.gallery?.length ? trip.stay.gallery : trip.stay?.image ? [[trip.stay.image,trip.stay.alt,trip.stay.name]] : [];
++const stay=trip.stay?`<section id="alojamiento" class="trip-block stay-block${stayPhotos.length?'':' stay-compact'}" data-carousel><div class="section-heading"><div><p class="eyebrow">DESCANSAR, COMPARTIR, REPETIR</p><h2>${escape(trip.stay.title||'Alojamiento y comidas.')}</h2></div>${stayPhotos.length>1?railControls('Alojamiento'):''}</div><p>${escape(stayCopy(trip.stay.text))}</p>${stayPhotos.length?`<div class="stay-carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Fotos del alojamiento; desplazamiento horizontal">${stayPhotos.map(([img,alt,caption])=>`<figure class="trip-figure"><img src="${escape(photoSource(img,1200))}" alt="${escape(alt)}" loading="lazy" decoding="async" width="1200" height="800">${caption?`<figcaption>${escape(caption)}</figcaption>`:''}</figure>`).join('')}</div>`:''}${trip.stay.galleryNote?`<p class="fine-print stay-gallery-note">${escape(trip.stay.galleryNote)}</p>`:''}${trip.stay.note?`<p class="fine-print">${escape(trip.stay.note)}</p>`:''}</section>`:'';
+ const related=trips.filter(t=>t.id!==trip.id).slice(0,3).map(t=>`<a class="related-trip" href="${url(t)}">${t.hero?`<img src="${escape(t.hero)}" alt="" width="1000" height="600" loading="lazy">`:""}<div><span>${escape(t.name)}</span><small>${t.state==='confirmed'?escape(departuresFor(t).length>1?'Varias salidas':departuresFor(t)[0]?.date??'Consultar fechas'):'Próximamente'}</small></div></a>`).join('');
+-return `<!doctype html>
++return withWhatsApp(`<!doctype html>
+ <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><title>${escape(trip.name)} · Viaje de surf — Let’s Surf Together</title><meta name="description" content="${escape(description)}"><meta property="og:title" content="${escape(trip.name)} · Let’s Surf Together"><meta property="og:description" content="${escape(description)}">${trip.hero?`<meta property="og:image" content="${escape(trip.hero)}">`:""}<meta property="og:url" content="${origin}${url(trip)}"><meta property="og:type" content="website"><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/trip-detail.css"></head>
+ <body class="home-modern trip-page trip-designed" data-state="${trip.state}">
+ <a class="skip-link" href="#contenido">Saltar al contenido</a>
+ <header class="site-header trip-header trip-sales-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let’s Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="${escape(trip.id)}" href="${wa(trip)}" target="_blank" rel="noopener noreferrer">Hablamos</a></nav>${bookingAction(trip,cta,'button trip-header-cta')}</header>
+ <main id="contenido" tabindex="-1">
+- <section class="trip-cover" aria-labelledby="trip-title">${trip.hero?`<img class="trip-cover-image" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="1000" height="600" fetchpriority="high" decoding="async">`:""}<div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><a class="trip-breadcrumb" href="/viajes/">Viajes de surf <span aria-hidden="true">/</span> ${escape(trip.name)}</a><p class="eyebrow"><span class="trip-dot" aria-hidden="true"></span> ${escape(trip.place)} / SURFTRIP</p><p class="trip-cover-level">${escape(levelLabel(trip))}</p><h1 id="trip-title"${trip.name.length>11?' class="trip-title-long"':''}>${escape(trip.name)}</h1><p class="trip-cover-lead">${escape(summaryTitle)}</p>${real?`<div class="cover-key-facts"><span>${multiple?"Varias salidas":escape(firstDeparture?.date??'Consultar fechas')}</span><span>${escape(durationLabel)}</span></div>`:`<span class="trip-state">${status(trip)}</span>`}${real&&shownDeparture?.price!=null?`<div class="trip-hero-fare"><p>${fareMarkup(trip,shownDeparture,{from:pricing.from})}<span> / persona</span></p>${offer?`<p class="hero-fare-condition">${escape(shownDeparture.promotion.label)} · ${escape(promotionCondition(shownDeparture.promotion))}${multiple?` · ${escape(shownDeparture.date)}`:''}</p>`:''}</div>`:''}<a class="button trip-cover-cta" href="#reservar">${isFull(trip)?'Consultar alternativas':multiple?'Ver fechas y precio':real?'Quiero vivir este viaje':'Quiero saber más'}</a></div>${trip.gallery.length?`<button type="button" class="cover-photos" data-open-gallery aria-label="Ver ${trip.gallery.length} ${trip.gallery.length===1?'foto':'fotos'} del viaje">Ver fotos <span>${trip.gallery.length}</span></button>`:""}</section>
+- <div class="trip-reassurance"><span>Viajes de surf en grupo</span><span>Un nivel que encaje contigo</span><a href="#incluye">El precio, con todo el detalle <span aria-hidden="true">↓</span></a></div>
++ <section class="trip-cover" aria-labelledby="trip-title" data-carousel>${coverCarousel}<div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="trip-cover-level">${escape(levelLabel(trip))}</p><h1 id="trip-title"${trip.name.length>11?' class="trip-title-long"':''}>${escape(trip.name)}</h1></div>${coverImages.length>1?`<div class="cover-carousel-controls">${railControls('Fotos del viaje')}<span data-carousel-counter aria-live="polite">01 / ${String(coverImages.length).padStart(2,'0')}</span></div>`:''}</section>
++ <div class="trip-reassurance"><span class="trip-location">${escape(trip.place||trip.name)}</span>${(trip.destinationFacts?.length?trip.destinationFacts:[durationLabel,real?'Surf en grupo':'Próximas salidas']).map(f=>`<span>${escape(f)}</span>`).join('')}</div>
++ <nav class="trip-breadcrumb trip-shell" aria-label="Breadcrumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/viajes/">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">${escape(trip.name)}</span></nav>
+  <div class="trip-layout">
+   <article class="trip-content">
+-   <section class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">${real?'TU PRÓXIMO SURFTRIP':'EL PRÓXIMO PLAN'}</p><h2 id="trip-summary-title">${escape(pitch.title)}</h2><p class="trip-kickoff">${escape(pitch.text)}</p>${renderQuickFacts(trip)}<div class="trip-price-summary">${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="trip-summary-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}<span>${shownDeparture?.price!=null?'por persona':'Consulta con el equipo'}</span></p><p class="trip-summary-price-note">${escape(offer?'Tarifa vigente para el cupo indicado. Confirmamos disponibilidad contigo.':summaryPrice(trip))}</p>${bookingAction(trip,cta,'button trip-summary-cta')}</div>${isFull(trip)?'<p class="trip-notice">Esta salida está completa. Consulta otras opciones con el equipo.</p>':''}${isFull(trip)&&multiple?`<dl class="trip-facts">${departures.map(d=>`<div><dt>${escape(d.date)}</dt><dd>${escape(d.duration)} · ${d.price!==null?formatPrice(d.price):'Consultar precio'} · Completo</dd></div>`).join('')}</dl>`:''}${mobileOptions}</section>
+-   <nav class="trip-section-nav" aria-label="En este viaje"><a href="#plan">Programa</a><a href="#nivel">Nivel de surf</a>${trip.stay?'<a href="#alojamiento">Alojamiento</a>':''}<a href="#incluye">Incluido / No incluido</a><a href="#dudas">Dudas frecuentes</a><a href="#reservar">${canRegister?'Inscripción':'Tu viaje'}</a></nav>
+-   ${pitch.highlights?.length?`<section class="trip-reasons" aria-label="Lo especial de este viaje">${pitch.highlights.map((item,i)=>`<article><span class="reason-number" aria-hidden="true">0${i+1}</span><h3>${escape(item.title)}</h3><p>${escape(item.text)}</p></article>`).join('')}</section>`:''}
+-   ${trip.gallery.length?`<section class="trip-story-gallery" aria-label="Un vistazo a ${escape(trip.name)}">${trip.gallery.slice(0,3).map(([img,alt,caption],i)=>`<figure><button class="gallery-photo" type="button" data-photo="${i}" aria-label="Ampliar foto: ${escape(alt)}"><img src="${escape(img)}" alt="${escape(alt)}" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>${escape(caption)}</figcaption></figure>`).join('')}</section>`:''}
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>${escape(levelLabel(trip))}</h2><p class="level-fixed-note">Tu punto de partida.</p></div><p>${escape(publicDetail(trip.levelText || trip.levelRequirement))}</p>${trip.levelRequirement&&trip.levelText&&trip.levelRequirement!==trip.levelText?`<p class="level-requirement"><strong>Para este viaje:</strong> ${escape(publicDetail(trip.levelRequirement))}</p>`:''}${trip.levelChecks?.length?`<ul>${trip.levelChecks.map(s=>`<li>${escape(publicDetail(s))}</li>`).join('')}</ul>`:''}<div class="level-actions"><a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</div>${trips.some(t=>t.slug===(trip.slug==='marruecos'?'marruecos-avanzado':trip.slug==='marruecos-avanzado'?'marruecos':''))?`<a class="trip-alternative" href="/viajes/${trip.slug==='marruecos'?'marruecos-avanzado':'marruecos'}/">${trip.slug==='marruecos'?'¿Ya tienes autonomía? Conoce Marruecos avanzado.':'¿Estás empezando? Conoce Marruecos I–II.'}</a>`:''}</section>
+-   <section class="trip-programme" id="plan" aria-label="Programa del viaje"><p class="eyebrow">EL PROGRAMA DEL VIAJE</p>${trip.story.length||trip.storyIntro?`<section class="trip-block"><h2>${escape(trip.storyTitle==='El programa.'?'Qué vamos a hacer.':trip.storyTitle)}</h2><p>${escape(trip.storyIntro)}</p><div class="plan-list">${story}</div></section>`:''}${trip.intro?trip.story.length||trip.storyIntro?`<details class="programme-context"><summary>Sobre este viaje <span aria-hidden="true">+</span></summary><p class="trip-intro">${escape(detailIntro(trip.intro))}</p></details>`:`<p class="trip-intro">${escape(detailIntro(trip.intro))}</p>`:''}${stay}
+-<section class="trip-block trip-team"><p class="eyebrow">QUIÉN TE ACOMPAÑA</p><h2>${escape(team?.title??(real?'Lucas va contigo.':'Viajamos en grupo.'))}</h2><p>${escape(team?.text??(real?'Lucas te acompaña durante el viaje, comparte las sesiones y está cerca para ayudarte a disfrutar del surf y del grupo.':`El próximo programa de ${trip.name} está pendiente. Publicaremos el acompañamiento junto con los detalles de la salida.`))}</p>${accompaniment.length ? `<ul class="trip-team-roles">${accompaniment.map(item=>`<li>${escape(publicDetail(item))}</li>`).join('')}</ul>` : ''}<a class="text-link" href="/conocenos/#acompanamiento">Conoce al equipo de LST</a>${!real?contact(trip,'Consultar el acompañamiento','button button-small trip-team-contact',`¡Hola, LST! Me interesa ${trip.name}. ¿Qué acompañamiento está previsto para la próxima salida?`):''}</section>
+-</section>
++   <section id="destino" class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">EL DESTINO</p><h2 id="trip-summary-title">¿Por qué ${escape(trip.name)}?</h2><p class="trip-kickoff">${escape(trip.destinationDescription||pitch.text)}</p>${real?`<div class="trip-summary-dates"><span>${multiple?'Fechas del viaje':'Próxima salida'}</span><strong>${departures.map(d=>escape(d.date)).join('<br>')}</strong></div>`:''}${renderQuickFacts(trip)}<div class="trip-price-summary">${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="trip-summary-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}<span>${shownDeparture?.price!=null?'por persona':'Consulta con el equipo'}</span></p><p class="trip-summary-price-note">${escape(offer?'Tarifa vigente para el cupo indicado. Confirmamos disponibilidad contigo.':summaryPrice(trip))}</p>${bookingAction(trip,cta,'button trip-summary-cta')}</div>${isFull(trip)?'<p class="trip-notice">Esta salida está completa. Consulta otras opciones con el equipo.</p>':''}${mobileOptions}</section>
++   <nav class="trip-section-nav" aria-label="En este viaje">${sectionLinks}</nav>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>¿Para quién es este viaje?</h2><p class="level-fixed-note">${escape(levelLabel(trip))}</p></div><p>${escape(publicDetail(trip.audience?.text || trip.levelText || trip.levelRequirement))}</p>${trip.levelRequirement&&trip.levelRequirement!==(trip.audience?.text||trip.levelText||trip.levelRequirement)?`<p class="level-requirement"><strong>Para este viaje:</strong> ${escape(publicDetail(trip.levelRequirement))}</p>`:''}${trip.audience?.profiles?.length?`<div class="audience-profiles">${trip.audience.profiles.map(([title,text])=>`<article><h3>${escape(title)}</h3><p>${escape(text)}</p></article>`).join('')}</div>`:''}${trip.audience?.objective?`<p class="audience-objective"><strong>El objetivo.</strong> ${escape(trip.audience.objective)}</p>`:''}${trip.levelChecks?.length?`<ul>${trip.levelChecks.map(s=>`<li>${escape(publicDetail(s))}</li>`).join('')}</ul>`:''}<div class="level-actions"><a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</div>${trips.some(t=>t.slug===(trip.slug==='marruecos'?'marruecos-avanzado':trip.slug==='marruecos-avanzado'?'marruecos':''))?`<a class="trip-alternative" href="/viajes/${trip.slug==='marruecos'?'marruecos-avanzado':'marruecos'}/">${trip.slug==='marruecos'?'¿Ya tienes autonomía? Conoce Marruecos avanzado.':'¿Estás empezando? Conoce Marruecos I–II.'}</a>`:''}</section>
++   ${visualRail(trip.activities,'actividades','Actividades.','MÁS ALLÁ DEL AGUA')}
++   ${visualRail(trip.spots,'spots','Spots.','BUSCANDO NUESTRA OLA',trip.spotsNote)}
++   <section class="trip-programme trip-block" id="plan" aria-labelledby="surf-plan-title"><p class="eyebrow">SURF Y PROGRESO</p><h2 id="surf-plan-title">Plan de surf.</h2>${trip.surfPlan?.length?`<div class="surf-plan-grid">${trip.surfPlan.map(([title,text],i)=>`<article><span class="plan-number" aria-hidden="true">0${i+1}</span><div><h3>${escape(title)}</h3><p>${escape(publicDetail(text))}</p></div></article>`).join('')}</div>`:''}${trip.story.length||trip.storyIntro?`<${trip.surfPlan?.length?'details':'div'} class="programme-full">${trip.surfPlan?.length?'<summary>Ver el programa completo <span aria-hidden="true">+</span></summary>':''}<h3>${escape(trip.storyTitle==='El programa.'?'El programa del viaje':trip.storyTitle)}</h3>${trip.storyIntro?`<p>${escape(trip.storyIntro)}</p>`:''}<div class="plan-list">${story}</div></${trip.surfPlan?.length?'details':'div'}>`:''}${trip.intro?`<details class="programme-context"><summary>Sobre este viaje <span aria-hidden="true">+</span></summary><p class="trip-intro">${escape(detailIntro(trip.intro))}</p></details>`:''}<section class="trip-block trip-team"><h3>${escape(team?.title??(real?'Lucas va contigo.':'Viajamos en grupo.'))}</h3><p>${escape(team?.text??(real?'Lucas te acompaña durante el viaje, comparte las sesiones y está cerca para ayudarte a disfrutar del surf y del grupo.':`El próximo programa de ${trip.name} está pendiente. Publicaremos el acompañamiento junto con los detalles de la salida.`))}</p>${accompaniment.length?`<ul class="trip-team-roles">${accompaniment.map(item=>`<li>${escape(publicDetail(item))}</li>`).join('')}</ul>`:''}<a class="text-link" href="/conocenos/#acompanamiento">Conoce al equipo de LST</a>${!real?contact(trip,'Consultar el acompañamiento','button button-small trip-team-contact',`¡Hola, LST! Me interesa ${trip.name}. ¿Qué acompañamiento está previsto para la próxima salida?`):''}</section></section>
++   ${stay}
+    ${inclusions}
+-   ${practical.length?`<section id="preparar" class="trip-block trip-practical"><p class="eyebrow">PARA VIAJAR CON TODO CLARO</p><h2>Antes de hacer la mochila.</h2><div class="practical-grid">${practical.map(item=>`<article><h3>${escape(item.title)}</h3><p>${escape(item.text)}</p></article>`).join('')}</div><a class="text-link" href="${wa(trip,`¡Hola, LST! Me interesa ${trip.name} y tengo una duda sobre cómo preparar el viaje.`)}" data-whatsapp="${escape(trip.id)}" target="_blank" rel="noopener noreferrer">¿Te queda alguna duda? Hablamos por WhatsApp</a></section>`:''}
+-   ${trip.gallery.length?`<details class="trip-photo-file"><summary>Todas las fotos del viaje <span>${trip.gallery.length} ${trip.gallery.length===1?'foto':'fotos'} <span aria-hidden="true">+</span></span></summary><section class="trip-gallery" aria-labelledby="photos-title"><h2 id="photos-title">El álbum de ${escape(trip.name)}.</h2><div class="gallery-track" aria-label="Fotos del destino">${gallery}</div></section></details>`:''}
+-   <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Lo que quieres saber.</h2>${faqs.length?'':'<p>Viajar por tu cuenta, elegir nivel, preparar la mochila… Empieza por nuestras preguntas frecuentes o cuéntanos tu duda.</p><a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a>'}<div class="faq-list">${faqs.map(([q,a])=>`<details><summary>${escape(q)}<span aria-hidden="true">+</span></summary><p>${escape(a)}</p></details>`).join('')}</div>${!trip.faqs.length&&faqs.length?'<a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a>':''}</section>
+-   <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">${canRegister?'INSCRIPCIÓN AL VIAJE':real?'TU PRÓXIMO VIAJE':'PRÓXIMAS SALIDAS'}</p><h2>${isFull(trip)?'Nos vemos en otra ola.':canRegister?'¿Te vienes?':`¿Te apetece ${escape(trip.name)}?`}</h2><p>${isFull(trip)?'Esta salida está completa. Puedes consultar otras opciones con el equipo.':canRegister?multiple?'Elige la fecha que te encaje y completa el formulario de inscripción.':'Completa el formulario de inscripción para solicitar tu plaza en el viaje.':real?'Consulta la disponibilidad y las condiciones de esta salida con el equipo.':'Consulta las próximas fechas y el programa con el equipo.'}</p>${bookingAction(trip,mainCta,'button reserve-main')}<p class="fine-print">${canRegister?'La inscripción no confirma la reserva. El equipo revisará tu solicitud y te indicará los siguientes pasos.':'La consulta no confirma una reserva.'}</p><details class="booking-conditions"><summary>Pago y confirmación de la plaza <span aria-hidden="true">+</span></summary>${commercial}${trip.notice?`<p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p>`:''}</details>${multiple?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Fechas</h2>${departures.map(d=>`<article><h3>${escape(d.date)}</h3>${dateDossier(d)}${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${departurePayment(d)}${registrationLink(trip,d)}${contact(trip,isFull(trip)||isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}</section>
++   <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Preguntas frecuentes.</h2>${faqs.length?'':'<p>Viajar por tu cuenta, elegir nivel, preparar la mochila… Empieza por nuestras preguntas frecuentes o cuéntanos tu duda.</p><a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a>'}<div class="faq-list">${practical.length?`<details><summary>¿Cómo preparo el viaje?<span aria-hidden="true">+</span></summary><div class="practical-grid">${practical.map(item=>`<article><h3>${escape(item.title)}</h3><p>${escape(item.text)}</p></article>`).join('')}</div></details>`:''}${faqs.map(([q,a])=>`<details><summary>${escape(q)}<span aria-hidden="true">+</span></summary><p>${escape(a)}</p></details>`).join('')}</div>${!trip.faqs.length&&faqs.length?'<a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a>':''}</section>
++   <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">${canRegister?'INSCRIPCIÓN AL VIAJE':real?'TU PRÓXIMO VIAJE':'PRÓXIMAS SALIDAS'}</p><h2>${isFull(trip)?'Nos vemos en otra ola.':canRegister?'¿Te vienes?':`¿Te apetece ${escape(trip.name)}?`}</h2><p>${isFull(trip)?'Esta salida está completa. Puedes consultar otras opciones con el equipo.':canRegister?multiple?'Elige la fecha que te encaje y completa el formulario de inscripción.':'Completa el formulario de inscripción para solicitar tu plaza en el viaje.':real?'Consulta la disponibilidad y las condiciones de esta salida con el equipo.':'Consulta las próximas fechas y el programa con el equipo.'}</p>${bookingAction(trip,mainCta,'button reserve-main')}${contact(trip,'¿Tienes dudas? Hablamos','button reserve-whatsapp')}<p class="fine-print">${canRegister?'La inscripción no confirma la reserva. El equipo revisará tu solicitud y te indicará los siguientes pasos.':'La consulta no confirma una reserva.'}</p><details class="booking-conditions"><summary>Pago y confirmación de la plaza <span aria-hidden="true">+</span></summary>${commercial}${trip.notice?`<p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p>`:''}</details>${multiple?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Fechas</h2>${departures.map(d=>`<article><h3>${escape(d.date)}</h3>${dateDossier(d)}${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${departurePayment(d)}${registrationLink(trip,d)}${contact(trip,isFull(trip)||isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}</section>
+   </article>
+-  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><p class="eyebrow">${status(trip)}</p><h2>Tu próxima<br>escapada.</h2>${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(offer?'Por persona · tarifa vigente para el cupo indicado':summaryPrice(trip))}</p><dl>${sidebarFacts(allFacts).map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl>${bookingAction(trip,cta,"button booking-card-cta")}${dossier(trip)}<p class="booking-card-help">${canRegister?'Solicita tu plaza. El equipo te acompaña con los siguientes pasos.':real?'Resolvemos tus dudas y confirmamos la disponibilidad contigo.':'Consulta las próximas salidas con el equipo.'}</p><a class="booking-card-link" href="#dudas">Tengo una duda</a></div></aside>
++  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><p class="eyebrow">${status(trip)}</p><p class="booking-trip-name">${escape(trip.name)}</p>${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(offer?'Por persona · tarifa vigente para el cupo indicado':summaryPrice(trip))}</p><dl>${sidebarFacts(allFacts).map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl>${bookingAction(trip,cta,"button booking-card-cta")}${dossier(trip)}<p class="booking-card-help">${canRegister?'Solicita tu plaza. El equipo te acompaña con los siguientes pasos.':real?'Resolvemos tus dudas y confirmamos la disponibilidad contigo.':'Consulta las próximas salidas con el equipo.'}</p>${contact(trip,'Hablamos por WhatsApp','button booking-whatsapp')}<details class="booking-page-nav"><summary>Explora el viaje</summary><nav aria-label="Secciones del viaje">${sectionLinks}</nav></details></div></aside>
+  </div>
+  <section class="related-section"><div class="trip-shell"><p class="eyebrow">SIGUE MIRANDO</p><h2>¿Y si tu próxima ola está aquí?</h2><div class="related-list">${related}</div><a class="text-link" href="/viajes/">Ver todos los viajes</a></div></section>
+ </main>
+ <footer class="trip-footer trip-shell"><a class="brand" href="/"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126" loading="lazy"></a><div><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener">@letsurftogether</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#experiencia">La experiencia</a><a href="/#reservar">Cómo reservar</a></div><p>© 2026 LET’S SURF TOGETHER</p></footer>
+ <div class="trip-dock" aria-label="Fechas e inscripción"><div>${offer?`<span class="dock-offer">${escape(shownDeparture.promotion.label)} · ${escape(promotionCondition(shownDeparture.promotion))}</span>`:''}${isFull(trip)?'<strong>Completo</strong>':real?`<p class="dock-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p>`:'<strong>Próximamente</strong>'}<span>${real?`por persona · ${escape(offer?shownDeparture.duration:durationLabel)}`:'Fechas por anunciar'}</span></div>${bookingAction(trip,cta,'button dock-cta')}</div>
+-<dialog class="photo-dialog" aria-labelledby="photo-title"><div class="photo-heading"><div><p id="photo-title">Fotos de ${escape(trip.name)}</p><p class="photo-instruction">Desliza para ver más</p></div><button class="photo-close" type="button" aria-label="Cerrar fotos">Cerrar</button></div><div class="photo-strip" tabindex="0" role="region" aria-label="Galería de fotos, desplazamiento horizontal">${photoSlides}</div><div class="photo-controls"><button type="button" data-photo-prev aria-label="Foto anterior">Anterior</button><span class="photo-counter" aria-live="polite" aria-atomic="true">1 / ${trip.gallery.length}</span><button type="button" data-photo-next aria-label="Foto siguiente">Siguiente</button></div></dialog>
++<dialog class="photo-dialog" aria-labelledby="photo-title"><div class="photo-heading"><div><p id="photo-title">Fotos de ${escape(trip.name)}</p><p class="photo-instruction">Desliza para ver más</p></div><button class="photo-close" type="button" aria-label="Cerrar fotos">Cerrar</button></div><div class="photo-strip" tabindex="0" role="region" aria-label="Galería de fotos, desplazamiento horizontal">${photoSlides}</div><div class="photo-controls"><button type="button" data-photo-prev aria-label="Foto anterior">Anterior</button><span class="photo-counter" aria-live="polite" aria-atomic="true">1 / ${coverImages.length}</span><button type="button" data-photo-next aria-label="Foto siguiente">Siguiente</button></div></dialog>
+ ${dateDialog(trip)}
+ 
+-<noscript><nav class="trip-static-nav" aria-label="Más páginas de LST"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav><style>.trip-designed .menu-toggle{display:none}.trip-designed .trip-sales-header{position:absolute}.trip-designed .trip-static-nav{display:flex;flex-wrap:wrap;gap:20px;padding:24px}</style></noscript>
++<noscript><nav class="trip-static-nav" aria-label="Más páginas de LST"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav><style>.trip-designed .menu-toggle,.trip-designed .rail-controls{display:none}.trip-designed .trip-sales-header{position:absolute}.trip-designed .trip-static-nav{display:flex;flex-wrap:wrap;gap:20px;padding:24px}</style></noscript>
+ <script src="/app.js" type="module"></script><script src="/trip.js" type="module"></script></body></html>
+-`.replace(/[ \t]+$/gm, '');
++`.replace(/[ \t]+$/gm, ''));
+ }
+--- before/scripts/sanity-trips.mjs
++++ after/scripts/sanity-trips.mjs
+@@ -107,7 +107,17 @@
+     for (const d of departures) d.availability ??= result.availability;
+     result.availability = aggregateAvailability(departures);
+   }
++  for (const key of ['destinationDescription', 'spotsNote']) if (doc[key] != null) result[key] = text(doc[key], key);
++  if (doc.destinationFacts != null) result.destinationFacts = strings(doc.destinationFacts, 'destinationFacts');
++  for (const key of ['activities', 'spots']) if (doc[key] != null) result[key] = list(doc[key], key).map(item => ({
++    title: text(item.title, key + '.title', true), text: text(item.text, key + '.text', true),
++    image: image(item.image, key + '.image'), alt: text(item.image?.alt, key + '.alt'),
++  }));
++  if (doc.surfPlan != null) result.surfPlan = pairs(doc.surfPlan, 'title', 'text', 'surfPlan');
++  if (doc.audience) result.audience = {text: text(doc.audience.text, 'audience.text'), objective: text(doc.audience.objective, 'audience.objective'), profiles: pairs(doc.audience.profiles, 'title', 'text', 'audience.profiles')};
+   if (doc.stay) result.stay = {title: text(doc.stay.title, 'stay.title'), name: text(doc.stay.name, 'stay.name'), text: text(doc.stay.text, 'stay.text'), note: text(doc.stay.note, 'stay.note'), image: image(doc.stay.image, 'stay.image'), alt: text(doc.stay.image?.alt, 'stay.alt')};
++  if (doc.stay?.gallery != null) result.stay.gallery = list(doc.stay.gallery, 'stay.gallery').map(v => [image(v, 'stay.gallery'), text(v.alt, 'stay.gallery.alt', true), text(v.caption, 'stay.gallery.caption')]);
++  if (doc.stay?.galleryNote != null) result.stay.galleryNote = text(doc.stay.galleryNote, 'stay.galleryNote');
+   if (doc.team) result.team = {title: text(doc.team.title, 'team.title'), text: text(doc.team.text, 'team.text')};
+   return result;
+ }
+--- before/scripts/sanity.mjs
++++ after/scripts/sanity.mjs
+@@ -29,7 +29,9 @@
+     ..., "dossier": coalesce(dossierFile.asset->url, dossier), "hero": hero{..., "url": asset->url},
+     "gallery": gallery[]{..., "url": asset->url},
+     "departures": departures[]{..., "dossier": coalesce(dossierFile.asset->url, dossier)},
+-    "stay": stay{..., "image": image{..., "url": asset->url}}
++    "activities": activities[]{..., "image": image{..., "url": asset->url}},
++    "spots": spots[]{..., "image": image{..., "url": asset->url}},
++    "stay": stay{..., "image": image{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url}}
+   }`, {...options, token: env.SANITY_READ_TOKEN, perspective: 'published'});
+ }
+ 
+--- before/scripts/trip-groups.mjs
++++ after/scripts/trip-groups.mjs
+@@ -4,7 +4,7 @@
+ }
+ 
+ // Dates share a trip only when the level range and complete programme match.
+-const programmeFields = ['levelRequirement', 'intro', 'storyTitle', 'storyLabel', 'storyIntro', 'story', 'includes', 'excludes', 'inclusionsNote', 'faqs', 'levelText', 'levelChecks', 'stay', 'team'];
++const programmeFields = ['destinationDescription', 'destinationFacts', 'audience', 'activities', 'spots', 'spotsNote', 'surfPlan', 'levelRequirement', 'intro', 'storyTitle', 'storyLabel', 'storyIntro', 'story', 'includes', 'excludes', 'inclusionsNote', 'faqs', 'levelText', 'levelChecks', 'stay', 'team'];
+ export const aggregateAvailability = departures => !departures.length ? 'enquiry' : departures.every(d => d.availability === 'full') ? 'full'
+   : departures.some(d => d.availability === 'available') ? 'available'
+   : departures.some(d => d.availability === 'last_places') ? 'last_places' : 'enquiry';
+--- before/scripts/update-trip-promotions.mjs
++++ after/scripts/update-trip-promotions.mjs
+@@ -72,7 +72,9 @@
+ const query = `*[_type == "trip"]{..., "dossier": coalesce(dossierFile.asset->url, dossier),
+   "hero": hero{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url},
+   "departures": departures[]{..., "dossier": coalesce(dossierFile.asset->url, dossier)},
+-  "stay": stay{..., "image": image{..., "url": asset->url}}}`;
++  "activities": activities[]{..., "image": image{..., "url": asset->url}},
++  "spots": spots[]{..., "image": image{..., "url": asset->url}},
++  "stay": stay{..., "image": image{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url}}}`;
+ 
+ async function main() {
+   const out = 'artifacts/early-bird-2026-10-25';
+--- before/studio/schemaTypes/trip.ts
++++ after/studio/schemaTypes/trip.ts
+@@ -1,5 +1,13 @@
+ import {defineArrayMember, defineField, defineType} from 'sanity'
+ import {promotionsField} from './promotions'
++
++const editorialCards = (name: string, title: string) => defineField({name, title, type: 'array', group: 'program', of: [defineArrayMember({
++  name: 'visualCard', type: 'object', fields: [
++    defineField({name: 'title', title: 'Título', type: 'string', validation: r => r.required()}),
++    defineField({name: 'text', title: 'Descripción breve', type: 'text', rows: 2, validation: r => r.required()}),
++    defineField({name: 'image', title: 'Foto', type: 'image', options: {hotspot: true}, fields: [defineField({name: 'alt', title: 'Descripción de la foto', type: 'string'})]}),
++  ], preview: {select: {title: 'title', media: 'image'}},
++})]})
+ 
+ export const trip = defineType({
+   name: 'trip',
+@@ -23,6 +31,23 @@
+     }),
+     defineField({name: 'place', title: 'Lugar / región', type: 'string', group: 'content'}),
+     defineField({name: 'tagline', title: 'Titular', type: 'string', group: 'content'}),
++    defineField({name: 'destinationDescription', title: '¿Por qué este destino?', type: 'text', rows: 3, group: 'content', description: 'Presentación breve que aparece justo después de la portada.'}),
++    defineField({name: 'destinationFacts', title: 'Datos breves bajo la portada', type: 'array', group: 'content', description: 'Por ejemplo «Costa atlántica» o «Surf y cultura». No repitas el lugar.', of: [defineArrayMember({type: 'string'})]}),
++    defineField({name: 'audience', title: '¿Para quién es este viaje?', type: 'object', group: 'departures', description: 'Describe solo los niveles configurados para este viaje. El requisito de autonomía se conserva debajo.', fields: [
++      defineField({name: 'text', title: 'Introducción breve', type: 'text', rows: 2}),
++      defineField({name: 'profiles', title: 'Perfiles de nivel', type: 'array', of: [defineArrayMember({type: 'object', name: 'audienceProfile', fields: [
++        defineField({name: 'title', title: 'Nivel y nombre', type: 'string', validation: r => r.required()}),
++        defineField({name: 'text', title: 'Descripción breve', type: 'text', rows: 2, validation: r => r.required()}),
++      ]})]}),
++      defineField({name: 'objective', title: 'Objetivo del viaje', type: 'text', rows: 2}),
++    ]}),
++    editorialCards('activities', 'Actividades y excursiones'),
++    editorialCards('spots', 'Spots de surf'),
++    defineField({name: 'spotsNote', title: 'Condiciones de los spots', type: 'text', rows: 2, group: 'program'}),
++    defineField({name: 'surfPlan', title: 'Plan de surf resumido', type: 'array', group: 'program', description: 'Puntos breves del plan. El programa completo sigue disponible en un desplegable.', of: [defineArrayMember({type: 'object', name: 'surfPlanItem', fields: [
++      defineField({name: 'title', title: 'Título', type: 'string', validation: r => r.required()}),
++      defineField({name: 'text', title: 'Descripción', type: 'text', rows: 2, validation: r => r.required()}),
++    ]})]}),
+     defineField({name: 'intro', title: 'Presentación', type: 'text', rows: 4, group: 'content'}),
+     defineField({
+       name: 'hero', title: 'Foto de portada', type: 'image', group: 'content', options: {hotspot: true},
+@@ -114,6 +139,11 @@
+       defineField({name: 'name', title: 'Nombre', type: 'string'}),
+       defineField({name: 'text', title: 'Descripción', type: 'text'}),
+       defineField({name: 'note', title: 'Condiciones', type: 'text'}),
++      defineField({name: 'gallery', title: 'Galería del alojamiento', type: 'array', of: [defineArrayMember({type: 'image', options: {hotspot: true}, fields: [
++        defineField({name: 'alt', title: 'Descripción de la foto', type: 'string', validation: r => r.required()}),
++        defineField({name: 'caption', title: 'Pie de foto', type: 'string'}),
++      ]})]}),
++      defineField({name: 'galleryNote', title: 'Nota sobre las fotos', type: 'string', description: 'Identifica aquí las imágenes de ejemplo hasta sustituirlas por fotografías del alojamiento real.'}),
+       defineField({name: 'image', title: 'Foto', type: 'image', options: {hotspot: true}, fields: [defineField({name: 'alt', title: 'Descripción de la foto', type: 'string'})]}),
+     ]}),
+     defineField({name: 'team', title: 'Acompañamiento', type: 'object', group: 'program', fields: [
+--- before/dist/trip.js
++++ after/dist/trip.js
+@@ -174,3 +174,34 @@
+   const datesObserver = new ResizeObserver(fitDates);
+   [departureDialog, ...fixedParts].forEach(part => datesObserver.observe(part));
+ }
++
++// Reuse one accessible native-scrolling controller for cover, activities, spots and stay.
++document.querySelectorAll('[data-carousel]').forEach(carousel => {
++  const track = carousel.querySelector('[data-carousel-track]');
++  if (!track) return;
++  const previous = carousel.querySelector('[data-carousel-prev]');
++  const next = carousel.querySelector('[data-carousel-next]');
++  const counter = carousel.querySelector('[data-carousel-counter]');
++  const children = [...track.children];
++  const current = () => children.reduce((best, child, i) => Math.abs(child.offsetLeft - children[0].offsetLeft - track.scrollLeft) < Math.abs(children[best].offsetLeft - children[0].offsetLeft - track.scrollLeft) ? i : best, 0);
++  const update = () => {
++    const focusedControl = document.activeElement;
++    if (previous) previous.disabled = track.scrollLeft < 2;
++    if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
++    if (counter) counter.textContent = `${String(current() + 1).padStart(2, '0')} / ${String(children.length).padStart(2, '0')}`;
++    if ((focusedControl === previous && previous?.disabled) || (focusedControl === next && next?.disabled)) track.focus({preventScroll:true});
++  };
++  const move = direction => {
++    const selected = children[Math.max(0, Math.min(children.length - 1, current() + direction))];
++    if (selected) track.scrollTo({left:selected.offsetLeft - children[0].offsetLeft, behavior:reducedMotion.matches ? 'instant' : 'smooth'});
++  };
++  previous?.addEventListener('click', () => move(-1));
++  next?.addEventListener('click', () => move(1));
++  track.addEventListener('keydown', event => {
++    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
++    event.preventDefault();move(event.key === 'ArrowRight' ? 1 : -1);
++  });
++  track.addEventListener('scroll', update, {passive:true});
++  new ResizeObserver(update).observe(track);
++  update();
++});
+--- before/dist/trip-detail.css
++++ after/dist/trip-detail.css
+@@ -264,3 +264,141 @@
+  .trip-designed .departure-payment{grid-column:1/-1;margin:0}
+  .trip-designed .departure-enquiry{grid-column:2;justify-self:end;min-height:44px;padding:10px 0;font-size:12px}
+ }
++
++/* Editorial trip journey, October 2026. Native scrolling stays available without JS. */
++.trip-designed .trip-cover{min-height:540px;height:76svh;max-height:850px;align-items:flex-end}
++.trip-designed .trip-cover-copy{position:relative;z-index:2;padding:145px 0 80px;pointer-events:none}
++.trip-designed .trip-cover h1{margin:0;max-width:12ch}
++.trip-designed .trip-cover-level{margin-bottom:18px;background:#192c2c35;backdrop-filter:blur(6px)}
++.cover-carousel-track{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
++.cover-carousel-track::-webkit-scrollbar{display:none}
++.cover-carousel-slide{position:relative;flex:0 0 100%;min-width:0;height:100%;scroll-snap-align:start;scroll-snap-stop:always}
++.cover-image-button{display:block;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
++.trip-designed .cover-carousel-slide .trip-cover-image{position:static;z-index:auto;display:block;width:100%;height:100%;object-fit:cover}
++.trip-designed .trip-cover-shade{z-index:1;pointer-events:none;background:linear-gradient(180deg,#101c2466,transparent 38%,#101b2180)}
++.cover-carousel-controls{position:absolute;right:max(22px,calc((100% - 1224px)/2));bottom:26px;z-index:3;display:flex;align-items:center;gap:18px;color:var(--paper)}
++.cover-carousel-controls>span{font:400 11px var(--mono);min-width:7ch}
++.rail-controls{display:none;gap:8px;flex-shrink:0}
++.rail-controls button{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:inherit;cursor:pointer}
++.rail-controls button:hover{background:var(--orange);color:var(--ink);border-color:var(--orange)}
++.rail-controls button:disabled{opacity:.35;cursor:default}
++.cover-carousel-controls .rail-controls{display:flex;--line:#fffae780}
++.trip-designed .trip-reassurance{justify-content:center;align-items:center;gap:10px 28px;background:#ece8d9;padding:21px 24px}
++.trip-reassurance>span::before{display:none}
++.trip-reassurance>span+span::before{display:inline-block;content:'·';color:#77705b;margin-right:28px}
++.trip-reassurance .trip-location{font-weight:600}
++.trip-designed .trip-breadcrumb{display:flex;align-items:center;gap:10px;margin-block:25px 0;font-size:11px;color:var(--muted)}
++.trip-breadcrumb a{min-height:32px;display:inline-flex;align-items:center;text-underline-offset:4px}
++.trip-breadcrumb a:hover{text-decoration:underline}
++.trip-designed .trip-summary{padding-top:24px}
++.trip-designed .trip-summary h2{max-width:22ch}
++.trip-designed .trip-section-nav{flex-wrap:nowrap;overflow:auto;white-space:nowrap;scrollbar-width:thin;margin:22px 0 36px;gap:24px}
++.trip-designed .trip-section-nav a{font-size:12px}
++.trip-designed .trip-level{padding:0 0 36px;background:transparent;border:0;border-radius:0;margin:0;border-bottom:1px solid var(--line)}
++.trip-designed .level-heading{gap:12px;margin-bottom:18px}
++.trip-designed .level-heading h2{font-size:clamp(38px,5vw,52px);max-width:19ch}
++.trip-designed .level-fixed-note{font:500 12px/1.6 var(--body);color:#a33417}
++.audience-profiles{display:grid;gap:20px;margin-top:25px}
++.audience-profiles article{border-left:2px solid var(--orange);padding-left:18px;min-width:0}
++.audience-profiles h3{font-size:15px;font-weight:600;margin-bottom:9px}
++.audience-profiles p{font-size:14px;line-height:1.75;color:var(--muted)}
++.trip-designed .trip-level .audience-objective{margin-top:24px;font-size:14px}
++.trip-designed .level-actions{gap:12px;margin-top:22px;max-width:none}
++.trip-designed .level-actions .text-link{flex:0 1 auto;border:0;padding-left:0;text-decoration:underline;text-underline-offset:4px}
++.trip-designed .level-actions .button-level{flex:0 1 auto}
++.section-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:22px}
++.trip-designed .section-heading h2{margin-bottom:0}
++.trip-designed .section-heading .eyebrow{margin-bottom:10px}
++.visual-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a49b80 transparent;padding-bottom:16px;overscroll-behavior-x:contain}
++.visual-card{position:relative;flex:0 0 83%;min-width:0;min-height:370px;aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#283a37;color:var(--paper);scroll-snap-align:start;isolation:isolate}
++.visual-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .5s}
++.visual-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 28%,#101b21e8);z-index:-1}
++.visual-card:hover>img{transform:scale(1.025)}
++.visual-card-copy{position:absolute;inset:auto 24px 26px}
++.visual-card-index{display:block;margin-bottom:13px;font:400 11px var(--mono);color:#f2c7ad}
++.trip-designed .visual-card h3{font:500 22px/1.2 var(--body);letter-spacing:-.025em;margin:0 0 11px;color:var(--paper)}
++.visual-card p{font-size:13px;line-height:1.7;color:#fff8e7e6}
++.rail-note{margin-top:10px}
++.trip-designed .trip-programme{margin-top:0;padding-top:38px}
++.trip-designed .trip-programme>.eyebrow{display:block}
++.surf-plan-grid{display:grid;gap:25px;margin-top:28px}
++.surf-plan-grid article{display:flex;gap:18px;align-items:start;min-width:0}
++.surf-plan-grid .plan-number{flex-shrink:0;padding-top:4px}
++.surf-plan-grid h3{font-size:15px;line-height:1.5;font-weight:600;margin-bottom:6px}
++.surf-plan-grid p{font-size:14px;line-height:1.8;color:var(--muted)}
++.programme-full{margin-top:28px}
++.programme-full>summary{display:flex;justify-content:space-between;gap:20px;align-items:center;min-height:50px;font-size:13px;border-block:1px solid var(--line);cursor:pointer}
++.programme-full>h3{font-size:18px;margin-top:22px}
++.surf-team-note{margin-top:25px;font-size:13px;line-height:1.8;color:var(--muted)}
++.surf-team-note .text-link{display:inline-flex;min-height:44px;align-items:center;font-size:12px;text-decoration:underline;text-underline-offset:4px}
++.stay-carousel-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#a49b80 transparent;padding-block:24px 14px;overscroll-behavior-x:contain}
++.stay-carousel-track>.trip-figure{flex:0 0 90%;min-width:0;scroll-snap-align:start;margin:0}
++.stay-carousel-track>.trip-figure:only-child{flex-basis:100%}
++.trip-designed .stay-carousel-track img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px}
++.trip-designed .stay-carousel-track figcaption{font-size:12px;line-height:1.6;margin-top:10px;color:var(--muted)}
++.stay-gallery-note{margin-top:6px}
++.whatsapp-icon{flex-shrink:0;vertical-align:middle}
++.trip-designed a[data-whatsapp]{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid transparent;border-radius:100px;background:#1d7348!important;color:#fff!important;padding:10px 17px;min-height:44px;font-size:12px;line-height:1.6;text-decoration:none}
++.trip-designed a[data-whatsapp]:hover{background:#155737!important;color:#fff!important}
++.trip-designed .booking-trip-name{font:400 30px/1.1 var(--display);margin-bottom:22px}
++.trip-designed .booking-card>.eyebrow{margin-bottom:12px}
++.trip-designed .booking-card dl{gap:12px;margin-block:19px}
++.trip-designed .booking-card dl>div{display:flex;align-items:baseline;justify-content:space-between;gap:16px}
++.trip-designed .booking-card dd{text-align:right;font-size:12px}
++.trip-designed .booking-card dt{font-size:11px;flex-shrink:0}
++.trip-designed .booking-whatsapp{width:100%;margin-top:16px}
++.booking-page-nav{border-top:1px solid var(--line);margin-top:20px;padding-top:7px}
++.booking-page-nav summary{font-size:12px;min-height:44px;display:flex;align-items:center;cursor:pointer}
++.booking-page-nav summary::after{content:'+';margin-left:auto}
++.booking-page-nav[open] summary::after{content:'−'}
++.booking-page-nav nav{display:grid;gap:4px}
++.booking-page-nav a{font-size:12px;display:flex;align-items:center;min-height:36px;text-underline-offset:4px}
++.trip-designed .trip-reserve .reserve-whatsapp{margin-top:14px;max-width:350px;width:100%}
++.trip-designed .trip-dock{border-radius:18px 18px 0 0;background:#fffdf5;box-shadow:0 -6px 28px #1b1b1b12;z-index:45}
++@media(min-width:600px){
++ .rail-controls{display:flex}
++ .visual-card{flex-basis:54%;min-height:355px}
++ .audience-profiles{grid-template-columns:repeat(2,minmax(0,1fr))}
++ .surf-plan-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 30px}
++ .stay-carousel-track>.trip-figure{flex-basis:88%}
++}
++@media(min-width:1000px){
++ .trip-designed .trip-cover{min-height:580px;height:75svh;max-height:850px}
++ .trip-designed .trip-cover-copy{padding-bottom:82px}
++ .cover-carousel-controls{right:max(48px,calc((100% - 1224px)/2));bottom:35px}
++ .trip-designed .trip-summary{padding-top:24px}
++ .trip-designed .trip-booking{padding-top:24px}
++ .trip-designed .trip-level{padding-bottom:45px}
++ .trip-designed .trip-dock{display:none}
++ .trip-designed .booking-card{padding:25px}
++}
++@media(max-width:599px){
++ .trip-designed .trip-cover{height:68svh;min-height:440px;max-height:660px}
++ .trip-designed .trip-cover-copy{padding-top:130px;padding-bottom:82px}
++ .trip-designed .trip-cover h1{font-size:clamp(60px,16vw,90px)}
++ .trip-designed .trip-cover h1.trip-title-long{font-size:clamp(49px,13vw,70px)}
++ .trip-designed .trip-reassurance{justify-content:flex-start;gap:5px 14px;padding:18px 22px;font-size:11px}
++ .trip-reassurance>span+span::before{margin-right:14px}
++ .trip-reassurance .trip-location{flex-basis:100%;font-size:13px}
++ .trip-reassurance .trip-location+span::before{display:none}
++ .cover-carousel-controls .rail-controls{display:none}
++ .cover-carousel-controls{bottom:24px;right:22px}
++ .trip-designed .trip-summary h2{font-size:42px}
++ .trip-designed .trip-level .level-heading h2{font-size:38px}
++ .trip-designed .trip-dock .dock-cta{min-width:118px}
++ .trip-designed .trip-section-nav{margin-bottom:30px}
++}
++@media(prefers-reduced-motion:reduce){.visual-card>img{transition:none}}
++
++.trip-designed .trip-programme .trip-team{padding:22px 0 0;margin-top:25px;border-top:1px solid var(--line);font-size:13px;line-height:1.8;color:var(--muted)}
++.trip-designed .trip-team h3{font-size:15px;font-weight:600;margin-bottom:10px;color:var(--ink)}
++.trip-designed .trip-team>p{font-size:13px!important;line-height:1.8!important}
++
++body.trip-designed .site-header nav a[data-whatsapp]{border-radius:100px;padding-inline:16px;gap:9px}
++body.trip-designed .site-header nav .lst-nav-trip{color:inherit}
++
++.trip-summary-dates{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 18px;margin-top:24px;font-size:14px;line-height:1.8}
++.trip-summary-dates>span{font-size:12px;color:var(--muted)}
++.trip-summary-dates>strong{font-weight:500}
++
++body.trip-designed .site-header.is-scrolled,body.trip-designed .site-header:has(nav.is-open){background:var(--paper)}
+--- before/scripts/trip-detail.test.mjs
++++ after/scripts/trip-detail.test.mjs
+@@ -42,7 +42,7 @@
+  const t=trip({departures:[date({promotions:undefined,price:699}),date({id:'later',date:'La fecha posterior',start:'2027-02-01',price:699})]});
+  const html=renderTrip(t);
+  assert.match(html,/Tarifa para el La fecha posterior/);assert.match(html,/Desde 599 €/);
+- assert.match(html,/class="trip-facts"/);assert.match(html,/Varias salidas/);
++ assert.match(html,/class="trip-facts"/);assert.match(html,/2 salidas/);
+ });
+ 
+ test('unknown cup, fractional savings and editor labels remain exact and escaped',()=>{
+@@ -76,7 +76,8 @@
+  const t=trip({departures:[date({price:null,regularPrice:null,promotions:undefined,duration:'2 noches'}),date({id:'later',date:'Otra salida',start:'2027-01-01',end:'2027-01-08',price:null,regularPrice:null,promotions:undefined,duration:'7 noches'})]});
+  const html=renderTrip(t);
+  assert.doesNotMatch(html,/Desde Precio|Desde Consultar/);
+- assert.match(html,/<div class="cover-key-facts"><span>Varias salidas<\/span><span>Según la salida<\/span>/);
++ assert.match(html,/Según la salida/);
++ assert.doesNotMatch(html,/cover-key-facts|trip-cover-cta/);
+  assert.match(html,/por persona · Según la salida/);
+ });
+ 
+--- before/scripts/trip-experience.test.mjs
++++ after/scripts/trip-experience.test.mjs
+@@ -6,7 +6,7 @@
+ test('pending or unconfigured programmes never inherit service scenes or invent photo assets',()=>{assert.equal(experienceScenes({...source,state:'upcoming'}),'');assert.equal(experienceScenes({...source,includes:[],departures:[]}), '');const html=experienceScenes({...source,gallery:[]});assert.doesNotMatch(html,/<img|data-photo/);assert.match(html,/scene-graphic/);});
+ test('each included service is retained exactly once in grouped inclusions with safe editorial text',()=>{const items=['2 noches en casa','Clases de surf <prueba>','Visita & cultura','Transporte incluido'];const html=groupedInclusions(items);for(const item of items)assert.equal(html.split(esc(item)).length-1,1);assert.doesNotMatch(html,/<prueba>/);});
+ test('quick facts distinguish capacity, unknown capacity and heterogeneous dates',()=>{const t={...source,capacity:null,departures:[{...source.departures[0],id:'short',duration:'2 noches',capacity:null},{...source.departures[0],id:'long',duration:'7 noches',capacity:null}]};const html=renderQuickFacts(t);assert.match(html,/Según la salida/);assert.match(html,/I–IV/);assert.match(html,/salidas para elegir/);assert.doesNotMatch(html,/personas por salida|2 noches|7 noches/);assert.match(renderQuickFacts(source),/máx\./);});
+-test('the sales journey keeps programme, accommodation, team and payment conditions accessible after its introduction and destination photos',()=>{const html=renderTrip(source,trips);const info=html.slice(html.indexOf('class="trip-programme"'),html.indexOf('id="incluye"'));assert(info.includes(esc(source.story[0][1])));assert(info.includes(esc(source.stay.text)));assert(info.includes('trip-team'));assert(html.includes(esc(source.payment.terms)));assert.match(html,/<details class="booking-conditions">/);for(const selector of ['trip-reasons','trip-story-gallery']){assert(html.indexOf(selector)>html.indexOf('trip-kickoff'));assert(html.indexOf(selector)<html.indexOf('trip-costs'));}for(const [,alt,caption] of source.gallery.slice(0,3)){assert(html.includes(esc(alt)));assert(html.includes(esc(caption)));}});
++test('the sales journey keeps programme, accommodation, team and payment conditions accessible after its introduction and destination photos',()=>{const html=renderTrip(source,trips);const info=html.slice(html.indexOf('id="plan"'),html.indexOf('id="incluye"'));assert(info.includes(esc(source.story[0][1])));assert(info.includes(esc(source.stay.text)));assert(info.includes('trip-team'));assert(html.includes(esc(source.payment.terms)));assert.match(html,/<details class="booking-conditions">/);assert(html.indexOf('id="nivel"')>html.indexOf('trip-kickoff'));assert(html.indexOf('id="plan"')<html.indexOf('id="alojamiento"'));assert(html.indexOf('id="alojamiento"')<html.indexOf('id="incluye"'));for(const [,alt,caption] of source.gallery.slice(0,3)){assert(html.includes(esc(alt)));assert(html.includes(esc(caption)));}});
+ test('each Morocco programme keeps its own services and PDF in one complete detail',()=>{for(const t of trips.filter(t=>t.slug.startsWith('marruecos'))){const html=renderTrip(t,trips);for(const item of [...t.includes,...t.excludes])assert(html.includes(esc(publicDetail(item))));assert(html.includes(esc(t.levelText)));for(const d of t.departures)assert(html.includes(d.dossier));assert.doesNotMatch(html,/departure-programme|data-view-programme/);}});
+ 
+ test('a group size is advertised per departure only when every date has that same confirmed capacity',()=>{const departure=source.departures[0];const t={...source,capacity:{total:10},departures:[{...departure,id:'one',capacity:{total:6}},{...departure,id:'two',capacity:{total:12}}]};let html=renderQuickFacts(t);assert.match(html,/Según la salida/);assert.doesNotMatch(html,/10<small>|personas por salida/);html=renderQuickFacts({...t,departures:[{...t.departures[0],capacity:{total:6}},{...t.departures[1],capacity:{total:6}}]});assert.match(html,/6<small> máx/);assert.match(html,/personas por salida/);html=renderQuickFacts({...t,capacity:null,departures:[{...t.departures[0],capacity:{total:6}},{...t.departures[1],capacity:null}]});assert.match(html,/Según la salida/);assert.doesNotMatch(html,/personas por salida/);});

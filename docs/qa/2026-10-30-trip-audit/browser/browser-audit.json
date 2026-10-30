@@ -1,0 +1,149 @@
+{
+  "layouts": [
+    {
+      "actionBottom": 671,
+      "actionHeight": 48,
+      "height": 740,
+      "overflow": 0,
+      "readingSize": "16px",
+      "scopeVisible": true,
+      "url": "/viajes/marruecos/",
+      "width": 320
+    },
+    {
+      "actionBottom": 671,
+      "actionHeight": 48,
+      "height": 740,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/maldivas/",
+      "width": 320
+    },
+    {
+      "actionBottom": 638,
+      "actionHeight": 48,
+      "height": 740,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/hossegor/",
+      "width": 320
+    },
+    {
+      "actionBottom": 604,
+      "actionHeight": 48,
+      "height": 844,
+      "overflow": 0,
+      "readingSize": "16px",
+      "scopeVisible": true,
+      "url": "/viajes/marruecos/",
+      "width": 390
+    },
+    {
+      "actionBottom": 633,
+      "actionHeight": 48,
+      "height": 844,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/maldivas/",
+      "width": 390
+    },
+    {
+      "actionBottom": 633,
+      "actionHeight": 48,
+      "height": 844,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/hossegor/",
+      "width": 390
+    },
+    {
+      "actionBottom": 606,
+      "actionHeight": 48,
+      "height": 1024,
+      "overflow": 0,
+      "readingSize": "16px",
+      "scopeVisible": true,
+      "url": "/viajes/marruecos/",
+      "width": 768
+    },
+    {
+      "actionBottom": 651,
+      "actionHeight": 48,
+      "height": 1024,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/maldivas/",
+      "width": 768
+    },
+    {
+      "actionBottom": 537,
+      "actionHeight": 48,
+      "height": 1024,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/hossegor/",
+      "width": 768
+    },
+    {
+      "actionBottom": 606,
+      "actionHeight": 48,
+      "height": 900,
+      "overflow": 0,
+      "readingSize": "16px",
+      "scopeVisible": true,
+      "url": "/viajes/marruecos/",
+      "width": 1440
+    },
+    {
+      "actionBottom": 632,
+      "actionHeight": 48,
+      "height": 900,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/maldivas/",
+      "width": 1440
+    },
+    {
+      "actionBottom": 537,
+      "actionHeight": 48,
+      "height": 900,
+      "overflow": 0,
+      "readingSize": null,
+      "scopeVisible": true,
+      "url": "/viajes/hossegor/",
+      "width": 1440
+    }
+  ],
+  "smallScreen": {
+    "actionBottom": 671,
+    "dock": "visible",
+    "heading": "Marruecos avanzado",
+    "height": 568,
+    "overflow": 0,
+    "width": 320
+  },
+  "interactions": [
+    "multi-date selector exposes both actions at 390×844",
+    "per-date documents and payment retained",
+    "Escape restores focus to overview action",
+    "second departure selects category 8 and its date and price",
+    "changing date selects category 7, updates summary and returns focus",
+    "empty required contact blocks advancement",
+    "31-02-1995 blocks advancement",
+    "five steps traversed with synthetic local data; no submission performed",
+    "all required fields and numeric radio values retained"
+  ],
+  "screenshots": [
+    "viaje-desktop.png",
+    "viaje-mobile.png",
+    "fechas-mobile.png",
+    "solicitud-mobile.png"
+  ]
+}

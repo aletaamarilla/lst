@@ -1,0 +1,33 @@
+{
+  "responses": [
+    {
+      "route": "/",
+      "status": 200,
+      "source": "sanity-local-preview",
+      "elPalmarOffer": true
+    },
+    {
+      "route": "/niveles/",
+      "status": 200,
+      "source": "sanity-local-preview",
+      "elPalmarOffer": true
+    },
+    {
+      "route": "/viajes/",
+      "status": 200,
+      "source": "sanity-local-preview",
+      "elPalmarOffer": true
+    },
+    {
+      "route": "/viajes/el-palmar/",
+      "status": 200,
+      "source": "sanity-local-preview",
+      "elPalmarOffer": true
+    }
+  ],
+  "previewDestinations": 6,
+  "previewOffers": 7,
+  "distOffers": 0,
+  "remoteWrites": 0,
+  "deployment": "pending"
+}

@@ -1,0 +1,40 @@
+{
+  "width": 1440,
+  "textScale": 2,
+  "cssSha256": "3325ad689da62807eab62bbea7c149947e661b157c8b47fc3e8e23d931db8e00",
+  "initial": {
+    "h1": {
+      "x": 108,
+      "y": 208.296875,
+      "width": 710,
+      "height": 1137.03125,
+      "top": 208.296875,
+      "right": 818,
+      "bottom": 1345.328125,
+      "left": 108
+    },
+    "heroHeight": 1569.328125,
+    "overflow": false
+  },
+  "expandedRect": {
+    "x": 108,
+    "y": 208.296875,
+    "width": 710,
+    "height": 1137.03125
+  },
+  "contrast": {
+    "pixels": 190886,
+    "min": 3.1867015471499345,
+    "below3": 0,
+    "worst": {
+      "x": 177,
+      "y": 1274,
+      "rgb": [
+        145,
+        144,
+        143
+      ]
+    }
+  },
+  "method": "Opaque or near opaque white glyph pixels >=250 RGB; screenshot with text transparent preserves explicit shadow; local background contrast against white."
+}

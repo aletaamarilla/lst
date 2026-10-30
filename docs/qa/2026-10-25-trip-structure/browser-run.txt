@@ -1,0 +1,11 @@
+{
+  "total": 485,
+  "failed": 0,
+  "issues": [],
+  "errors": [],
+  "hashes": {
+    "scripts/render-trips.mjs": "c841039d3c2cb5b52f119048e3129ef9af21be0a7a4623fc19917795238ffabb",
+    "dist/trip-detail.css": "ada42de348ed9c970fefb52979c07e1f470d064d5b91b9773b94b8a6ce5253ed",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13"
+  }
+}

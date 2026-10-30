@@ -1,0 +1,194 @@
+--- before/dist/catalog.css
++++ after/dist/catalog.css
+@@ -1,22 +1,41 @@
+ /* Catalogue shares the home identity, navigation, footer and trip cards. */
+-body.catalog-page .site-header{background:var(--lst-paper);border-bottom:1px solid var(--lst-line)}
++body.catalog-page .site-header{background:var(--lst-orange);border-bottom:1px solid rgba(27,27,27,.22)}
++body.catalog-page .site-header.is-scrolled,body.catalog-page .site-header:has(nav.is-open){background:var(--lst-paper)}
++body.catalog-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--lst-ink)}
++body.catalog-page .site-header nav .lst-nav-contact{padding:9px 18px;border-radius:100px;background:var(--lst-ink);color:var(--lst-paper)}
++body.catalog-page .site-header nav .lst-nav-contact:hover{background:var(--lst-paper);color:var(--lst-ink);text-decoration:none}
++body.catalog-page .site-header:not(.is-scrolled) nav [aria-current=page]{text-decoration-color:var(--lst-ink)}
+ body.catalog-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:7px}
+ body.catalog-page main{padding-top:var(--home-header-height)}
+ body.catalog-page main[tabindex="-1"]:focus{outline:none;box-shadow:none}
+-body.catalog-page .catalog-intro{padding-block:62px 36px}
+-body.catalog-page .catalog-intro .lst-eyebrow{margin-bottom:22px}
+-body.catalog-page .catalog-intro-heading{display:flex;align-items:center;justify-content:space-between;gap:32px}
+-body.catalog-page .catalog-intro h1{font:400 clamp(64px,6.7vw,96px)/.98 var(--lst-display);letter-spacing:-.015em}
+-body.catalog-page .catalog-symbol{width:100px;flex:0 0 100px;margin-right:32px}
+-body.catalog-page .catalog-intro-copy{margin-top:22px;color:var(--lst-muted);font-size:16px;line-height:1.65}
+-body.catalog-page .catalog-filters{display:flex;align-items:end;flex-wrap:wrap;gap:16px 20px;padding:24px;border:1px solid var(--lst-line);border-radius:24px;background:var(--lst-paper)}
+-body.catalog-page .catalog-field{flex:0 1 280px;min-width:0}
+-body.catalog-page .catalog-field label{display:block;margin:0 0 8px 14px;font-size:12px;font-weight:500}
+-body.catalog-page .catalog-field select{width:100%;min-width:0;min-height:50px;padding:12px 42px 12px 16px;border:1px solid var(--lst-line);border-radius:100px;background:var(--lst-paper);color:var(--lst-ink);font:400 15px/1.5 'Work Sans',Arial,sans-serif;cursor:pointer}
+-body.catalog-page .catalog-field select:focus-visible{outline:3px solid var(--lst-ink);outline-offset:3px}
+-body.catalog-page .catalog-clear{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:50px;margin-left:auto;padding:12px 6px;border:0;background:transparent;color:var(--lst-ink);font-size:13px;font-weight:500;cursor:pointer}
++/* An orange surf poster with a photograph held like a printed memory. */
++body.catalog-page .catalog-intro{position:relative;isolation:isolate;padding-block:44px 104px;background:var(--lst-orange)}
++body.catalog-page .catalog-intro:after{content:'';position:absolute;inset:auto 0 -1px;height:20px;background:var(--lst-paper);clip-path:polygon(0 65%,4% 38%,9% 63%,14% 36%,20% 60%,26% 33%,32% 60%,38% 35%,45% 64%,52% 38%,59% 60%,66% 31%,73% 61%,80% 36%,87% 62%,94% 35%,100% 62%,100% 100%,0 100%);pointer-events:none}
++body.catalog-page .catalog-intro-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:56px}
++body.catalog-page .catalog-intro-content{position:relative;z-index:1;min-width:0}
++body.catalog-page .catalog-intro .lst-eyebrow{max-width:32em;margin-bottom:26px;font-size:10px;letter-spacing:.035em}
++body.catalog-page .catalog-intro h1{max-width:760px;font:400 clamp(64px,6.4vw,92px)/1.02 var(--lst-display);letter-spacing:-.015em}
++body.catalog-page .catalog-intro h1 em{display:inline-block;margin-top:8px;padding:0 .12em .07em;background:var(--lst-ink);color:var(--lst-paper);font-style:normal;transform:rotate(-3deg)}
++body.catalog-page .catalog-intro-copy{max-width:32em;margin-top:28px;color:var(--lst-ink);font-size:15px;line-height:1.65}
++body.catalog-page .catalog-postcard{position:relative;width:100%;max-width:385px;margin:0 10px 0 auto;padding:11px 11px 16px;background:var(--lst-paper);box-shadow:10px 12px 0 var(--lst-ink);transform:rotate(5deg)}
++body.catalog-page .catalog-postcard-photo{overflow:hidden;aspect-ratio:1.08}
++body.catalog-page .catalog-postcard-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 64%}
++body.catalog-page .catalog-postcard figcaption{padding:14px 4px 0;font:400 clamp(24px,2.4vw,33px)/1.1 var(--lst-display)}
++body.catalog-page .catalog-stamp{position:absolute;top:-26px;right:-20px;display:grid;place-items:center;width:92px;aspect-ratio:1;border:2px solid var(--lst-ink);border-radius:50%;background:var(--lst-paper);transform:rotate(-14deg)}
++body.catalog-page .catalog-stamp img{width:65px;height:auto}
++/* Controls are steady and readable inside a contrasting, offset printed panel. */
++body.catalog-page .catalog-filters{position:relative;z-index:2;display:flex;align-items:end;flex-wrap:wrap;gap:18px 28px;margin-top:-42px;padding:28px 32px 32px;border:0;border-radius:4px 28px 4px 4px;background:var(--lst-ink);color:var(--lst-paper);box-shadow:7px 7px 0 var(--lst-orange)}
++body.catalog-page .catalog-field{flex:1 1 260px;min-width:0}
++body.catalog-page .catalog-field label{display:flex;align-items:baseline;gap:12px;margin:0 0 12px;color:var(--lst-paper);font:400 32px/1.1 var(--lst-display)}
++body.catalog-page .catalog-field label:before{content:'01 /';color:var(--lst-orange);font:400 11px/1.5 'Space Mono',monospace}
++body.catalog-page .catalog-field:nth-child(2) label:before{content:'02 /'}
++body.catalog-page .catalog-field select{width:100%;min-width:0;min-height:54px;padding:13px 42px 13px 16px;border:2px solid var(--lst-paper);border-radius:4px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.5 'Work Sans',Arial,sans-serif;cursor:pointer;transition:border-color .18s}
++body.catalog-page .catalog-field select:hover{border-color:var(--lst-orange)}
++body.catalog-page .catalog-field select:focus-visible{outline:3px solid var(--lst-paper);outline-offset:5px;border-color:var(--lst-orange)}
++body.catalog-page .catalog-clear{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;margin-left:4px;padding:12px 18px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:13px;font-weight:500;cursor:pointer;transition:background .18s,border-color .18s}
+ body.catalog-page .catalog-clear span{font-size:21px;line-height:1}
+-body.catalog-page .catalog-clear:hover{text-decoration:underline;text-underline-offset:5px}
++body.catalog-page .catalog-clear:hover{background:var(--lst-paper);border-color:var(--lst-paper)}
++body.catalog-page .catalog-filters button:focus-visible{outline-color:var(--lst-paper)}
+ body.catalog-page .catalog-status{margin-block:26px 22px;color:var(--lst-muted);font-size:12px;line-height:1.7}
+ body.catalog-page .catalog-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+ body.catalog-page .catalog-card[hidden],body.catalog-page [hidden]{display:none!important}
+@@ -29,29 +48,42 @@
+ body.catalog-page .catalog{padding-bottom:64px}
+ body.catalog-page .lst-footer{border-top:1px solid var(--lst-line)}
+ @media(max-width:1100px){
+- body.catalog-page .catalog-intro{padding-top:48px}
+- body.catalog-page .catalog-symbol{margin-right:0;width:80px;flex-basis:80px}
++ body.catalog-page .catalog-intro-layout{gap:40px;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
++ body.catalog-page .catalog-postcard{width:calc(100% - 30px);max-width:320px;margin-right:20px}
++ body.catalog-page .catalog-intro h1{font-size:clamp(61px,7.2vw,78px)}
+  body.catalog-page .catalog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
++ body.catalog-page .catalog-field{flex-basis:220px}
++ body.catalog-page .catalog-filters{gap:20px;padding:26px}
++ body.catalog-page .catalog-clear{margin-left:0}
+ }
+ @media(max-width:760px){
+- body.catalog-page .catalog-intro{padding-block:38px 28px}
+- body.catalog-page .catalog-intro h1{font-size:clamp(49px,8.5vw,64px)}
+- body.catalog-page .catalog-intro .lst-eyebrow{margin-bottom:18px;font-size:10px}
+- body.catalog-page .catalog-symbol{display:none}
+- body.catalog-page .catalog-intro-copy{margin-top:18px;font-size:14px}
+- body.catalog-page .catalog-filters{gap:14px;padding:18px;border-radius:22px}
+- body.catalog-page .catalog-field{flex:1 1 calc(50% - 7px)}
+- body.catalog-page .catalog-field label{margin-left:4px}
+- body.catalog-page .catalog-field select{padding-left:12px;padding-right:22px;font-size:14px}
+- body.catalog-page .catalog-clear{min-height:44px;padding-block:8px}
+- body.catalog-page .catalog-status{margin-block:22px 18px}
++ body.catalog-page .catalog-intro{padding-block:30px 76px}
++ body.catalog-page .catalog-intro-layout{grid-template-columns:minmax(0,1fr);gap:30px}
++ body.catalog-page .catalog-intro .lst-eyebrow{margin-bottom:18px;font-size:9px}
++ body.catalog-page .catalog-intro h1{font-size:clamp(53px,9.4vw,74px)}
++ body.catalog-page .catalog-intro h1 em{margin-top:5px}
++ body.catalog-page .catalog-intro-copy{margin-top:20px;font-size:14px}
++ body.catalog-page .catalog-postcard{width:80%;max-width:330px;margin:0 12px 0 auto;padding:8px 8px 12px;box-shadow:7px 8px 0 var(--lst-ink);transform:rotate(4deg)}
++ body.catalog-page .catalog-postcard-photo{aspect-ratio:1.8}
++ body.catalog-page .catalog-postcard figcaption{padding-top:10px;font-size:25px}
++ body.catalog-page .catalog-stamp{top:-19px;right:-14px;width:68px}
++ body.catalog-page .catalog-stamp img{width:48px}
++ body.catalog-page .catalog-filters{gap:22px 18px;margin-top:-28px;padding:24px 22px;border-radius:4px 24px 4px 4px;box-shadow:5px 5px 0 var(--lst-orange)}
++ body.catalog-page .catalog-field{flex:1 1 calc(50% - 9px)}
++ body.catalog-page .catalog-field label{margin-bottom:10px;font-size:30px}
++ body.catalog-page .catalog-clear{min-height:44px;margin-left:auto;padding-block:9px}
++ body.catalog-page .catalog-status{margin-block:26px 18px}
+  body.catalog-page .catalog-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+  body.catalog-page .catalog-card h2{font-size:39px}
+  body.catalog-page .catalog{padding-bottom:44px}
+  body.catalog-page .catalog-empty{padding:28px 20px}
+  body.catalog-page .catalog-empty h2{font-size:36px}
+ }
+-@media(max-width:480px){
++@media(max-width:600px){
+  body.catalog-page .catalog-field{flex-basis:100%}
+- body.catalog-page .catalog-field select{font-size:16px;padding-right:34px}
++ body.catalog-page .catalog-field select{padding-right:34px}
++ body.catalog-page .catalog-postcard{width:84%}
+ }
++@media(prefers-reduced-motion:reduce){
++ body.catalog-page .catalog-filters :is(select,button){transition:none}
++}
+--- before/dist/viajes/index.html
++++ after/dist/viajes/index.html
+@@ -7,10 +7,15 @@
+ <header class="site-header"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/" aria-current="page">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos</a></nav></header>
+ <noscript><nav class="static-navigation lst-width" aria-label="Navegación sin JavaScript"><a href="/viajes/" aria-current="page">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav></noscript>
+ <main id="contenido" tabindex="-1">
+- <section class="catalog-intro lst-width" aria-labelledby="catalog-title">
+-  <p class="lst-eyebrow"><span class="lst-dot" aria-hidden="true"></span>Viajes de surf en grupo</p>
+-  <div class="catalog-intro-heading"><h1 id="catalog-title">Tu próximo viaje<br>empieza en el agua.</h1><img class="catalog-symbol" src="/assets/brand/symbol-orange.svg" alt="" aria-hidden="true" width="100" height="63"></div>
+-  <p class="catalog-intro-copy">Elige el nivel y las fechas que van contigo.</p>
++ <section class="catalog-intro" aria-labelledby="catalog-title">
++  <div class="catalog-intro-layout lst-width">
++   <div class="catalog-intro-content">
++    <p class="lst-eyebrow">Salitre, amigos y alguna que otra ola.</p>
++    <h1 id="catalog-title">Tu próximo viaje<br>empieza en <em>el agua.</em></h1>
++    <p class="catalog-intro-copy">Elige el nivel y las fechas que van contigo.</p>
++   </div>
++   <figure class="catalog-postcard"><div class="catalog-postcard-photo"><img src="/assets/surf-session.webp" alt="Una surfista de LST recorre una ola cerca de la orilla" width="1600" height="1066" fetchpriority="high" decoding="async"></div><figcaption>Menos rutina. Más salitre.</figcaption><span class="catalog-stamp" aria-hidden="true"><img src="/assets/brand/symbol-orange.svg" alt="" width="72" height="45"></span></figure>
++  </div>
+  </section>
+  <section class="catalog lst-width" aria-label="Catálogo de viajes">
+   <div class="catalog-filters" data-catalog-filters role="group" aria-label="Filtrar viajes" hidden>
+--- before/scripts/check-catalog-browser.mjs
++++ after/scripts/check-catalog-browser.mjs
+@@ -10,7 +10,7 @@
+ const output = process.env.LST_QA_OUTPUT || 'docs/qa/2026-10-25-viajes-home/browser';
+ await mkdir(output, {recursive:true});
+ const root = path.resolve('dist');
+-const before = path.resolve('docs/qa/2026-10-25-viajes-home/before/dist');
++const before = path.resolve(process.env.LST_QA_BEFORE || 'docs/qa/2026-10-25-viajes-home/before/dist');
+ const template = await readFile(path.join(root, 'viajes/index.html'), 'utf8');
+ const {trips} = JSON.parse(await readFile(path.join(root, 'catalog-snapshot.json'), 'utf8'));
+ const model = trips.map(t => ({levels:levelsFor(t), departures:departuresFor(t).map(d=>({...d,levels:departureLevels(t,d)}))}));
+@@ -39,7 +39,7 @@
+ const eq=(actual,expected,label)=>{assert.deepEqual(actual,expected,label);checks++;};
+ const results=[];
+ try{
+- for(const width of [320,390,768,1024,1440]){
++ for(const width of [320,390,481,768,1024,1440]){
+   const page=await browser.newPage({viewport:{width,height:900},reducedMotion:'reduce'});
+   page.on('pageerror',e=>errors.push(e.message));
+   if([390,1440].includes(width)){
+@@ -49,13 +49,17 @@
+   await page.goto(base+'/viajes/');await page.evaluate(()=>document.fonts.ready);
+   eq(await page.locator('.catalog-field label').allTextContents(),['Nivel','Fecha'],'exactly two requested filters');
+   eq(await page.locator('select').count(),2,'two select controls');
+-  if(width<=480) ok(await page.locator('#catalog-date').evaluate(e=>{const level=document.querySelector('#catalog-level').getBoundingClientRect(),date=e.getBoundingClientRect();return date.top>=level.bottom&&date.width>=230;}),'narrow filters stack with room for full text');
++  if(width<=600) ok(await page.locator('#catalog-date').evaluate(e=>{const level=document.querySelector('#catalog-level').getBoundingClientRect(),date=e.getBoundingClientRect();return date.top>=level.bottom&&date.width>=230;}),'narrow filters stack with room for full text');
+   eq(await page.locator('#catalog-state,.catalog-card-state,.destination-collection,.home-more-trips,.catalog-help').count(),0,'no state controls, groups or extra help sections');
+   ok(!/Con fecha|Próximamente/.test(await page.locator('main').innerText()),'obsolete state wording absent');
+   eq(await page.locator('[data-catalog-trip]:visible').count(),trips.length,'every destination visible');
+   ok(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily.startsWith('Aura')),'same display type');
+   ok(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(255, 250, 231)'&&getComputedStyle(e).fontFamily.includes('Work Sans')),'same cream and body type');
+   ok(await page.locator('.catalog-card').evaluateAll(es=>es.every(e=>{const s=getComputedStyle(e),footer=getComputedStyle(e.querySelector('.home-trip-link'));return parseFloat(s.borderRadius)===28&&s.boxShadow!=='none'&&footer.backgroundColor==='rgb(27, 27, 27)';})),'same rounded cards and ink booking footer');
++  if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)){
++   await page.screenshot({path:path.join(output,`overflow-${width}.png`),fullPage:true});
++   await writeFile(path.join(output,`overflow-${width}.json`),JSON.stringify(await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>e.getClientRects().length&&e.getBoundingClientRect().right>innerWidth+1).map(e=>({tag:e.tagName,class:e.className,text:e.textContent.slice(0,60),right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width}))),null,2));
++  }
+   ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'no horizontal overflow');
+   for(const level of ['','1','2','3','4']){
+    await page.selectOption('#catalog-level',level);
+@@ -88,6 +92,7 @@
+   await page.evaluate(()=>{document.activeElement?.blur();scrollTo(0,0);});
+   const images=await page.locator('.home-trip-photo').evaluateAll(async es=>Promise.all(es.map(async e=>{e.loading='eager';await e.decode().catch(()=>{});return {url:e.currentSrc,loaded:e.naturalWidth>0};})));
+   results.push({width,images});
++  await page.screenshot({path:path.join(output,`viajes-${width}-opening.png`)});
+   await page.screenshot({path:path.join(output,`viajes-${width}.png`),fullPage:true});
+   await page.goto(base+'/viajes/?nivel=3&fecha=2027-03&estado=upcoming&source=qa');
+   eq(await page.locator('#catalog-date').inputValue(),'2027-03','month deep link');
+@@ -118,7 +123,7 @@
+  const enlarged=await browser.newPage({viewport:{width:320,height:568}});await enlarged.goto(base+'/viajes/');await enlarged.addStyleTag({content:'html{font-size:200%} body{font-size:200%} select,button{font-size:inherit!important}'});ok(await enlarged.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'enlarged text narrow viewport no overflow');await enlarged.screenshot({path:path.join(output,'viajes-320-text200.png'),fullPage:true});await enlarged.close();
+  eq(errors,[],'no browser exceptions');
+  await writeFile(path.join(output,'images.json'),JSON.stringify(results,null,2));
+- console.log(`PASS: ${checks} browser assertions; 320, 390, 768, 1024, 1440px, level/month combinations, same-departure matching, month boundaries, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.`);
++ console.log(`PASS: ${checks} browser assertions; 320, 390, 481, 768, 1024, 1440px, level/month combinations, same-departure matching, month boundaries, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.`);
+ }finally{await browser.close();await new Promise(r=>server.close(r));}
+ 
+ 

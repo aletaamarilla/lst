@@ -1,0 +1,122 @@
+{
+  "project": {
+    "id": "q5bj2rn2",
+    "name": "LTS",
+    "organizationId": "oCsOalTXP"
+  },
+  "target": {
+    "projectId": "q5bj2rn2",
+    "dataset": "production",
+    "apiVersion": "2025-02-19"
+  },
+  "plan": [
+    {
+      "id": "drafts.lst-hossegor-2026-11-20",
+      "slug": "hossegor-2026-11-20",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-el-palmar-2026-12-04",
+      "slug": "el-palmar-2026-12-04",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-marruecos-2027-01-17",
+      "slug": "marruecos-2027-01-17",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-marruecos-2027-01-24",
+      "slug": "marruecos-2027-01-24",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-fuerteventura-2027-02-12",
+      "slug": "fuerteventura-2027-02-12",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-senegal-2027-02-28",
+      "slug": "senegal-2027-02-28",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-maldivas-2027-03-21",
+      "slug": "maldivas-2027-03-21",
+      "action": "create-draft"
+    },
+    {
+      "id": "drafts.lst-maldivas-2027-03-28",
+      "slug": "maldivas-2027-03-28",
+      "action": "create-draft"
+    }
+  ],
+  "files": [
+    {
+      "id": "drafts.lst-hossegor-2026-11-20",
+      "source": "4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf",
+      "bytes": 2682110,
+      "sha256": "3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276",
+      "sha1": "e488fd20ae30f867a6a1f162b67ada09d267d015",
+      "expectedAssetId": "file-e488fd20ae30f867a6a1f162b67ada09d267d015-pdf"
+    },
+    {
+      "id": "drafts.lst-el-palmar-2026-12-04",
+      "source": "5. LST_EL_PALMAR_SURFTRIP_-_PUENTE_DE_DICIEMBRE.pdf",
+      "bytes": 1669078,
+      "sha256": "8cf425e8b13cfbfbbba426095507b5d546be3ad7fa97771a68e2f36606987fc1",
+      "sha1": "ad258244540fb13e8f973c889ce1a56013e6f6fc",
+      "expectedAssetId": "file-ad258244540fb13e8f973c889ce1a56013e6f6fc-pdf"
+    },
+    {
+      "id": "drafts.lst-marruecos-2027-01-17",
+      "source": "6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf",
+      "bytes": 2658468,
+      "sha256": "ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a",
+      "sha1": "c5d34e8474d7f8552d55575797af32c8f9e4bcd3",
+      "expectedAssetId": "file-c5d34e8474d7f8552d55575797af32c8f9e4bcd3-pdf"
+    },
+    {
+      "id": "drafts.lst-marruecos-2027-01-24",
+      "source": "7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf",
+      "bytes": 2595137,
+      "sha256": "db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04",
+      "sha1": "d2899332fdb948bd8192747a8c81266548aa9433",
+      "expectedAssetId": "file-d2899332fdb948bd8192747a8c81266548aa9433-pdf"
+    },
+    {
+      "id": "drafts.lst-fuerteventura-2027-02-12",
+      "source": "8. LST_FUERTEVENTURA_SURFTRIP_-_NIVEL_1-2.pdf",
+      "bytes": 2827517,
+      "sha256": "507b631675d95e54f0ba5f6da3e8f6dbc77287a2f197910a2aaf9a8a71ef7bc7",
+      "sha1": "b49d95e5b29c389a69dfe1de2cdd082acc32f2fc",
+      "expectedAssetId": "file-b49d95e5b29c389a69dfe1de2cdd082acc32f2fc-pdf"
+    },
+    {
+      "id": "drafts.lst-senegal-2027-02-28",
+      "source": "9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf",
+      "bytes": 3547216,
+      "sha256": "1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741",
+      "sha1": "d2dda39badca876f59d9c14e60fe5daab2c0a218",
+      "expectedAssetId": "file-d2dda39badca876f59d9c14e60fe5daab2c0a218-pdf"
+    },
+    {
+      "id": "drafts.lst-maldivas-2027-03-21",
+      "source": "10. Maldivas_Surftrip_Semana_Santa_2027_LST.pdf",
+      "bytes": 7602663,
+      "sha256": "4910e2e3343fe674105e4f5bbec347681a8465f44ae3e2d003b9197b30dd2f5b",
+      "sha1": "d5614a40b8754b05890d82ae0dc6a0f42bc85817",
+      "expectedAssetId": "file-d5614a40b8754b05890d82ae0dc6a0f42bc85817-pdf"
+    },
+    {
+      "id": "drafts.lst-maldivas-2027-03-28",
+      "source": "11. Maldivas_Surftrip_Pascua_2027_LST.pdf",
+      "bytes": 7627557,
+      "sha256": "75f8a899bb33e8962549d78990095ddc20ee041ca1bd509705a3ff73634db8a4",
+      "sha1": "cccb17697b4a3d97c57525bf6d7f224ca6e26d1e",
+      "expectedAssetId": "file-cccb17697b4a3d97c57525bf6d7f224ca6e26d1e-pdf"
+    }
+  ],
+  "existingDocuments": 13,
+  "existingAssets": 0
+}

@@ -1,0 +1,16 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "modifiedFiles": [
+    "dist/registration.css"
+  ],
+  "newImplementationFiles": [],
+  "sha256": {
+    "dist/registration.css": "6b2d8ee661b4d7b0848402a39fe75564aaf81937c9afa6a6a690ca23a132e21b"
+  },
+  "unchanged": {
+    "dist/registration.js": true,
+    "scripts/render-registration.mjs": true,
+    "dist/catalog-snapshot.json": true
+  }
+}

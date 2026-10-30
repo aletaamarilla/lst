@@ -1,0 +1,78 @@
+[
+  {
+    "check": "Responsive 320",
+    "pass": true,
+    "metrics": {
+      "cards": 3,
+      "firstSection": "viajes",
+      "overflow": [],
+      "scrollWidth": 305,
+      "width": 320
+    }
+  },
+  {
+    "check": "Responsive 390",
+    "pass": true,
+    "metrics": {
+      "cards": 3,
+      "firstSection": "viajes",
+      "overflow": [],
+      "scrollWidth": 375,
+      "width": 390
+    }
+  },
+  {
+    "check": "Responsive 768",
+    "pass": true,
+    "metrics": {
+      "cards": 3,
+      "firstSection": "viajes",
+      "overflow": [],
+      "scrollWidth": 753,
+      "width": 768
+    }
+  },
+  {
+    "check": "Responsive 1440",
+    "pass": true,
+    "metrics": {
+      "cards": 3,
+      "firstSection": "viajes",
+      "overflow": [],
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  },
+  {
+    "check": "Menú móvil abre",
+    "pass": true
+  },
+  {
+    "check": "Escape cierra menú",
+    "pass": true
+  },
+  {
+    "check": "Rookies conserva filtro del catálogo",
+    "pass": true
+  },
+  {
+    "check": "Card navega a Hossegor",
+    "pass": true
+  },
+  {
+    "check": "Reserva abre respuesta nativa",
+    "pass": true
+  },
+  {
+    "check": "Enter cierra respuesta",
+    "pass": true
+  },
+  {
+    "check": "Sin errores de consola",
+    "pass": true
+  },
+  {
+    "check": "Fotos cargadas tras recorrer la página",
+    "pass": true
+  }
+]

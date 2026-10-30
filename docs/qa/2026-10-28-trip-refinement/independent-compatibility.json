@@ -1,0 +1,135 @@
+{
+  "manifestMatches": true,
+  "checks": [
+    {
+      "source": "published",
+      "slug": "el-palmar",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "fuerteventura",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "hossegor",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "maldivas",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 2
+    },
+    {
+      "source": "published",
+      "slug": "marruecos",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "marruecos-avanzado",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "published",
+      "slug": "senegal",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "el-palmar",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "fuerteventura",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "hossegor",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "maldivas",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 2
+    },
+    {
+      "source": "local",
+      "slug": "marruecos",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "marruecos-avanzado",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    },
+    {
+      "source": "local",
+      "slug": "senegal",
+      "linksIdenticalIgnoringRemovedLevelEnquiry": true,
+      "allInclusions": true,
+      "generatedAliases": 1
+    }
+  ],
+  "protectedMatches": {
+    "dist/catalog-snapshot.json": true,
+    "artifacts/local-trip-preview.json": true,
+    "scripts/trip-model.mjs": true,
+    "scripts/sanity-trips.mjs": true,
+    "scripts/trip-groups.mjs": true,
+    "scripts/brevo.mjs": true,
+    "dist/trip.js": true,
+    "dist/styles.css": true,
+    "dist/home.css": true
+  },
+  "multipleProfileAutonomyReproduction": {
+    "slug": "maldivas",
+    "levels": [
+      2,
+      3
+    ],
+    "requirement": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+    "profiles": [
+      [
+        "Nivel II",
+        "Primeros giros."
+      ],
+      [
+        "Nivel III",
+        "Pulir maniobras."
+      ]
+    ],
+    "requirementPresentBefore": true,
+    "requirementPresentAfter": true,
+    "renderedLevel": "<section id=\"nivel\" class=\"trip-block trip-level\"><p class=\"eyebrow\">TU GRUPO EN EL AGUA</p><div class=\"level-heading\"><h2>¿Es este tu viaje?</h2><p class=\"level-fixed-note\">Niveles II–III</p></div><div class=\"audience-profiles\"><article><h3>Nivel II</h3><p>Primeros giros.</p></article><article><h3>Nivel III</h3><p>Pulir maniobras.</p></article><p class=\"level-requirement\">Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.</p></div><div class=\"level-actions\"><a class=\"text-link\" href=\"/niveles/\">Ver la guía de niveles</a></div></section>"
+  }
+}

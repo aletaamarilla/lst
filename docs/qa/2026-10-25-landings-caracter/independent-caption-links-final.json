@@ -1,0 +1,109 @@
+{
+  "links": [
+    {
+      "mode": "normal",
+      "text": "forma de viajar en LST",
+      "href": "/conocenos/#asi-viajamos",
+      "decoration": "underline",
+      "visible": true
+    },
+    {
+      "mode": "text200",
+      "text": "forma de viajar en LST",
+      "href": "/conocenos/#asi-viajamos",
+      "decoration": "underline",
+      "visible": true
+    },
+    {
+      "mode": "no-js",
+      "text": "forma de viajar en LST",
+      "href": "/conocenos/#asi-viajamos",
+      "decoration": "underline",
+      "visible": true
+    }
+  ],
+  "captions": [
+    {
+      "version": "base",
+      "kind": "about",
+      "caption": {
+        "top": 1395.4375,
+        "bottom": 1455.4375,
+        "height": 60
+      },
+      "copy": {
+        "top": 126,
+        "bottom": 1408.4375,
+        "height": 1282.4375
+      },
+      "overlap": 13
+    },
+    {
+      "version": "base",
+      "kind": "faq",
+      "caption": {
+        "top": 767.125,
+        "bottom": 827.125,
+        "height": 60
+      },
+      "copy": {
+        "top": 126,
+        "bottom": 788.125,
+        "height": 662.125
+      },
+      "overlap": 21
+    },
+    {
+      "version": "candidate",
+      "kind": "about",
+      "caption": {
+        "top": 1542.90625,
+        "bottom": 1602.90625,
+        "height": 60
+      },
+      "copy": {
+        "top": 155,
+        "bottom": 1491.90625,
+        "height": 1336.90625
+      },
+      "overlap": 0
+    },
+    {
+      "version": "candidate",
+      "kind": "faq",
+      "caption": {
+        "top": 974.96875,
+        "bottom": 1034.96875,
+        "height": 60
+      },
+      "copy": {
+        "top": 155,
+        "bottom": 939.96875,
+        "height": 784.96875
+      },
+      "overlap": 0
+    }
+  ],
+  "hashes": [
+    {
+      "file": "dist/landing.css",
+      "sha256": "9cc87d183985d38f88a635b592276e9bcaf66ecbb30546cf7d563cc98d3b33e5"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "a27912247ffa61ea3e4db34ffd1e340036ff7fc6b8f2dd9685339ef60d515e31"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "8747d81e31030d3b52a87105ecf6917a5aec7b943b9d3779b426f118788ebaea"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "8364fddaa8bf2972c3d4824d3a91b558973517f7ac2e33cc6e9704d6e98c2984"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "002662ade0c79aa7c8047747fdb547b6b25e088d74b0b0d8553075245f4197bf"
+    }
+  ]
+}

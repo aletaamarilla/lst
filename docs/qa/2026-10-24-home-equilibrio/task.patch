@@ -1,0 +1,109 @@
+diff --git a/docs/qa/2026-10-24-home-equilibrio/before/home.css b/dist/home.css
+index 3a5665a..867e4af 100644
+--- a/docs/qa/2026-10-24-home-equilibrio/before/home.css
++++ b/dist/home.css
+@@ -69,9 +69,9 @@ body.home-modern .home-trip :is(h3,h4){position:absolute;bottom:20px;left:20px;r
+ body.home-modern .home-trip-preview{margin-top:17px;padding-inline:10px;color:var(--lst-muted);font-size:13px;line-height:1.6}
+ body.home-modern .home-trip-preview small{display:block;margin-top:6px;color:var(--lst-muted);font-size:12px;line-height:1.65}
+ body.home-modern .home-trip-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;min-height:76px;margin-top:auto;padding:15px 10px 7px;border-radius:4px}
+-body.home-modern .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:38px;max-width:100%;padding:9px 15px;border:1px solid var(--lst-orange);border-radius:100px;background:transparent;color:var(--lst-ink);font-size:13px;font-weight:500;line-height:1.4;transition:background .18s,color .18s,border-color .18s}
++body.home-modern .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:38px;max-width:100%;padding:9px 15px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:13px;font-weight:500;line-height:1.4;transition:background .18s,color .18s,border-color .18s}
+ body.home-modern .home-trip-action>span{flex-shrink:0;font-size:18px;line-height:1}
+-body.home-modern .home-trip-link:hover .home-trip-action{background:var(--lst-orange);color:var(--lst-ink);border-color:var(--lst-orange)}
++body.home-modern .home-trip-link:hover .home-trip-action{background:var(--lst-ink);color:var(--lst-paper);border-color:var(--lst-ink)}
+ body.home-modern .home-trip-price{margin-left:auto;font:400 34px/1.1 var(--lst-display);letter-spacing:-.01em;text-align:right;overflow-wrap:anywhere}
+ body.home-modern .home-trip-price small{display:block;margin-top:3px;color:var(--lst-muted);font:400 11px/1.5 'Work Sans',sans-serif;letter-spacing:0}
+ body.home-modern .home-trip-dates{position:absolute;inset:0;z-index:2;border:0}
+@@ -121,8 +121,8 @@ body.home-modern .lst-level-card p{margin-block:14px 24px;color:var(--lst-muted)
+ body.home-modern .lst-level-cta{display:flex;align-items:center;min-height:48px;margin-top:auto;border-top:1px solid var(--lst-line);font-size:12px;font-weight:500;line-height:1.5}
+ body.home-modern .lst-level-note{max-width:900px;margin-top:25px;color:var(--lst-muted);font-size:13px;line-height:1.8}
+ body.home-modern .lst-level-note a{display:inline-block;color:var(--lst-ink);font-weight:500;text-decoration:underline;text-underline-offset:4px}
+-body.home-modern .people{padding:0;background:linear-gradient(rgba(234,89,52,.035),rgba(234,89,52,.035)),var(--lst-paper);border-block:1px solid var(--lst-line)}
+-body.home-modern .lst-people-layout{display:grid;grid-template-columns:.95fr 1.12fr;align-items:center;gap:85px}
++body.home-modern .people{padding:40px 0;background:var(--lst-paper);border:0}
++body.home-modern .lst-people-layout{display:grid;grid-template-columns:.95fr 1.12fr;align-items:center;gap:48px;padding:48px;border-radius:32px;background:var(--lst-orange)}
+ body.home-modern .lst-people-copy{min-width:0}
+ body.home-modern .lst-people-copy .lst-eyebrow{margin-bottom:20px}
+ body.home-modern .lst-people-copy h2{font-size:clamp(48px,4.8vw,68px);margin-bottom:25px}
+@@ -156,13 +156,14 @@ body.home-modern .lst-faq-list summary>span{flex:0 0 24px;color:var(--lst-orange
+ body.home-modern .lst-faq-list details[open] summary>span{transform:rotate(45deg)}
+ body.home-modern .lst-faq-list details>p{max-width:540px;padding:0 35px 25px 0;color:var(--lst-muted);font-size:15px;line-height:1.8}
+ body.home-modern .lst-faq-list details>p a{text-decoration:underline;text-underline-offset:4px}
+-body.home-modern .lst-closing{padding-block:74px 78px;background:linear-gradient(rgba(234,89,52,.045),rgba(234,89,52,.045)),var(--lst-paper);color:var(--lst-ink);text-align:center;border-block:1px solid var(--lst-line);border-radius:36px 36px 0 0}
+-body.home-modern .lst-closing .lst-eyebrow{justify-content:center;margin-bottom:25px}
+-body.home-modern .lst-closing h2{font-size:clamp(62px,8vw,112px);line-height:.98;letter-spacing:-.01em}
++body.home-modern .lst-closing{padding-block:48px;background:var(--lst-ink);color:var(--lst-paper);text-align:center;border:0;border-radius:36px 36px 0 0}
++body.home-modern .lst-closing .lst-eyebrow{justify-content:center;margin-bottom:18px;color:var(--lst-paper)}
++body.home-modern .lst-closing h2{font-size:clamp(62px,6.7vw,96px);line-height:.98;letter-spacing:-.01em}
+ body.home-modern .lst-closing h2 em{color:var(--lst-orange);font-style:normal}
+-body.home-modern .lst-closing .lst-button{margin-top:32px;background:transparent;border-color:var(--lst-ink);color:var(--lst-ink)}
+-body.home-modern .lst-closing .lst-button:hover{background:var(--lst-paper);color:var(--lst-ink);border-color:var(--lst-ink)}
+-body.home-modern .lst-closing p:last-child{margin-top:24px;font-size:13px;line-height:1.8}
++body.home-modern .lst-closing .lst-button{min-height:48px;margin-top:24px;padding:12px 21px;background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink);font-size:13px}
++body.home-modern .lst-closing .lst-button:hover{background:var(--lst-orange);color:var(--lst-ink);border-color:var(--lst-orange)}
++body.home-modern .lst-closing :is(a,button):focus-visible{outline-color:var(--lst-paper)}
++body.home-modern .lst-closing p:last-child{margin-top:20px;font-size:13px;line-height:1.8}
+ body.home-modern .lst-closing p:last-child a{display:inline-block;font-weight:500;text-decoration:underline;text-underline-offset:4px}
+ body.home-modern .lst-footer{padding-block:42px 20px;background:var(--lst-paper);color:var(--lst-ink)}
+ body.home-modern .lst-footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:30px}
+@@ -211,7 +212,8 @@ body.home-modern .lst-footer-links a:hover{text-decoration:underline;text-underl
+  body.home-modern .lst-level-card h3{font-size:42px}
+  body.home-modern .lst-level-card p{max-width:260px}
+  body.home-modern .lst-level-cta{font-size:13px}
+- body.home-modern .lst-people-layout,body.home-modern .lst-booking,body.home-modern .faq{gap:38px}
++ body.home-modern .lst-booking,body.home-modern .faq{gap:38px}
++ body.home-modern .lst-people-layout{gap:44px}
+ }
+ @media(max-width:760px){
+  body.home-modern .lst-width{width:calc(100% - 44px)}
+@@ -258,7 +260,8 @@ body.home-modern .lst-footer-links a:hover{text-decoration:underline;text-underl
+  body.home-modern .lst-level-card p{font-size:14px;margin-block:13px 22px}
+  body.home-modern .lst-level-cta{font-size:12px;min-height:50px}
+  body.home-modern .lst-level-note{margin-top:23px;font-size:13px}
+- body.home-modern .lst-people-layout{grid-template-columns:1fr;gap:36px}
++ body.home-modern .people{padding-block:24px}
++ body.home-modern .lst-people-layout{grid-template-columns:1fr;gap:28px;padding:24px;border-radius:26px}
+  body.home-modern .lst-people-copy h2{font-size:50px;margin-bottom:23px;max-width:520px}
+  body.home-modern .lst-people-copy>p:not(.lst-eyebrow){max-width:500px;font-size:15px}
+  body.home-modern .lst-signature{margin-top:22px;font-size:16px}
+@@ -276,11 +279,11 @@ body.home-modern .lst-footer-links a:hover{text-decoration:underline;text-underl
+  body.home-modern .lst-faq-intro .lst-link{margin-top:18px}
+  body.home-modern .lst-faq-list summary{min-height:78px;font-size:15px;gap:22px}
+  body.home-modern .lst-faq-list details>p{padding-right:25px;font-size:15px}
+- body.home-modern .lst-closing{padding-block:57px 54px;border-radius:27px 27px 0 0}
+- body.home-modern .lst-closing .lst-eyebrow{margin-bottom:24px}
+- body.home-modern .lst-closing h2{font-size:clamp(54px,11vw,79px)}
+- body.home-modern .lst-closing .lst-button{margin-top:30px}
+- body.home-modern .lst-closing p:last-child{max-width:360px;margin:24px auto 0;font-size:12px}
++ body.home-modern .lst-closing{padding-block:40px;border-radius:27px 27px 0 0}
++ body.home-modern .lst-closing .lst-eyebrow{margin-bottom:18px}
++ body.home-modern .lst-closing h2{font-size:54px}
++ body.home-modern .lst-closing .lst-button{margin-top:22px}
++ body.home-modern .lst-closing p:last-child{max-width:360px;margin:20px auto 0;font-size:12px}
+  body.home-modern .lst-footer{padding-block:37px 20px}
+  body.home-modern .lst-footer-top{flex-direction:column;align-items:flex-start;gap:23px;padding-bottom:27px}
+  body.home-modern .lst-footer-brand{width:210px}
+@@ -372,3 +375,4 @@ body.home-modern .lst-level-card{border-top:3px solid var(--lst-orange)}
+ 
+ 
+ 
++
+diff --git a/docs/qa/2026-10-24-home-equilibrio/before/check-home-browser.mjs b/scripts/check-home-browser.mjs
+index 1ed1dbe..d13587d 100644
+--- a/docs/qa/2026-10-24-home-equilibrio/before/check-home-browser.mjs
++++ b/scripts/check-home-browser.mjs
+@@ -39,11 +39,12 @@ try{
+   ok(await page.locator('.brand-dark').isVisible(),'original dark logo on the clean cover');
+   assert.equal(await page.locator('.lst-hero h1').innerText(),'¿Te vienes\na surfear?');checks++;
+   assert.equal(await page.locator('.home-trip-preview small').count(),0);checks++;
+-  ok(await page.locator('.home-trip-action').first().evaluate(e=>getComputedStyle(e).borderTopColor==='rgb(234, 89, 52)'&&e.getBoundingClientRect().height>=32&&e.getBoundingClientRect().height<=40),'trip action has a subtle visual weight');
++  ok(await page.locator('.home-trip-action').first().evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(234, 89, 52)'&&getComputedStyle(e).borderTopColor==='rgb(234, 89, 52)'&&e.getBoundingClientRect().height>=32&&e.getBoundingClientRect().height<=40),'trip action has a subtle visual weight');
+   ok(await page.locator('.home-trip-link').first().evaluate(e=>e.getBoundingClientRect().height>=44),'trip link keeps its touch target');
+   ok(await page.evaluate(()=>{const s=getComputedStyle(document.querySelector('.faq'));return s.backgroundColor!=='rgba(0, 0, 0, 0)'&&s.backgroundColor!==getComputedStyle(document.querySelector('.lst-booking')).backgroundColor&&parseFloat(s.borderTopLeftRadius)>0&&parseFloat(s.borderTopWidth)>0;}),'FAQs retain a separate light panel');
+   ok(await page.locator('.lst-hero h1').evaluate(e=>getComputedStyle(e).color==='rgb(255, 255, 255)'),'hero title is white');
+-  ok(await page.evaluate(()=>['.lst-testimonials','.people','.faq','.lst-closing','.lst-footer'].every(sel=>!['rgb(27, 27, 27)','rgb(234, 89, 52)'].includes(getComputedStyle(document.querySelector(sel)).backgroundColor))),'large sections avoid solid ink and orange backgrounds');
++  ok(await page.evaluate(()=>getComputedStyle(document.querySelector('.lst-closing')).backgroundColor==='rgb(27, 27, 27)'&&['.lst-testimonials','.people','.faq','.lst-footer'].every(sel=>!['rgb(27, 27, 27)','rgb(234, 89, 52)'].includes(getComputedStyle(document.querySelector(sel)).backgroundColor))),'closing is the single large dark section');
++  ok(await page.locator('.lst-people-layout').evaluate(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return s.backgroundColor==='rgb(234, 89, 52)'&&r.left>0&&r.right<innerWidth&&parseFloat(s.paddingLeft)>=24;}),'people have a contained orange panel');
+   ok(await page.evaluate(()=>!document.querySelector('section.lst-experience')&&document.querySelectorAll('#experiencia').length===1&&(document.querySelector('#dudas').compareDocumentPosition(document.querySelector('#reservar'))&Node.DOCUMENT_POSITION_FOLLOWING)>0),'redundant experience removed, anchor retained and FAQs before booking');
+   ok(await page.evaluate(()=>{const paint=sel=>{const s=getComputedStyle(document.querySelector(sel));return s.backgroundColor+'|'+s.backgroundImage;};return paint('.lst-testimonials')!==paint('.lst-levels');}),'opinions and levels have distinct surfaces');
+   assert.equal(await page.locator('.lst-quote-grid blockquote').count(),2);checks++;

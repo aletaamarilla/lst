@@ -127,13 +127,17 @@ function updateReadingSpace() {
   const height = (element, position) => getComputedStyle(element).position === position
     ? element.getBoundingClientRect().height : 0;
   document.documentElement.style.setProperty('--trip-header-height', `${height(tripHeader, 'sticky')}px`);
+  document.documentElement.style.setProperty('--trip-reading-header-height', `${height(tripHeader, 'fixed') + height(tripHeader, 'sticky')}px`);
   document.documentElement.style.setProperty('--trip-dock-height', `${height(tripDock, 'fixed')}px`);
 }
 const readingSpaceObserver = new ResizeObserver(updateReadingSpace);
 readingSpaceObserver.observe(tripHeader);
 readingSpaceObserver.observe(tripDock);
 window.addEventListener('resize', updateReadingSpace);
+
 updateReadingSpace();
+
+
 
 // Anchor only the close button if large text needs a scrolling dialog.
 function positionDialogClose(dialog, heading, close) {
@@ -174,3 +178,82 @@ if (departureDialog) {
   const datesObserver = new ResizeObserver(fitDates);
   [departureDialog, ...fixedParts].forEach(part => datesObserver.observe(part));
 }
+
+// One native-scrolling controller keeps hero thumbnails, touch and keyboard in sync.
+document.querySelectorAll('[data-carousel]').forEach(carousel => {
+  const track = carousel.querySelector('[data-carousel-track]');
+  if (!track) return;
+  const previous = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  const counter = carousel.querySelector('[data-carousel-counter]');
+  const thumbs = [...carousel.querySelectorAll('[data-carousel-thumb]')];
+  const thumbTrack = carousel.querySelector('[data-carousel-thumbnails]');
+  const children = [...track.children];
+  const fullPhotos = carousel.classList.contains('trip-opening-gallery');
+  let selectedThumb = -1;
+  let frameWidth = track.clientWidth;
+  const warmPhoto = selected => {
+    if(!fullPhotos)return;
+    [selected-1,selected,selected+1].forEach(i=>{
+      const image=children[i]?.querySelector('img');
+      if(image&&image.loading!=='eager')image.loading='eager';
+    });
+  };
+  // Every cover frame spans the viewport; the image inside keeps its own ratio.
+  const current = () => children.reduce((best, child, i) => Math.abs(child.offsetLeft - children[0].offsetLeft - track.scrollLeft) < Math.abs(children[best].offsetLeft - children[0].offsetLeft - track.scrollLeft) ? i : best, 0);
+  const update = () => {
+    // Resize can emit scroll before ResizeObserver. Preserve the old selection
+    // before comparing offsets in the new geometry.
+    if(fullPhotos&&track.clientWidth!==frameWidth){
+      frameWidth=track.clientWidth;
+      if(selectedThumb>=0)select(selectedThumb,false);
+    }
+    const focusedControl = document.activeElement;
+    const selected = current();
+    warmPhoto(selected);
+    if (previous) previous.disabled = track.scrollLeft < 2;
+    if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+    if (counter) counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(children.length).padStart(2, '0')}`;
+    if ((focusedControl === previous && previous?.disabled) || (focusedControl === next && next?.disabled)) track.focus({preventScroll:true});
+    if (selectedThumb !== selected) {
+      selectedThumb = selected;
+      thumbs.forEach((thumb,i) => i === selected ? thumb.setAttribute('aria-current','true') : thumb.removeAttribute('aria-current'));
+      const thumb = thumbs[selected];
+      if (thumb && thumbTrack) {
+        const frame = thumbTrack.getBoundingClientRect(), bounds = thumb.getBoundingClientRect();
+        const delta = bounds.left < frame.left ? bounds.left - frame.left - 5 : bounds.right > frame.right ? bounds.right - frame.right + 5 : 0;
+        if (delta) thumbTrack.scrollBy({left:delta,behavior:reducedMotion.matches?'instant':'smooth'});
+      }
+    }
+  };
+  const select = (selected, animate = true) => {
+    const selectedIndex=Math.max(0,Math.min(children.length-1,selected));
+    const child=children[selectedIndex];
+    warmPhoto(selectedIndex);
+    if (child) track.scrollTo({left:child.offsetLeft-children[0].offsetLeft,behavior:animate&&!reducedMotion.matches?'smooth':'instant'});
+  };
+  previous?.addEventListener('click', () => select(current() - 1));
+  next?.addEventListener('click', () => select(current() + 1));
+  thumbs.forEach((thumb,i) => {
+    thumb.addEventListener('click',event => {event.preventDefault();select(i);});
+    thumb.addEventListener('keydown',event => {
+      let selected;
+      if (event.key === 'ArrowRight') selected = Math.min(thumbs.length-1,i+1);
+      if (event.key === 'ArrowLeft') selected = Math.max(0,i-1);
+      if (event.key === 'Home') selected = 0;
+      if (event.key === 'End') selected = thumbs.length-1;
+      if (selected === undefined) return;
+      event.preventDefault();thumbs[selected].focus({preventScroll:true});select(selected);
+    });
+  });
+  track.addEventListener('keydown',event => {
+    if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
+    event.preventDefault();select(current()+(event.key==='ArrowRight'?1:-1));
+  });
+  track.addEventListener('scroll',update,{passive:true});
+  new ResizeObserver(() => {
+    if(fullPhotos&&selectedThumb>=0)select(selectedThumb,false);
+    update();
+  }).observe(track);
+  update();
+});

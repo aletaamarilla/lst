@@ -1,5 +1,5 @@
 // Optional real-browser coverage of the guide and every home/trip integration.
-// Uses the existing browser installation, like check-ux.mjs; no dependency added.
+// Uses an existing browser installation; no dependency added.
 import {createRequire} from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,14 +10,15 @@ const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
 const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-levels-verification');
 fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
-const trips=JSON.parse(fs.readFileSync('data/trips.json'));
+const trips=JSON.parse(fs.readFileSync('dist/catalog-snapshot.json')).trips;
+const hasPending=trips.some(t=>t.state==='upcoming');
 const slugs=['rookies','aprendices','riders','supercracks'];
 const report={checks:[],issues:[],errors:[],whatsapp:[],routes:['/','/niveles/',...trips.map(t=>`/viajes/${t.slug}/`)]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
 async function context(options){
  const c=await browser.newContext({reducedMotion:'reduce',...options});
- await c.route('https://**/*',async r=>{const u=new URL(r.request().url());if(u.hostname==='wa.me'){report.whatsapp.push(u.href);await r.fulfill({contentType:'text/plain',body:'Consulta interceptada localmente; no se envía ningún mensaje.'});}else await r.abort();});
+ await c.route('https://**/*',async r=>{const u=new URL(r.request().url());if(u.hostname==='cdn.sanity.io'){await r.continue();}else if(u.hostname==='wa.me'){report.whatsapp.push(u.href);await r.fulfill({contentType:'text/plain',body:'Consulta interceptada localmente; no se envía ningún mensaje.'});}else await r.abort();});
  c.on('page',p=>p.on('pageerror',e=>report.errors.push(e.message)));
  return c;
 }
@@ -39,10 +40,10 @@ try{
   check(tag+' no legacy or external content links',external.length===0,external);
   check(tag+' level numerals stay on one line',await p.locator('.guide-index-number').evaluateAll(els=>els.every(e=>e.getBoundingClientRect().height<=parseFloat(getComputedStyle(e).lineHeight)+1)));
   check(tag+' one shared help block',await p.locator('[data-guide-enquiry]').count()===1&&await p.locator('.guide-trips-help').count()===0);
-  check(tag+' pending destinations initially folded',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
+  if(hasPending)check(tag+' pending destinations initially folded',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
   if(zoom===1&&[390,1440].includes(width)&&height>500){
-   await p.locator('.guide-trip-pending summary').click();
-   for(const img of await p.locator('main img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>new Promise((resolve,reject)=>{if(e.complete)return e.naturalWidth?resolve():reject(Error('Image failed: '+e.src));e.addEventListener('load',resolve,{once:true});e.addEventListener('error',()=>reject(Error('Image failed: '+e.src)),{once:true});}));}await p.locator('.guide-trip-pending summary').click();await p.evaluate(()=>scrollTo(0,0));
+   if(hasPending)await p.locator('.guide-trip-pending summary').click();
+   for(const img of await p.locator('main img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>new Promise((resolve,reject)=>{if(e.complete)return e.naturalWidth?resolve():reject(Error('Image failed: '+e.src));e.addEventListener('load',resolve,{once:true});e.addEventListener('error',()=>reject(Error('Image failed: '+e.src)),{once:true});}));}if(hasPending)await p.locator('.guide-trip-pending summary').click();await p.evaluate(()=>scrollTo(0,0));
    check(tag+' photographs loaded',await p.locator('main img').evaluateAll(imgs=>imgs.every(img=>img.complete&&img.naturalWidth>0)));
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-portada.png`)});
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-completa.png`),fullPage:true});
@@ -68,19 +69,23 @@ try{
    await p.locator(`[data-guide-filter="${slug}"]`).click();
    check(tag+' travel context '+slug,new URL(p.url()).searchParams.get('nivel')===slug&&new URL(p.url()).hash==='#viajes-por-nivel');
    const expectedDated=trips.filter(t=>t.state==='confirmed'&&levelsFor(t).includes(index+1)).map(t=>t.slug).sort();
-   const datedShown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.pathname.split('/')[2]).sort());
+   const datedShown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.querySelector('.home-trip-link').pathname.split('/')[2]).sort());
    check(tag+' prioritises dated trips '+slug,JSON.stringify(datedShown)===JSON.stringify(expectedDated),{datedShown,expectedDated});
    const pendingCount=trips.filter(t=>t.state==='upcoming'&&levelsFor(t).includes(index+1)).length;
+   if(hasPending){
    check(tag+' pending matching count '+slug,await p.locator('[data-guide-pending-count]').innerText()===String(pendingCount));
+   if(pendingCount>0){
    await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');
    check(tag+' pending opens with keyboard '+slug,await p.locator('.guide-trip-pending').evaluate(e=>e.open));
    const disclosure=await p.locator('.guide-trip-pending').evaluate(e=>{const summary=e.querySelector('summary'),r=summary.getBoundingClientRect(),title=summary.firstElementChild.getBoundingClientRect(),intro=e.querySelector('.guide-pending-intro').getBoundingClientRect();return {upright:[...summary.children].slice(0,2).every(e=>getComputedStyle(e).transform==='none'),contained:title.top>=r.top&&title.bottom<=r.bottom&&title.left>=r.left&&title.right<=r.right,introGap:intro.top-r.bottom};});
    check(tag+' disclosure text stays in place '+slug,disclosure.upright&&disclosure.contained&&disclosure.introGap>=0&&disclosure.introGap<24,disclosure);
    const expected=trips.filter(t=>levelsFor(t).includes(index+1)).map(t=>t.slug).sort();
-   const shown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.pathname.split('/')[2]).sort());
+   const shown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.querySelector('.home-trip-link').pathname.split('/')[2]).sort());
    check(tag+' configured matching trips '+slug,JSON.stringify(shown)===JSON.stringify(expected),{shown,expected});
    await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Space');
    check(tag+' pending closes with keyboard '+slug,await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
+   }
+   }
    const message=new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text');
    check(tag+' selected enquiry '+slug,message.includes(['Rookies','Aprendices','Riders','Supercracks'][index])&&message.includes('autonomía'));
    const cardContact=p.locator(`#${slug} .guide-level-enquiry`);await cardContact.focus();const contactTab=c.waitForEvent('page');await p.keyboard.press('Enter');const contactPage=await contactTab;await contactPage.waitForLoadState();await contactPage.close();
@@ -89,7 +94,7 @@ try{
   await p.locator('[data-guide-filter=""]').click();
   check(tag+' all leaves no highlighted card',await p.locator('.guide-level.is-arriving').count()===0);
   check(tag+' all shows dated trips first',await p.locator('.guide-trip-card:visible').count()===trips.filter(t=>t.state==='confirmed').length);
-  await p.locator('.guide-trip-pending summary').click();check(tag+' all pending remain available',await p.locator('.guide-trip-card:visible').count()===trips.length);
+  if(hasPending)await p.locator('.guide-trip-pending summary').click();check(tag+' all pending remain available',await p.locator('.guide-trip-card:visible').count()===trips.length);
   await p.goto(base+'/niveles/#aprendices');await p.evaluate(()=>document.fonts.ready);
   let rect=await geometry(p,'#aprendices');check(`${width}x${height} direct URL anchor at default text size`,rect.top>=rect.header-1,rect);
   await p.goto(base+'/niveles/');await p.evaluate(()=>document.fonts.ready);await enlarge(p,zoom);
@@ -115,7 +120,7 @@ try{
   check(tag+' level WhatsApp context',new URL(await link.getAttribute('href')).searchParams.get('text')==='¡Hola, LST! Quiero consultar mi nivel de surf y saber si encajo en un viaje. ¿Podéis orientarme?');
   await p.locator('.guide-next a').click();
   await p.locator('[data-catalog-filters]').waitFor({state:'visible'});
-  check(tag+' explore full catalog',new URL(p.url()).pathname==='/viajes/'&&await p.locator('[data-catalog-trip]:visible').count()===6);
+  check(tag+' explore full catalog',new URL(p.url()).pathname==='/viajes/'&&await p.locator('[data-catalog-trip]:visible').count()===trips.length);
   rect=await geometry(p,'#catalog-title');check(`${width}x${height} catalog below header at default text size`,rect.top>=rect.header-1,rect);
   await c.close();
  }
@@ -157,7 +162,7 @@ try{
   await motionContext.close();
  }
  const c=await context({viewport:{width:390,height:844},javaScriptEnabled:false}),p=await c.newPage();
- await p.goto(base+'/niveles/');check('static content without JS',await p.locator('.guide-level:visible').count()===4);await p.locator('.guide-index a[href="#riders"]').click();check('native anchor without JS',new URL(p.url()).hash==='#riders');check('pending folded without JS',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);check('no persistent highlight without JS',await p.locator('#riders').evaluate(e=>getComputedStyle(e).borderLeftColor!=='rgb(234, 89, 52)'));check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);await c.close();
+ await p.goto(base+'/niveles/');check('static content without JS',await p.locator('.guide-level:visible').count()===4);await p.locator('.guide-index a[href="#riders"]').click();check('native anchor without JS',new URL(p.url()).hash==='#riders');if(hasPending)check('pending folded without JS',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));if(hasPending){await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');}check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);check('no persistent highlight without JS',await p.locator('#riders').evaluate(e=>getComputedStyle(e).borderLeftColor!=='rgb(234, 89, 52)'));check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);await c.close();
  for(const href of report.whatsapp){const u=new URL(href);check('WhatsApp destination',u.origin==='https://wa.me'&&u.pathname==='/34648189257'&&!!u.searchParams.get('text'));}
  check('shared script has no page errors',report.errors.length===0,report.errors);
 } finally {await browser.close();fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(report,null,2)+'\n');}

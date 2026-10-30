@@ -1,0 +1,2448 @@
+{
+  "checks": [
+    {
+      "name": "320x740-text100 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x740-text100 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x740-text100 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 90.25,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text100 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text100 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 90.4375,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text100 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text100 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 89.625,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text100 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text100 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 90.3125,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text100 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text100 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740-text100 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text100 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x844-text100 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x844-text100 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 89.578125,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text100 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text100 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 90.265625,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text100 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text100 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 89.859375,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text100 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text100 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 89.953125,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text100 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text100 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text100 photos decode",
+      "pass": true
+    },
+    {
+      "name": "390x844-text100 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768x1024-text100 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768x1024-text100 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 89.734375,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text100 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text100 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 89.734375,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text100 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text100 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 90.453125,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text100 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text100 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 90.453125,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text100 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text100 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text100 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text100 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024x900-text100 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024x900-text100 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 100.140625,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1024x900-text100 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1024x900-text100 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 100.140625,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1024x900-text100 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1024x900-text100 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 99.8125,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1024x900-text100 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1024x900-text100 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 99.8125,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1024x900-text100 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1024x900-text100 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "1024x900-text100 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1024x900-text100 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440x900-text100 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440x900-text100 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 100.140625,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text100 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text100 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 100.140625,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text100 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text100 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 99.8125,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text100 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text100 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 99.8125,
+        "header": 88,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text100 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text100 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text100 photos decode",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text100 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x320-text100 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x320-text100 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 90.25,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x320-text100 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x320-text100 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 90.4375,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x320-text100 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x320-text100 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 89.625,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x320-text100 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(255, 250, 231)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(255, 250, 231)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x320-text100 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 90.3125,
+        "header": 78,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x320-text100 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x320-text100 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x320-text100 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x320-text100 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x740-text200 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320x740-text200 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 91.25,
+        "header": 79,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text200 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text200 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 91.421875,
+        "header": 79,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text200 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text200 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 90.59375,
+        "header": 79,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text200 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(255, 250, 231)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(255, 250, 231)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text200 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 90.765625,
+        "header": 79,
+        "focus": true
+      }
+    },
+    {
+      "name": "320x740-text200 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "320x740-text200 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "320x740-text200 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "320x740-text200 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x844-text200 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390x844-text200 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 94.140625,
+        "header": 81.796875,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text200 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text200 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 94.1875,
+        "header": 81.796875,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text200 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text200 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 94.046875,
+        "header": 81.796875,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text200 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(255, 250, 231)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(255, 250, 231)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text200 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 94.09375,
+        "header": 81.796875,
+        "focus": true
+      }
+    },
+    {
+      "name": "390x844-text200 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "390x844-text200 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "390x844-text200 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "390x844-text200 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768x1024-text200 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768x1024-text200 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 97.328125,
+        "header": 84.59375,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text200 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text200 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 97.328125,
+        "header": 84.59375,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text200 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text200 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 96.515625,
+        "header": 84.59375,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text200 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text200 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 96.515625,
+        "header": 84.59375,
+        "focus": true
+      }
+    },
+    {
+      "name": "768x1024-text200 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "768x1024-text200 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "768x1024-text200 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "768x1024-text200 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 four readable levels",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 four level photographs",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 no page overflow",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 copy fits",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440x900-text200 44px actions",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440x900-text200 trip contract rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor and focus rookies",
+      "pass": true,
+      "detail": {
+        "top": 104.359375,
+        "header": 91.890625,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text200 filter context rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 primary text contrast rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 visible keyboard outline rookies",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 photographic title support rookies",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text200 level consultation rookies",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 trip contract aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor and focus aprendices",
+      "pass": true,
+      "detail": {
+        "top": 104.359375,
+        "header": 91.890625,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text200 filter context aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 primary text contrast aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 visible keyboard outline aprendices",
+      "pass": true,
+      "detail": {
+        "text": "rgb(255, 250, 231)",
+        "button": "rgb(27, 27, 27)",
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 photographic title support aprendices",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text200 level consultation aprendices",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 trip contract riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor and focus riders",
+      "pass": true,
+      "detail": {
+        "top": 104.03125,
+        "header": 91.890625,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text200 filter context riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 primary text contrast riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 visible keyboard outline riders",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(255, 250, 231)",
+        "surface": "rgb(27, 27, 27)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 photographic title support riders",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text200 level consultation riders",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 trip contract supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 anchor and focus supercracks",
+      "pass": true,
+      "detail": {
+        "top": 104.03125,
+        "header": 91.890625,
+        "focus": true
+      }
+    },
+    {
+      "name": "1440x900-text200 filter context supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 primary text contrast supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 visible keyboard outline supercracks",
+      "pass": true,
+      "detail": {
+        "text": "rgb(27, 27, 27)",
+        "button": "rgb(234, 89, 52)",
+        "outline": "rgb(234, 89, 52)",
+        "surface": "rgb(255, 250, 231)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 photographic title support supercracks",
+      "pass": true,
+      "detail": {
+        "color": "rgba(27, 27, 27, 0.8)",
+        "contained": true
+      }
+    },
+    {
+      "name": "1440x900-text200 level consultation supercracks",
+      "pass": true
+    },
+    {
+      "name": "1440x900-text200 help keyboard outline",
+      "pass": true,
+      "detail": {
+        "outline": "rgb(27, 27, 27)",
+        "surface": "rgb(234, 89, 52)",
+        "visible": true
+      }
+    },
+    {
+      "name": "1440x900-text200 catalogue remains reachable",
+      "pass": true
+    },
+    {
+      "name": "no JS four levels",
+      "pass": true
+    },
+    {
+      "name": "no JS native anchor",
+      "pass": true
+    },
+    {
+      "name": "no JS shared travel cards",
+      "pass": true
+    },
+    {
+      "name": "no JS errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "metrics": [
+    {
+      "version": "before",
+      "width": 390,
+      "height": 9455,
+      "levelWords": 315
+    },
+    {
+      "version": "before",
+      "width": 1440,
+      "height": 5149,
+      "levelWords": 315
+    },
+    {
+      "version": "after",
+      "width": 390,
+      "height": 7989,
+      "levelWords": 159
+    },
+    {
+      "version": "after",
+      "width": 1440,
+      "height": 4815,
+      "levelWords": 159
+    }
+  ],
+  "sharedCssSha256": "738c45d0bfe74b289cc32c2117c830f71631cabda3898c6d0516c084a813639a"
+}

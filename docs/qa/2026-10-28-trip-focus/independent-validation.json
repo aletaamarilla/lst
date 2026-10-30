@@ -1,0 +1,185 @@
+{
+  "manifestMatches": true,
+  "previousRendererHash": "94e1c6023c60e822c25d71d3f27557e76ca0c89d98fd11a4a5d8ae9d781f0b79",
+  "checks": [
+    {
+      "slug": "el-palmar",
+      "routes": [
+        "el-palmar",
+        "el-palmar-2026-12-04"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "fuerteventura",
+      "routes": [
+        "fuerteventura",
+        "fuerteventura-2027-02-12"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "hossegor",
+      "routes": [
+        "hossegor",
+        "hossegor-2026-11-20"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "maldivas",
+      "routes": [
+        "maldivas",
+        "maldivas-2027-03-21",
+        "maldivas-2027-03-28"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "marruecos",
+      "routes": [
+        "marruecos",
+        "marruecos-2027-01-17"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "routes": [
+        "marruecos-avanzado",
+        "marruecos-2027-01-24"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "senegal",
+      "routes": [
+        "senegal",
+        "senegal-2027-02-28"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "promo": false,
+      "priceNote": "Precio en habitación compartida & suplemento <individual>.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": true,
+      "note": "Precio en habitación compartida &amp; suplemento &lt;individual&gt;.",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true,
+      "sidebar": "<aside class=\"trip-booking\" aria-label=\"Consultar este viaje\"><div class=\"booking-card\"><div class=\"booking-card-top\"><p class=\"booking-trip-name\">Maldivas</p><p class=\"booking-status\" data-tone=\"available\">PLAZAS DISPONIBLES</p></div><p class=\"booking-card-price\"><strong>1.499 €</strong></p><p class=\"booking-card-price-note\">Precio en habitación compartida &amp; suplemento &lt;individual&gt;.</p><div class=\"booking-essentials\"><p class=\"booking-date\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4m8-4v4M3 11h18\"/></svg><span>2 salidas</span></p><div class=\"booking-tags\"><span>7 noches</span><span>Niveles II–III</span></div></div><div class=\"booking-deposit\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7H5a2 2 0 0 1 0-4h13v4M4 7v12a2 2 0 0 0 2 2h14V7\"/><path d=\"M20 12h-5v5h5\"/><circle cx=\"16.8\" cy=\"14.5\" r=\".6\" fill=\"currentColor\"/></svg><div><p>Reserva con <strong>500 €</strong></p><span>Señal al confirmar tu plaza</span></div></div><button type=\"button\" class=\"button booking-card-cta\" data-open-dates aria-haspopup=\"dialog\" aria-controls=\"departure-dialog\">Fechas</button><p class=\"booking-card-help\">Solicitud sujeta a confirmación.</p><div class=\"booking-secondary\"><a class=\"button booking-whatsapp\" data-whatsapp=\"maldivas\" href=\"https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Maldivas.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"¿Dudas? · Maldivas, por WhatsApp\"><svg class=\"whatsapp-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z\"/><path d=\"M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z\"/></svg><span>¿Dudas?</span></a></div></div></aside>"
+    },
+    {
+      "promo": false,
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true,
+      "sidebar": "<aside class=\"trip-booking\" aria-label=\"Consultar este viaje\"><div class=\"booking-card\"><div class=\"booking-card-top\"><p class=\"booking-trip-name\">Maldivas</p><p class=\"booking-status\" data-tone=\"available\">PLAZAS DISPONIBLES</p></div><p class=\"booking-card-price\"><strong>1.499 €</strong></p><p class=\"booking-card-price-note\">por persona</p><div class=\"booking-essentials\"><p class=\"booking-date\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4m8-4v4M3 11h18\"/></svg><span>2 salidas</span></p><div class=\"booking-tags\"><span>7 noches</span><span>Niveles II–III</span></div></div><div class=\"booking-deposit\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7H5a2 2 0 0 1 0-4h13v4M4 7v12a2 2 0 0 0 2 2h14V7\"/><path d=\"M20 12h-5v5h5\"/><circle cx=\"16.8\" cy=\"14.5\" r=\".6\" fill=\"currentColor\"/></svg><div><p>Reserva con <strong>500 €</strong></p><span>Señal al confirmar tu plaza</span></div></div><button type=\"button\" class=\"button booking-card-cta\" data-open-dates aria-haspopup=\"dialog\" aria-controls=\"departure-dialog\">Fechas</button><p class=\"booking-card-help\">Solicitud sujeta a confirmación.</p><div class=\"booking-secondary\"><a class=\"button booking-whatsapp\" data-whatsapp=\"maldivas\" href=\"https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Maldivas.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"¿Dudas? · Maldivas, por WhatsApp\"><svg class=\"whatsapp-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z\"/><path d=\"M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z\"/></svg><span>¿Dudas?</span></a></div></div></aside>"
+    },
+    {
+      "promo": false,
+      "priceNote": "",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true,
+      "sidebar": "<aside class=\"trip-booking\" aria-label=\"Consultar este viaje\"><div class=\"booking-card\"><div class=\"booking-card-top\"><p class=\"booking-trip-name\">Maldivas</p><p class=\"booking-status\" data-tone=\"available\">PLAZAS DISPONIBLES</p></div><p class=\"booking-card-price\"><strong>1.499 €</strong></p><p class=\"booking-card-price-note\">por persona</p><div class=\"booking-essentials\"><p class=\"booking-date\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4m8-4v4M3 11h18\"/></svg><span>2 salidas</span></p><div class=\"booking-tags\"><span>7 noches</span><span>Niveles II–III</span></div></div><div class=\"booking-deposit\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7H5a2 2 0 0 1 0-4h13v4M4 7v12a2 2 0 0 0 2 2h14V7\"/><path d=\"M20 12h-5v5h5\"/><circle cx=\"16.8\" cy=\"14.5\" r=\".6\" fill=\"currentColor\"/></svg><div><p>Reserva con <strong>500 €</strong></p><span>Señal al confirmar tu plaza</span></div></div><button type=\"button\" class=\"button booking-card-cta\" data-open-dates aria-haspopup=\"dialog\" aria-controls=\"departure-dialog\">Fechas</button><p class=\"booking-card-help\">Solicitud sujeta a confirmación.</p><div class=\"booking-secondary\"><a class=\"button booking-whatsapp\" data-whatsapp=\"maldivas\" href=\"https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Maldivas.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"¿Dudas? · Maldivas, por WhatsApp\"><svg class=\"whatsapp-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z\"/><path d=\"M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z\"/></svg><span>¿Dudas?</span></a></div></div></aside>"
+    },
+    {
+      "promo": true,
+      "priceNote": "Precio en habitación compartida & suplemento <individual>.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": true,
+      "note": "Precio en habitación compartida &amp; suplemento &lt;individual&gt;.",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true,
+      "sidebar": "<aside class=\"trip-booking\" aria-label=\"Consultar este viaje\"><div class=\"booking-card\"><div class=\"booking-card-top\"><p class=\"booking-trip-name\">Maldivas</p><p class=\"booking-status\" data-tone=\"available\">PLAZAS DISPONIBLES</p></div><p class=\"booking-card-price\"><del><span class=\"visually-hidden\">Precio general: </span>1.499 €</del> <strong>Desde 1.399 €</strong></p><p class=\"booking-card-price-note\">Precio en habitación compartida &amp; suplemento &lt;individual&gt;.</p><div class=\"trip-offer trip-offer-compact\"><p class=\"trip-offer-label\">Early bird</p><p class=\"trip-offer-condition\">Primeras 5 plazas</p><p class=\"trip-offer-date\">Tarifa para el 28 mar 2027 — 4 abr 2027</p></div><div class=\"booking-essentials\"><p class=\"booking-date\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4m8-4v4M3 11h18\"/></svg><span>2 salidas</span></p><div class=\"booking-tags\"><span>7 noches</span><span>Niveles II–III</span></div></div><div class=\"booking-deposit\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7H5a2 2 0 0 1 0-4h13v4M4 7v12a2 2 0 0 0 2 2h14V7\"/><path d=\"M20 12h-5v5h5\"/><circle cx=\"16.8\" cy=\"14.5\" r=\".6\" fill=\"currentColor\"/></svg><div><p>Reserva con <strong>500 €</strong></p><span>Señal al confirmar tu plaza</span></div></div><button type=\"button\" class=\"button booking-card-cta\" data-open-dates aria-haspopup=\"dialog\" aria-controls=\"departure-dialog\">Fechas</button><p class=\"booking-card-help\">Solicitud sujeta a confirmación.</p><div class=\"booking-secondary\"><a class=\"button booking-whatsapp\" data-whatsapp=\"maldivas\" href=\"https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Maldivas.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"¿Dudas? · Maldivas, por WhatsApp\"><svg class=\"whatsapp-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z\"/><path d=\"M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z\"/></svg><span>¿Dudas?</span></a></div></div></aside>"
+    },
+    {
+      "promo": true,
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true,
+      "sidebar": "<aside class=\"trip-booking\" aria-label=\"Consultar este viaje\"><div class=\"booking-card\"><div class=\"booking-card-top\"><p class=\"booking-trip-name\">Maldivas</p><p class=\"booking-status\" data-tone=\"available\">PLAZAS DISPONIBLES</p></div><p class=\"booking-card-price\"><del><span class=\"visually-hidden\">Precio general: </span>1.499 €</del> <strong>Desde 1.399 €</strong></p><p class=\"booking-card-price-note\">por persona</p><div class=\"trip-offer trip-offer-compact\"><p class=\"trip-offer-label\">Early bird</p><p class=\"trip-offer-condition\">Primeras 5 plazas</p><p class=\"trip-offer-date\">Tarifa para el 28 mar 2027 — 4 abr 2027</p></div><div class=\"booking-essentials\"><p class=\"booking-date\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4m8-4v4M3 11h18\"/></svg><span>2 salidas</span></p><div class=\"booking-tags\"><span>7 noches</span><span>Niveles II–III</span></div></div><div class=\"booking-deposit\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7H5a2 2 0 0 1 0-4h13v4M4 7v12a2 2 0 0 0 2 2h14V7\"/><path d=\"M20 12h-5v5h5\"/><circle cx=\"16.8\" cy=\"14.5\" r=\".6\" fill=\"currentColor\"/></svg><div><p>Reserva con <strong>500 €</strong></p><span>Señal al confirmar tu plaza</span></div></div><button type=\"button\" class=\"button booking-card-cta\" data-open-dates aria-haspopup=\"dialog\" aria-controls=\"departure-dialog\">Fechas</button><p class=\"booking-card-help\">Solicitud sujeta a confirmación.</p><div class=\"booking-secondary\"><a class=\"button booking-whatsapp\" data-whatsapp=\"maldivas\" href=\"https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Maldivas.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"¿Dudas? · Maldivas, por WhatsApp\"><svg class=\"whatsapp-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z\"/><path d=\"M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z\"/></svg><span>¿Dudas?</span></a></div></div></aside>"
+    },
+    {
+      "promo": true,
+      "priceNote": "",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true,
+      "sidebar": "<aside class=\"trip-booking\" aria-label=\"Consultar este viaje\"><div class=\"booking-card\"><div class=\"booking-card-top\"><p class=\"booking-trip-name\">Maldivas</p><p class=\"booking-status\" data-tone=\"available\">PLAZAS DISPONIBLES</p></div><p class=\"booking-card-price\"><del><span class=\"visually-hidden\">Precio general: </span>1.499 €</del> <strong>Desde 1.399 €</strong></p><p class=\"booking-card-price-note\">por persona</p><div class=\"trip-offer trip-offer-compact\"><p class=\"trip-offer-label\">Early bird</p><p class=\"trip-offer-condition\">Primeras 5 plazas</p><p class=\"trip-offer-date\">Tarifa para el 28 mar 2027 — 4 abr 2027</p></div><div class=\"booking-essentials\"><p class=\"booking-date\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"3\"/><path d=\"M8 3v4m8-4v4M3 11h18\"/></svg><span>2 salidas</span></p><div class=\"booking-tags\"><span>7 noches</span><span>Niveles II–III</span></div></div><div class=\"booking-deposit\"><svg class=\"booking-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 7H5a2 2 0 0 1 0-4h13v4M4 7v12a2 2 0 0 0 2 2h14V7\"/><path d=\"M20 12h-5v5h5\"/><circle cx=\"16.8\" cy=\"14.5\" r=\".6\" fill=\"currentColor\"/></svg><div><p>Reserva con <strong>500 €</strong></p><span>Señal al confirmar tu plaza</span></div></div><button type=\"button\" class=\"button booking-card-cta\" data-open-dates aria-haspopup=\"dialog\" aria-controls=\"departure-dialog\">Fechas</button><p class=\"booking-card-help\">Solicitud sujeta a confirmación.</p><div class=\"booking-secondary\"><a class=\"button booking-whatsapp\" data-whatsapp=\"maldivas\" href=\"https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20Maldivas.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"¿Dudas? · Maldivas, por WhatsApp\"><svg class=\"whatsapp-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><path d=\"M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z\"/><path d=\"M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z\"/></svg><span>¿Dudas?</span></a></div></div></aside>"
+    }
+  ],
+  "protectedMatches": {
+    "dist/catalog-snapshot.json": true,
+    "artifacts/local-trip-preview.json": true,
+    "scripts/trip-model.mjs": true,
+    "scripts/sanity-trips.mjs": true,
+    "scripts/trip-groups.mjs": true,
+    "scripts/brevo.mjs": true,
+    "dist/trip.js": true,
+    "dist/styles.css": true,
+    "dist/home.css": true,
+    "dist/assets/team/lucas-concept-ai.png": true
+  }
+}

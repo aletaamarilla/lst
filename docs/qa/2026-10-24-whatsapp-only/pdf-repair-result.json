@@ -1,0 +1,440 @@
+{
+  "transactionId": "L3ZrvhdiWtwAlFI8eP7jYV",
+  "results": [
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-marruecos-2027-01-17",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7jYV",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:36:25Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 15
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "marruecos-2027-01-17",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-01-24",
+            "price": 899,
+            "start": "2027-01-17"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/5c6db16bd916a52f50354b5f50aac1bb98b84c69.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-5c6db16bd916a52f50354b5f50aac1bb98b84c69-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Vuelos",
+          "Seguro de viaje",
+          "Tablas evolutivas y shortboards: alquiler aparte (p. 5)"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "No te preocupes. Estarás acompañado en todo momento por monitores y el equipo de Let’s Surf Together, y adaptaremos tu progresión a tu nivel.",
+            "question": "¿Y si no sé nada de surf?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "¡Sin problema! Haremos videocorrecciones para tu nivel y nos preocuparemos de que aprendas las pautas para llevar tu surfing al siguiente nivel.",
+            "question": "¿Y si tengo más nivel que el resto?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, pero allí tienes todo el material de iniciación, y además puedes alquilar tablas de mayor nivel.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches en Surf House",
+          "Pensión completa: desayuno, comida y cena",
+          "Clases y coaching adaptados al nivel",
+          "Material de iniciación y neoprenos",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Excursiones y visitas culturales",
+          "Transfers: aeropuerto, spots y actividades",
+          "Fotos y vídeos del viaje",
+          "Acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: con el pie en la arena y la tabla en el\nagua \nDespués de un 2026 lleno de viajes y surftrips increíbles, toca volver a las raíces.\nA recordar por qué nos enamoramos del surf, a conectar con nuestra primera ola\ny con esa sensación de libertad que solo el mar te da.\nEste surftrip está diseñado para quienes quieren dar sus primeros pasos en el\nsurf o mejorar su base, coger confianza en el agua y empezar a disfrutar de las\nprimeras paredes y maniobras sencillas.\nSerá una semana llena de surf, cultura marroquí y momentos compartidos con\nun grupo reducido de personas con la misma pasión.",
+        "levelRequirement": "Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.",
+        "levels": [
+          1,
+          2
+        ],
+        "name": "Marruecos · nivel 1–2",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 270,
+          "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Agadir · Marruecos",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "marruecos-2027-01-17"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Clases y coaching de lunes a sábado; videoanálisis grupal e individual, Animal Flow diario, material de iniciación y neoprenos. Evolutivas/shortboards no incluidos; posible alquiler.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Dunas de Tamri, Zoco de Agadir, mercados locales, surf day en Imsouane y jornada en Paradise Valley.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-marruecos-2027-01-24",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7jYV",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:36:25Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 10
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "marruecos-2027-01-24",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-01-31",
+            "price": 899,
+            "start": "2027-01-24"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/2c75a88174e3071f85f59b20c8684fffdcca10f1.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-2c75a88174e3071f85f59b20c8684fffdcca10f1-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf; SHA256 db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Vuelos",
+          "Seguro de viaje",
+          "Tabla propia o alquiler en destino (p. 5; no consta incluido)"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Entonces te encajará mejor el viaje del 17 al 24 de enero, pensado para iniciación e intermedio bajo.",
+            "question": "¿Y si todavía no voy por la pared?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Nivel 3: ser independiente en el agua y pillar tus paredes con tabla corta. Si ya haces maniobras y quieres pulirlas, también es tu viaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, de hecho lo recomendamos en este viaje. Si lo prefieres, también puedes alquilar allí.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos.",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Marruecos · nivel 3 · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Marruecos · nivel 3 · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches en Surf House",
+          "Pensión completa: desayuno, comida y cena",
+          "Surf coaching intensivo con Lucas",
+          "Vídeos todos los días",
+          "4 sesiones de videocorrecciones",
+          "Animal Flow y estiramientos",
+          "Excursiones y visitas culturales",
+          "Transfers: aeropuerto, spots y actividades",
+          "Fotos y vídeos del viaje",
+          "Acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: entrenando duro en el agua y buscando\nnuevos retos \nDespués de un 2026 lleno de olas, aprendizajes y surftrips épicos, toca dar el\nsiguiente paso: que tu surf deje de ser solo coger olas y empiece a fluir.\nPara ganar velocidad y control en la pared, aprender a bombear, colocarte\nmejor en la ola y soltar tus primeros giros con buena técnica. Para sentir que de\nverdad progresas, sesión a sesión.\nUna semana enfocada en progresar en tu surf, con sesiones intensivas, análisis\nen detalle y tiempo para disfrutar de la cultura marroquí.",
+        "levelRequirement": "Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.",
+        "levels": [
+          3
+        ],
+        "name": "Marruecos · nivel 3",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 270,
+          "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Agadir · Marruecos",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "marruecos-2027-01-24"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Coaching con Lucas de lunes a sábado; hasta 2 sesiones al día si las condiciones acompañan; vídeos diarios y 4 videocorrecciones; Animal Flow y movilidad. Tabla propia o alquiler.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Spots anunciados: Imsouane, Anchor Point, Desert Point, Banana y Camel según condiciones. Si el mar descansa o el grupo lo pide, Zoco de Agadir y actividades locales.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "lst-senegal-2027-02-28",
+        "_rev": "L3ZrvhdiWtwAlFI8eP7jYV",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T11:36:25Z",
+        "availability": "available",
+        "capacity": {
+          "_type": "capacity",
+          "total": 12
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "senegal-2027-02-28",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-03-07",
+            "price": 1299,
+            "start": "2027-02-28"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/0265db128ef6c50005e0754e1437cd11aa3957fd.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-0265db128ef6c50005e0754e1437cd11aa3957fd-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Fuente documental: 9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf; SHA256 1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+        "excludes": [
+          "Vuelos",
+          "Comidas del mediodía",
+          "Bebidas de la cena del desierto",
+          "Seguro de viaje"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2: ponerte de pie con soltura, coger tus propias olas y empezar a surfear paredes. Si estás empezando, este no es tu viaje, pero tenemos otros pensados para ti.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Hay vuelos a Dakar a muy buen precio desde España. Te asesoramos y crearemos un grupo de WhatsApp para coordinarnos y volar juntos. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "No hace falta: el material está incluido todo el día. Si prefieres surfear con tu tabla, también puedes traerla.",
+            "question": "¿Tengo que llevar mi tabla?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "No están incluidas, pero hay opciones locales muy ricas y económicas. Desayuno y cena sí van incluidos todos los días.",
+            "question": "¿Y las comidas del mediodía?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Senegal · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Senegal · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches de alojamiento, una en el desierto",
+          "Desayuno y cena todos los días",
+          "Surf todos los días con clases o surf guiding",
+          "Material de surf",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Desierto de Lompoul y Lago Rosa",
+          "Isla de Gorée con barco, entrada y guía",
+          "Almadies y mercado artesanal",
+          "Transfers: aeropuerto y excursiones",
+          "Fotos y vídeos del viaje y acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nUNA AVENTURA DE SURF EN ÁFRICA\nHay viajes que se recuerdan toda la vida, y este es uno de ellos \nNos vamos a Senegal, al punto más occidental de África, a surfear olas atlánticas\ncon sol, en un país lleno de color, ritmo y energía.\nSerá una semana para mejorar tu surf en las olas de Senegal, vivir una aventura\nen el desierto de Lompoul, ver el Lago Rosa y descubrir la Isla de Gorée.\nTodo con un grupo reducido de 12 personas con la misma pasión, con el estilo de\nsiempre de LST: surf, coaching, buen rollo y momentos que no se olvidan.\nLa familia LST en un viaje anterior",
+        "levelRequirement": "Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.",
+        "levels": [
+          2
+        ],
+        "name": "Senegal",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 325,
+          "terms": "Señal fija de 325 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Dakar · Senegal",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "senegal-2027-02-28"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf camp sin nombre; habitaciones compartidas, mosquiteras, taquilla, jardín, comedor, coworking, rooftop, wifi y agua potable. Una noche en tiendas en Lompoul (p. 7)."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Surf diario con clases o guiding según condiciones; material todo el día; videoanálisis, Animal Flow y fotos/vídeos.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Lompoul, Lago Rosa, Gorée con barco/entrada/guía, Almadies y mercado; transfers incluidos.",
+            "title": "Programa 2"
+          },
+          {
+            "_key": "program-3",
+            "_type": "storyItem",
+            "text": "Una noche en tiendas en Lompoul, atardecer, cena y desayuno; bebidas de la cena excluidas. Lago Rosa al volver.",
+            "title": "Programa 3"
+          }
+        ]
+      },
+      "operation": "update"
+    }
+  ]
+}

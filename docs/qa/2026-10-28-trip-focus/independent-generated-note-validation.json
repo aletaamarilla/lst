@@ -1,0 +1,97 @@
+{
+  "manifestMatches": true,
+  "changedFromPrior": [
+    "scripts/render-trips.mjs",
+    "scripts/trip-focus.test.mjs"
+  ],
+  "producerRoundTrips": [
+    {
+      "regularPrices": [
+        699
+      ],
+      "generatedByActualProducer": "Early bird: 599 € (primeras 8 plazas); Segundo tramo: 649 € (plazas 9–20). Tarifa general: 699 €. Precios por persona. La consulta no confirma la reserva.",
+      "condensed": true,
+      "customVariantsPreservedAndEscaped": 3,
+      "modelUnchanged": true
+    },
+    {
+      "regularPrices": [
+        699,
+        699
+      ],
+      "generatedByActualProducer": "Early bird: 599 € (primeras 8 plazas); Segundo tramo: 649 € (plazas 9–20). Tarifa general: 699 €. Precios por persona. La consulta no confirma la reserva.",
+      "condensed": true,
+      "customVariantsPreservedAndEscaped": 3,
+      "modelUnchanged": true
+    },
+    {
+      "regularPrices": [
+        699,
+        799
+      ],
+      "generatedByActualProducer": "Early bird: 599 € (primeras 8 plazas); Segundo tramo: 649 € (plazas 9–20). Tarifa general: 699 €. Early bird: 699 € (primeras 8 plazas); Segundo tramo: 749 € (plazas 9–20). Tarifa general: 799 €. Precios por persona. La consulta no confirma la reserva.",
+      "condensed": true,
+      "customVariantsPreservedAndEscaped": 3,
+      "modelUnchanged": true
+    },
+    {
+      "regularPrices": [
+        699.5,
+        799.5
+      ],
+      "generatedByActualProducer": "Early bird: 599,5 € (primeras 8 plazas); Segundo tramo: 649,5 € (plazas 9–20). Tarifa general: 699,5 €. Early bird: 699,5 € (primeras 8 plazas); Segundo tramo: 749,5 € (plazas 9–20). Tarifa general: 799,5 €. Precios por persona. La consulta no confirma la reserva.",
+      "condensed": true,
+      "customVariantsPreservedAndEscaped": 3,
+      "modelUnchanged": true
+    }
+  ],
+  "localResults": [
+    {
+      "slug": "el-palmar",
+      "previousNote": "Early bird: 599 € (primeras 8 plazas); Segundo tramo: 649 € (plazas 9–20). Tarifa general: 699 €. Precios por persona. La consulta no confirma la reserva.",
+      "sidebarNote": "por persona"
+    },
+    {
+      "slug": "fuerteventura",
+      "previousNote": "Early bird: 649 € (primeras 4 plazas). Tarifa general: 699 €. Precios por persona. La consulta no confirma la reserva.",
+      "sidebarNote": "por persona"
+    },
+    {
+      "slug": "hossegor",
+      "previousNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "sidebarNote": "por persona"
+    },
+    {
+      "slug": "maldivas",
+      "previousNote": "Early bird: 1.399 € (plazas limitadas). Tarifa general: 1.499 €. Precios por persona. La consulta no confirma la reserva.",
+      "sidebarNote": "por persona"
+    },
+    {
+      "slug": "marruecos",
+      "previousNote": "Early bird: 860 € (primeras 5 plazas). Tarifa general: 899 €. Precios por persona. La consulta no confirma la reserva.",
+      "sidebarNote": "por persona"
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "previousNote": "Early bird: 860 € (primeras 5 plazas). Tarifa general: 899 €. Precios por persona. La consulta no confirma la reserva.",
+      "sidebarNote": "por persona"
+    },
+    {
+      "slug": "senegal",
+      "previousNote": "Early bird: 1.269 € (primeras 5 plazas). Tarifa general: 1.299 €. Precios por persona. La consulta no confirma la reserva.",
+      "sidebarNote": "por persona"
+    }
+  ],
+  "protectedMatches": {
+    "dist/catalog-snapshot.json": true,
+    "artifacts/local-trip-preview.json": true,
+    "scripts/trip-model.mjs": true,
+    "scripts/sanity-trips.mjs": true,
+    "scripts/trip-groups.mjs": true,
+    "scripts/brevo.mjs": true,
+    "dist/trip.js": true,
+    "dist/styles.css": true,
+    "dist/home.css": true,
+    "dist/assets/team/lucas-concept-ai.png": true
+  }
+}

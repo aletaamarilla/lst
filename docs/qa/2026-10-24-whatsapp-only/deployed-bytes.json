@@ -1,0 +1,138 @@
+{
+  "commit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "comparison": "Immutable Git objects; working directory has later concurrent edits outside this task",
+  "files": [
+    {
+      "path": "/about.css",
+      "sha256": "d72a161d2a4039eed67ec605335c368365893a77acc5c8600150fab8d206d66e"
+    },
+    {
+      "path": "/app.js",
+      "sha256": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3"
+    },
+    {
+      "path": "/catalog-filter.js",
+      "sha256": "e20e4d3ed302a07330680c56c3d62da445db8aab86cc1303328e7814fb07c6e9"
+    },
+    {
+      "path": "/catalog-snapshot.json",
+      "sha256": "5d157729afa056f047a02fd74dc2545eb3d0e6222b663914a26105f7e9add8aa"
+    },
+    {
+      "path": "/catalog.css",
+      "sha256": "e3dde4eecde4b7fad98028504617faca564565d230a61b74acfde885032e863e"
+    },
+    {
+      "path": "/catalog.js",
+      "sha256": "a5c158c06370989b16bca9e5e8fe753b59f4fb0bf6d1fb72a433f1276dee89cd"
+    },
+    {
+      "path": "/conocenos/index.html",
+      "sha256": "53f68529fdddff35876d6230381f6fa3fb69fa2e9291883f26f8a7b9219d4506"
+    },
+    {
+      "path": "/faq.css",
+      "sha256": "6278a717f605060bcd61dfa4d1df8d2913b91a93756ba1b537fd05eb2d87f9ce"
+    },
+    {
+      "path": "/home-cards.css",
+      "sha256": "24526125e9627b2f28f986b9489699e88ce9f949241a2819aff0c46e07274b75"
+    },
+    {
+      "path": "/index.html",
+      "sha256": "0dd4a4bebaf95495a3bd73139f21d236ce17abc2d57178a10817a1a9ee21e168"
+    },
+    {
+      "path": "/levels.css",
+      "sha256": "92b45157970f9944c8891c5ae898e8b85cb3b4df98e4ae5df4c6566ee67317cb"
+    },
+    {
+      "path": "/levels.js",
+      "sha256": "41664d5553c01d90eec28e7e671216f353994f0506f08fdba340e0b692cfbf27"
+    },
+    {
+      "path": "/mobile.css",
+      "sha256": "b1b64a70f69d357dcf127726cad726cf405fd3dcf460e5ae9548164574ae0519"
+    },
+    {
+      "path": "/niveles/index.html",
+      "sha256": "4c6b92139d3b76e6afc50fb756f288bdcd3e3965fddc70207d8f54f56e169be8"
+    },
+    {
+      "path": "/preguntas-frecuentes/index.html",
+      "sha256": "8d984465d4e66ef697c37ee200c0cc34a04331f359d198d74e02abaefe836808"
+    },
+    {
+      "path": "/styles.css",
+      "sha256": "32cf90e36f701b81b4dfa9abe49f9a3c83857b89d2e1095bca9d5b66d101a098"
+    },
+    {
+      "path": "/trip.css",
+      "sha256": "64d6b99fda3e0d60c50c7f3e3caaf750b243033f080071708f998ed0e3111224"
+    },
+    {
+      "path": "/trip.js",
+      "sha256": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13"
+    },
+    {
+      "path": "/viajes/asturias/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "/viajes/azores/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "/viajes/cadiz/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "/viajes/el-palmar-2026-12-04/index.html",
+      "sha256": "846bb2859071f6804c1e574b63956a68298d2ace509e1fa6b16ba90864af25f9"
+    },
+    {
+      "path": "/viajes/el-salvador/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "/viajes/euskadi/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "/viajes/fuerteventura-2027-02-12/index.html",
+      "sha256": "f815bc81bfc8342eede60354cd633a232718a202fb14eb3b542b90fb5d26a1d8"
+    },
+    {
+      "path": "/viajes/hossegor-2026-11-20/index.html",
+      "sha256": "a1a0390565514489e074feb431d3535be423cb67dabc57e37b3b33d43026c497"
+    },
+    {
+      "path": "/viajes/index.html",
+      "sha256": "e3ba363de518d0cf3e81731f0308dfdd39ff7ae6d10883c483f303bcc62dc484"
+    },
+    {
+      "path": "/viajes/maldivas-2027-03-21/index.html",
+      "sha256": "60c41a615b31dfebd63b05ffccfdc2b25b44b7869f65497918bb46e5950f65e4"
+    },
+    {
+      "path": "/viajes/maldivas-2027-03-28/index.html",
+      "sha256": "7261665ee66e25c05236a3f1aa209bef1726124b3e0e6e474b22aa474b2d0777"
+    },
+    {
+      "path": "/viajes/marruecos-2027-01-17/index.html",
+      "sha256": "6be3f696f7dab2f9fc45b7f66d2dcebed3275056be75546d490a2f147c81fb64"
+    },
+    {
+      "path": "/viajes/marruecos-2027-01-24/index.html",
+      "sha256": "746a1f38ea71328683a927f4f6ca483927e4e02cc8a72a0062d8a12f7a17aa94"
+    },
+    {
+      "path": "/viajes/marruecos/index.html",
+      "sha256": "d3698c3dd4b1a469f25ecb99cb6b1c07f94997d5d9b1721b12d61194c9991fe3"
+    },
+    {
+      "path": "/viajes/senegal-2027-02-28/index.html",
+      "sha256": "e722c2fed19c47909c995797ea33545b7a9f6c034794c5cb619308d478715eb2"
+    }
+  ]
+}

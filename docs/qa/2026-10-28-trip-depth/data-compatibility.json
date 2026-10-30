@@ -1,0 +1,11 @@
+{
+  "dist/catalog-snapshot.json": true,
+  "artifacts/local-trip-preview.json": true,
+  "scripts/trip-model.mjs": true,
+  "scripts/sanity-trips.mjs": true,
+  "scripts/trip-groups.mjs": true,
+  "scripts/brevo.mjs": true,
+  "dist/trip.js": true,
+  "dist/styles.css": true,
+  "dist/home.css": true
+}

@@ -1,0 +1,84 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "files": [
+    {
+      "path": "scripts/trip-pricing.mjs",
+      "sha256": "cd560c6170dea3ecb6405b625cedda6027a319ec7864cb8412df871b98a10bee",
+      "new": true,
+      "base": null
+    },
+    {
+      "path": "scripts/trip-pricing.d.mts",
+      "sha256": "13292cece6a6c571762a5ce8cef01320377d4bce0be896023f573be91b994391",
+      "new": true,
+      "base": null
+    },
+    {
+      "path": "scripts/trip-model.mjs",
+      "sha256": "b20f52c6cd0aefc32d7f685992572fc6d009dd42b156f64d436a8252fd439cf4",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before/scripts__trip-model.mjs"
+    },
+    {
+      "path": "scripts/sanity-trips.mjs",
+      "sha256": "5bb384768c8ebd588c212b97b7cd559775affe36296a947935f90b7ec9ac1d80",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before/scripts__sanity-trips.mjs"
+    },
+    {
+      "path": "studio/schemaTypes/promotions.ts",
+      "sha256": "977e0f525c9c35fe1da75733b9680f989787faf6a3d183c8bc778f27b2389ac7",
+      "new": true,
+      "base": null
+    },
+    {
+      "path": "studio/schemaTypes/trip.ts",
+      "sha256": "ed8c63bac4dae4208c5c406b6007e3e7279b56c7f1e13ca73bf9bcf09f820b25",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before/studio__schemaTypes__trip.ts"
+    },
+    {
+      "path": "scripts/render-home-trips.mjs",
+      "sha256": "44c453cddf07c9ebe513975c191bc8149d9f50fedf31805c4d9bdd8d8b11efc7",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before-home/scripts__render-home-trips.mjs"
+    },
+    {
+      "path": "dist/home.css",
+      "sha256": "e1933f6313d421f183558583de0041386b1174cf8ebc4ad0fbfaeb79d555049c",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before-home/dist__home.css"
+    },
+    {
+      "path": "scripts/home-trips.test.mjs",
+      "sha256": "74b75c229c5da35da4fee03927b162d9bd786e1201d29f7f29ad382baf3306de",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before-home/scripts__home-trips.test.mjs"
+    },
+    {
+      "path": "scripts/trip-pricing.test.mjs",
+      "sha256": "668dd2c7b8ee2c45383ef30e5460478ae6a8ae9276844e595b6a8c7c5843ffa5",
+      "new": true,
+      "base": null
+    },
+    {
+      "path": "scripts/update-trip-promotions.mjs",
+      "sha256": "aa7386b5c1a495473d0555a3cb5843df6e26ac97ba217bb3b34e23fe73668a0f",
+      "new": true,
+      "base": null
+    },
+    {
+      "path": "scripts/check-home-browser.mjs",
+      "sha256": "6fd591b21a536342612091d8cd092a4994cde90f62227c752054283bb19f8d0b",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before/scripts__check-home-browser.mjs"
+    },
+    {
+      "path": "docs/guia-cliente.md",
+      "sha256": "53bae40fb69cd7add2c6c491aa37bc84a1c55168e34bd0a5116d460705686450",
+      "new": false,
+      "base": "artifacts/early-bird-2026-10-25/before/docs__guia-cliente.md"
+    }
+  ]
+}

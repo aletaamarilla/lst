@@ -1,0 +1,590 @@
+--- a/scripts/trip-pricing.mjs
++++ b/scripts/trip-pricing.mjs
+@@ -0,0 +1,48 @@
++const money = value => Number.isFinite(value) && value > 0 && Math.abs(Math.round(value * 100) - value * 100) < 1e-8;
++
++// A tariff is selected by an editor. These ranges describe the offer, not live stock.
++export function validatePromotions(value, regularPrice, capacity = null) {
++  if (value == null) return [];
++  if (!Array.isArray(value)) throw Error('Las tarifas reducidas deben ser una lista');
++  if (!value.length) return [];
++  if (!money(regularPrice)) throw Error('Indica la tarifa general antes de añadir descuentos');
++  let active = 0;
++  const promotions = value.map(item => {
++    if (!item || typeof item !== 'object' || typeof item.label !== 'string' || !item.label.trim() || item.label.length > 60) throw Error('Cada tarifa reducida necesita un nombre de hasta 60 caracteres');
++    if (!money(item.price) || item.price >= regularPrice) throw Error('El precio reducido debe ser positivo, con hasta dos decimales e inferior a la tarifa general');
++    if (item.active != null && typeof item.active !== 'boolean') throw Error('La tarifa vigente debe indicarse con una casilla');
++    if (item.active) active++;
++    const firstPlace = item.firstPlace ?? null;
++    const lastPlace = item.lastPlace ?? null;
++    if ((firstPlace === null) !== (lastPlace === null)) throw Error('Indica las plazas inicial y final del tramo, o deja ambas vacías');
++    if (firstPlace !== null && (!Number.isInteger(firstPlace) || !Number.isInteger(lastPlace) || firstPlace < 1 || lastPlace < firstPlace || (capacity != null && lastPlace > capacity))) throw Error('El tramo de plazas es inválido o supera la capacidad de la salida');
++    if (item.condition != null && typeof item.condition !== 'string') throw Error('La condición de la tarifa debe ser texto');
++    const condition = (item.condition ?? '').trim();
++    if (condition.length > 80 || (firstPlace === null && !condition)) throw Error('Sin cupo numérico, indica la condición publicada (hasta 80 caracteres)');
++    return {label: item.label.trim(), price: item.price, firstPlace, lastPlace, condition, active: item.active === true};
++  });
++  if (active > 1) throw Error('Solo puede haber una tarifa reducida vigente por salida');
++  const ranged = promotions.filter(p => p.firstPlace !== null).sort((a, b) => a.firstPlace - b.firstPlace);
++  for (let i = 1; i < ranged.length; i++) {
++    if (ranged[i].firstPlace <= ranged[i - 1].lastPlace) throw Error('Los tramos de plazas no pueden solaparse');
++    if (ranged[i].price <= ranged[i - 1].price) throw Error('El precio debe aumentar entre tramos de plazas');
++  }
++  return promotions;
++}
++
++export function promotionCondition(promotion) {
++  if (promotion.firstPlace === 1) return `Primeras ${promotion.lastPlace} plazas`;
++  if (promotion.firstPlace != null) return `Plazas ${promotion.firstPlace}–${promotion.lastPlace}`;
++  return promotion.condition;
++}
++
++export function departurePricing(departure, defaults = {}) {
++  if (departure.promotions == null) return {price: departure.price ?? null};
++  // regularPrice makes repeated normalization safe: never discount a discounted price.
++  const regularPrice = departure.regularPrice ?? departure.price ?? null;
++  const promotions = validatePromotions(departure.promotions, regularPrice, (departure.capacity ?? defaults.capacity)?.total);
++  const availability = departure.availability ?? defaults.availability;
++  const full = availability ? availability === 'full' : (departure.capacity ?? defaults.capacity)?.available === 0;
++  const promotion = !full && (departure.state ?? defaults.state) === 'confirmed' ? promotions.find(p => p.active) ?? null : null;
++  return {price: promotion?.price ?? regularPrice, regularPrice, promotions, promotion};
++}
+--- a/scripts/trip-pricing.d.mts
++++ b/scripts/trip-pricing.d.mts
+@@ -0,0 +1,5 @@
++export interface Promotion {label: string; price: number; firstPlace: number | null; lastPlace: number | null; condition: string; active: boolean}
++export interface PricingDeparture {price?: number | null; regularPrice?: number | null; promotions?: unknown; state?: string; availability?: string; capacity?: {total?: number | null; available?: number | null}}
++export function validatePromotions(value: unknown, regularPrice: unknown, capacity?: number | null): Promotion[];
++export function promotionCondition(promotion: Promotion): string;
++export function departurePricing(departure: PricingDeparture, defaults?: PricingDeparture): {price: number | null; regularPrice?: number | null; promotions?: Promotion[]; promotion?: Promotion | null};
+--- a/scripts/trip-model.mjs
++++ b/scripts/trip-model.mjs
+@@ -1,3 +1,4 @@
++import {departurePricing} from './trip-pricing.mjs';
+ const ALL_LEVELS = Object.freeze([1, 2, 3, 4]);
+ const ROMAN = ['I', 'II', 'III', 'IV'];
+ 
+@@ -55,7 +56,7 @@
+     if (!['confirmed', 'upcoming'].includes(result.state)) {
+       throw new Error(`Invalid departure state: ${trip.id}/${departure.id}`);
+     }
+-    return result;
++    return {...result, ...departurePricing(result)};
+   });
+ }
+ 
+@@ -84,12 +85,20 @@
+ 
+ export const formatPrice = value => `${new Intl.NumberFormat('es-ES', {maximumFractionDigits: 2, useGrouping: 'always'}).format(value)} €`;
+ 
++export function tripPriceDetails(trip) {
++  const departures = departuresFor(trip);
++  let priced = departures.filter(d => d.price !== null);
++  // Legacy journeys keep their price semantics. Promotional journeys never use a
++  // sold-out departure to advertise a cheaper fare on another available date.
++  if (departures.some(d => d.promotions?.length) && departures.some(d => !isFull(d))) priced = priced.filter(d => !isFull(d));
++  priced.sort((a, b) => a.price - b.price || (a.start || '').localeCompare(b.start || ''));
++  return {departure: priced[0] ?? null, from: new Set(priced.map(d => d.price)).size > 1 || priced.length < departures.length};
++}
++
+ export function tripPrice(trip) {
+-  const departures = departuresFor(trip);
+-  const prices = departures.filter(departure => departure.price !== null).map(departure => departure.price);
+-  if (!prices.length) return departures.length ? 'Precio por confirmar' : 'Fechas por anunciar';
+-  const from = new Set(prices).size > 1 || prices.length < departures.length;
+-  return `${from ? 'Desde ' : ''}${formatPrice(Math.min(...prices))}`;
++  const {departure, from} = tripPriceDetails(trip);
++  if (!departure) return departuresFor(trip).length ? 'Precio por confirmar' : 'Fechas por anunciar';
++  return `${from ? 'Desde ' : ''}${formatPrice(departure.price)}`;
+ }
+ 
+ // Zero is an explicit commercial value; missing availability remains by enquiry.
+--- a/scripts/sanity-trips.mjs
++++ b/scripts/sanity-trips.mjs
+@@ -1,4 +1,5 @@
+ import {tripName, consolidateTrips, aggregateAvailability} from './trip-groups.mjs';
++import {departurePricing, validatePromotions} from './trip-pricing.mjs';
+ 
+ const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+ const optional = value => value == null || value === '';
+@@ -69,14 +70,16 @@
+   const departures = list(doc.departures, 'departures').map(d => {
+     if (!/^[A-Za-z0-9_-]+$/.test(d._key ?? '') || keys.has(d._key)) throw Error(`Clave de salida inválida: ${slug}`);
+     keys.add(d._key);
+-    return {id: d._key, date: dates(d), start: d.start, end: d.end, duration: text(d.duration, 'duration') || 'Por confirmar',
++    const departure = {id: d._key, date: dates(d), start: d.start, end: d.end, duration: text(d.duration, 'duration') || 'Por confirmar',
+       price: positive(d.price, 'price'), state: doc.state,
+       ...(d.levels != null ? {levels: validateLevels(d.levels, slug)} : {}),
+       ...(d.levelRequirement ? {levelRequirement: text(d.levelRequirement, 'departure.levelRequirement')} : {}),
+       ...(d.dossier ? {dossier: httpsUrl(d.dossier, 'departure.dossier')} : {}),
+       ...(d.availability != null ? {availability: validateAvailability(d.availability, slug)} : {}),
+       ...(d.capacity ? {capacity: validateCapacity(d.capacity, slug)} : {}),
+-      ...(d.message ? {message: text(d.message, 'message')} : {})};
++      ...(d.message ? {message: text(d.message, 'message')} : {}),
++      ...(d.promotions != null ? {promotions: validatePromotions(d.promotions, d.price, d.capacity?.total ?? doc.capacity?.total)} : {})};
++    return {...departure, ...departurePricing(departure, {state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
+   });
+   if (doc.state === 'confirmed' && !departures.length) throw Error(`Faltan fechas: ${slug}`);
+   const capacity = {total: doc.capacity?.total ?? null, available: doc.capacity?.available ?? null};
+--- a/studio/schemaTypes/promotions.ts
++++ b/studio/schemaTypes/promotions.ts
+@@ -0,0 +1,25 @@
++import {defineArrayMember, defineField} from 'sanity'
++import {validatePromotions} from '../../scripts/trip-pricing.mjs'
++
++export const promotionsField = defineField({
++  name: 'promotions', title: 'Tarifas reducidas / early bird', type: 'array',
++  description: 'Opcional. Mantén arriba el precio general. Marca una sola tarifa como vigente; al completar su cupo, desmárcala y activa el siguiente tramo si existe. Sin ninguna vigente se aplica el precio general. Las plazas describen el cupo de la oferta: no son un contador de reservas ni de plazas libres.',
++  of: [defineArrayMember({
++    name: 'promotion', title: 'Tarifa reducida', type: 'object',
++    fields: [
++      defineField({name: 'label', title: 'Nombre', type: 'string', initialValue: 'Early bird', validation: r => r.required().max(60)}),
++      defineField({name: 'price', title: 'Precio reducido por persona (€)', type: 'number', validation: r => r.required().greaterThan(0).precision(2)}),
++      defineField({name: 'active', title: 'Esta es la tarifa vigente', type: 'boolean', initialValue: false, description: 'Selección manual. Solo una tarifa reducida puede estar vigente en esta salida.'}),
++      defineField({name: 'firstPlace', title: 'Primera plaza del tramo', type: 'number', description: 'Por ejemplo, 1 en early bird o 9 en el siguiente tramo. Deja ambas plazas vacías si el PDF no concreta cupo.', validation: r => r.integer().min(1)}),
++      defineField({name: 'lastPlace', title: 'Última plaza del tramo', type: 'number', description: 'Por ejemplo, 8 significa primeras 8 plazas cuando el tramo empieza en 1.', validation: r => r.integer().min(1)}),
++      defineField({name: 'condition', title: 'Condición cuando no hay cupo numérico', type: 'string', description: 'Copia la condición aprobada, por ejemplo «Plazas limitadas». No inventes un cupo.', validation: r => r.max(80)}),
++    ],
++    preview: {select: {title: 'label', price: 'price', active: 'active'}, prepare: ({title, price, active}) => ({title, subtitle: `${price ?? '—'} €${active ? ' · VIGENTE' : ''}`})},
++  })],
++  validation: rule => rule.custom((value, context) => {
++    const parent = context.parent as {price?: number; capacity?: {total?: number}} | undefined
++    const document = context.document as {capacity?: {total?: number}} | undefined
++    try { validatePromotions(value, parent?.price, parent?.capacity?.total ?? document?.capacity?.total); return true }
++    catch (error) { return error instanceof Error ? error.message : 'Tarifas reducidas inválidas' }
++  }),
++})
+--- a/studio/schemaTypes/trip.ts
++++ b/studio/schemaTypes/trip.ts
+@@ -1,4 +1,5 @@
+ import {defineArrayMember, defineField, defineType} from 'sanity'
++import {promotionsField} from './promotions'
+ 
+ export const trip = defineType({
+   name: 'trip',
+@@ -67,7 +68,8 @@
+           defineField({name: 'capacity', title: 'Capacidad de esta salida (opcional)', type: 'object', description: 'Vacío = hereda la capacidad general del viaje.', fields: [
+             defineField({name: 'total', title: 'Capacidad total', type: 'number', validation: r => r.integer().min(1)}),
+           ]}),
+-          defineField({name: 'price', title: 'Precio por persona (€)', type: 'number', description: 'Precio vigente manual. Vacío = por confirmar. No se seleccionan promociones por cupo.', validation: (rule) => rule.greaterThan(0).precision(2)}),
++          defineField({name: 'price', title: 'Precio general por persona (€)', type: 'number', description: 'Tarifa general sin descuento. Vacío = por confirmar. Las tarifas reducidas se configuran debajo; no se cambia este importe al activar un early bird.', validation: (rule) => rule.greaterThan(0).precision(2)}),
++          promotionsField,
+           defineField({name: 'dossierFile', title: 'PDF de esta salida (opcional)', type: 'file', options: {accept: 'application/pdf'}, description: 'PDF específico de esta fecha. Tiene prioridad sobre la URL de esta salida. Sin PDF ni URL propios, se usa el dossier general del viaje.'}),
+           defineField({name: 'dossier', title: 'URL del dossier de esta salida (opcional)', type: 'url', description: 'URL específica de esta fecha si no adjuntas un PDF propio. Vacío = usa el dossier general del viaje.', validation: (rule) => rule.uri({scheme: ['https']})}),
+           defineField({name: 'message', title: 'Mensaje de consulta por WhatsApp', type: 'text', rows: 3}),
+--- a/scripts/render-home-trips.mjs
++++ b/scripts/render-home-trips.mjs
+@@ -1,5 +1,6 @@
+ import {renderDepartureRows} from './render-departure-rows.mjs';
+-import {departuresFor, levelLabel, tripPrice, availabilityLabel} from './trip-model.mjs';
++import {departuresFor, levelLabel, tripPrice, tripPriceDetails, formatPrice, availabilityLabel} from './trip-model.mjs';
++import {promotionCondition} from './trip-pricing.mjs';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+ 
+@@ -13,25 +14,33 @@
+   return value;
+ };
+ 
+-export function renderHomeTrip(trip, {heading, idPrefix = 'trip'} = {}) {
++export function renderHomeTrip(trip, {heading, idPrefix = 'trip', compact = false} = {}) {
+     const departures = departuresFor(trip);
+     const dated = trip.state === 'confirmed';
+     heading ??= dated ? 'h3' : 'h4';
+     const id = escape(trip.id);
+     const availability = availabilityLabel(trip);
+     const firstDate = [...departures].sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999'))[0];
+-    const preview = firstDate ? compactDate(firstDate.date) : 'Por anunciar';
++    const pricing = tripPriceDetails(trip);
++    const offer = compact ? pricing.departure?.promotion : null;
++    // Keep the displayed date, current price and saving on the same departure.
++    const shownDate = offer ? pricing.departure : firstDate;
++    const preview = shownDate ? compactDate(shownDate.date) : 'Por anunciar';
++    const previewLabel = offer && shownDate.id !== firstDate?.id ? 'Fecha de la tarifa' : 'Próx. fecha';
++    const discount = offer ? `<p class="home-trip-saving" id="${idPrefix}-${id}-offer"><strong>${escape(formatPrice(Math.round((pricing.departure.regularPrice - pricing.departure.price) * 100) / 100))} de descuento</strong><span>${escape(promotionCondition(offer))}</span></p>` : '';
++    const currentPrice = `${escape(tripPrice(trip))}${departures.some(d => d.price !== null) ? '<small>por persona</small>' : ''}`;
++    const footer = compact ? `<div class="home-trip-booking${offer ? ' has-offer' : ''}">${discount}<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts${offer ? ` ${idPrefix}-${id}-offer` : ''}" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-price">${offer ? `<del>${escape(formatPrice(pricing.departure.regularPrice))}</del>` : ''}${currentPrice}</span><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span></a></div>` : `<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span><span class="home-trip-price">${currentPrice}</span></a>`;
+     const status = availability === 'Plazas disponibles' ? '' : `<span class="home-trip-status">${escape(availability)}</span>`;
+     const dates = `<a class="home-trip-dates-link" href="/viajes/${escape(trip.slug)}/" aria-label="Ver viaje de ${escape(trip.name)}">${departures.length ? renderDepartureRows(trip, 'home-trip-departures') : '<p>Fechas por anunciar</p>'}</a>`;
+-    return `<article class="home-trip${dated ? '' : ' home-trip-pending'}" aria-labelledby="${idPrefix}-${id}-title">
++    return `<article class="home-trip${dated ? '' : ' home-trip-pending'}" ${compact ? 'data-compact-home ' : ''}aria-labelledby="${idPrefix}-${id}-title">
+ <div class="home-trip-media">${trip.hero ? `<img class="home-trip-photo" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt || trip.name)}" width="1000" height="600" loading="lazy" decoding="async">` : '<div class="home-trip-placeholder" aria-hidden="true">LST</div>'}
+ <span class="home-trip-level">${escape(levelLabel(trip))}</span>${status}<${heading} id="${idPrefix}-${id}-title">${escape(trip.name)}</${heading}>
+ <details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de ${escape(trip.name)}"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas de ${escape(trip.name)}">${dates}</div></details>
+-</div><p class="home-trip-preview" id="${idPrefix}-${id}-facts"><span class="home-trip-preview-label">Próx. fecha</span><span class="home-trip-preview-date">${escape(preview)}</span></p><a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span><span class="home-trip-price">${escape(tripPrice(trip))}${departures.some(d => d.price !== null) ? '<small>por persona</small>' : ''}</span></a></article>`;
++</div><p class="home-trip-preview" id="${idPrefix}-${id}-facts"><span class="home-trip-preview-label">${escape(previewLabel)}</span><span class="home-trip-preview-date">${escape(preview)}</span>${compact && shownDate?.duration && shownDate.duration !== 'Por confirmar' ? `<span class="home-trip-duration">${escape(shownDate.duration)}</span>` : ''}</p>${footer}</article>`;
+ }
+ 
+ export function renderHomeTrips(current, trips) {
+-  const card = trip => renderHomeTrip(trip);
++  const card = trip => renderHomeTrip(trip, {compact: true});
+   // Start with the nearest departure. Keep all published trips in the HTML,
+   // including destinations without dates and the native expandable collection.
+   const dated = trips.filter(t => t.state === 'confirmed').map((trip, order) => ({trip, order, start: departuresFor(trip).map(d => d.start).filter(Boolean).sort()[0]})).sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999') || a.order - b.order).map(t => t.trip);
+--- a/dist/home.css
++++ b/dist/home.css
+@@ -662,3 +662,40 @@
+ body.home-modern .lst-story-arrow{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border-radius:50%;background:var(--lst-orange);color:var(--lst-ink);font-size:22px;transition:transform .2s}
+ body.home-modern .lst-people-copy .lst-story-cta:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink);box-shadow:0 5px 16px rgba(27,27,27,.12)}
+ body.home-modern .lst-story-cta:is(:hover,:focus-visible) .lst-story-arrow{transform:rotate(45deg)}
++
++/* Approved compact home card: a visible saving, its cup and one native trip link. */
++body.home-modern .home-trip[data-compact-home]{container-type:inline-size;padding:8px;border-radius:25px}
++body.home-modern .home-trip[data-compact-home] .home-trip-media{min-height:208px;grid-template-rows:minmax(max(7.5em,calc(20em - 200px)),1fr) auto;border-radius:17px}
++body.home-modern .home-trip[data-compact-home] .home-trip-media:before{height:208px;aspect-ratio:auto}
++body.home-modern .home-trip[data-compact-home] .home-trip-photo{border-radius:17px}
++body.home-modern .home-trip[data-compact-home] .home-trip-media:after{border-radius:0 0 17px 17px}
++body.home-modern .home-trip[data-compact-home] :is(h3,h4){padding:0 17px 17px;font-size:46px}
++body.home-modern .home-trip[data-compact-home] .home-trip-level{top:11px;left:11px;font-size:11px;padding:9px}
++body.home-modern .home-trip[data-compact-home] .home-trip-media:has(.home-trip-status){grid-template-rows:minmax(max(9em,calc(22em - 208px)),1fr) auto}
++body.home-modern .home-trip[data-compact-home] .home-trip-dates>summary{inset:10px 10px auto auto}
++body.home-modern .home-trip[data-compact-home] .home-trip-dates-label{font-size:11px}
++body.home-modern .home-trip[data-compact-home] .home-trip-dates-panel{top:5em;max-height:calc(100% - 6em)}
++body.home-modern .home-trip[data-compact-home] .home-trip-media:has(.home-trip-status) .home-trip-dates-panel{top:7.4em;max-height:calc(100% - 8.4em)}
++body.home-modern .home-trip[data-compact-home] .home-trip-preview{margin-block:10px;padding-inline:8px;flex-wrap:wrap;font-size:12px;line-height:1.5}
++body.home-modern .home-trip[data-compact-home] .home-trip-preview-label{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
++body.home-modern .home-trip[data-compact-home] .home-trip-preview-date{margin:0;text-align:left}
++body.home-modern .home-trip[data-compact-home] .home-trip-duration{margin-left:auto;white-space:nowrap}
++body.home-modern .home-trip[data-compact-home] .home-trip-booking{margin-top:auto}
++body.home-modern .home-trip[data-compact-home] .home-trip-saving{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:3px 8px;padding:8px 10px;border-radius:13px 13px 0 0;background:var(--lst-orange);color:var(--lst-ink)}
++body.home-modern .home-trip[data-compact-home] .home-trip-saving strong{font:400 clamp(18px,6.7cqw,23px)/1.15 var(--lst-display);white-space:nowrap}
++body.home-modern .home-trip[data-compact-home] .home-trip-saving>span{font:500 11px/1.4 'Work Sans',sans-serif;text-align:right}
++body.home-modern .home-trip[data-compact-home] .home-trip-link{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;min-height:76px;padding:10px 12px;border-radius:13px}
++body.home-modern .home-trip[data-compact-home] .home-trip-booking.has-offer .home-trip-link{border-radius:0 0 13px 13px}
++body.home-modern .home-trip[data-compact-home] .home-trip-price{min-width:0;margin:0;font-size:39px;text-align:left}
++body.home-modern .home-trip[data-compact-home] .home-trip-price del{display:inline-block;margin-right:8px;color:rgba(255,250,231,.78);font:400 17px/1.3 'Work Sans',sans-serif;text-decoration-thickness:1.5px;white-space:nowrap}
++body.home-modern .home-trip[data-compact-home] .home-trip-price small{margin-top:3px}
++body.home-modern .home-trip[data-compact-home] .home-trip-action{min-height:44px;padding:10px 13px;font-size:12px}
++body.home-modern .home-trip[data-compact-home] .home-trip-link:after{border-radius:25px}
++body.home-modern .home-trip[data-compact-home].home-trip-pending .home-trip-price{font:400 14px/1.5 'Work Sans',sans-serif}
++@container (max-width:270px){
++ body.home-modern .home-trip[data-compact-home] .home-trip-saving{padding-inline:8px;gap:3px 6px}
++ body.home-modern .home-trip[data-compact-home] .home-trip-link{padding-inline:10px;gap:8px}
++ body.home-modern .home-trip[data-compact-home] .home-trip-price{font-size:35px}
++ body.home-modern .home-trip[data-compact-home] .home-trip-price del{font-size:15px;margin-right:6px}
++ body.home-modern .home-trip[data-compact-home] .home-trip-action{padding-inline:11px}
++}
+--- a/scripts/home-trips.test.mjs
++++ b/scripts/home-trips.test.mjs
+@@ -1,6 +1,7 @@
+ import test from 'node:test';
+ import assert from 'node:assert/strict';
+ import {renderHomeTrips} from './render-home-trips.mjs';
++import {renderLevelTrips} from './render-level-trips.mjs';
+ 
+ const shell = '<!-- home-trips:start --><!-- home-trips:end -->';
+ const departure = (id, start, price) => ({id, start, date: `${start} — fin`, price, duration: '4 noches', state: 'confirmed'});
+@@ -57,7 +58,7 @@
+ test('preview labels the earliest departure and preserves its direct-link description', () => {
+   const html = renderHomeTrips(shell, [trip('independent', {levelRequirement: 'Independencia en el agua: remontar solo.', departures: [departure('later', '2027-02-01', 450), departure('first', '2027-01-01', 399)]})]);
+   const preview = html.match(/<p class="home-trip-preview" id="trip-independent-facts">([\s\S]*?)<\/p>/)[1];
+-  assert.equal(preview, '<span class="home-trip-preview-label">Próx. fecha</span><span class="home-trip-preview-date">2027-01-01 — fin</span>');
++  assert.equal(preview, '<span class="home-trip-preview-label">Próx. fecha</span><span class="home-trip-preview-date">2027-01-01 — fin</span><span class="home-trip-duration">4 noches</span>');
+   assert.doesNotMatch(preview, /2 fechas|Independencia|<small>/);
+   assert.match(html, /aria-describedby="trip-independent-facts"/);
+   assert.match(html, /aria-labelledby="trip-independent-action trip-independent-title"/);
+@@ -94,3 +95,31 @@
+   assert.match(html, /<span class="home-trip-preview-date">2–8 sept 2027<\/span>/);
+   assert.match(panelFor(html), /20 nov 2026 — 22 nov 2026/);
+ });
++
++
++test('level trips share home cards, pricing and date controls while retaining filter metadata', () => {
++  const values = [
++    trip('multi', {name: 'Mar & <olas>', departures: [departure('one', '2027-01-01', 399.5), departure('two', '2027-02-01', 450)]}),
++    trip('full', {availability: 'full'}),
++    trip('pending', {state: 'upcoming', departures: []}),
++  ];
++  for (const value of values) {
++    const home = renderHomeTrips(shell, [value]);
++    const guide = renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->', [value]);
++    assert.equal(panelFor(guide), panelFor(home));
++    assert.equal(priceFor(guide), priceFor(home));
++    assert.match(guide, /<article data-trip-levels="1 2" data-trip-name=/);
++    assert.match(guide, /class="home-trip guide-trip-card(?: home-trip-pending)?" data-compact-home/);
++    assert.match(guide, new RegExp('id="guide-trip-' + value.id + '-title"'));
++    assert.match(guide, /class="home-trip-grid"/);
++    assert.doesNotMatch(guide, /guide-trip-date|guide-trip-action|guide-trip-levels|<a class="guide-trip-card"/);
++    if (value.state === 'upcoming') assert.match(guide, /<details class="guide-trip-group guide-trip-pending"/);
++  }
++});
++
++test('empty level collections preserve the help and native empty-state contract', () => {
++  const html = renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->', []);
++  assert.match(html, /No hay viajes publicados para este nivel/);
++  assert.doesNotMatch(html, /<article/);
++  assert.throws(() => renderLevelTrips('', []), /Missing guide trip generation markers/);
++});
+--- a/scripts/trip-pricing.test.mjs
++++ b/scripts/trip-pricing.test.mjs
+@@ -0,0 +1,121 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFile} from 'node:fs/promises';
++import {validatePromotions, departurePricing, promotionCondition} from './trip-pricing.mjs';
++import {departuresFor, tripPrice, tripPriceDetails} from './trip-model.mjs';
++import {renderHomeTrips, renderHomeTrip} from './render-home-trips.mjs';
++import {adaptTrip} from './sanity-trips.mjs';
++import {prepareDrafts} from './import-departures.mjs';
++import {planPromotionUpdate, applyPromotionPlan} from './update-trip-promotions.mjs';
++
++const offer = (changes = {}) => ({label: 'Early bird', price: 860, firstPlace: 1, lastPlace: 5, active: true, ...changes});
++const departure = (changes = {}) => ({id: 'one', date: '17 ene 2027 — 24 ene 2027', start: '2027-01-17', end: '2027-01-24', duration: '7 noches', state: 'confirmed', price: 899, availability: 'available', promotions: [offer()], ...changes});
++const trip = (changes = {}) => ({id: 'marruecos', slug: 'marruecos', name: 'Marruecos', state: 'confirmed', levels: [1, 2], availability: 'available', departures: [departure()], ...changes});
++const shell = '<!-- home-trips:start --><!-- home-trips:end -->';
++
++test('published general, active offer and repeated normalization stay independent', () => {
++  const source = trip();
++  const first = departuresFor(source);
++  assert.equal(first[0].price, 860);
++  assert.equal(first[0].regularPrice, 899);
++  assert.equal(source.departures[0].price, 899);
++  assert.deepEqual(departuresFor({...source, departures: first}), first);
++  assert.equal(tripPrice(source), '860 €');
++});
++
++test('manual stage change and closing a cup use the correct current tariff', () => {
++  const tariffs = [offer({price: 599, lastPlace: 8, active: false}), offer({label: 'Segundo tramo', price: 649, firstPlace: 9, lastPlace: 20})];
++  const current = departurePricing(departure({price: 699, promotions: tariffs}));
++  assert.equal(current.price, 649);
++  assert.equal(promotionCondition(current.promotion), 'Plazas 9–20');
++  assert.equal(departurePricing({...current, state: 'confirmed', promotions: tariffs.map(p => ({...p, active: false}))}).price, 699);
++});
++
++test('unknown cup stays textual and never becomes an invented remaining count', () => {
++  const html = renderHomeTrips(shell, [trip({departures: [departure({price: 1499, promotions: [offer({price: 1399, firstPlace: null, lastPlace: null, condition: 'Plazas limitadas'})]})]})]);
++  assert.match(html, /100 € de descuento/);
++  assert.match(html, /Plazas limitadas/);
++  assert.doesNotMatch(html, /Primeras|Quedan|contador/);
++});
++
++test('invalid amounts, ambiguous active stages, overlapping cups and impossible capacity are rejected', () => {
++  for (const promotions of [[offer({price: 899})], [offer({price: -1})], [offer({price: 860.123})], [offer({active: 'true'})], [offer(), offer({label: 'Otra', price: 870, firstPlace: 6, lastPlace: 8})], [offer({active: false}), offer({price: 870, firstPlace: 5, lastPlace: 8})], [offer({firstPlace: null})], [offer({firstPlace: null, lastPlace: null})], [offer({lastPlace: 16})]]) assert.throws(() => validatePromotions(promotions, 899, 15));
++  assert.throws(() => validatePromotions([offer()], null));
++});
++
++test('full and future departures never advertise their early bird', () => {
++  for (const changes of [{availability: 'full'}, {state: 'upcoming'}]) {
++    const value = trip({departures: [departure(changes)]});
++    assert.equal(departuresFor(value)[0].price, 899);
++    assert.doesNotMatch(renderHomeTrips(shell, [value]), /home-trip-saving|<del>/);
++  }
++});
++
++test('a full priced departure cannot supply a fare for an available unpriced date', () => {
++  const value = trip({departures: [departure({availability: 'full'}), departure({id: 'two', start: '2027-02-01', date: '1 feb 2027', price: null, promotions: undefined})]});
++  assert.equal(tripPrice(value), 'Precio por confirmar');
++  assert.equal(tripPriceDetails(value).departure, null);
++  assert.doesNotMatch(renderHomeTrips(shell, [value]), /home-trip-saving|<del>|899 €/);
++});
++
++test('the card pairs savings, regular fare and date from the same selected departure', () => {
++  const value = trip({departures: [departure({price: 999, promotions: undefined}), departure({id: 'two', start: '2027-02-01', date: '1 feb 2027', price: 699, promotions: [offer({price: 649, lastPlace: 4})]})]});
++  const html = renderHomeTrips(shell, [value]);
++  assert.match(html, /50 € de descuento/);
++  assert.match(html, /<del>699 €<\/del>Desde 649 €/);
++  assert.match(html, /Fecha de la tarifa<\/span><span class="home-trip-preview-date">1 feb 2027/);
++  assert.match(html, /Primeras 4 plazas/);
++  assert.doesNotMatch(html, /<del>999 €/);
++  assert.doesNotMatch(renderHomeTrip(value, {heading: 'h2', idPrefix: 'catalog'}), /data-compact-home|home-trip-saving|<del>/);
++});
++
++test('legacy price-only journeys keep their price values and no extra pricing properties', () => {
++  const old = departure({promotions: undefined, price: 399.5});
++  const normalized = departuresFor(trip({departures: [old]}))[0];
++  assert.equal(normalized.price, 399.5);
++  assert.equal(Object.hasOwn(normalized, 'regularPrice'), false);
++  assert.equal(tripPrice(trip({departures: [old]})), '399,5 €');
++});
++
++test('promotional conditions are escaped in the card', () => {
++  const html = renderHomeTrips(shell, [trip({departures: [departure({promotions: [offer({firstPlace: null, lastPlace: null, condition: '<img src=x onerror=alert(1)>'})]})]})]);
++  assert.match(html, /&lt;img src=x onerror=alert\(1\)&gt;/);
++  assert.doesNotMatch(html, /<img src=x/);
++});
++
++const inventory = JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json', 'utf8'));
++const docs = prepareDrafts(inventory).map((d, index) => ({...d, _id: d._id.slice(7), _rev: `revision-${index}`, departures: d.departures.map(p => ({...p, price: Math.max(...inventory.departures[index].pricing.tariffs.map(t => t.amount))}))}));
++
++test('PDF plan covers exactly seven discounted departures and preserves general fares, signals and other fields', () => {
++  const plan = planPromotionUpdate(docs, inventory);
++  assert.equal(plan.length, 7);
++  const candidate = applyPromotionPlan(docs, plan);
++  assert.equal(planPromotionUpdate(candidate, inventory).length, 0);
++  const palmar = candidate.find(d => d.slug.current.startsWith('el-palmar'));
++  assert.equal(palmar.departures[0].price, 699);
++  assert.deepEqual(palmar.departures[0].promotions.map(p => [p.price, p.firstPlace, p.lastPlace, p.active]), [[599, 1, 8, true], [649, 9, 20, false]]);
++  for (let i = 0; i < docs.length; i++) {
++    assert.deepEqual(candidate[i].payment, docs[i].payment);
++    assert.deepEqual(candidate[i].capacity, docs[i].capacity);
++    assert.deepEqual(candidate[i].includes, docs[i].includes);
++  }
++  const adapted = adaptTrip(palmar);
++  assert.equal(adapted.departures[0].price, 599);
++  assert.equal(adapted.departures[0].regularPrice, 699);
++  assert.match(palmar.priceNote, /649 €/);
++  assert.doesNotMatch(palmar.priceNote, /sin promociones/);
++});
++
++test('CMS rerun preserves the editor selection; stale revisions, drafts and changed general fares block writes', () => {
++  const plan = planPromotionUpdate(docs, inventory);
++  const candidate = applyPromotionPlan(docs, plan);
++  const palmar = candidate.find(d => d.slug.current.startsWith('el-palmar'));
++  palmar.departures[0].promotions[0].active = false;
++  palmar.departures[0].promotions[1].active = true;
++  assert.deepEqual(planPromotionUpdate(candidate, inventory), []);
++  assert.throws(() => applyPromotionPlan(docs.map(d => ({...d, _rev: 'later'})), plan), /Revisión distinta/);
++  assert.throws(() => planPromotionUpdate([...docs, {...docs[1], _id: `drafts.${docs[1]._id}`}], inventory), /edición pendiente/);
++  const changed = structuredClone(docs);
++  changed[1].departures[0].price += 1;
++  assert.throws(() => planPromotionUpdate(changed, inventory), /tarifa general cambió/);
++});
+--- a/scripts/update-trip-promotions.mjs
++++ b/scripts/update-trip-promotions.mjs
+@@ -0,0 +1,113 @@
++import {readFile, writeFile, mkdir} from 'node:fs/promises';
++import {createHash} from 'node:crypto';
++import os from 'node:os';
++import path from 'node:path';
++import {pathToFileURL} from 'node:url';
++import {querySanity, SANITY} from './sanity.mjs';
++import {validatePromotions, promotionCondition} from './trip-pricing.mjs';
++
++const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
++const price = n => `${new Intl.NumberFormat('es-ES', {useGrouping: 'always'}).format(n)} €`;
++const sourceShape = list => list.map(({label, price, firstPlace = null, lastPlace = null, condition = ''}) => ({label, price, firstPlace, lastPlace, condition}));
++
++export function planPromotionUpdate(documents, inventory) {
++  if (inventory.sanityTarget?.projectId !== SANITY.projectId || inventory.sanityTarget?.dataset !== SANITY.dataset) throw Error('Inventario de otro proyecto o dataset');
++  const sources = new Map(inventory.departures.map(d => [d.id, d]));
++  const seen = new Set();
++  const patches = [];
++  for (const doc of documents.filter(d => !/^(drafts|versions)\./.test(d._id))) {
++    const set = {};
++    const conditions = [];
++    for (const departure of doc.departures ?? []) {
++      const source = sources.get(departure._key);
++      if (!source) continue;
++      if (seen.has(source.id)) throw Error('Salida duplicada en Sanity: ' + source.id);
++      seen.add(source.id);
++      if (source.dates.start !== departure.start || source.dates.end !== departure.end) throw Error('Fechas distintas del PDF: ' + source.id);
++      const general = Math.max(...source.pricing.tariffs.map(t => t.amount));
++      if (departure.price !== general) throw Error('La tarifa general cambió; revisar antes de aplicar: ' + source.id);
++      const reduced = source.pricing.tariffs.filter(t => t.amount < general);
++      if (!reduced.length) continue;
++      if (documents.some(d => d._id === `drafts.${doc._id}` || d._id.startsWith('versions.') && d._id.endsWith('.' + doc._id))) throw Error('Hay una edición pendiente del viaje: ' + doc._id);
++      const expected = reduced.map((t, index) => ({_key: `promotion-${index + 1}`, _type: 'promotion', label: index === 0 ? 'Early bird' : 'Segundo tramo', price: t.amount,
++        ...(t.firstPlace != null ? {firstPlace: t.firstPlace, lastPlace: t.lastPlace} : {condition: 'Plazas limitadas'}), active: index === 0}));
++      validatePromotions(expected, general, departure.capacity?.total ?? doc.capacity?.total);
++      if (departure.promotions != null) {
++        validatePromotions(departure.promotions, general, departure.capacity?.total ?? doc.capacity?.total);
++        if (!same(sourceShape(departure.promotions), sourceShape(expected))) throw Error('Las tarifas existentes difieren del PDF: ' + source.id);
++        // Never reset an editor's later choice of active stage on a rerun.
++      } else {
++        set[`departures[_key==${JSON.stringify(departure._key)}].promotions`] = expected;
++      }
++      const tariffs = validatePromotions(expected, general).map(t => `${t.label}: ${price(t.price)} (${promotionCondition(t).toLocaleLowerCase('es')})`);
++      conditions.push(`${tariffs.join('; ')}. Tarifa general: ${price(general)}.`);
++    }
++    if (Object.keys(set).length) {
++      if (!doc._rev) throw Error('Falta la revisión del documento: ' + doc._id);
++      set.priceNote = `${[...new Set(conditions)].join(' ')} Precios por persona. La consulta no confirma la reserva.`;
++      patches.push({id: doc._id, ifRevisionID: doc._rev, set});
++    }
++  }
++  for (const id of sources.keys()) if (!seen.has(id)) throw Error('Falta una salida del inventario en Sanity: ' + id);
++  return patches;
++}
++
++export function applyPromotionPlan(documents, patches) {
++  const result = structuredClone(documents);
++  for (const patch of patches) {
++    const doc = result.find(d => d._id === patch.id);
++    if (!doc || doc._rev !== patch.ifRevisionID) throw Error('Revisión distinta al preparar el cambio: ' + patch.id);
++    for (const [key, value] of Object.entries(patch.set)) {
++      if (key === 'priceNote') { doc.priceNote = value; continue; }
++      const match = /^departures\[_key==("[^"\\]+")\]\.promotions$/.exec(key);
++      if (!match) throw Error('Ruta de escritura no permitida');
++      const departure = doc.departures.find(d => d._key === JSON.parse(match[1]));
++      if (!departure) throw Error('Salida desaparecida al aplicar el plan');
++      departure.promotions = structuredClone(value);
++    }
++  }
++  return result;
++}
++
++const query = `*[_type == "trip"]{..., "dossier": coalesce(dossierFile.asset->url, dossier),
++  "hero": hero{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url},
++  "departures": departures[]{..., "dossier": coalesce(dossierFile.asset->url, dossier)},
++  "stay": stay{..., "image": image{..., "url": asset->url}}}`;
++
++async function main() {
++  const out = 'artifacts/early-bird-2026-10-25';
++  await mkdir(out, {recursive: true});
++  const inventory = JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json', 'utf8'));
++  const sourceDirectory = process.env.LST_PDF_SOURCE_DIR || (process.platform === 'win32' ? inventory.sourceDirectoryWSL.replace('/mnt/c/', 'C:/') : inventory.sourceDirectoryWSL);
++  for (const item of inventory.departures) {
++    const hash = createHash('sha256').update(await readFile(path.join(sourceDirectory, item.source.file))).digest('hex');
++    if (hash !== item.source.sha256) throw Error('El PDF original cambió: ' + item.source.file);
++  }
++  const configPath = process.env.LST_SANITY_AUTH_CONFIG || path.join(os.homedir(), '.config/sanity/config.json');
++  const token = process.env.SANITY_IMPORT_TOKEN || JSON.parse(await readFile(configPath, 'utf8')).authToken;
++  if (!token) throw Error('Falta una sesión de Sanity con permiso de edición');
++  const docs = await querySanity(query, {token, perspective: 'raw'});
++  const patches = planPromotionUpdate(docs, inventory);
++  if (!process.argv.includes('--apply')) {
++    await writeFile(`${out}/promotion-plan.json`, JSON.stringify(patches, null, 2));
++    await writeFile(`${out}/sanity-candidate.json`, JSON.stringify(applyPromotionPlan(docs, patches).filter(d => !/^(drafts|versions)\./.test(d._id)), null, 2));
++    console.log(JSON.stringify({mode: 'plan', documents: patches.length, departures: patches.reduce((n, p) => n + Object.keys(p.set).filter(k => k !== 'priceNote').length, 0), originalPdfsVerified: inventory.departures.length}));
++    return;
++  }
++  const reviewed = JSON.parse(await readFile(`${out}/promotion-plan.json`, 'utf8'));
++  if (!patches.length) { console.log('Las tarifas ya están configuradas; se conserva la selección editorial vigente.'); return; }
++  if (!same(patches, reviewed)) throw Error('Cambió el contenido desde el plan revisado; no se ha escrito en Sanity');
++  const response = await fetch(`https://${SANITY.projectId}.api.sanity.io/v${SANITY.apiVersion}/data/mutate/${SANITY.dataset}?visibility=sync&returnDocuments=false`, {
++    method: 'POST', headers: {'Content-Type': 'application/json', Authorization: `Bearer ${token}`}, redirect: 'error', signal: AbortSignal.timeout(30000),
++    body: JSON.stringify({mutations: patches.map(patch => ({patch}))}),
++  });
++  if (!response.ok) throw Error('No se aplicó la transacción de tarifas: HTTP ' + response.status);
++  const transaction = await response.json();
++  await writeFile(`${out}/sanity-transaction.json`, JSON.stringify({transactionId: transaction.transactionId, documents: patches.map(p => p.id)}, null, 2));
++  const after = await querySanity(query, {token, perspective: 'raw'});
++  if (planPromotionUpdate(after, inventory).length) throw Error('La lectura posterior no coincide con las tarifas preparadas');
++  await writeFile(`${out}/sanity-after.json`, JSON.stringify(after, null, 2));
++  console.log(JSON.stringify({mode: 'applied', transactionId: transaction.transactionId, documents: patches.length, readback: 'verified'}));
++}
++
++if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) main().catch(error => { console.error(error.message); process.exitCode = 1; });
+--- a/scripts/check-home-browser.mjs
++++ b/scripts/check-home-browser.mjs
+@@ -61,7 +61,7 @@
+   ok(await page.locator('.brand-dark').isVisible(),'original dark logo on the clean cover');
+   assert.equal(await page.locator('.lst-hero h1').innerText(),'¿Te vienes\na surfear?');checks++;
+   assert.equal(await page.locator('.home-trip-preview small').count(),0);checks++;
+-  ok(await page.locator('.home-trip-action').first().evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(234, 89, 52)'&&getComputedStyle(e).borderTopColor==='rgb(234, 89, 52)'&&e.getBoundingClientRect().height>=32&&e.getBoundingClientRect().height<=40),'trip action has a subtle visual weight');
++  ok(await page.locator('.home-trip-action').first().evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(234, 89, 52)'&&getComputedStyle(e).borderTopColor==='rgb(234, 89, 52)'&&e.getBoundingClientRect().height>=44&&e.getBoundingClientRect().height<=48),'compact trip action keeps its 44px touch target');
+   ok(await page.locator('.home-trip-link').first().evaluate(e=>e.getBoundingClientRect().height>=44),'trip link keeps its touch target');
+   ok(await page.evaluate(()=>{const panel=getComputedStyle(document.querySelector('.faq')),header=getComputedStyle(document.querySelector('.lst-faq-intro'));return panel.backgroundColor==='rgb(255, 250, 231)'&&parseFloat(panel.borderTopWidth)===0&&header.backgroundColor==='rgba(0, 0, 0, 0)'&&header.color==='rgb(27, 27, 27)'&&[...document.querySelectorAll('.lst-faq-list summary')].every(e=>getComputedStyle(e).backgroundColor==='rgb(27, 27, 27)'&&getComputedStyle(e).color==='rgb(255, 250, 231)');}),'FAQs use a quiet heading and separate ink accordion surfaces');
+   ok(await page.evaluate(()=>{const intro=document.querySelector('.lst-level-intro'),r=intro.getBoundingClientRect(),photo=document.querySelector('.lst-level-photo img').getBoundingClientRect(),grid=document.querySelector('.lst-level-grid').getBoundingClientRect(),paper=getComputedStyle(document.body).backgroundColor;return getComputedStyle(intro).color===paper&&Math.abs(photo.width-r.width)<1&&Math.abs(photo.height-r.height)<1&&grid.top<r.bottom&&r.bottom-grid.top<=32&&[...document.querySelectorAll('.lst-level-card')].every(e=>getComputedStyle(e).backgroundColor===paper);}), 'level cards overlap a compact photographic introduction without changing their cream surface');
+@@ -77,8 +77,8 @@
+   assert.equal(await page.locator('.lst-quote-grid blockquote').count(),2);checks++;
+   ok(await page.locator('.lst-story-cta').evaluate(e=>{const s=getComputedStyle(e);return e.getAttribute('href')==='/conocenos/'&&s.backgroundColor==='rgb(27, 27, 27)'&&s.color==='rgb(255, 250, 231)'&&e.getBoundingClientRect().height>=54;}),'story has a contrasting, accessible action');
+   ok(await page.locator(width<1000?'.lst-header-trip':'.lst-nav-trip').evaluate(e=>getComputedStyle(e).backgroundColor==='rgba(0, 0, 0, 0)'&&parseFloat(getComputedStyle(e).borderTopWidth)===0&&e.getBoundingClientRect().height>=44),'header navigation retains its accessible text link');
+-  ok(await page.locator('.home-trip-preview-label').evaluateAll(es=>es.length>0&&es.every(e=>e.textContent==='Próx. fecha')),'next date is clearly labelled');
+-  ok(await page.evaluate(()=>{const more=document.querySelector('.home-more-trips'),wasOpen=more?.open;if(more)more.open=true;const aligned=[...document.querySelectorAll('.home-trip-preview')].every(e=>{const label=e.querySelector('.home-trip-preview-label').getBoundingClientRect(),date=e.querySelector('.home-trip-preview-date').getBoundingClientRect();return date.left>=label.right+4&&Math.abs(date.top-label.top)<=5&&date.right<=e.getBoundingClientRect().right+1;});if(more)more.open=wasOpen;return aligned;}),'all next dates remain to the right of their labels');
++  ok(await page.locator('.home-trip-preview-label').evaluateAll(es=>es.length>0&&es.every(e=>['Próx. fecha','Fecha de la tarifa'].includes(e.textContent))),'next date is clearly labelled');
++  ok(await page.evaluate(()=>{const more=document.querySelector('.home-more-trips'),wasOpen=more?.open;if(more)more.open=true;const aligned=[...document.querySelectorAll('.home-trip-preview')].every(e=>{const date=e.querySelector('.home-trip-preview-date').getBoundingClientRect(),duration=e.querySelector('.home-trip-duration')?.getBoundingClientRect(),bounds=e.getBoundingClientRect();return date.left>=bounds.left-1&&date.right<=bounds.right+1&&(!duration||duration.left>=date.right+4&&Math.abs(duration.top-date.top)<=5);});if(more)more.open=wasOpen;return aligned;}),'compact dates and durations remain readable without overlap');
+   ok(await page.locator('.lst-closing-actions').evaluate(e=>{const [trip,question]=e.querySelectorAll('a'),a=trip.getBoundingClientRect(),b=question.getBoundingClientRect();return trip.textContent.trim()==='Ver viajes'&&question.textContent.trim()==='Pregúntanos'&&getComputedStyle(trip).backgroundColor==='rgb(234, 89, 52)'&&b.left>a.right&&Math.abs(b.top-a.top)<2&&question.href.startsWith('https://wa.me/34648189257?');}),'closing actions are paired with the orange trip CTA first');
+   ok(await page.locator('.lst-footer-links a').evaluateAll(es=>es.length===6&&es.every(e=>{const s=getComputedStyle(e);return parseFloat(s.borderTopWidth)===0&&s.backgroundColor==='rgba(0, 0, 0, 0)'&&parseFloat(s.minHeight)>=44;})),'footer uses accessible text links');
+   ok(await page.locator('.home-trip-dates-panel').evaluateAll(es=>es.every(e=>e.children.length===1&&e.firstElementChild.matches('a.home-trip-dates-link')&&!!e.querySelector('ul')&&!e.textContent.includes('€'))),'date overlays contain only the departure list');
+--- a/docs/guia-cliente.md
++++ b/docs/guia-cliente.md
+@@ -7,6 +7,8 @@
+ 3. **Sustituir el PDF:** en «Programa» → **PDF del viaje**, sube el archivo aprobado y publica. Este archivo tiene prioridad sobre la URL anterior del dossier. Comprueba el enlace «Descargar dossier» en la web.
+ 4. **Nueva salida:** crea o duplica un viaje; usa una URL nueva y estable, nombre/fecha/niveles/precio correctos, disponibilidad, programa/inclusiones/exclusiones, fotos con descripción y PDF revisados. Todas las consultas van a WhatsApp. Confirma las condiciones comerciales y publica solo cuando esté completo; mientras tanto déjalo en borrador.
+ 
++5. **Early bird y otros tramos:** en «Fechas y niveles» → «Salidas», conserva el **Precio general por persona** y añade las **Tarifas reducidas / early bird**. Cada tarifa tiene su precio y un cupo (plaza inicial y final); si el PDF no concreta número, deja ambos vacíos y escribe la condición aprobada, por ejemplo «Plazas limitadas». Marca **Esta es la tarifa vigente** solo en una. Cuando se cubra el cupo, desmárcala; activa el siguiente tramo si existe o deja todas desmarcadas para usar el precio general. Publica para reconstruir la web. Es una selección manual: no cuenta reservas ni muestra plazas restantes. Marcar el viaje o la salida completo retira el descuento. Revisa también condiciones y dossier.
++
+ Publicar inicia automáticamente una reconstrucción en Vercel. La web cambia cuando el despliegue termina; no es instantáneo. Los borradores y sus ediciones no reconstruyen ni aparecen en la web. Despublicar o eliminar un viaje publicado también reconstruye y lo retira. Un cambio de URL elimina el acceso a la anterior salvo las rutas históricas conservadas; evita cambiar URLs existentes.
+ 
+ Si no ves un cambio, consulta el último despliegue de `lst` en Vercel y su estado **Ready**. Si falla, se conserva la última versión publicada: corrige el contenido indicado y vuelve a publicar. El enlace de reconstrucción es privado y está guardado entre Sanity y Vercel; no debe copiarse a la web. Las consultas abren WhatsApp: la plaza la confirma el equipo; no hay pagos ni inventario automático. Los PDF e imágenes del CDN son accesibles por URL y no deben contener secretos o datos personales privados.

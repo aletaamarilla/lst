@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "file": "dist/index.html",
+      "equal": true
+    },
+    {
+      "file": "dist/app.js",
+      "equal": true
+    },
+    {
+      "file": "dist/home.js",
+      "equal": true
+    },
+    {
+      "file": "scripts/render-home-trips.mjs",
+      "equal": true
+    }
+  ],
+  "heroRulesEqual": true,
+  "levelRulesEqual": true,
+  "contrasts": {
+    "inkOnOrange": 4.902406414379292,
+    "creamOnInk": 16.469911608431392
+  }
+}

@@ -1,0 +1,52 @@
+TAP version 13
+# Subtest: home date panel contains only departures, while price and one direct trip link stay outside
+ok 1 - home date panel contains only departures, while price and one direct trip link stay outside
+  ---
+  duration_ms: 17.026967
+  type: 'test'
+  ...
+# Subtest: missing and mixed prices never inherit an obsolete trip price
+ok 2 - missing and mixed prices never inherit an obsolete trip price
+  ---
+  duration_ms: 0.91743
+  type: 'test'
+  ...
+# Subtest: all published trips remain reachable, with three chronological highlights
+ok 3 - all published trips remain reachable, with three chronological highlights
+  ---
+  duration_ms: 1.197518
+  type: 'test'
+  ...
+# Subtest: full, pending, missing photographs, unusual names and empty catalogue stay honest and safe
+ok 4 - full, pending, missing photographs, unusual names and empty catalogue stay honest and safe
+  ---
+  duration_ms: 0.774817
+  type: 'test'
+  ...
+# Subtest: preview labels the earliest departure and preserves its direct-link description
+ok 5 - preview labels the earliest departure and preserves its direct-link description
+  ---
+  duration_ms: 0.534691
+  type: 'test'
+  ...
+# Subtest: pending cards keep the next-date label without inventing a departure
+ok 6 - pending cards keep the next-date label without inventing a departure
+  ---
+  duration_ms: 0.242988
+  type: 'test'
+  ...
+# Subtest: date text is escaped in the panel and preview
+ok 7 - date text is escaped in the panel and preview
+  ---
+  duration_ms: 0.364381
+  type: 'test'
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 7
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 98.019598

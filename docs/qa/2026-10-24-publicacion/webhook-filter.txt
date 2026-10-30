@@ -1,0 +1,9 @@
+lst-a create true
+lst-a update true
+lst-a delete true
+drafts.lst-a create false
+drafts.lst-a update false
+drafts.lst-a delete false
+versions.qa.lst-a create false
+versions.qa.lst-a update false
+versions.qa.lst-a delete false

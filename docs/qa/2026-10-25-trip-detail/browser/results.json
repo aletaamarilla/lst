@@ -1,0 +1,4236 @@
+{
+  "checks": 667,
+  "failed": [],
+  "errors": [],
+  "imageFixtures": "Local community.webp in isolated browser routes. Real destination images additionally inspected in IAB.",
+  "results": [
+    {
+      "name": "published-el-palmar-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-el-palmar-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "published-el-palmar-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-el-palmar-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-fuerteventura-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "published-fuerteventura-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-fuerteventura-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-hossegor-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "published-hossegor-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-hossegor-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-maldivas-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "published-maldivas-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-maldivas-320 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-marruecos-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "published-marruecos-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-marruecos-320 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-senegal-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "published-senegal-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-senegal-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-el-palmar-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "published-el-palmar-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-el-palmar-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-fuerteventura-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "published-fuerteventura-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-fuerteventura-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-hossegor-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "published-hossegor-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-hossegor-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-maldivas-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "published-maldivas-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-maldivas-390 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-marruecos-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "published-marruecos-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-marruecos-390 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-senegal-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "published-senegal-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-senegal-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-el-palmar-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "published-el-palmar-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-el-palmar-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-fuerteventura-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "published-fuerteventura-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-fuerteventura-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-hossegor-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "published-hossegor-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-hossegor-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-maldivas-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "published-maldivas-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-maldivas-768 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-marruecos-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "published-marruecos-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-marruecos-768 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "published-senegal-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "published-senegal-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "published-senegal-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-el-palmar-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "published-el-palmar-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1317.859375,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-el-palmar-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-fuerteventura-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "published-fuerteventura-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1295.765625,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-fuerteventura-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-hossegor-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "published-hossegor-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1339.953125,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-hossegor-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-maldivas-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "published-maldivas-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1339.953125,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-maldivas-1024 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-marruecos-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "published-marruecos-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1273.671875,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-marruecos-1024 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-senegal-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "published-senegal-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1339.953125,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-senegal-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-el-palmar-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "published-el-palmar-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1321.859375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-el-palmar-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-el-palmar-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-fuerteventura-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "published-fuerteventura-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1299.765625,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-fuerteventura-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-fuerteventura-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-hossegor-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "published-hossegor-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1321.859375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-hossegor-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-hossegor-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-maldivas-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "published-maldivas-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1343.953125,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-maldivas-1440 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-maldivas-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-marruecos-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "published-marruecos-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1277.671875,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-marruecos-1440 dates open",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 close focused",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 all dates",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 context 0",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 context 1",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 dates close",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 focus returned",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-marruecos-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "published-senegal-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "published-senegal-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1321.859375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "published-senegal-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "published-senegal-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-el-palmar-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "promo-el-palmar-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 834.203125,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-el-palmar-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-320 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-320 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-fuerteventura-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "promo-fuerteventura-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 834.203125,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-fuerteventura-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-320 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-320 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "promo-hossegor-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "promo-hossegor-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 843,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-hossegor-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-320 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-maldivas-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "promo-maldivas-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 834.203125,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-maldivas-320 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-320 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-marruecos-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "promo-marruecos-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 834.203125,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-marruecos-320 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-320 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-320 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 320,
+        "width": 320,
+        "h1": {
+          "width": 280,
+          "scroll": 280,
+          "client": 280,
+          "left": 20,
+          "right": 300
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-senegal-320 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 280,
+        "scroll": 280,
+        "client": 280,
+        "left": 20,
+        "right": 300
+      }
+    },
+    {
+      "name": "promo-senegal-320 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-320 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-320 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 182,
+        "y": 834.203125,
+        "width": 122,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-senegal-320 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-320 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-320 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-320 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-el-palmar-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "promo-el-palmar-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-el-palmar-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-390 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-390 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-fuerteventura-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "promo-fuerteventura-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-fuerteventura-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-390 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-390 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "promo-hossegor-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "promo-hossegor-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-hossegor-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-390 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-maldivas-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "promo-maldivas-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-maldivas-390 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-390 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-marruecos-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "promo-marruecos-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-marruecos-390 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-390 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-390 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 390,
+        "width": 390,
+        "h1": {
+          "width": 350,
+          "scroll": 350,
+          "client": 350,
+          "left": 20,
+          "right": 370
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-senegal-390 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 350,
+        "scroll": 350,
+        "client": 350,
+        "left": 20,
+        "right": 370
+      }
+    },
+    {
+      "name": "promo-senegal-390 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-390 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-390 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 242,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-senegal-390 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-390 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-390 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-390 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-el-palmar-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "promo-el-palmar-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-el-palmar-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-768 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-768 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-fuerteventura-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "promo-fuerteventura-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-fuerteventura-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-768 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-768 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 69
+      }
+    },
+    {
+      "name": "promo-hossegor-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "promo-hossegor-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 843,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-hossegor-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-768 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-maldivas-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "promo-maldivas-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-maldivas-768 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-768 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-marruecos-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "promo-marruecos-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-marruecos-768 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-768 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-768 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 768,
+        "width": 768,
+        "h1": {
+          "width": 704,
+          "scroll": 704,
+          "client": 704,
+          "left": 32,
+          "right": 736
+        },
+        "header": 72,
+        "dockHeight": 86.59375
+      }
+    },
+    {
+      "name": "promo-senegal-768 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 704,
+        "scroll": 704,
+        "client": 704,
+        "left": 32,
+        "right": 736
+      }
+    },
+    {
+      "name": "promo-senegal-768 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-768 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-768 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 608,
+        "y": 834.203125,
+        "width": 128,
+        "height": 46
+      }
+    },
+    {
+      "name": "promo-senegal-768 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-768 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-768 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-768 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-el-palmar-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "promo-el-palmar-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1392.09375,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-el-palmar-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1024 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1024 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-fuerteventura-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "promo-fuerteventura-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1370,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-fuerteventura-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1024 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1024 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-hossegor-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "promo-hossegor-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1339.953125,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-hossegor-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1024 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-maldivas-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "promo-maldivas-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1445.875,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-maldivas-1024 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1024 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-marruecos-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "promo-marruecos-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1379.59375,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-marruecos-1024 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1024 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1024 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1024,
+        "width": 1024,
+        "h1": {
+          "width": 928,
+          "scroll": 928,
+          "client": 928,
+          "left": 48,
+          "right": 976
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-senegal-1024 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 928,
+        "scroll": 928,
+        "client": 928,
+        "left": 48,
+        "right": 976
+      }
+    },
+    {
+      "name": "promo-senegal-1024 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1024 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1024 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 682,
+        "y": 1414.1875,
+        "width": 268,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-senegal-1024 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1024 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1024 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1024 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-el-palmar-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "promo-el-palmar-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1396.09375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-el-palmar-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1440 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-el-palmar-1440 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-fuerteventura-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "promo-fuerteventura-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1374,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-fuerteventura-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1440 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-fuerteventura-1440 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-hossegor-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "promo-hossegor-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1321.859375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-hossegor-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-hossegor-1440 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-maldivas-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "promo-maldivas-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1449.875,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-maldivas-1440 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-maldivas-1440 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-marruecos-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "promo-marruecos-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1383.59375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-marruecos-1440 dates open",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 close focused",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 all dates",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 context 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 date offer 0",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 context 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 date offer 1",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 dates close",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 focus returned",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-marruecos-1440 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1440 page fits",
+      "passed": true,
+      "evidence": {
+        "scroll": 1440,
+        "width": 1440,
+        "h1": {
+          "width": 1224,
+          "scroll": 1224,
+          "client": 1224,
+          "left": 108,
+          "right": 1332
+        },
+        "header": 88,
+        "dockHeight": 0
+      }
+    },
+    {
+      "name": "promo-senegal-1440 heading fits",
+      "passed": true,
+      "evidence": {
+        "width": 1224,
+        "scroll": 1224,
+        "client": 1224,
+        "left": 108,
+        "right": 1332
+      }
+    },
+    {
+      "name": "promo-senegal-1440 eager local images load",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1440 visible booking",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1440 touch target",
+      "passed": true,
+      "evidence": {
+        "x": 1010,
+        "y": 1396.09375,
+        "width": 290,
+        "height": 48
+      }
+    },
+    {
+      "name": "promo-senegal-1440 gallery opens",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1440 gallery closes",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1440 offer state",
+      "passed": true
+    },
+    {
+      "name": "promo-senegal-1440 mobile saving price",
+      "passed": true
+    },
+    {
+      "name": "text200-el-palmar-320 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-marruecos-320 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-fuerteventura-320 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-el-palmar-320 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-320 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-320 native dates visible",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-320 two native enquiries",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-fuerteventura-320 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-el-palmar-390 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-marruecos-390 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-fuerteventura-390 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-el-palmar-390 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-390 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-390 native dates visible",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-390 two native enquiries",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-fuerteventura-390 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-el-palmar-768 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-marruecos-768 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-fuerteventura-768 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-el-palmar-768 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-768 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-768 native dates visible",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-768 two native enquiries",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-fuerteventura-768 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-el-palmar-1440 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-marruecos-1440 page fits",
+      "passed": true
+    },
+    {
+      "name": "text200-fuerteventura-1440 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-el-palmar-1440 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-1440 page fits",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-1440 native dates visible",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-marruecos-1440 two native enquiries",
+      "passed": true
+    },
+    {
+      "name": "nojs-text200-fuerteventura-1440 page fits",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,862 @@
+{
+  "checks": [
+    {
+      "label": "320/el-palmar no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar registration href",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura registration href",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor registration href",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas registration href",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas correct date control",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos registration href",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos correct date control",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado registration href",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado correct date control",
+      "pass": true
+    },
+    {
+      "label": "320/senegal no overflow",
+      "pass": true
+    },
+    {
+      "label": "320/senegal fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "320/senegal programme visible",
+      "pass": true
+    },
+    {
+      "label": "320/senegal no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "320/senegal registration href",
+      "pass": true
+    },
+    {
+      "label": "320 date modal open",
+      "pass": true
+    },
+    {
+      "label": "320 date modal common programme",
+      "pass": true
+    },
+    {
+      "label": "320 both dates",
+      "pass": true
+    },
+    {
+      "label": "320 modal close has focus",
+      "pass": true
+    },
+    {
+      "label": "320 modal focus returns",
+      "pass": true
+    },
+    {
+      "label": "320 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "320 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "320 filters separate Morocco",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar registration href",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura registration href",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor registration href",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas registration href",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas correct date control",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos registration href",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos correct date control",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado registration href",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado correct date control",
+      "pass": true
+    },
+    {
+      "label": "390/senegal no overflow",
+      "pass": true
+    },
+    {
+      "label": "390/senegal fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "390/senegal programme visible",
+      "pass": true
+    },
+    {
+      "label": "390/senegal no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "390/senegal registration href",
+      "pass": true
+    },
+    {
+      "label": "390 date modal open",
+      "pass": true
+    },
+    {
+      "label": "390 date modal common programme",
+      "pass": true
+    },
+    {
+      "label": "390 both dates",
+      "pass": true
+    },
+    {
+      "label": "390 modal close has focus",
+      "pass": true
+    },
+    {
+      "label": "390 modal focus returns",
+      "pass": true
+    },
+    {
+      "label": "390 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "390 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "390 filters separate Morocco",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar registration href",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura registration href",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor registration href",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas registration href",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas correct date control",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos registration href",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos correct date control",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado registration href",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado correct date control",
+      "pass": true
+    },
+    {
+      "label": "768/senegal no overflow",
+      "pass": true
+    },
+    {
+      "label": "768/senegal fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "768/senegal programme visible",
+      "pass": true
+    },
+    {
+      "label": "768/senegal no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "768/senegal registration href",
+      "pass": true
+    },
+    {
+      "label": "768 date modal open",
+      "pass": true
+    },
+    {
+      "label": "768 date modal common programme",
+      "pass": true
+    },
+    {
+      "label": "768 both dates",
+      "pass": true
+    },
+    {
+      "label": "768 modal close has focus",
+      "pass": true
+    },
+    {
+      "label": "768 modal focus returns",
+      "pass": true
+    },
+    {
+      "label": "768 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "768 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "768 filters separate Morocco",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar registration href",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura registration href",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor registration href",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas registration href",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas correct date control",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos registration href",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos correct date control",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado registration href",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado correct date control",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal no overflow",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal fixed cover level",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal programme visible",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal no per-date programme controls",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal registration href",
+      "pass": true
+    },
+    {
+      "label": "1440 date modal open",
+      "pass": true
+    },
+    {
+      "label": "1440 date modal common programme",
+      "pass": true
+    },
+    {
+      "label": "1440 both dates",
+      "pass": true
+    },
+    {
+      "label": "1440 modal close has focus",
+      "pass": true
+    },
+    {
+      "label": "1440 modal focus returns",
+      "pass": true
+    },
+    {
+      "label": "1440 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "1440 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "1440 filters separate Morocco",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado dated signup correct category",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado form links correct detail",
+      "pass": true
+    },
+    {
+      "label": "marruecos text200 jstrue no overflow",
+      "pass": true
+    },
+    {
+      "label": "marruecos text200 jstrue programme remains visible",
+      "pass": true
+    },
+    {
+      "label": "marruecos-avanzado text200 jstrue no overflow",
+      "pass": true
+    },
+    {
+      "label": "marruecos-avanzado text200 jstrue programme remains visible",
+      "pass": true
+    },
+    {
+      "label": "maldivas text200 jstrue no overflow",
+      "pass": true
+    },
+    {
+      "label": "maldivas text200 jstrue programme remains visible",
+      "pass": true
+    },
+    {
+      "label": "marruecos text200 jsfalse no overflow",
+      "pass": true
+    },
+    {
+      "label": "marruecos text200 jsfalse programme remains visible",
+      "pass": true
+    },
+    {
+      "label": "marruecos-avanzado text200 jsfalse no overflow",
+      "pass": true
+    },
+    {
+      "label": "marruecos-avanzado text200 jsfalse programme remains visible",
+      "pass": true
+    },
+    {
+      "label": "maldivas text200 jsfalse no overflow",
+      "pass": true
+    },
+    {
+      "label": "maldivas text200 jsfalse programme remains visible",
+      "pass": true
+    },
+    {
+      "label": "native date queries accessible",
+      "pass": true
+    },
+    {
+      "label": "no browser exceptions",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "images": []
+}

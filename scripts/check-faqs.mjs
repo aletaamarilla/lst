@@ -11,7 +11,8 @@ fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
 const report={checks:[],issues:[],errors:[],views:[]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
-const routes=['/','/viajes/','/niveles/','/conocenos/','/preguntas-frecuentes/',...JSON.parse(fs.readFileSync('data/trips.json')).map(t=>`/viajes/${t.slug}/`)];
+const trips=JSON.parse(fs.readFileSync('dist/catalog-snapshot.json')).trips;
+const routes=['/','/viajes/','/niveles/','/conocenos/','/preguntas-frecuentes/',...trips.map(t=>`/viajes/${t.slug}/`)];
 const links=['/viajes/','/niveles/','/conocenos/','/preguntas-frecuentes/'];
 const measure=page=>page.evaluate(()=>{
  const h=document.querySelector('.site-header'),b=h.getBoundingClientRect();
@@ -23,7 +24,7 @@ try{
   const tag=`${width}-${mode}`,height=width>=1000?1000:844;
   const context=await browser.newContext({viewport:{width,height},javaScriptEnabled:mode!=='no-js',reducedMotion:'reduce'});
   const external=[];
-  await context.route('https://**/*',r=>{external.push(r.request().url());return r.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Consulta interceptada localmente</title>'});});
+  await context.route('https://**/*',r=>{if(new URL(r.request().url()).hostname==='cdn.sanity.io')return r.continue();external.push(r.request().url());return r.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Consulta interceptada localmente</title>'});});
   const page=await context.newPage();page.on('pageerror',e=>report.errors.push({tag,message:e.message}));
   check(tag+' FAQ HTTP 200',(await page.goto(base+'/preguntas-frecuentes/')).status()===200);
   await page.evaluate(()=>document.fonts.ready);
@@ -31,6 +32,12 @@ try{
   const geometry=await measure(page);report.views.push({tag,...geometry});
   check(tag+' no horizontal overflow',geometry.scrollWidth<=width+1&&geometry.overflow.length===0,geometry);
   check(tag+' title clears header',geometry.titleTop>=geometry.headerHeight,geometry);
+  const masthead=await page.locator('.site-header').evaluate(e=>({ink:getComputedStyle(e).color,paper:getComputedStyle(e).backgroundColor,light:getComputedStyle(e.querySelector('.brand-light')).display,dark:getComputedStyle(e.querySelector('.brand-dark')).display}));
+  const heroSpacing=await page.locator('.faq-hero').evaluate(e=>({copyTop:e.querySelector('h1').getBoundingClientRect().top,headerBottom:document.querySelector('header').getBoundingClientRect().bottom}));
+  check(tag+' paper opening clears header',heroSpacing.copyTop>=heroSpacing.headerBottom,heroSpacing);
+  check(tag+' masthead colours and logo',masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block',masthead);
+  check(tag+' opening uses typography without a repeated photo',await page.locator('.faq-hero img').count()===0);
+  check(tag+' useful category icons',await page.locator('.faq-topic-heading > svg[aria-hidden="true"]').count()===4);
   check(tag+' retained fonts',geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&geometry.fonts.label.includes('Space Mono'));
   await page.keyboard.press('Tab');check(tag+' skip-link first',await page.locator('.skip-link').evaluate(e=>e===document.activeElement));
   await page.keyboard.press('Enter');check(tag+' skip-link focuses main',await page.locator('main').evaluate(e=>e===document.activeElement));
@@ -40,6 +47,7 @@ try{
    await summaries.nth(i).focus();await page.keyboard.press(i%2?'Space':'Enter');
    check(tag+' keyboard opens answer '+i,await summaries.nth(i).evaluate(e=>e.parentElement.open));
   }
+  check(tag+' answer links are visibly underlined',await page.locator('.faq-answers a').evaluateAll(es=>es.every(e=>getComputedStyle(e).textDecorationLine.includes('underline'))));
   check(tag+' multiple answers stay open',await page.locator('.faq-answers details[open]').count()===8);
   const openGeometry=await measure(page);check(tag+' open answers do not overflow',openGeometry.scrollWidth<=width+1&&openGeometry.overflow.length===0,openGeometry.overflow);
   await summaries.first().focus();await page.keyboard.press('Enter');check(tag+' independent close preserves others',await page.locator('.faq-answers details[open]').count()===7);
@@ -67,7 +75,7 @@ try{
   }else{
    for(const href of links){const a=page.locator(`.static-navigation a[href="${href}"]`);check(tag+' no-JS navigation visible '+href,await a.isVisible());}
    await page.locator('.static-navigation a[href="/viajes/"]').click();await page.waitForURL(base+'/viajes/');
-   check(tag+' no-JS catalog has all destinations',await page.locator('[data-catalog-trip]').count()===6);
+   check(tag+' no-JS catalog has all destinations',await page.locator('[data-catalog-trip]').count()===trips.length);
    await page.goBack();
   }
   // Navigation may restore collapsed state; save deliberate open/closed examples.
@@ -103,9 +111,11 @@ try{
     check(`${width} logo home ${route}`,await page.locator('.site-header .brand').getAttribute('href')==='/');
    }
    if(route.startsWith('/viajes/')&&route!=='/viajes/'){
-    check(`${width} specific FAQs preserved ${route}`,await page.locator('.trip-faq details').count()>=5);
-    await page.locator('.trip-faq summary').first().click();await page.locator('.trip-faq summary').nth(1).click();
-    check(`${width} detail disclosures work ${route}`,await page.locator('.trip-faq details[open]').count()>=2);
+    const trip=trips.find(t=>route===`/viajes/${t.slug}/`);
+    const questions=trip.faqs.length;
+    check(`${width} specific FAQs preserved ${route}`,await page.locator('.trip-faq details').count()===questions);
+    for(let i=0;i<Math.min(questions,2);i++)await page.locator('.trip-faq summary').nth(i).click();
+    check(`${width} detail disclosures work ${route}`,await page.locator('.trip-faq details[open]').count()===Math.min(questions,2));
     await page.locator('footer a[href="/preguntas-frecuentes/"]').click();await page.waitForURL(base+'/preguntas-frecuentes/');
    }
   }
@@ -119,4 +129,4 @@ try{
  }
 }finally{await browser.close();fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(report,null,2));}
 if(report.issues.length||report.errors.length)throw Error(JSON.stringify({issues:report.issues,errors:report.errors},null,2));
-console.log(`PASS: ${report.views.length} FAQ views, ${report.checks.length} behavior checks, 11 routes; keyboard, disclosures, menu, no JS, 200% text and intercepted WhatsApp.`);
+console.log(`PASS: ${report.views.length} FAQ views, ${report.checks.length} behavior checks, ${routes.length} routes; keyboard, disclosures, menu, no JS, 200% text and intercepted WhatsApp.`);

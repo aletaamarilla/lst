@@ -1,0 +1,22 @@
+{
+  "completedAt": "2026-10-25T17:31:18.643Z",
+  "gitBase": "58f338661fc4705364fea08727c836e79b3f2048",
+  "projectId": "q5bj2rn2",
+  "dataset": "production",
+  "validSourceImages": 281,
+  "ignoredAppleDoubleFiles": 150,
+  "initialUpload": 281,
+  "removedAfterScopeCorrection": 234,
+  "retained": 47,
+  "previousImagesPreserved": 6,
+  "previousDocumentsUnchanged": 54,
+  "transactionId": "2D42OFpIbrkQoZrdHYMh2U",
+  "codeHashes": {
+    "curate.mjs": "1344c2463537b9dfb800bdf7daa0ba0c41f6a7b695aab0bfd3ba38dd0fe33acf",
+    "import.mjs": "1a6a484c1cba480725eda94c3cc18bfd8b3eea0bc6553179a50ed8ebf5fcae51",
+    "inventory.py": "e6eae42d7f97ea437337aaff8454c9e61db861b92a82e6fdf057e442a6f9a393",
+    "contacts.py": "67101a62351da07c3d564e5980d0114a6990924a6a597d254207cbcd18bc5408"
+  },
+  "applicationCodeChanged": false,
+  "commitCreated": false
+}

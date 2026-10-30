@@ -1,0 +1,257 @@
+{
+  "repository": "/home/amfernandez/personalProjects/letsurftogethersystem",
+  "initialBaseCommit": "50ffb54",
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "status": "uncommitted cleanup; concurrent PDF commit preserved",
+  "trackedDiffSha256": "4e1f50d770fa8df1b33943ad116fab66e3657988746901ebffa2cb6dff406d07",
+  "trackedChanges": [
+    {
+      "path": "README.md",
+      "sha256": "b7a210fc39ab8438a8b2e26a9b7fcdf137ca448b3e733d2bbfe136a62f269479",
+      "deleted": false
+    },
+    {
+      "path": "data/trips.json",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/asturias-surf.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/asturias.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/azores-coast.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/azores-surf.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/azores.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/cadiz-session.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/cadiz.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/euskadi-coast.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/euskadi-stay.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/marruecos.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/salvador-17.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/salvador-18.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/assets/salvador-19.webp",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "dist/catalog.css",
+      "sha256": "aebf4d1c5f619301dd325d96113bb78557f12338840c86d9034a8063fab95418",
+      "deleted": false
+    },
+    {
+      "path": "dist/trip.css",
+      "sha256": "f1360af68cd8100d4d2fa936b7391e7a07d802bfcf203fbd95f53d09a3283113",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/el-palmar-2026-12-04/index.html",
+      "sha256": "a33b227a9ce0087aca57f7607ecf23b7b6cc39da5ccb36b3fb50c90830e8af12",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/fuerteventura-2027-02-12/index.html",
+      "sha256": "f6d0e255dffaf516c316251fde83227be1b4691d9235998671648d19266436af",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/hossegor-2026-11-20/index.html",
+      "sha256": "2003e583abd87202ce0c7f8e7e74e6c8bebd78b102d91a8b721e94c0bf3b1fdf",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/maldivas-2027-03-21/index.html",
+      "sha256": "62348bd6963b3d9169a296abee9d0ca7d1e8049efc02a2044c5d18fe25b98635",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/maldivas-2027-03-28/index.html",
+      "sha256": "6afc67a172a3358827a4eaa678ba52109a7879f1225c0caa31f00b0842f2684c",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/marruecos-2027-01-17/index.html",
+      "sha256": "75a936453dccd5ee1f93af1f1efa01aabf855994514f4c1097c0f60bf4daeb0d",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/marruecos-2027-01-24/index.html",
+      "sha256": "98afde4aabdebd92f1ee04f12c1d496bbec8aabcc1c517c565c4113c14cbaa26",
+      "deleted": false
+    },
+    {
+      "path": "dist/viajes/senegal-2027-02-28/index.html",
+      "sha256": "e6d4a8c841d1661cf0e23647a71b188163e21cd542237ef77b4439283f7cb9df",
+      "deleted": false
+    },
+    {
+      "path": "package.json",
+      "sha256": "f9cd6810cdaa2adc124f8ef1a33e8a90fafd8a148c4c8e0f3699babb969aa7ee",
+      "deleted": false
+    },
+    {
+      "path": "scripts/build.mjs",
+      "sha256": "365cd70a52ab6b0f930d04736de932e54d4d7cfdf8348c6e9d455b3051f8ff46",
+      "deleted": false
+    },
+    {
+      "path": "scripts/catalog-filter.test.mjs",
+      "sha256": "01eb918ab02a162b356778869d8d2640400f372591ce40d55ed2b04bb56f6618",
+      "deleted": false
+    },
+    {
+      "path": "scripts/check-about.mjs",
+      "sha256": "91b8509927bac0daa99686da028606bc6e947344521c35a6e809c1e35557178b",
+      "deleted": false
+    },
+    {
+      "path": "scripts/check-catalog.mjs",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "scripts/check-dialogs.mjs",
+      "sha256": "af4ed8825e5667dc001f144f0cea1e82a2bff03c956b3e740fc37b0faea34260",
+      "deleted": false
+    },
+    {
+      "path": "scripts/check-faqs.mjs",
+      "sha256": "2a5d38d5f976201e66598ed2959c32c070b7803620b3defe4f463e91f4544284",
+      "deleted": false
+    },
+    {
+      "path": "scripts/check-home-cards.mjs",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "scripts/check-levels.mjs",
+      "sha256": "80906503d5c1d825d0944ecc8bc9c18e115eda1283e3eae25af45beea38c45c0",
+      "deleted": false
+    },
+    {
+      "path": "scripts/check-sanity-browser.mjs",
+      "sha256": "c9bb46a8bdfb5ef0cec9f45e971b0558f3602e5be8d223ce72c84b2fd53b6ce7",
+      "deleted": false
+    },
+    {
+      "path": "scripts/check-ux.mjs",
+      "sha256": null,
+      "deleted": true
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha256": "ca14a5fef756690044e85fa2c5bb747c0eb723c6068e2f58bf2e1bf920047983",
+      "deleted": false
+    },
+    {
+      "path": "scripts/render-catalog.mjs",
+      "sha256": "e23f0f2898adb4c18bcf55b2496b6fe853669924b765a763ab18afa109e50858",
+      "deleted": false
+    },
+    {
+      "path": "scripts/render-home-trips.mjs",
+      "sha256": "08ee99c6009f8db87b06093fae130b22fcf0eb5aa3a14c31324ebd5d7cc9cbff",
+      "deleted": false
+    },
+    {
+      "path": "scripts/render-level-trips.mjs",
+      "sha256": "ede915c9f86e5efd7eaf862e4a686eeb598189bf1468c413984f01a48b49865f",
+      "deleted": false
+    },
+    {
+      "path": "scripts/render-trips.mjs",
+      "sha256": "82cf5b5e6e7d85060fb08196993a54d8b0d5456568af7d7eb5496fadc23754d8",
+      "deleted": false
+    },
+    {
+      "path": "scripts/sanity-trips.mjs",
+      "sha256": "8474a0bd86407b6790e43dcdc533da5468a547cdd79bdc13d905f8252f290f47",
+      "deleted": false
+    },
+    {
+      "path": "scripts/sanity.test.mjs",
+      "sha256": "5ad34ee15e1125355b74d5ffbc49b2ae7e4e5f7a29fd2ba0593414c653814daa",
+      "deleted": false
+    },
+    {
+      "path": "scripts/trip-model.mjs",
+      "sha256": "05862d03f449201a57f66c4a2ac7bfa7fd0c1fbb6451ab75aea19a92c2b29f04",
+      "deleted": false
+    },
+    {
+      "path": "scripts/trip-model.test.mjs",
+      "sha256": "dc2d554ceda5f976fb11306a523848640d0bb5e194f3f331cdc2f095966aa9b7",
+      "deleted": false
+    }
+  ],
+  "newFilesScope": "docs/qa/2026-10-24-limpieza-viajes/ (this task only); other pre-existing untracked QA/Sanity files left untouched",
+  "newFiles": [
+    "README.md",
+    "about.txt",
+    "base-check.txt",
+    "base-test.txt",
+    "build.txt",
+    "check.txt",
+    "dialogs-results.json",
+    "dialogs.txt",
+    "faqs.txt",
+    "independent-check.txt",
+    "independent-test.txt",
+    "levels-base.json",
+    "levels-candidate.json",
+    "levels-comparison.json",
+    "reference-audit.json",
+    "revision-independiente.md",
+    "sanity-browser.txt",
+    "studio-check.txt",
+    "tests.txt",
+    "version.json"
+  ]
+}

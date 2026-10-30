@@ -1,0 +1,964 @@
+
+> lets-surf-together-home@0.1.0 test
+> node --test scripts/*.test.mjs
+
+TAP version 13
+# Subtest: level all and month preserve compatible destinations
+ok 1 - level all and month preserve compatible destinations
+  ---
+  duration_ms: 12.829709
+  type: 'test'
+  ...
+# Subtest: level 1 and month preserve compatible destinations
+ok 2 - level 1 and month preserve compatible destinations
+  ---
+  duration_ms: 0.580026
+  type: 'test'
+  ...
+# Subtest: level 2 and month preserve compatible destinations
+ok 3 - level 2 and month preserve compatible destinations
+  ---
+  duration_ms: 0.306641
+  type: 'test'
+  ...
+# Subtest: level 3 and month preserve compatible destinations
+ok 4 - level 3 and month preserve compatible destinations
+  ---
+  duration_ms: 0.231776
+  type: 'test'
+  ...
+# Subtest: level 4 and month preserve compatible destinations
+ok 5 - level 4 and month preserve compatible destinations
+  ---
+  duration_ms: 0.318256
+  type: 'test'
+  ...
+# Subtest: recognises exact numeric levels and calendar months; ignores obsolete states
+ok 6 - recognises exact numeric levels and calendar months; ignores obsolete states
+  ---
+  duration_ms: 0.360927
+  type: 'test'
+  ...
+# Subtest: months include both ends, year boundaries and valid leap days
+ok 7 - months include both ends, year boundaries and valid leap days
+  ---
+  duration_ms: 0.522213
+  type: 'test'
+  ...
+# Subtest: every date shares its trip range, while Morocco products filter independently
+ok 8 - every date shares its trip range, while Morocco products filter independently
+  ---
+  duration_ms: 0.298994
+  type: 'test'
+  ...
+# Subtest: missing, null and empty levels retain model defaults
+ok 9 - missing, null and empty levels retain model defaults
+  ---
+  duration_ms: 0.971258
+  type: 'test'
+  ...
+# Subtest: filtering, empty results and clearing never mutate trips
+ok 10 - filtering, empty results and clearing never mutate trips
+  ---
+  duration_ms: 1.206946
+  type: 'test'
+  ...
+# Subtest: catalogue renders every trip once, shared home cards and generated month options
+ok 11 - catalogue renders every trip once, shared home cards and generated month options
+  ---
+  duration_ms: 90.512836
+  type: 'test'
+  ...
+# Subtest: home date panel contains only departures, while price and one direct trip link stay outside
+ok 12 - home date panel contains only departures, while price and one direct trip link stay outside
+  ---
+  duration_ms: 46.021956
+  type: 'test'
+  ...
+# Subtest: missing and mixed prices never inherit an obsolete trip price
+ok 13 - missing and mixed prices never inherit an obsolete trip price
+  ---
+  duration_ms: 0.914747
+  type: 'test'
+  ...
+# Subtest: all published trips remain reachable, with three chronological highlights
+ok 14 - all published trips remain reachable, with three chronological highlights
+  ---
+  duration_ms: 2.909919
+  type: 'test'
+  ...
+# Subtest: full, pending, missing photographs, unusual names and empty catalogue stay honest and safe
+ok 15 - full, pending, missing photographs, unusual names and empty catalogue stay honest and safe
+  ---
+  duration_ms: 7.429342
+  type: 'test'
+  ...
+# Subtest: preview labels the earliest departure and preserves its direct-link description
+ok 16 - preview labels the earliest departure and preserves its direct-link description
+  ---
+  duration_ms: 2.824434
+  type: 'test'
+  ...
+# Subtest: pending cards keep the next-date label without inventing a departure
+ok 17 - pending cards keep the next-date label without inventing a departure
+  ---
+  duration_ms: 0.5205
+  type: 'test'
+  ...
+# Subtest: date text is escaped in the panel and preview
+ok 18 - date text is escaped in the panel and preview
+  ---
+  duration_ms: 0.630967
+  type: 'test'
+  ...
+# Subtest: published next dates compact on the card without changing full departure dates
+ok 19 - published next dates compact on the card without changing full departure dates
+  ---
+  duration_ms: 0.647913
+  type: 'test'
+  ...
+# Subtest: level trips share home cards, pricing and date controls while retaining filter metadata
+ok 20 - level trips share home cards, pricing and date controls while retaining filter metadata
+  ---
+  duration_ms: 1.916562
+  type: 'test'
+  ...
+# Subtest: empty level collections preserve the help and native empty-state contract
+ok 21 - empty level collections preserve the help and native empty-state contract
+  ---
+  duration_ms: 0.985267
+  type: 'test'
+  ...
+# Subtest: local offers survive navigation through home, levels, catalogue and canonical/historical details without altering dist
+ok 22 - local offers survive navigation through home, levels, catalogue and canonical/historical details without altering dist
+  ---
+  duration_ms: 136.916992
+  type: 'test'
+  ...
+# Subtest: published preview remains byte-for-byte dist without the explicit local-preview option
+ok 23 - published preview remains byte-for-byte dist without the explicit local-preview option
+  ---
+  duration_ms: 15.647834
+  type: 'test'
+  ...
+# Subtest: missing local configuration falls back to dist; an invalid configuration fails visibly
+ok 24 - missing local configuration falls back to dist; an invalid configuration fails visibly
+  ---
+  duration_ms: 7.428336
+  type: 'test'
+  ...
+# Subtest: all eight client categories map by destination and exact start/end, regardless of order
+ok 25 - all eight client categories map by destination and exact start/end, regardless of order
+  ---
+  duration_ms: 3.384731
+  type: 'test'
+  ...
+# Subtest: pending, full and unmapped trips expose consultation without a form or signup link
+ok 26 - pending, full and unmapped trips expose consultation without a form or signup link
+  ---
+  duration_ms: 18.166821
+  type: 'test'
+  ...
+# Subtest: canonical multi-date pages require an explicit date; single and dated aliases preselect correctly
+ok 27 - canonical multi-date pages require an explicit date; single and dated aliases preselect correctly
+  ---
+  duration_ms: 3.366201
+  type: 'test'
+  ...
+# Subtest: Brevo payload keeps every supplied field, category value and required/optional distinction
+ok 28 - Brevo payload keeps every supplied field, category value and required/optional distinction
+  ---
+  duration_ms: 3.409396
+  type: 'test'
+  ...
+# Subtest: the optional CMS category is validated and preserved without exposing private metadata
+ok 29 - the optional CMS category is validated and preserved without exposing private metadata
+  ---
+  duration_ms: 2.598729
+  type: 'test'
+  ...
+# Subtest: registration links are additive and remain available in the native date fallback
+ok 30 - registration links are additive and remain available in the native date fallback
+  ---
+  duration_ms: 5.726158
+  type: 'test'
+  ...
+# Subtest: build generates forms and aliases, preserves static serving and removes forms when unpublished
+ok 31 - build generates forms and aliases, preserves static serving and removes forms when unpublished
+  ---
+  duration_ms: 470.06217
+  type: 'test'
+  ...
+# Subtest: local preview uses current registration templates and availability without mutating published output
+ok 32 - local preview uses current registration templates and availability without mutating published output
+  ---
+  duration_ms: 1.985777
+  type: 'test'
+  ...
+# Subtest: split Morocco signups and old URLs keep categories 3 and 4 isolated
+ok 33 - split Morocco signups and old URLs keep categories 3 and 4 isolated
+  ---
+  duration_ms: 3.803352
+  type: 'test'
+  ...
+# Subtest: five semantic steps keep every native field reachable before JavaScript enhancement
+ok 34 - five semantic steps keep every native field reachable before JavaScript enhancement
+  ---
+  duration_ms: 1.559082
+  type: 'test'
+  ...
+# Subtest: production explicitly requests published perspective, fixed target and separate private reader
+ok 35 - production explicitly requests published perspective, fixed target and separate private reader
+  ---
+  duration_ms: 8.269749
+  type: 'test'
+  ...
+# Subtest: an importer token is never reused as a production reader; failures do not leak credentials or bodies
+ok 36 - an importer token is never reused as a production reader; failures do not leak credentials or bodies
+  ---
+  duration_ms: 1.918099
+  type: 'test'
+  ...
+# Subtest: raw inspection uses importer token only; mutation is create-only and draft-only
+ok 37 - raw inspection uses importer token only; mutation is create-only and draft-only
+  ---
+  duration_ms: 1.194003
+  type: 'test'
+  ...
+# Subtest: adapter rejects drafts/releases, invalid business data, unsafe URLs and duplicate routes
+ok 38 - adapter rejects drafts/releases, invalid business data, unsafe URLs and duplicate routes
+  ---
+  duration_ms: 2.401704
+  type: 'test'
+  ...
+# Subtest: manual price, deposit and availability stay independent; decimals are not rounded to euros
+ok 39 - manual price, deposit and availability stay independent; decimals are not rounded to euros
+  ---
+  duration_ms: 20.488899
+  type: 'test'
+  ...
+# Subtest: optional content is omitted without fake services, photos or undefined markup; registration and level enquiries retain their context
+ok 40 - optional content is omitted without fake services, photos or undefined markup; registration and level enquiries retain their context
+  ---
+  duration_ms: 2.281766
+  type: 'test'
+  ...
+# Subtest: legacy application URLs are discarded; supported bookings use registration while enquiries stay contextual
+ok 41 - legacy application URLs are discarded; supported bookings use registration while enquiries stay contextual
+  ---
+  duration_ms: 15.955344
+  type: 'test'
+  ...
+# Subtest: public snapshot whitelists fields and strips internal notes and unknown nested metadata
+ok 42 - public snapshot whitelists fields and strips internal notes and unknown nested metadata
+  ---
+  duration_ms: 1.707795
+  type: 'test'
+  ...
+# Subtest: editorial tariff text is escaped instead of executing markup in a published card
+ok 43 - editorial tariff text is escaped instead of executing markup in a published card
+  ---
+  duration_ms: 2.168079
+  type: 'test'
+  ...
+# Subtest: exclusions and conditions remain visible independently of optional included services
+ok 44 - exclusions and conditions remain visible independently of optional included services
+  ---
+  duration_ms: 3.498388
+  type: 'test'
+  ...
+# Subtest: one read supplies home, catalogue, levels and details; stale demo content disappears and routes stay reachable
+ok 45 - one read supplies home, catalogue, levels and details; stale demo content disappears and routes stay reachable
+  ---
+  duration_ms: 444.240073
+  type: 'test'
+  ...
+# Subtest: reading/validation/render errors preserve the last output
+ok 46 - reading/validation/render errors preserve the last output
+  ---
+  duration_ms: 4.225547
+  type: 'test'
+  ...
+# Subtest: specific eight-draft mapping keeps unknown prices/availability, source distinctions and fixed deposits
+ok 47 - specific eight-draft mapping keeps unknown prices/availability, source distinctions and fixed deposits
+  ---
+  duration_ms: 2.381007
+  type: 'test'
+  ...
+# Subtest: collision detection covers IDs, slugs, drafts, published and release versions; existing manual edits are skipped
+ok 48 - collision detection covers IDs, slugs, drafts, published and release versions; existing manual edits are skipped
+  ---
+  duration_ms: 0.526459
+  type: 'test'
+  ...
+# Subtest: remote preflight includes a different document type without slug occupying a reserved ID
+ok 49 - remote preflight includes a different document type without slug occupying a reserved ID
+  ---
+  duration_ms: 2.894109
+  type: 'test'
+  ...
+# Subtest: dry run has zero writes; full validation and authenticated collision checks precede a single transaction
+ok 50 - dry run has zero writes; full validation and authenticated collision checks precede a single transaction
+  ---
+  duration_ms: 9.877403
+  type: 'test'
+  ...
+# Subtest: a full trip retains dates, prices and PDFs without registration, and can reopen
+ok 51 - a full trip retains dates, prices and PDFs without registration, and can reopen
+  ---
+  duration_ms: 8.151887
+  type: 'test'
+  ...
+# Subtest: manual availability labels have no free-place counts and override obsolete quantities
+ok 52 - manual availability labels have no free-place counts and override obsolete quantities
+  ---
+  duration_ms: 3.737425
+  type: 'test'
+  ...
+# Subtest: old documents without manual status retain enquiry when no availability was confirmed
+ok 53 - old documents without manual status retain enquiry when no availability was confirmed
+  ---
+  duration_ms: 0.45757
+  type: 'test'
+  ...
+# Subtest: trip details show the same active price, general price, saving and cup at all booking placements
+ok 54 - trip details show the same active price, general price, saving and cup at all booking placements
+  ---
+  duration_ms: 44.05793
+  type: 'test'
+  ...
+# Subtest: date selector keeps the offer and enquiry with its own date, and never borrows a missing price
+ok 55 - date selector keeps the offer and enquiry with its own date, and never borrows a missing price
+  ---
+  duration_ms: 3.893729
+  type: 'test'
+  ...
+# Subtest: full, inactive and pending tariffs never advertise a discount
+ok 56 - full, inactive and pending tariffs never advertise a discount
+  ---
+  duration_ms: 10.674497
+  type: 'test'
+  ...
+# Subtest: the price for a later promoted date names that date without changing the earliest trip facts
+not ok 57 - the price for a later promoted date names that date without changing the earliest trip facts
+  ---
+  duration_ms: 3.500649
+  type: 'test'
+  location: '/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-detail.test.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /Varias salidas/. Input:
+    
+    '<!doctype html>\n' +
+      '<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><title>El Palmar · Viaje de surf — Let’s Surf Together</title><meta name="description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:title" content="El Palmar · Let’s Surf Together"><meta property="og:description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:image" content="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"><meta property="og:url" content="https://lst-sepia.vercel.app/viajes/el-palmar/"><meta property="og:type" content="website"><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/trip-detail.css"></head>\n' +
+      '<body class="home-modern trip-page trip-designed" data-state="confirmed">\n' +
+      '<a class="skip-link" href="#contenido">Saltar al contenido</a>\n' +
+      '<header class="site-header trip-header trip-sales-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let’s Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Hablamos</span></a></nav><button type="button" class="button trip-header-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></header>\n' +
+      '<main id="contenido" tabindex="-1">\n' +
+      ' <section class="trip-cover" aria-labelledby="trip-title" data-carousel><div class="cover-carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Fotos de El Palmar; desliza para ver más"><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="0" type="button" aria-label="Ampliar foto 1: Foto de grupo junto a una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg" alt="Foto de grupo junto a una bandera de LST en El Palmar, 2024." width="1600" height="1000" fetchpriority="high" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="1" type="button" aria-label="Ampliar foto 2: Grupo junto a la playa con una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg" alt="Grupo junto a la playa con una bandera de LST en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="2" type="button" aria-label="Ampliar foto 3: Práctica de surfskate en grupo en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg" alt="Práctica de surfskate en grupo en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="3" type="button" aria-label="Ampliar foto 4: Sesión de estiramientos sobre una terraza en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg" alt="Sesión de estiramientos sobre una terraza en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="4" type="button" aria-label="Ampliar foto 5: Explicación de surf en la playa de El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg" alt="Explicación de surf en la playa de El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="5" type="button" aria-label="Ampliar foto 6: Surfista deslizándose en una ola en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg" alt="Surfista deslizándose en una ola en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure></div><div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="trip-cover-level">Todos los niveles</p><h1 id="trip-title">El Palmar</h1></div><div class="cover-carousel-controls"><div class="rail-controls"><button type="button" data-carousel-prev aria-label="Fotos del viaje: anterior"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-carousel-next aria-label="Fotos del viaje: siguiente"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><span data-carousel-counter aria-live="polite">01 / 06</span></div></section>\n' +
+      ' <div class="trip-reassurance"><span class="trip-location">Vejer de la Frontera · Cádiz</span><span>4 noches</span><span>Surf en grupo</span></div>\n' +
+      ' <nav class="trip-breadcrumb trip-shell" aria-label="Breadcrumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/viajes/">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">El Palmar</span></nav>\n' +
+      ' <div class="trip-layout">\n' +
+      '  <article class="trip-content">\n' +
+      '   <section id="destino" class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">EL DESTINO</p><h2 id="trip-summary-title">¿Por qué El Palmar?</h2><p class="trip-kickoff">Cambiar de ritmo, dedicarle tiempo al surf y compartir los ratos entre baño y baño. El Palmar es una invitación a hacer sitio a todo eso.</p><dl class="trip-quick-facts"><div><dt>El tiempo fuera</dt><dd><strong>4</strong><span>noches</span></dd></div><div><dt>Tu nivel</dt><dd><strong>I–IV</strong><span>todos los niveles</span></dd></div><div><dt>El grupo</dt><dd><strong>30<small> máx.</small></strong><span>personas por salida</span></dd></div></dl><div class="trip-price-summary"><div class="trip-offer"><p class="trip-offer-label">Early bird <strong>100 € de descuento</strong></p><p class="trip-offer-condition">Primeras 8 plazas</p><p class="trip-offer-date">Tarifa para el La fecha posterior</p></div><p class="trip-summary-price"><del><span class="visually-hidden">Precio general: </span>699 €</del> <strong>Desde 599 €</strong><span>por persona</span></p><p class="trip-summary-price-note">Tarifa vigente para el cupo indicado. Confirmamos disponibilidad contigo.</p><button type="button" class="button trip-summary-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></div></section>\n' +
+      '   <nav class="trip-section-nav" aria-label="En este viaje"><a href="#destino">El destino</a><a href="#nivel">Para quién</a><a href="#plan">Plan de surf</a><a href="#alojamiento">Alojamiento</a><a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a></nav>\n' +
+      '   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>¿Para quién es este viaje?</h2><p class="level-fixed-note">Todos los niveles</p></div><p>Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras.</p><div class="level-actions"><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.'... 24610 more characters
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    <!doctype html>
+    <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><title>El Palmar · Viaje de surf — Let’s Surf Together</title><meta name="description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:title" content="El Palmar · Let’s Surf Together"><meta property="og:description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:image" content="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"><meta property="og:url" content="https://lst-sepia.vercel.app/viajes/el-palmar/"><meta property="og:type" content="website"><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/trip-detail.css"></head>
+    <body class="home-modern trip-page trip-designed" data-state="confirmed">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header trip-header trip-sales-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let’s Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Hablamos</span></a></nav><button type="button" class="button trip-header-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></header>
+    <main id="contenido" tabindex="-1">
+     <section class="trip-cover" aria-labelledby="trip-title" data-carousel><div class="cover-carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Fotos de El Palmar; desliza para ver más"><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="0" type="button" aria-label="Ampliar foto 1: Foto de grupo junto a una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg" alt="Foto de grupo junto a una bandera de LST en El Palmar, 2024." width="1600" height="1000" fetchpriority="high" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="1" type="button" aria-label="Ampliar foto 2: Grupo junto a la playa con una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg" alt="Grupo junto a la playa con una bandera de LST en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="2" type="button" aria-label="Ampliar foto 3: Práctica de surfskate en grupo en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg" alt="Práctica de surfskate en grupo en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="3" type="button" aria-label="Ampliar foto 4: Sesión de estiramientos sobre una terraza en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg" alt="Sesión de estiramientos sobre una terraza en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="4" type="button" aria-label="Ampliar foto 5: Explicación de surf en la playa de El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg" alt="Explicación de surf en la playa de El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="5" type="button" aria-label="Ampliar foto 6: Surfista deslizándose en una ola en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg" alt="Surfista deslizándose en una ola en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure></div><div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="trip-cover-level">Todos los niveles</p><h1 id="trip-title">El Palmar</h1></div><div class="cover-carousel-controls"><div class="rail-controls"><button type="button" data-carousel-prev aria-label="Fotos del viaje: anterior"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-carousel-next aria-label="Fotos del viaje: siguiente"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><span data-carousel-counter aria-live="polite">01 / 06</span></div></section>
+     <div class="trip-reassurance"><span class="trip-location">Vejer de la Frontera · Cádiz</span><span>4 noches</span><span>Surf en grupo</span></div>
+     <nav class="trip-breadcrumb trip-shell" aria-label="Breadcrumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/viajes/">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">El Palmar</span></nav>
+     <div class="trip-layout">
+      <article class="trip-content">
+       <section id="destino" class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">EL DESTINO</p><h2 id="trip-summary-title">¿Por qué El Palmar?</h2><p class="trip-kickoff">Cambiar de ritmo, dedicarle tiempo al surf y compartir los ratos entre baño y baño. El Palmar es una invitación a hacer sitio a todo eso.</p><dl class="trip-quick-facts"><div><dt>El tiempo fuera</dt><dd><strong>4</strong><span>noches</span></dd></div><div><dt>Tu nivel</dt><dd><strong>I–IV</strong><span>todos los niveles</span></dd></div><div><dt>El grupo</dt><dd><strong>30<small> máx.</small></strong><span>personas por salida</span></dd></div></dl><div class="trip-price-summary"><div class="trip-offer"><p class="trip-offer-label">Early bird <strong>100 € de descuento</strong></p><p class="trip-offer-condition">Primeras 8 plazas</p><p class="trip-offer-date">Tarifa para el La fecha posterior</p></div><p class="trip-summary-price"><del><span class="visually-hidden">Precio general: </span>699 €</del> <strong>Desde 599 €</strong><span>por persona</span></p><p class="trip-summary-price-note">Tarifa vigente para el cupo indicado. Confirmamos disponibilidad contigo.</p><button type="button" class="button trip-summary-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></div></section>
+       <nav class="trip-section-nav" aria-label="En este viaje"><a href="#destino">El destino</a><a href="#nivel">Para quién</a><a href="#plan">Plan de surf</a><a href="#alojamiento">Alojamiento</a><a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a></nav>
+       <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>¿Para quién es este viaje?</h2><p class="level-fixed-note">Todos los niveles</p></div><p>Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras.</p><div class="level-actions"><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar mi nivel</span></a></div></section>
+    
+    
+       <section class="trip-programme trip-block" id="plan" aria-labelledby="surf-plan-title"><p class="eyebrow">SURF Y PROGRESO</p><h2 id="surf-plan-title">Plan de surf.</h2><div class="programme-full"><h3>El programa del viaje</h3><div class="plan-list"><details class="plan-item" open><summary><span class="plan-number" aria-hidden="true">01</span><span>Al agua, cada día.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>4 clases de sábado a martes; tres grupos y videocorrecciones. Material y seguro de escuela local.</p></details>
+    <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">02</span><span>El surf también se entrena fuera.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Surfskate con horarios por grupo; Animal Flow y movilidad diarios.</p></details>
+    <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">03</span><span>Después de la última ola.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Visita a Conil, ping pong, juegos y barbacoa.</p></details>
+    <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">04</span><span>El plan cuando cae el sol.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Viernes: bienvenida. Sábado: ambiente y posiblemente música en directo. Domingo: juegos en casa. Lunes: fiesta 80/90; planes opcionales y respeto al descanso.</p></details></div></div><details class="programme-context"><summary>Sobre este viaje <span aria-hidden="true">+</span></summary><p class="trip-intro">En Let’s Surf Together creemos que un surftrip no es solo surfear. Es compartir, aprender y vivir una experiencia que se queda contigo mucho después de volver a casa Este puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con más ambiente surfero del sur, y queremos que formes parte de ello. Serán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel, videocorrecciones para pulir cada detalle de tu técnica, surfskate en pista privada y Animal Flow para sentirte ágil dentro y fuera del agua. Y fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche con fiesta temática de los 80 y 90 Es el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve encantadaaaa.</p></details><div class="surf-team-note"><p>Lucas te acompaña durante el viaje, comparte las sesiones y está cerca para ayudarte a disfrutar del surf y del grupo.</p><ul class="trip-team-roles"><li>4 clases de surf en 3 grupos según nivel</li></ul><a class="text-link" href="/conocenos/#acompanamiento">Conoce al equipo de LST</a></div></section>
+       <section id="alojamiento" class="trip-block stay-block stay-compact" data-carousel><div class="section-heading"><div><p class="eyebrow">DESCANSAR, COMPARTIR, REPETIR</p><h2>Alojamiento y comidas.</h2></div></div><p>Nexo Surfhouse, 200 m de playa; habitaciones dobles/triples, jardín, azotea, pista de surfskate, ping pong, barbacoa, comedor, cafetería y parking. Petición de compartir habitación por WhatsApp.</p></section>
+       <section id="incluye" class="trip-block trip-costs"><p class="eyebrow">EL PRECIO, AL DETALLE</p><h2>Incluido y no incluido.</h2><div class="inclusion-grid"><div class="inclusion-list" aria-labelledby="included-title"><h3 id="included-title"><span aria-hidden="true">✓</span> Incluido</h3><div class="inclusion-groups"><div class="inclusion-group"><svg class="trip-sketch " aria-hidden="true" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8m0 9h23v4M3 13h23v8M7 13V8h15v5M7 8V5h15v3"/></svg><h4>Cama & mesa</h4><ul><li>4 noches en Nexo Surfhouse, a 200 m de la playa</li><li>Pensión completa: cena del viernes a comida del martes</li></ul></div><div class="inclusion-group"><svg class="trip-sketch " aria-hidden="true" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c4 0 4-7 9-7 4 0 5 5 9 5M3 22c4 0 5-3 9-3s5 3 9 3M13 10c-2-5 4-8 7-4-3-1-4 2-3 4"/></svg><h4>Surf & movimiento</h4><ul><li>4 clases de surf en 3 grupos según nivel</li><li>Material y seguro de la escuela local</li><li>Videocorrecciones por grupos</li><li>Surfskate en pista privada</li><li>Animal Flow y movilidad</li></ul></div><div class="inclusion-group"><svg class="trip-sketch " aria-hidden="true" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9a6 6 0 1 0 0 12 6 6 0 0 0 0-12ZM15 2v3m0 20v3M2 15h3m20 0h3M6 6l2 2m14 14 2 2M6 24l2-2M22 8l2-2"/></svg><h4>El resto del plan</h4><ul><li>Visita a Conil</li><li>Barbacoa, juegos y actividades de grupo</li><li>Fiesta temática de los 80 y 90</li></ul></div></div></div><div class="inclusion-list exclusion-list" aria-labelledby="excluded-title"><h3 id="excluded-title"><span aria-hidden="true">↗</span> No incluido</h3><ul><li>Transporte (coches compartidos)</li></ul></div></div></section>
+       <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Preguntas frecuentes.</h2><div class="faq-list"><details><summary>¿Cómo preparo el viaje?<span aria-hidden="true">+</span></summary><div class="practical-grid"><article><h3>Cómo llegar y moverte</h3><p>El transporte hasta el destino no está incluido. Consulta cómo coordinar coches compartidos con el grupo.</p></article><article><h3>Las comidas, claras desde el principio</h3><p>Pensión completa: cena del viernes a comida del martes</p></article><article><h3>Tabla, neopreno y material</h3><p>Material y seguro de la escuela local</p></article><article><h3>El seguro para tu viaje</h3><p>Las clases incluyen el seguro de la escuela local. Esa cobertura es distinta de un seguro de viaje.</p></article></div></details><details><summary>¿El programa de surf es fijo?<span aria-hidden="true">+</span></summary><p>El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar.</p></details><details><summary>¿Tengo que participar en todos los planes?<span aria-hidden="true">+</span></summary><p>Puedes vivir los ratos libres a tu ritmo. La fiesta y los planes fuera del agua son una invitación a compartir; también hay espacio para descansar, respetando los horarios del grupo.</p></details></div><a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a></section>
+       <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">INSCRIPCIÓN AL VIAJE</p><h2>¿Te vienes?</h2><p>Elige la fecha que te encaje y completa el formulario de inscripción.</p><button type="button" class="button reserve-main" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button><a class="button reserve-whatsapp" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer" aria-label="¿Tienes dudas? Hablamos · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>¿Tienes dudas? Hablamos</span></a><p class="fine-print">La inscripción no confirma la reserva. El equipo revisará tu solicitud y te indicará los siguientes pasos.</p><details class="booking-conditions"><summary>Pago y confirmación de la plaza <span aria-hidden="true">+</span></summary><dl class="trip-facts"><div><dt>Señal</dt><dd>250 €</dd></div><div><dt>Capacidad total</dt><dd>30 personas</dd></div><div><dt>Disponibilidad</dt><dd>Plazas disponibles</dd></div></dl><p class="fine-print">Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p><p class="fine-print">La inscripción es una solicitud de plaza. El equipo revisa la disponibilidad y te indica cómo confirmar la reserva.</p><p class="trip-notice">La solicitud inicia una consulta; el equipo confirmará la reserva contigo.</p></details><noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Fechas</h2><article><h3>4 dic 2026 — 8 dic 2026</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del 4 dic 2026 — 8 dic 2026"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a><p><strong>699 €</strong></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="button trip-registration" data-registration="el-palmar" href="/inscripciones/el-palmar/?salida=one">Inscribirme en esta fecha</a><a class="button" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%204%20dic%202026%20%E2%80%94%208%20dic%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar esta fecha · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar esta fecha</span></a></article><article><h3>La fecha posterior</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del La fecha posterior"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a><div class="trip-offer"><p class="trip-offer-label">Early bird <strong>100 € de descuento</strong></p><p class="trip-offer-condition">Primeras 8 plazas</p></div><p><del><span class="visually-hidden">Precio general: </span>699 €</del> <strong>599 €</strong></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="button" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%20La%20fecha%20posterior.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar esta fecha · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar esta fecha</span></a></article></section></noscript></section>
+      </article>
+      <aside class="trip-booking" aria-label="Consultar este viaje"><div class="booking-card"><p class="eyebrow">PLAZAS DISPONIBLES</p><p class="booking-trip-name">El Palmar</p><div class="trip-offer"><p class="trip-offer-label">Early bird <strong>100 € de descuento</strong></p><p class="trip-offer-condition">Primeras 8 plazas</p><p class="trip-offer-date">Tarifa para el La fecha posterior</p></div><p class="booking-card-price"><del><span class="visually-hidden">Precio general: </span>699 €</del> <strong>Desde 599 €</strong></p><p class="booking-card-price-note">Por persona · tarifa vigente para el cupo indicado</p><dl><div><dt>Fechas</dt><dd>2 salidas</dd></div><div><dt>Duración</dt><dd>4 noches</dd></div><div><dt>Nivel de surf</dt><dd>Todos los niveles</dd></div></dl><button type="button" class="button booking-card-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button><p class="booking-card-help">Solicita tu plaza. El equipo te acompaña con los siguientes pasos.</p><a class="button booking-whatsapp" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer" aria-label="Hablamos por WhatsApp · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Hablamos por WhatsApp</span></a><details class="booking-page-nav"><summary>Explora el viaje</summary><nav aria-label="Secciones del viaje"><a href="#destino">El destino</a><a href="#nivel">Para quién</a><a href="#plan">Plan de surf</a><a href="#alojamiento">Alojamiento</a><a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a></nav></details></div></aside>
+     </div>
+     <section class="related-section"><div class="trip-shell"><p class="eyebrow">SIGUE MIRANDO</p><h2>¿Y si tu próxima ola está aquí?</h2><div class="related-list"></div><a class="text-link" href="/viajes/">Ver todos los viajes</a></div></section>
+    </main>
+    <footer class="trip-footer trip-shell"><a class="brand" href="/"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126" loading="lazy"></a><div><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener">@letsurftogether</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#experiencia">La experiencia</a><a href="/#reservar">Cómo reservar</a></div><p>© 2026 LET’S SURF TOGETHER</p></footer>
+    <div class="trip-dock" aria-label="Fechas e inscripción"><div><span class="dock-offer">Early bird · Primeras 8 plazas</span><p class="dock-price"><del><span class="visually-hidden">Precio general: </span>699 €</del> <strong>Desde 599 €</strong></p><span>por persona · 4 noches</span></div><button type="button" class="button dock-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></div>
+    <dialog class="photo-dialog" aria-labelledby="photo-title"><div class="photo-heading"><div><p id="photo-title">Fotos de El Palmar</p><p class="photo-instruction">Desliza para ver más</p></div><button class="photo-close" type="button" aria-label="Cerrar fotos">Cerrar</button></div><div class="photo-strip" tabindex="0" role="region" aria-label="Galería de fotos, desplazamiento horizontal"><figure class="photo-slide" aria-label="Foto 1 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg" alt="Foto de grupo junto a una bandera de LST en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 2 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg" alt="Grupo junto a la playa con una bandera de LST en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 3 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg" alt="Práctica de surfskate en grupo en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 4 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg" alt="Sesión de estiramientos sobre una terraza en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 5 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg" alt="Explicación de surf en la playa de El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 6 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg" alt="Surfista deslizándose en una ola en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure></div><div class="photo-controls"><button type="button" data-photo-prev aria-label="Foto anterior">Anterior</button><span class="photo-counter" aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-photo-next aria-label="Foto siguiente">Siguiente</button></div></dialog>
+    <dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">El Palmar / SURFTRIP</p><h2 id="departure-dialog-title">Fechas.</h2></div><button class="departure-close" type="button">Cerrar <span aria-hidden="true">×</span></button></div><p id="departure-dialog-description" class="departure-dialog-intro">Todos los niveles · Mismo programa en todas las fechas.</p><div class="departure-dialog-list"><article class="departure-option"><div class="departure-option-top"><p class="departure-option-status"><span class="departure-index" aria-hidden="true">01</span> Plazas disponibles</p><div class="departure-option-date"><h3>4 dic 2026 — 8 dic 2026</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del 4 dic 2026 — 8 dic 2026"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div><p class="departure-option-meta">4 noches · 30 personas</p></div><div class="departure-option-booking"><p class="departure-option-price"><strong>699 €</strong><span>por persona</span></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="button trip-registration" data-registration="el-palmar" href="/inscripciones/el-palmar/?salida=one">Inscribirme en esta fecha</a><a class="departure-enquiry" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%204%20dic%202026%20%E2%80%94%208%20dic%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" data-departure="one" target="_blank" rel="noopener noreferrer" aria-label="Consultar El Palmar, 4 dic 2026 — 8 dic 2026, Todos los niveles, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Tengo una duda</span></a></div></article><article class="departure-option"><div class="departure-option-top"><p class="departure-option-status"><span class="departure-index" aria-hidden="true">02</span> Plazas disponibles</p><div class="departure-option-date"><h3>La fecha posterior</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del La fecha posterior"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div><p class="departure-option-meta">4 noches · 30 personas</p></div><div class="departure-option-booking"><div class="trip-offer"><p class="trip-offer-label">Early bird <strong>100 € de descuento</strong></p><p class="trip-offer-condition">Primeras 8 plazas</p></div><p class="departure-option-price"><del><span class="visually-hidden">Precio general: </span>699 €</del> <strong>599 €</strong><span>por persona</span></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="departure-enquiry" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%20La%20fecha%20posterior.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" data-departure="later" target="_blank" rel="noopener noreferrer" aria-label="Consultar El Palmar, La fecha posterior, Todos los niveles, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Tengo una duda</span></a></div></article></div><p class="departure-dialog-help">El PDF de cada fecha recoge su programa y condiciones. ¿Alguna duda? Puedes consultarnos antes de inscribirte.</p></dialog>
+    
+    <noscript><nav class="trip-static-nav" aria-label="Más páginas de LST"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav><style>.trip-designed .menu-toggle{display:none}.trip-designed .trip-sales-header{position:absolute}.trip-designed .trip-static-nav{display:flex;flex-wrap:wrap;gap:20px;padding:24px}</style></noscript>
+    <script src="/app.js" type="module"></script><script src="/trip.js" type="module"></script></body></html>
+    
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-detail.test.mjs:45:49)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: unknown cup, fractional savings and editor labels remain exact and escaped
+ok 58 - unknown cup, fractional savings and editor labels remain exact and escaped
+  ---
+  duration_ms: 2.350269
+  type: 'test'
+  ...
+# Subtest: native date enquiries remain reachable without JavaScript and keep the common range and per-date offers
+ok 59 - native date enquiries remain reachable without JavaScript and keep the common range and per-date offers
+  ---
+  duration_ms: 3.384982
+  type: 'test'
+  ...
+# Subtest: the original service copy and restriction content are preserved while PDF headings are cleaned
+ok 60 - the original service copy and restriction content are preserved while PDF headings are cleaned
+  ---
+  duration_ms: 3.832928
+  type: 'test'
+  ...
+# Subtest: uppercase editorial conditions survive PDF typography cleanup
+ok 61 - uppercase editorial conditions survive PDF typography cleanup
+  ---
+  duration_ms: 1.536787
+  type: 'test'
+  ...
+# Subtest: no numeric price means no from prefix, while mixed durations are described per departure
+not ok 62 - no numeric price means no from prefix, while mixed durations are described per departure
+  ---
+  duration_ms: 2.000057
+  type: 'test'
+  location: '/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-detail.test.mjs:75:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /<div class="cover-key-facts"><span>Varias salidas<\/span><span>Según la salida<\/span>/. Input:
+    
+    '<!doctype html>\n' +
+      '<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><title>El Palmar · Viaje de surf — Let’s Surf Together</title><meta name="description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:title" content="El Palmar · Let’s Surf Together"><meta property="og:description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:image" content="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"><meta property="og:url" content="https://lst-sepia.vercel.app/viajes/el-palmar/"><meta property="og:type" content="website"><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/trip-detail.css"></head>\n' +
+      '<body class="home-modern trip-page trip-designed" data-state="confirmed">\n' +
+      '<a class="skip-link" href="#contenido">Saltar al contenido</a>\n' +
+      '<header class="site-header trip-header trip-sales-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let’s Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Hablamos</span></a></nav><button type="button" class="button trip-header-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></header>\n' +
+      '<main id="contenido" tabindex="-1">\n' +
+      ' <section class="trip-cover" aria-labelledby="trip-title" data-carousel><div class="cover-carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Fotos de El Palmar; desliza para ver más"><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="0" type="button" aria-label="Ampliar foto 1: Foto de grupo junto a una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg" alt="Foto de grupo junto a una bandera de LST en El Palmar, 2024." width="1600" height="1000" fetchpriority="high" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="1" type="button" aria-label="Ampliar foto 2: Grupo junto a la playa con una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg" alt="Grupo junto a la playa con una bandera de LST en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="2" type="button" aria-label="Ampliar foto 3: Práctica de surfskate en grupo en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg" alt="Práctica de surfskate en grupo en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="3" type="button" aria-label="Ampliar foto 4: Sesión de estiramientos sobre una terraza en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg" alt="Sesión de estiramientos sobre una terraza en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="4" type="button" aria-label="Ampliar foto 5: Explicación de surf en la playa de El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg" alt="Explicación de surf en la playa de El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="5" type="button" aria-label="Ampliar foto 6: Surfista deslizándose en una ola en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg" alt="Surfista deslizándose en una ola en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure></div><div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="trip-cover-level">Todos los niveles</p><h1 id="trip-title">El Palmar</h1></div><div class="cover-carousel-controls"><div class="rail-controls"><button type="button" data-carousel-prev aria-label="Fotos del viaje: anterior"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-carousel-next aria-label="Fotos del viaje: siguiente"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><span data-carousel-counter aria-live="polite">01 / 06</span></div></section>\n' +
+      ' <div class="trip-reassurance"><span class="trip-location">Vejer de la Frontera · Cádiz</span><span>Según la salida</span><span>Surf en grupo</span></div>\n' +
+      ' <nav class="trip-breadcrumb trip-shell" aria-label="Breadcrumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/viajes/">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">El Palmar</span></nav>\n' +
+      ' <div class="trip-layout">\n' +
+      '  <article class="trip-content">\n' +
+      '   <section id="destino" class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">EL DESTINO</p><h2 id="trip-summary-title">¿Por qué El Palmar?</h2><p class="trip-kickoff">Cambiar de ritmo, dedicarle tiempo al surf y compartir los ratos entre baño y baño. El Palmar es una invitación a hacer sitio a todo eso.</p><dl class="trip-quick-facts"><div><dt>El tiempo fuera</dt><dd><strong>Según la salida</strong></dd></div><div><dt>Tu nivel</dt><dd><strong>I–IV</strong><span>todos los niveles</span></dd></div><div><dt>El grupo</dt><dd><strong>30<small> máx.</small></strong><span>personas por salida</span></dd></div></dl><div class="trip-price-summary"><p class="trip-summary-price"><strong>Precio por confirmar</strong><span>Consulta con el equipo</span></p><p class="trip-summary-price-note">Precio y programa por confirmar</p><button type="button" class="button trip-summary-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></div></section>\n' +
+      '   <nav class="trip-section-nav" aria-label="En este viaje"><a href="#destino">El destino</a><a href="#nivel">Para quién</a><a href="#plan">Plan de surf</a><a href="#alojamiento">Alojamiento</a><a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a></nav>\n' +
+      '   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>¿Para quién es este viaje?</h2><p class="level-fixed-note">Todos los niveles</p></div><p>Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras.</p><div class="level-actions"><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar mi nivel</span></a></div></section>\n' +
+      '\n' +
+      '\n' +
+      '   <section class="trip-programme trip-block" id="plan" aria-label'... 23362 more characters
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: |-
+    <!doctype html>
+    <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><title>El Palmar · Viaje de surf — Let’s Surf Together</title><meta name="description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:title" content="El Palmar · Let’s Surf Together"><meta property="og:description" content="Surftrip a El Palmar. 2 fechas disponibles. Todos los niveles. Consulta el programa y las fechas e inscríbete con el formulario."><meta property="og:image" content="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"><meta property="og:url" content="https://lst-sepia.vercel.app/viajes/el-palmar/"><meta property="og:type" content="website"><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/home.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/trip-detail.css"></head>
+    <body class="home-modern trip-page trip-designed" data-state="confirmed">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header trip-header trip-sales-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let’s Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a class="lst-nav-contact" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Hablamos</span></a></nav><button type="button" class="button trip-header-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></header>
+    <main id="contenido" tabindex="-1">
+     <section class="trip-cover" aria-labelledby="trip-title" data-carousel><div class="cover-carousel-track" data-carousel-track tabindex="0" role="region" aria-label="Fotos de El Palmar; desliza para ver más"><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="0" type="button" aria-label="Ampliar foto 1: Foto de grupo junto a una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg" alt="Foto de grupo junto a una bandera de LST en El Palmar, 2024." width="1600" height="1000" fetchpriority="high" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="1" type="button" aria-label="Ampliar foto 2: Grupo junto a la playa con una bandera de LST en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg" alt="Grupo junto a la playa con una bandera de LST en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="2" type="button" aria-label="Ampliar foto 3: Práctica de surfskate en grupo en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg" alt="Práctica de surfskate en grupo en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="3" type="button" aria-label="Ampliar foto 4: Sesión de estiramientos sobre una terraza en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg" alt="Sesión de estiramientos sobre una terraza en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="4" type="button" aria-label="Ampliar foto 5: Explicación de surf en la playa de El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg" alt="Explicación de surf en la playa de El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure><figure class="cover-carousel-slide"><button class="cover-image-button" data-photo="5" type="button" aria-label="Ampliar foto 6: Surfista deslizándose en una ola en El Palmar, 2024."><img class="trip-cover-image" src="https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg" alt="Surfista deslizándose en una ola en El Palmar, 2024." width="1600" height="1000" loading="lazy" decoding="async"></button></figure></div><div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="trip-cover-level">Todos los niveles</p><h1 id="trip-title">El Palmar</h1></div><div class="cover-carousel-controls"><div class="rail-controls"><button type="button" data-carousel-prev aria-label="Fotos del viaje: anterior"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4m6-6-6 6 6 6"/></svg></button><button type="button" data-carousel-next aria-label="Fotos del viaje: siguiente"><svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button></div><span data-carousel-counter aria-live="polite">01 / 06</span></div></section>
+     <div class="trip-reassurance"><span class="trip-location">Vejer de la Frontera · Cádiz</span><span>Según la salida</span><span>Surf en grupo</span></div>
+     <nav class="trip-breadcrumb trip-shell" aria-label="Breadcrumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/viajes/">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">El Palmar</span></nav>
+     <div class="trip-layout">
+      <article class="trip-content">
+       <section id="destino" class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">EL DESTINO</p><h2 id="trip-summary-title">¿Por qué El Palmar?</h2><p class="trip-kickoff">Cambiar de ritmo, dedicarle tiempo al surf y compartir los ratos entre baño y baño. El Palmar es una invitación a hacer sitio a todo eso.</p><dl class="trip-quick-facts"><div><dt>El tiempo fuera</dt><dd><strong>Según la salida</strong></dd></div><div><dt>Tu nivel</dt><dd><strong>I–IV</strong><span>todos los niveles</span></dd></div><div><dt>El grupo</dt><dd><strong>30<small> máx.</small></strong><span>personas por salida</span></dd></div></dl><div class="trip-price-summary"><p class="trip-summary-price"><strong>Precio por confirmar</strong><span>Consulta con el equipo</span></p><p class="trip-summary-price-note">Precio y programa por confirmar</p><button type="button" class="button trip-summary-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></div></section>
+       <nav class="trip-section-nav" aria-label="En este viaje"><a href="#destino">El destino</a><a href="#nivel">Para quién</a><a href="#plan">Plan de surf</a><a href="#alojamiento">Alojamiento</a><a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a></nav>
+       <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>¿Para quién es este viaje?</h2><p class="level-fixed-note">Todos los niveles</p></div><p>Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras.</p><div class="level-actions"><a class="text-link" href="/niveles/">Ver la guía de niveles</a><a class="button button-level" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar%2C%20pero%20quiero%20consultar%20si%20mi%20nivel%20de%20surf%20encaja.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar mi nivel · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar mi nivel</span></a></div></section>
+    
+    
+       <section class="trip-programme trip-block" id="plan" aria-labelledby="surf-plan-title"><p class="eyebrow">SURF Y PROGRESO</p><h2 id="surf-plan-title">Plan de surf.</h2><div class="programme-full"><h3>El programa del viaje</h3><div class="plan-list"><details class="plan-item" open><summary><span class="plan-number" aria-hidden="true">01</span><span>Al agua, cada día.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>4 clases de sábado a martes; tres grupos y videocorrecciones. Material y seguro de escuela local.</p></details>
+    <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">02</span><span>El surf también se entrena fuera.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Surfskate con horarios por grupo; Animal Flow y movilidad diarios.</p></details>
+    <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">03</span><span>Después de la última ola.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Visita a Conil, ping pong, juegos y barbacoa.</p></details>
+    <details class="plan-item"><summary><span class="plan-number" aria-hidden="true">04</span><span>El plan cuando cae el sol.</span><span class="plan-toggle" aria-hidden="true">+</span></summary><p>Viernes: bienvenida. Sábado: ambiente y posiblemente música en directo. Domingo: juegos en casa. Lunes: fiesta 80/90; planes opcionales y respeto al descanso.</p></details></div></div><details class="programme-context"><summary>Sobre este viaje <span aria-hidden="true">+</span></summary><p class="trip-intro">En Let’s Surf Together creemos que un surftrip no es solo surfear. Es compartir, aprender y vivir una experiencia que se queda contigo mucho después de volver a casa Este puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con más ambiente surfero del sur, y queremos que formes parte de ello. Serán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel, videocorrecciones para pulir cada detalle de tu técnica, surfskate en pista privada y Animal Flow para sentirte ágil dentro y fuera del agua. Y fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche con fiesta temática de los 80 y 90 Es el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve encantadaaaa.</p></details><div class="surf-team-note"><p>Lucas te acompaña durante el viaje, comparte las sesiones y está cerca para ayudarte a disfrutar del surf y del grupo.</p><ul class="trip-team-roles"><li>4 clases de surf en 3 grupos según nivel</li></ul><a class="text-link" href="/conocenos/#acompanamiento">Conoce al equipo de LST</a></div></section>
+       <section id="alojamiento" class="trip-block stay-block stay-compact" data-carousel><div class="section-heading"><div><p class="eyebrow">DESCANSAR, COMPARTIR, REPETIR</p><h2>Alojamiento y comidas.</h2></div></div><p>Nexo Surfhouse, 200 m de playa; habitaciones dobles/triples, jardín, azotea, pista de surfskate, ping pong, barbacoa, comedor, cafetería y parking. Petición de compartir habitación por WhatsApp.</p></section>
+       <section id="incluye" class="trip-block trip-costs"><p class="eyebrow">EL PRECIO, AL DETALLE</p><h2>Incluido y no incluido.</h2><div class="inclusion-grid"><div class="inclusion-list" aria-labelledby="included-title"><h3 id="included-title"><span aria-hidden="true">✓</span> Incluido</h3><div class="inclusion-groups"><div class="inclusion-group"><svg class="trip-sketch " aria-hidden="true" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8m0 9h23v4M3 13h23v8M7 13V8h15v5M7 8V5h15v3"/></svg><h4>Cama & mesa</h4><ul><li>4 noches en Nexo Surfhouse, a 200 m de la playa</li><li>Pensión completa: cena del viernes a comida del martes</li></ul></div><div class="inclusion-group"><svg class="trip-sketch " aria-hidden="true" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17c4 0 4-7 9-7 4 0 5 5 9 5M3 22c4 0 5-3 9-3s5 3 9 3M13 10c-2-5 4-8 7-4-3-1-4 2-3 4"/></svg><h4>Surf & movimiento</h4><ul><li>4 clases de surf en 3 grupos según nivel</li><li>Material y seguro de la escuela local</li><li>Videocorrecciones por grupos</li><li>Surfskate en pista privada</li><li>Animal Flow y movilidad</li></ul></div><div class="inclusion-group"><svg class="trip-sketch " aria-hidden="true" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9a6 6 0 1 0 0 12 6 6 0 0 0 0-12ZM15 2v3m0 20v3M2 15h3m20 0h3M6 6l2 2m14 14 2 2M6 24l2-2M22 8l2-2"/></svg><h4>El resto del plan</h4><ul><li>Visita a Conil</li><li>Barbacoa, juegos y actividades de grupo</li><li>Fiesta temática de los 80 y 90</li></ul></div></div></div><div class="inclusion-list exclusion-list" aria-labelledby="excluded-title"><h3 id="excluded-title"><span aria-hidden="true">↗</span> No incluido</h3><ul><li>Transporte (coches compartidos)</li></ul></div></div></section>
+       <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Preguntas frecuentes.</h2><div class="faq-list"><details><summary>¿Cómo preparo el viaje?<span aria-hidden="true">+</span></summary><div class="practical-grid"><article><h3>Cómo llegar y moverte</h3><p>El transporte hasta el destino no está incluido. Consulta cómo coordinar coches compartidos con el grupo.</p></article><article><h3>Las comidas, claras desde el principio</h3><p>Pensión completa: cena del viernes a comida del martes</p></article><article><h3>Tabla, neopreno y material</h3><p>Material y seguro de la escuela local</p></article><article><h3>El seguro para tu viaje</h3><p>Las clases incluyen el seguro de la escuela local. Esa cobertura es distinta de un seguro de viaje.</p></article></div></details><details><summary>¿El programa de surf es fijo?<span aria-hidden="true">+</span></summary><p>El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar.</p></details><details><summary>¿Tengo que participar en todos los planes?<span aria-hidden="true">+</span></summary><p>Puedes vivir los ratos libres a tu ritmo. La fiesta y los planes fuera del agua son una invitación a compartir; también hay espacio para descansar, respetando los horarios del grupo.</p></details></div><a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a></section>
+       <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">INSCRIPCIÓN AL VIAJE</p><h2>¿Te vienes?</h2><p>Elige la fecha que te encaje y completa el formulario de inscripción.</p><button type="button" class="button reserve-main" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button><a class="button reserve-whatsapp" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer" aria-label="¿Tienes dudas? Hablamos · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>¿Tienes dudas? Hablamos</span></a><p class="fine-print">La inscripción no confirma la reserva. El equipo revisará tu solicitud y te indicará los siguientes pasos.</p><details class="booking-conditions"><summary>Pago y confirmación de la plaza <span aria-hidden="true">+</span></summary><dl class="trip-facts"><div><dt>Señal</dt><dd>250 €</dd></div><div><dt>Capacidad total</dt><dd>30 personas</dd></div><div><dt>Disponibilidad</dt><dd>Plazas disponibles</dd></div></dl><p class="fine-print">Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p><p class="fine-print">La inscripción es una solicitud de plaza. El equipo revisa la disponibilidad y te indica cómo confirmar la reserva.</p><p class="trip-notice">La solicitud inicia una consulta; el equipo confirmará la reserva contigo.</p></details><noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Fechas</h2><article><h3>4 dic 2026 — 8 dic 2026</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del 4 dic 2026 — 8 dic 2026"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a><p><strong>Consultar precio</strong></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="button trip-registration" data-registration="el-palmar" href="/inscripciones/el-palmar/?salida=one">Inscribirme en esta fecha</a><a class="button" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%204%20dic%202026%20%E2%80%94%208%20dic%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar esta fecha · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar esta fecha</span></a></article><article><h3>Otra salida</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del Otra salida"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a><p><strong>Consultar precio</strong></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="button" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%20Otra%20salida.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar esta fecha · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Consultar esta fecha</span></a></article></section></noscript></section>
+      </article>
+      <aside class="trip-booking" aria-label="Consultar este viaje"><div class="booking-card"><p class="eyebrow">PLAZAS DISPONIBLES</p><p class="booking-trip-name">El Palmar</p><p class="booking-card-price"><strong>Precio por confirmar</strong></p><p class="booking-card-price-note">Precio y programa por confirmar</p><dl><div><dt>Fechas</dt><dd>2 salidas</dd></div><div><dt>Duración</dt><dd>Según la salida</dd></div><div><dt>Nivel de surf</dt><dd>Todos los niveles</dd></div></dl><button type="button" class="button booking-card-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button><p class="booking-card-help">Solicita tu plaza. El equipo te acompaña con los siguientes pasos.</p><a class="button booking-whatsapp" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20El%20Palmar.%20%C2%BFPodemos%20consultar%20las%20pr%C3%B3ximas%20salidas%3F" target="_blank" rel="noopener noreferrer" aria-label="Hablamos por WhatsApp · El Palmar, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Hablamos por WhatsApp</span></a><details class="booking-page-nav"><summary>Explora el viaje</summary><nav aria-label="Secciones del viaje"><a href="#destino">El destino</a><a href="#nivel">Para quién</a><a href="#plan">Plan de surf</a><a href="#alojamiento">Alojamiento</a><a href="#incluye">Incluido / No incluido</a><a href="#dudas">FAQs</a></nav></details></div></aside>
+     </div>
+     <section class="related-section"><div class="trip-shell"><p class="eyebrow">SIGUE MIRANDO</p><h2>¿Y si tu próxima ola está aquí?</h2><div class="related-list"></div><a class="text-link" href="/viajes/">Ver todos los viajes</a></div></section>
+    </main>
+    <footer class="trip-footer trip-shell"><a class="brand" href="/"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126" loading="lazy"></a><div><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener">@letsurftogether</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#experiencia">La experiencia</a><a href="/#reservar">Cómo reservar</a></div><p>© 2026 LET’S SURF TOGETHER</p></footer>
+    <div class="trip-dock" aria-label="Fechas e inscripción"><div><p class="dock-price"><strong>Precio por confirmar</strong></p><span>por persona · Según la salida</span></div><button type="button" class="button dock-cta" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Fechas</button></div>
+    <dialog class="photo-dialog" aria-labelledby="photo-title"><div class="photo-heading"><div><p id="photo-title">Fotos de El Palmar</p><p class="photo-instruction">Desliza para ver más</p></div><button class="photo-close" type="button" aria-label="Cerrar fotos">Cerrar</button></div><div class="photo-strip" tabindex="0" role="region" aria-label="Galería de fotos, desplazamiento horizontal"><figure class="photo-slide" aria-label="Foto 1 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg" alt="Foto de grupo junto a una bandera de LST en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption></figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 2 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg" alt="Grupo junto a la playa con una bandera de LST en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 3 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg" alt="Práctica de surfskate en grupo en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 4 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg" alt="Sesión de estiramientos sobre una terraza en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 5 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg" alt="Explicación de surf en la playa de El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure>
+    <figure class="photo-slide" aria-label="Foto 6 de 6"><img src="https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg" alt="Surfista deslizándose en una ola en El Palmar, 2024." width="1000" height="600" loading="lazy" decoding="async"><figcaption>Recuerdo de un viaje de LST a El Palmar en 2024.</figcaption></figure></div><div class="photo-controls"><button type="button" data-photo-prev aria-label="Foto anterior">Anterior</button><span class="photo-counter" aria-live="polite" aria-atomic="true">1 / 6</span><button type="button" data-photo-next aria-label="Foto siguiente">Siguiente</button></div></dialog>
+    <dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">El Palmar / SURFTRIP</p><h2 id="departure-dialog-title">Fechas.</h2></div><button class="departure-close" type="button">Cerrar <span aria-hidden="true">×</span></button></div><p id="departure-dialog-description" class="departure-dialog-intro">Todos los niveles · Mismo programa en todas las fechas.</p><div class="departure-dialog-list"><article class="departure-option"><div class="departure-option-top"><p class="departure-option-status"><span class="departure-index" aria-hidden="true">01</span> Plazas disponibles</p><div class="departure-option-date"><h3>4 dic 2026 — 8 dic 2026</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del 4 dic 2026 — 8 dic 2026"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div><p class="departure-option-meta">2 noches · 30 personas</p></div><div class="departure-option-booking"><p class="departure-option-price"><strong>Consultar precio</strong></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="button trip-registration" data-registration="el-palmar" href="/inscripciones/el-palmar/?salida=one">Inscribirme en esta fecha</a><a class="departure-enquiry" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%204%20dic%202026%20%E2%80%94%208%20dic%202026.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" data-departure="one" target="_blank" rel="noopener noreferrer" aria-label="Consultar El Palmar, 4 dic 2026 — 8 dic 2026, Todos los niveles, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Tengo una duda</span></a></div></article><article class="departure-option"><div class="departure-option-top"><p class="departure-option-status"><span class="departure-index" aria-hidden="true">02</span> Plazas disponibles</p><div class="departure-option-date"><h3>Otra salida</h3><a class="dossier-link departure-dossier" href="https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del Otra salida"><span class="dossier-format">PDF</span> Ver programa <svg class="action-arrow" aria-hidden="true" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></div><p class="departure-option-meta">7 noches · 30 personas</p></div><div class="departure-option-booking"><p class="departure-option-price"><strong>Consultar precio</strong></p><details class="departure-payment"><summary>Condiciones de pago</summary><p>Señal: 250 €</p><p>Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva.</p></details><a class="departure-enquiry" data-whatsapp="el-palmar" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST!%20Me%20interesa%20el%20viaje%20a%20El%20Palmar%20del%20Otra%20salida.%20%C2%BFPodemos%20consultar%20la%20disponibilidad%20y%20c%C3%B3mo%20reservar%20esta%20salida%3F" data-departure="later" target="_blank" rel="noopener noreferrer" aria-label="Consultar El Palmar, Otra salida, Todos los niveles, por WhatsApp"><svg class="whatsapp-icon" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.2 7.4c-.5.1-1 1.2-.6 2.4.7 2.4 3.2 4.9 5.8 5.5 1.2.3 2.1-.5 2.3-1.1.1-.3-1.8-1.3-2-1.1l-.9.8c-1.5-.5-2.9-1.8-3.5-3.2l.6-1c.2-.3-1.1-2.4-1.7-2.3Z"/></svg><span>Tengo una duda</span></a></div></article></div><p class="departure-dialog-help">El PDF de cada fecha recoge su programa y condiciones. ¿Alguna duda? Puedes consultarnos antes de inscribirte.</p></dialog>
+    
+    <noscript><nav class="trip-static-nav" aria-label="Más páginas de LST"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav><style>.trip-designed .menu-toggle{display:none}.trip-designed .trip-sales-header{position:absolute}.trip-designed .trip-static-nav{display:flex;flex-wrap:wrap;gap:20px;padding:24px}</style></noscript>
+    <script src="/app.js" type="module"></script><script src="/trip.js" type="module"></script></body></html>
+    
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-detail.test.mjs:79:9)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: the reading journey preserves custom programme titles, visible services and a useful FAQ fallback
+ok 63 - the reading journey preserves custom programme titles, visible services and a useful FAQ fallback
+  ---
+  duration_ms: 1.733429
+  type: 'test'
+  ...
+# Subtest: the booking sidebar keeps the range concise while the level section retains the full requirement and paired actions
+ok 64 - the booking sidebar keeps the range concise while the level section retains the full requirement and paired actions
+  ---
+  duration_ms: 1.769709
+  type: 'test'
+  ...
+# Subtest: multiple dates expose their own PDF next to each date with and without JavaScript, without duplicating them in the sidebar
+ok 65 - multiple dates expose their own PDF next to each date with and without JavaScript, without duplicating them in the sidebar
+  ---
+  duration_ms: 4.560871
+  type: 'test'
+  ...
+# Subtest: single-date PDF fallback stays available and registration is the primary action at every booking placement
+ok 66 - single-date PDF fallback stays available and registration is the primary action at every booking placement
+  ---
+  duration_ms: 1.531224
+  type: 'test'
+  ...
+# Subtest: date-specific registration links preserve the departure parameter and closed dates keep enquiries only
+ok 67 - date-specific registration links preserve the departure parameter and closed dates keep enquiries only
+  ---
+  duration_ms: 2.920075
+  type: 'test'
+  ...
+# Subtest: full, pending and unmapped trips keep consultation without promising an unavailable registration form
+ok 68 - full, pending and unmapped trips keep consultation without promising an unavailable registration form
+  ---
+  duration_ms: 6.344261
+  type: 'test'
+  ...
+# Subtest: accommodation without photos is compact and preserves useful facts while photographed accommodation remains visual
+ok 69 - accommodation without photos is compact and preserves useful facts while photographed accommodation remains visual
+  ---
+  duration_ms: 4.464656
+  type: 'test'
+  ...
+# Subtest: inclusions use explicit labels and preserve all included services, exclusions and conditions
+ok 70 - inclusions use explicit labels and preserve all included services, exclusions and conditions
+  ---
+  duration_ms: 2.237348
+  type: 'test'
+  ...
+# Subtest: a full multi-date trip still exposes all dates and their PDFs, with alternatives instead of registration
+ok 71 - a full multi-date trip still exposes all dates and their PDFs, with alternatives instead of registration
+  ---
+  duration_ms: 2.290264
+  type: 'test'
+  ...
+# Subtest: distinct level introduction and autonomy requirement both remain visible, without duplicating identical copy
+ok 72 - distinct level introduction and autonomy requirement both remain visible, without duplicating identical copy
+  ---
+  duration_ms: 7.045771
+  type: 'test'
+  ...
+# Subtest: trip navigation exposes the same pages as the rest of the site and loads both shared navigation and trip interactions
+ok 73 - trip navigation exposes the same pages as the rest of the site and loads both shared navigation and trip interactions
+  ---
+  duration_ms: 1.888296
+  type: 'test'
+  ...
+# Subtest: sales FAQs preserve editorial conditions while replacing stale imported flight-price claims
+ok 74 - sales FAQs preserve editorial conditions while replacing stale imported flight-price claims
+  ---
+  duration_ms: 2.23535
+  type: 'test'
+  ...
+# Subtest: PDF page references are removed while customer-facing restrictions and meaningful parentheses remain
+ok 75 - PDF page references are removed while customer-facing restrictions and meaningful parentheses remain
+  ---
+  duration_ms: 1.419342
+  type: 'test'
+  ...
+# Subtest: visual scenes quote services from the same trip, retain photo provenance and never mutate the source
+ok 76 - visual scenes quote services from the same trip, retain photo provenance and never mutate the source
+  ---
+  duration_ms: 13.691921
+  type: 'test'
+  ...
+# Subtest: pending or unconfigured programmes never inherit service scenes or invent photo assets
+ok 77 - pending or unconfigured programmes never inherit service scenes or invent photo assets
+  ---
+  duration_ms: 0.432829
+  type: 'test'
+  ...
+# Subtest: each included service is retained exactly once in grouped inclusions with safe editorial text
+ok 78 - each included service is retained exactly once in grouped inclusions with safe editorial text
+  ---
+  duration_ms: 0.770211
+  type: 'test'
+  ...
+# Subtest: quick facts distinguish capacity, unknown capacity and heterogeneous dates
+ok 79 - quick facts distinguish capacity, unknown capacity and heterogeneous dates
+  ---
+  duration_ms: 2.424373
+  type: 'test'
+  ...
+# Subtest: the sales journey keeps programme, accommodation, team and payment conditions accessible after its introduction and destination photos
+not ok 80 - the sales journey keeps programme, accommodation, team and payment conditions accessible after its introduction and destination photos
+  ---
+  duration_ms: 73.380076
+  type: 'test'
+  location: '/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-experience.test.mjs:9:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert(info.includes(esc(source.story[0][1])))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-experience.test.mjs:9:275)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: each Morocco programme keeps its own services and PDF in one complete detail
+ok 81 - each Morocco programme keeps its own services and PDF in one complete detail
+  ---
+  duration_ms: 4.174147
+  type: 'test'
+  ...
+# Subtest: a group size is advertised per departure only when every date has that same confirmed capacity
+ok 82 - a group size is advertised per departure only when every date has that same confirmed capacity
+  ---
+  duration_ms: 0.510595
+  type: 'test'
+  ...
+# Subtest: editorial destination names exclude old imported labels
+ok 83 - editorial destination names exclude old imported labels
+  ---
+  duration_ms: 1.905988
+  type: 'test'
+  ...
+# Subtest: eight source dates become seven trips: two Morocco programmes and one Maldives programme
+ok 84 - eight source dates become seven trips: two Morocco programmes and one Maldives programme
+  ---
+  duration_ms: 93.499802
+  type: 'test'
+  ...
+# Subtest: each Morocco product retains its own programme, material, requirements and dossier
+ok 85 - each Morocco product retains its own programme, material, requirements and dossier
+  ---
+  duration_ms: 11.604843
+  type: 'test'
+  ...
+# Subtest: stale per-date levels, requirements or programmes fail before publication
+ok 86 - stale per-date levels, requirements or programmes fail before publication
+  ---
+  duration_ms: 9.101498
+  type: 'test'
+  ...
+# Subtest: same destination and level with a different itinerary never merge
+ok 87 - same destination and level with a different itinerary never merge
+  ---
+  duration_ms: 6.772797
+  type: 'test'
+  ...
+# Subtest: all discovery views expose independent Morocco cards with a fixed range
+ok 88 - all discovery views expose independent Morocco cards with a fixed range
+  ---
+  duration_ms: 7.172824
+  type: 'test'
+  ...
+# Subtest: Maldives keeps per-date availability and payment without mixing booking conditions
+ok 89 - Maldives keeps per-date availability and payment without mixing booking conditions
+  ---
+  duration_ms: 9.07543
+  type: 'test'
+  ...
+# Subtest: canonical and dated URLs survive splitting, regrouping and withdrawal
+ok 90 - canonical and dated URLs survive splitting, regrouping and withdrawal
+  ---
+  duration_ms: 621.017135
+  type: 'test'
+  ...
+# Subtest: native multi-date documents inherit their PDF and vary availability independently
+ok 91 - native multi-date documents inherit their PDF and vary availability independently
+  ---
+  duration_ms: 2.963156
+  type: 'test'
+  ...
+# Subtest: pending advanced Morocco remains separate from the confirmed basic trip
+ok 92 - pending advanced Morocco remains separate from the confirmed basic trip
+  ---
+  duration_ms: 2.369495
+  type: 'test'
+  ...
+# Subtest: obsolete invisible level titles never split otherwise identical dates
+ok 93 - obsolete invisible level titles never split otherwise identical dates
+  ---
+  duration_ms: 1.595149
+  type: 'test'
+  ...
+# Subtest: levels default to all four; explicit restrictions remain configured
+ok 94 - levels default to all four; explicit restrictions remain configured
+  ---
+  duration_ms: 7.479399
+  type: 'test'
+  ...
+# Subtest: single departure retains its date, duration, price and enquiry context
+ok 95 - single departure retains its date, duration, price and enquiry context
+  ---
+  duration_ms: 37.18212
+  type: 'test'
+  ...
+# Subtest: multiple departures retain distinct dates, prices and WhatsApp messages
+ok 96 - multiple departures retain distinct dates, prices and WhatsApp messages
+  ---
+  duration_ms: 0.675459
+  type: 'test'
+  ...
+# Subtest: pending destinations keep all levels and do not manufacture dates or prices
+ok 97 - pending destinations keep all levels and do not manufacture dates or prices
+  ---
+  duration_ms: 0.258413
+  type: 'test'
+  ...
+# Subtest: obsolete top-level dates and prices never supply a departure
+ok 98 - obsolete top-level dates and prices never supply a departure
+  ---
+  duration_ms: 0.388274
+  type: 'test'
+  ...
+# Subtest: published general, active offer and repeated normalization stay independent
+ok 99 - published general, active offer and repeated normalization stay independent
+  ---
+  duration_ms: 27.03591
+  type: 'test'
+  ...
+# Subtest: manual stage change and closing a cup use the correct current tariff
+ok 100 - manual stage change and closing a cup use the correct current tariff
+  ---
+  duration_ms: 0.479878
+  type: 'test'
+  ...
+# Subtest: unknown cup stays textual and never becomes an invented remaining count
+ok 101 - unknown cup stays textual and never becomes an invented remaining count
+  ---
+  duration_ms: 4.651218
+  type: 'test'
+  ...
+# Subtest: invalid amounts, ambiguous active stages, overlapping cups and impossible capacity are rejected
+ok 102 - invalid amounts, ambiguous active stages, overlapping cups and impossible capacity are rejected
+  ---
+  duration_ms: 0.677621
+  type: 'test'
+  ...
+# Subtest: full and future departures never advertise their early bird
+ok 103 - full and future departures never advertise their early bird
+  ---
+  duration_ms: 1.198455
+  type: 'test'
+  ...
+# Subtest: a full priced departure cannot supply a fare for an available unpriced date
+ok 104 - a full priced departure cannot supply a fare for an available unpriced date
+  ---
+  duration_ms: 1.469719
+  type: 'test'
+  ...
+# Subtest: the card pairs savings, regular fare and date from the same selected departure
+ok 105 - the card pairs savings, regular fare and date from the same selected departure
+  ---
+  duration_ms: 1.026936
+  type: 'test'
+  ...
+# Subtest: legacy price-only journeys keep their price values and no extra pricing properties
+ok 106 - legacy price-only journeys keep their price values and no extra pricing properties
+  ---
+  duration_ms: 0.444279
+  type: 'test'
+  ...
+# Subtest: promotional conditions are escaped in the card
+ok 107 - promotional conditions are escaped in the card
+  ---
+  duration_ms: 0.951817
+  type: 'test'
+  ...
+# Subtest: PDF plan covers exactly seven discounted departures and preserves general fares, signals and other fields
+ok 108 - PDF plan covers exactly seven discounted departures and preserves general fares, signals and other fields
+  ---
+  duration_ms: 7.483934
+  type: 'test'
+  ...
+# Subtest: CMS rerun preserves the editor selection; stale revisions, drafts and changed general fares block writes
+ok 109 - CMS rerun preserves the editor selection; stale revisions, drafts and changed general fares block writes
+  ---
+  duration_ms: 5.353895
+  type: 'test'
+  ...
+# Subtest: seven current destinations receive distinct editorial framing without changing their source data
+ok 110 - seven current destinations receive distinct editorial framing without changing their source data
+  ---
+  duration_ms: 13.98593
+  type: 'test'
+  ...
+# Subtest: meal arrangements remain specific: full board, two free dinners, or lunches paid separately
+ok 111 - meal arrangements remain specific: full board, two free dinners, or lunches paid separately
+  ---
+  duration_ms: 0.839162
+  type: 'test'
+  ...
+# Subtest: the Moroccan programmes keep different equipment requirements, and Maldivas never inherits included equipment
+ok 112 - the Moroccan programmes keep different equipment requirements, and Maldivas never inherits included equipment
+  ---
+  duration_ms: 0.510755
+  type: 'test'
+  ...
+# Subtest: school cover and travel insurance are distinguished without inventing a policy for Maldivas
+ok 113 - school cover and travel insurance are distinguished without inventing a policy for Maldivas
+  ---
+  duration_ms: 0.564716
+  type: 'test'
+  ...
+# Subtest: transport reflects current inclusions and generated flight answers replace old estimates without urgency
+ok 114 - transport reflects current inclusions and generated flight answers replace old estimates without urgency
+  ---
+  duration_ms: 4.8769
+  type: 'test'
+  ...
+# Subtest: Maldivas retains optional snorkel without promising sightings and replaces the imported no-wave FAQ
+ok 115 - Maldivas retains optional snorkel without promising sightings and replaces the imported no-wave FAQ
+  ---
+  duration_ms: 0.510946
+  type: 'test'
+  ...
+# Subtest: upcoming destinations never advertise services left in their CMS document
+ok 116 - upcoming destinations never advertise services left in their CMS document
+  ---
+  duration_ms: 0.437711
+  type: 'test'
+  ...
+# Subtest: unknown destinations and removed services have no inherited itinerary or material claims
+ok 117 - unknown destinations and removed services have no inherited itinerary or material claims
+  ---
+  duration_ms: 1.92991
+  type: 'test'
+  ...
+# Subtest: snorkel optionality is only asserted when the current inclusion explicitly says so
+ok 118 - snorkel optionality is only asserted when the current inclusion explicitly says so
+  ---
+  duration_ms: 1.104071
+  type: 'test'
+  ...
+# Subtest: accompaniment reuses exact services from its own confirmed departure without borrowing staff
+ok 119 - accompaniment reuses exact services from its own confirmed departure without borrowing staff
+  ---
+  duration_ms: 4.074523
+  type: 'test'
+  ...
+# Subtest: pending programmes and explicit editorial team text retain their own authority
+ok 120 - pending programmes and explicit editorial team text retain their own authority
+  ---
+  duration_ms: 0.289507
+  type: 'test'
+  ...
+# Subtest: confirmed accompaniment names Lucas and preserves exact escaped programme services without an unknown-host enquiry
+not ok 121 - confirmed accompaniment names Lucas and preserves exact escaped programme services without an unknown-host enquiry
+  ---
+  duration_ms: 19.881901
+  type: 'test'
+  location: '/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-team.test.mjs:25:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of null (reading '1')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-team.test.mjs:29:89)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: explicit editorial accompaniment remains authoritative and escaped
+not ok 122 - explicit editorial accompaniment remains authoritative and escaped
+  ---
+  duration_ms: 2.908805
+  type: 'test'
+  location: '/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-team.test.mjs:37:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of null (reading '1')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-team.test.mjs:39:101)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: a destination without confirmed staff keeps a candid enquiry without asserting named people
+not ok 123 - a destination without confirmed staff keeps a candid enquiry without asserting named people
+  ---
+  duration_ms: 1.492752
+  type: 'test'
+  location: '/home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-team.test.mjs:44:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of null (reading '1')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///home/amfernandez/personalProjects/letsurftogethersystem/scripts/trip-team.test.mjs:47:101)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..123
+# tests 123
+# suites 0
+# pass 117
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 920.320761

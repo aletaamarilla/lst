@@ -1,0 +1,134 @@
+[
+  {
+    "width": 320,
+    "normal": {
+      "overflow": false,
+      "ctaHeight": 38.1875,
+      "anchorHeight": 81.09375,
+      "ctaFill": "rgba(0, 0, 0, 0)",
+      "ctaBorder": "rgb(234, 89, 52)",
+      "faqColor": "rgb(27, 27, 27)",
+      "faqAnswer": "rgba(27, 27, 27, 0.73)",
+      "faqTint": "linear-gradient(rgba(234, 89, 52, 0.035), rgba(234, 89, 52, 0.035)), none",
+      "captionColor": "rgba(27, 27, 27, 0.73)",
+      "footerColor": "rgba(27, 27, 27, 0.73)",
+      "footerLogo": "/assets/brand/logo-black.svg"
+    },
+    "levelNodeCount": 44,
+    "levelDifferences": [],
+    "focus": {
+      "style": "solid",
+      "color": "rgb(234, 89, 52)",
+      "width": "3px"
+    },
+    "zoom": {
+      "overflow": false,
+      "h1": {
+        "x": 18,
+        "y": 209,
+        "width": 284,
+        "height": 656.625,
+        "top": 209,
+        "right": 302,
+        "bottom": 865.625,
+        "left": 18
+      },
+      "heroHeight": 1107.625,
+      "ctaHeight": 56.390625
+    },
+    "contrast200": {
+      "pixels": 40810,
+      "min": 3.3145996198912693,
+      "below3": 0
+    },
+    "sameHeroGeometryFor200PercentCapture": true
+  },
+  {
+    "width": 390,
+    "normal": {
+      "overflow": false,
+      "ctaHeight": 38.1875,
+      "anchorHeight": 81.09375,
+      "ctaFill": "rgba(0, 0, 0, 0)",
+      "ctaBorder": "rgb(234, 89, 52)",
+      "faqColor": "rgb(27, 27, 27)",
+      "faqAnswer": "rgba(27, 27, 27, 0.73)",
+      "faqTint": "linear-gradient(rgba(234, 89, 52, 0.035), rgba(234, 89, 52, 0.035)), none",
+      "captionColor": "rgba(27, 27, 27, 0.73)",
+      "footerColor": "rgba(27, 27, 27, 0.73)",
+      "footerLogo": "/assets/brand/logo-black.svg"
+    },
+    "levelNodeCount": 44,
+    "levelDifferences": [],
+    "focus": {
+      "style": "solid",
+      "color": "rgb(234, 89, 52)",
+      "width": "3px"
+    },
+    "zoom": {
+      "overflow": false,
+      "h1": {
+        "x": 22,
+        "y": 176,
+        "width": 346,
+        "height": 625.234375,
+        "top": 176,
+        "right": 368,
+        "bottom": 801.234375,
+        "left": 22
+      },
+      "heroHeight": 1049.234375,
+      "ctaHeight": 56.390625
+    },
+    "contrast200": {
+      "pixels": 53559,
+      "min": 3.2280276103103884,
+      "below3": 0
+    },
+    "sameHeroGeometryFor200PercentCapture": true
+  },
+  {
+    "width": 1440,
+    "normal": {
+      "overflow": false,
+      "ctaHeight": 38.1875,
+      "anchorHeight": 78.890625,
+      "ctaFill": "rgba(0, 0, 0, 0)",
+      "ctaBorder": "rgb(234, 89, 52)",
+      "faqColor": "rgb(27, 27, 27)",
+      "faqAnswer": "rgba(27, 27, 27, 0.73)",
+      "faqTint": "linear-gradient(rgba(234, 89, 52, 0.035), rgba(234, 89, 52, 0.035)), none",
+      "captionColor": "rgba(27, 27, 27, 0.73)",
+      "footerColor": "rgba(27, 27, 27, 0.73)",
+      "footerLogo": "/assets/brand/logo-black.svg"
+    },
+    "levelNodeCount": 44,
+    "levelDifferences": [],
+    "focus": {
+      "style": "solid",
+      "color": "rgb(234, 89, 52)",
+      "width": "3px"
+    },
+    "zoom": {
+      "overflow": false,
+      "h1": {
+        "x": 108,
+        "y": 208.296875,
+        "width": 710,
+        "height": 1137.03125,
+        "top": 208.296875,
+        "right": 818,
+        "bottom": 1345.328125,
+        "left": 108
+      },
+      "heroHeight": 1569.328125,
+      "ctaHeight": 56.390625
+    },
+    "contrast200": {
+      "pixels": 190890,
+      "min": 2.8389585697580086,
+      "below3": 10
+    },
+    "sameHeroGeometryFor200PercentCapture": true
+  }
+]

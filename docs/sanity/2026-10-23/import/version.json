@@ -1,0 +1,12 @@
+{
+  "baseCommit": "73dc52dca750482853b1fc5973953ea1675b1fc2",
+  "changes": "Uncommitted; only docs/sanity/2026-10-23/import added/updated for this operation. Previous repository changes preserved.",
+  "executorSha256": "38d015f1c6644e2518ba65499713f6607cc6f3b2907c34777b9028b3934c96f4",
+  "dependencies": {
+    "scripts/import-departures.mjs": "2e554d837bb7b04e1c07d8adcb03256c327f039f027c6bd189b55cc2c3583e1d",
+    "scripts/sanity.mjs": "be1b851f6b135ca43e8455f979d66d1c15af91f3bb915ea6f459b63bbe9807b4",
+    "scripts/sanity-trips.mjs": "e4e59da3b6014c70f9788c808ce38a155eb206b669e26d4d134b8fe90770bab9",
+    "studio/schemaTypes/trip.ts": "41d845fcb43216d84393900d49bd89715c2d7ae86da6641363d781d7b92451c9",
+    "docs/sanity/2026-10-23/salidas.json": "252a73bcb13ebd6c8a1471a88ca564854d4aebf7055944052b397dc5d7414c07"
+  }
+}

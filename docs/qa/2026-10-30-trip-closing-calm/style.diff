@@ -1,0 +1,38 @@
+--- docs/qa/2026-10-30-trip-closing-calm/before/trip-conversion.css	2026-10-30 20:47:47.410174274 +0100
++++ dist/trip-conversion.css	2026-10-30 20:48:44.142175505 +0100
+@@ -393,22 +393,23 @@
+ .trip-designed .trip-faq summary{font-size:16px;padding-block:24px;font-weight:500}
+ .trip-designed .trip-faq details[open]{background:#f2ecd5;padding-inline:20px;border-radius:4px 20px 4px 4px}
+ .trip-designed .trip-faq summary>span{color:var(--ink)}
+-.trip-designed .trip-reserve{margin-top:24px;padding:40px 32px;background:var(--orange);color:var(--ink);border:0;border-radius:4px 36px 4px 4px}
+-.trip-designed .trip-reserve h2{font:400 clamp(52px,6vw,76px)/1 var(--display);margin-bottom:22px}
+-.trip-designed .trip-reserve .eyebrow,.trip-designed .trip-reserve .reserve-copy>p:not(.eyebrow),.trip-designed .trip-reserve .fine-print{color:var(--ink)}
+-.trip-designed .trip-reserve .eyebrow:before{background:var(--ink)}
+-.trip-designed .trip-reserve .reserve-main{background:var(--ink);border:1px solid var(--ink);color:var(--paper)}
++.trip-designed .trip-reserve{margin-top:24px;padding:40px 32px;background:#242424;color:var(--paper);border:0;border-radius:4px 36px 4px 4px}
++.trip-designed .trip-reserve h2{font:400 clamp(52px,6vw,76px)/1 var(--display);margin-bottom:22px;color:var(--paper)}
++.trip-designed .trip-reserve .eyebrow{color:var(--paper)}
++.trip-designed .trip-reserve .reserve-copy>p:not(.eyebrow),.trip-designed .trip-reserve .fine-print{color:#e3e0d3}
++.trip-designed .trip-reserve .eyebrow:before{background:var(--orange)}
++.trip-designed .trip-reserve .reserve-main{background:var(--orange);border:1px solid var(--orange);color:var(--ink)}
+ .trip-designed .trip-reserve .reserve-main:hover{background:var(--paper);border-color:var(--paper);color:var(--ink);transform:none}
+-.trip-designed .trip-reserve .reserve-whatsapp{border-color:#1b1b1b80;color:var(--ink)}
++.trip-designed .trip-reserve .reserve-whatsapp{border-color:#fffae780;color:var(--paper)}
+ .trip-designed .trip-reserve .reserve-whatsapp:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+ .trip-designed .trip-reserve .request-steps{gap:12px;margin-top:32px;padding:0;border:0}
+-.trip-designed .request-steps li{padding:20px 0 0;background:transparent;border-top:1px solid #1b1b1b66;border-radius:0}
+-.trip-designed .request-steps li>span{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid var(--ink);background:var(--ink);border-radius:50%;margin-bottom:16px;color:var(--orange);font-size:11px}
+-.trip-designed .request-steps strong{font-size:14px}
+-.trip-designed .request-steps p{font-size:14px;color:var(--ink)}
++.trip-designed .request-steps li{padding:20px 0 0;background:transparent;border-top:1px solid #fffae747;border-radius:0}
++.trip-designed .request-steps li>span{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border:1px solid #fffae766;background:transparent;border-radius:50%;margin-bottom:16px;color:var(--paper);font-size:11px}
++.trip-designed .request-steps strong{font-size:14px;color:var(--paper)}
++.trip-designed .request-steps p{font-size:14px;color:#e3e0d3}
+ .trip-designed .trip-reserve .reserve-note{font-size:13px;line-height:1.7;margin-top:26px}
+-.trip-designed .trip-reserve .reserve-conditions-link{color:var(--ink);font-size:13px}
+-.trip-designed .trip-reserve :is(a,button,summary):focus-visible{outline-color:var(--ink)}
++.trip-designed .trip-reserve .reserve-conditions-link{color:var(--paper);font-size:13px}
++.trip-designed .trip-reserve :is(a,button,summary):focus-visible{outline-color:var(--paper)}
+ @media(min-width:760px){
+  .trip-community.has-moment{grid-template-columns:minmax(0,.9fr) minmax(0,1fr);align-items:start}
+  .community-moment:after{content:'Nos vemos en el pico.';display:block;margin-top:32px;color:var(--orange);font:400 38px/1.1 var(--display);max-width:10ch}

@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: cover copy contains only the trip name and fixed level, with breadcrumb and booking outside the image
+ok 1 - cover copy contains only the trip name and fixed level, with breadcrumb and booking outside the image
+  ---
+  duration_ms: 20.075214
+  type: 'test'
+  ...
+# Subtest: CMS editorial sections render in the requested order and retain their own exact content
+ok 2 - CMS editorial sections render in the requested order and retain their own exact content
+  ---
+  duration_ms: 2.608874
+  type: 'test'
+  ...
+# Subtest: optional editorial fields do not invent activities, spots or accommodation photographs for older documents
+ok 3 - optional editorial fields do not invent activities, spots or accommodation photographs for older documents
+  ---
+  duration_ms: 3.695962
+  type: 'test'
+  ...
+# Subtest: visual CMS data rejects outside-project images and incomplete card copy
+ok 4 - visual CMS data rejects outside-project images and incomplete card copy
+  ---
+  duration_ms: 2.817904
+  type: 'test'
+  ...
+# Subtest: every trip WhatsApp link includes its icon and keeps a contextual message
+ok 5 - every trip WhatsApp link includes its icon and keeps a contextual message
+  ---
+  duration_ms: 1.714749
+  type: 'test'
+  ...
+# Subtest: different editorial programmes are never consolidated into one dated trip
+ok 6 - different editorial programmes are never consolidated into one dated trip
+  ---
+  duration_ms: 1.516455
+  type: 'test'
+  ...
+# Subtest: confirmed single-date trips expose their date in the reading content available on mobile
+ok 7 - confirmed single-date trips expose their date in the reading content available on mobile
+  ---
+  duration_ms: 1.824476
+  type: 'test'
+  ...
+# Subtest: hero thumbnails address every cover image and the removed figures and section bar stay absent
+ok 8 - hero thumbnails address every cover image and the removed figures and section bar stay absent
+  ---
+  duration_ms: 2.470057
+  type: 'test'
+  ...
+# Subtest: a single cover photo has no redundant thumbnails and no gallery still keeps the trip readable
+ok 9 - a single cover photo has no redundant thumbnails and no gallery still keeps the trip readable
+  ---
+  duration_ms: 2.182098
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 89.849773

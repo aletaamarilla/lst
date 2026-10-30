@@ -1,0 +1,60 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "implementation": [
+    "scripts/render-trips.mjs",
+    "dist/trip-detail.css",
+    "scripts/trip-detail.test.mjs"
+  ],
+  "generated": [
+    "dist/viajes/el-palmar/index.html",
+    "dist/viajes/el-palmar-2026-12-04/index.html",
+    "dist/viajes/fuerteventura/index.html",
+    "dist/viajes/fuerteventura-2027-02-12/index.html",
+    "dist/viajes/hossegor/index.html",
+    "dist/viajes/hossegor-2026-11-20/index.html",
+    "dist/viajes/maldivas/index.html",
+    "dist/viajes/maldivas-2027-03-21/index.html",
+    "dist/viajes/maldivas-2027-03-28/index.html",
+    "dist/viajes/marruecos/index.html",
+    "dist/viajes/marruecos-2027-01-17/index.html",
+    "dist/viajes/marruecos-2027-01-24/index.html",
+    "dist/viajes/senegal/index.html",
+    "dist/viajes/senegal-2027-02-28/index.html"
+  ],
+  "hashes": {
+    "scripts/render-trips.mjs": "1c7ff266eb965366f0241c4fdee7a72bba652b39c56c3552e355f5c908602843",
+    "dist/trip-detail.css": "a152f63a177d608e597bede0c1d22daf02f54b30eee1e8c26e0926bdb429b46d",
+    "scripts/trip-detail.test.mjs": "a64c537fb82bea82344c335e2a9027b62be418b8df95fc75786523392dec21f9",
+    "dist/trip.css": "234d33645809254b0092ea1baf699f47f1e91094600dff8872533488db4da08a",
+    "dist/trip.js": "478a2efabef466859b7c0952e75ec034f4331009e8660ba0fac8d3b05d1e1b09",
+    "dist/viajes/el-palmar/index.html": "62fc6e3ca1175fb057d0cb2c4f8546a326c3825586608366946edec88272f460",
+    "dist/viajes/el-palmar-2026-12-04/index.html": "62fc6e3ca1175fb057d0cb2c4f8546a326c3825586608366946edec88272f460",
+    "dist/viajes/fuerteventura/index.html": "b5bd18681d45732e91b09b78624788db71ceef6b80397ed1a361613c6e5cc083",
+    "dist/viajes/fuerteventura-2027-02-12/index.html": "b5bd18681d45732e91b09b78624788db71ceef6b80397ed1a361613c6e5cc083",
+    "dist/viajes/hossegor/index.html": "b0181c7a0fcb6b4286eb638df32968ba9c796031e66e56af4d4f69cd1c67940f",
+    "dist/viajes/hossegor-2026-11-20/index.html": "b0181c7a0fcb6b4286eb638df32968ba9c796031e66e56af4d4f69cd1c67940f",
+    "dist/viajes/maldivas/index.html": "ab79514d3aa7db7787763cbf8d0c4da3d517024425c8dfe5a59fa04b0ef62cde",
+    "dist/viajes/maldivas-2027-03-21/index.html": "ab79514d3aa7db7787763cbf8d0c4da3d517024425c8dfe5a59fa04b0ef62cde",
+    "dist/viajes/maldivas-2027-03-28/index.html": "ab79514d3aa7db7787763cbf8d0c4da3d517024425c8dfe5a59fa04b0ef62cde",
+    "dist/viajes/marruecos/index.html": "ac7d36103c4433c12e8b5be2cb755602e08b2fce67f7ef1228c09da9249fd4d2",
+    "dist/viajes/marruecos-2027-01-17/index.html": "ac7d36103c4433c12e8b5be2cb755602e08b2fce67f7ef1228c09da9249fd4d2",
+    "dist/viajes/marruecos-2027-01-24/index.html": "ac7d36103c4433c12e8b5be2cb755602e08b2fce67f7ef1228c09da9249fd4d2",
+    "dist/viajes/senegal/index.html": "fce53bfe58da0b4981fd1257ebf20aa6a37cee625887be0541dc90f5792992e4",
+    "dist/viajes/senegal-2027-02-28/index.html": "fce53bfe58da0b4981fd1257ebf20aa6a37cee625887be0541dc90f5792992e4"
+  },
+  "preserved": {
+    "tripCss": true,
+    "tripJs": true
+  },
+  "verification": {
+    "tests": 80,
+    "browser": 667,
+    "pages": 24,
+    "promotionPreviewPages": 24,
+    "publicDestinations": 6,
+    "publicOffers": 0,
+    "remoteRefresh": false,
+    "published": false
+  }
+}

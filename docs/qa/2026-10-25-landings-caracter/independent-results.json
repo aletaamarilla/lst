@@ -1,0 +1,508 @@
+{
+  "views": [
+    {
+      "kind": "about",
+      "width": 320,
+      "mode": "normal",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 320,
+      "mode": "text200",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 320,
+      "mode": "no-js",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 390,
+      "mode": "normal",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 390,
+      "mode": "text200",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 390,
+      "mode": "no-js",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 768,
+      "mode": "normal",
+      "closed": {
+        "width": 768,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 768,
+      "mode": "text200",
+      "closed": {
+        "width": 768,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 768,
+      "mode": "no-js",
+      "closed": {
+        "width": 768,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 1440,
+      "mode": "normal",
+      "closed": {
+        "width": 1440,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 1440,
+      "mode": "text200",
+      "closed": {
+        "width": 1440,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "about",
+      "width": 1440,
+      "mode": "no-js",
+      "closed": {
+        "width": 1440,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 320,
+      "mode": "normal",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 320,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 320,
+      "mode": "text200",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 320,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 320,
+      "mode": "no-js",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 320,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "mode": "normal",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 390,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "mode": "text200",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 390,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "mode": "no-js",
+      "closed": {
+        "width": 390,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 390,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 768,
+      "mode": "normal",
+      "closed": {
+        "width": 768,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 768,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 768,
+      "mode": "text200",
+      "closed": {
+        "width": 768,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 768,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 768,
+      "mode": "no-js",
+      "closed": {
+        "width": 768,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 768,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 1440,
+      "mode": "normal",
+      "closed": {
+        "width": 1440,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 1440,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 1440,
+      "mode": "text200",
+      "closed": {
+        "width": 1440,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 1440,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 1440,
+      "mode": "no-js",
+      "closed": {
+        "width": 1440,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 1440,
+        "overflow": []
+      },
+      "headerScrolled": {
+        "top": 0,
+        "position": "sticky",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    }
+  ],
+  "errors": [],
+  "issues": [],
+  "contrasts": [
+    {
+      "kind": "about",
+      "width": 390,
+      "pixels": 8735,
+      "min": 1.0295806152956775,
+      "p05": 3.238667610057696,
+      "max": 5.446874324459513
+    },
+    {
+      "kind": "about",
+      "width": 1440,
+      "pixels": 35506,
+      "min": 2.2280126048586255,
+      "p05": 3.399941437404659,
+      "max": 5.497458752255579
+    },
+    {
+      "kind": "faq",
+      "width": 390,
+      "pixels": 5496,
+      "min": 1.4478362168979855,
+      "p05": 1.5866517376601497,
+      "max": 5.518232844086247
+    },
+    {
+      "kind": "faq",
+      "width": 1440,
+      "pixels": 25326,
+      "min": 1.7894638265027407,
+      "p05": 2.0853991211341154,
+      "max": 5.338784670864189
+    }
+  ],
+  "hashes": [
+    {
+      "file": "dist/landing.css",
+      "sha256": "c9947f40265905c7bba19c65042d49939e6f1adf2d6864645c6701daa63c36ea"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "c9b789a549e05f7c8d46e9213a3f11ca866b4f39d7fd9ec83dd4aace36b0d167"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "0b3c0fb9969fc2277e661178946a70067fbd260bf150d90374fa0aa2720b5686"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "88d94160572ca74b0ddbf399a4cd282a2bb51cecddc5bc72b74ebd85acdb203c"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "002662ade0c79aa7c8047747fdb547b6b25e088d74b0b0d8553075245f4197bf"
+    }
+  ],
+  "sameFaqQuestions": true,
+  "sameFaqAnswerTargets": true
+}

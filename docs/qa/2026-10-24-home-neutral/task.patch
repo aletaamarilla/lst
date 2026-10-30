@@ -1,0 +1,43 @@
+diff --git a/docs/qa/2026-10-24-home-neutral/before/home.css b/dist/home.css
+index 077575e..f1f163c 100644
+--- a/docs/qa/2026-10-24-home-neutral/before/home.css
++++ b/dist/home.css
+@@ -1,5 +1,5 @@
+-/* LST home: original identity. The warm surface mixes 18% brand orange with 82% cream. */
+-body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-surface:#FBDDC7;--lst-card:#fff;--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
++/* LST home: original brand colors, with white inset surfaces against the cream canvas. */
++body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-surface:#fff;--lst-card:#fff;--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
+ body.home-modern *,body.home-modern *:before,body.home-modern *:after{box-sizing:border-box}
+ body.home-modern :is(h1,h2,h3,h4,p,figure){margin:0}
+ body.home-modern :is(h1,h2,h3,h4){color:inherit;overflow-wrap:anywhere}
+@@ -150,7 +150,7 @@ body.home-modern .lst-booking-steps li:last-child{padding-bottom:0}
+ body.home-modern .lst-booking-steps li>span{font:400 43px/1.1 var(--lst-display);letter-spacing:-.01em;color:var(--lst-orange)}
+ body.home-modern .lst-booking-steps h3{font:400 33px/1.1 var(--lst-display);letter-spacing:-.01em}
+ body.home-modern .lst-booking-steps p{margin-top:12px;color:var(--lst-muted);font-size:15px;line-height:1.75}
+-body.home-modern .faq{display:grid;grid-template-columns:.95fr 1.12fr;align-items:start;gap:64px;margin-block:80px 0;padding:48px;border:1px solid var(--lst-ink);border-top:3px solid var(--lst-orange);border-radius:4px 32px 4px 4px;background:var(--lst-surface);color:var(--lst-ink)}
++body.home-modern .faq{display:grid;grid-template-columns:.95fr 1.12fr;align-items:start;gap:64px;margin-block:80px 0;padding:48px;border:1px solid var(--lst-ink);border-top:1px solid var(--lst-ink);border-radius:4px 32px 4px 4px;background:var(--lst-surface);color:var(--lst-ink)}
+ body.home-modern .lst-faq-intro .lst-eyebrow{margin:0 0 20px;color:var(--lst-ink);font-size:11px}
+ body.home-modern .lst-faq-intro .lst-link{margin-top:25px}
+ body.home-modern .lst-faq-list{min-width:0;border-top:1px solid var(--lst-line)}
+@@ -355,7 +355,7 @@ body.home-modern .lst-testimonials .lst-small-index{margin-bottom:12px;color:var
+ body.home-modern .lst-reviews-note{max-width:760px;margin-top:22px;color:var(--lst-muted);font-size:12px;line-height:1.8}
+ body.home-modern .lst-reviews-note a{display:inline-block;min-height:44px;padding-block:10px;color:var(--lst-ink);text-decoration:underline;text-underline-offset:5px}
+ body.home-modern .lst-testimonials :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+-body.home-modern .lst-levels{background:var(--lst-surface);border-radius:36px}
++body.home-modern .lst-levels{background:var(--lst-surface);border:1px solid var(--lst-line);border-radius:36px}
+ body.home-modern :is(.lst-levels,.faq) :is(a,button,summary):focus-visible{outline-color:var(--lst-ink)}
+ body.home-modern .lst-level-intro{display:grid;grid-template-columns:1.3fr .85fr;align-items:center;gap:88px;margin-bottom:47px}
+ body.home-modern .lst-level-intro>div{min-width:0}
+diff --git a/docs/qa/2026-10-24-home-neutral/before/check-home-browser.mjs b/scripts/check-home-browser.mjs
+index 56d768c..7971d9d 100644
+--- a/docs/qa/2026-10-24-home-neutral/before/check-home-browser.mjs
++++ b/scripts/check-home-browser.mjs
+@@ -54,7 +54,7 @@ try{
+   ok(await page.evaluate(()=>['.lst-testimonials','.faq'].every(sel=>getComputedStyle(document.querySelector(sel)).backgroundImage==='none')),'section surfaces remain flat rather than relying on gradients');
+   assert.equal(await page.locator('.lst-quote-grid blockquote').count(),2);checks++;
+   const focusFailures=await page.evaluate(()=>{const details=[...document.querySelectorAll('.lst-faq-list details')],states=details.map(e=>e.open);details.forEach(e=>e.open=true);const failures=[...document.querySelectorAll('.lst-levels a,.faq a,.faq summary')].map(e=>{e.focus();const s=getComputedStyle(e);return {text:e.textContent.slice(0,50),visibleFocus:e.matches(':focus-visible'),active:e===document.activeElement,color:s.outlineColor,width:s.outlineWidth};}).filter(s=>!s.visibleFocus||s.color!=='rgb(27, 27, 27)'||parseFloat(s.width)<3);details.forEach((e,i)=>e.open=states[i]);return failures;});
+-  ok(focusFailures.length===0,'warm panels retain a high contrast keyboard focus: '+JSON.stringify(focusFailures));
++  ok(focusFailures.length===0,'neutral panels retain a high contrast keyboard focus: '+JSON.stringify(focusFailures));
+   await page.locator('#viajes').scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>document.querySelector('.site-header').classList.contains('is-scrolled'));
+   ok(await page.locator('.site-header').evaluate(e=>e.classList.contains('is-scrolled')),'scrolled navigation state');

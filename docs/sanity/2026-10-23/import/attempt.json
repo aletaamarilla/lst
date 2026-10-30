@@ -1,0 +1,282 @@
+{
+  "recordedAt": "2026-10-23T17:00:14.255Z",
+  "target": {
+    "projectId": "q5bj2rn2",
+    "dataset": "production",
+    "apiVersion": "2025-02-19"
+  },
+  "baseCommit": "73dc52dca750482853b1fc5973953ea1675b1fc2",
+  "inventorySha256": "252a73bcb13ebd6c8a1471a88ca564854d4aebf7055944052b397dc5d7414c07",
+  "status": "superseded-by-completed-import",
+  "createdIds": [],
+  "modifiedIds": [],
+  "createdAssetIds": [],
+  "remoteWrites": 0,
+  "authenticatedPreflight": "not-executed",
+  "anonymousPublishedRead": {
+    "documents": 0,
+    "scope": "published only; does not prove absence of drafts or releases"
+  },
+  "localChecks": {
+    "testsPassed": 41,
+    "testsFailed": 0,
+    "dryRunDocuments": 8,
+    "uniqueDraftIds": 8,
+    "allSourceHashesVerified": true,
+    "commercialUnknownsPreserved": true
+  },
+  "schemaDocumentValidation": "pending",
+  "postWriteReadback": "not-executed",
+  "duplicateCheck": "authenticated raw query pending",
+  "documents": [
+    {
+      "id": "drafts.lst-hossegor-2026-11-20",
+      "name": "Hossegor",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2026-11-20",
+        "end": "2026-11-22",
+        "source": {
+          "pages": [
+            1,
+            10
+          ]
+        }
+      },
+      "levels": [
+        2,
+        3
+      ],
+      "depositAmount": 200,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web"
+      ]
+    },
+    {
+      "id": "drafts.lst-el-palmar-2026-12-04",
+      "name": "El Palmar",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "5. LST_EL_PALMAR_SURFTRIP_-_PUENTE_DE_DICIEMBRE.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2026-12-04",
+        "end": "2026-12-08",
+        "source": {
+          "pages": [
+            1,
+            10
+          ]
+        }
+      },
+      "levels": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "depositAmount": 250,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web",
+        "Determinar tramo vigente; no existe una tarifa general única en el PDF"
+      ]
+    },
+    {
+      "id": "drafts.lst-marruecos-2027-01-17",
+      "name": "Marruecos · nivel 1–2",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2027-01-17",
+        "end": "2027-01-24",
+        "source": {
+          "pages": [
+            1,
+            11
+          ]
+        }
+      },
+      "levels": [
+        1,
+        2
+      ],
+      "depositAmount": 270,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web",
+        "Aclarar reserva fija 270 € frente a 30 % y saldo: no coincide exactamente con ambas tarifas"
+      ]
+    },
+    {
+      "id": "drafts.lst-marruecos-2027-01-24",
+      "name": "Marruecos · nivel 3",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2027-01-24",
+        "end": "2027-01-31",
+        "source": {
+          "pages": [
+            1,
+            11
+          ]
+        }
+      },
+      "levels": [
+        3
+      ],
+      "depositAmount": 270,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web",
+        "Aclarar reserva fija 270 € frente a 30 % y saldo: no coincide exactamente con ambas tarifas"
+      ]
+    },
+    {
+      "id": "drafts.lst-fuerteventura-2027-02-12",
+      "name": "Fuerteventura",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "8. LST_FUERTEVENTURA_SURFTRIP_-_NIVEL_1-2.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2027-02-12",
+        "end": "2027-02-16",
+        "source": {
+          "pages": [
+            1,
+            9
+          ]
+        }
+      },
+      "levels": [
+        1,
+        2
+      ],
+      "depositAmount": 250,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web"
+      ]
+    },
+    {
+      "id": "drafts.lst-senegal-2027-02-28",
+      "name": "Senegal",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2027-02-28",
+        "end": "2027-03-07",
+        "source": {
+          "pages": [
+            1,
+            12
+          ]
+        }
+      },
+      "levels": [
+        2
+      ],
+      "depositAmount": 325,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web",
+        "Aclarar reserva fija 325 € frente a 25 % en ambas tarifas"
+      ]
+    },
+    {
+      "id": "drafts.lst-maldivas-2027-03-21",
+      "name": "Maldivas · Semana Santa",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "10. Maldivas_Surftrip_Semana_Santa_2027_LST.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2027-03-21",
+        "end": "2027-03-28",
+        "source": {
+          "pages": [
+            1,
+            11
+          ]
+        }
+      },
+      "levels": [
+        2,
+        3
+      ],
+      "depositAmount": 500,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web",
+        "Confirmar cupo early bird; el PDF solo dice plazas limitadas",
+        "Aclarar material de surf y seguro: no se declaran incluidos ni explícitamente excluidos (solo descuento en seguro)"
+      ]
+    },
+    {
+      "id": "drafts.lst-maldivas-2027-03-28",
+      "name": "Maldivas · Pascua",
+      "status": "not-imported",
+      "created": false,
+      "modified": false,
+      "sourceFile": "11. Maldivas_Surftrip_Pascua_2027_LST.pdf",
+      "sourceSha256Matches": true,
+      "pdfHeaderValid": true,
+      "dates": {
+        "start": "2027-03-28",
+        "end": "2027-04-04",
+        "source": {
+          "pages": [
+            1,
+            11
+          ]
+        }
+      },
+      "levels": [
+        2,
+        3
+      ],
+      "depositAmount": 500,
+      "pending": [
+        "Confirmar disponibilidad y vigencia de tarifas/condiciones",
+        "Aprobar material fotográfico y URL pública del dossier",
+        "Resolver formulario externo frente a WhatsApp de la web",
+        "Confirmar cupo early bird; el PDF solo dice plazas limitadas",
+        "Aclarar material de surf y seguro: no se declaran incluidos ni explícitamente excluidos (solo descuento en seguro)"
+      ]
+    }
+  ],
+  "supersededBy": "docs/sanity/2026-10-23/import/run-2026-10-23T18-17-32-544Z/manifest.json"
+}

@@ -1,0 +1,35 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {renderTrip} from '../../../scripts/render-trips.mjs';
+import {readLocalPreview} from '../../../scripts/serve.mjs';
+const qa='docs/qa/2026-10-28-trip-refinement/';
+const manifest=JSON.parse(await readFile(qa+'candidate-sha256.json','utf8'));
+const current=Object.fromEntries(await Promise.all(Object.keys(manifest).map(async f=>[f,createHash('sha256').update(await readFile(f)).digest('hex')])));
+await writeFile(qa+'independent-candidate-sha256.json',JSON.stringify(current,null,2));
+const manifestMatches=Object.keys(manifest).every(f=>manifest[f]===current[f]);
+let oldSource=await readFile(qa+'before/scripts/render-trips.mjs','utf8');
+oldSource=oldSource.replace(/from '\.\/([^']+)'/g,(_,file)=>"from '"+pathToFileURL(path.resolve('scripts',file)).href+"'");
+const {renderTrip:before}=await import('data:text/javascript;base64,'+Buffer.from(oldSource).toString('base64'));
+const published=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
+const local=await readLocalPreview();
+const groups={published,local};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const links=html=>[...html.matchAll(/<a\b([^>]+)>[\s\S]*?<\/a>/g)].filter(m=>!m[1].includes('button-level')).map(m=>{const href=m[1].match(/href="([^"]+)"/)?.[1];const type=m[1].match(/data-(?:registration|whatsapp)="([^"]+)"/)?.[0]?.split('=')[0]??'';return type+' '+href;}).sort();
+const checks=[];
+for(const [source,trips] of Object.entries(groups))for(const trip of trips){
+ const older=before(trip,trips),newer=renderTrip(trip,trips);
+ const oldLinks=links(older),newLinks=links(newer);
+ checks.push({source,slug:trip.slug,linksIdenticalIgnoringRemovedLevelEnquiry:JSON.stringify(oldLinks)===JSON.stringify(newLinks),allInclusions:[...trip.includes,...trip.excludes].every(s=>newer.includes(esc(s.replace(/\s*\(p\.\s*\d+[^)]*\)/gi,'').trim()))),generatedAliases:(trip.aliases??[]).length});
+}
+const maldives=structuredClone(published.find(t=>t.slug==='maldivas'));
+maldives.audience={text:'Para progresar en el agua.',profiles:[['Nivel II','Primeros giros.'],['Nivel III','Pulir maniobras.']]};
+const oldLevel=before(maldives,published).match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
+const newLevel=renderTrip(maldives,published).match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
+const repro={slug:maldives.slug,levels:maldives.levels,requirement:maldives.levelRequirement,profiles:maldives.audience.profiles,requirementPresentBefore:oldLevel.includes(esc(maldives.levelRequirement)),requirementPresentAfter:newLevel.includes(esc(maldives.levelRequirement)),renderedLevel:newLevel};
+const protectedBefore=JSON.parse(await readFile(qa+'protected-before.json','utf8'));
+const protectedMatches=Object.fromEntries(await Promise.all(Object.entries(protectedBefore).map(async([f,hash])=>[f,createHash('sha256').update(await readFile(f)).digest('hex')===hash])));
+const result={manifestMatches,checks,protectedMatches,multipleProfileAutonomyReproduction:repro};
+await writeFile(qa+'independent-compatibility.json',JSON.stringify(result,null,2));
+console.log(JSON.stringify(result,null,2));

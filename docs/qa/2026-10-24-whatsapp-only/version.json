@@ -1,0 +1,23 @@
+{
+  "repository": "aletaamarilla/lst",
+  "base": "22e4b0d529a288da2f6b610b72ec1469614bed30",
+  "implementation": "50ffb5438a42a3c3a4959427d432d2b4145a4601",
+  "release": "58f338661fc4705364fea08727c836e79b3f2048",
+  "deploymentId": "dpl_BigR4dz63Zm3NjB7Br7pax3maTSU",
+  "deploymentState": "READY",
+  "currentTrips": 8,
+  "newTripPublications": 0,
+  "googleFormsInCurrentTripDocuments": 0,
+  "googleFormsInCurrentFrontend": 0,
+  "googleFormsLinksInActivePdfs": 0,
+  "sha256": {
+    "final-after.json": "12d0bd742d7d8ae9576a939dfe9cfb2877b424aea56de11ee8e0b7953b453dd3",
+    "remote-plan.json": "2dad3ece4235c2be0cd8fd407308a11cf469f53b4d2a00433061aa9b4b253465",
+    "pdf-repairs.json": "5762ee059f06dd2fd0eb8b2c67e0e94832053036061615849f216100c56af2fa",
+    "live-browser.json": "348896c8681822b96575f52768b901378e7e6bd27adae1b191f907a228dfcd6c",
+    "live-verification.json": "ae2ed7415e691b8ee6962b8aee36a4c96fefe06a8ca3337ce222e7e115f40a41",
+    "live-pdf-validation.json": "6029062e1fca89d7586ba4bbce0ff989e5ccff8724c776e44f46a9075debb85e",
+    "deployed-bytes.json": "0d65800f0980b5141832bb5d12caa36e1510bbd46dbc0b7ebd134ab6a5a127f7"
+  },
+  "uncommitted": "This QA directory only belongs to this task. Later concurrent implementation edits preserved; see final-workspace-status.txt."
+}

@@ -1,0 +1,60 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "files": [
+    {
+      "file": "dist/index.html",
+      "beforeSha256": "44e5902ccf89720d0763643aa59dabc55de01cc63ae4251f01ad3187c31bcf28",
+      "candidateSha256": "c29fb61c4aa8d2e3d1db970e2e68622b60578dba1b9cb4ade77b5b4a290ba227"
+    },
+    {
+      "file": "dist/home.css",
+      "beforeSha256": "d4e5805d9c4899bc8155eb48fdd5a030e02642ddf582a7c99d9094b567557ef2",
+      "candidateSha256": "cff96d48ad35a41285c8bae9e63d460310b053010d0ce9adcbad1b16c75be4d8"
+    },
+    {
+      "file": "scripts/check-home-browser.mjs",
+      "beforeSha256": "365ee66ffac357bc55c026a885e5ae8b374e8119c2749bf5d4d1c9d8d83dee2b",
+      "candidateSha256": "1f2682bc1e81a9331c88f26b6d021fde3d1b98dde940bc86cb30ffdf737b92b7"
+    }
+  ],
+  "unchanged": [
+    "dist/app.js",
+    "dist/home.js",
+    "scripts/render-home-trips.mjs"
+  ],
+  "unchangedGeneratedTripPages": [
+    {
+      "file": "dist/viajes/el-palmar-2026-12-04/index.html",
+      "sha256": "11f77bafd80ef43b36542b86a28677de7ea2b5d884e8716de9070969020b6256"
+    },
+    {
+      "file": "dist/viajes/fuerteventura-2027-02-12/index.html",
+      "sha256": "d137e003bac4d53b285c51228253cb0dc6b87e8ecd764410c8b528e14d608029"
+    },
+    {
+      "file": "dist/viajes/hossegor-2026-11-20/index.html",
+      "sha256": "1b17bbcf681fc3ed1bcb139d6252126e0d7a8302c99cd03f2c0445f7bb96506f"
+    },
+    {
+      "file": "dist/viajes/maldivas-2027-03-21/index.html",
+      "sha256": "940243cfe2ef0665fd43d8ece7e4b2a803a2bc90a2ddec90a6c1c18bca237ea9"
+    },
+    {
+      "file": "dist/viajes/maldivas-2027-03-28/index.html",
+      "sha256": "6fadeb6a5445bd301907bf00c3c82d64223eb0d51779dec9b7513d1a709b87ee"
+    },
+    {
+      "file": "dist/viajes/marruecos-2027-01-17/index.html",
+      "sha256": "31943e6f83a3f2abe484ae063b6b8c020f618f525649a273ad1676647aadcab2"
+    },
+    {
+      "file": "dist/viajes/marruecos-2027-01-24/index.html",
+      "sha256": "07eb47047a554368267be170d1f7aadd1629421580e2ef1c2e823d6bd04dfb8c"
+    },
+    {
+      "file": "dist/viajes/senegal-2027-02-28/index.html",
+      "sha256": "6bb40821ba2e02b15d2ee171b2a986d8e0ae4f3b9cb8be54db4291759ae533e8"
+    }
+  ]
+}

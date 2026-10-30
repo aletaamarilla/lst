@@ -1,0 +1,43 @@
+diff --git a/docs/qa/2026-10-24-home-cards/before/home.css b/dist/home.css
+index 5c66e70..e62a0a3 100644
+--- a/docs/qa/2026-10-24-home-cards/before/home.css
++++ b/dist/home.css
+@@ -1,5 +1,5 @@
+ /* LST home: original identity, surf photography and a clear booking path. */
+-body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-card:#fff;--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
++body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-card:var(--lst-paper);--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
+ body.home-modern *,body.home-modern *:before,body.home-modern *:after{box-sizing:border-box}
+ body.home-modern :is(h1,h2,h3,h4,p,figure){margin:0}
+ body.home-modern :is(h1,h2,h3,h4){color:inherit;overflow-wrap:anywhere}
+@@ -66,14 +66,14 @@ body.home-modern .home-trip-placeholder{height:100%;min-height:260px;display:gri
+ body.home-modern .home-trip-level,body.home-modern .home-trip-status{position:absolute;top:14px;left:14px;z-index:1;max-width:calc(100% - 124px);padding:8px 10px;border-radius:100px;background:var(--lst-paper);color:var(--lst-ink);font-size:10px;line-height:1.4;font-weight:500}
+ body.home-modern .home-trip-status{top:54px;max-width:calc(100% - 28px);background:var(--lst-ink);color:var(--lst-paper)}
+ body.home-modern .home-trip :is(h3,h4){position:absolute;bottom:20px;left:20px;right:20px;z-index:1;font:400 clamp(37px,3.8vw,51px)/1 var(--lst-display);letter-spacing:-.01em;overflow-wrap:anywhere}
+-body.home-modern .home-trip-preview{margin-top:17px;padding-inline:10px;color:var(--lst-muted);font-size:13px;line-height:1.6}
++body.home-modern .home-trip-preview{margin-top:17px;margin-bottom:14px;padding-inline:10px;color:var(--lst-muted);font-size:13px;line-height:1.6}
+ body.home-modern .home-trip-preview small{display:block;margin-top:6px;color:var(--lst-muted);font-size:12px;line-height:1.65}
+-body.home-modern .home-trip-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;min-height:76px;margin-top:auto;padding:15px 10px 7px;border-radius:4px}
++body.home-modern .home-trip-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;min-height:76px;margin-top:auto;padding:12px 14px;border-radius:18px;background:var(--lst-ink);color:var(--lst-paper)}
+ body.home-modern .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:38px;max-width:100%;padding:9px 15px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:13px;font-weight:500;line-height:1.4;transition:background .18s,color .18s,border-color .18s}
+ body.home-modern .home-trip-action>span{flex-shrink:0;font-size:18px;line-height:1}
+-body.home-modern .home-trip-link:hover .home-trip-action{background:var(--lst-ink);color:var(--lst-paper);border-color:var(--lst-ink)}
++body.home-modern .home-trip-link:hover .home-trip-action{background:var(--lst-paper);color:var(--lst-ink);border-color:var(--lst-paper)}
+ body.home-modern .home-trip-price{margin-left:auto;font:400 34px/1.1 var(--lst-display);letter-spacing:-.01em;text-align:right;overflow-wrap:anywhere}
+-body.home-modern .home-trip-price small{display:block;margin-top:3px;color:var(--lst-muted);font:400 11px/1.5 'Work Sans',sans-serif;letter-spacing:0}
++body.home-modern .home-trip-price small{display:block;margin-top:3px;color:rgba(255,250,231,.75);font:400 11px/1.5 'Work Sans',sans-serif;letter-spacing:0}
+ body.home-modern .home-trip-dates{position:absolute;inset:0;z-index:2;border:0}
+ body.home-modern .home-trip-dates>summary{position:absolute;inset:0;display:block;min-height:44px;padding:0;border-radius:19px;list-style:none;cursor:pointer}
+ body.home-modern .home-trip-dates>summary:after,body.home-modern .home-trip-dates>summary::-webkit-details-marker{display:none}
+diff --git a/docs/qa/2026-10-24-home-cards/before/check-home-browser.mjs b/scripts/check-home-browser.mjs
+index f7916e0..34958df 100644
+--- a/docs/qa/2026-10-24-home-cards/before/check-home-browser.mjs
++++ b/scripts/check-home-browser.mjs
+@@ -43,7 +43,7 @@ try{
+   ok(await page.locator('.home-trip-link').first().evaluate(e=>e.getBoundingClientRect().height>=44),'trip link keeps its touch target');
+   ok(await page.evaluate(()=>{const panel=getComputedStyle(document.querySelector('.faq')),header=getComputedStyle(document.querySelector('.lst-faq-intro'));return panel.backgroundColor==='rgb(255, 250, 231)'&&parseFloat(panel.borderTopWidth)===0&&header.backgroundColor==='rgb(27, 27, 27)'&&header.color==='rgb(255, 250, 231)'&&document.querySelector('.lst-faq-list').getBoundingClientRect().width>0;}),'FAQs separate their compact ink heading from the open question list');
+   ok(await page.evaluate(()=>{const intro=document.querySelector('.lst-level-intro'),r=intro.getBoundingClientRect(),photo=document.querySelector('.lst-level-photo img').getBoundingClientRect(),grid=document.querySelector('.lst-level-grid').getBoundingClientRect(),paper=getComputedStyle(document.body).backgroundColor;return getComputedStyle(intro).color===paper&&Math.abs(photo.width-r.width)<1&&Math.abs(photo.height-r.height)<1&&grid.top<r.bottom&&r.bottom-grid.top<=32&&[...document.querySelectorAll('.lst-level-card')].every(e=>getComputedStyle(e).backgroundColor===paper);}), 'level cards overlap a compact photographic introduction without changing their cream surface');
+-  ok(await page.evaluate(()=>{const paper=getComputedStyle(document.body).backgroundColor;return [...document.querySelectorAll('.home-trip')].every(e=>{const s=getComputedStyle(e);return s.backgroundColor==='rgb(255, 255, 255)'&&s.backgroundColor!==paper&&s.boxShadow!=='none';});}),'trip cards have a distinct light surface and contained depth');
++  ok(await page.evaluate(()=>{const paper=getComputedStyle(document.body).backgroundColor;return [...document.querySelectorAll('.home-trip')].every(e=>{const s=getComputedStyle(e),footer=getComputedStyle(e.querySelector('.home-trip-link'));return s.backgroundColor===paper&&s.boxShadow!=='none'&&footer.backgroundColor==='rgb(27, 27, 27)'&&footer.color===paper;});}),'trip cards use brand cream with an ink price and action footer');
+   ok(await page.locator('.lst-hero h1').evaluate(e=>getComputedStyle(e).color==='rgb(255, 255, 255)'),'hero title is white');
+   ok(await page.evaluate(()=>getComputedStyle(document.querySelector('.lst-closing')).backgroundColor==='rgb(27, 27, 27)'&&['.lst-testimonials','.people','.faq','.lst-footer'].every(sel=>!['rgb(27, 27, 27)','rgb(234, 89, 52)'].includes(getComputedStyle(document.querySelector(sel)).backgroundColor))),'closing is the single large dark section');
+   ok(await page.locator('.lst-people-layout').evaluate(e=>{const s=getComputedStyle(e),r=e.getBoundingClientRect();return s.backgroundColor==='rgb(234, 89, 52)'&&r.left>0&&r.right<innerWidth&&parseFloat(s.paddingLeft)>=24;}),'people have a contained orange panel');

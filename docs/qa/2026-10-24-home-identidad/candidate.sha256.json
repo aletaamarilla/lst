@@ -1,0 +1,110 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "analyticsAdded": false,
+  "files": [
+    {
+      "file": "dist/index.html",
+      "kind": "modified",
+      "beforeSha256": "d029b875557e4cff28f5766cbe90010d3a37e596814dcbbd73564ab17ec863a9",
+      "candidateSha256": "277dcf0e8414e615b9183158c46e3ee1b031668c51ad46b0d908e574bd8a3eb5"
+    },
+    {
+      "file": "dist/home.css",
+      "kind": "modified",
+      "beforeSha256": "d1b3c290a514a17e32f246039072ad22a168e7517961c18c935d92ad50e84489",
+      "candidateSha256": "54208711c958939b51771436000a9ca197acde31ca2bf73af2660608b7e3267b"
+    },
+    {
+      "file": "dist/trip.css",
+      "kind": "modified",
+      "beforeSha256": "f1360af68cd8100d4d2fa936b7391e7a07d802bfcf203fbd95f53d09a3283113",
+      "candidateSha256": "644f7720857a690c30fd3e6e91dbf179f1b335c0a560316e0148d50498cc168f"
+    },
+    {
+      "file": "scripts/render-trips.mjs",
+      "kind": "modified",
+      "beforeSha256": "82cf5b5e6e7d85060fb08196993a54d8b0d5456568af7d7eb5496fadc23754d8",
+      "candidateSha256": "fd20c0afc0cfac718d23465bab6617f9ca6caa163d6eef01b506d4ad33cc8ced"
+    },
+    {
+      "file": "scripts/sanity.test.mjs",
+      "kind": "modified",
+      "beforeSha256": "5ad34ee15e1125355b74d5ffbc49b2ae7e4e5f7a29fd2ba0593414c653814daa",
+      "candidateSha256": "6a70077851547928c29445eafd868a491fe3ca042f360b06700f76bafc1c4a04"
+    },
+    {
+      "file": "scripts/check-home-browser.mjs",
+      "kind": "modified",
+      "beforeSha256": "ca0af2ce87561ee45eeaf6f42a73458cdf3e3c21d1adf7ac33fe01116a32dd7f",
+      "candidateSha256": "f484febb36bc0e07e3c08beca484e2e68707959ee7761a04d77d14afff0ecd44"
+    },
+    {
+      "file": "dist/assets/home/marruecos-comunidad.webp",
+      "kind": "new",
+      "beforeSha256": null,
+      "candidateSha256": "cdc62b58be43b65c8257f93160a4c6abfcea2cc42bbfd97cfc4acbd9e4d636cd"
+    },
+    {
+      "file": "scripts/trip-team.test.mjs",
+      "kind": "new",
+      "beforeSha256": null,
+      "candidateSha256": "ba8709f8811c6d9ac90d4aac48db2aae6e3f356551ebc814a7dc38bc19d84dd0"
+    },
+    {
+      "file": "dist/viajes/el-palmar-2026-12-04/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "11f77bafd80ef43b36542b86a28677de7ea2b5d884e8716de9070969020b6256"
+    },
+    {
+      "file": "dist/viajes/fuerteventura-2027-02-12/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "d137e003bac4d53b285c51228253cb0dc6b87e8ecd764410c8b528e14d608029"
+    },
+    {
+      "file": "dist/viajes/hossegor-2026-11-20/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "1b17bbcf681fc3ed1bcb139d6252126e0d7a8302c99cd03f2c0445f7bb96506f"
+    },
+    {
+      "file": "dist/viajes/maldivas-2027-03-21/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "940243cfe2ef0665fd43d8ece7e4b2a803a2bc90a2ddec90a6c1c18bca237ea9"
+    },
+    {
+      "file": "dist/viajes/maldivas-2027-03-28/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "6fadeb6a5445bd301907bf00c3c82d64223eb0d51779dec9b7513d1a709b87ee"
+    },
+    {
+      "file": "dist/viajes/marruecos-2027-01-17/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "31943e6f83a3f2abe484ae063b6b8c020f618f525649a273ad1676647aadcab2"
+    },
+    {
+      "file": "dist/viajes/marruecos-2027-01-24/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "07eb47047a554368267be170d1f7aadd1629421580e2ef1c2e823d6bd04dfb8c"
+    },
+    {
+      "file": "dist/viajes/senegal-2027-02-28/index.html",
+      "kind": "generated",
+      "beforeSha256": null,
+      "candidateSha256": "6bb40821ba2e02b15d2ee171b2a986d8e0ae4f3b9cb8be54db4291759ae533e8"
+    }
+  ],
+  "unchanged": [
+    "dist/app.js",
+    "dist/home.js",
+    "dist/trip.js",
+    "scripts/render-home-trips.mjs",
+    "scripts/home-trips.test.mjs"
+  ]
+}

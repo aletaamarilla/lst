@@ -1,0 +1,1174 @@
+--- before/scripts/brevo.mjs
++++ after/scripts/brevo.mjs
+@@ -8,7 +8,7 @@
+   ['hossegor', '2026-11-20', '2026-11-22', '1'],
+   ['el-palmar', '2026-12-04', '2026-12-08', '2'],
+   ['marruecos', '2027-01-17', '2027-01-24', '3'],
+-  ['marruecos', '2027-01-24', '2027-01-31', '4'],
++  ['marruecos-avanzado', '2027-01-24', '2027-01-31', '4'],
+   ['fuerteventura', '2027-02-12', '2027-02-16', '5'],
+   ['senegal', '2027-02-28', '2027-03-07', '6'],
+   ['maldivas', '2027-03-21', '2027-03-28', '7'],
+--- before/scripts/catalog-filter.test.mjs
++++ after/scripts/catalog-filter.test.mjs
+@@ -41,16 +41,13 @@
+   assert.deepEqual(departureMonths({start: '2027-03-01', end: '2027-02-01'}), ['2027-03']);
+ });
+ 
+-test('level and date must match the same departure, including non-consecutive levels', () => {
+-  const fixture = resolved({slug: 'mixed', levels: [1, 2], departures: [
+-    {start: '2027-01-01', end: '2027-01-08', levels: [1]},
+-    {start: '2027-02-01', end: '2027-02-08', levels: [2, 4]},
+-  ]});
+-  assert.deepEqual(filterCatalog([fixture], '1', '2027-02'), []);
+-  assert.deepEqual(filterCatalog([fixture], '4', '2027-01'), []);
+-  assert.deepEqual(filterCatalog([fixture], '4', '2027-02'), [fixture]);
+-  assert.deepEqual(filterCatalog([fixture], '4'), [fixture]);
+-  assert.deepEqual(filterCatalog([fixture], '3'), []);
++test('every date shares its trip range, while Morocco products filter independently', () => {
++ const basic=resolved({slug:'marruecos',levels:[1,2],departures:[{start:'2027-01-17',end:'2027-01-24'}]});
++ const advanced=resolved({slug:'marruecos-avanzado',levels:[3],departures:[{start:'2027-01-24',end:'2027-01-31'}]});
++ assert.deepEqual(filterCatalog([basic,advanced],'1','2027-01'),[basic]);
++ assert.deepEqual(filterCatalog([basic,advanced],'3','2027-01'),[advanced]);
++ assert.deepEqual(filterCatalog([basic,advanced],'4','2027-01'),[]);
++ assert.deepEqual(filterCatalog([basic,advanced],'3','2027-02'),[]);
+ });
+ 
+ test('missing, null and empty levels retain model defaults', () => {
+--- before/scripts/check-catalog-browser.mjs
++++ after/scripts/check-catalog-browser.mjs
+@@ -5,7 +5,7 @@
+ import assert from 'node:assert/strict';
+ import {renderCatalog} from './render-catalog.mjs';
+ import {filterCatalog} from '../dist/catalog-filter.js';
+-import {departuresFor, departureLevels, levelsFor} from './trip-model.mjs';
++import {departuresFor, levelsFor} from './trip-model.mjs';
+ const {chromium} = createRequire(import.meta.url)(process.env.LST_PLAYWRIGHT_MODULE || 'playwright');
+ const output = process.env.LST_QA_OUTPUT || 'docs/qa/2026-10-25-viajes-home/browser';
+ await mkdir(output, {recursive:true});
+@@ -13,11 +13,11 @@
+ const before = path.resolve(process.env.LST_QA_BEFORE || 'docs/qa/2026-10-25-viajes-home/before/dist');
+ const template = await readFile(path.join(root, 'viajes/index.html'), 'utf8');
+ const {trips} = JSON.parse(await readFile(path.join(root, 'catalog-snapshot.json'), 'utf8'));
+-const model = trips.map(t => ({levels:levelsFor(t), departures:departuresFor(t).map(d=>({...d,levels:departureLevels(t,d)}))}));
++const model = trips.map(t => ({levels:levelsFor(t), departures:departuresFor(t)}));
+ let baseline = false, fixture = false;
+-const mixed = {...structuredClone(trips[0]), id:'qa-mixed', name:'Fechas y niveles', slug:'qa-mixed', hero:'/assets/el-salvador.webp', levels:[1,2], departures:[
+- {id:'jan',start:'2027-01-25',end:'2027-02-02',date:'25 ene — 2 feb 2027',levels:[1],price:500,state:'confirmed'},
+- {id:'mar',start:'2027-03-01',end:'2027-03-08',date:'1–8 mar 2027',levels:[3],price:650,state:'confirmed'},
++const mixed = {...structuredClone(trips[0]), id:'qa-mixed', name:'Varias fechas, mismo nivel', slug:'qa-mixed', hero:'/assets/el-salvador.webp', levels:[1,2], departures:[
++ {id:'jan',start:'2027-01-25',end:'2027-02-02',date:'25 ene — 2 feb 2027',price:500,state:'confirmed'},
++ {id:'mar',start:'2027-03-01',end:'2027-03-08',date:'1–8 mar 2027',price:650,state:'confirmed'},
+ ]};
+ const pending = {...mixed, id:'qa-pending',slug:'qa-pending', name:'Sin fechas', state:'upcoming',levels:[4], departures:[],hero:''};
+ const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.svg':'image/svg+xml','.webp':'image/webp','.woff2':'font/woff2','.ttf':'font/ttf'};
+@@ -55,7 +55,7 @@
+   eq(await page.locator('[data-catalog-trip]:visible').count(),trips.length,'every destination visible');
+   ok(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily.startsWith('Aura')),'same display type');
+   ok(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(255, 250, 231)'&&getComputedStyle(e).fontFamily.includes('Work Sans')),'same cream and body type');
+-  ok(await page.locator('.catalog-card').evaluateAll(es=>es.every(e=>{const s=getComputedStyle(e),footer=getComputedStyle(e.querySelector('.home-trip-link'));return parseFloat(s.borderRadius)===28&&s.boxShadow!=='none'&&footer.backgroundColor==='rgb(27, 27, 27)';})),'same rounded cards and ink booking footer');
++  ok(await page.locator('.catalog-card').evaluateAll(es=>es.every(e=>{const s=getComputedStyle(e),footer=getComputedStyle(e.querySelector('.home-trip-link'));return parseFloat(s.borderRadius)===25&&s.boxShadow!=='none'&&footer.backgroundColor==='rgb(27, 27, 27)';})),'same rounded cards and ink booking footer');
+   if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)){
+    await page.screenshot({path:path.join(output,`overflow-${width}.png`),fullPage:true});
+    await writeFile(path.join(output,`overflow-${width}.json`),JSON.stringify(await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>e.getClientRects().length&&e.getBoundingClientRect().right>innerWidth+1).map(e=>({tag:e.tagName,class:e.className,text:e.textContent.slice(0,60),right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width}))),null,2));
+@@ -107,15 +107,15 @@
+  }
+  fixture=true;
+  const page=await browser.newPage({viewport:{width:390,height:844}});
+- await page.goto(base+'/viajes/?nivel=1&fecha=2027-03');
+- eq(await page.locator('[data-catalog-trip]:visible').count(),0,'no false match across distinct departures');
++ await page.goto(base+'/viajes/?nivel=3&fecha=2027-03');
++ eq(await page.locator('[data-catalog-trip]:visible').count(),0,'fixed trip range excludes incompatible levels');
+  await page.locator('#catalog-empty [data-catalog-clear]').click();
+  eq(await page.locator('#catalog-level').evaluate(e=>e===document.activeElement),true,'empty clear restores visible focus');
+  eq(await page.locator('[data-catalog-trip]:visible').count(),2,'pending destination survives clear');
+  await page.selectOption('#catalog-date','2027-02');
+  eq(await page.locator('[data-catalog-trip]:visible').count(),1,'cross-month departure matches February');
+  await page.selectOption('#catalog-level','3');
+- eq(await page.locator('[data-catalog-trip]:visible').count(),0,'same-departure effective level required');
++ eq(await page.locator('[data-catalog-trip]:visible').count(),0,'trip range applies to every departure');
+  await page.close();fixture=false;
+  const noJs=await browser.newPage({javaScriptEnabled:false,viewport:{width:390,height:844}});
+  await noJs.goto(base+'/viajes/');eq(await noJs.locator('[data-catalog-trip]:visible').count(),trips.length,'no JS lists all trips');ok(!(await noJs.locator('[data-catalog-filters]').isVisible()),'nonfunctional filters hidden without JS');
+@@ -123,7 +123,7 @@
+  const enlarged=await browser.newPage({viewport:{width:320,height:568}});await enlarged.goto(base+'/viajes/');await enlarged.addStyleTag({content:'html{font-size:200%} body{font-size:200%} select,button{font-size:inherit!important}'});ok(await enlarged.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'enlarged text narrow viewport no overflow');await enlarged.screenshot({path:path.join(output,'viajes-320-text200.png'),fullPage:true});await enlarged.close();
+  eq(errors,[],'no browser exceptions');
+  await writeFile(path.join(output,'images.json'),JSON.stringify(results,null,2));
+- console.log(`PASS: ${checks} browser assertions; 320, 390, 481, 768, 1024, 1440px, level/month combinations, same-departure matching, month boundaries, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.`);
++ console.log(`PASS: ${checks} browser assertions; 320, 390, 481, 768, 1024, 1440px, level/month combinations, fixed-range matching, month boundaries, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.`);
+ }finally{await browser.close();await new Promise(r=>server.close(r));}
+ 
+ 
+--- before/scripts/home-trips.test.mjs
++++ after/scripts/home-trips.test.mjs
+@@ -17,7 +17,7 @@
+   assert.match(html, /2027-01-01 — fin/);
+   assert.match(html, /2027-02-01 — fin/);
+   const panel = panelFor(html);
+-  assert.equal(panel, '<a class="home-trip-dates-link" href="/viajes/multi/" aria-label="Ver viaje de Viaje multi"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">2027-01-01 — fin</span><span class="departure-row-level">Niveles I–II</span></li><li class="departure-row"><span class="departure-row-date">2027-02-01 — fin</span><span class="departure-row-level">Niveles I–II</span></li></ul></a>');
++  assert.equal(panel, '<a class="home-trip-dates-link" href="/viajes/multi/" aria-label="Ver viaje de Viaje multi"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">2027-01-01 — fin</span></li><li class="departure-row"><span class="departure-row-date">2027-02-01 — fin</span></li></ul></a>');
+   assert.doesNotMatch(panel, /€|Precio|Consulta|disponib|home-trip-dates-title|home-trip-date-note/);
+   assert.equal(priceFor(html), 'Desde 399,5 €<small>por persona</small>');
+   assert.equal((html.match(/href="\/viajes\/multi\/"/g) ?? []).length, 2);
+@@ -80,7 +80,7 @@
+ test('date text is escaped in the panel and preview', () => {
+   const date = '1 < 8 & "marzo"';
+   const html = renderHomeTrips(shell, [trip('escaped', {departures: [{...departure('one', '2027-03-01', 399), date}]})]);
+-  assert.equal(panelFor(html), '<a class="home-trip-dates-link" href="/viajes/escaped/" aria-label="Ver viaje de Viaje escaped"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">1 &lt; 8 &amp; &quot;marzo&quot;</span><span class="departure-row-level">Niveles I–II</span></li></ul></a>');
++  assert.equal(panelFor(html), '<a class="home-trip-dates-link" href="/viajes/escaped/" aria-label="Ver viaje de Viaje escaped"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">1 &lt; 8 &amp; &quot;marzo&quot;</span></li></ul></a>');
+   assert.match(html, /Próx. fecha<\/span><span class="home-trip-preview-date">1 &lt; 8 &amp; &quot;marzo&quot;<\/span>/);
+ });
+ 
+--- before/scripts/registration.test.mjs
++++ after/scripts/registration.test.mjs
+@@ -16,7 +16,7 @@
+ const documents=prepareDrafts(inventory).map(doc=>({...doc,_id:doc._id.replace(/^drafts\./,'')}));
+ 
+ test('all eight client categories map by destination and exact start/end, regardless of order',()=>{
+- const expected={hossegor:['1'],'el-palmar':['2'],marruecos:['3','4'],fuerteventura:['5'],senegal:['6'],maldivas:['7','8']};
++ const expected={hossegor:['1'],'el-palmar':['2'],marruecos:['3'],'marruecos-avanzado':['4'],fuerteventura:['5'],senegal:['6'],maldivas:['7','8']};
+  for(const [slug,values] of Object.entries(expected)) {
+   const t=get(slug);assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values);
+   t.departures.reverse();assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values.toReversed());
+@@ -31,21 +31,21 @@
+   assert.equal(registrationUrl(t),'');assert.doesNotMatch(renderRegistration(t),/<form\b|registration.js/);
+   assert.match(renderRegistration(t),/no está disponible/);assert.doesNotMatch(renderTrip(t),/data-registration=/);
+  }
+- const t=get('marruecos');t.departures[0].availability='full';
+- assert.deepEqual(registrationDepartures(t).map(d=>brevoValue(t,d)),['4']);
+- assert.equal(registrationUrl(t,t.departures[0]),'');assert.doesNotMatch(renderRegistration(t),/name="VIAJE_SURF"[^>]*value="3"/);
++ const t=get('maldivas');t.departures[0].availability='full';
++ assert.deepEqual(registrationDepartures(t).map(d=>brevoValue(t,d)),['8']);
++ assert.equal(registrationUrl(t,t.departures[0]),'');assert.doesNotMatch(renderRegistration(t),/name="VIAJE_SURF"[^>]*value="7"/);
+ });
+ 
+ test('canonical multi-date pages require an explicit date; single and dated aliases preselect correctly',()=>{
+- const t=get('marruecos');assert.doesNotMatch(renderRegistration(t),/name="VIAJE_SURF"[^>]* checked/);
+- assert.match(renderRegistration(t,'marruecos-2027-01-24'),/name="VIAJE_SURF"[^>]*value="4"[^>]* checked/);
+- assert.doesNotMatch(renderRegistration(t,'marruecos-2027-01-24'),/name="VIAJE_SURF"[^>]*value="3"[^>]* checked/);
++ const t=get('maldivas');assert.doesNotMatch(renderRegistration(t),/name="VIAJE_SURF"[^>]* checked/);
++ assert.match(renderRegistration(t,'maldivas-2027-03-28'),/name="VIAJE_SURF"[^>]*value="8"[^>]* checked/);
++ assert.doesNotMatch(renderRegistration(t,'maldivas-2027-03-28'),/name="VIAJE_SURF"[^>]*value="7"[^>]* checked/);
+  t.departures[0].availability='full';
+- const closedAlias=renderRegistration(t,'marruecos-2027-01-17');
++ const closedAlias=renderRegistration(t,'maldivas-2027-03-21');
+  assert.doesNotMatch(closedAlias,/name="VIAJE_SURF"[^>]* checked/);
+  assert.match(closedAlias,/id="registration-date-error" role="alert">/);
+  assert.match(renderRegistration(get('hossegor')),/name="VIAJE_SURF"[^>]*value="1"[^>]* checked/);
+- assert.equal(registrationUrl(t,t.departures[1]),'/inscripciones/marruecos/?salida='+t.departures[1].id);
++ assert.equal(registrationUrl(t,t.departures[1]),'/inscripciones/maldivas/?salida='+t.departures[1].id);
+ });
+ 
+ test('Brevo payload keeps every supplied field, category value and required/optional distinction',()=>{
+@@ -69,11 +69,11 @@
+  const trip=adaptTrip(doc);assert.equal(trip.departures[0].brevoValue,101);assert(!JSON.stringify(trip).includes('PRIVATE'));
+  for(const value of [0,-1,1.5,'3',NaN]){doc.departures[0].brevoValue=value;assert.throws(()=>adaptTrip(doc),/VIAJE_SURF/);}
+  const palmar=get('el-palmar'),marruecos=get('marruecos');palmar.departures[0].brevoValue=3;assert.throws(()=>validateRegistrationMappings([palmar,marruecos]),/compartido/);
+- const duplicate=get('marruecos');duplicate.departures[1].brevoValue=3;assert.throws(()=>renderRegistration(duplicate),/duplicado/);
++ const duplicate=get('maldivas');duplicate.departures[1].brevoValue=7;assert.throws(()=>renderRegistration(duplicate),/duplicado/);
+ });
+ 
+ test('registration links are additive and remain available in the native date fallback',()=>{
+- const t=get('marruecos'),html=renderTrip(t);
++ const t=get('maldivas'),html=renderTrip(t);
+  assert.match(html,/class="button reserve-main" data-open-dates/);
+  for(const d of t.departures)assert(html.includes(registrationUrl(t,d)));
+  const noJs=html.match(/<noscript>[\s\S]*?<\/noscript>/)[0];
+@@ -87,8 +87,8 @@
+  const temp=await mkdtemp(path.join(os.tmpdir(),'lst-brevo-'));const out=path.join(temp,'dist');
+  try {
+   await buildSite({out,read:async()=>documents});
+-  assert.match(await readFile(path.join(out,'inscripciones/marruecos/index.html'),'utf8'),/name="VIAJE_SURF"/);
+-  assert.match(await readFile(path.join(out,'inscripciones/marruecos-2027-01-24/index.html'),'utf8'),/value="4"[^>]* checked/);
++  assert.match(await readFile(path.join(out,'inscripciones/maldivas/index.html'),'utf8'),/name="VIAJE_SURF"/);
++  assert.match(await readFile(path.join(out,'inscripciones/maldivas-2027-03-28/index.html'),'utf8'),/value="8"[^>]* checked/);
+   const server=createSiteServer({root:out});await new Promise(r=>server.listen(0,'127.0.0.1',r));
+   try {
+    const base=`http://127.0.0.1:${server.address().port}`;
+@@ -96,8 +96,8 @@
+    assert.equal((await fetch(base+'/inscripciones/desconocido/')).status,404);
+   } finally {await new Promise(r=>server.close(r));}
+   await buildSite({out,read:async()=>[]});
+-  assert.doesNotMatch(await readFile(path.join(out,'inscripciones/marruecos/index.html'),'utf8'),/<form\b/);
+-  assert.doesNotMatch(await readFile(path.join(out,'inscripciones/marruecos-2027-01-24/index.html'),'utf8'),/<form\b/);
++  assert.doesNotMatch(await readFile(path.join(out,'inscripciones/maldivas/index.html'),'utf8'),/<form\b/);
++  assert.doesNotMatch(await readFile(path.join(out,'inscripciones/maldivas-2027-03-28/index.html'),'utf8'),/<form\b/);
+  } finally {await rm(temp,{recursive:true,force:true});}
+ });
+ 
+@@ -108,3 +108,14 @@
+  assert.doesNotMatch(preview,/<form\b/);assert.match(preview,/no está disponible/);
+  assert.equal(await readFile(file,'utf8'),before);
+ });
++
++
++test('split Morocco signups and old URLs keep categories 3 and 4 isolated',()=>{
++ for(const [slug,alias,value,other] of [['marruecos','marruecos-2027-01-17','3','4'],['marruecos-avanzado','marruecos-2027-01-24','4','3']]){
++  const t=get(slug),html=renderRegistration(t,alias);
++  assert.match(html,new RegExp('name="VIAJE_SURF"[^>]*value="'+value+'"[^>]* checked'));
++  assert.doesNotMatch(html,new RegExp('name="VIAJE_SURF"[^>]*value="'+other+'"'));
++  assert.match(renderTrip(t),new RegExp('href="/inscripciones/'+slug+'/"'));
++  assert.equal(brevoValue(t,t.departures[0]),value);
++ }
++});
+--- before/scripts/render-catalog.mjs
++++ after/scripts/render-catalog.mjs
+@@ -1,5 +1,5 @@
+ import {renderHomeTrip} from './render-home-trips.mjs';
+-import {levelsFor, departuresFor, departureLevels} from './trip-model.mjs';
++import {levelsFor, departuresFor} from './trip-model.mjs';
+ import {departureMonths} from '../dist/catalog-filter.js';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({
+@@ -10,7 +10,7 @@
+   const cards = trips.map((trip, order) => ({trip, order,
+     start: departuresFor(trip).map(d => d.start).filter(Boolean).sort()[0] || '9999',
+   })).sort((a, b) => a.start.localeCompare(b.start) || a.order - b.order).map(({trip}) => {
+-    const departures = departuresFor(trip).map(d => ({start: d.start, end: d.end, levels: departureLevels(trip, d)}));
++    const departures = departuresFor(trip).map(d => ({start: d.start, end: d.end}));
+     return renderHomeTrip(trip, {heading: 'h2', idPrefix: 'catalog', compact: true})
+       .replace('<article class="home-trip', `<article data-catalog-trip data-levels="${levelsFor(trip).join(' ')}" data-departures="${escape(JSON.stringify(departures))}" class="catalog-card home-trip`)
+       .replace('class="home-trip-link"', 'class="home-trip-link catalog-card-link"');
+@@ -22,7 +22,7 @@
+   }).join('');
+   const markers = /<!-- catalog:start -->[\s\S]*?<!-- catalog:end -->/;
+   if (!markers.test(current)) throw Error('Missing catalog generation markers');
+-  const content = `<p class="catalog-status" id="catalog-status" role="status" aria-live="polite" aria-atomic="true">${trips.length ? `${trips.length} de ${trips.length} destinos.` : 'No hay viajes publicados en este momento.'}</p>
++  const content = `<p class="catalog-status" id="catalog-status" role="status" aria-live="polite" aria-atomic="true">${trips.length ? `${trips.length} de ${trips.length} viajes.` : 'No hay viajes publicados en este momento.'}</p>
+ <div class="catalog-grid home-trip-grid" id="catalog-results">${cards}</div>`;
+   return current.replace(markers, `<!-- catalog:start -->\n${content}\n<!-- catalog:end -->`)
+     .replace(/<!-- catalog-dates:start -->[\s\S]*?<!-- catalog-dates:end -->/,
+--- before/scripts/render-departure-rows.mjs
++++ after/scripts/render-departure-rows.mjs
+@@ -1,5 +1,5 @@
+-import {departuresFor, departureLevelLabel} from './trip-model.mjs';
++import {departuresFor} from './trip-model.mjs';
+ const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ export function renderDepartureRows(trip, className='') {
+-  return `<ul class="${className ? className+' ' : ''}departure-rows">${departuresFor(trip).map(d=>`<li class="departure-row"><span class="departure-row-date">${escape(d.date)}</span><span class="departure-row-level">${escape(departureLevelLabel(trip,d))}</span></li>`).join('')}</ul>`;
++  return `<ul class="${className ? className+' ' : ''}departure-rows">${departuresFor(trip).map(d=>`<li class="departure-row"><span class="departure-row-date">${escape(d.date)}</span></li>`).join('')}</ul>`;
+ }
+--- before/scripts/render-registration.mjs
++++ after/scripts/render-registration.mjs
+@@ -1,5 +1,5 @@
+ import {brevoConfig, brevoValue, registrationDepartures} from './brevo.mjs';
+-import {departureLevelLabel} from './trip-model.mjs';
++import {levelLabel} from './trip-model.mjs';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const error = '<label class="entry__error entry__error--primary"></label>';
+@@ -12,7 +12,7 @@
+ }
+ 
+ function form(trip, departures, selected, unavailableAlias) {
+-  const dates = `<fieldset class="sib-radiobutton-group sib-form-block registration-dates" data-required="true"><legend>Tu fecha para ${escape(trip.name)} *</legend><div class="form__entry entry_mcq"><div class="form__label-row"><div class="registration-choices">${departures.map(d => `<div class="entry__choice"><label><input type="radio" name="VIAJE_SURF" class="input_replaced" value="${brevoValue(trip, d)}" data-departure-id="${escape(d.id)}"${selected?.id === d.id ? ' checked' : ''} required><span class="radio-button"></span><span><strong>${escape(d.date)}</strong><small>${escape(departureLevelLabel(trip, d))} · ${escape(d.duration)}</small></span></label></div>`).join('')}</div></div>${error}</div></fieldset>`;
++  const dates = `<fieldset class="sib-radiobutton-group sib-form-block registration-dates" data-required="true"><legend>Tu fecha para ${escape(trip.name)} *</legend><div class="form__entry entry_mcq"><div class="form__label-row"><div class="registration-choices">${departures.map(d => `<div class="entry__choice"><label><input type="radio" name="VIAJE_SURF" class="input_replaced" value="${brevoValue(trip, d)}" data-departure-id="${escape(d.id)}"${selected?.id === d.id ? ' checked' : ''} required><span class="radio-button"></span><span><strong>${escape(d.date)}</strong><small>${escape(levelLabel(trip))} · ${escape(d.duration)}</small></span></label></div>`).join('')}</div></div>${error}</div></fieldset>`;
+   const personal = `<div class="registration-grid">${field('NOMBRE', 'Nombre', {autocomplete:'given-name'})}${field('APELLIDOS', 'Apellidos', {autocomplete:'family-name'})}${field('EMAIL', 'Email', {type:'email', autocomplete:'email'})}${phone()}${field('FECHADENACIMIENTO', 'Fecha de nacimiento', {attrs:'data-type="date" pattern="^([0-2][0-9]|(3)[0-1])(-)(((0)[0-9])|((1)[0-2]))(-)\\d{4}$" title="dd-mm-aaaa" data-format="dd-mm-yyyy" placeholder="dd-mm-aaaa"', help:'Día, mes y año. Por ejemplo: 15-06-1995.'})}${field('DNI', 'DNI / documento de identidad')}${field('DIRECCION', 'Dirección', {autocomplete:'street-address'})}${field('CIUDAD', 'Ciudad', {autocomplete:'address-level2'})}${field('CODIGO_POSTAL', 'Código postal', {autocomplete:'postal-code', attrs:'data-numeric="true" inputmode="numeric" pattern="[0-9]+"'})}${field('PAIS', 'País', {autocomplete:'country-name'})}</div>`;
+   const surf = choices('NIVEL_SURF', '¿Cuál es tu nivel de surf?', ['Nivel 1, iniciación','Nivel 2, nivel base de surf','Nivel 3, intermedio','Nivel 4, controlo']) + '<p class="registration-help"><a href="/niveles/" target="_blank" rel="noopener">Consulta nuestra guía de niveles</a> si tienes dudas.</p>' + choices('TALLA_CAMISETA', 'Talla de camiseta', ['S','M','L','XL']) + choices('CONQUIENVIAJO', '¿Cómo vendrías al surftrip?', ['Sol@ a la aventura!','Acompañad@ o con amigos!']) + field('ACOMPANANTES', 'Si vienes con gente, ¿cuáles son sus nombres?', {required:false}) + choices('MATERIAL', 'En cuanto al material', ['Llevo el mio propio','Alquilaré una tabla']) + field('MATERIAL_MEDIDAS', 'Si vas a alquilar, ¿qué medidas crees que necesitas?', {required:false});
+   const more = field('ALERGIAS_INTOLERANCIAS', '¿Tienes alergias o alguna preferencia alimenticia?', {required:false}) + field('ENFERMEDAD_PROBLEMA', '¿Tienes alguna enfermedad o problema que te impida surfear y viajar de forma segura?', {required:false}) + field('MOTIVA', '¿Qué te motiva para unirte a este viaje con LST?') + choices('CONOCIDO', '¿Cómo has conocido este viaje?', ['Ya he viajado con Lets Surf Together','Recomendaciones de amigos/conocidos','Redes sociales! Mi primer viaje con LST!','Pagina Web','Otros']);
+--- before/scripts/render-trips.mjs
++++ after/scripts/render-trips.mjs
+@@ -1,4 +1,4 @@
+-import {levelLabel, departuresFor, departureMessage, tripMessage, tripFacts, tripPrice, tripPriceDetails, formatPrice, isFull, availabilityLabel, hasDepartureLevels, departureLevelLabel, departureRequirement, levelsFor} from './trip-model.mjs';
++import {levelLabel, departuresFor, departureMessage, tripMessage, tripFacts, tripPrice, tripPriceDetails, formatPrice, isFull, availabilityLabel} from './trip-model.mjs';
+ import {registrationUrl} from './brevo.mjs';
+ import {promotionCondition} from './trip-pricing.mjs';
+ import {tripMood, renderQuickFacts, experienceScenes, groupedInclusions} from './trip-experience.mjs';
+@@ -26,7 +26,8 @@
+  fuerteventura: 'Sal del invierno. Entra al agua.',
+  hossegor: 'Un finde. Todo tu surf por delante.',
+  maldivas: 'Cambia de azul. Sigue surfeando.',
+- marruecos: 'Un viaje. Tu manera de surfear.',
++ marruecos: 'Tu semana entre olas y zocos.',
++ 'marruecos-avanzado': 'Más olas. Más intención en cada giro.',
+  senegal: 'El Atlántico tiene otro ritmo.',
+ };
+ 
+@@ -34,6 +35,8 @@
+  'el-palmar': ['Al agua, cada día.', 'El surf también se entrena fuera.', 'Después de la última ola.', 'El plan cuando cae el sol.'],
+  fuerteventura: ['Más sesiones. Más recursos.', 'Un día con ritmo de isla.', 'La isla también se vive fuera del agua.'],
+  hossegor: ['Tu surf, visto con otros ojos.', 'Aprender a leer el mar.'],
++ marruecos: ['Tu surf empieza aquí.', 'Marruecos también se vive fuera del agua.'],
++ 'marruecos-avanzado': ['Coaching para dar el siguiente paso.', 'Leer el mar. Elegir la ola.'],
+  maldivas: ['De la primera sesión al último sunset.', 'Si el mar pide una pausa.'],
+  senegal: ['Surfear. Revisar. Volver al agua.', 'Otro ritmo fuera del agua.', 'Una noche bajo otro cielo.'],
+ };
+@@ -62,6 +65,7 @@
+  return trip.dossier?`<a class="dossier-link" href="${escape(trip.dossier)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier <span class="dossier-format">PDF</span></a>`:'';
+ };
+ const registrationLink=(trip,departure,classes='button trip-registration')=>{const href=registrationUrl(trip,departure);return href?`<a class="${classes}" data-registration="${escape(trip.id)}" href="${escape(href)}">Inscribirme${departure?' en esta fecha':''}</a>`:'';};
++const departurePayment=d=>(d.payment?.depositAmount!=null||d.payment?.terms)?`<details class="departure-payment"><summary>Condiciones de pago</summary>${d.payment?.depositAmount!=null?`<p>Señal: ${formatPrice(d.payment.depositAmount)}</p>`:''}${d.payment?.terms?`<p>${escape(d.payment.terms)}</p>`:''}</details>`:'';
+ const bookingAction=(trip,label,classes)=>isFull(trip)?contact(trip,'Consultar viaje completo',classes,`¡Hola, LST! Veo que ${trip.name} está completo. Quiero consultar otras opciones con el equipo.`):departuresFor(trip).length>1?`<button type="button" class="${classes}" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Elegir fecha</button>`:contact(trip,label,classes);
+ function dateDialog(trip){
+  const departures=departuresFor(trip);
+@@ -69,19 +73,9 @@
+  const options=departures.map(d=>{
+   const availability=d.availability?availabilityLabel(d):availabilityLabel(trip);
+   const full=d.availability?isFull(d):isFull(trip);
+-  return `<article class="departure-option"><div class="departure-option-top"><p class="departure-option-status">${escape(availability)}</p><div class="departure-option-date"><h3>${escape(d.date)}</h3><span class="departure-option-level">${escape(departureLevelLabel(trip,d))}</span></div><p class="departure-option-meta">${escape(d.duration)}</p>${d.levels?`<p class="departure-level-override">Nivel específico de esta fecha</p>`:''}${departureRequirement(trip,d)?`<p class="departure-option-meta">${escape(departureRequirement(trip,d))}</p>`:''}${d.capacity?.total!=null?`<p class="departure-option-meta">Capacidad: ${d.capacity.total} personas</p>`:''}${d.programme?`<a class="text-link" data-view-programme href="#programa-${escape(d.id)}">Ver programa de esta fecha</a>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div><div class="departure-option-booking">${offerMarkup(trip,d)}<p class="departure-option-price">${fareMarkup(trip,d)}${d.price!==null?'<span>por persona</span>':''}</p>${d.payment?.depositAmount!=null?`<p class="departure-option-meta">Señal: ${formatPrice(d.payment.depositAmount)}</p>`:''}${registrationLink(trip,d)}<a class="button departure-enquiry" data-whatsapp="${trip.id}" href="${wa(trip,departureMessage(trip,d))}" data-departure="${escape(d.id)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar ${escape(trip.name)}, ${escape(d.date)}, ${escape(departureLevelLabel(trip,d))}, por WhatsApp">${full?'Consultar alternativas':'Consultar'}</a></div></article>`;
++  return `<article class="departure-option"><div class="departure-option-top"><p class="departure-option-status">${escape(availability)}</p><div class="departure-option-date"><h3>${escape(d.date)}</h3></div><p class="departure-option-meta">${escape(d.duration)}</p>${d.capacity?.total!=null?`<p class="departure-option-meta">Capacidad: ${d.capacity.total} personas</p>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div><div class="departure-option-booking">${offerMarkup(trip,d)}<p class="departure-option-price">${fareMarkup(trip,d)}${d.price!==null?'<span>por persona</span>':''}</p>${departurePayment(d)}${registrationLink(trip,d)}<a class="button departure-enquiry" data-whatsapp="${trip.id}" href="${wa(trip,departureMessage(trip,d))}" data-departure="${escape(d.id)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar ${escape(trip.name)}, ${escape(d.date)}, ${escape(levelLabel(trip))}, por WhatsApp">${full?'Consultar alternativas':'Consultar'}</a></div></article>`;
+  }).join('');
+- return `<dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">${escape(trip.name)} / SURFTRIP</p><h2 id="departure-dialog-title">Elige tu fecha.</h2></div><button class="departure-close" type="button">Cerrar</button></div><p id="departure-dialog-description" class="departure-dialog-intro">${hasDepartureLevels(trip)?'Cada fecha tiene su nivel. Revisa sus requisitos y su programa.':'Consulta la salida que te encaje.'}</p><div class="departure-dialog-list">${options}</div><p class="departure-dialog-help">Hablamos por WhatsApp y resolvemos tus dudas antes de reservar.</p></dialog>`;
+-}
+-
+-function departureProgrammes(trip) {
+- const departures=departuresFor(trip).filter(d=>d.programme);
+- if(!departures.length)return '';
+- const list=items=>items?.length?`<ul>${items.map(item=>`<li>${escape(item)}</li>`).join('')}</ul>`:'';
+- return `<section class="trip-block departure-programmes" aria-labelledby="departure-programmes-title"><p class="eyebrow">CADA FECHA, SU PROGRAMA</p><h2 id="departure-programmes-title">Elige la salida que encaja contigo.</h2><p>Consulta el nivel, las sesiones y el material de cada fecha.</p>${departures.map(d=>{
+- const p=d.programme;
+- return `<details class="departure-programme" id="programa-${escape(d.id)}"><summary><span>${escape(d.date)}</span><span>${escape(departureLevelLabel(trip,d))}</span></summary><div class="departure-programme-copy"><p>${escape(departureRequirement(trip,d))}</p>${list(p.levelChecks)}${p.levelText && p.levelText!==departureRequirement(trip,d)?`<p>${escape(p.levelText)}</p>`:''}${p.intro?`<p>${escape(p.intro)}</p>`:''}${p.storyIntro?`<p>${escape(p.storyIntro)}</p>`:''}${(p.story??[]).map(([title,copy])=>`<h3>${escape(title)}</h3><p>${escape(copy)}</p>`).join('')}${p.includes?.length?`<h3>Incluido en esta fecha</h3>${list(p.includes)}`:''}${p.excludes?.length?`<h3>No incluido en esta fecha</h3>${list(p.excludes)}`:''}${p.inclusionsNote?`<p class="fine-print">${escape(p.inclusionsNote)}</p>`:''}${p.stay?`<h3>${escape(p.stay.title)}</h3><p>${escape(p.stay.name)}</p><p>${escape(p.stay.text)}</p><p class="fine-print">${escape(p.stay.note)}</p>`:''}${p.team?`<h3>${escape(p.team.title)}</h3><p>${escape(p.team.text)}</p>`:''}${p.faqs?.length?`<h3>Dudas de esta salida</h3>${p.faqs.map(([q,a])=>`<details><summary>${escape(q)}</summary><p>${escape(a)}</p></details>`).join('')}`:''}${d.capacity?.total!=null?`<p class="fine-print">Capacidad de esta salida: ${d.capacity.total} personas.</p>`:''}${d.payment?.terms?`<p class="fine-print">${escape(d.payment.terms)}</p>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div></details>`;
+- }).join('')}</section>`;
++ return `<dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">${escape(trip.name)} / SURFTRIP</p><h2 id="departure-dialog-title">Elige tu fecha.</h2></div><button class="departure-close" type="button">Cerrar</button></div><p id="departure-dialog-description" class="departure-dialog-intro">${escape(levelLabel(trip))} · Mismo programa en todas las fechas. Elige cuándo te vienes.</p><div class="departure-dialog-list">${options}</div><p class="departure-dialog-help">Hablamos por WhatsApp y resolvemos tus dudas antes de reservar.</p></dialog>`;
+ }
+ 
+ export function renderTrip(trip, trips = []){
+@@ -115,23 +109,22 @@
+ <a class="skip-link" href="#contenido">Saltar al contenido</a>
+ <header class="trip-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126"></a><nav class="trip-header-nav" aria-label="Navegación principal"><a class="trip-back" href="/viajes/" aria-label="Ver todos los viajes">${arrow("left")} Viajes</a><a class="trip-header-levels" href="/niveles/">Niveles</a></nav>${bookingAction(trip,cta,'trip-header-cta')}</header>
+ <main id="contenido">
+- <section class="trip-cover" aria-labelledby="trip-title">${trip.hero?`<img class="trip-cover-image" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="1000" height="600" fetchpriority="high" decoding="async">`:""}<div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="eyebrow"><span class="trip-dot" aria-hidden="true"></span> ${escape(trip.place)} / SURFTRIP</p><h1 id="trip-title"${trip.name.length>11?' class="trip-title-long"':''}>${escape(trip.name)}</h1><p class="trip-cover-lead">${escape(summaryTitle)}</p>${real?`<div class="cover-key-facts"><span>${multiple?"Varias salidas":escape(firstDeparture?.date??'Consultar fechas')}</span><span>${escape(durationLabel)}</span><span>${escape(levelLabel(trip))}</span></div>`:`<span class="trip-state">${status(trip)}</span>`}<a class="button trip-cover-cta" href="#reservar">${isFull(trip)?'Consultar alternativas':multiple?'Encuentra tu fecha':real?'Me apunto al plan':'Quiero saber más'}</a></div>${trip.gallery.length?`<button type="button" class="cover-photos" data-open-gallery aria-label="Ver las ${trip.gallery.length} fotos del viaje">Ver fotos <span>${trip.gallery.length}</span></button>`:""}</section>
++ <section class="trip-cover" aria-labelledby="trip-title">${trip.hero?`<img class="trip-cover-image" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="1000" height="600" fetchpriority="high" decoding="async">`:""}<div class="trip-cover-shade" aria-hidden="true"></div><div class="trip-cover-copy"><p class="eyebrow"><span class="trip-dot" aria-hidden="true"></span> ${escape(trip.place)} / SURFTRIP</p><p class="trip-cover-level">${escape(levelLabel(trip))}</p><h1 id="trip-title"${trip.name.length>11?' class="trip-title-long"':''}>${escape(trip.name)}</h1><p class="trip-cover-lead">${escape(summaryTitle)}</p>${real?`<div class="cover-key-facts"><span>${multiple?"Varias salidas":escape(firstDeparture?.date??'Consultar fechas')}</span><span>${escape(durationLabel)}</span></div>`:`<span class="trip-state">${status(trip)}</span>`}<a class="button trip-cover-cta" href="#reservar">${isFull(trip)?'Consultar alternativas':multiple?'Encuentra tu fecha':real?'Me apunto al plan':'Quiero saber más'}</a></div>${trip.gallery.length?`<button type="button" class="cover-photos" data-open-gallery aria-label="Ver las ${trip.gallery.length} fotos del viaje">Ver fotos <span>${trip.gallery.length}</span></button>`:""}</section>
+  <div class="trip-manifesto"><span>Más que un surftrip.</span><span>Olas. Gente. Vida.</span><span>LET’S SURF TOGETHER <span aria-hidden="true">↗</span></span></div>
+  <div class="trip-layout">
+   <article class="trip-content">
+    <section class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">${real?'APAGA EL PILOTO AUTOMÁTICO':'EL PRÓXIMO PLAN'}</p><h2 id="trip-summary-title">${escape(mood[0])}</h2><p class="trip-kickoff">${escape(mood[1])}</p>${renderQuickFacts(trip)}<div class="trip-price-summary">${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="trip-summary-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}<span>${shownDeparture?.price!=null?'por persona':'Consulta con el equipo'}</span></p><p class="trip-summary-price-note">${escape(offer?'Tarifa vigente para el cupo indicado. Confirmamos disponibilidad contigo.':summaryPrice(trip))}</p>${bookingAction(trip,cta,'button trip-summary-cta')}</div>${isFull(trip)?'<p class="trip-notice">Esta salida está completa. Consulta otras opciones con el equipo.</p>':''}${isFull(trip)&&multiple?`<dl class="trip-facts">${departures.map(d=>`<div><dt>${escape(d.date)}</dt><dd>${escape(d.duration)} · ${d.price!==null?formatPrice(d.price):'Consultar precio'} · Completo</dd></div>`).join('')}</dl>`:''}${mobileOptions}</section>
+    ${experienceScenes(trip)}
+-   ${departureProgrammes(trip)}
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><div class="level-heading"><h2>${escape(trip.levelTitle==='Tu nivel de surf.'?'Buen rollo sí. Tu nivel, también.':trip.levelTitle)}</h2><div class="level-meter" aria-label="${escape(levelLabel(trip))}">${[1,2,3,4].map((n)=>`<span${levelsFor(trip).includes(n)?' class="level-active"':''} aria-hidden="true">${['I','II','III','IV'][n-1]}</span>`).join('')}</div></div><p>${escape(trip.levelText)}</p>${hasDepartureLevels(trip)?`<ul class="departure-level-list">${departures.map(d=>`<li><strong>${escape(d.date)} · ${escape(departureLevelLabel(trip,d))}</strong><span>${escape(departureRequirement(trip,d))}</span></li>`).join('')}</ul>`:''}${trip.levelChecks?`<ul>${trip.levelChecks.map(s=>`<li>${escape(s)}</li>`).join('')}</ul>`:''}<a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">TU GRUPO EN EL AGUA</p><div class="level-heading"><h2>${escape(levelLabel(trip))}</h2><p class="level-fixed-note">Un mismo nivel.<br>Un plan compartido.</p></div><p>${escape(trip.levelText || trip.levelRequirement)}</p>${trip.levelChecks?.length?`<ul>${trip.levelChecks.map(s=>`<li>${escape(s)}</li>`).join('')}</ul>`:''}<a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}${trips.some(t=>t.slug===(trip.slug==='marruecos'?'marruecos-avanzado':trip.slug==='marruecos-avanzado'?'marruecos':''))?`<a class="trip-alternative" href="/viajes/${trip.slug==='marruecos'?'marruecos-avanzado':'marruecos'}/">${trip.slug==='marruecos'?'¿Ya tienes autonomía? Conoce Marruecos avanzado.':'¿Estás empezando? Conoce Marruecos I–II.'}</a>`:''}</section>
++   <section class="trip-programme" id="plan" aria-label="Programa del viaje"><p class="eyebrow">EL PLAN, PUNTO POR PUNTO</p><p class="trip-intro">${escape(detailIntro(trip.intro))}</p>${trip.story.length||trip.storyIntro?`<section class="trip-block"><h2>${escape(trip.storyTitle==='El programa.'?'El programa completo.':trip.storyTitle)}</h2><p>${escape(trip.storyIntro)}</p><div class="plan-list">${story}</div></section>`:''}${stay}
++<section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>${escape(team?.title??'Quién te acompañará.')}</h2><p>${escape(team?.text??(real?'Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones de esta salida.':`El próximo programa de ${trip.name} está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.`))}</p>${accompaniment.length ? `<p class="trip-team-programme">El programa de esta salida recoge:</p><ul class="trip-team-roles">${accompaniment.map(item=>`<li>${escape(item)}</li>`).join('')}</ul>` : ''}<a class="text-link" href="/conocenos/#acompanamiento">Conoce cómo viajamos en LST</a>${contact(trip,'Consultar el acompañamiento','button button-small trip-team-contact',`¡Hola, LST! Me interesa ${trip.name}. ¿Quién acompaña al grupo, quién imparte las sesiones de surf y qué apoyo tenemos antes y durante esta salida?`)}</section>
++</section>
+    ${inclusions}
+-   <details class="trip-info-file" id="plan"><summary><span class="file-label">EL PLAN, PUNTO POR PUNTO</span><span>Programa, alojamiento y equipo</span><span class="file-toggle" aria-hidden="true">+</span></summary><div class="trip-file-content"><p class="trip-intro">${escape(detailIntro(trip.intro))}</p>${trip.story.length||trip.storyIntro?`<section class="trip-block"><h2>${escape(trip.storyTitle==='El programa.'?'El programa completo.':trip.storyTitle)}</h2><p>${escape(trip.storyIntro)}</p><div class="plan-list">${story}</div></section>`:''}${stay}
+-<section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>${escape(team?.title??'Quién te acompañará.')}</h2><p>${escape(team?.text??(real?'Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones de esta salida.':`El próximo programa de ${trip.name} está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.`))}</p>${accompaniment.length ? `<p class="trip-team-programme">El programa de esta salida recoge:</p><ul class="trip-team-roles">${accompaniment.map(item=>`<li>${escape(item)}</li>`).join('')}</ul>` : ''}<a class="text-link" href="/conocenos/#acompanamiento">Conoce cómo viajamos en LST</a>${contact(trip,'Consultar el acompañamiento','button button-small trip-team-contact',`¡Hola, LST! Me interesa ${trip.name}. ¿Quién acompaña al grupo, quién imparte las sesiones de surf y qué apoyo tenemos antes y durante esta salida?`)}</section>
+-</div></details>
+    ${trip.gallery.length?`<details class="trip-photo-file"><summary>Más fotos. Más ganas de ir. <span>${trip.gallery.length} fotos <span aria-hidden="true">+</span></span></summary><section class="trip-gallery" aria-labelledby="photos-title"><h2 id="photos-title">El álbum de ${escape(trip.name)}.</h2><div class="gallery-track" aria-label="Fotos del destino">${gallery}</div></section></details>`:''}
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Las dudas, fuera de la maleta.</h2>${trip.faqs.length?'':'<p>Viajar por tu cuenta, elegir nivel, preparar la mochila… Empieza por nuestras preguntas frecuentes o cuéntanos tu duda.</p><a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a>'}<div class="faq-list">${trip.faqs.map(([q,a])=>`<details><summary>${escape(q)}<span aria-hidden="true">+</span></summary><p>${escape(a)}</p></details>`).join('')}</div></section>
+-   <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">${real?'TU PLAZA, PASO A PASO':'HABLEMOS DEL PRÓXIMO VIAJE'}</p><h2>${isFull(trip)?'Vamos a por otra ola.':real?'Cierra pestañas.<br>Abre viaje.':`¿Te apetece ${escape(trip.name)}?`}</h2><p>${isFull(trip)?'Esta salida está completa. Puedes consultar otras opciones con el equipo por WhatsApp.':real?'Empieza con un WhatsApp. Te contamos lo que necesitas saber antes de apuntarte.':'Escríbenos por WhatsApp si este destino te interesa. Cuéntanos cuándo podrías viajar y cómo surfeas.'}</p><details class="booking-conditions"><summary>Cómo se paga y cuándo se confirma tu plaza <span aria-hidden="true">+</span></summary>${commercial}<p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p></details><ol class="reservation-steps"><li><span aria-hidden="true">01</span><div><strong>${real?'Nos escribes':'Nos cuentas qué buscas'}</strong><p>${real?'Tu nivel, tu fecha y con quién vienes.':'Destino, fechas que te encajan y experiencia en el agua.'}</p></div></li><li><span aria-hidden="true">02</span><div><strong>${real?'Lo revisamos contigo':'Hablamos de las próximas salidas'}</strong><p>${real?'Nivel, disponibilidad y condiciones claras.':'Te contamos qué información está confirmada y qué falta por anunciar.'}</p></div></li><li><span aria-hidden="true">03</span><div><strong>${real?'Confirmas con el equipo':'Decides cuando tengas los detalles'}</strong><p>${real?'Formalizamos la reserva contigo.':'Cuando exista una salida, podrás revisar el programa y las condiciones antes de reservar.'}</p></div></li></ol>${registrationLink(trip)}${bookingAction(trip,mainCta,'button reserve-main')}${multiple&&!isFull(trip)?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Consulta tu fecha</h2>${departures.map(d=>`<article><h3>${escape(d.date)} · ${escape(departureLevelLabel(trip,d))}</h3>${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${registrationLink(trip,d)}${contact(trip,isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}<p class="fine-print">${real?'El mensaje inicia una consulta; la plaza se confirma con el equipo.':'La consulta no es una reserva ni activa avisos automáticos.'}</p></section>
++   <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">${real?'TU PLAZA, PASO A PASO':'HABLEMOS DEL PRÓXIMO VIAJE'}</p><h2>${isFull(trip)?'Vamos a por otra ola.':real?'Cierra pestañas.<br>Abre viaje.':`¿Te apetece ${escape(trip.name)}?`}</h2><p>${isFull(trip)?'Esta salida está completa. Puedes consultar otras opciones con el equipo por WhatsApp.':real?'Empieza con un WhatsApp. Te contamos lo que necesitas saber antes de apuntarte.':'Escríbenos por WhatsApp si este destino te interesa. Cuéntanos cuándo podrías viajar y cómo surfeas.'}</p><details class="booking-conditions"><summary>Cómo se paga y cuándo se confirma tu plaza <span aria-hidden="true">+</span></summary>${commercial}<p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p></details><ol class="reservation-steps"><li><span aria-hidden="true">01</span><div><strong>${real?'Nos escribes':'Nos cuentas qué buscas'}</strong><p>${real?'Tu nivel, tu fecha y con quién vienes.':'Destino, fechas que te encajan y experiencia en el agua.'}</p></div></li><li><span aria-hidden="true">02</span><div><strong>${real?'Lo revisamos contigo':'Hablamos de las próximas salidas'}</strong><p>${real?'Nivel, disponibilidad y condiciones claras.':'Te contamos qué información está confirmada y qué falta por anunciar.'}</p></div></li><li><span aria-hidden="true">03</span><div><strong>${real?'Confirmas con el equipo':'Decides cuando tengas los detalles'}</strong><p>${real?'Formalizamos la reserva contigo.':'Cuando exista una salida, podrás revisar el programa y las condiciones antes de reservar.'}</p></div></li></ol>${registrationLink(trip)}${bookingAction(trip,mainCta,'button reserve-main')}${multiple&&!isFull(trip)?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Consulta tu fecha</h2>${departures.map(d=>`<article><h3>${escape(d.date)}</h3>${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${departurePayment(d)}${registrationLink(trip,d)}${contact(trip,isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}<p class="fine-print">${real?'El mensaje inicia una consulta; la plaza se confirma con el equipo.':'La consulta no es una reserva ni activa avisos automáticos.'}</p></section>
+   </article>
+-  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><p class="eyebrow">${status(trip)}</p><h2>¿Te vienes<br>o qué?</h2>${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(offer?'Por persona · tarifa vigente para el cupo indicado':summaryPrice(trip))}</p><dl>${allFacts.filter(([k])=>k==='Fechas').map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl>${registrationLink(trip)}${bookingAction(trip,cta,"button booking-card-cta")}${dossier(trip)}<p class="booking-card-help">${real?'Te orientamos por WhatsApp antes de reservar.':'Consulta las próximas salidas con el equipo.'}</p><a class="booking-card-link" href="#dudas">Tengo una duda</a></div></aside>
++  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><p class="eyebrow">${status(trip)}</p><h2>¿Te vienes<br>o qué?</h2>${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(offer?'Por persona · tarifa vigente para el cupo indicado':summaryPrice(trip))}</p><dl>${allFacts.map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl>${registrationLink(trip)}${bookingAction(trip,cta,"button booking-card-cta")}${dossier(trip)}<p class="booking-card-help">${real?'Te orientamos por WhatsApp antes de reservar.':'Consulta las próximas salidas con el equipo.'}</p><a class="booking-card-link" href="#dudas">Tengo una duda</a></div></aside>
+  </div>
+  <section class="related-section"><div class="trip-shell"><p class="eyebrow">SIGUE MIRANDO</p><h2>Siempre hay otra ola.</h2><div class="related-list">${related}</div><a class="text-link" href="/#viajes">Ver todos los viajes</a></div></section>
+ </main>
+--- before/scripts/sanity-trips.mjs
++++ after/scripts/sanity-trips.mjs
+@@ -47,11 +47,6 @@
+   return `${fmt.format(new Date(d.start))} — ${fmt.format(new Date(d.end))}`;
+ }
+ 
+-function validateLevels(value, slug) {
+-  if (Array.isArray(value) && !value.length) return undefined;
+-  if (!Array.isArray(value) || !value.length || new Set(value).size !== value.length || value.some(v => !Number.isInteger(v) || v < 1 || v > 4)) throw Error(`Niveles inválidos: ${slug}`);
+-  return value;
+-}
+ function validateAvailability(value, slug) {
+   if (!['available', 'last_places', 'full', 'enquiry'].includes(value)) throw Error(`Disponibilidad inválida: ${slug}`);
+   return value;
+@@ -75,10 +70,9 @@
+   const departures = list(doc.departures, 'departures').map(d => {
+     if (!/^[A-Za-z0-9_-]+$/.test(d._key ?? '') || keys.has(d._key)) throw Error(`Clave de salida inválida: ${slug}`);
+     keys.add(d._key);
++    if (d.levels?.length || d.levelRequirement || d.programme) throw Error(`Separa el nivel y el programa en otro viaje: ${slug}/${d._key}`);
+     const departure = {id: d._key, date: dates(d), start: d.start, end: d.end, duration: text(d.duration, 'duration') || 'Por confirmar',
+       price: positive(d.price, 'price'), state: doc.state,
+-      ...(d.levels != null ? {levels: validateLevels(d.levels, slug)} : {}),
+-      ...(d.levelRequirement ? {levelRequirement: text(d.levelRequirement, 'departure.levelRequirement')} : {}),
+       ...(d.dossier ? {dossier: httpsUrl(d.dossier, 'departure.dossier')} : {}),
+       ...(d.availability != null ? {availability: validateAvailability(d.availability, slug)} : {}),
+       ...(d.capacity ? {capacity: validateCapacity(d.capacity, slug)} : {}),
+@@ -102,7 +96,7 @@
+     storyTitle: text(doc.storyTitle, 'storyTitle') || 'El programa.', storyLabel: text(doc.storyLabel, 'storyLabel') || 'EL VIAJE',
+     storyIntro: text(doc.storyIntro, 'storyIntro'), story: pairs(doc.story, 'title', 'text', 'story'),
+     gallery: list(doc.gallery, 'gallery').map(v => [image(v, 'gallery'), text(v.alt, 'gallery.alt', true), text(v.caption, 'caption')]),
+-    levelTitle: text(doc.levelTitle, 'levelTitle') || 'Tu nivel de surf.', levelText: text(doc.levelText, 'levelText') || text(doc.levelRequirement, 'levelRequirement'),
++    levelText: text(doc.levelText, 'levelText') || text(doc.levelRequirement, 'levelRequirement'),
+     levelChecks: strings(doc.levelChecks, 'levelChecks'), includes: strings(doc.includes, 'includes'), excludes: strings(doc.excludes, 'excludes'),
+     inclusionsNote: text(doc.inclusionsNote, 'inclusionsNote'), faqs: pairs(doc.faqs, 'question', 'answer', 'faqs'),
+     dossier: httpsUrl(doc.dossier, 'dossier'),
+--- before/scripts/trip-detail.test.mjs
++++ after/scripts/trip-detail.test.mjs
+@@ -53,10 +53,10 @@
+  assert.doesNotMatch(html,/<bird>|<limitadas>|Quedan|Primeras/);
+ });
+ 
+-test('native date enquiries remain reachable without JavaScript and keep per-date level and conditions',()=>{
+- const t=trip({departures:[date(),date({id:'rider',date:'Riders',start:'2027-01-01',end:'2027-01-03',levels:[3],promotions:undefined})]});
++test('native date enquiries remain reachable without JavaScript and keep the common range and per-date offers',()=>{
++ const t=trip({departures:[date(),date({id:'rider',date:'Riders',start:'2027-01-01',end:'2027-01-03',promotions:undefined})]});
+  const html=renderTrip(t),fallback=html.match(/<noscript>[\s\S]*?<\/noscript>/)[0];
+- assert.match(fallback,/fechas-sin-javascript/);assert.match(fallback,/Nivel III/);assert.match(fallback,/Primeras 8 plazas/);
++ assert.match(fallback,/fechas-sin-javascript/);assert.match(html,/Todos los niveles/);assert.match(fallback,/Primeras 8 plazas/);
+  assert.equal((fallback.match(/data-whatsapp=/g)??[]).length,2);
+  assert(html.indexOf('<noscript>')<html.indexOf('<aside class="trip-booking"'));
+ });
+--- before/scripts/trip-experience.mjs
++++ after/scripts/trip-experience.mjs
+@@ -1,11 +1,12 @@
+-import {departuresFor, levelLabel, hasDepartureLevels} from './trip-model.mjs';
++import {departuresFor, levelLabel} from './trip-model.mjs';
+ const escape=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const moods={
+  'el-palmar':['La oficina puede esperar.','Sal del piloto automático. Aquí se viene a mojarse, compartir y volver con algo más que fotos.'],
+  fuerteventura:['El invierno, que espere.','Pon el móvil en modo isla. Lo demás empieza con los pies en la arena.'],
+  hossegor:['Menos excusas. Más surf.','Trae tu surf. Las ganas de mirarlo de cerca las ponemos entre todos.'],
+  maldivas:['Mucho azul. Pocas excusas.','Cambia el fondo de pantalla por el de verdad. La rutina se queda en tierra.'],
+- marruecos:['Salitre. Y otra ronda.','Elige tu fecha y entra al plan. Cada grupo tiene su nivel; las ganas de agua van aparte.'],
++ marruecos:['Salitre. Y otra ronda.','Una semana para encontrar tu ritmo entre olas, mercados y vida en grupo.'],
++ 'marruecos-avanzado':['Tu surf pide otra ronda.','Coaching, olas y tiempo para pulir tu surf. Trae autonomía en el agua y ganas de seguir aprendiendo.'],
+  senegal:['Esto no cabe en un story.','Hay vida más allá del pico. Y viajes que te sacan del guion.'],
+ };
+ export const tripMood=trip=>trip.state==='confirmed'?(moods[trip.slug]??['Deja sitio para el salitre.','Tu siguiente historia empieza lejos del piloto automático.']):['La próxima ola está por llegar.','Las fechas y el programa están pendientes. Puedes preguntar al equipo por este destino.'];
+@@ -15,12 +16,12 @@
+  const dates=departuresFor(trip),durations=[...new Set(dates.map(d=>d.duration))];
+  const duration=durations.length===1?durations[0]:dates.length?'Según la salida':'Por confirmar';
+  const match=/^(\d+)\s+(.+)$/.exec(duration);
+- const label=levelLabel(trip),level=hasDepartureLevels(trip)?'Por fecha':label==='Todos los niveles'?'I–IV':label.replace(/^Niveles? /,'');
++ const label=levelLabel(trip),level=label==='Todos los niveles'?'I–IV':label.replace(/^Niveles? /,'');
+  const capacities=dates.map(d=>d.capacity?.total??null);
+  const uniqueCapacities=[...new Set(capacities)];
+  const group=uniqueCapacities.length===1&&uniqueCapacities[0]!=null?uniqueCapacities[0]:null;
+  const mixedCapacity=capacities.some(n=>n!=null)&&group===null;
+- return `<dl class="trip-quick-facts"><div><dt>El tiempo fuera</dt><dd><strong>${escape(match?.[1]??duration)}</strong>${match?`<span>${escape(match[2])}</span>`:''}</dd></div><div><dt>Tu nivel</dt><dd><strong>${escape(level)}</strong><span>${hasDepartureLevels(trip)?'revisa cada salida':label==='Todos los niveles'?'todos los niveles':'nivel de surf'}</span></dd></div>${group!=null?`<div><dt>El grupo</dt><dd><strong>${escape(group)}<small> máx.</small></strong><span>personas por salida</span></dd></div>`:mixedCapacity?`<div><dt>El grupo</dt><dd><strong>Según la salida</strong><span>capacidad del grupo</span></dd></div>`:dates.length>1?`<div><dt>Tu fecha</dt><dd><strong>${dates.length}</strong><span>salidas para elegir</span></dd></div>`:''}</dl>`;
++ return `<dl class="trip-quick-facts"><div><dt>El tiempo fuera</dt><dd><strong>${escape(match?.[1]??duration)}</strong>${match?`<span>${escape(match[2])}</span>`:''}</dd></div><div><dt>Tu nivel</dt><dd><strong>${escape(level)}</strong><span>${label==='Todos los niveles'?'todos los niveles':'nivel de surf'}</span></dd></div>${group!=null?`<div><dt>El grupo</dt><dd><strong>${escape(group)}<small> máx.</small></strong><span>personas por salida</span></dd></div>`:mixedCapacity?`<div><dt>El grupo</dt><dd><strong>Según la salida</strong><span>capacidad del grupo</span></dd></div>`:dates.length>1?`<div><dt>Tu fecha</dt><dd><strong>${dates.length}</strong><span>salidas para elegir</span></dd></div>`:''}</dl>`;
+ }
+ export function experienceScenes(trip){
+  if(trip.state!=='confirmed')return '';
+@@ -28,7 +29,7 @@
+  const surf=includes.filter(s=>/clases|coaching|surf guiding|surf en barco|surf todos|videoanálisis|videocorrecciones/i.test(s)).slice(0,2);
+  const off=includes.filter(s=>/surfskate|fiesta|actividades de tarde|desierto|excursiones|Gorée|Almadies|teoría del mar|Animal Flow|actividades de grupo/i.test(s)&&!/noches|alojamiento/i.test(s)).sort((a,b)=>Number(/Animal Flow/i.test(a))-Number(/Animal Flow/i.test(b))).slice(0,2);
+  const base=includes.filter(s=>/noches|pensión|desayuno|comidas|cenas|alojamiento/i.test(s)).slice(0,2);
+- if(!surf.length&&!off.length&&!base.length&&!hasDepartureLevels(trip))return '';
++ if(!surf.length&&!off.length&&!base.length)return '';
+  const photos=trip.gallery??[];
+  const surfIndex=photos.findIndex(([,alt])=>/surfista|olas?|surfistas|explicación de surf/i.test(alt));
+  const offMatch=off.some(s=>/surfskate/i.test(s))?/surfskate/i:off.some(s=>/desierto/i.test(s))?/campamento|dunas/i:/grupo|mercado|dunas/i;
+@@ -36,7 +37,7 @@
+  if(offIndex<0)offIndex=photos.findIndex(([,alt],i)=>i!==surfIndex&&/grupo|campamento|mercado|dunas/i.test(alt));
+  const photo=(index,kind)=>index>=0?`<figure class="scene-photo"><button class="gallery-photo" type="button" data-photo="${index}" aria-label="Ampliar foto: ${escape(photos[index][1])}"><img src="${escape(photos[index][0])}" alt="${escape(photos[index][1])}" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>${escape(photos[index][2])}</figcaption></figure>`:`<div class="scene-graphic" aria-hidden="true">${tripIcon(kind)}<span>${kind==='wave'?'SAL / AGUA / REPETIR':'FUERA DE LA RUTINA'}</span></div>`;
+  const list=items=>`<ul>${items.map(item=>`<li>${escape(item)}</li>`).join('')}</ul>`;
+- return `<section class="trip-experience" aria-labelledby="experience-title"><div class="experience-heading"><p class="eyebrow">ESTO ES LO QUE HAY</p><h2 id="experience-title">Al agua.<br><em>Y al lío.</em></h2><span class="trip-stamp" aria-hidden="true">SALITRE<br>EN LAS VENAS</span></div><div class="experience-scenes">${surf.length||hasDepartureLevels(trip)?`<article class="experience-scene scene-surf">${photo(surfIndex,'wave')}<div class="scene-copy"><span class="scene-index">01 / AL AGUA</span><h3>Que hable<br>tu surf.</h3>${surf.length?list(surf):'<p>El surf cambia según tu fecha y tu nivel. Revisa el programa de cada salida.</p>'}</div></article>`:''}${off.length?`<article class="experience-scene scene-off">${photo(offIndex,'sun')}<div class="scene-copy"><span class="scene-index">02 / CUANDO SALES</span><h3>La última ola<br>no cierra el día.</h3>${list(off)}</div></article>`:''}${base.length?`<article class="scene-base"><div class="base-mark" aria-hidden="true">${tripIcon('bed')}</div><div><span class="scene-index">LA BASE DE OPERACIONES</span><h3>Comer. Dormir.<br>Volver a liarla.</h3></div>${list(base)}</article>`:''}</div></section>`;
++ return `<section class="trip-experience" aria-labelledby="experience-title"><div class="experience-heading"><p class="eyebrow">ESTO ES LO QUE HAY</p><h2 id="experience-title">Al agua.<br><em>Y al lío.</em></h2><span class="trip-stamp" aria-hidden="true">SALITRE<br>EN LAS VENAS</span></div><div class="experience-scenes">${surf.length?`<article class="experience-scene scene-surf">${photo(surfIndex,'wave')}<div class="scene-copy"><span class="scene-index">01 / AL AGUA</span><h3>Que hable<br>tu surf.</h3>${list(surf)}</div></article>`:''}${off.length?`<article class="experience-scene scene-off">${photo(offIndex,'sun')}<div class="scene-copy"><span class="scene-index">02 / CUANDO SALES</span><h3>La última ola<br>no cierra el día.</h3>${list(off)}</div></article>`:''}${base.length?`<article class="scene-base"><div class="base-mark" aria-hidden="true">${tripIcon('bed')}</div><div><span class="scene-index">LA BASE DE OPERACIONES</span><h3>Comer. Dormir.<br>Volver a liarla.</h3></div>${list(base)}</article>`:''}</div></section>`;
+ }
+ export function groupedInclusions(items){
+  const groups=[{name:'Cama & mesa',icon:'bed',items:[]},{name:'Surf & movimiento',icon:'wave',items:[]},{name:'El resto del plan',icon:'sun',items:[]}];
+--- before/scripts/trip-experience.test.mjs
++++ after/scripts/trip-experience.test.mjs
+@@ -5,9 +5,8 @@
+ test('visual scenes quote services from the same trip, retain photo provenance and never mutate the source',()=>{const t=structuredClone(source),before=structuredClone(t);const html=experienceScenes(t);for(const value of [...html.matchAll(/<li>([\s\S]*?)<\/li>/g)].map(m=>m[1]))assert(t.includes.map(esc).includes(value));for(const caption of t.gallery.filter(([,alt])=>html.includes(esc(alt))).map(([, ,caption])=>caption))assert(html.includes(esc(caption)));assert.deepEqual(t,before);assert.match(html,/Surfskate en pista privada/);});
+ test('pending or unconfigured programmes never inherit service scenes or invent photo assets',()=>{assert.equal(experienceScenes({...source,state:'upcoming'}),'');assert.equal(experienceScenes({...source,includes:[],departures:[]}), '');const html=experienceScenes({...source,gallery:[]});assert.doesNotMatch(html,/<img|data-photo/);assert.match(html,/scene-graphic/);});
+ test('each included service is retained exactly once in grouped inclusions with safe editorial text',()=>{const items=['2 noches en casa','Clases de surf <prueba>','Visita & cultura','Transporte incluido'];const html=groupedInclusions(items);for(const item of items)assert.equal(html.split(esc(item)).length-1,1);assert.doesNotMatch(html,/<prueba>/);});
+-test('quick facts distinguish capacity, unknown capacity and heterogeneous dates',()=>{const t={...source,capacity:null,departures:[{...source.departures[0],id:'short',duration:'2 noches',capacity:null},{...source.departures[0],id:'long',duration:'7 noches',levels:[3],capacity:null}]};const html=renderQuickFacts(t);assert.match(html,/Según la salida/);assert.match(html,/Por fecha/);assert.match(html,/salidas para elegir/);assert.doesNotMatch(html,/personas por salida|2 noches|7 noches/);assert.match(renderQuickFacts(source),/máx\./);});
+-test('the new reading path keeps programme, accommodation, team and payment conditions accessible in native details',()=>{const html=renderTrip(source,trips);const info=html.match(/<details class="trip-info-file"[\s\S]*?<\/div><\/details>/)[0];assert(info.includes(esc(source.story[0][1])));assert(info.includes(esc(source.stay.text)));assert(info.includes('trip-team'));assert(html.includes(esc(source.payment.terms)));assert.match(html,/<details class="booking-conditions">/);assert(html.indexOf('trip-kickoff')<html.indexOf('trip-experience'));assert(html.indexOf('trip-experience')<html.indexOf('trip-costs'));});
+-test('Morocco keeps the effective level, material, full programme and PDF attached to each date',()=>{const t=trips.find(t=>t.slug==='marruecos');const html=renderTrip(t,trips);for(const d of t.departures){const start=html.indexOf('id="programa-'+d.id+'"');const next=html.indexOf('<details class="departure-programme"',start+1);const content=html.slice(start,next<0?html.indexOf('</section>',start):next);for(const item of d.programme.includes)assert(content.includes(esc(item)));for(const item of d.programme.excludes)assert(content.includes(esc(item)));assert(content.includes(esc(d.programme.levelText)));assert(content.includes(d.dossier));}});
+-test('the approved cover template is unchanged in this revision',async()=>{const before=await readFile('docs/qa/2026-10-25-trip-rebel/before/scripts/render-trips.mjs','utf8');const now=await readFile('scripts/render-trips.mjs','utf8');const cover=s=>s.slice(s.indexOf(' <section class="trip-cover"'),s.indexOf('\n <div class="trip-layout">'));assert.equal(cover(now),cover(before));});
++test('quick facts distinguish capacity, unknown capacity and heterogeneous dates',()=>{const t={...source,capacity:null,departures:[{...source.departures[0],id:'short',duration:'2 noches',capacity:null},{...source.departures[0],id:'long',duration:'7 noches',capacity:null}]};const html=renderQuickFacts(t);assert.match(html,/Según la salida/);assert.match(html,/I–IV/);assert.match(html,/salidas para elegir/);assert.doesNotMatch(html,/personas por salida|2 noches|7 noches/);assert.match(renderQuickFacts(source),/máx\./);});
++test('the new reading path keeps programme, accommodation, team and payment conditions accessible in the visible programme',()=>{const html=renderTrip(source,trips);const info=html.slice(html.indexOf('class="trip-programme"'),html.indexOf('id="incluye"'));assert(info.includes(esc(source.story[0][1])));assert(info.includes(esc(source.stay.text)));assert(info.includes('trip-team'));assert(html.includes(esc(source.payment.terms)));assert.match(html,/<details class="booking-conditions">/);assert(html.indexOf('trip-kickoff')<html.indexOf('trip-experience'));assert(html.indexOf('trip-experience')<html.indexOf('trip-costs'));});
++test('each Morocco programme keeps its own services and PDF in one complete detail',()=>{for(const t of trips.filter(t=>t.slug.startsWith('marruecos'))){const html=renderTrip(t,trips);for(const item of [...t.includes,...t.excludes])assert(html.includes(esc(item)));assert(html.includes(esc(t.levelText)));for(const d of t.departures)assert(html.includes(d.dossier));assert.doesNotMatch(html,/departure-programme|data-view-programme/);}});
+ 
+ test('a group size is advertised per departure only when every date has that same confirmed capacity',()=>{const departure=source.departures[0];const t={...source,capacity:{total:10},departures:[{...departure,id:'one',capacity:{total:6}},{...departure,id:'two',capacity:{total:12}}]};let html=renderQuickFacts(t);assert.match(html,/Según la salida/);assert.doesNotMatch(html,/10<small>|personas por salida/);html=renderQuickFacts({...t,departures:[{...t.departures[0],capacity:{total:6}},{...t.departures[1],capacity:{total:6}}]});assert.match(html,/6<small> máx/);assert.match(html,/personas por salida/);html=renderQuickFacts({...t,capacity:null,departures:[{...t.departures[0],capacity:{total:6}},{...t.departures[1],capacity:null}]});assert.match(html,/Según la salida/);assert.doesNotMatch(html,/personas por salida/);});
+--- before/scripts/trip-groups.mjs
++++ after/scripts/trip-groups.mjs
+@@ -1,65 +1,52 @@
+-// Editorial names describe the destination; dates and levels belong to departures.
++// Remove labels from the original one-document-per-date import.
+ export function tripName(name) {
+   return name.replace(/\s*·\s*(?:nivel(?:es)?\s+[\dIVX,\s–—-]+|Semana Santa(?:\s+\d{4})?|Pascua(?:\s+\d{4})?)\s*$/i, '').trim();
+ }
+ 
+-const programmeFields = ['intro', 'storyTitle', 'storyLabel', 'storyIntro', 'story', 'includes', 'excludes', 'inclusionsNote', 'faqs', 'levelTitle', 'levelText', 'levelChecks', 'stay', 'team'];
+-const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+-const pickProgramme = trip => Object.fromEntries(programmeFields.filter(k => trip[k] !== undefined).map(k => [k, trip[k]]));
++// Dates share a trip only when the level range and complete programme match.
++const programmeFields = ['levelRequirement', 'intro', 'storyTitle', 'storyLabel', 'storyIntro', 'story', 'includes', 'excludes', 'inclusionsNote', 'faqs', 'levelText', 'levelChecks', 'stay', 'team'];
+ export const aggregateAvailability = departures => !departures.length ? 'enquiry' : departures.every(d => d.availability === 'full') ? 'full'
+   : departures.some(d => d.availability === 'available') ? 'available'
+   : departures.some(d => d.availability === 'last_places') ? 'last_places' : 'enquiry';
+ 
+-// The existing import uses destination-YYYY-MM-DD slugs. Consolidate those
+-// documents for presentation, keeping every original URL and programme intact.
+-// Custom slugs and single documents with several dates keep their own identity.
+ export function consolidateTrips(trips) {
+   const groups = new Map();
+-  for (const trip of trips) {
+-    const destination = trip.slug.replace(/-\d{4}-\d{2}-\d{2}$/, '');
+-    const key = JSON.stringify([destination, trip.name]);
+-    if (!groups.has(key)) groups.set(key, []);
+-    groups.get(key).push(trip);
++  for (const source of trips) {
++    const imported = /-\d{4}-\d{2}-\d{2}$/.test(source.slug);
++    const destination = source.slug.replace(/-\d{4}-\d{2}-\d{2}$/, '');
++    // Stable identity for the two existing Morocco products, including old dated URLs.
++    const advanced = destination === 'marruecos' && source.levels.every(level => level >= 3);
++    const slug = advanced ? 'marruecos-avanzado' : destination;
++    const trip = advanced ? {...source, name: 'Marruecos avanzado', tagline: source.tagline === source.name ? 'Marruecos avanzado' : source.tagline} : source;
++    const key = JSON.stringify([slug, trip.name, [...trip.levels].sort(), ...programmeFields.map(field => trip[field] ?? null)]);
++    if (!groups.has(key)) groups.set(key, {slug, imported, members: []});
++    groups.get(key).members.push(trip);
+   }
+-  const result = [];
+-  for (const members of groups.values()) {
+-    if (members.length === 1 && !/-\d{4}-\d{2}-\d{2}$/.test(members[0].slug)) { result.push(members[0]); continue; }
++  const candidates = [...groups.values()];
++  const result = candidates.map(({slug: preferred, imported, members}) => {
+     members.sort((a, b) => (a.departures[0]?.start ?? '9999').localeCompare(b.departures[0]?.start ?? '9999'));
+     const first = members[0];
+-    const slug = first.slug.replace(/-\d{4}-\d{2}-\d{2}$/, '');
+-    const differing = programmeFields.filter(k => members.some(t => !same(t[k], first[k])));
+-    const trip = {...first, state: members.some(t => t.state === 'confirmed') ? 'confirmed' : 'upcoming', id: slug, slug, aliases: members.map(t => t.slug).filter(alias => alias !== slug), departures: [],
+-      dossier: members.length === 1 ? first.dossier : '', capacity: members.length === 1 ? first.capacity : {total: null, available: null}};
+-    for (const key of differing) trip[key] = Array.isArray(first[key])
+-      ? first[key].filter(value => members.every(t => t[key]?.some(v => same(value, v))))
+-      : undefined;
+-    if (!trip.intro) trip.intro = 'Elige tu fecha para consultar el nivel, el programa y los servicios de cada salida.';
+-    if (!trip.levelText) trip.levelText = 'Consulta el nivel y los requisitos de cada fecha antes de apuntarte.';
+-    if (!trip.levelTitle) trip.levelTitle = 'Tu nivel de surf.';
+-    if (!trip.storyTitle) trip.storyTitle = 'El programa.';
+-    if (!trip.storyLabel) trip.storyLabel = 'EL VIAJE';
+-    trip.storyIntro ??= '';
+-    trip.inclusionsNote ??= '';
+-    for (const member of members) {
+-      for (const departure of member.departures) {
+-        trip.departures.push({...departure,
+-          ...(departure.levels || same(member.levels, first.levels) ? {} : {levels: member.levels}),
+-          levelRequirement: departure.levelRequirement ?? member.levelRequirement,
+-          dossier: departure.dossier || member.dossier,
+-          availability: departure.availability ?? member.availability,
+-          capacity: departure.capacity ?? member.capacity,
+-          payment: member.payment,
+-          ...(differing.length ? {programme: pickProgramme(member)} : {}),
+-        });
+-      }
+-    }
+-    if (new Set(trip.departures.map(d => d.id)).size !== trip.departures.length) throw Error('Claves de salida duplicadas al unificar viajes');
+-    trip.departures.sort((a, b) => a.start.localeCompare(b.start));
+-    trip.availability = aggregateAvailability(trip.departures);
+-    if (!members.every(t => same(t.payment, first.payment))) trip.payment = {depositAmount: null, terms: ''};
+-    result.push(trip);
+-  }
+-  const routes = result.flatMap(t => [t.slug, ...(t.aliases ?? [])]);
+-  if (new Set(routes).size !== routes.length) throw Error('Colisión de rutas al unificar viajes');
++    // Different programmes at the same destination retain their original identities.
++    const slug = candidates.filter(group => group.slug === preferred).length > 1 ? first.slug : preferred;
++    if (!imported && members.length === 1 && slug === first.slug) return first;
++    const departures = members.flatMap(member => member.departures.map(departure => ({...departure,
++      dossier: departure.dossier || member.dossier,
++      availability: departure.availability ?? member.availability,
++      capacity: departure.capacity ?? member.capacity,
++      payment: departure.payment ?? member.payment,
++    }))).sort((a, b) => (a.start ?? '').localeCompare(b.start ?? ''));
++    if (new Set(departures.map(d => d.id)).size !== departures.length) throw Error('Claves de salida duplicadas al agrupar fechas');
++    const samePayment = members.every(member => JSON.stringify(member.payment) === JSON.stringify(first.payment));
++    return {...first, id: slug, slug,
++      state: members.some(member => member.state === 'confirmed') ? 'confirmed' : 'upcoming',
++      aliases: [...new Set(members.flatMap(member => [member.slug, ...(member.aliases ?? [])]))].filter(alias => alias !== slug),
++      departures, availability: aggregateAvailability(departures),
++      dossier: members.length === 1 ? first.dossier : '',
++      capacity: members.length === 1 ? first.capacity : {total: null, available: null},
++      payment: samePayment ? first.payment : {depositAmount: null, terms: ''},
++    };
++  });
++  const routes = result.flatMap(trip => [trip.slug, ...(trip.aliases ?? [])]);
++  if (new Set(routes).size !== routes.length) throw Error('Colisión de rutas: usa una URL propia para cada programa');
+   return result;
+ }
+--- before/scripts/trip-groups.test.mjs
++++ after/scripts/trip-groups.test.mjs
+@@ -6,7 +6,7 @@
+ import {prepareDrafts} from './import-departures.mjs';
+ import {adaptTrip, adaptTrips} from './sanity-trips.mjs';
+ import {tripName} from './trip-groups.mjs';
+-import {levelsFor, departureLevels, departureLevelLabel, levelLabel, departureMessage, tripFacts} from './trip-model.mjs';
++import {levelsFor, levelLabel, departureMessage, tripFacts} from './trip-model.mjs';
+ import {renderTrip} from './render-trips.mjs';
+ import {renderCatalog} from './render-catalog.mjs';
+ import {renderHomeTrips} from './render-home-trips.mjs';
+@@ -21,162 +21,117 @@
+ const morocco=['marruecos-2027-01-17','marruecos-2027-01-24'];
+ const maldives=['maldivas-2027-03-21','maldivas-2027-03-28'];
+ 
+-test('editorial destination names exclude levels and seasonal date labels',()=>{
++test('editorial destination names exclude old imported labels',()=>{
+  for(const name of ['Marruecos · nivel 1–2','Marruecos · nivel 3','Marruecos · niveles II–III'])assert.equal(tripName(name),'Marruecos');
+  for(const name of ['Maldivas · Semana Santa','Maldivas · Pascua'])assert.equal(tripName(name),'Maldivas');
+- assert.equal(tripName('El Palmar'),'El Palmar');
+- assert.equal(tripName('Costa · Ruta norte'),'Costa · Ruta norte');
++ assert.equal(tripName('Marruecos avanzado'),'Marruecos avanzado');
+ });
+ 
+-test('six destinations consolidate eight documents without changing the source or losing date PDFs',()=>{
+- const docs=documents(),before=structuredClone(docs);
+- const trips=adaptTrips(docs);
+- assert.equal(trips.length,6);
+- assert.deepEqual(docs,before);
+- assert.deepEqual(trips.map(t=>t.name).sort(),['El Palmar','Fuerteventura','Hossegor','Maldivas','Marruecos','Senegal']);
++test('eight source dates become seven trips: two Morocco programmes and one Maldives programme',()=>{
++ const docs=documents(),before=structuredClone(docs),trips=adaptTrips(docs);
++ assert.equal(trips.length,7);assert.deepEqual(docs,before);
++ assert.deepEqual(trips.map(t=>t.name).sort(),['El Palmar','Fuerteventura','Hossegor','Maldivas','Marruecos','Marruecos avanzado','Senegal']);
+  const trip=trips.find(t=>t.slug==='maldivas');
+- assert.deepEqual(trip.aliases,maldives);
+- assert.equal(trip.departures.length,2);
++ assert.deepEqual(trip.aliases,maldives);assert.equal(trip.departures.length,2);
++ assert.deepEqual(levelsFor(trip),[2,3]);assert.equal(levelLabel(trip),'Niveles II–III');
+  assert.deepEqual(trip.departures.map(d=>d.dossier),maldives.map(slug=>'https://example.com/'+slug+'.pdf'));
+- assert.deepEqual(trip.departures.map(d=>departureLevels(trip,d)),[[2,3],[2,3]]);
+- assert.equal(trip.capacity.total,null);
+  assert(trip.departures.every(d=>d.capacity.total===10));
+- const html=renderTrip(trip,trips);
+- for(const d of trip.departures){assert(html.includes(d.dossier));assert(html.includes(d.date));assert(html.includes(encodeURIComponent(departureMessage(trip,d))));}
+- assert(!html.includes('departure-programmes-title'));
++ for(const d of trip.departures){assert.equal(d.levels,undefined);assert.equal(d.programme,undefined);assert(renderTrip(trip).includes(encodeURIComponent(departureMessage(trip,d))));}
+ });
+ 
+-test('Morocco defaults to I-II and its later date overrides to III, retaining distinct programmes',()=>{
+- const docs=documents(),trip=adaptTrips(docs).find(t=>t.slug==='marruecos');
+- assert.deepEqual(trip.levels,[1,2]);
+- assert.equal(trip.departures[0].levels,undefined);
+- assert.deepEqual(trip.departures[1].levels,[3]);
+- assert.deepEqual(levelsFor(trip),[1,2,3]);
+- assert.equal(levelLabel(trip),'Nivel según la fecha');
+- assert.equal(departureLevelLabel(trip,trip.departures[0]),'Niveles I–II');
+- assert.equal(departureLevelLabel(trip,trip.departures[1]),'Nivel III');
+- assert(!trip.includes.includes('Material de iniciación y neoprenos'));
+- for(let i=0;i<2;i++){
++test('each Morocco product retains its own programme, material, requirements and dossier',()=>{
++ const docs=documents(),trips=adaptTrips(docs),basic=trips.find(t=>t.slug==='marruecos'),advanced=trips.find(t=>t.slug==='marruecos-avanzado');
++ assert.deepEqual(basic.levels,[1,2]);assert.deepEqual(advanced.levels,[3]);
++ for(const [i,trip] of [basic,advanced].entries()){
+   const source=adaptTrip(find(docs,morocco[i]));
+-  assert.deepEqual(trip.departures[i].programme.includes,source.includes);
+-  assert.deepEqual(trip.departures[i].programme.excludes,source.excludes);
+-  assert.deepEqual(trip.departures[i].programme.story,source.story);
+-  assert.equal(trip.departures[i].dossier,source.dossier);
++  assert.equal(trip.departures.length,1);assert.deepEqual(trip.aliases,[morocco[i]]);
++  for(const field of ['includes','excludes','story','levelRequirement','levelText'])assert.deepEqual(trip[field],source[field]);
++  assert.equal(trip.departures[0].dossier,source.dossier);
++  const html=renderTrip(trip,trips);
++  assert(!html.includes('data-open-dates'));assert(!html.includes('departure-programme'));
++  assert(html.includes(source.levelRequirement));
++  assert(html.includes('/viajes/'+(i?'marruecos':'marruecos-avanzado')+'/'));
+  }
+- const html=renderTrip(trip);
+- assert.match(html,/<h1 id="trip-title">Marruecos<\/h1>/);
+- const second=html.split('id="programa-'+morocco[1]+'"')[1].split('</div></details>')[0];
+- assert(second.includes('Surf coaching intensivo con Lucas'));
+- assert(!second.includes('Material de iniciación y neoprenos'));
+- assert(second.includes('Tabla propia o alquiler'));
+- assert.match(departureMessage(trip,trip.departures[1]),/Nivel III/);
+- assert.equal(tripFacts(trip)[2][1],'Nivel según la fecha');
++ assert(basic.includes.includes('Material de iniciación y neoprenos'));
++ assert(!advanced.includes.includes('Material de iniciación y neoprenos'));
++ assert(advanced.includes.includes('Surf coaching intensivo con Lucas'));
++ assert.equal(tripFacts(advanced)[2][1],'Nivel III · '+advanced.levelRequirement);
+ });
+ 
+-test('level overrides inherit when absent or cleared, and replace rather than widen the default',()=>{
+- const doc=documents()[0];
+- doc.slug.current='test-trip';doc.levels=[1,2];
+- doc.departures.push({...doc.departures[0],_key:'second',levels:[3],levelRequirement:'Autonomía',dossier:'https://example.com/second.pdf'});
+- let trip=adaptTrip(doc);
+- assert.deepEqual(departureLevels(trip,trip.departures[0]),[1,2]);
+- assert.deepEqual(departureLevels(trip,trip.departures[1]),[3]);
+- assert.deepEqual(levelsFor(trip),[1,2,3]);
+- assert.equal(trip.departures[1].levelRequirement,'Autonomía');
+- assert.equal(trip.departures[1].dossier,'https://example.com/second.pdf');
+- doc.departures[0].levels=[3];trip=adaptTrip(doc);
+- assert.deepEqual(levelsFor(trip),[3]); // Default levels do not match a date overridden to III.
+- doc.departures[1].levels=[];trip=adaptTrip(doc);
+- assert.deepEqual(departureLevels(trip,trip.departures[1]),[1,2]);
+- for(const levels of [[0],[5],[2,2],'3']){
+-  doc.departures[1].levels=levels;
+-  assert.throws(()=>adaptTrip(doc),/Niveles inválidos/);
++test('stale per-date levels, requirements or programmes fail before publication',()=>{
++ for(const override of [{levels:[3]},{levelRequirement:'Otra autonomía'},{programme:{includes:['Otro material']}}]){
++  const doc=documents()[0];Object.assign(doc.departures[0],override);
++  assert.throws(()=>adaptTrip(doc),/Separa el nivel y el programa/);
+  }
+- doc.departures[1].levels=[3];doc.departures[1].dossier='javascript:alert(1)';
+- assert.throws(()=>adaptTrip(doc),/HTTPS/);
++ const doc=documents()[0];doc.departures[0].levels=[];doc.departures[0].levelRequirement='';
++ assert.deepEqual(adaptTrip(doc).levels,doc.levels);
+ });
+ 
+-test('home, catalogue and guide render one Morocco with dates linked to effective levels',()=>{
+- const trip=adaptTrips(documents()).find(t=>t.slug==='marruecos');
+- for(const html of [
+-  renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->',[trip]),
+-  renderCatalog('<!-- catalog:start --><!-- catalog:end -->',[trip]),
+-  renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->',[trip]),
+- ]){
+-  for(const d of trip.departures){assert(html.includes(d.date));assert(html.includes(departureLevelLabel(trip,d)));}
+-  assert(html.includes('Nivel según la fecha'));
+-  assert(!/<h[1-4][^>]*>Marruecos · nivel/i.test(html));
++test('same destination and level with a different itinerary never merge',()=>{
++ for(const change of [{story:[{title:'Otra ruta',text:'Programa diferente'}]},{includes:['Otros servicios']},{levelRequirement:'Otra autonomía'}]){
++  const docs=documents().filter(d=>maldives.includes(d.slug.current));Object.assign(docs[1],change);
++  const trips=adaptTrips(docs);assert.equal(trips.length,2);
++  assert.deepEqual(trips.map(t=>t.slug),maldives);
++  assert(trips.every(t=>t.departures.length===1));
+  }
+- const catalog=renderCatalog('<!-- catalog:start --><!-- catalog:end -->',[trip]);
+- assert.equal((catalog.match(/data-catalog-trip/g)||[]).length,1);
+- assert(catalog.includes('data-levels="1 2 3"'));
+ });
+ 
+-test('grouped departure status and capacity stay separate, including full versus available',()=>{
+- const docs=documents().filter(d=>maldives.includes(d.slug.current));
+- docs[0].availability='full';docs[1].availability='available';
+- let trip=adaptTrips(docs)[0],html=renderTrip(trip);
+- assert.equal(trip.availability,'available');
+- assert(html.includes('Consultar alternativas'));
+- assert(html.includes('Completo'));
+- assert(html.includes('Plazas disponibles'));
+- assert.deepEqual(trip.departures.map(d=>d.availability),['full','available']);
+- docs[1].availability='full';trip=adaptTrips(docs)[0];html=renderTrip(trip);
+- assert.equal(trip.availability,'full');
+- assert(!html.includes('data-open-dates'));
+- for(const d of trip.departures)assert(html.includes(d.dossier));
++test('all discovery views expose independent Morocco cards with a fixed range',()=>{
++ const trips=adaptTrips(documents()).filter(t=>t.slug.startsWith('marruecos'));
++ for(const html of [renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->',trips),renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips),renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->',trips)]){
++  assert(html.includes('/viajes/marruecos/'));assert(html.includes('/viajes/marruecos-avanzado/'));
++  assert(html.includes('Marruecos avanzado'));assert(html.includes('Niveles I–II'));assert(html.includes('Nivel III'));
++  assert(!html.includes('Nivel según la fecha'));
++ }
++ const catalog=renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips);
++ assert.equal((catalog.match(/data-catalog-trip/g)||[]).length,2);
++ assert(catalog.includes('data-levels="1 2"'));assert(catalog.includes('data-levels="3"'));
+ });
+ 
+-test('canonical and old date URLs survive consolidation and withdrawal without stale content',async()=>{
+- const dir=await mkdtemp(path.join(os.tmpdir(),'lst-unified-'));
++test('Maldives keeps per-date availability and payment without mixing booking conditions',()=>{
+  const docs=documents().filter(d=>maldives.includes(d.slug.current));
+- const out=path.join(dir,'site');
++ docs[0].availability='full';docs[1].availability='available';docs[1].payment={depositAmount:321,terms:'Condición de la segunda fecha'};
++ const trip=adaptTrips(docs)[0],html=renderTrip(trip);
++ assert.equal(trip.availability,'available');assert(html.includes('Consultar alternativas'));
++ assert.deepEqual(trip.departures.map(d=>d.availability),['full','available']);
++ assert(html.includes('321 €'));assert(html.includes('Condición de la segunda fecha'));
++ docs[1].availability='full';assert(!renderTrip(adaptTrips(docs)[0]).includes('data-open-dates'));
++});
++
++test('canonical and dated URLs survive splitting, regrouping and withdrawal',async()=>{
++ const dir=await mkdtemp(path.join(os.tmpdir(),'lst-fixed-programme-')),out=path.join(dir,'site');
++ const docs=documents();
+  try{
+   await buildSite({out,read:async()=>docs});
+-  const canonical=await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8');
+-  for(const slug of maldives)assert.equal(await readFile(path.join(out,'viajes',slug,'index.html'),'utf8'),canonical);
+-  await buildSite({out,template:out,read:async()=>[docs[0]]});
+-  assert.match(await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8'),/Maldivas/);
+-  assert.match(await readFile(path.join(out,'viajes',maldives[1],'index.html'),'utf8'),/no está publicado/);
++  for(const [slug,aliases] of [['maldivas',maldives],['marruecos',[morocco[0]]],['marruecos-avanzado',[morocco[1]]]]){
++   const canonical=await readFile(path.join(out,'viajes',slug,'index.html'),'utf8');
++   for(const alias of aliases)assert.equal(await readFile(path.join(out,'viajes',alias,'index.html'),'utf8'),canonical);
++  }
++  await buildSite({out,template:out,read:async()=>docs.filter(d=>d.slug.current!==morocco[1])});
++  for(const slug of ['marruecos-avanzado',morocco[1]])assert.match(await readFile(path.join(out,'viajes',slug,'index.html'),'utf8'),/no está publicado/);
++  assert.match(await readFile(path.join(out,'viajes/marruecos/index.html'),'utf8'),/Material de iniciación/);
+   await buildSite({out,template:out,read:async()=>[]});
+   assert.match(await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8'),/no está publicado/);
+  }finally{await rm(dir,{recursive:true,force:true});}
+ });
+ 
+-test('a single CMS document inherits its default PDF per date and an available override reopens the selector',()=>{
+- const doc=documents()[0];
+- doc.slug.current='native-trip';doc.availability='full';
+- doc.departures.push({...doc.departures[0],_key:'second',dossier:'https://example.com/special.pdf'});
+- doc.departures[0].availability='available';
++test('native multi-date documents inherit their PDF and vary availability independently',()=>{
++ const doc=documents()[0];doc.slug.current='native-trip';doc.availability='full';
++ doc.departures.push({...doc.departures[0],_key:'second',dossier:'https://example.com/special.pdf'});doc.departures[0].availability='available';
+  const trip=adaptTrips([doc])[0],html=renderTrip(trip);
+- assert.equal(trip.availability,'available');
+- assert(html.includes('id="departure-dialog"'));
+- const first=html.split('class="departure-option"')[1].split('</article>')[0];
+- const second=html.split('class="departure-option"')[2].split('</article>')[0];
+- assert(first.includes(doc.dossier));
+- assert(first.includes('Plazas disponibles'));
+- assert(second.includes('https://example.com/special.pdf'));
+- assert(second.includes('Completo'));
++ assert.equal(trip.availability,'available');assert(html.includes('id="departure-dialog"'));
++ for(const pdf of [doc.dossier,'https://example.com/special.pdf'])assert(html.includes(pdf));
+ });
+ 
+-test('pending destinations never become full and mixed state dates share one stable route',()=>{
++test('pending advanced Morocco remains separate from the confirmed basic trip',()=>{
+  const docs=documents().filter(d=>morocco.includes(d.slug.current));
+  docs[1].state='upcoming';docs[1].departures=[];docs[1].availability='enquiry';
+- const pending=adaptTrips([docs[1]])[0];
+- assert.equal(pending.state,'upcoming');
+- assert.equal(pending.availability,'enquiry');
+- assert.equal(pending.departures.length,0);
+- const trip=adaptTrips(docs)[0];
+- assert.equal(adaptTrips(docs).length,1);
+- assert.equal(trip.state,'confirmed');
+- assert.equal(trip.slug,'marruecos');
+- assert.equal(trip.departures.length,1);
+- assert.equal(trip.availability,'available');
+- assert(trip.aliases.includes(morocco[1]));
++ const trips=adaptTrips(docs);assert.equal(trips.length,2);
++ const pending=trips.find(t=>t.slug==='marruecos-avanzado');
++ assert.equal(pending.state,'upcoming');assert.equal(pending.availability,'enquiry');assert.equal(pending.departures.length,0);
+ });
+ 
+-test('clearing a date autonomy requirement restores the trip default',()=>{
+- const doc=documents()[0];doc.departures[0].levelRequirement='';
+- const trip=adaptTrip(doc);
+- assert.equal(trip.departures[0].levelRequirement,undefined);
+- assert(renderTrip(trip).includes(doc.levelRequirement));
++test('obsolete invisible level titles never split otherwise identical dates',()=>{
++ const docs=documents().filter(d=>maldives.includes(d.slug.current));docs[1].levelTitle='Título retirado';
++ const trips=adaptTrips(docs);assert.equal(trips.length,1);assert.equal(trips[0].slug,'maldivas');assert.equal(trips[0].departures.length,2);
+ });
+--- before/scripts/trip-model.mjs
++++ after/scripts/trip-model.mjs
+@@ -12,14 +12,7 @@
+   return [...new Set(configured)].sort((a, b) => a - b);
+ }
+ 
+-export const departureLevels = (trip, departure) => configuredLevels({id: trip.id, levels: departure.levels?.length ? departure.levels : trip.levels});
+-export const departureRequirement = (trip, departure) => departure.levelRequirement || trip.levelRequirement || '';
+-export const hasDepartureLevels = trip => (trip.departures ?? []).some(d => d.levels != null && JSON.stringify(departureLevels(trip, d)) !== JSON.stringify(configuredLevels(trip)));
+-
+-export function levelsFor(trip) {
+-  if (!trip.departures?.length) return configuredLevels(trip);
+-  return [...new Set(trip.departures.flatMap(d => departureLevels(trip, d)))].sort((a, b) => a - b);
+-}
++export const levelsFor = configuredLevels;
+ 
+ const labelFor = levels => {
+   if (levels.length === 4) return 'Todos los niveles';
+@@ -29,8 +22,7 @@
+     : levels.map(level => ROMAN[level - 1]).join(', ');
+   return `${levels.length === 1 ? 'Nivel' : 'Niveles'} ${label}`;
+ };
+-export const departureLevelLabel = (trip, departure) => labelFor(departureLevels(trip, departure));
+-export const levelLabel = trip => hasDepartureLevels(trip) ? 'Nivel según la fecha' : labelFor(levelsFor(trip));
++export const levelLabel = trip => labelFor(levelsFor(trip));
+ 
+ export function departuresFor(trip) {
+   const source = trip.departures ?? [];
+@@ -62,7 +54,7 @@
+ 
+ export function departureMessage(trip, departure) {
+   if ((departure.availability ?? trip.availability) === 'full') return `¡Hola, LST! Veo que la salida a ${trip.name} del ${departure.date} está completa. Quiero consultar otras opciones.`;
+-  return departure.message ?? `¡Hola, LST! Me interesa el viaje a ${trip.name} del ${departure.date}${hasDepartureLevels(trip) ? ` (${departureLevelLabel(trip, departure)})` : ''}. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?`;
++  return departure.message ?? `¡Hola, LST! Me interesa el viaje a ${trip.name} del ${departure.date}. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?`;
+ }
+ 
+ export function tripMessage(trip) {
+@@ -79,7 +71,7 @@
+       : departures[0]?.date ?? 'Por anunciar'],
+     ['Duración', durations.length === 1
+       ? durations[0] : departures.length ? 'Según la salida' : 'Por confirmar'],
+-    ['Nivel de surf', `${levelLabel(trip)}${trip.levelRequirement && !hasDepartureLevels(trip) ? ` · ${trip.levelRequirement}` : ''}`],
++    ['Nivel de surf', `${levelLabel(trip)}${trip.levelRequirement ? ` · ${trip.levelRequirement}` : ''}`],
+   ];
+ }
+ 
+--- before/studio/schemaTypes/trip.ts
++++ after/studio/schemaTypes/trip.ts
+@@ -7,14 +7,14 @@
+   type: 'document',
+   groups: [
+     {name: 'content', title: 'Destino', default: true},
+-    {name: 'departures', title: 'Fechas y niveles'},
++    {name: 'departures', title: 'Fechas y nivel'},
+     {name: 'program', title: 'Programa'},
+   ],
+   fields: [
+     defineField({
+       name: 'name', title: 'Nombre del destino', type: 'string', group: 'content',
+-      description: 'Usa el nombre del destino sin niveles. Indica el nivel general en «Niveles de surf» y las diferencias en cada salida.',
+-      validation: (rule) => rule.required().custom(value => !value || !/\b(?:nivel(?:es)?|rookies|aprendices|riders|supercracks)\b/i.test(value) || 'El nombre del viaje no puede incluir el nivel. Usa los campos de niveles del viaje o de la salida.'),
++      description: 'Da un nombre propio a cada viaje, por ejemplo «Marruecos» o «Marruecos avanzado». Cada viaje tiene un rango de nivel y un único programa.',
++      validation: (rule) => rule.required().custom(value => !value || !/\b(?:nivel(?:es)?|rookies|aprendices|riders|supercracks)\b/i.test(value) || 'El nombre del viaje no puede incluir el nivel. Usa el rango de nivel del viaje.'),
+     }),
+     defineField({
+       name: 'slug', title: 'URL del destino', type: 'slug', group: 'content',
+@@ -36,18 +36,18 @@
+     }),
+     defineField({name: 'availability', title: 'Disponibilidad', type: 'string', group: 'departures', initialValue: 'available', options: {list: [{title: 'Plazas disponibles', value: 'available'}, {title: 'Últimas plazas', value: 'last_places'}, {title: 'Completo', value: 'full'}, {title: 'Consultar disponibilidad', value: 'enquiry'}], layout: 'radio'}, description: 'Estado manual sin contador de plazas. Publica para actualizar la web.'}),
+     defineField({
+-      name: 'levels', title: 'Niveles de surf', type: 'array', group: 'departures',
+-      description: 'Niveles generales del viaje. Cada salida los hereda salvo que indiques otros niveles en esa fecha.',
++      name: 'levels', title: 'Rango de nivel del viaje', type: 'array', group: 'departures',
++      description: 'Rango fijo para todas las fechas de este viaje. Si cambia el nivel o el programa, crea otro viaje con su propia URL.',
+       of: [defineArrayMember({type: 'number', options: {list: [
+         {title: 'I · Rookies', value: 1}, {title: 'II · Aprendices', value: 2},
+         {title: 'III · Riders', value: 3}, {title: 'IV · Supercracks', value: 4},
+       ]}, validation: (rule) => rule.integer().min(1).max(4)})],
+       validation: (rule) => rule.required().min(1).unique(),
+     }),
+-    defineField({name: 'levelRequirement', title: 'Requisito de autonomía', type: 'string', group: 'departures', description: 'Requisito general. Cada salida lo hereda salvo que indiques uno propio para esa fecha.'}),
++    defineField({name: 'levelRequirement', title: 'Requisito de autonomía', type: 'string', group: 'departures', description: 'Requisito común a todas las fechas del viaje.'}),
+     defineField({
+       name: 'departures', title: 'Salidas', type: 'array', group: 'departures',
+-      description: 'Crea un solo viaje por destino y añade aquí sus distintas fechas. Los niveles, la disponibilidad, la capacidad y el dossier generales se heredan salvo que indiques valores propios en una salida.',
++      description: 'Añade fechas solo si comparten el rango de nivel y exactamente el mismo programa. Puedes variar precio, disponibilidad, capacidad y dossier. Para otro nivel o itinerario, crea un viaje independiente.',
+       of: [defineArrayMember({
+         name: 'departure', title: 'Salida', type: 'object',
+         fields: [
+@@ -55,16 +55,6 @@
+           defineField({name: 'end', title: 'Fecha de fin', type: 'date', validation: (rule) => rule.required().min(rule.valueOfField('start'))}),
+           defineField({name: 'brevoValue', title: 'Valor VIAJE_SURF en Brevo (opcional)', type: 'number', description: 'ID numérico de la opción de esta fecha en el formulario Brevo. Debe existir allí antes de publicar. Las ocho salidas del formulario inicial ya están vinculadas por destino y fechas exactas. Rellena este campo para nuevas fechas o si cambia el ID.', validation: rule => rule.integer().min(1)}),
+           defineField({name: 'duration', title: 'Duración (p. ej., 7 noches)', type: 'string'}),
+-          defineField({
+-            name: 'levels', title: 'Niveles de esta salida (opcional)', type: 'array',
+-            description: 'Vacío = hereda los niveles generales del viaje. Rellena solo si esta fecha tiene otros niveles.',
+-            of: [defineArrayMember({type: 'number', options: {list: [
+-              {title: 'I · Rookies', value: 1}, {title: 'II · Aprendices', value: 2},
+-              {title: 'III · Riders', value: 3}, {title: 'IV · Supercracks', value: 4},
+-            ]}, validation: (rule) => rule.integer().min(1).max(4)})],
+-            validation: (rule) => rule.unique(),
+-          }),
+-          defineField({name: 'levelRequirement', title: 'Requisito de autonomía de esta salida (opcional)', type: 'string', description: 'Vacío = hereda el requisito general del viaje.'}),
+           defineField({name: 'availability', title: 'Disponibilidad de esta salida (opcional)', type: 'string', options: {list: [{title: 'Plazas disponibles', value: 'available'}, {title: 'Últimas plazas', value: 'last_places'}, {title: 'Completo', value: 'full'}, {title: 'Consultar disponibilidad', value: 'enquiry'}], layout: 'radio'}, description: 'Vacío = hereda la disponibilidad general del viaje. Estado manual para esta fecha.'}),
+           defineField({name: 'capacity', title: 'Capacidad de esta salida (opcional)', type: 'object', description: 'Vacío = hereda la capacidad general del viaje.', fields: [
+             defineField({name: 'total', title: 'Capacidad total', type: 'number', validation: r => r.integer().min(1)}),
+@@ -111,7 +101,6 @@
+       ],
+     })]}),
+     defineField({name: 'inclusionsNote', title: 'Aclaración de inclusiones', type: 'text', group: 'program'}),
+-    defineField({name: 'levelTitle', title: 'Título del nivel', type: 'string', group: 'departures'}),
+     defineField({name: 'levelText', title: 'Explicación del nivel', type: 'text', group: 'departures'}),
+     defineField({name: 'levelChecks', title: 'Requisitos del nivel', type: 'array', group: 'departures', of: [defineArrayMember({type: 'string'})]}),
+     defineField({name: 'gallery', title: 'Fotos del viaje', type: 'array', group: 'content', of: [defineArrayMember({
+--- before/dist/trip.css
++++ after/dist/trip.css
+@@ -225,24 +225,3 @@
+ .trip-team-roles{padding-left:20px;margin:10px 0 18px;font-size:15px;line-height:1.65}
+ .trip-team-roles li+li{margin-top:8px}
+ .trip-team .trip-team-contact{display:flex;width:fit-content;margin-top:14px;white-space:normal}
+-
+-/* Programme details remain attached to their own departure. */
+-.departure-level-override{font-size:12px;line-height:1.5;color:#a33417;margin:7px 0}
+-.departure-level-list{list-style:none;padding:0}
+-.departure-level-list li{margin:16px 0}
+-.departure-level-list strong,.departure-level-list span{display:block}
+-.departure-programme{border-block-end:1px solid var(--line);margin-top:16px}
+-.departure-programme>summary{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px 0;cursor:pointer;font-weight:600;min-height:48px}
+-.departure-programme>summary span:last-child{font-size:14px;color:#a33417}
+-.departure-programme-copy{padding:0 0 24px;font-size:15px;line-height:1.65}
+-.trip-page .departure-programme-copy h3{font-size:20px;line-height:1.35;margin:24px 0 10px}
+-.departure-programme-copy ul{padding-left:20px;margin-block:14px}
+-.departure-programme-copy details{margin-top:16px}
+-.departure-programme:target{scroll-margin-top:calc(var(--trip-header-height,72px) + 20px)}
+-
+-/* The level sits beside its date, including within the date selector. */
+-.departure-option-date{display:grid;grid-template-columns:minmax(0,1fr) fit-content(42%);align-items:center;gap:14px;margin-bottom:9px}
+-.departure-option-date h3{margin:0;min-width:0}
+-.departure-option-level{font-size:13px;line-height:1.5;font-weight:600;color:#a33417;text-align:right;white-space:normal}
+-.departure-programme>summary{display:grid;grid-template-columns:minmax(0,1fr) max-content}
+-.departure-programme>summary>span:last-child{white-space:nowrap;text-align:right}
+--- before/dist/trip-detail.css
++++ after/dist/trip-detail.css
+@@ -239,9 +239,6 @@
+ .trip-designed .trip-level{border-radius:0;margin-top:26px;padding:27px 22px}
+ .level-heading{display:grid;gap:22px;margin-bottom:20px}
+ .trip-designed .level-heading h2{font-size:42px;line-height:1.02;margin:0}
+-.level-meter{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:250px}
+-.level-meter>span{display:grid;place-items:center;width:100%;height:42px;border:1px solid #fffae744;font:400 24px/1 var(--display);color:#c9c4b1}
+-.level-meter>.level-active{background:var(--orange);color:var(--ink);border-color:var(--orange)}
+ .trip-designed .trip-level>p:not(.eyebrow){font-size:14px;line-height:1.7}
+ .trip-designed .trip-level>.button-level{display:inline-flex;width:auto;font-size:12px;min-height:44px;padding:10px 15px;margin-top:5px;border:1px solid #fffae770;background:transparent;color:var(--paper)}
+ .trip-designed .trip-level>.text-link{font-size:12px}
+@@ -263,19 +260,6 @@
+ .trip-designed .trip-costs .exclusion-list ul{margin-bottom:0;display:grid;gap:0 24px}
+ .trip-designed .trip-costs .exclusion-list li{font-size:13px;line-height:1.75;border-color:#fffae733}
+ .trip-designed .trip-costs .exclusion-list li:before{background:#ff9c7f}
+-.trip-info-file,.trip-photo-file{border-top:2px solid var(--ink);border-bottom:1px solid var(--line);margin-top:22px}
+-.trip-info-file>summary{display:grid;grid-template-columns:minmax(0,1fr) 30px;gap:7px 16px;align-items:center;padding:24px 0;list-style:none;cursor:pointer}
+-.trip-info-file>summary::-webkit-details-marker,.trip-photo-file>summary::-webkit-details-marker{display:none}
+-.file-label{font:400 10px/1.6 var(--mono);grid-column:1}
+-.trip-info-file>summary>span:nth-child(2){font:400 32px/1.05 var(--display);grid-column:1}
+-.file-toggle{grid-column:2;grid-row:1/3;font-size:28px;text-align:center}
+-.trip-info-file[open] .file-toggle{transform:rotate(45deg)}
+-.trip-file-content{padding-bottom:24px}
+-.trip-file-content>.trip-intro{font-size:14px;line-height:1.8;margin-bottom:15px}
+-.trip-designed .trip-file-content h2{font-size:36px;line-height:1.05}
+-.trip-designed .trip-file-content .trip-block{padding-block:26px}
+-.trip-designed .trip-file-content .trip-block>p:not(.eyebrow){font-size:14px;line-height:1.8}
+-.trip-designed .trip-file-content .trip-team-contact{font-size:12px;min-height:44px}
+ .trip-photo-file>summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:68px;font-size:14px;font-weight:600;line-height:1.6;cursor:pointer;list-style:none}
+ .trip-photo-file>summary>span{font-size:11px;white-space:nowrap;font-weight:400}
+ .trip-photo-file .trip-gallery{padding-bottom:20px}
+@@ -333,7 +317,6 @@
+  .trip-designed .booking-card-price{font-size:40px}
+  .trip-designed .booking-card dl{margin-block:20px;gap:10px}
+  .trip-designed .trip-costs{padding-block:48px 20px}
+- .trip-designed .trip-info-file .trip-block{padding-block:26px}
+  .trip-designed .trip-reserve{padding:36px}
+ }
+ @media(min-width:1280px){.trip-designed .trip-layout{grid-template-columns:minmax(0,1fr) 320px;gap:74px}}
+@@ -346,3 +329,22 @@
+ }
+ 
+ .trip-designed .trip-registration{display:flex;margin:14px 0;justify-content:center;text-align:center}.trip-designed .trip-reserve .trip-registration{background:#1b1b1b;color:#fffae7}.trip-designed .departure-option-booking .trip-registration{font-size:14px}
++
++/* A trip owns one level range and one visible programme; dates only vary the booking. */
++.trip-cover-level{display:table;background:var(--orange);color:var(--ink);font:600 12px/1.5 var(--body);padding:7px 13px;margin:0 0 17px}
++.trip-designed .trip-cover h1.trip-title-long{max-width:11ch}
++.trip-designed .level-heading{grid-template-columns:minmax(0,1fr);gap:12px;align-items:end}
++.trip-designed .level-heading h2{font-size:clamp(44px,8vw,62px)}
++.level-fixed-note{font:400 12px/1.6 var(--mono);color:#ff9c7f}
++.trip-alternative{display:block;border-top:1px solid #fffae744;padding:16px 0 0;margin-top:22px;font-size:13px;line-height:1.7;text-underline-offset:4px}
++.trip-programme{padding-top:42px;margin-top:30px;border-top:2px solid var(--ink)}
++.trip-programme>.eyebrow{margin-bottom:18px}
++.trip-designed .trip-programme .trip-block{padding-block:26px}
++.trip-designed .trip-programme .trip-intro{font-size:16px;line-height:1.8}
++.trip-programme .trip-team{border-bottom:0}
++@media(min-width:600px){.trip-designed .level-heading{grid-template-columns:minmax(0,1fr) auto}.level-fixed-note{text-align:right}.trip-cover-level{font-size:14px}}
++
++.dossier-format{flex-shrink:0;min-width:3ch;white-space:nowrap}
++.departure-payment{font-size:13px;line-height:1.7}
++.departure-payment summary{min-height:44px;display:list-item;cursor:pointer;font-weight:500}
++.departure-payment p{margin-top:8px}
+--- before/dist/trip.js
++++ after/dist/trip.js
+@@ -174,23 +174,3 @@
+   const datesObserver = new ResizeObserver(fitDates);
+   [departureDialog, ...fixedParts].forEach(part => datesObserver.observe(part));
+ }
+-
+-// Programme links leave the modal and open the matching date in the page.
+-document.querySelectorAll('[data-view-programme]').forEach(link => {
+-  link.addEventListener('click', event => {
+-    const programme = document.getElementById(link.hash.slice(1));
+-    if (!programme) return;
+-    event.preventDefault();
+-    const dialog = link.closest('dialog');
+-    const reveal = () => {
+-      programme.open = true;
+-      history.replaceState(null, '', link.hash);
+-      programme.scrollIntoView({behavior: 'instant', block: 'start'});
+-      programme.querySelector('summary').focus({preventScroll: true});
+-    };
+-    if (dialog?.open) {
+-      dialog.addEventListener('close', () => requestAnimationFrame(reveal), {once: true});
+-      dialog.close();
+-    } else reveal();
+-  });
+-});
+--- before/dist/catalog-filter.js
++++ after/dist/catalog-filter.js
+@@ -1,5 +1,4 @@
+-// These filters are shared by generation and the browser. Match the level and
+-// month against one departure so separate dates cannot create a false match.
++// The level range belongs to the trip; dates only determine the calendar month.
+ export function catalogFilters(level = '', date = '') {
+   return {
+     level: /^[1-4]$/.test(String(level)) ? Number(level) : null,
+@@ -21,10 +20,7 @@
+ export function filterCatalog(trips, level = '', date = '') {
+   const filters = catalogFilters(level, date);
+   return trips.filter(trip => {
+-    if (filters.date === null) return filters.level === null || trip.levels.includes(filters.level);
+-    return (trip.departures ?? []).some(departure =>
+-      departureMonths(departure).includes(filters.date) &&
+-      (filters.level === null || (departure.levels?.length ? departure.levels : trip.levels).includes(filters.level))
+-    );
++    return (filters.level === null || trip.levels.includes(filters.level)) &&
++      (filters.date === null || (trip.departures ?? []).some(departure => departureMonths(departure).includes(filters.date)));
+   });
+ }
+--- before/dist/catalog.js
++++ after/dist/catalog.js
+@@ -19,7 +19,7 @@
+   empty.hidden = visible.size !== 0 || !trips.length;
+   const context = [level, date].filter(select => select.value)
+     .map(select => select.selectedOptions[0].textContent);
+-  status.textContent = !trips.length ? 'No hay viajes publicados en este momento.' : `${visible.size} de ${trips.length} destinos${context.length ? ` · ${context.join(' · ')}` : ''}.`;
++  status.textContent = !trips.length ? 'No hay viajes publicados en este momento.' : `${visible.size} de ${trips.length} viajes${context.length ? ` · ${context.join(' · ')}` : ''}.`;
+ }
+ 
+ function syncFromUrl() {
+@@ -55,5 +55,3 @@
+ window.addEventListener('popstate', syncFromUrl);
+ syncFromUrl();
+ controls.hidden = false;
+-
+-
+--- before/README.md
++++ after/README.md
+@@ -38,7 +38,7 @@
+ - dist/viajes/*/index.html: fichas publicadas y avisos de compatibilidad de URLs históricas.
+ - dist/trip.css: diseño de detalle desde móvil, barra inferior y ficha lateral de escritorio.
+ - dist/trip.js: galería horizontal, popup de fechas, teclado, bloqueo de scroll y retorno del foco.
+-- scripts/trip-model.mjs: niveles, salidas, precios y mensajes por fecha.
++- scripts/trip-model.mjs: rango fijo del viaje, salidas, precios y mensajes por fecha.
+ - scripts/trip-model.test.mjs: pruebas de fechas únicas/múltiples, niveles y consultas.
+ - dist/assets/: material documental de LST, logos sin modificar y fuentes locales.
+ - docs/content-inventory.json: datos comerciales, fuentes y pendientes.
+@@ -68,13 +68,15 @@
+ 
+ Azores, Euskadi, Marruecos y Cádiz tienen páginas completas de destino con próximas fechas y programa pendientes; sus niveles están configurados como I–IV. Los recuerdos de viajes anteriores y sus fotos se presentan como tales. Sus servicios, alojamientos y precios anteriores no se trasladan a la nueva oferta. Para activar una salida real, actualizar el estado y todos los datos confirmados en data/trips.json y reconstruir las páginas. El sitio no se actualiza automáticamente.
+ 
+-## Fechas y niveles configurables
+-
+-Cada viaje contiene `departures`, una lista de salidas con `id`, `date`, `start`, `end`, `duration`, `price` opcional y `state`. Una fecha conserva el acceso directo a WhatsApp. Con varias fechas, «Elegir fecha» abre un único popup: desde abajo en móvil y centrado en pantallas mayores. La lista interior admite scroll para muchas salidas; las fechas no se despliegan dentro de la página o la ficha lateral. Cada salida tiene un enlace «Consultar» con destino y fecha en el mensaje, y admite un precio distinto. Una lista vacía muestra las fechas por anunciar.
+-
+-`levels` admite varios valores entre 1 y 4. Si falta o está vacío, se usa «Todos los niveles». El Salvador conserva [2, 3] y el requisito de autonomía; los otros cinco destinos tienen [1, 2, 3, 4] por indicación del cliente. Los niveles ya están configurados aunque el programa de una próxima salida siga pendiente.
+-
+-El dossier se enlaza desde la ficha de reserva de escritorio y desde el resumen de reserva en móvil. Se retiran la navegación interna entre plan/nivel/inclusiones y el enlace al PDF dentro del programa. Las acciones en móvil usan texto sin flechas decorativas. Las inclusiones y exclusiones son bloques estáticos siempre visibles. La galería conserva el gesto horizontal y sus controles se llaman Anterior, Siguiente y Cerrar.
++## Un programa y un rango fijo por viaje
++
++Cada viaje define un único `levels` (rango fijo de valores 1–4), requisito de autonomía, programa e inclusiones. Todas sus `departures` comparten ese rango e itinerario. Las fechas solo pueden variar en precio/promociones, disponibilidad, capacidad, pago y dossier. No se admiten niveles, requisitos ni programas propios de una salida: el adaptador rechaza esos datos para evitar mezclar ofertas.
++
++Marruecos I–II (`/viajes/marruecos/`, 17–24 enero 2027) y Marruecos avanzado III (`/viajes/marruecos-avanzado/`, 24–31 enero 2027) son dos viajes independientes. Maldivas II–III mantiene sus dos fechas y un solo programa. La agrupación de documentos antiguos exige igualdad de rango, requisitos y contenido del programa. Los documentos con URL propia mantienen su identidad; las URLs fechadas ya publicadas siguen abriendo el viaje correspondiente, también en las inscripciones.
++
++El detalle muestra el rango en portada, un bloque de requisitos y el programa visible antes de las inclusiones. Solo los viajes con varias fechas abren «Elegir fecha». El selector conserva precios, disponibilidad, condiciones y PDF por fecha, con alternativa nativa sin JavaScript. Galería, foco, WhatsApp e inscripciones Brevo se conservan.
++
++[Alcance y validación de este cambio](docs/qa/2026-10-25-programa-unico/README.md). Las revisiones anteriores de este README son históricas y pueden describir modelos retirados.
+ 
+ ## Consulta y reserva
+ 
+--- before/docs/guia-cliente.md
++++ after/docs/guia-cliente.md
+@@ -2,12 +2,12 @@
+ 
+ Studio: https://lets-surf-together.sanity.studio/ (requiere tu cuenta con acceso). Web: https://lst-sepia.vercel.app/viajes/.
+ 
+-1. **Cambiar un precio:** abre el viaje → «Fechas y niveles» → «Salidas» → precio por persona. Revisa condiciones de tarifa, señal y PDF para que coincidan. Pulsa **Publicar**.
++1. **Cambiar un precio:** abre el viaje → «Fechas y nivel» → «Salidas» → precio por persona. Revisa condiciones de tarifa, señal y PDF para que coincidan. Pulsa **Publicar**.
+ 2. **Marcar completo:** cambia «Disponibilidad» a **Completo** y publica. Se conserva la ficha con sus fechas/precios y se retira la solicitud de plaza. También puedes elegir **Plazas disponibles**, **Últimas plazas** o **Consultar disponibilidad**. No se usa un contador de plazas libres.
+ 3. **Sustituir el PDF:** en «Programa» → **PDF del viaje**, sube el archivo aprobado y publica. Este archivo tiene prioridad sobre la URL anterior del dossier. Comprueba el enlace «Descargar dossier» en la web.
+-4. **Nueva salida:** crea o duplica un viaje; usa una URL nueva y estable, nombre/fecha/niveles/precio correctos, disponibilidad, programa/inclusiones/exclusiones, fotos con descripción y PDF revisados. Las consultas siguen en WhatsApp. La integración local de inscripciones Brevo se explica debajo y requiere desplegar el código. Confirma las condiciones comerciales y publica solo cuando esté completo; mientras tanto déjalo en borrador.
++4. **Nueva salida:** añade la fecha al viaje existente únicamente si comparte su rango de nivel y exactamente su programa. Si cambia el nivel o el itinerario, crea o duplica un viaje con nombre y URL propios (por ejemplo, «Marruecos avanzado»). Revisa fechas, precio, disponibilidad, programa/inclusiones/exclusiones, fotos con descripción y PDF. Las consultas siguen en WhatsApp. La integración local de inscripciones Brevo se explica debajo y requiere desplegar el código. Confirma las condiciones comerciales y publica solo cuando esté completo; mientras tanto déjalo en borrador.
+ 
+-5. **Early bird y otros tramos:** en «Fechas y niveles» → «Salidas», conserva el **Precio general por persona** y añade las **Tarifas reducidas / early bird**. Cada tarifa tiene su precio y un cupo (plaza inicial y final); si el PDF no concreta número, deja ambos vacíos y escribe la condición aprobada, por ejemplo «Plazas limitadas». Marca **Esta es la tarifa vigente** solo en una. Cuando se cubra el cupo, desmárcala; activa el siguiente tramo si existe o deja todas desmarcadas para usar el precio general. Publica para reconstruir la web. Es una selección manual: no cuenta reservas ni muestra plazas restantes. Marcar el viaje o la salida completo retira el descuento. Revisa también condiciones y dossier.
++5. **Early bird y otros tramos:** en «Fechas y nivel» → «Salidas», conserva el **Precio general por persona** y añade las **Tarifas reducidas / early bird**. Cada tarifa tiene su precio y un cupo (plaza inicial y final); si el PDF no concreta número, deja ambos vacíos y escribe la condición aprobada, por ejemplo «Plazas limitadas». Marca **Esta es la tarifa vigente** solo en una. Cuando se cubra el cupo, desmárcala; activa el siguiente tramo si existe o deja todas desmarcadas para usar el precio general. Publica para reconstruir la web. Es una selección manual: no cuenta reservas ni muestra plazas restantes. Marcar el viaje o la salida completo retira el descuento. Revisa también condiciones y dossier.
+ 
+ Publicar inicia automáticamente una reconstrucción en Vercel. La web cambia cuando el despliegue termina; no es instantáneo. Los borradores y sus ediciones no reconstruyen ni aparecen en la web. Despublicar o eliminar un viaje publicado también reconstruye y lo retira. Un cambio de URL elimina el acceso a la anterior salvo las rutas históricas conservadas; evita cambiar URLs existentes.
+ 
+--- before/dist/styles.css
++++ after/dist/styles.css
+@@ -74,10 +74,9 @@
+ .footer-navigation{display:flex;flex-wrap:wrap;gap:4px 24px;padding-block:20px;border-top:1px solid var(--line)}
+ .footer-navigation a{display:inline-flex;align-items:center;min-height:44px;font:500 14px/1.5 var(--body);text-underline-offset:5px}
+ 
+-/* One departure per row: dates on the left, its effective surf level on the right. */
++/* Date rows share the level range displayed on the trip card. */
+ .departure-rows{width:100%;list-style:none;margin:10px 0 16px;padding:0;border-block:1px solid var(--line);font-size:13px;line-height:1.6}
+-.departure-row{display:grid;grid-template-columns:minmax(0,1fr) fit-content(42%);align-items:center;gap:12px;min-width:0;padding-block:10px;border-top:1px solid var(--line)}
++.departure-row{display:block;min-width:0;padding-block:10px;border-top:1px solid var(--line)}
+ .departure-row:first-child{border-top:0}
+ .departure-row-date{min-width:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+-.departure-row-level{white-space:normal;text-align:right;font-size:.88em;line-height:1.5;font-weight:500}
+ .catalog-date-heading{margin-top:12px;font-size:13px}
+--- before/dist/home.css
++++ after/dist/home.css
+@@ -637,7 +637,6 @@
+ body.home-modern .home-trip-link:after{content:"";position:absolute;inset:0;z-index:1;border-radius:28px}
+ body.home-modern .home-trip-link:focus-visible{outline:none}
+ body.home-modern .home-trip-link:focus-visible:after{outline:3px solid var(--lst-orange);outline-offset:5px}
+-body.home-modern .home-trip-departures .departure-row-level{text-align:right;font-size:11px;line-height:1.5;white-space:normal}
+ body.home-modern .home-trip-departures .departure-row-date{min-width:0}
+ 
+ body.home-modern .home-trip-dates-link{display:block;min-height:44px;padding:8px 12px;color:inherit;text-decoration:none}

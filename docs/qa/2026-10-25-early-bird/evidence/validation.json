@@ -1,0 +1,47 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "reviewedSourceFiles": 13,
+  "allReviewedHashesUnchanged": true,
+  "unitTests": {
+    "passed": 70,
+    "failed": 0,
+    "log": "final-tests.txt"
+  },
+  "affectedBehaviorTests": 64,
+  "browserChecks": {
+    "existing": 259,
+    "promotions": 130
+  },
+  "siteChecks": {
+    "publishedDataPages": 24,
+    "privateCandidatePages": 24,
+    "status": "passed"
+  },
+  "studio": {
+    "types": "passed",
+    "build": "passed",
+    "deployment": "succeeded",
+    "schemaId": "_.schemas.lets-surf-together",
+    "schemaUpdatedAt": "2026-10-25T18:21:12Z",
+    "schemaRevision": "L3ZrvhdiWtwAlFI8eUGEUN",
+    "promotionsArrayConfirmed": true,
+    "hostedInterface": "requires account authentication"
+  },
+  "independentReview": {
+    "agent": "/root/review_early_bird",
+    "code": "approved, no remaining blockers",
+    "remoteReadback": "approved; 8 published unchanged, 7 drafts exact, 13 source hashes unchanged"
+  },
+  "data": {
+    "publishedDocuments": 8,
+    "drafts": 7,
+    "activeDraftOffers": 7,
+    "publishedPromotions": 0,
+    "publicWebsitePromotions": 0,
+    "publicSnapshotSha256": "643da32875cc55ff1d227df818c30646c4d885c73d350b88a57e4e89e226f1e3",
+    "webPublication": "pending by explicit user instruction"
+  },
+  "webPublication": "pending by explicit user instruction",
+  "diffWhitespaceCheck": "passed for all 13 task deltas against recorded base snapshots"
+}

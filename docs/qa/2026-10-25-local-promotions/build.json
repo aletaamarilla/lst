@@ -1,0 +1,13 @@
+{
+  "build": {
+    "source": "sanity-published",
+    "count": 6,
+    "out": "/home/amfernandez/personalProjects/letsurftogethersystem/dist"
+  },
+  "source": "retained published data, deeply equal to existing snapshot",
+  "changed": [
+    "dist/viajes/index.html"
+  ],
+  "distPromotions": 0,
+  "webPublication": "pending"
+}

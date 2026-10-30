@@ -1,0 +1,1 @@
+Revisión independiente final de brand_review: sin hallazgos accionables ni bloqueos en candidate.json. Verificó 13 archivos, equivalencia de controles/enlaces, preservación byte a byte de plantillas/datos/JavaScript funcional, 185 tests, check de 40 páginas y sintaxis del comprobador FAQ. Alcance: código, cascada y compatibilidad; navegador a cargo del agente principal.

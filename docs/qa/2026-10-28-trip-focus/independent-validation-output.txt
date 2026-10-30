@@ -1,0 +1,179 @@
+{
+  "manifestMatches": true,
+  "previousRendererHash": "94e1c6023c60e822c25d71d3f27557e76ca0c89d98fd11a4a5d8ae9d781f0b79",
+  "cases": [
+    {
+      "promo": false,
+      "priceNote": "Precio en habitación compartida & suplemento <individual>.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": true,
+      "note": "Precio en habitación compartida &amp; suplemento &lt;individual&gt;.",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true
+    },
+    {
+      "promo": false,
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true
+    },
+    {
+      "promo": false,
+      "priceNote": "",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true
+    },
+    {
+      "promo": true,
+      "priceNote": "Precio en habitación compartida & suplemento <individual>.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": true,
+      "note": "Precio en habitación compartida &amp; suplemento &lt;individual&gt;.",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true
+    },
+    {
+      "promo": true,
+      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true
+    },
+    {
+      "promo": true,
+      "priceNote": "",
+      "nonSidebarHtmlIdentical": true,
+      "escapedRestrictionShown": false,
+      "note": "por persona",
+      "applicableDatePreserved": true,
+      "quotaPreserved": true,
+      "nonSidebarDiscountPreserved": true,
+      "sidebarDiscountRemoved": true
+    }
+  ],
+  "checks": [
+    {
+      "slug": "el-palmar",
+      "routes": [
+        "el-palmar",
+        "el-palmar-2026-12-04"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "fuerteventura",
+      "routes": [
+        "fuerteventura",
+        "fuerteventura-2027-02-12"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "hossegor",
+      "routes": [
+        "hossegor",
+        "hossegor-2026-11-20"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "maldivas",
+      "routes": [
+        "maldivas",
+        "maldivas-2027-03-21",
+        "maldivas-2027-03-28"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "marruecos",
+      "routes": [
+        "marruecos",
+        "marruecos-2027-01-17"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "routes": [
+        "marruecos-avanzado",
+        "marruecos-2027-01-24"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    },
+    {
+      "slug": "senegal",
+      "routes": [
+        "senegal",
+        "senegal-2027-02-28"
+      ],
+      "htmlOutsideSidebarIdentical": true,
+      "allActionTargetsIdentical": true,
+      "generatedCurrentMatches": [
+        true,
+        true
+      ]
+    }
+  ],
+  "protectedMatches": {
+    "dist/catalog-snapshot.json": true,
+    "artifacts/local-trip-preview.json": true,
+    "scripts/trip-model.mjs": true,
+    "scripts/sanity-trips.mjs": true,
+    "scripts/trip-groups.mjs": true,
+    "scripts/brevo.mjs": true,
+    "dist/trip.js": true,
+    "dist/styles.css": true,
+    "dist/home.css": true,
+    "dist/assets/team/lucas-concept-ai.png": true
+  }
+}

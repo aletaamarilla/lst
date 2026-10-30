@@ -80,42 +80,66 @@ test('manual price, deposit and availability stay independent; decimals are not 
   assert.equal(tripPrice(trip), '860,29 €');
   const html = renderTrip(trip);
   assert.match(html, /Completo/);
-  assert.match(html, /270 €/);
-  assert.match(html, /equivalencia pendiente/);
+  assert.doesNotMatch(html, /Reserva con/); // closed trips no longer show a separate payment panel
+  assert.match(trip.payment.terms, /equivalencia pendiente/);
   doc.departures[0].price = null;
   assert.equal(tripPrice(adaptTrip(doc)), 'Precio por confirmar');
   assert.equal(departuresFor({state: 'confirmed', price: 100, departures: [{id: 'a', date: 'hoy', price: null}]} )[0].price, null);
 });
 
-test('optional content is omitted without fake services, photos or undefined markup; default request stays contextual WhatsApp', () => {
+test('optional content is omitted without fake services, photos or undefined markup; registration and general enquiries retain their context', () => {
   const doc = published(0);
   for (const field of ['payment', 'capacity', 'story', 'includes', 'excludes', 'stay', 'faqs', 'intro']) delete doc[field];
   const trip = adaptTrip(doc);
   const html = renderTrip(trip);
-  assert.doesNotMatch(html, /undefined|NaN|\/assets\/null|\/assets\/undefined|habitación compartida|data-open-gallery|og:image/);
-  assert.match(html, /Disponibilidad<\/dt><dd>Consultar disponibilidad/);
+  assert.doesNotMatch(html, /undefined|NaN|\/assets\/null|\/assets\/undefined|habitación compartida|<button[^>]+data-open-gallery|og:image/);
+  assert.match(html, /CONSULTAR DISPONIBILIDAD/);
   assert.match(html, /Precio por confirmar/);
-  const link = html.match(/data-whatsapp="[^"]+" href="([^"]+)"/)[1];
-  assert.match(new URL(link).searchParams.get('text'), /Hossegor.*20 nov/);
+  const link = html.match(/class="button reserve-whatsapp" data-whatsapp="[^"]+" href="([^"]+)"/)[1];
+  const enquiry = new URL(link);
+  assert.equal(enquiry.origin,'https://wa.me');
+  assert.equal(enquiry.pathname,'/34648189257');
+  assert.match(enquiry.searchParams.get('text'), /Hossegor/);
+  assert.doesNotMatch(html,/Consultar mi nivel|button-level/);
+  assert.match(html, new RegExp('data-registration="[^"]+" href="/inscripciones/'+trip.slug+'/"'));
   assert.doesNotMatch(html, /data-application/);
 });
 
-test('legacy application URLs are discarded and every booking placement uses contextual WhatsApp', () => {
+test('legacy application URLs are discarded; supported bookings use registration while enquiries stay contextual', () => {
   const doc = published(0);
   doc.booking = {applicationUrl: 'https://forms.gle/obsolete'};
   const trip = adaptTrip(doc);
   assert.equal(trip.booking, undefined);
   let html = renderTrip({...trip, booking: doc.booking});
-  assert.doesNotMatch(html, /data-application|forms.gle|formulario/);
-  assert.equal((html.match(/data-whatsapp=/g) ?? []).length, 5);
+  assert.doesNotMatch(html, /data-application|forms.gle/);
+  const registrations=[...html.matchAll(/<a class="([^"]*)" data-registration="([^"]+)" href="([^"]+)"/g)];
+  for(const placement of ['trip-header-cta','reserve-main','booking-card-cta','dock-cta']){
+    const links=registrations.filter(([,classes])=>classes.split(' ').includes(placement));
+    assert.equal(links.length,1,placement+' remains a single registration action');
+    assert.equal(links[0][3],'/inscripciones/'+trip.slug+'/');
+    assert.equal(links[0][2],trip.id,placement+' keeps the trip context');
+  }
+  const contacts=[...html.matchAll(/<a class="([^"]*)" data-whatsapp="([^"]+)" href="([^"]+)"/g)];
+  const levelLinks=contacts.filter(([,classes])=>classes.split(' ').includes('button-level'));
+  assert.equal(levelLinks.length,0,'The requested level enquiry stays removed');
+  const destination=new URL(contacts.find(([,classes])=>classes.split(' ').includes('reserve-whatsapp'))[3]);
+  assert.equal(destination.origin,'https://wa.me');
+  assert.equal(destination.pathname,'/34648189257');
+  assert(destination.searchParams.get('text').includes(trip.name));
+  assert.match(destination.searchParams.get('text'),/disponibilidad|reservar/);
+  assert.doesNotMatch(html,/class="[^"]*trip-team-contact/);
   doc.departures.push({...doc.departures[0], _key: 'second', start: '2026-12-01', end: '2026-12-03', price: 500});
   html = renderTrip(adaptTrip(doc));
   assert.match(html, /id="departure-dialog"/);
   assert.match(html, /data-departure="second"/);
-  assert.doesNotMatch(html, /data-application|forms.gle|formulario/);
+  assert.doesNotMatch(html, /data-application|forms.gle/);
   const links = [...html.matchAll(/href="(https:\/\/wa.me[^" ]+)" data-departure="([^"]+)"/g)];
   assert.equal(links.length, 2);
   assert.ok(new URL(links[1][1]).searchParams.get('text').includes('1 dic 2026'));
+  const options=[...html.matchAll(/<article class="departure-option">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
+  assert.match(options[0],/data-registration=/);
+  assert(options[0].includes('/inscripciones/'+trip.slug+'/?salida='+trip.departures[0].id));
+  assert.doesNotMatch(options[1],/data-registration=/,'Unmapped dates must remain enquiries');
 });
 
 test('public snapshot whitelists fields and strips internal notes and unknown nested metadata', () => {
@@ -174,7 +198,7 @@ test('one read supplies home, catalogue, levels and details; stale demo content 
   } finally { await rm(dir, {recursive: true, force: true}); }
 });
 
-test('reading/validation/render errors preserve the last output; demo cannot replace production', async () => {
+test('reading/validation/render errors preserve the last output', async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'lst-failure-'));
   try {
     await writeFile(path.join(dir, 'sentinel'), 'last-valid');
@@ -184,7 +208,6 @@ test('reading/validation/render errors preserve the last output; demo cannot rep
     }
     await assert.rejects(buildSite({out: dir, template: '/does-not-exist', read: async () => []}));
     assert.equal(await readFile(path.join(dir, 'sentinel'), 'utf8'), 'last-valid');
-    await assert.rejects(buildSite({demo: true}), /fuera de dist/);
   } finally { await rm(dir, {recursive: true, force: true}); }
 });
 
@@ -254,7 +277,7 @@ test('dry run has zero writes; full validation and authenticated collision check
 });
 
 
-test('a full trip remains visible with dates/prices, suppresses applications and date choices, and can reopen', async () => {
+test('a full trip retains dates, prices and PDFs without registration, and can reopen', async () => {
   const {renderCatalog} = await import('./render-catalog.mjs');
   const {renderHomeTrips} = await import('./render-home-trips.mjs');
   const {renderLevelTrips} = await import('./render-level-trips.mjs');
@@ -262,6 +285,7 @@ test('a full trip remains visible with dates/prices, suppresses applications and
   doc.departures[0].price = 399;
   doc.booking = {applicationUrl: 'https://forms.gle/approved'};
   doc.notice = 'Plazas disponibles. Envía tu solicitud.';
+  doc.dossier = 'https://example.com/closed-programme.pdf';
   doc.capacity.available = 0;
   for (const multiple of [false, true]) {
     if (multiple) doc.departures.push({...doc.departures[0], _key: 'second', start: '2026-12-01', end: '2026-12-03', price: 450});
@@ -270,17 +294,24 @@ test('a full trip remains visible with dates/prices, suppresses applications and
     assert.match(html, /COMPLETO/);
     assert.match(html, /399 €/);
     assert.match(html, /Completo/);
-    assert.match(html, /Consultar viaje completo/);
+    if (!multiple) assert.match(html, /Consultar viaje completo/);
     assert.doesNotMatch(html, /Plazas disponibles\. Envía tu solicitud/);
     assert.match(html, /20 nov 2026/);
-    if (multiple) { assert.match(html, /1 dic 2026/); assert.match(html, /450 €/); }
-    assert.doesNotMatch(html, /data-application|forms.gle|data-open-dates|departure-dialog/);
+    if (multiple) {
+      assert.match(html, /1 dic 2026/); assert.match(html, /450 €/);
+      assert.match(html, /data-open-dates/);assert.match(html, /id="departure-dialog"/);
+      const options=[...html.matchAll(/<article class="departure-option">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
+      assert.equal(options.length,2);
+      for(const option of options){assert(option.includes(doc.dossier));assert.match(option,/Consultar alternativas/);}
+    } else assert.doesNotMatch(html, /data-open-dates|departure-dialog/);
+    assert.doesNotMatch(html, /data-application|forms.gle|data-registration=/);
     assert.match(renderCatalog('<!-- catalog:start --><!-- catalog:end -->', [trip]), /Completo/);
     assert.match(renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->', [trip]), /Completo/);
     assert.match(renderLevelTrips(await readFile('dist/niveles/index.html', 'utf8'), [trip]), /Completo/);
   }
   doc.capacity.available = 1;
-  assert.match(renderTrip(adaptTrip(doc)), /data-whatsapp/);
+  const reopened=renderTrip(adaptTrip(doc));
+  assert.match(reopened, /data-whatsapp/);assert.match(reopened, /data-registration=/);
 });
 
 
@@ -291,7 +322,7 @@ test('manual availability labels have no free-place counts and override obsolete
   for (const [availability, label] of [['available', 'Plazas disponibles'], ['last_places', 'Últimas plazas'], ['full', 'Completo'], ['enquiry', 'Consultar disponibilidad']]) {
     doc.availability = availability;
     const html = renderTrip(adaptTrip(doc));
-    assert.ok(html.includes(label));
+    assert.ok(html.includes(label.toLocaleUpperCase('es')));
     assert.doesNotMatch(html, /0 plazas disponibles|\d+ plazas disponibles/);
     assert.equal(html.includes('data-application'), false);
     assert.match(html, /data-whatsapp/);

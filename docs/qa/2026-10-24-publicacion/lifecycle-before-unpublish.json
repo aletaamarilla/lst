@@ -1,0 +1,135 @@
+[
+  {
+    "_createdAt": "2026-10-23T18:18:02Z",
+    "_id": "lst-hossegor-2026-11-20",
+    "_rev": "2D42OFpIbrkQoZrdHVIqT0",
+    "_type": "trip",
+    "_updatedAt": "2026-10-24T11:08:42Z",
+    "availability": "available",
+    "booking": {
+      "_type": "booking",
+      "applicationUrl": "https://forms.gle/sserHWdhwvDMVxYQ6"
+    },
+    "capacity": {
+      "_type": "capacity",
+      "total": 6
+    },
+    "checkedAt": "2026-10-24",
+    "departures": [
+      {
+        "_key": "hossegor-2026-11-20",
+        "_type": "departure",
+        "duration": "2 noches",
+        "end": "2026-11-22",
+        "price": 399,
+        "start": "2026-11-20"
+      }
+    ],
+    "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e488fd20ae30f867a6a1f162b67ada09d267d015.pdf",
+    "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276. PDF original conserva sus tramos documentales. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276; 12 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (hossegor-2026-11-20).\nTarifas del PDF, vigencia NO confirmada:\nTarifa publicada: 399 € · Por persona\nFormulario extraído, canal aún NO aprobado: https://forms.gle/sserHWdhwvDMVxYQ6\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":399,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":399,\"label\":\"Tarifa publicada\",\"firstPlace\":null,\"lastPlace\":null,\"condition\":\"Por persona\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[10]}}],\"source\":{\"pages\":[10]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":200,\"depositPercentPublished\":null,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Antes del viaje\",\"balanceAmountPublished\":199,\"balancePercentPublished\":null,\"source\":{\"pages\":[10,12]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/sserHWdhwvDMVxYQ6\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":\"Menos de 24–48 h (no revalidado)\",\"source\":{\"pages\":[12]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-e488fd20ae30f867a6a1f162b67ada09d267d015-pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276.",
+    "excludes": [
+      "Material de surf (alquiler posible)",
+      "Transporte (coches compartidos)",
+      "Seguro de viaje"
+    ],
+    "faqs": [
+      {
+        "_key": "faq-1",
+        "_type": "faq",
+        "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+        "question": "¿Qué nivel necesito?"
+      },
+      {
+        "_key": "faq-2",
+        "_type": "faq",
+        "answer": "Sí: cada uno trae su tabla y su neopreno. Si te falta algo, allí podrás alquilarlo.",
+        "question": "¿Tengo que llevar mi material?"
+      },
+      {
+        "_key": "faq-3",
+        "_type": "faq",
+        "answer": "En coche. Crearemos un grupo de WhatsApp con las personas que reserven para compartir coche y gastos desde cada ciudad.",
+        "question": "¿Cómo llego hasta allí?"
+      },
+      {
+        "_key": "faq-4",
+        "_type": "faq",
+        "answer": "Si las condiciones no son buenas para el viaje, lo cancelamos y puedes elegir entre reembolso o bono para otro viaje.",
+        "question": "¿Qué pasa si no hay olas buenas?"
+      },
+      {
+        "_key": "faq-5",
+        "_type": "faq",
+        "answer": "Sí. Con nuestro enlace de IATI Seguros tienes un 5 % de descuento; te lo pasamos al confirmar la plaza.",
+        "question": "¿El seguro de viaje es obligatorio?"
+      }
+    ],
+    "gallery": [
+      {
+        "_key": "dossier-photo",
+        "_type": "image",
+        "alt": "Hossegor · fotografía del dossier de LST",
+        "asset": {
+          "_ref": "image-71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044-jpg",
+          "_type": "reference"
+        },
+        "caption": "Fotografía del dossier de LST."
+      }
+    ],
+    "hero": {
+      "_type": "image",
+      "alt": "Hossegor · fotografía del dossier de LST",
+      "asset": {
+        "_ref": "image-71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044-jpg",
+        "_type": "reference"
+      }
+    },
+    "includes": [
+      "2 noches en surfhouse",
+      "Pensión completa: cena del viernes a desayuno del domingo",
+      "Coaching en todas las sesiones con seguimiento individual de Lucas",
+      "Vídeos de todas las sesiones",
+      "Videoanálisis grupal e individual",
+      "Animal Flow y estiramientos",
+      "Teoría del mar, condiciones y forecast"
+    ],
+    "intro": "Let’s Surf Together\nUN FINDE PARA SUBIR DE NIVEL\nUn finde para dar un salto de calidad en tu surf en una de las mecas del surf\neuropeo \nNos vamos a Hossegor con un grupo muy reducido de solo 6 personas, para\nque Lucas pueda hacer un seguimiento individualizado de cada uno durante\ntodo el fin de semana.\nAnalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de\nverdad necesitas para mejorar: dentro del agua, en vídeo y en la teoría del mar.\nY todo con el ambiente de siempre de LST: surf, buena comida y buen rollo en\nuna surfhouse con muy buena energía.",
+    "levelRequirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
+    "levels": [
+      2,
+      3
+    ],
+    "name": "Hossegor",
+    "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo. Consulta las condiciones con el equipo.",
+    "payment": {
+      "_type": "payment",
+      "depositAmount": 200,
+      "terms": "Señal fija de 200 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+    },
+    "place": "Landas · Francia",
+    "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+    "slug": {
+      "_type": "slug",
+      "current": "hossegor-2026-11-20"
+    },
+    "state": "confirmed",
+    "stay": {
+      "_type": "stay",
+      "text": "Surfhouse con jardín; nombre y habitaciones no indicados."
+    },
+    "story": [
+      {
+        "_key": "program-1",
+        "_type": "storyItem",
+        "text": "Coaching en todas las sesiones con Lucas; grabación, videoanálisis grupal e individual, Animal Flow y estiramientos.",
+        "title": "Programa 1"
+      },
+      {
+        "_key": "program-2",
+        "_type": "storyItem",
+        "text": "Teoría del mar: swell y periodo, viento y mareas, elección de pico.",
+        "title": "Programa 2"
+      }
+    ]
+  }
+]

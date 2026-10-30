@@ -1,0 +1,80 @@
+[
+  {
+    "_id": "_.groups.access-manager",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.administrator",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.blueprints-deployer",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.create-session",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.public",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.read",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.contributor",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.developer",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.editor",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.sanity.viewer",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.groups.write",
+    "_rev": "Q4SWYYXaC2HJR11MhJxugz",
+    "_type": "system.group",
+    "slug": null
+  },
+  {
+    "_id": "_.retention._maximum_project",
+    "_rev": "qRSMy2xPay8q031dK9ZPu9",
+    "_type": "system.retention",
+    "slug": null
+  },
+  {
+    "_id": "_.schemas.lets-surf-together",
+    "_rev": "pXCl9ERODuTwGU6A0Z6CHP",
+    "_type": "system.schema",
+    "slug": null
+  }
+]

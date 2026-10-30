@@ -1,0 +1,17 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "candidateFiles": 19,
+  "candidateManifestMatches": true,
+  "protectedUnchanged": {
+    "dist/catalog-snapshot.json": true,
+    "artifacts/local-trip-preview.json": true,
+    "scripts/trip-model.mjs": true,
+    "scripts/sanity-trips.mjs": true,
+    "scripts/trip-groups.mjs": true,
+    "scripts/brevo.mjs": true,
+    "dist/trip.js": true,
+    "dist/styles.css": true,
+    "dist/home.css": true,
+    "dist/assets/team/lucas-concept-ai.png": true
+  }
+}

@@ -1,0 +1,664 @@
+--- before/scripts/render-registration.mjs
++++ scripts/render-registration.mjs
+@@ -2,31 +2,41 @@
+ import {levelLabel} from './trip-model.mjs';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+-const error = '<label class="entry__error entry__error--primary"></label>';
+-const field = (name, label, {required = true, type = 'text', autocomplete = 'off', attrs = '', help = ''} = {}) => `<div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="${name}">${label}${required ? ' *' : ' (opcional)'}</label><div class="entry__field"><input class="input" type="${type}" id="${name}" name="${name}"${name === 'EMAIL' ? '' : ' maxlength="200"'} autocomplete="${autocomplete}"${required ? ' data-required="true" required' : ''}${help ? ` aria-describedby="help-${name}"` : ''} ${attrs}></div>${help ? `<p class="registration-help" id="help-${name}">${help}</p>` : ''}</div>${error}</div></div>`;
+-const choices = (name, title, values) => `<fieldset class="sib-radiobutton-group sib-form-block" data-required="true"><legend>${title} *</legend><div class="form__entry entry_mcq"><div class="form__label-row"><div class="registration-choices">${values.map((label, i) => `<div class="entry__choice"><label><input type="radio" name="${name}" class="input_replaced" value="${i + 1}" required><span class="radio-button"></span><span>${label}</span></label></div>`).join('')}</div></div>${error}</div></fieldset>`;
+-const section = (number, title, content) => `<section class="registration-section" aria-labelledby="section-${number}"><h2 id="section-${number}"><span>${number}</span>${title}</h2>${content}</section>`;
++const error = name => `<span class="entry__error entry__error--primary" id="error-${name}"></span>`;
++const field = (name, label, {required = true, type = 'text', autocomplete = 'off', attrs = '', help = ''} = {}) => `<div class="sib-input sib-form-block"><div class="form__entry entry_block"><label class="entry__label" for="${name}">${label}${required ? '' : ' <span>(opcional)</span>'}</label><div class="entry__field"><input class="input" type="${type}" id="${name}" name="${name}"${name === 'EMAIL' ? '' : ' maxlength="200"'} autocomplete="${autocomplete}" aria-describedby="error-${name}${help ? ` help-${name}` : ''}"${required ? ' data-required="true" required' : ''} ${attrs}></div>${help ? `<p class="registration-help" id="help-${name}">${help}</p>` : ''}${error(name)}</div></div>`;
++const choices = (name, title, values) => `<fieldset class="sib-radiobutton-group sib-form-block${name === 'TALLA_CAMISETA' ? ' registration-sizes' : ''}" data-required="true" aria-describedby="error-${name}"><legend>${title}</legend><div class="form__entry entry_mcq"><div class="registration-choices">${values.map((label, i) => `<div class="entry__choice"><label><input type="radio" name="${name}" value="${i + 1}" required><span>${label}</span></label></div>`).join('')}</div>${error(name)}</div></fieldset>`;
++const steps = [
++  ['Tu viaje', 'Vamos a por ese viaje.', 'Elige tu fecha y dinos cómo podemos contactar contigo.'],
++  ['Tus datos', 'Un poco sobre ti.', 'Los datos que necesitamos para preparar tu inscripción.'],
++  ['Tu surf', 'Ahora, hablemos de olas.', 'Cuéntanos cómo surfeas y qué material vas a llevar.'],
++  ['El grupo', 'Mejor en compañía.', 'Vengas por tu cuenta o con amigos, hay sitio para tu historia.'],
++  ['Casi listo', 'La maleta, casi hecha.', 'Unos últimos detalles para conocerte un poco mejor.'],
++];
++const section = (index, content) => `<section class="registration-section" data-registration-step="${index}" aria-labelledby="section-${index}" tabindex="-1"><p class="registration-step-count">PASO ${index + 1} DE ${steps.length} <span>/ ${steps[index][0]}</span></p><h2 id="section-${index}">${steps[index][1]}</h2><p class="registration-step-intro">${steps[index][2]}</p>${content}</section>`;
+ 
+ function phone() {
+-  return `<div class="sib-sms-field sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="WHATSAPP">WhatsApp *</label><div class="sib-sms-input-wrapper"><div class="sib-sms-input" data-placeholder="WhatsApp" data-required="true" data-country-code="ES" data-value="" data-attributename="WHATSAPP"><div class="entry__field"><select class="input" name="WHATSAPP__COUNTRY_CODE" aria-label="Prefijo de país de WhatsApp" data-required="true">${brevoConfig.countries.map(c => `<option value="${escape(c.value)}"${c.label === '+34 ES' ? ' selected' : ''}>${escape(c.label)}</option>`).join('')}</select><input type="tel" class="input" id="WHATSAPP" name="WHATSAPP" autocomplete="tel-national" placeholder="Tu número" data-required="true" required></div><div class="sib-sms-tooltip"><div class="sib-sms-tooltip__box">Incluye tu número sin el prefijo del país.</div></div></div></div></div>${error}</div></div>`;
++  return `<div class="sib-sms-field sib-form-block"><div class="form__entry entry_block"><label class="entry__label" for="WHATSAPP">WhatsApp</label><div class="sib-sms-input-wrapper"><div class="sib-sms-input"><div class="entry__field"><select class="input" name="WHATSAPP__COUNTRY_CODE" aria-label="Prefijo de país de WhatsApp">${brevoConfig.countries.map(c => `<option value="${escape(c.value)}"${c.label === '+34 ES' ? ' selected' : ''}>${escape(c.label)}</option>`).join('')}</select><input type="tel" class="input" id="WHATSAPP" name="WHATSAPP" autocomplete="tel-national" placeholder="Tu número" aria-describedby="error-WHATSAPP" data-required="true" required></div></div></div>${error('WHATSAPP')}</div></div>`;
+ }
+ 
+ function form(trip, departures, selected, unavailableAlias) {
+-  const dates = `<fieldset class="sib-radiobutton-group sib-form-block registration-dates" data-required="true"><legend>Tu fecha para ${escape(trip.name)} *</legend><div class="form__entry entry_mcq"><div class="form__label-row"><div class="registration-choices">${departures.map(d => `<div class="entry__choice"><label><input type="radio" name="VIAJE_SURF" class="input_replaced" value="${brevoValue(trip, d)}" data-departure-id="${escape(d.id)}"${selected?.id === d.id ? ' checked' : ''} required><span class="radio-button"></span><span><strong>${escape(d.date)}</strong><small>${escape(levelLabel(trip))} · ${escape(d.duration)}</small></span></label></div>`).join('')}</div></div>${error}</div></fieldset>`;
+-  const personal = `<div class="registration-grid">${field('NOMBRE', 'Nombre', {autocomplete:'given-name'})}${field('APELLIDOS', 'Apellidos', {autocomplete:'family-name'})}${field('EMAIL', 'Email', {type:'email', autocomplete:'email'})}${phone()}${field('FECHADENACIMIENTO', 'Fecha de nacimiento', {attrs:'data-type="date" pattern="^([0-2][0-9]|(3)[0-1])(-)(((0)[0-9])|((1)[0-2]))(-)\\d{4}$" title="dd-mm-aaaa" data-format="dd-mm-yyyy" placeholder="dd-mm-aaaa"', help:'Día, mes y año. Por ejemplo: 15-06-1995.'})}${field('DNI', 'DNI / documento de identidad')}${field('DIRECCION', 'Dirección', {autocomplete:'street-address'})}${field('CIUDAD', 'Ciudad', {autocomplete:'address-level2'})}${field('CODIGO_POSTAL', 'Código postal', {autocomplete:'postal-code', attrs:'data-numeric="true" inputmode="numeric" pattern="[0-9]+"'})}${field('PAIS', 'País', {autocomplete:'country-name'})}</div>`;
+-  const surf = choices('NIVEL_SURF', '¿Cuál es tu nivel de surf?', ['Nivel 1, iniciación','Nivel 2, nivel base de surf','Nivel 3, intermedio','Nivel 4, controlo']) + '<p class="registration-help"><a href="/niveles/" target="_blank" rel="noopener">Consulta nuestra guía de niveles</a> si tienes dudas.</p>' + choices('TALLA_CAMISETA', 'Talla de camiseta', ['S','M','L','XL']) + choices('CONQUIENVIAJO', '¿Cómo vendrías al surftrip?', ['Sol@ a la aventura!','Acompañad@ o con amigos!']) + field('ACOMPANANTES', 'Si vienes con gente, ¿cuáles son sus nombres?', {required:false}) + choices('MATERIAL', 'En cuanto al material', ['Llevo el mio propio','Alquilaré una tabla']) + field('MATERIAL_MEDIDAS', 'Si vas a alquilar, ¿qué medidas crees que necesitas?', {required:false});
+-  const more = field('ALERGIAS_INTOLERANCIAS', '¿Tienes alergias o alguna preferencia alimenticia?', {required:false}) + field('ENFERMEDAD_PROBLEMA', '¿Tienes alguna enfermedad o problema que te impida surfear y viajar de forma segura?', {required:false}) + field('MOTIVA', '¿Qué te motiva para unirte a este viaje con LST?') + choices('CONOCIDO', '¿Cómo has conocido este viaje?', ['Ya he viajado con Lets Surf Together','Recomendaciones de amigos/conocidos','Redes sociales! Mi primer viaje con LST!','Pagina Web','Otros']);
+-  return `<div class="sib-form"><div id="sib-form-container" class="sib-form-container"><div id="error-message" class="sib-form-message-panel" role="alert"><div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Vaya, no hemos podido procesar tu inscripción. Inténtalo de nuevo en unos minutos.</span></div></div><div id="success-message" class="sib-form-message-panel" role="status" tabindex="-1"><div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.</span></div></div><div id="sib-container" class="sib-container--large sib-container--vertical"><form id="sib-form" method="POST" action="${escape(brevoConfig.action)}" data-type="subscription">${section('01','El viaje empieza aquí.', dates)}<p id="registration-date-error" role="alert"${unavailableAlias ? '' : ' hidden'}>La fecha del enlace no está disponible. Elige una de las fechas que aparecen arriba.</p>${departures.length > 1 ? '<noscript><p>Comprueba y selecciona tu fecha antes de enviar la inscripción.</p></noscript>' : ''}${section('02','Un poco sobre ti.', personal)}${section('03','Tu surf. Tu plan.', surf)}${section('04','Antes de hacer la maleta.', more)}<div class="registration-submit sib-form-block"><p>Los campos con * son obligatorios. Al enviar, tus datos se tramitan a través de Brevo para gestionar esta inscripción. La plaza se confirma con el equipo.</p><button class="sib-form-block__button sib-form-block__button-with-loader button" form="sib-form" type="submit"><svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 24a232 232 0 0 1 232 232h-48A184 184 0 0 0 256 72Z"/></svg>Me apunto al viaje</button></div><input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="locale" value="es"></form></div></div></div>`;
++  const dates = `<fieldset class="sib-radiobutton-group sib-form-block registration-dates" data-required="true" aria-describedby="error-VIAJE_SURF"><legend>Tu fecha para ${escape(trip.name)}</legend><div class="form__entry entry_mcq"><div class="registration-choices">${departures.map(d => `<div class="entry__choice"><label><input type="radio" name="VIAJE_SURF" value="${brevoValue(trip, d)}" data-departure-id="${escape(d.id)}" data-date-label="${escape(d.date)}"${selected?.id === d.id ? ' checked' : ''} required><span><strong>${escape(d.date)}</strong><small>${escape(levelLabel(trip))} · ${escape(d.duration)}</small></span></label></div>`).join('')}</div>${error('VIAJE_SURF')}</div></fieldset><p id="registration-date-error" role="alert"${unavailableAlias ? '' : ' hidden'}>La fecha del enlace no está disponible. Elige una de las fechas que aparecen arriba.</p>`;
++  const contact = `<div class="registration-grid registration-contact-grid">${field('NOMBRE', 'Nombre', {autocomplete:'given-name'})}${field('APELLIDOS', 'Apellidos', {autocomplete:'family-name'})}${field('EMAIL', 'Email', {type:'email', autocomplete:'email'})}${phone()}</div>`;
++  const personal = `<div class="registration-grid">${field('FECHADENACIMIENTO', 'Fecha de nacimiento', {attrs:'data-type="date" pattern="^([0-2][0-9]|(3)[0-1])(-)(((0)[0-9])|((1)[0-2]))(-)\\d{4}$" title="dd-mm-aaaa" data-format="dd-mm-yyyy" placeholder="dd-mm-aaaa"', help:'Por ejemplo: 15-06-1995.'})}${field('DNI', 'DNI / documento de identidad')}${field('DIRECCION', 'Dirección', {autocomplete:'street-address'})}${field('CIUDAD', 'Ciudad', {autocomplete:'address-level2'})}${field('CODIGO_POSTAL', 'Código postal', {autocomplete:'postal-code', attrs:'data-numeric="true" inputmode="numeric" pattern="[0-9]+"'})}${field('PAIS', 'País', {autocomplete:'country-name'})}</div>`;
++  const surf = choices('NIVEL_SURF', '¿Cómo te llevas con las olas?', ['I · Iniciación','II · Nivel base','III · Intermedio','IV · Controlo']) + '<p class="registration-help"><a href="/niveles/" target="_blank" rel="noopener">¿Dudas? Mira nuestra guía de niveles.</a></p>' + choices('MATERIAL', '¿Qué hacemos con la tabla?', ['Llevo mi material','Alquilaré una tabla']) + field('MATERIAL_MEDIDAS', 'Si alquilas, ¿qué medidas necesitas?', {required:false});
++  const group = choices('CONQUIENVIAJO', '¿Con quién te vienes?', ['A la aventura, por mi cuenta','Con amigos o acompañante']) + field('ACOMPANANTES', '¿Cómo se llaman tus acompañantes?', {required:false}) + choices('TALLA_CAMISETA', 'Tu talla de camiseta', ['S','M','L','XL']);
++  const more = field('ALERGIAS_INTOLERANCIAS', 'Alergias o preferencias alimenticias', {required:false}) + field('ENFERMEDAD_PROBLEMA', '¿Hay algún problema de salud que debamos conocer para viajar y surfear con seguridad?', {required:false}) + field('MOTIVA', '¿Qué te trae a este viaje?') + choices('CONOCIDO', '¿Cómo nos has encontrado?', ['Ya he viajado con LST','Por amigos o conocidos','Redes sociales','La web de LST','Otros']);
++  const progress = `<nav class="registration-progress" aria-label="Pasos de la inscripción" hidden><ol>${steps.map(([label], i) => `<li><button type="button" data-go-step="${i}" aria-label="Paso ${i + 1}: ${label}"><span class="registration-progress-number">${String(i + 1).padStart(2,'0')}</span><span class="registration-progress-name">${label}</span></button></li>`).join('')}</ol></nav>`;
++  return `<div class="sib-form"><div id="sib-form-container" class="sib-form-container"><div id="error-message" class="sib-form-message-panel" role="alert" tabindex="-1"><span class="sib-form-message-panel__inner-text">Vaya, no hemos podido procesar tu inscripción. Inténtalo de nuevo en unos minutos.</span></div><div id="success-message" class="sib-form-message-panel" role="status" tabindex="-1"><p class="eyebrow">NOS VEMOS EN EL PICO</p><h2>Ya estamos un paso más cerca.</h2><span class="sib-form-message-panel__inner-text">¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.</span><a class="button" href="/viajes/${escape(trip.slug)}/">Volver al viaje</a></div><div id="sib-container"><form id="sib-form" method="POST" action="${escape(brevoConfig.action)}" data-type="subscription">${progress}<p class="visually-hidden" id="registration-step-announcement" aria-live="polite" aria-atomic="true"></p>${section(0,dates+contact)}${section(1,personal)}${section(2,surf)}${section(3,group)}${section(4,more)}<p class="registration-submit-note" data-submit-note>Al enviar, tus datos se tramitan a través de Brevo para gestionar la inscripción. Tu plaza se confirma con el equipo; este formulario no realiza ningún pago.</p><div class="registration-navigation"><button type="button" class="registration-prev" data-step-prev hidden><span aria-hidden="true">←</span> Atrás</button><button type="button" class="button registration-next" data-step-next hidden>Continuar <span aria-hidden="true">→</span></button><div class="registration-submit"><button class="sib-form-block__button button" type="submit">Me apunto al viaje <span aria-hidden="true">↗</span></button></div></div><p class="registration-required-note">Todos los campos son obligatorios salvo los marcados como opcionales.</p><input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="locale" value="es"></form></div></div></div>`;
+ }
+ 
+ export function renderRegistration(trip, routeSlug = trip.slug) {
+   const departures = registrationDepartures(trip);
+   const aliasStart = routeSlug !== trip.slug ? /-(\d{4}-\d{2}-\d{2})$/.exec(routeSlug)?.[1] : '';
+   const selected = aliasStart ? departures.find(d => d.start === aliasStart) : departures.length === 1 ? departures[0] : undefined;
+-  const contact = `<a class="text-link" data-whatsapp="${escape(trip.id)}" href="https://wa.me/34648189257?text=${encodeURIComponent(`¡Hola, LST! Tengo una duda sobre la inscripción a ${trip.name}.`)}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>`;
++  const contact = `<a data-whatsapp="${escape(trip.id)}" href="https://wa.me/34648189257?text=${encodeURIComponent(`¡Hola, LST! Tengo una duda sobre la inscripción a ${trip.name}.`)}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>`;
+   return `<!doctype html>
+-<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Inscripción a ${escape(trip.name)} · Let’s Surf Together</title><meta name="description" content="Inscríbete al viaje de surf a ${escape(trip.name)} con Let’s Surf Together."><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/registration.css"></head>
+-<body class="trip-page registration-page"><a class="skip-link" href="#contenido">Saltar al contenido</a><header class="trip-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126"></a><nav class="trip-header-nav" aria-label="Navegación principal"><a class="trip-back" href="/viajes/${escape(trip.slug)}/">Volver al viaje</a><a class="trip-header-levels" href="/niveles/">Niveles</a></nav></header>
+-<main id="contenido" class="registration-shell"><div class="registration-intro"><p class="eyebrow">NOS VEMOS EN EL PICO / INSCRIPCIONES</p><h1>Te vienes a<br><em>${escape(trip.name)}.</em></h1><p>Unas olas, buena compañía y un viaje por delante. Cuéntanos un poco sobre ti y empecemos a prepararlo.</p></div><div class="registration-layout"><aside class="registration-summary"><p class="eyebrow">TU PRÓXIMO SURFTRIP</p>${trip.hero ? `<img src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="600" height="400">` : ''}<h2>${escape(trip.name)}</h2><p>${escape(trip.place)}</p><p>¿Una duda antes de apuntarte?</p>${contact}<p class="registration-help">Enviar el formulario no confirma la reserva ni realiza ningún pago.</p></aside><div class="registration-content">${departures.length ? form(trip, departures, selected, Boolean(aliasStart && !selected)) : `<section class="registration-unavailable"><h2>La inscripción no está disponible.</h2><p>Consulta las próximas salidas y la disponibilidad con el equipo.</p>${contact}</section>`}</div></div></main><footer class="trip-footer trip-shell"><a href="/">Let’s Surf Together</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></footer>${departures.length ? '<script defer src="/registration.js"></script>' : ''}</body></html>
++<html lang="es" class="registration-document"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Inscripción a ${escape(trip.name)} · Let’s Surf Together</title><meta name="description" content="Inscríbete al viaje de surf a ${escape(trip.name)} con Let’s Surf Together."><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/registration.css"></head>
++<body class="trip-page registration-page"><a class="skip-link" href="#contenido">Saltar al contenido</a><header class="trip-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126"></a><nav class="trip-header-nav" aria-label="Navegación principal"><a class="trip-back" href="/viajes/${escape(trip.slug)}/"><span aria-hidden="true">←</span> Volver al viaje</a><a class="trip-header-levels" href="/niveles/">Niveles</a></nav></header>
++<main id="contenido" class="registration-shell"><div class="registration-layout"><aside class="registration-context"><div class="registration-postcard">${trip.hero ? `<img src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="700" height="900">` : ''}<div class="registration-postcard-copy"><p class="eyebrow">LET’S SURF TOGETHER / INSCRIPCIÓN</p><h1>${escape(trip.name)}<span>.</span></h1><p>El viaje empieza<br>antes de la primera ola.</p></div><span class="registration-stamp" aria-hidden="true">SURF.<br>TRAVEL.<br>REPEAT.</span></div><p class="registration-trip-date" data-trip-date>${selected ? escape(selected.date) : 'Elige la fecha que te encaje.'}</p><p class="registration-context-note">Olas, gente y un buen plan.<br>El resto, lo preparamos juntos.</p></aside><div class="registration-content">${departures.length ? form(trip, departures, selected, Boolean(aliasStart && !selected)) : `<section class="registration-unavailable"><p class="eyebrow">HABLEMOS</p><h2>Esta inscripción no está disponible.</h2><p>Consulta las próximas salidas y la disponibilidad con el equipo.</p>${contact}</section>`}</div></div><div class="registration-support"><span>¿Algo que quieras preguntar antes?</span>${contact}</div></main><footer class="registration-footer"><a href="/">Let’s Surf Together</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></footer>${departures.length ? '<script defer src="/registration.js"></script>' : ''}</body></html>
+ `;
+ }
+--- before/dist/registration.js
++++ dist/registration.js
+@@ -1,19 +1,22 @@
+-// Preserve the client's Brevo field names, category IDs and form endpoint.
+-// The unenhanced HTML also supports a native POST directly to Brevo.
++// Keep the same Brevo payload. Step visibility never disables or clears fields.
+ const form = document.querySelector('#sib-form');
+ const dates = [...document.querySelectorAll('input[name="VIAJE_SURF"]')];
++const dateNotice = document.querySelector('#registration-date-error');
++const tripDate = document.querySelector('[data-trip-date]');
+ const requested = new URLSearchParams(location.search).get('salida');
+ if (requested !== null) {
+   const selected = dates.find(input => input.dataset.departureId === requested);
+   dates.forEach(input => { input.checked = input === selected; });
+-  const notice = document.querySelector('#registration-date-error');
+-  notice.hidden = Boolean(selected);
++  dateNotice.hidden = Boolean(selected);
++}
++const updateDate = () => {
++  const selected = dates.find(input => input.checked);
++  if (tripDate) tripDate.textContent = selected?.dataset.dateLabel || 'Elige la fecha que te encaje.';
++};
++updateDate();
++dates.forEach(input => input.addEventListener('change', () => { dateNotice.hidden = true; updateDate(); }));
+ 
+-}
+-
+-dates.forEach(input => input.addEventListener('change', () => { document.querySelector('#registration-date-error').hidden = true; }));
+-
+-// Do not save personal information to URLs or browser storage.
++// Personal information stays only in this page; no browser storage or URL persistence.
+ const birthDate = document.querySelector('#FECHADENACIMIENTO');
+ birthDate?.addEventListener('input', () => {
+   const parts = /^(\d{2})-(\d{2})-(\d{4})$/.exec(birthDate.value);
+@@ -23,68 +26,154 @@
+   birthDate.setCustomValidity(Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === `${year}-${month}-${day}` ? '' : 'Introduce una fecha válida.');
+ });
+ 
++function createSteps(form) {
++  const sections = [...form.querySelectorAll('[data-registration-step]')];
++  const progress = form.querySelector('.registration-progress');
++  const links = [...progress.querySelectorAll('[data-go-step]')];
++  const previous = form.querySelector('[data-step-prev]');
++  const next = form.querySelector('[data-step-next]');
++  const submit = form.querySelector('.registration-submit');
++  const note = form.querySelector('[data-submit-note]');
++  const announcement = form.querySelector('#registration-step-announcement');
++  let current = 0;
++  let visited = 0;
++  let locked = false;
++  const update = () => {
++    sections.forEach((section, i) => { section.hidden = i !== current; });
++    links.forEach((link, i) => {
++      link.disabled = locked || i > visited;
++      link.toggleAttribute('data-complete', i < visited);
++      if (i === current) link.setAttribute('aria-current', 'step');
++      else link.removeAttribute('aria-current');
++    });
++    previous.hidden = current === 0;
++    previous.disabled = locked;
++    next.hidden = current === sections.length - 1;
++    next.disabled = locked;
++    submit.hidden = current !== sections.length - 1;
++    note.hidden = current !== sections.length - 1;
++    form.dataset.currentStep = String(current);
++  };
++  const show = (index, focus = true) => {
++    current = index;
++    visited = Math.max(visited, index);
++    update();
++    if (focus) {
++      announcement.textContent = sections[current].querySelector('.registration-step-count').textContent;
++      sections[current].focus({preventScroll:true});
++      progress.scrollIntoView({block:'start', behavior:'auto'});
++    }
++  };
++  const invalidIn = section => [...section.querySelectorAll('input,select,textarea')].find(input => !input.checkValidity());
++  const advance = () => {
++    if (locked) return;
++    const invalid = invalidIn(sections[current]);
++    if (invalid) { invalid.reportValidity(); return; }
++    if (current < sections.length - 1) show(current + 1);
++  };
++  previous.addEventListener('click', () => { if (!locked && current > 0) show(current - 1); });
++  next.addEventListener('click', advance);
++  links.forEach((link, index) => link.addEventListener('click', () => { if (!locked && index <= visited) show(index); }));
++  // Validate only the visible step, then all steps before sending; native no-JS POST remains intact.
++  form.noValidate = true;
++  document.body.classList.add('registration-enhanced');
++  progress.hidden = false;
++  show(0, false);
++  return {
++    get last() { return current === sections.length - 1; },
++    advance,
++    lock(value) { locked = value; update(); },
++    validateAll() {
++      for (let i = 0; i < sections.length; i++) {
++        const invalid = invalidIn(sections[i]);
++        if (invalid) { show(i); invalid.reportValidity(); return false; }
++      }
++      return true;
++    },
++    reveal(input) {
++      const index = sections.indexOf(input?.closest('[data-registration-step]'));
++      if (index >= 0) show(index, false);
++    },
++  };
++}
++
+ if (form) {
++  const wizard = createSteps(form);
+   const button = form.querySelector('button[type="submit"]');
+   const success = document.querySelector('#success-message');
+   const error = document.querySelector('#error-message');
+-  const originalError = error.querySelector('span').textContent;
++  const originalError = error.querySelector('.sib-form-message-panel__inner-text').textContent;
+   let sending = false;
+   let complete = false;
+   const show = (panel, message) => {
+-    if (message) panel.querySelector('span').textContent = message;
++    if (message) panel.querySelector('.sib-form-message-panel__inner-text').textContent = message;
+     panel.classList.add('sib-form-message-panel--active');
+-    panel.setAttribute('tabindex', '-1');
+-    panel.focus();
+-    panel.scrollIntoView({behavior: 'auto', block: 'center'});
++    panel.focus({preventScroll:true});
++    panel.scrollIntoView({behavior:'auto', block:'center'});
+   };
+   form.addEventListener('input', event => {
+     const entry = event.target.closest('.form__entry');
+-    if (entry) entry.querySelector('.entry__error').textContent = '';
++    if (entry) {
++      entry.querySelector('.entry__error').textContent = '';
++      entry.querySelectorAll('[aria-invalid]').forEach(input => input.removeAttribute('aria-invalid'));
++    }
+   });
+   form.addEventListener('submit', async event => {
+     event.preventDefault();
+-    if (sending || complete || !form.reportValidity()) return;
++    if (sending || complete) return;
++    // Enter follows the same progression as the Continue button.
++    if (!wizard.last) { wizard.advance(); return; }
++    if (!wizard.validateAll()) return;
+     sending = true;
++    wizard.lock(true);
+     button.disabled = true;
+     button.setAttribute('aria-busy', 'true');
+     button.textContent = 'Enviando…';
+     success.classList.remove('sib-form-message-panel--active');
+     error.classList.remove('sib-form-message-panel--active');
+     form.querySelectorAll('.entry__error').forEach(label => { label.textContent = ''; });
++    form.querySelectorAll('[aria-invalid]').forEach(input => input.removeAttribute('aria-invalid'));
+     try {
+       const endpoint = new URL(form.action);
+-      // Brevo's embedded form uses this response mode with the same FormData.
+       endpoint.searchParams.set('isAjax', '1');
+       const response = await fetch(endpoint, {method:'POST', body:new FormData(form), credentials:'omit', signal:AbortSignal.timeout(30000)});
+       if (!response.ok) throw Error('Brevo HTTP error');
+       const result = await response.json();
+       if (result.success !== true) {
++        let firstInvalid = null;
+         for (const [name, message] of Object.entries(result.errors ?? {})) {
+           const control = form.elements.namedItem(name);
+           const input = control instanceof RadioNodeList ? control[0] : control;
+           const label = input?.closest('.form__entry')?.querySelector('.entry__error');
+-          if (label) label.textContent = String(message);
++          if (label) {
++            label.textContent = String(message);
++            input.setAttribute('aria-invalid', 'true');
++            firstInvalid ??= input;
++          }
+         }
++        if (firstInvalid) wizard.reveal(firstInvalid);
+         show(error, typeof result.message === 'string' ? result.message : originalError);
+         return;
+       }
+       complete = true;
+       button.textContent = 'Inscripción enviada';
++      form.hidden = true;
+       show(success, typeof result.message === 'string' ? result.message : '¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.');
+       if (typeof result.redirect === 'string') {
+         try {
+           const redirect = new URL(result.redirect);
+           if (redirect.protocol === 'https:' && !redirect.username && !redirect.password) location.assign(redirect.href);
+-        } catch { /* The submission succeeded; retain its confirmation if a redirect is malformed. */ }
++        } catch { /* Keep the accepted submission confirmed if the redirect is malformed. */ }
+       }
+     } catch {
+-      // Preserve the completed fields; never retry a personal-data submission automatically.
++      // Keep the completed fields; never retry a personal-data submission automatically.
+       show(error, 'No hemos podido confirmar el envío. Comprueba tu conexión. Si el problema continúa, consulta con el equipo antes de volver a enviar.');
+     } finally {
+       sending = false;
++      wizard.lock(complete);
+       button.removeAttribute('aria-busy');
+       button.disabled = complete;
+-      if (!complete) button.textContent = 'Me apunto al viaje';
++      if (!complete) button.textContent = 'Me apunto al viaje ↗';
+     }
+   });
+ }
+--- before/dist/registration.css
++++ dist/registration.css
+@@ -1,70 +1,95 @@
+-/* Brevo stays confined to the registration page; shared brand tokens are reused. */
+-.registration-page{background:#fffae7;color:#1b1b1b}
+-.registration-page .trip-header{position:relative}
+-.registration-shell{max-width:1240px;padding:48px 5vw 80px;margin:auto}
+-.registration-intro{max-width:760px;margin-bottom:40px}
+-.registration-intro h1{font-family:Aura,serif;font-size:clamp(48px,7vw,94px);font-weight:400;line-height:1.05;margin:20px 0}
+-.registration-intro h1 em{font-style:normal;color:#ea5934;overflow-wrap:anywhere}
+-.registration-intro>p:last-child{max-width:580px;font-size:18px;line-height:1.65}
+-.registration-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:64px;align-items:start}
+-.registration-summary{position:sticky;top:28px;min-width:0}
+-.registration-summary img{display:block;width:100%;height:185px;object-fit:cover;border-radius:12px;margin:18px 0}
+-.registration-summary h2{font-family:Aura,serif;font-size:36px;font-weight:400;margin:16px 0 6px}
+-.registration-summary>p{line-height:1.6;margin:12px 0}
+-.registration-summary .text-link{display:inline-block;min-height:44px;align-content:center}
+-.registration-page .registration-help{font-size:14px;line-height:1.6;color:#4c4b45;margin:8px 0 16px}
+-.registration-content{min-width:0}
+-.registration-page .sib-form{font-family:'Work Sans',sans-serif;text-align:left;background:transparent;padding:0}
+-.registration-page #sib-container{background:transparent;padding:0;text-align:left;max-width:none;overflow:visible;border:0}
+-.registration-page .sib-form-container{max-width:none}
+-.registration-page .sib-form-block{padding:0;margin:0 0 22px;font-size:16px;min-width:0}
+-.registration-section{margin:0 0 32px;padding:28px;background:#fffdf5;border:1px solid #dcd8c7;border-radius:16px}
+-.registration-section h2{display:flex;align-items:center;gap:12px;font-size:23px;font-weight:600;line-height:1.3;margin:0 0 28px}
+-.registration-section h2>span{font-family:'Space Mono',monospace;font-size:13px;color:#a5361d}
+-.registration-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
+-.registration-page .entry__label,.registration-page legend{display:block;font-family:inherit;font-size:15px;font-weight:600;line-height:1.5;white-space:normal;margin:0 0 9px;padding:0;color:#1b1b1b}
++/* A single, quiet step with the same typography, paper and orange as the trip pages. */
++.registration-document{scroll-behavior:auto}
++.registration-page{background:var(--paper);color:var(--ink)}
++.registration-page .trip-header{position:relative;min-height:80px;padding-block:22px}
++.registration-page .trip-header .brand{width:210px}
++.registration-shell{max-width:1270px;margin:auto;padding:44px 44px 32px}
++.registration-layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:84px;align-items:start}
++.registration-context{position:sticky;top:24px;min-width:0}
++.registration-postcard{position:relative;isolation:isolate;min-height:490px;overflow:hidden;border-radius:24px;background:var(--ink);color:var(--paper)}
++.registration-postcard:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#1b1b1b05 20%,#1b1b1bd6 100%)}
++.registration-postcard>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
++.registration-postcard-copy{position:absolute;left:30px;right:26px;bottom:32px}
++.registration-postcard .eyebrow{font-size:10px;margin-bottom:15px;line-height:1.7}
++.registration-postcard h1{font:400 clamp(48px,5.8vw,82px)/1.02 var(--display);letter-spacing:-.02em;overflow-wrap:anywhere;margin:0 0 14px}
++.registration-postcard h1>span{color:var(--orange)}
++.registration-postcard-copy>p:last-child{font-size:17px;line-height:1.45}
++.registration-stamp{position:absolute;right:22px;top:22px;border-radius:50%;width:90px;height:90px;display:grid;place-content:center;background:var(--orange);color:var(--ink);font:400 10px/1.5 var(--mono);text-align:center;transform:rotate(9deg)}
++.registration-trip-date{font:400 11px/1.7 var(--mono);margin:20px 0 8px}
++.registration-context-note{font-size:14px;line-height:1.65;color:var(--muted)}
++.registration-content{min-width:0;padding-top:3px}
++.registration-progress{margin-bottom:32px}
++.registration-progress ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
++.registration-progress button{font:400 11px/1.5 var(--mono);text-align:left;display:flex;flex-direction:column;gap:8px;border:0;border-top:2px solid var(--line);background:transparent;color:var(--muted);width:100%;min-height:55px;padding:10px 0 0}
++.registration-progress button:disabled{cursor:default;color:var(--muted);opacity:.65}
++.registration-progress button[aria-current=step]{border-color:var(--orange);color:var(--ink)}
++.registration-progress button[aria-current=step] .registration-progress-number{color:#a33417}
++.registration-progress button[data-complete]{border-color:var(--ink);color:var(--ink)}
++.registration-progress-number{font-weight:600}
++.registration-progress-name{font:400 11px/1.5 var(--body)}
++.registration-section{padding:0;margin:0 0 30px;min-width:0;outline:none}
++.registration-step-count{font:400 10px/1.6 var(--mono);color:#a33417;margin:0 0 12px}
++.registration-step-count>span{color:var(--muted)}
++.registration-section h2{font:400 clamp(34px,3.6vw,48px)/1.08 var(--display);letter-spacing:-.01em;margin:0 0 12px;overflow-wrap:anywhere}
++.registration-step-intro{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 30px;max-width:480px}
++.registration-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px}
++.registration-page .sib-form-block{padding:0;margin:0 0 22px;min-width:0}
++.registration-page .entry__label,.registration-page legend{display:block;font:500 13px/1.6 var(--body);color:var(--ink);margin:0 0 8px;padding:0;white-space:normal}
++.registration-page .entry__label>span{font-size:11px;font-weight:400;color:var(--muted)}
+ .registration-page fieldset{border:0;min-width:0;padding:0}
+-.registration-page .entry__field{background:#fffdf5;border:1px solid #8d8b80;border-radius:8px;min-width:0;margin:0;overflow:hidden}
+-.registration-page .entry__field:focus-within{outline:3px solid #ea5934;outline-offset:3px}
+-.registration-page #sib-container input.input,.registration-page #sib-container select.input{height:48px;min-height:48px;font:inherit;font-size:16px;color:#1b1b1b;border:0;background:transparent;box-shadow:none;padding:10px 12px;width:100%;min-width:0}
+-.registration-page #sib-container .sib-sms-input .entry__field{display:flex}
+-.registration-page #sib-container .sib-sms-input select{width:105px;flex:0 0 105px;padding:8px}
+-.registration-page #sib-container .sib-sms-input input{flex:1}
+-.registration-page .sib-sms-input-wrapper,.registration-page .sib-sms-input{width:100%;min-width:0}
+-.registration-page .sib-sms-tooltip{display:none}
+-.registration-choices{display:flex;flex-wrap:wrap;gap:10px}
+-.registration-page .entry__choice{margin:0;flex:1 1 140px}
+-.registration-page .entry__choice label{display:flex;gap:10px;align-items:center;min-height:50px;padding:12px;border:1px solid #8d8b80;border-radius:8px;cursor:pointer;line-height:1.5;overflow-wrap:anywhere}
+-.registration-page .entry__choice label:has(input:checked){background:#fce6dd;border-color:#a5361d}
+-.registration-page .entry__choice label:has(input:focus-visible){outline:3px solid #ea5934;outline-offset:3px}
+-.registration-page #sib-container input[type=radio].input_replaced{position:static;appearance:auto;opacity:1;width:18px;height:18px;flex:0 0 18px;margin:0;accent-color:#a5361d}
+-.registration-page .radio-button{display:none}
+-.registration-dates .entry__choice{flex-basis:100%}
+-.registration-dates small{display:block;font-size:14px;margin-top:4px}
+-.registration-page .entry__error{font-size:14px;color:#8c2116;background:#ffeded;line-height:1.5;border-radius:5px}
++.registration-page .entry__field{display:block;border:0;border-bottom:1px solid #a6a08e;min-width:0;background:transparent}
++.registration-page .entry__field:focus-within{border-color:var(--orange);box-shadow:0 1px 0 var(--orange)}
++.registration-page input.input,.registration-page select.input{height:44px;min-height:44px;width:100%;min-width:0;padding:8px 0;border:0;border-radius:0;background:transparent;color:var(--ink);font:400 16px/1.5 var(--body);box-shadow:none;outline:none}
++.registration-page input.input::placeholder{color:#858173;opacity:1;font-size:14px}
++.registration-page .sib-sms-input .entry__field{display:flex;gap:8px}
++.registration-page .sib-sms-input select.input{width:88px;flex:0 0 88px;font-size:13px}
++.registration-page .sib-sms-input input{flex:1}
++.registration-page .registration-help{font-size:12px;line-height:1.6;color:var(--muted);margin:8px 0 20px}
++.registration-help a{color:var(--ink);text-underline-offset:4px}
++.registration-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
++.registration-page .entry__choice{min-width:0}
++.registration-page .entry__choice label{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:12px;padding:13px 14px;min-height:53px;cursor:pointer;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
++.registration-page .entry__choice label:has(input:checked){background:var(--ink);border-color:var(--ink);color:var(--paper)}
++.registration-page .entry__choice label:has(input:focus-visible){outline:3px solid var(--orange);outline-offset:3px}
++.registration-page input[type=radio]{width:17px;height:17px;flex:0 0 17px;accent-color:var(--orange);margin:0}
++.registration-dates .registration-choices{grid-template-columns:1fr}
++.registration-dates strong{font-size:14px;font-weight:500}
++.registration-dates small{display:block;font-size:11px;margin-top:4px;line-height:1.6}
++.registration-sizes .registration-choices{grid-template-columns:repeat(4,minmax(0,1fr))}
++.registration-sizes .entry__choice label{justify-content:center;padding-inline:8px}
++.registration-page .form__entry{min-width:0}
+ .registration-page .entry__error:empty{display:none}
+-.registration-page .sib-form-message-panel{display:none;margin:0 0 24px;padding:18px;border-radius:10px;font-size:16px;line-height:1.6}
+-.registration-page #error-message{background:#ffeded;color:#661d1d;border:1px solid #b43c31}
+-.registration-page #success-message{background:#e7faf0;color:#085229;border:1px solid #2f7c4c}
++.registration-page .entry__error:not(:empty){display:block;color:#8b2719;font-size:12px;line-height:1.6;margin-top:7px}
++.registration-page [aria-invalid=true]{color:#8b2719}
++.registration-navigation{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:22px;border-top:1px solid var(--line)}
++.registration-navigation .button{display:inline-flex;gap:28px;align-items:center;justify-content:center;border:0;border-radius:40px;min-height:52px;padding:14px 26px;background:var(--orange);color:var(--ink);font:600 14px/1.5 var(--body)}
++.registration-navigation .button:hover{background:var(--ink);color:var(--paper)}
++.registration-navigation .button:disabled{opacity:.65;cursor:wait}
++.registration-next,.registration-submit{margin-left:auto}
++.registration-prev{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 0;border:0;background:transparent;color:var(--ink);font:500 13px/1.5 var(--body)}
++.registration-submit-note{font-size:12px;line-height:1.65;color:var(--muted);margin:4px 0 24px}
++.registration-required-note{font-size:11px;color:var(--muted);line-height:1.6;margin:16px 0 0}
++.registration-page .sib-form-message-panel{display:none}
+ .registration-page .sib-form-message-panel--active{display:block}
+-.registration-submit p{font-size:14px;line-height:1.65;margin:0 0 18px}
+-.registration-page .sib-form-block__button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 25px;border-radius:40px;background:#1b1b1b;color:#fffdf5;font-family:inherit;font-size:16px;font-weight:600;border:0;white-space:normal}
+-.registration-page .sib-form-block__button:hover{background:#a5361d}
+-.registration-page .sib-form-block__button svg{width:18px;height:18px;fill:currentColor}
+-.registration-page .sib-hide-loader-icon{display:none}
+-.registration-page .input--hidden{display:none!important}
+-.registration-page [hidden]{display:none!important}
+-#registration-date-error{padding:16px;background:#ffeded;color:#661d1d;border-radius:8px;margin-bottom:24px}
+-.registration-unavailable{padding:28px;border:1px solid #dcd8c7;border-radius:16px}
+-.trip-registration{display:block;margin:16px 0}
+-@media(max-width:850px){.registration-shell{padding-top:30px}.registration-layout{grid-template-columns:minmax(0,1fr);gap:24px}.registration-intro{margin-bottom:28px}.registration-summary{position:static;border-bottom:1px solid #dcd8c7;padding-bottom:20px}.registration-summary img{display:none}.registration-summary h2{font-size:28px}.registration-summary>.eyebrow{display:none}.registration-summary>p{margin:6px 0}.registration-section{padding:22px}.registration-summary .registration-help{margin-bottom:0}}
+-@media(max-width:480px){.registration-shell{padding-inline:16px}.registration-grid{grid-template-columns:minmax(0,1fr)}.registration-section{padding:20px 16px}.registration-section h2{font-size:21px}.registration-intro>p:last-child{font-size:16px}.registration-page .entry__choice{flex-basis:100%}.registration-page .registration-submit button{width:100%}}
++.registration-page #error-message{padding:16px 18px;margin-bottom:24px;border-left:3px solid #a33417;background:#f9e7db;color:#73210f;font-size:14px;line-height:1.6;outline:none}
++.registration-page #success-message{padding:36px 0;outline:none}
++.registration-page #success-message h2{font:400 48px/1.08 var(--display);margin-bottom:24px}
++.registration-page #success-message>span{display:block;font-size:16px;line-height:1.7;margin-bottom:28px}
++.registration-page #success-message .button{border-radius:40px;font-size:14px;min-height:48px}
++#registration-date-error{font-size:13px;line-height:1.6;padding:12px 14px;background:#f9e7db;border-left:2px solid #a33417;margin:0 0 24px}
++.registration-support{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:6px 12px;font-size:12px;line-height:1.6;margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted)}
++.registration-support a{color:var(--ink);text-underline-offset:4px;min-height:30px}
++.registration-footer{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;padding:22px 20px 30px;font:400 10px/1.6 var(--mono)}
++.registration-footer a{text-decoration:none}
++.registration-footer a:hover{text-decoration:underline}
++.registration-unavailable h2{font:400 42px/1.1 var(--display);margin:20px 0}
++.registration-unavailable>p{font-size:16px;line-height:1.7;margin-bottom:24px}
++.registration-page .input--hidden,.registration-page [hidden]{display:none!important}
++@media(min-width:1000px){.registration-enhanced .registration-section{min-height:390px}}
++@media(max-width:1100px){.registration-layout{gap:44px}.registration-shell{padding-inline:32px}.registration-postcard{min-height:430px}.registration-progress-name{font-size:10px}}
++@media(max-width:799px){.registration-page .trip-header{min-height:68px;padding:18px 24px}.registration-page .trip-header .brand{width:160px}.registration-shell{max-width:660px;padding:28px 24px 20px}.registration-layout{grid-template-columns:minmax(0,1fr);gap:24px}.registration-context{position:static}.registration-postcard{min-height:0;overflow:visible;border-radius:0;background:transparent;color:var(--ink)}.registration-postcard:after,.registration-postcard>img,.registration-stamp,.registration-postcard-copy>p:last-child,.registration-context-note{display:none}.registration-postcard-copy{position:static}.registration-postcard .eyebrow{font-size:9px;margin:0 0 10px}.registration-postcard h1{font-size:46px;margin:0}.registration-trip-date{font-size:10px;margin:10px 0 0}.registration-content{padding:0}.registration-progress{margin-bottom:26px}.registration-progress button{min-height:46px;gap:4px;padding-top:8px}.registration-progress-name{font-size:10px}.registration-step-count{font-size:9px;margin-bottom:10px}.registration-section h2{font-size:36px}.registration-step-intro{font-size:14px;margin-bottom:24px}.registration-section{margin-bottom:28px}.registration-support{justify-content:flex-start;margin-top:32px;font-size:11px}.registration-footer{padding-bottom:max(24px,env(safe-area-inset-bottom))}}
++@media(max-width:479px){.registration-page .trip-header{padding:17px 20px;gap:12px}.registration-page .trip-header .brand{width:140px}.registration-page .trip-header-nav{gap:12px}.registration-page .trip-back,.registration-page .trip-header-levels{font-size:10px}.registration-shell{padding:22px 20px 16px}.registration-layout{gap:22px}.registration-postcard h1{font-size:43px}.registration-grid{grid-template-columns:minmax(0,1fr);gap:0}.registration-progress-name{display:none}.registration-progress button{min-height:34px}.registration-progress{margin-bottom:22px}.registration-page .sib-form-block{margin-bottom:20px}.registration-choices{grid-template-columns:1fr}.registration-sizes .registration-choices{grid-template-columns:repeat(4,minmax(0,1fr))}.registration-navigation .button{padding-inline:23px;gap:22px}.registration-section h2{font-size:34px}.registration-step-intro{font-size:13px}.registration-required-note{font-size:10px}.registration-page #success-message h2{font-size:40px}}
+ 
+-.registration-page .form__entry,.registration-page .form__label-row{min-width:0}
+-.registration-page .entry__field{display:block}
+-.registration-page .entry__error:not(:empty){display:block;padding:10px;margin-top:8px}
+-.registration-page .sib-form-message-panel__text{display:block}
+-.registration-page .registration-choices .entry__choice label{display:flex;width:100%;box-sizing:border-box}
+-.registration-page .registration-choices .entry__choice{display:block}
+-.registration-page .sib-form-block__button:disabled{opacity:.65;cursor:wait}
+-.registration-page .registration-help a{color:#8d2f19;text-underline-offset:3px}
++@media(max-width:479px){.registration-contact-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px}.registration-contact-grid>:nth-child(n+3){grid-column:1/-1}}
++
++.registration-page .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+--- before/scripts/registration.test.mjs
++++ scripts/registration.test.mjs
+@@ -119,3 +119,20 @@
+   assert.equal(brevoValue(t,t.departures[0]),value);
+  }
+ });
++
++
++test('five semantic steps keep every native field reachable before JavaScript enhancement',()=>{
++ const html=renderRegistration(get('el-palmar'));
++ assert.equal((html.match(/data-registration-step="\d"/g)??[]).length,5);
++ assert.equal((html.match(/data-go-step="\d"/g)??[]).length,5);
++ assert.doesNotMatch(html,/<section[^>]*data-registration-step[^>]*\bhidden/);
++ assert.match(html,/data-step-prev hidden/);assert.match(html,/data-step-next hidden/);
++ for(const name of ['NOMBRE','EMAIL','FECHADENACIMIENTO','NIVEL_SURF','CONQUIENVIAJO','MOTIVA'])assert.match(html,new RegExp(`name="${name}"`));
++ assert.doesNotMatch(html,/<(?:input|select)[^>]*\bdisabled/);
++ assert.match(html,/aria-live="polite" aria-atomic="true"/);
++ assert.match(html,/aria-describedby="error-EMAIL"/);
++ const indexes=[...html.matchAll(/data-registration-step="(\d)"/g)].map(m=>m.index);
++ for(const [name,step] of [['NOMBRE',0],['FECHADENACIMIENTO',1],['NIVEL_SURF',2],['TALLA_CAMISETA',3],['MOTIVA',4]]){
++  const position=html.indexOf(`name="${name}"`);assert(position>indexes[step]);assert(step===4||position<indexes[step+1]);
++ }
++});
+--- before/scripts/check-registration-browser.mjs
++++ scripts/check-registration-browser.mjs
+@@ -1,109 +1,137 @@
+-// Optional browser QA. Intercept every external request; never create a Brevo contact.
++// Browser acceptance: all external submissions are intercepted, never sent to Brevo.
+ import {createRequire} from 'node:module';
+-import {readFile, writeFile, mkdir} from 'node:fs/promises';
++import {readFile,writeFile,mkdir} from 'node:fs/promises';
+ import path from 'node:path';
+ import assert from 'node:assert/strict';
+ import {createSiteServer} from './serve.mjs';
+ const require=createRequire(import.meta.url);
+-const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE || 'playwright');
+-const output=path.resolve(process.env.LST_QA_OUTPUT || 'docs/qa/2026-10-25-brevo/browser');
+-await mkdir(output,{recursive:true});
++const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
++const output=path.resolve(process.env.LST_QA_OUTPUT||'docs/qa/2026-10-25-inscripcion-pasos/browser');await mkdir(output,{recursive:true});
+ const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
+-const server=createSiteServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
++const server=createSiteServer();await new Promise(r=>server.listen(0,'127.0.0.1',r));
+ const origin=`http://127.0.0.1:${server.address().port}`;
+ const browser=await chromium.launch({headless:true,executablePath:process.env.LST_CHROMIUM_PATH});
+ const errors=[],results=[];let submissions=[],mode='success';
+ const check=(name,actual,expected=true)=>{assert.deepEqual(actual,expected,name);results.push(name);};
+-async function route(context) {
++const groups=[{NOMBRE:'Prueba',APELLIDOS:'Local',EMAIL:'qa@example.test',WHATSAPP:'600000000'},
++ {FECHADENACIMIENTO:'15-06-1995',DNI:'DOCUMENTO-PRUEBA',DIRECCION:'Dirección de prueba',CIUDAD:'Madrid',CODIGO_POSTAL:'28001',PAIS:'España'},
++ {MATERIAL_MEDIDAS:'6 pies'}, {ACOMPANANTES:'Amistad de prueba'},
++ {ALERGIAS_INTOLERANCIAS:'Sin preferencias',ENFERMEDAD_PROBLEMA:'Sin observaciones',MOTIVA:'Verificación local sin envío real'}];
++const radios=[[],[],['NIVEL_SURF','MATERIAL'],['TALLA_CAMISETA','CONQUIENVIAJO'],['CONOCIDO']];
++async function routing(context){
+  await context.route('https://**/*',async r=>{
+-  const u=r.request().url();
+-  if(u.startsWith('https://cdn.sanity.io/'))return r.fulfill({body:await readFile('dist/assets/community.webp'),contentType:'image/webp'});
+-  if(u.includes('.sibforms.com/serve/')&&r.request().method()==='POST'){
+-   submissions.push({url:u,body:r.request().postData()});
++  const url=r.request().url();
++  if(url.startsWith('https://cdn.sanity.io/'))return r.fulfill({body:await readFile('dist/assets/community.webp'),contentType:'image/webp'});
++  if(url.includes('.sibforms.com/serve/')&&r.request().method()==='POST'){
++   submissions.push({url,body:r.request().postData()});
+    if(mode==='network')return r.abort('failed');
+-   if(mode==='native')return r.fulfill({contentType:'text/html',body:'<h1>Native submission intercepted</h1>'});
+-   const body=mode==='malformed'?'not-json':JSON.stringify(mode==='rejected'?{success:false,message:'Revisa tu email.',errors:{EMAIL:'Email rechazado por Brevo.'}}:{success:true,...(mode==='redirect-malformed'?{redirect:'::::'}:mode==='redirect-insecure'?{redirect:'javascript:alert(1)'}:{})});
++   if(mode==='native')return r.fulfill({contentType:'text/html',body:'<h1>Native POST intercepted</h1>'});
+    await new Promise(resolve=>setTimeout(resolve,100));
+-   return r.fulfill({status:mode==='http'?503:200,headers:{'access-control-allow-origin':'*'},contentType:'application/json',body});
++   const response=mode==='rejected'?{success:false,message:'Revisa tu email.',errors:{EMAIL:'Email rechazado por Brevo.'}}:{success:true,...(mode==='redirect-malformed'?{redirect:'::::'}:mode==='redirect-insecure'?{redirect:'javascript:alert(1)'}:{})};
++   return r.fulfill({status:mode==='http'?503:200,headers:{'access-control-allow-origin':'*'},contentType:'application/json',body:mode==='malformed'?'not-json':JSON.stringify(response)});
+   }
+   return r.abort();
+  });
+ }
+-async function fill(page) {
+- for(const [name,value] of Object.entries({NOMBRE:'Prueba',APELLIDOS:'Local',EMAIL:'qa@example.test',WHATSAPP:'600000000',FECHADENACIMIENTO:'15-06-1995',DNI:'DOCUMENTO-PRUEBA',DIRECCION:'Dirección de prueba',CIUDAD:'Madrid',CODIGO_POSTAL:'28001',PAIS:'España',MOTIVA:'Verificación local sin envío real'}))await page.locator(`[name="${name}"]`).fill(value);
+- for(const name of ['NIVEL_SURF','TALLA_CAMISETA','CONQUIENVIAJO','MATERIAL','CONOCIDO'])await page.locator(`[name="${name}"]`).first().check();
++async function fillStep(page,index){
++ if(index===0&&await page.locator('[name=VIAJE_SURF]:checked').count()===0)await page.locator('[name=VIAJE_SURF]').first().check();
++ for(const [name,value] of Object.entries(groups[index]))await page.locator(`[name="${name}"]`).fill(value);
++ for(const name of radios[index])await page.locator(`[name="${name}"]`).first().check();
+ }
+-try {
+- for(const width of [320,390,768,1440]) {
+-  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});await route(context);
+-  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+-  for(const trip of trips) {
++async function complete(page){for(let i=0;i<5;i++){await fillStep(page,i);if(i<4)await page.locator('[data-step-next]').click();}}
++async function contextFor(width=390,js=true){const context=await browser.newContext({viewport:{width,height:900},javaScriptEnabled:js,reducedMotion:'reduce'});await routing(context);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));return{context,page};}
++try{
++ for(const width of [320,390,768,1440]){
++  const {context,page}=await contextFor(width);
++  for(const trip of trips){
+    await page.goto(origin+`/inscripciones/${trip.slug}/`);await page.evaluate(()=>document.fonts.ready);
++   check(`${trip.slug} ${width}: one visible step`,await page.locator('[data-registration-step]:visible').count(),1);
++   check(`${trip.slug} ${width}: starts on first step`,await page.locator('#sib-form').getAttribute('data-current-step'),'0');
++   check(`${trip.slug} ${width}: correct trip`,(await page.locator('h1').innerText()).includes(trip.name));
+    check(`${trip.slug} ${width}: no horizontal overflow`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+-   check(`${trip.slug} ${width}: correct trip`,(await page.locator('h1').innerText()).includes(trip.name));
+-   check(`${trip.slug} ${width}: native phone prefix`,await page.locator('[name=WHATSAPP__COUNTRY_CODE]').inputValue(),'+34');
+-   check(`${trip.slug} ${width}: date selection is explicit`,await page.locator('[name=VIAJE_SURF]:checked').count(),trip.departures.length===1?1:0);
+-   check(`${trip.slug} ${width}: controls have accessible labels`,await page.locator('input:not([type=hidden]):not([type=radio]):not([name=email_address_check])').evaluateAll(nodes=>nodes.every(n=>n.labels.length>0)));
+-   check(`${trip.slug} ${width}: submit touch target`,(await page.locator('button[type=submit]').boundingBox()).height>=44);
++   check(`${trip.slug} ${width}: next touch target`,(await page.locator('[data-step-next]').boundingBox()).height>=44);
++   check(`${trip.slug} ${width}: no premature submit`,await page.locator('button[type=submit]').isVisible(),false);
++   check(`${trip.slug} ${width}: date selection`,await page.locator('[name=VIAJE_SURF]:checked').count(),trip.departures.length===1?1:0);
+   }
+-  await page.goto(origin+'/inscripciones/marruecos/');
+-  await page.screenshot({path:path.join(output,`marruecos-${width}.png`),fullPage:width===390});
++  await page.goto(origin+'/inscripciones/el-palmar/');
++  for(let step=0;step<5;step++){
++   check(`${width} step ${step}: exactly one section`,await page.locator('[data-registration-step]:visible').count(),1);
++   check(`${width} step ${step}: correct section`,await page.locator('#sib-form').getAttribute('data-current-step'),String(step));
++   check(`${width} step ${step}: no horizontal overflow`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
++   check(`${width} step ${step}: active progress`,await page.locator('[aria-current=step]').getAttribute('data-go-step'),String(step));
++   check(`${width} step ${step}: announcement stays visually hidden`,await page.locator('#registration-step-announcement').evaluate(e=>e.getBoundingClientRect().width<=1&&e.getBoundingClientRect().height<=1));
++   check(`${width} step ${step}: skip link stays outside view until focused`,await page.locator('.skip-link').evaluate(e=>e.getBoundingClientRect().bottom<=0));
++   if([390,1440].includes(width)&&[0,2,4].includes(step)){
++    // Capture from the top so Chromium does not composite offscreen fixed links into a full-page image.
++    await page.evaluate(()=>scrollTo(0,0));
++    await page.screenshot({path:path.join(output,`el-palmar-${width}-step${step+1}.png`),fullPage:true});
++   }
++   await fillStep(page,step);
++   if(step<4)await page.locator('[data-step-next]').click();
++  }
+   if(width===320){
+-   await page.evaluate(()=>{const nodes=[...document.querySelectorAll('body,body *')];const sizes=nodes.map(e=>parseFloat(getComputedStyle(e).fontSize));nodes.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});
+-   check('text at 200% stays within 320px',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
++   await page.evaluate(()=>{const nodes=[...document.querySelectorAll('body,body *')],sizes=nodes.map(e=>parseFloat(getComputedStyle(e).fontSize));nodes.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});
++   check('200% text fits at 320px',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+   }
+   await context.close();
+  }
+- const context=await browser.newContext({viewport:{width:390,height:844}});await route(context);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
+- const trip=trips.find(t=>t.slug==='marruecos'),second=trip.departures[1];
+- await page.goto(origin+`/inscripciones/marruecos/?salida=${second.id}`);
+- check('dated URL selects the second Brevo category',await page.locator('[name=VIAJE_SURF]:checked').inputValue(),'4');
+- await fill(page);
+- await page.locator('[name=FECHADENACIMIENTO]').fill('31-02-1995');
+- check('impossible birth date rejected',await page.locator('#sib-form').evaluate(f=>f.checkValidity()),false);
+- await page.locator('[name=FECHADENACIMIENTO]').fill('15-06-1995');
+- check('valid completed form accepted by native validation',await page.locator('#sib-form').evaluate(f=>f.checkValidity()));
++ console.log('All trips and five steps fit at four screen widths.');
++ const {context,page}=await contextFor();const multi=trips.find(t=>t.departures.length>1),second=multi.departures[1];
++ await page.goto(origin+`/inscripciones/${multi.slug}/?salida=${second.id}`);
++ check('URL selects exact second departure',await page.locator('[name=VIAJE_SURF]:checked').getAttribute('data-departure-id'),second.id);
++ check('future progress cannot skip required fields',await page.locator('[data-go-step="4"]').isDisabled());
++ await page.locator('[data-step-next]').click();check('empty step cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
++ await fillStep(page,0);await page.locator('[name=EMAIL]').fill('incorrecto');await page.locator('[data-step-next]').click();
++ check('invalid email cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
++ await page.locator('[name=EMAIL]').fill('qa@example.test');await page.locator('[name=EMAIL]').press('Enter');
++ check('Enter advances without sending',await page.locator('#sib-form').getAttribute('data-current-step'),'1');check('Enter did not submit to Brevo',submissions.length,0);
++ check('step focus follows navigation',await page.locator('[data-registration-step="1"]').evaluate(e=>e===document.activeElement));
++ await fillStep(page,1);await page.locator('[name=FECHADENACIMIENTO]').fill('31-02-1995');await page.locator('[data-step-next]').click();
++ check('impossible date cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'1');
++ await page.locator('[name=FECHADENACIMIENTO]').fill('15-06-1995');await page.locator('[data-step-prev]').click();
++ check('back preserves name',await page.locator('[name=NOMBRE]').inputValue(),'Prueba');
++ check('back preserves selected trip',await page.locator('[name=VIAJE_SURF]:checked').getAttribute('data-departure-id'),second.id);
++ await page.locator('[data-go-step="1"]').click();await page.locator('[data-step-next]').click();
++ for(let i=2;i<5;i++){await fillStep(page,i);if(i<4)await page.locator('[data-step-next]').click();}
++ await page.locator('[data-go-step="0"]').click();await page.locator('[name=EMAIL]').fill('');await page.locator('[data-go-step="4"]').click();
++ await page.locator('button[type=submit]').click();check('final validation reveals earlier invalid step',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
++ check('invalid hidden fields do not send',submissions.length,0);
++ await page.locator('[name=EMAIL]').fill('qa@example.test');await page.locator('[data-go-step="4"]').click();
++ mode='rejected';await page.locator('button[type=submit]').click();await page.waitForSelector('#error-message.sib-form-message-panel--active');
++ check('server field error reveals contact step',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
++ check('server error is connected to field',await page.locator('[name=EMAIL]').getAttribute('aria-invalid'),'true');
++ check('server error is readable',await page.locator('#error-EMAIL').innerText(),'Email rechazado por Brevo.');
++ await page.locator('[name=EMAIL]').fill('fixed@example.test');await page.locator('[data-go-step="4"]').click();
+  mode='success';submissions=[];
+  await page.locator('#sib-form').evaluate(f=>{f.requestSubmit();f.requestSubmit();});
++ check('navigation locked during send',await page.locator('[data-go-step="0"]').isDisabled());
+  await page.waitForSelector('#success-message.sib-form-message-panel--active');
+- check('double submit sends exactly once',submissions.length,1);
+- const payload=submissions[0];check('AJAX endpoint uses Brevo response mode',new URL(payload.url).searchParams.get('isAjax'),'1');
+- for(const [name,value] of [['VIAJE_SURF','4'],['WHATSAPP__COUNTRY_CODE','+34'],['FECHADENACIMIENTO','15-06-1995'],['locale','es']])check(`payload ${name} exact`,payload.body.includes(`name="${name}"\r\n\r\n${value}\r\n`));
+- check('submit disabled after success',await page.locator('button[type=submit]').isDisabled());
+- check('success announced accessibly',await page.locator('#success-message').evaluate(e=>e===document.activeElement));
+- for(const failure of ['rejected','network','malformed','http']) {
+-  mode=failure;await page.goto(origin+'/inscripciones/el-palmar/');await fill(page);submissions=[];
+-  await page.locator('button[type=submit]').click();await page.waitForSelector('#error-message.sib-form-message-panel--active');
+-  check(`${failure}: form data retained`,await page.locator('[name=NOMBRE]').inputValue(),'Prueba');
+-  check(`${failure}: manual retry possible`,await page.locator('button[type=submit]').isEnabled());
+-  check(`${failure}: no automatic retries`,submissions.length,1);
+-  if(failure==='rejected')check('server field error rendered',await page.locator('[name=EMAIL]').locator('xpath=ancestor::div[contains(@class,"form__entry")]').locator('.entry__error').innerText(),'Email rechazado por Brevo.');
++ check('duplicate send prevented',submissions.length,1);check('form hidden after success',await page.locator('#sib-form').isVisible(),false);
++ check('success has keyboard focus',await page.locator('#success-message').evaluate(e=>e===document.activeElement));
++ const payload=submissions[0];check('same Brevo AJAX mode',new URL(payload.url).searchParams.get('isAjax'),'1');
++ for(const [name,value] of [['VIAJE_SURF',await page.locator('[name=VIAJE_SURF]:checked').inputValue()],['NOMBRE','Prueba'],['EMAIL','fixed@example.test'],['WHATSAPP__COUNTRY_CODE','+34'],['FECHADENACIMIENTO','15-06-1995'],['locale','es'],['TALLA_CAMISETA','1'],['NIVEL_SURF','1']])check(`complete payload includes hidden-step ${name}`,payload.body.includes(`name="${name}"\r\n\r\n${value}\r\n`));
++ for(const failure of ['network','malformed','http','redirect-malformed','redirect-insecure']){
++  await page.goto(origin+'/inscripciones/el-palmar/');await complete(page);mode=failure;submissions=[];
++  await page.locator('button[type=submit]').click();const succeeded=failure.startsWith('redirect');
++  await page.waitForSelector(`${succeeded?'#success-message':'#error-message'}.sib-form-message-panel--active`);
++  check(`${failure}: exactly one intercepted send`,submissions.length,1);
++  if(!succeeded){check(`${failure}: retry enabled`,await page.locator('button[type=submit]').isEnabled());await page.locator('[data-step-prev]').click();check(`${failure}: back keeps values`,await page.locator('[name=ACOMPANANTES]').inputValue(),'Amistad de prueba');}
+  }
+- for(const redirectMode of ['redirect-malformed','redirect-insecure']) {
+-  mode=redirectMode;await page.goto(origin+'/inscripciones/el-palmar/');await fill(page);
+-  await page.locator('button[type=submit]').click();await page.waitForSelector('#success-message.sib-form-message-panel--active');
+-  check(`${redirectMode}: successful submission stays confirmed`,await page.locator('#error-message').isVisible(),false);
+-  check(`${redirectMode}: successful submission cannot be repeated`,await page.locator('button[type=submit]').isDisabled());
+- }
+- await page.goto(origin+'/inscripciones/marruecos/?salida=incorrecta');
+- check('invalid dated URL shows actionable error',await page.locator('#registration-date-error').isVisible());
+- check('invalid dated URL cannot silently choose another trip',await page.locator('[name=VIAJE_SURF]:checked').count(),0);
+- await page.locator('[name=VIAJE_SURF]').last().check();check('choosing a valid date clears URL error',await page.locator('#registration-date-error').isVisible(),false);
+- await page.goto(origin+'/inscripciones/marruecos-2027-01-24/');check('historical route selects matching date',await page.locator('[name=VIAJE_SURF]:checked').inputValue(),'4');
+- await page.goto(origin+'/viajes/marruecos/');await page.locator('[data-open-dates]:visible').first().click();
+- const link=page.locator('#departure-dialog [data-registration]').last();await link.click();
+- check('trip selector links to the chosen registration date',await page.locator('[name=VIAJE_SURF]:checked').inputValue(),'4');
+- check('unknown slug remains 404',(await page.goto(origin+'/inscripciones/desconocido/')).status(),404);
++ await page.goto(origin+`/inscripciones/${multi.slug}/?salida=incorrecta`);
++ check('invalid departure URL still explained',await page.locator('#registration-date-error').isVisible());
++ check('invalid departure URL no silent selection',await page.locator('[name=VIAJE_SURF]:checked').count(),0);
++ await page.locator('[name=VIAJE_SURF]').last().check();check('valid choice clears URL error',await page.locator('#registration-date-error').isVisible(),false);
++ await page.goto(origin+`/inscripciones/${multi.slug}-${second.start}/`);check('dated alias still selects matching date',await page.locator('[name=VIAJE_SURF]:checked').getAttribute('data-departure-id'),second.id);
++ for(const [slug,value] of [['marruecos','3'],['marruecos-avanzado','4']]){await page.goto(origin+`/inscripciones/${slug}/`);check(`${slug}: preserves isolated Brevo category`,await page.locator('[name=VIAJE_SURF]:checked').inputValue(),value);}
++ check('unknown route is 404',(await page.goto(origin+'/inscripciones/desconocido/')).status(),404);
+  await context.close();
+- console.log('Responsive, AJAX payload, error and date-link assertions passed.');
+- const noJs=await browser.newContext({javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});await route(noJs);const native=await noJs.newPage();
+- await native.goto(origin+'/inscripciones/hossegor/');check('without JS single date preselected',await native.locator('[name=VIAJE_SURF]:checked').inputValue(),'1');
+- await fill(native);mode='native';submissions=[];await native.locator('button[type=submit]').click();await native.waitForSelector('h1');
+- check('without JS native POST reaches the same endpoint',submissions.length,1);
+- check('native POST does not request AJAX',new URL(submissions[0].url).searchParams.has('isAjax'),false);
+- await native.goto(origin+'/inscripciones/marruecos/');check('without JS multiple dates remain selectable',await native.locator('[name=VIAJE_SURF]').count(),2);
+- await noJs.close();
+- check('no product JavaScript errors',errors,[]);
++ const native=await contextFor(390,false);await native.page.goto(origin+'/inscripciones/hossegor/');
++ check('without JS all five sections readable',await native.page.locator('[data-registration-step]:visible').count(),5);
++ check('without JS enhanced navigation absent',await native.page.locator('.registration-progress').isVisible(),false);
++ for(let i=0;i<5;i++)await fillStep(native.page,i);
++ mode='native';submissions=[];await native.page.locator('button[type=submit]').click();
++ check('native form submitted once',submissions.length,1);check('native form preserves original endpoint',new URL(submissions[0].url).searchParams.has('isAjax'),false);
++ await native.context.close();check('no product JavaScript errors',errors,[]);
+  await writeFile(path.join(output,'results.json'),JSON.stringify({checks:results.length,results,errors,externalSubmissions:0},null,2)+'\n');
+- console.log(`PASS: ${results.length} browser assertions at 320/390/768/1440px, exact POST payload, date links/aliases, native fallback, success/rejections/network/invalid JSON/HTTP errors, double submission and 200% text. No external submissions.`);
+-} finally {await browser.close();await new Promise(r=>server.close(r));}
++ console.log(`PASS: ${results.length} assertions; 7 trips, 5 steps, 320/390/768/1440px, validation/back/Enter/focus, earlier-step server errors, full payload, network/HTTP/JSON errors, duplicate sends, aliases, 200% text and native POST. No external submissions.`);
++}finally{await browser.close();await new Promise(r=>server.close(r));}

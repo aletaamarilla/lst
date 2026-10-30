@@ -1,0 +1,14 @@
+{
+  "files": {
+    "dist/index.html": "7373bdda8e37a6a95403dfd7f7cd7d4914a1b7b1b0245a4eebb92ee3583f6a2d",
+    "dist/home.css": "1b6c839b93039053de9fb2c57292fb1e39b1bfaf1d209262bdc6607ecf76b47d",
+    "scripts/render-home-trips.mjs": "97fb798404e4990cd01166e66d3d503dc90967faefe187d70003bda2e5458903",
+    "scripts/home-trips.test.mjs": "04e911ba495e74ab59ca1b53a6a5b7efc140e3d99f25dd3963bbb054af754396",
+    "scripts/check-home-browser.mjs": "beeaa96b8cb0721c71c7db4bb7054da204bd3d45d1819d75b10cb09caf982bf5"
+  },
+  "preserved": {
+    "dist/home.js": true,
+    "dist/app.js": true,
+    "scripts/check.mjs": true
+  }
+}

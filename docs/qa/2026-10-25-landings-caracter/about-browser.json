@@ -1,0 +1,2698 @@
+{
+  "checks": [
+    {
+      "name": "320-normal HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "320-normal no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320-normal persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "320-normal photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 548.9375,
+        "captionTop": 580.9375
+      }
+    },
+    {
+      "name": "320-normal masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "320-normal loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "320-normal retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "320-normal required content",
+      "pass": true
+    },
+    {
+      "name": "320-normal no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "320-normal origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 78,
+        "heading": 439.796875,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "320-normal menu open",
+      "pass": true
+    },
+    {
+      "name": "320-normal current page in menu",
+      "pass": true
+    },
+    {
+      "name": "320-normal Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "320-normal mobile navigation to levels",
+      "pass": true
+    },
+    {
+      "name": "320-normal WhatsApp consult intercepted",
+      "pass": true
+    },
+    {
+      "name": "320-normal trips CTA reaches catalog",
+      "pass": true
+    },
+    {
+      "name": "320-normal home introduction leads to about",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-palmar team text preserved",
+      "pass": true
+    },
+    {
+      "name": "320-normal el-palmar accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 169.875,
+        "header": 78
+      }
+    },
+    {
+      "name": "320-normal fuerteventura team text preserved",
+      "pass": true
+    },
+    {
+      "name": "320-normal fuerteventura accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 169.875,
+        "header": 78
+      }
+    },
+    {
+      "name": "320-normal hossegor team text preserved",
+      "pass": true
+    },
+    {
+      "name": "320-normal hossegor accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.09375,
+        "header": 78
+      }
+    },
+    {
+      "name": "320-normal maldivas team text preserved",
+      "pass": true
+    },
+    {
+      "name": "320-normal maldivas accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 169.875,
+        "header": 78
+      }
+    },
+    {
+      "name": "320-normal marruecos team text preserved",
+      "pass": true
+    },
+    {
+      "name": "320-normal marruecos accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.09375,
+        "header": 78
+      }
+    },
+    {
+      "name": "320-normal senegal team text preserved",
+      "pass": true
+    },
+    {
+      "name": "320-normal senegal accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.09375,
+        "header": 78
+      }
+    },
+    {
+      "name": "320-text200 HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "320-text200 no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320-text200 persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "320-text200 photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 1491.90625,
+        "captionTop": 1542.90625
+      }
+    },
+    {
+      "name": "320-text200 masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "320-text200 loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "320-text200 retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "320-text200 required content",
+      "pass": true
+    },
+    {
+      "name": "320-text200 no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "320-text200 origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 107,
+        "heading": 556.296875,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "320-text200 menu open",
+      "pass": true
+    },
+    {
+      "name": "320-text200 current page in menu",
+      "pass": true
+    },
+    {
+      "name": "320-text200 Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "320-text200 mobile navigation to levels",
+      "pass": true
+    },
+    {
+      "name": "320-no-js HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "320-no-js persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "320-no-js native header stays visible on scroll",
+      "pass": true
+    },
+    {
+      "name": "320-no-js photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 672,
+        "captionTop": 704
+      }
+    },
+    {
+      "name": "320-no-js masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(27, 27, 27)",
+        "paper": "rgb(255, 250, 231)",
+        "light": "none",
+        "dark": "block"
+      }
+    },
+    {
+      "name": "320-no-js loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "320-no-js retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "320-no-js required content",
+      "pass": true
+    },
+    {
+      "name": "320-no-js no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "390-normal HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "390-normal no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390-normal persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "390-normal photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 476,
+        "captionTop": 508
+      }
+    },
+    {
+      "name": "390-normal masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "390-normal loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "390-normal retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "390-normal required content",
+      "pass": true
+    },
+    {
+      "name": "390-normal no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "390-normal origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 78,
+        "heading": 463.578125,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "390-normal menu open",
+      "pass": true
+    },
+    {
+      "name": "390-normal current page in menu",
+      "pass": true
+    },
+    {
+      "name": "390-normal Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "390-normal mobile navigation to levels",
+      "pass": true
+    },
+    {
+      "name": "390-normal WhatsApp consult intercepted",
+      "pass": true
+    },
+    {
+      "name": "390-normal trips CTA reaches catalog",
+      "pass": true
+    },
+    {
+      "name": "390-normal home introduction leads to about",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-palmar team text preserved",
+      "pass": true
+    },
+    {
+      "name": "390-normal el-palmar accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.296875,
+        "header": 78
+      }
+    },
+    {
+      "name": "390-normal fuerteventura team text preserved",
+      "pass": true
+    },
+    {
+      "name": "390-normal fuerteventura accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.296875,
+        "header": 78
+      }
+    },
+    {
+      "name": "390-normal hossegor team text preserved",
+      "pass": true
+    },
+    {
+      "name": "390-normal hossegor accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.296875,
+        "header": 78
+      }
+    },
+    {
+      "name": "390-normal maldivas team text preserved",
+      "pass": true
+    },
+    {
+      "name": "390-normal maldivas accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.296875,
+        "header": 78
+      }
+    },
+    {
+      "name": "390-normal marruecos team text preserved",
+      "pass": true
+    },
+    {
+      "name": "390-normal marruecos accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.296875,
+        "header": 78
+      }
+    },
+    {
+      "name": "390-normal senegal team text preserved",
+      "pass": true
+    },
+    {
+      "name": "390-normal senegal accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 170.296875,
+        "header": 78
+      }
+    },
+    {
+      "name": "390-text200 HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "390-text200 no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390-text200 persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "390-text200 photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 1410.90625,
+        "captionTop": 1491.90625
+      }
+    },
+    {
+      "name": "390-text200 masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "390-text200 loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "390-text200 retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "390-text200 required content",
+      "pass": true
+    },
+    {
+      "name": "390-text200 no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "390-text200 origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 81.796875,
+        "heading": 537.234375,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "390-text200 menu open",
+      "pass": true
+    },
+    {
+      "name": "390-text200 current page in menu",
+      "pass": true
+    },
+    {
+      "name": "390-text200 Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "390-text200 mobile navigation to levels",
+      "pass": true
+    },
+    {
+      "name": "390-no-js HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "390-no-js persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "390-no-js native header stays visible on scroll",
+      "pass": true
+    },
+    {
+      "name": "390-no-js photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 622,
+        "captionTop": 654
+      }
+    },
+    {
+      "name": "390-no-js masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(27, 27, 27)",
+        "paper": "rgb(255, 250, 231)",
+        "light": "none",
+        "dark": "block"
+      }
+    },
+    {
+      "name": "390-no-js loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "390-no-js retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "390-no-js required content",
+      "pass": true
+    },
+    {
+      "name": "390-no-js no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "768-normal HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "768-normal no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768-normal persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "768-normal photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 588,
+        "captionTop": 621.5
+      }
+    },
+    {
+      "name": "768-normal masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "768-normal loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "768-normal retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "768-normal required content",
+      "pass": true
+    },
+    {
+      "name": "768-normal no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "768-normal origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 78,
+        "heading": 210.375,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "768-normal menu open",
+      "pass": true
+    },
+    {
+      "name": "768-normal current page in menu",
+      "pass": true
+    },
+    {
+      "name": "768-normal Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "768-normal mobile navigation to levels",
+      "pass": true
+    },
+    {
+      "name": "768-normal WhatsApp consult intercepted",
+      "pass": true
+    },
+    {
+      "name": "768-normal trips CTA reaches catalog",
+      "pass": true
+    },
+    {
+      "name": "768-normal home introduction leads to about",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-palmar team text preserved",
+      "pass": true
+    },
+    {
+      "name": "768-normal el-palmar accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 195.421875,
+        "header": 78
+      }
+    },
+    {
+      "name": "768-normal fuerteventura team text preserved",
+      "pass": true
+    },
+    {
+      "name": "768-normal fuerteventura accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 195.421875,
+        "header": 78
+      }
+    },
+    {
+      "name": "768-normal hossegor team text preserved",
+      "pass": true
+    },
+    {
+      "name": "768-normal hossegor accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 195.421875,
+        "header": 78
+      }
+    },
+    {
+      "name": "768-normal maldivas team text preserved",
+      "pass": true
+    },
+    {
+      "name": "768-normal maldivas accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 195.421875,
+        "header": 78
+      }
+    },
+    {
+      "name": "768-normal marruecos team text preserved",
+      "pass": true
+    },
+    {
+      "name": "768-normal marruecos accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 195.421875,
+        "header": 78
+      }
+    },
+    {
+      "name": "768-normal senegal team text preserved",
+      "pass": true
+    },
+    {
+      "name": "768-normal senegal accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 195.421875,
+        "header": 78
+      }
+    },
+    {
+      "name": "768-text200 HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "768-text200 no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768-text200 persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "768-text200 photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 1247.53125,
+        "captionTop": 1336.53125
+      }
+    },
+    {
+      "name": "768-text200 masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "768-text200 loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "768-text200 retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "768-text200 required content",
+      "pass": true
+    },
+    {
+      "name": "768-text200 no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "768-text200 origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 84.59375,
+        "heading": 236.3125,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "768-text200 menu open",
+      "pass": true
+    },
+    {
+      "name": "768-text200 current page in menu",
+      "pass": true
+    },
+    {
+      "name": "768-text200 Escape restores focus",
+      "pass": true
+    },
+    {
+      "name": "768-text200 mobile navigation to levels",
+      "pass": true
+    },
+    {
+      "name": "768-no-js HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "768-no-js persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "768-no-js native header stays visible on scroll",
+      "pass": true
+    },
+    {
+      "name": "768-no-js photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 734,
+        "captionTop": 767.5
+      }
+    },
+    {
+      "name": "768-no-js masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(27, 27, 27)",
+        "paper": "rgb(255, 250, 231)",
+        "light": "none",
+        "dark": "block"
+      }
+    },
+    {
+      "name": "768-no-js loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "768-no-js retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "768-no-js required content",
+      "pass": true
+    },
+    {
+      "name": "768-no-js no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "1024-normal HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1024-normal no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024-normal persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "1024-normal photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 588,
+        "captionTop": 621.5
+      }
+    },
+    {
+      "name": "1024-normal masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "1024-normal loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "1024-normal retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "1024-normal required content",
+      "pass": true
+    },
+    {
+      "name": "1024-normal no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "1024-normal origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 88,
+        "heading": 220.375,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "1024-normal WhatsApp consult intercepted",
+      "pass": true
+    },
+    {
+      "name": "1024-normal trips CTA reaches catalog",
+      "pass": true
+    },
+    {
+      "name": "1024-normal home introduction leads to about",
+      "pass": true
+    },
+    {
+      "name": "1024-normal el-palmar team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1024-normal el-palmar accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 205.75,
+        "header": 88
+      }
+    },
+    {
+      "name": "1024-normal fuerteventura team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1024-normal fuerteventura accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 205.75,
+        "header": 88
+      }
+    },
+    {
+      "name": "1024-normal hossegor team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1024-normal hossegor accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 205.75,
+        "header": 88
+      }
+    },
+    {
+      "name": "1024-normal maldivas team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1024-normal maldivas accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 205.75,
+        "header": 88
+      }
+    },
+    {
+      "name": "1024-normal marruecos team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1024-normal marruecos accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 205.75,
+        "header": 88
+      }
+    },
+    {
+      "name": "1024-normal senegal team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1024-normal senegal accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 205.75,
+        "header": 88
+      }
+    },
+    {
+      "name": "1024-text200 HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024-text200 persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 1043.984375,
+        "captionTop": 1132.984375
+      }
+    },
+    {
+      "name": "1024-text200 masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "1024-text200 loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "1024-text200 retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 required content",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "1024-text200 origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 91.890625,
+        "heading": 243.765625,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "1024-no-js HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1024-no-js persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js native header stays visible on scroll",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 744,
+        "captionTop": 777.5
+      }
+    },
+    {
+      "name": "1024-no-js masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(27, 27, 27)",
+        "paper": "rgb(255, 250, 231)",
+        "light": "none",
+        "dark": "block"
+      }
+    },
+    {
+      "name": "1024-no-js loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "1024-no-js retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js required content",
+      "pass": true
+    },
+    {
+      "name": "1024-no-js no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "1440-normal HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1440-normal no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440-normal persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "1440-normal photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 624.4375,
+        "captionTop": 657.9375
+      }
+    },
+    {
+      "name": "1440-normal masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "1440-normal loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "1440-normal retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "1440-normal required content",
+      "pass": true
+    },
+    {
+      "name": "1440-normal no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "1440-normal origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 88,
+        "heading": 220.8125,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "1440-normal WhatsApp consult intercepted",
+      "pass": true
+    },
+    {
+      "name": "1440-normal trips CTA reaches catalog",
+      "pass": true
+    },
+    {
+      "name": "1440-normal home introduction leads to about",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-palmar team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1440-normal el-palmar accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 206.0625,
+        "header": 88
+      }
+    },
+    {
+      "name": "1440-normal fuerteventura team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1440-normal fuerteventura accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 206.0625,
+        "header": 88
+      }
+    },
+    {
+      "name": "1440-normal hossegor team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1440-normal hossegor accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 206.0625,
+        "header": 88
+      }
+    },
+    {
+      "name": "1440-normal maldivas team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1440-normal maldivas accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 206.0625,
+        "header": 88
+      }
+    },
+    {
+      "name": "1440-normal marruecos team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1440-normal marruecos accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 206.0625,
+        "header": 88
+      }
+    },
+    {
+      "name": "1440-normal senegal team text preserved",
+      "pass": true
+    },
+    {
+      "name": "1440-normal senegal accompaniment reachable",
+      "pass": true,
+      "detail": {
+        "top": 206.0625,
+        "header": 88
+      }
+    },
+    {
+      "name": "1440-text200 HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440-text200 persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 1475.640625,
+        "captionTop": 1564.640625
+      }
+    },
+    {
+      "name": "1440-text200 masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(255, 250, 231)",
+        "paper": "rgba(0, 0, 0, 0)",
+        "light": "block",
+        "dark": "none"
+      }
+    },
+    {
+      "name": "1440-text200 loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "1440-text200 retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 required content",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 origin anchor clears fixed header",
+      "pass": true,
+      "detail": {
+        "header": 91.890625,
+        "heading": 243.421875,
+        "fixed": 0
+      }
+    },
+    {
+      "name": "1440-no-js HTTP 200",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no overflow",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "1440-no-js persistent header clears title",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js native header stays visible on scroll",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js photo caption clears copy",
+      "pass": true,
+      "detail": {
+        "copyBottom": 744,
+        "captionTop": 777.5
+      }
+    },
+    {
+      "name": "1440-no-js masthead colours and logo",
+      "pass": true,
+      "detail": {
+        "ink": "rgb(27, 27, 27)",
+        "paper": "rgb(255, 250, 231)",
+        "light": "none",
+        "dark": "block"
+      }
+    },
+    {
+      "name": "1440-no-js loaded photo cover and complete documentary frames",
+      "pass": true,
+      "detail": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ]
+    },
+    {
+      "name": "1440-no-js retained fonts and heading",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js required content",
+      "pass": true
+    },
+    {
+      "name": "1440-no-js no unsupported promises",
+      "pass": true
+    },
+    {
+      "name": "390 skip link focus",
+      "pass": true
+    },
+    {
+      "name": "390 skip link target",
+      "pass": true
+    },
+    {
+      "name": "390 smooth scroll arrival",
+      "pass": true
+    },
+    {
+      "name": "1440 skip link focus",
+      "pass": true
+    },
+    {
+      "name": "1440 skip link target",
+      "pass": true
+    },
+    {
+      "name": "1440 smooth scroll arrival",
+      "pass": true
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "views": [
+    {
+      "tag": "320-normal",
+      "width": 320,
+      "scrollWidth": 320,
+      "headerHeight": 78,
+      "headerPosition": "fixed",
+      "titleTop": 161,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "320-text200",
+      "width": 320,
+      "scrollWidth": 320,
+      "headerHeight": 107,
+      "headerPosition": "fixed",
+      "titleTop": 241,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "320-no-js",
+      "width": 320,
+      "scrollWidth": 320,
+      "headerHeight": 78,
+      "headerPosition": "sticky",
+      "titleTop": 284.0625,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "390-normal",
+      "width": 390,
+      "scrollWidth": 390,
+      "headerHeight": 78,
+      "headerPosition": "fixed",
+      "titleTop": 161.375,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "390-text200",
+      "width": 390,
+      "scrollWidth": 390,
+      "headerHeight": 81.796875,
+      "headerPosition": "fixed",
+      "titleTop": 216,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "390-no-js",
+      "width": 390,
+      "scrollWidth": 390,
+      "headerHeight": 78,
+      "headerPosition": "sticky",
+      "titleTop": 307.375,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "768-normal",
+      "width": 768,
+      "scrollWidth": 768,
+      "headerHeight": 78,
+      "headerPosition": "fixed",
+      "titleTop": 233.96875,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "768-text200",
+      "width": 768,
+      "scrollWidth": 768,
+      "headerHeight": 84.59375,
+      "headerPosition": "fixed",
+      "titleTop": 212.390625,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "768-no-js",
+      "width": 768,
+      "scrollWidth": 768,
+      "headerHeight": 78,
+      "headerPosition": "sticky",
+      "titleTop": 379.96875,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "1024-normal",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "headerHeight": 88,
+      "headerPosition": "fixed",
+      "titleTop": 233.96875,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "1024-text200",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "headerHeight": 91.890625,
+      "headerPosition": "fixed",
+      "titleTop": 219.390625,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "1024-no-js",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "headerHeight": 88,
+      "headerPosition": "sticky",
+      "titleTop": 389.96875,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "1440-normal",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "headerHeight": 88,
+      "headerPosition": "fixed",
+      "titleTop": 196.6875,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "1440-text200",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "headerHeight": 91.890625,
+      "headerPosition": "fixed",
+      "titleTop": 219.390625,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    },
+    {
+      "tag": "1440-no-js",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "headerHeight": 88,
+      "headerPosition": "sticky",
+      "titleTop": 316.25,
+      "overflow": [],
+      "images": [
+        {
+          "src": "/assets/home/marruecos-grupo.webp",
+          "loaded": true,
+          "hero": true,
+          "cover": true,
+          "fullFrame": false
+        },
+        {
+          "src": "/assets/home/marruecos-comunidad.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/learning.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/after-surf.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        },
+        {
+          "src": "/assets/marruecos-day.webp",
+          "loaded": true,
+          "hero": false,
+          "cover": false,
+          "fullFrame": true
+        }
+      ],
+      "fonts": {
+        "heading": "Aura, Impact, sans-serif",
+        "body": "\"Work Sans\", Arial, sans-serif",
+        "label": "\"Space Mono\", monospace"
+      },
+      "h1": 1
+    }
+  ]
+}

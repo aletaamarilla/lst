@@ -1,0 +1,33 @@
+{
+  "checkedAt": "2026-10-19T12:41:03.338Z",
+  "project": {
+    "id": "q5bj2rn2",
+    "name": "LTS",
+    "organizationId": "oCsOalTXP"
+  },
+  "application": {
+    "id": "jcegzkyow71llyc9jting9xd",
+    "projectId": "q5bj2rn2",
+    "title": "Let's Surf Together",
+    "host": "lets-surf-together",
+    "studioVersion": "6.19.0",
+    "deploymentId": "rvf07lupgisst2yriirzf9qv",
+    "deployedAt": "2026-10-19T12:40:11.603Z",
+    "workspaces": [
+      {
+        "name": "lets-surf-together",
+        "projectId": "q5bj2rn2",
+        "dataset": "production"
+      }
+    ]
+  },
+  "url": "https://lets-surf-together.sanity.studio/",
+  "httpStatus": 200,
+  "contentDocuments": 0,
+  "registeredStudios": 1,
+  "access": {
+    "initialStatus": 302,
+    "redirectTo": "https://www.sanity.io/@oCsOalTXP/studio/jcegzkyow71llyc9jting9xd",
+    "note": "El acceso requiere iniciar sesión en Sanity. No se ha probado la interfaz autenticada."
+  }
+}

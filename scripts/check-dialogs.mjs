@@ -1,17 +1,31 @@
 // Optional browser regression checks. Start npm run dev; supply an existing
 // Playwright module and Chromium via LST_PLAYWRIGHT_MODULE / LST_CHROMIUM_PATH.
-// WhatsApp is fulfilled locally. Long departures exist only in a temp fixture.
+// WhatsApp is fulfilled locally. Synthetic CMS content exists only in intercepted test routes.
 import {createRequire} from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import {spawnSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
 const root=process.env.LST_REPO||process.cwd();
 const {departureMessage,tripMessage}=await import(path.join(root,'scripts/trip-model.mjs'));
-const trips=JSON.parse(fs.readFileSync(path.join(root,'data/trips.json')));
+const {adaptTrip}=await import(path.join(root,'scripts/sanity-trips.mjs'));
+const {renderTrip}=await import(path.join(root,'scripts/render-trips.mjs'));
+// Synthetic CMS documents exercise UI boundaries only, intercepted locally.
+// They are never read by buildSite or included in the public catalogue.
+const photo=i=>({url:`https://cdn.sanity.io/images/q5bj2rn2/production/qa-photo-${i}.svg`,alt:`Foto de prueba ${i}`,caption:'Solo QA'});
+const documents=['qa-single','qa-multiple','qa-pending'].map((slug,i)=>({
+ _id:slug,_type:'trip',slug:{current:slug},name:`Destino QA ${i+1}`,
+ state:i===2?'upcoming':'confirmed',levels:[1,2,3,4],availability:'enquiry',
+ hero:photo(1),gallery:[photo(1),photo(2)],
+ departures:i===2?[]:Array.from({length:i+1},(_,j)=>({_key:`date-${j}`,start:j?'2027-01-15':'2027-01-01',end:j?'2027-01-17':'2027-01-03',duration:'2 noches',price:300+j})),
+}));
+const trips=documents.map(adaptTrip);
+const intercept=async context=>{
+ for(const trip of trips)await context.route(`**/viajes/${trip.slug}/`,r=>r.fulfill({contentType:'text/html',body:renderTrip(trip,trips)}));
+ await context.route('https://cdn.sanity.io/**',r=>r.fulfill({contentType:'image/svg+xml',body:`<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000"><rect width="800" height="1000" fill="#1b1b1b"/></svg>`}));
+};
 const output=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-dialog-verification');
 const baseURL=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
 fs.mkdirSync(output,{recursive:true});
@@ -20,13 +34,9 @@ const matchesWidth=([width])=>!selectedWidth||width===selectedWidth;
 const hashes=Object.fromEntries(['dist/trip.css','dist/trip.js','scripts/check-dialogs.mjs'].map(file=>[file,createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]));
 const report={selectedWidth,hashes,checks:[],issues:[],whatsapp:[],errors:[],touch:[],dimensions:[]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
-const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'lst-departures-'));
-const fixtureTrips=structuredClone(trips),fixtureTrip=fixtureTrips.find(t=>t.slug==='asturias');
+const fixtureTrip=structuredClone(trips.find(t=>t.slug==='qa-multiple'));
 fixtureTrip.departures=Array.from({length:16},(_,i)=>{const start=new Date(Date.UTC(2027,0,1+i*7)),end=new Date(+start+2*86400000);return {...fixtureTrip.departures[0],id:`qa-only-${i+1}`,start:start.toISOString().slice(0,10),end:end.toISOString().slice(0,10),date:`Prueba ${i+1}: ${start.toISOString().slice(0,10)} – ${end.toISOString().slice(0,10)}`,price:300+i};});
-fs.mkdirSync(path.join(fixture,'data'));fs.writeFileSync(path.join(fixture,'data/trips.json'),JSON.stringify(fixtureTrips));
-const render=spawnSync(process.execPath,[path.join(root,'scripts/render-trips.mjs')],{cwd:fixture,encoding:'utf8'});
-if(render.status!==0)throw Error(render.stderr);
-const fixtureHTML=fs.readFileSync(path.join(fixture,'dist/viajes/asturias/index.html'),'utf8');
+const fixtureHTML=renderTrip(fixtureTrip,trips);
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
 const usable=locator=>locator.evaluate(e=>{const r=e.getBoundingClientRect(),hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);return {ok:r.top>=0&&r.bottom<=innerHeight+1&&r.left>=0&&r.right<=innerWidth+1&&(hit===e||e.contains(hit)),rect:r.toJSON()};});
 async function swipe(page,locator,left=true){
@@ -63,8 +73,8 @@ async function dates(page,context,tag,long=false){
  for(const i of selected){
   await links.nth(i).scrollIntoViewIfNeeded();
   const popupPromise=context.waitForEvent('page');await links.nth(i).click();const popup=await popupPromise;await popup.waitForLoadState();
-  const actual=new URL(popup.url());const dep=(long?fixtureTrip:trips.find(t=>t.slug==='asturias')).departures[i];
-  check(tag+` departure ${i+1} WhatsApp context`,actual.origin==='https://wa.me'&&actual.pathname==='/34648189257'&&actual.searchParams.get('text')===departureMessage(long?fixtureTrip:trips.find(t=>t.slug==='asturias'),dep),actual.searchParams.get('text'));
+  const actual=new URL(popup.url());const dep=(long?fixtureTrip:trips.find(t=>t.slug==='qa-multiple')).departures[i];
+  check(tag+` departure ${i+1} WhatsApp context`,actual.origin==='https://wa.me'&&actual.pathname==='/34648189257'&&actual.searchParams.get('text')===departureMessage(long?fixtureTrip:trips.find(t=>t.slug==='qa-multiple'),dep),actual.searchParams.get('text'));
   check(tag+' popup intercepted',await popup.locator('body').innerText()==='Local interception. No message sent.');await popup.close();
  }
  if(long)await page.screenshot({path:path.join(output,tag.replaceAll(' ','-')+'-last-date.png')});
@@ -76,13 +86,15 @@ async function dates(page,context,tag,long=false){
 }
 try{
  const sizes=[[320,740],[390,844],[768,1024],[1440,900],[320,320],[390,360],[768,360],[1440,480]];
- for(const [width,height] of (process.env.LST_QA_QUICK?sizes.slice(0,1):sizes).filter(matchesWidth)){
+ const selectedSizes=sizes.filter(matchesWidth);
+ for(const [width,height] of (process.env.LST_QA_QUICK?selectedSizes.slice(0,1):selectedSizes)){
   for(const motion of ['reduce','no-preference']){
-   for(const slug of ['el-salvador','asturias','azores']){
+   for(const slug of ['qa-single','qa-multiple','qa-pending']){
     const tag=`${slug} ${width}x${height} ${motion}`;
     const context=await browser.newContext({viewport:{width,height},isMobile:width<1000,hasTouch:true,reducedMotion:motion});
     await context.route('https://**/*',async r=>{const url=new URL(r.request().url());if(url.hostname==='wa.me'){report.whatsapp.push({tag,url:url.href});await r.fulfill({contentType:'text/plain',body:'Local interception. No message sent.'});}else await r.abort();});
     if(process.env.LST_DIALOG_BASELINE)for(const file of ['trip.css','trip.js'])await context.route(`**/${file}`,r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist',file)}));
+    await intercept(context);
     const page=await context.newPage();page.setDefaultTimeout(5000);page.on('pageerror',e=>report.errors.push({tag,message:e.message}));
     try{
      await page.goto(`${baseURL}/viajes/${slug}/`);await page.evaluate(()=>document.fonts.ready);
@@ -105,7 +117,7 @@ try{
      const image=page.locator('.photo-slide img').nth(1);await image.evaluate(e=>e.decode());
      const dims=await image.evaluate(e=>{const r=e.getBoundingClientRect(),scale=Math.min(r.width/e.naturalWidth,r.height/e.naturalHeight);return {natural:[e.naturalWidth,e.naturalHeight],painted:[e.naturalWidth*scale,e.naturalHeight*scale],fit:getComputedStyle(e).objectFit,box:r.toJSON()};});
      report.dimensions.push({tag,normal,expanded:dims});check(tag+' photo contains entire image',dims.fit==='contain'&&dims.box.height>0&&dims.box.top>=0&&dims.box.bottom<=height);
-     if(slug==='asturias'&&height>=740&&width<=390)check(tag+' portrait inspection fills width',dims.painted[0]>=width-2,dims);
+     if(slug==='qa-multiple'&&height>=740&&width<=390)check(tag+' portrait inspection fills width',dims.painted[0]>=width-2,dims);
      await page.keyboard.press('Home');await settledPhoto(page,0);
      if(width<1000&&motion==='no-preference'){
       await page.evaluate(()=>{window.qaTouches=[];document.querySelector('.photo-strip').addEventListener('touchstart',e=>qaTouches.push(e.isTrusted),{passive:true});});
@@ -128,7 +140,7 @@ try{
       await swipe(page,page.locator('.gallery-track'));
       check(tag+' page gallery native horizontal swipe',await page.locator('.gallery-track').evaluate(e=>e.scrollLeft>10)&&await page.locator('.photo-dialog').evaluate(e=>!e.open));
      }
-     if(slug==='asturias')await dates(page,context,tag);
+     if(slug==='qa-multiple')await dates(page,context,tag);
      else{
       check(tag+' single or pending date has no selector',await page.locator('.departure-dialog').count()===0&&await page.locator('[data-open-dates]').count()===0);
       const link=page.locator(width>=1000?'.trip-header-cta':'.dock-cta'),expected=tripMessage(trips.find(t=>t.slug===slug));
@@ -143,8 +155,8 @@ try{
  // as page errors because a ResizeObserver feedback loop need not throw.
  for(const [width,height] of [[320,320],[390,360],[390,400],[390,420],[390,440]].filter(matchesWidth)){
   const tag=`large-photo ${width}x${height}`,context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
-  const page=await context.newPage();await page.route('https://**/*',r=>r.abort());
-  await page.goto(`${baseURL}/viajes/asturias/`);await page.evaluate(()=>document.fonts.ready);
+  await context.route('https://**/*',r=>r.abort());await intercept(context);const page=await context.newPage();
+  await page.goto(`${baseURL}/viajes/qa-multiple/`);await page.evaluate(()=>document.fonts.ready);
   await page.evaluate(()=>{const all=[...document.querySelectorAll('body,body *')],sizes=all.map(e=>parseFloat(getComputedStyle(e).fontSize));all.forEach((e,i)=>e.style.fontSize=`${sizes[i]*2}px`);});
   const opener=page.locator('[data-photo="1"]');await opener.scrollIntoViewIfNeeded();const reading=await page.evaluate(()=>scrollY);await opener.click();await page.waitForTimeout(100);
   const states=[];
@@ -160,15 +172,16 @@ try{
  }
  for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1440,900,1],[320,320,1],[390,360,1],[390,480,2],[320,740,2],[320,320,2],[390,360,2],[390,420,2]].filter(matchesWidth)){
   const tag=`long-dates ${width}x${height} text${zoom*100}`,context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
-  await context.route('**/viajes/asturias/',r=>r.fulfill({contentType:'text/html',body:fixtureHTML}));
   await context.route('https://**/*',async r=>{report.whatsapp.push({tag,url:r.request().url()});await r.fulfill({contentType:'text/plain',body:'Local interception. No message sent.'});});
   if(process.env.LST_DIALOG_BASELINE)for(const file of ['trip.css','trip.js'])await context.route(`**/${file}`,r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist',file)}));
+  await intercept(context);
+  await context.route('**/viajes/qa-multiple/',r=>r.fulfill({contentType:'text/html',body:fixtureHTML}));
   const page=await context.newPage();page.setDefaultTimeout(5000);
-  try{await page.goto(`${baseURL}/viajes/asturias/`);await page.evaluate(()=>document.fonts.ready);
+  try{await page.goto(`${baseURL}/viajes/qa-multiple/`);await page.evaluate(()=>document.fonts.ready);
    if(zoom===2)await page.evaluate(()=>{const all=[...document.querySelectorAll('body,body *')],sizes=all.map(e=>parseFloat(getComputedStyle(e).fontSize));all.forEach((e,i)=>e.style.fontSize=`${sizes[i]*2}px`);});
    await dates(page,context,tag,true);
   }catch(e){console.error(tag,e.stack);report.issues.push({name:tag+' execution',detail:e.message});await page.screenshot({path:path.join(output,tag.replaceAll(' ','-')+'-failure.png')}).catch(()=>{});}
   await context.close();
  }
  check('no uncaught page errors',report.errors.length===0,report.errors);
-}finally{await browser.close();fs.rmSync(fixture,{recursive:true,force:true});fs.writeFileSync(path.join(output,'verification.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({checks:report.checks.length,issues:report.issues,whatsapp:report.whatsapp.length,touch:report.touch.length},null,2));if(report.issues.length)process.exitCode=1;}
+}finally{await browser.close();fs.writeFileSync(path.join(output,'verification.json'),JSON.stringify(report,null,2));console.log(JSON.stringify({checks:report.checks.length,issues:report.issues,whatsapp:report.whatsapp.length,touch:report.touch.length},null,2));if(report.issues.length)process.exitCode=1;}

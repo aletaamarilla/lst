@@ -1,0 +1,293 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "method": "Same current check-levels.mjs harness, same snapshot and Chromium runtime, original committed dist served on 4176; candidate served on 4175. Full 1412-assertion matrix run on both.",
+  "baseChecks": 1412,
+  "candidateChecks": 1412,
+  "identicalIssueRecords": true,
+  "baseIssues": 28,
+  "candidateIssues": 28,
+  "issues": [
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "El PalmarPlazas disponibles · 4 dic 2026 — 8 dic 2026Todos los ni",
+        "top": 67.296875,
+        "bottom": 336.28125,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "FuerteventuraPlazas disponibles · 12 feb 2027 — 16 feb 2027Nivele",
+        "top": 71.28125,
+        "bottom": 332.984375,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "HossegorPlazas disponibles · 20 nov 2026 — 22 nov 2026Niveles II–",
+        "top": 56.984375,
+        "bottom": 346.109375,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · Semana SantaPlazas disponibles · 21 mar 2027 — 28 mar ",
+        "top": -5.890625,
+        "bottom": 409.65625,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · PascuaPlazas disponibles · 28 mar 2027 — 4 abr 2027Niv",
+        "top": 20.65625,
+        "bottom": 383.0625,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 1–2Plazas disponibles · 17 ene 2027 — 24 ene 20",
+        "top": 51.0625,
+        "bottom": 353.046875,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 3Plazas disponibles · 24 ene 2027 — 31 ene 2027",
+        "top": 41.046875,
+        "bottom": 363.171875,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x320-text100 keyboard focus visible",
+      "detail": {
+        "text": "SenegalPlazas disponibles · 28 feb 2027 — 7 mar 2027Nivel II · Ha",
+        "top": 57.171875,
+        "bottom": 346.296875,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · Semana SantaPlazas disponibles · 21 mar 2027 — 28 mar ",
+        "top": 83.09375,
+        "bottom": 385.078125,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "390x360-text100 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 3Plazas disponibles · 24 ene 2027 — 31 ene 2027",
+        "top": 80.765625,
+        "bottom": 362.609375,
+        "header": 71,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "El PalmarPlazas disponibles · 4 dic 2026 — 8 dic 2026Todos los ni",
+        "top": -24.03125,
+        "bottom": 911.015625,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "FuerteventuraPlazas disponibles · 12 feb 2027 — 16 feb 2027Nivele",
+        "top": 36.015625,
+        "bottom": 850.171875,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "HossegorPlazas disponibles · 20 nov 2026 — 22 nov 2026Niveles II–",
+        "top": -71.828125,
+        "bottom": 958.40625,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · Semana SantaPlazas disponibles · 21 mar 2027 — 28 mar ",
+        "top": -251.59375,
+        "bottom": 1137.828125,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · PascuaPlazas disponibles · 28 mar 2027 — 4 abr 2027Niv",
+        "top": -198.171875,
+        "bottom": 1084.953125,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 1–2Plazas disponibles · 17 ene 2027 — 24 ene 20",
+        "top": -57.046875,
+        "bottom": 944,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 3Plazas disponibles · 24 ene 2027 — 31 ene 2027",
+        "top": -125,
+        "bottom": 1011.53125,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "320x740-text200 keyboard focus visible",
+      "detail": {
+        "text": "SenegalPlazas disponibles · 28 feb 2027 — 7 mar 2027Nivel II · Ha",
+        "top": -31.46875,
+        "bottom": 918.171875,
+        "header": 133.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · Semana SantaPlazas disponibles · 21 mar 2027 — 28 mar ",
+        "top": 92.046875,
+        "bottom": 1027.09375,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · PascuaPlazas disponibles · 28 mar 2027 — 4 abr 2027Niv",
+        "top": 54.09375,
+        "bottom": 882.84375,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 1–2Plazas disponibles · 17 ene 2027 — 24 ene 20",
+        "top": 61.84375,
+        "bottom": 876,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "390x844-text200 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 3Plazas disponibles · 24 ene 2027 — 31 ene 2027",
+        "top": 1,
+        "bottom": 936.046875,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "detail": {
+        "text": "HossegorPlazas disponibles · 20 nov 2026 — 22 nov 2026Niveles II–",
+        "top": 17.21875,
+        "bottom": 1098.859375,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · Semana SantaPlazas disponibles · 21 mar 2027 — 28 mar ",
+        "top": 17.21875,
+        "bottom": 1098.859375,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "detail": {
+        "text": "Maldivas · PascuaPlazas disponibles · 28 mar 2027 — 4 abr 2027Niv",
+        "top": 50.859375,
+        "bottom": 1066.5,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 1–2Plazas disponibles · 17 ene 2027 — 24 ene 20",
+        "top": 50.859375,
+        "bottom": 1066.5,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "detail": {
+        "text": "Marruecos · nivel 3Plazas disponibles · 24 ene 2027 — 31 ene 2027",
+        "top": 50.5,
+        "bottom": 1066.140625,
+        "header": 79.296875,
+        "visible": false
+      }
+    },
+    {
+      "name": "768x1024-text200 keyboard focus visible",
+      "detail": {
+        "text": "SenegalPlazas disponibles · 28 feb 2027 — 7 mar 2027Nivel II · Ha",
+        "top": 50.5,
+        "bottom": 1066.140625,
+        "header": 79.296875,
+        "visible": false
+      }
+    }
+  ],
+  "basePageErrors": [],
+  "candidatePageErrors": []
+}

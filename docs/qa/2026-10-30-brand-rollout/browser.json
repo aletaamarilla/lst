@@ -1,0 +1,1567 @@
+{
+  "views": [
+    {
+      "route": "/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿Te vienesa surfear?",
+      "width": 320
+    },
+    {
+      "route": "/conocenos/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Tú traelas ganas.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/el-palmar-2026-12-04/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/el-palmar/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/fuerteventura-2027-02-12/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/fuerteventura/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/hossegor-2026-11-20/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/hossegor/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/maldivas-2027-03-21/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/maldivas-2027-03-28/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/maldivas/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/marruecos-2027-01-17/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/marruecos-2027-01-24/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/marruecos-avanzado/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/marruecos/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/senegal-2027-02-28/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal.",
+      "width": 320
+    },
+    {
+      "route": "/inscripciones/senegal/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal.",
+      "width": 320
+    },
+    {
+      "route": "/niveles/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿En qué olaestás tú?",
+      "width": 320
+    },
+    {
+      "route": "/preguntas-frecuentes/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Antes del baño,las cosas claras.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Busca tupróxima ola.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/asturias/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 320,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/azores/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 320,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/cadiz/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 320,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/el-palmar-2026-12-04/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar",
+      "width": 320
+    },
+    {
+      "route": "/viajes/el-palmar/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar",
+      "width": 320
+    },
+    {
+      "route": "/viajes/el-salvador/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 320,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/euskadi/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 320,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 320
+    },
+    {
+      "route": "/viajes/fuerteventura-2027-02-12/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura",
+      "width": 320
+    },
+    {
+      "route": "/viajes/fuerteventura/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura",
+      "width": 320
+    },
+    {
+      "route": "/viajes/hossegor-2026-11-20/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor",
+      "width": 320
+    },
+    {
+      "route": "/viajes/hossegor/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor",
+      "width": 320
+    },
+    {
+      "route": "/viajes/maldivas-2027-03-21/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 320
+    },
+    {
+      "route": "/viajes/maldivas-2027-03-28/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 320
+    },
+    {
+      "route": "/viajes/maldivas/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 320
+    },
+    {
+      "route": "/viajes/marruecos-2027-01-17/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 320
+    },
+    {
+      "route": "/viajes/marruecos-2027-01-24/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado",
+      "width": 320
+    },
+    {
+      "route": "/viajes/marruecos-avanzado/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado",
+      "width": 320
+    },
+    {
+      "route": "/viajes/marruecos/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 320
+    },
+    {
+      "route": "/viajes/senegal-2027-02-28/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal",
+      "width": 320
+    },
+    {
+      "route": "/viajes/senegal/",
+      "testWidth": 320,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 305,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal",
+      "width": 320
+    },
+    {
+      "route": "/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿Te vienesa surfear?",
+      "width": 390
+    },
+    {
+      "route": "/conocenos/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Tú traelas ganas.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/el-palmar-2026-12-04/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/el-palmar/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/fuerteventura-2027-02-12/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/fuerteventura/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/hossegor-2026-11-20/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/hossegor/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/maldivas-2027-03-21/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/maldivas-2027-03-28/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/maldivas/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/marruecos-2027-01-17/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/marruecos-2027-01-24/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/marruecos-avanzado/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/marruecos/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/senegal-2027-02-28/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal.",
+      "width": 390
+    },
+    {
+      "route": "/inscripciones/senegal/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal.",
+      "width": 390
+    },
+    {
+      "route": "/niveles/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿En qué olaestás tú?",
+      "width": 390
+    },
+    {
+      "route": "/preguntas-frecuentes/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Antes del baño,las cosas claras.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Busca tupróxima ola.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/asturias/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 390,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/azores/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 390,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/cadiz/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 390,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/el-palmar-2026-12-04/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar",
+      "width": 390
+    },
+    {
+      "route": "/viajes/el-palmar/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar",
+      "width": 390
+    },
+    {
+      "route": "/viajes/el-salvador/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 390,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/euskadi/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 390,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 390
+    },
+    {
+      "route": "/viajes/fuerteventura-2027-02-12/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura",
+      "width": 390
+    },
+    {
+      "route": "/viajes/fuerteventura/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura",
+      "width": 390
+    },
+    {
+      "route": "/viajes/hossegor-2026-11-20/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor",
+      "width": 390
+    },
+    {
+      "route": "/viajes/hossegor/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor",
+      "width": 390
+    },
+    {
+      "route": "/viajes/maldivas-2027-03-21/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 390
+    },
+    {
+      "route": "/viajes/maldivas-2027-03-28/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 390
+    },
+    {
+      "route": "/viajes/maldivas/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 390
+    },
+    {
+      "route": "/viajes/marruecos-2027-01-17/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 390
+    },
+    {
+      "route": "/viajes/marruecos-2027-01-24/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado",
+      "width": 390
+    },
+    {
+      "route": "/viajes/marruecos-avanzado/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado",
+      "width": 390
+    },
+    {
+      "route": "/viajes/marruecos/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 390
+    },
+    {
+      "route": "/viajes/senegal-2027-02-28/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal",
+      "width": 390
+    },
+    {
+      "route": "/viajes/senegal/",
+      "testWidth": 390,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 375,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal",
+      "width": 390
+    },
+    {
+      "route": "/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿Te vienesa surfear?",
+      "width": 1440
+    },
+    {
+      "route": "/conocenos/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Tú traelas ganas.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/el-palmar-2026-12-04/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/el-palmar/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/fuerteventura-2027-02-12/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/fuerteventura/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/hossegor-2026-11-20/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/hossegor/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/maldivas-2027-03-21/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/maldivas-2027-03-28/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/maldivas/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/marruecos-2027-01-17/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/marruecos-2027-01-24/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/marruecos-avanzado/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/marruecos/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/senegal-2027-02-28/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal.",
+      "width": 1440
+    },
+    {
+      "route": "/inscripciones/senegal/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal.",
+      "width": 1440
+    },
+    {
+      "route": "/niveles/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿En qué olaestás tú?",
+      "width": 1440
+    },
+    {
+      "route": "/preguntas-frecuentes/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Antes del baño,las cosas claras.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Busca tupróxima ola.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/asturias/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1440,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/azores/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1440,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/cadiz/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1440,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/el-palmar-2026-12-04/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/el-palmar/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/el-salvador/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1440,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/euskadi/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1440,
+      "header": "sticky",
+      "headingFont": "\"Work Sans\", Arial, sans-serif",
+      "overflow": [],
+      "title": "Este viaje no está publicado.",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/fuerteventura-2027-02-12/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/fuerteventura/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Fuerteventura",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/hossegor-2026-11-20/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/hossegor/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Hossegor",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/maldivas-2027-03-21/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/maldivas-2027-03-28/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/maldivas/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Maldivas",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/marruecos-2027-01-17/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/marruecos-2027-01-24/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/marruecos-avanzado/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos avanzado",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/marruecos/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/senegal-2027-02-28/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal",
+      "width": 1440
+    },
+    {
+      "route": "/viajes/senegal/",
+      "testWidth": 1440,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 1425,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Senegal",
+      "width": 1440
+    },
+    {
+      "route": "/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿Te vienesa surfear?",
+      "width": 768
+    },
+    {
+      "route": "/viajes/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Busca tupróxima ola.",
+      "width": 768
+    },
+    {
+      "route": "/niveles/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "¿En qué olaestás tú?",
+      "width": 768
+    },
+    {
+      "route": "/conocenos/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Tú traelas ganas.",
+      "width": 768
+    },
+    {
+      "route": "/preguntas-frecuentes/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "fixed",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Antes del baño,las cosas claras.",
+      "width": 768
+    },
+    {
+      "route": "/viajes/marruecos/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "absolute",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "Marruecos",
+      "width": 768
+    },
+    {
+      "route": "/inscripciones/el-palmar/",
+      "testWidth": 768,
+      "bodyFont": "\"Work Sans\", Arial, sans-serif",
+      "documentWidth": 753,
+      "header": "relative",
+      "headingFont": "Aura, Impact, sans-serif",
+      "overflow": [],
+      "title": "El Palmar.",
+      "width": 768
+    }
+  ],
+  "checks": [
+    {
+      "name": "FAQ teclado, ocho respuestas independientes, foco y lectura a 320",
+      "answerLineHeight": "29.6px",
+      "open": 8,
+      "outline": "rgb(27, 27, 27) solid 3px",
+      "overflow": false,
+      "questionFont": "\"Work Sans\", Arial, sans-serif",
+      "summaryFocus": "SUMMARY"
+    },
+    {
+      "name": "Ancla FAQ respeta cabecera",
+      "header": 78,
+      "title": 98.640625
+    },
+    {
+      "name": "Menú móvil con teclado y Escape",
+      "menuOpen": "true",
+      "menuFocus": {
+        "rect": {
+          "bottom": 138,
+          "height": 49,
+          "left": 22,
+          "right": 283,
+          "top": 89,
+          "width": 261,
+          "x": 22,
+          "y": 89
+        },
+        "text": "Ver viajes"
+      },
+      "menuClose": {
+        "expanded": "false",
+        "focus": "menu-toggle"
+      }
+    },
+    {
+      "name": "Barra de reserva y WhatsApp circular a 320",
+      "bodyPadding": "144.688px",
+      "buttons": [
+        {
+          "name": "Elegir fecha",
+          "rect": {
+            "bottom": 722.84375,
+            "height": 48,
+            "left": 132,
+            "right": 236,
+            "top": 674.84375,
+            "width": 104,
+            "x": 132,
+            "y": 674.84375
+          }
+        },
+        {
+          "name": "Hablar por WhatsApp · Maldivas, por WhatsApp",
+          "rect": {
+            "bottom": 720.84375,
+            "height": 44,
+            "left": 244,
+            "right": 288,
+            "top": 676.84375,
+            "width": 44,
+            "x": 244,
+            "y": 676.84375
+          }
+        }
+      ],
+      "dock": {
+        "bottom": 760,
+        "height": 144.6875,
+        "left": 0,
+        "right": 305,
+        "top": 615.3125,
+        "width": 305,
+        "x": 0,
+        "y": 615.3125
+      },
+      "radius": "50%",
+      "secondaryNav": 0,
+      "whatsapp": {
+        "bottom": 720.84375,
+        "height": 44,
+        "left": 244,
+        "right": 288,
+        "top": 676.84375,
+        "width": 44,
+        "x": 244,
+        "y": 676.84375
+      }
+    },
+    {
+      "name": "Selector de fechas, Escape y retorno de foco",
+      "modal": {
+        "focus": "Cerrar ×",
+        "overflow": false,
+        "rect": {
+          "bottom": 760,
+          "height": 699.1875,
+          "left": 0,
+          "right": 320,
+          "top": 60.8125,
+          "width": 320,
+          "x": 0,
+          "y": 60.8125
+        }
+      },
+      "restored": {
+        "dialogOpen": false,
+        "focus": "button dock-cta"
+      }
+    },
+    {
+      "name": "Inscripción paso1 validación, datos y selección surf sin envío",
+      "choice": {
+        "background": "rgb(27, 27, 27)",
+        "checked": true,
+        "color": "rgb(255, 250, 231)",
+        "rect": {
+          "bottom": 398.734375,
+          "height": 53,
+          "left": 20,
+          "right": 285,
+          "top": 345.734375,
+          "width": 265,
+          "x": 20,
+          "y": 345.734375
+        }
+      },
+      "selectedDeparture": "maldivas-2027-03-21",
+      "status": "Avance a paso4; no se ha enviado el formulario"
+    },
+    {
+      "name": "Inscripción cinco pasos y vuelta atrás",
+      "result": "Paso5 alcanzado, atrás conserva elecciones; sin pulsar envío final"
+    },
+    {
+      "name": "Atrás conserva talla",
+      "checked": true
+    },
+    {
+      "name": "Menú en pantalla baja 320x500",
+      "rect": {
+        "bottom": 355.390625,
+        "height": 46.390625,
+        "left": 22,
+        "right": 124.25,
+        "top": 309,
+        "width": 102.25,
+        "x": 22,
+        "y": 309
+      },
+      "viewport": 500
+    },
+    {
+      "name": "Barra de reserva en pantalla baja 320x500",
+      "bodyPadding": "0px",
+      "class": "trip-dock",
+      "height": 144.6875,
+      "position": "static",
+      "viewport": 500
+    }
+  ],
+  "issues": [],
+  "notes": [
+    "Navegador integrado de Codex; sin envío de formularios ni apertura de WhatsApp."
+  ]
+}

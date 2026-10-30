@@ -1,0 +1,32 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "scope": [
+    "scripts/render-trips.mjs (presentation changes only)",
+    "scripts/trip-experience.mjs (new)",
+    "scripts/trip-experience.test.mjs (new)",
+    "dist/trip-detail.css"
+  ],
+  "hashes": {
+    "scripts/render-trips.mjs": "2977c6c8b76f4d3697dfde88a4cfd0a617606da4255be01a376a986556181f66",
+    "scripts/trip-experience.mjs": "68db8f24d14b6249ffd6670a110f5105b91fed6acfaeacb3940c7611b0ef6d63",
+    "scripts/trip-experience.test.mjs": "b891d0634b27f0ecba8511ca688e99cc418aac383870492aef55ca83b7ccfd99",
+    "dist/trip-detail.css": "e609b147ccb1bf0e7ea2269506f83eaac8a78cc5eb861b5b920b4a6fb5f6b6e2",
+    "dist/trip.css": "234d33645809254b0092ea1baf699f47f1e91094600dff8872533488db4da08a",
+    "dist/trip.js": "478a2efabef466859b7c0952e75ec034f4331009e8660ba0fac8d3b05d1e1b09"
+  },
+  "designOnlyTemplate": "c409315190075f8c5df8743b8bf1c94b73c9935f98342af70f5f9efb2b9b4a14",
+  "concurrent": "Final render-trips also contains additive registration links from separate Brevo work, preserved and excluded from this task.patch. Earlier tests fixtures were adapted concurrently by that work.",
+  "checks": {
+    "unit": 91,
+    "browserMatrix": 667,
+    "presentation": 82,
+    "publicPages": 38,
+    "previewPages": 38,
+    "published": false
+  },
+  "preserved": {
+    "tripCss": true,
+    "tripJs": true
+  }
+}

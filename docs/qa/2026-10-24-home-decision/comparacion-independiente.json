@@ -1,0 +1,45 @@
+{
+  "heroHtmlEqual": true,
+  "heroSectionsFound": true,
+  "levelsHtmlEqual": true,
+  "heroRulesEqual": true,
+  "levelRulesEqual": true,
+  "generatedTripsEqual": true,
+  "markersStart": 1,
+  "markersEnd": 1,
+  "experienceCount": 1,
+  "unchangedFiles": [
+    {
+      "file": "dist/app.js",
+      "equal": true
+    },
+    {
+      "file": "dist/home.js",
+      "equal": true
+    },
+    {
+      "file": "scripts/render-home-trips.mjs",
+      "equal": true
+    }
+  ],
+  "finalContent": {
+    "quoteGridEqual": true,
+    "faqDetailsEqual": true,
+    "heroHtmlEqual": true,
+    "levelsHtmlEqual": true
+  },
+  "finalHashes": [
+    {
+      "file": "dist/index.html",
+      "sha256": "bb7203556cf4fa0f67a0b9b1185c60e018eacbd395b9514b3570d34363bc4f9b"
+    },
+    {
+      "file": "dist/home.css",
+      "sha256": "63317e28e832b71e08177119ce6dff11df3c645b805ebe67653ffa4d3fc1afee"
+    },
+    {
+      "file": "scripts/check-home-browser.mjs",
+      "sha256": "bd733ca29e97980990c3bfe4370599a54a19bb0770d08fa4b6f95a0df47e0443"
+    }
+  ]
+}

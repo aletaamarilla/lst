@@ -1,0 +1,70 @@
+{
+  "views": [
+    {
+      "kind": "about",
+      "width": 320,
+      "mode": "text200",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(255, 250, 231)",
+        "bg": "rgba(0, 0, 0, 0)"
+      }
+    },
+    {
+      "kind": "faq",
+      "width": 320,
+      "mode": "text200",
+      "closed": {
+        "width": 320,
+        "overflow": []
+      },
+      "answersOpen": 8,
+      "open": {
+        "width": 320,
+        "overflow": []
+      },
+      "menuOpen": true,
+      "menuClosed": true,
+      "headerScrolled": {
+        "top": 0,
+        "position": "fixed",
+        "color": "rgb(27, 27, 27)",
+        "bg": "rgb(255, 250, 231)"
+      }
+    }
+  ],
+  "errors": [],
+  "issues": [],
+  "contrasts": [],
+  "hashes": [
+    {
+      "file": "dist/landing.css",
+      "sha256": "0e1098510b885ea3f97b54cd271cec8be5d13b7ecb467d9d872f120785f5b649"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "01514f59d546c007b38e22f8da2956dabe1ef4f1f4e7753dea5bb214d5d6f5a6"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "63624ede0a76dd021b60cb4435f70a37fff0f985cb12b72ff9c9e15daea014d7"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "8364fddaa8bf2972c3d4824d3a91b558973517f7ac2e33cc6e9704d6e98c2984"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "002662ade0c79aa7c8047747fdb547b6b25e088d74b0b0d8553075245f4197bf"
+    }
+  ],
+  "sameFaqQuestions": true,
+  "sameFaqAnswerTargets": true
+}

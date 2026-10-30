@@ -1,0 +1,1240 @@
+{
+  "hashes": {
+    "dist/index.html": "7373bdda8e37a6a95403dfd7f7cd7d4914a1b7b1b0245a4eebb92ee3583f6a2d",
+    "dist/home.css": "1b6c839b93039053de9fb2c57292fb1e39b1bfaf1d209262bdc6607ecf76b47d",
+    "scripts/render-home-trips.mjs": "97fb798404e4990cd01166e66d3d503dc90967faefe187d70003bda2e5458903",
+    "scripts/home-trips.test.mjs": "04e911ba495e74ab59ca1b53a6a5b7efc140e3d99f25dd3963bbb054af754396",
+    "scripts/check-home-browser.mjs": "beeaa96b8cb0721c71c7db4bb7054da204bd3d45d1819d75b10cb09caf982bf5"
+  },
+  "pages": [
+    {
+      "width": 320,
+      "controls": [
+        {
+          "text": "Saltar al contenido",
+          "href": "#contenido",
+          "height": 54.390625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 176,
+          "clientWidth": 176
+        },
+        {
+          "text": "",
+          "href": "/",
+          "height": 20.515625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 126,
+          "clientWidth": 126
+        },
+        {
+          "text": "Ver viajes ↗",
+          "href": "#viajes",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 88,
+          "clientWidth": 88
+        },
+        {
+          "text": "Ver viajes ↗",
+          "href": "#viajes",
+          "height": 54,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 127,
+          "clientWidth": 127
+        },
+        {
+          "text": "Ver todos ↗",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 103,
+          "clientWidth": 103
+        },
+        {
+          "text": "Ver viaje ↗399 €por persona",
+          "href": "/viajes/hossegor-2026-11-20/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗699 €por persona",
+          "href": "/viajes/el-palmar-2026-12-04/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗899 €por persona",
+          "href": "/viajes/marruecos-2027-01-17/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗899 €por persona",
+          "href": "/viajes/marruecos-2027-01-24/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗699 €por persona",
+          "href": "/viajes/fuerteventura-2027-02-12/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗1.299 €por persona",
+          "href": "/viajes/senegal-2027-02-28/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗1.499 €por persona",
+          "href": "/viajes/maldivas-2027-03-21/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "Ver viaje ↗1.499 €por persona",
+          "href": "/viajes/maldivas-2027-03-28/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 262,
+          "clientWidth": 262
+        },
+        {
+          "text": "?¿Dudas con tu nivel? ↓",
+          "href": "#niveles",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 231,
+          "clientWidth": 231
+        },
+        {
+          "text": "Guía de niveles ↗",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 160,
+          "clientWidth": 160
+        },
+        {
+          "text": "NIVEL I↗RookiesEmpiezas en espumas y olas pequeñas.Ver viajes ↗",
+          "href": "/viajes/?nivel=1",
+          "height": 318.5625,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 135,
+          "clientWidth": 135
+        },
+        {
+          "text": "NIVEL II↗AprendicesYa coges olas verdes y recorres la pared.Ver viajes ↗",
+          "href": "/viajes/?nivel=2",
+          "height": 318.5625,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 135,
+          "clientWidth": 135
+        },
+        {
+          "text": "NIVEL III↗RidersTienes autonomía y enlazas maniobras.Ver viajes ↗",
+          "href": "/viajes/?nivel=3",
+          "height": 297.125,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 135,
+          "clientWidth": 135
+        },
+        {
+          "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y pules tu técnica.Ver viajes ↗",
+          "href": "/viajes/?nivel=4",
+          "height": 297.125,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 135,
+          "clientWidth": 135
+        },
+        {
+          "text": "Escríbenos al WhatsApp",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 151,
+          "clientWidth": 151
+        },
+        {
+          "text": "Conoce nuestra historia ↗",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "text": "Ver opiniones en LST ↗",
+          "href": "https://www.letsurftogether.com/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "text": "Todas las preguntas ↗",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 174,
+          "clientWidth": 174
+        },
+        {
+          "text": "Guía de niveles ↗",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 160,
+          "clientWidth": 160
+        },
+        {
+          "text": "Ver todos los viajes ↗",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 186,
+          "clientWidth": 186
+        },
+        {
+          "text": "Hablar por WhatsApp ↗",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 54,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "text": "Ver viajes y fechas ↗",
+          "href": "/viajes/",
+          "height": 48,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 206,
+          "clientWidth": 206
+        },
+        {
+          "text": "Pregúntanos por WhatsApp",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 240,
+          "clientWidth": 240
+        },
+        {
+          "text": "",
+          "href": "/",
+          "height": 34.203125,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 210,
+          "clientWidth": 210
+        },
+        {
+          "text": "Viajes",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 55,
+          "clientWidth": 55
+        },
+        {
+          "text": "Niveles",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        {
+          "text": "Conócenos",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "text": "FAQs",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        },
+        {
+          "text": "Cómo reservar",
+          "href": "#reservar",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 103,
+          "clientWidth": 103
+        },
+        {
+          "text": "Instagram ↗",
+          "href": "https://www.instagram.com/letsurftogether/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 95,
+          "clientWidth": 95
+        }
+      ],
+      "wa": {
+        "label": "Escríbenos al WhatsApp",
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+        "trigger": "orientacion",
+        "svg": "true"
+      },
+      "styles": {
+        ".lst-hero-actions .lst-button": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-nav-trip": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-header-trip": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-level-help": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        }
+      },
+      "focus": [
+        {
+          "text": "Ver todos ↗",
+          "outline": "rgb(234, 89, 52)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "?¿Dudas con tu nivel? ↓",
+          "outline": "rgb(234, 89, 52)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Escríbenos al WhatsApp",
+          "outline": "rgb(27, 27, 27)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Conoce nuestra historia ↗",
+          "outline": "rgb(27, 27, 27)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Todas las preguntas ↗",
+          "outline": "rgb(255, 250, 231)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Pregúntanos por WhatsApp",
+          "outline": "rgb(255, 250, 231)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        }
+      ],
+      "reflow": {
+        "viewport": 320,
+        "documentWidth": 320,
+        "failures": []
+      }
+    },
+    {
+      "width": 390,
+      "controls": [
+        {
+          "text": "Saltar al contenido",
+          "href": "#contenido",
+          "height": 54.390625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 176,
+          "clientWidth": 176
+        },
+        {
+          "text": "",
+          "href": "/",
+          "height": 24.4375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 150,
+          "clientWidth": 150
+        },
+        {
+          "text": "Ver viajes ↗",
+          "href": "#viajes",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 98,
+          "clientWidth": 98
+        },
+        {
+          "text": "Ver viajes ↗",
+          "href": "#viajes",
+          "height": 54,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 142,
+          "clientWidth": 142
+        },
+        {
+          "text": "Ver todos ↗",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 103,
+          "clientWidth": 103
+        },
+        {
+          "text": "Ver viaje ↗399 €por persona",
+          "href": "/viajes/hossegor-2026-11-20/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗699 €por persona",
+          "href": "/viajes/el-palmar-2026-12-04/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗899 €por persona",
+          "href": "/viajes/marruecos-2027-01-17/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗899 €por persona",
+          "href": "/viajes/marruecos-2027-01-24/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗699 €por persona",
+          "href": "/viajes/fuerteventura-2027-02-12/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗1.299 €por persona",
+          "href": "/viajes/senegal-2027-02-28/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗1.499 €por persona",
+          "href": "/viajes/maldivas-2027-03-21/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "Ver viaje ↗1.499 €por persona",
+          "href": "/viajes/maldivas-2027-03-28/",
+          "height": 83.09375,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 324,
+          "clientWidth": 324
+        },
+        {
+          "text": "?¿Dudas con tu nivel? ↓",
+          "href": "#niveles",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 231,
+          "clientWidth": 231
+        },
+        {
+          "text": "Guía de niveles ↗",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 160,
+          "clientWidth": 160
+        },
+        {
+          "text": "NIVEL I↗RookiesEmpiezas en espumas y olas pequeñas.Ver viajes ↗",
+          "href": "/viajes/?nivel=1",
+          "height": 308.3125,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "text": "NIVEL II↗AprendicesYa coges olas verdes y recorres la pared.Ver viajes ↗",
+          "href": "/viajes/?nivel=2",
+          "height": 308.3125,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "text": "NIVEL III↗RidersTienes autonomía y enlazas maniobras.Ver viajes ↗",
+          "href": "/viajes/?nivel=3",
+          "height": 308.3125,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y pules tu técnica.Ver viajes ↗",
+          "href": "/viajes/?nivel=4",
+          "height": 308.3125,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 164,
+          "clientWidth": 164
+        },
+        {
+          "text": "Escríbenos al WhatsApp",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 151,
+          "clientWidth": 151
+        },
+        {
+          "text": "Conoce nuestra historia ↗",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "text": "Ver opiniones en LST ↗",
+          "href": "https://www.letsurftogether.com/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 197,
+          "clientWidth": 197
+        },
+        {
+          "text": "Todas las preguntas ↗",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 174,
+          "clientWidth": 174
+        },
+        {
+          "text": "Guía de niveles ↗",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 160,
+          "clientWidth": 160
+        },
+        {
+          "text": "Ver todos los viajes ↗",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 186,
+          "clientWidth": 186
+        },
+        {
+          "text": "Hablar por WhatsApp ↗",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 54,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "text": "Ver viajes y fechas ↗",
+          "href": "/viajes/",
+          "height": 48,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 206,
+          "clientWidth": 206
+        },
+        {
+          "text": "Pregúntanos por WhatsApp",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 240,
+          "clientWidth": 240
+        },
+        {
+          "text": "",
+          "href": "/",
+          "height": 34.203125,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 210,
+          "clientWidth": 210
+        },
+        {
+          "text": "Viajes",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 55,
+          "clientWidth": 55
+        },
+        {
+          "text": "Niveles",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        {
+          "text": "Conócenos",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "text": "FAQs",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        },
+        {
+          "text": "Cómo reservar",
+          "href": "#reservar",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 103,
+          "clientWidth": 103
+        },
+        {
+          "text": "Instagram ↗",
+          "href": "https://www.instagram.com/letsurftogether/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 95,
+          "clientWidth": 95
+        }
+      ],
+      "wa": {
+        "label": "Escríbenos al WhatsApp",
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+        "trigger": "orientacion",
+        "svg": "true"
+      },
+      "styles": {
+        ".lst-hero-actions .lst-button": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-nav-trip": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-header-trip": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-level-help": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        }
+      },
+      "focus": [
+        {
+          "text": "Ver todos ↗",
+          "outline": "rgb(234, 89, 52)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "?¿Dudas con tu nivel? ↓",
+          "outline": "rgb(234, 89, 52)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Escríbenos al WhatsApp",
+          "outline": "rgb(27, 27, 27)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Conoce nuestra historia ↗",
+          "outline": "rgb(27, 27, 27)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Todas las preguntas ↗",
+          "outline": "rgb(255, 250, 231)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Pregúntanos por WhatsApp",
+          "outline": "rgb(255, 250, 231)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        }
+      ],
+      "reflow": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "failures": []
+      }
+    },
+    {
+      "width": 1440,
+      "controls": [
+        {
+          "text": "Saltar al contenido",
+          "href": "#contenido",
+          "height": 54.390625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 176,
+          "clientWidth": 176
+        },
+        {
+          "text": "",
+          "href": "/",
+          "height": 33.390625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 205,
+          "clientWidth": 205
+        },
+        {
+          "text": "Ver viajes",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 84,
+          "clientWidth": 84
+        },
+        {
+          "text": "Niveles",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 70,
+          "clientWidth": 70
+        },
+        {
+          "text": "Conócenos",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 94,
+          "clientWidth": 94
+        },
+        {
+          "text": "FAQs",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 56,
+          "clientWidth": 56
+        },
+        {
+          "text": "Hablamos ↗",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 110,
+          "clientWidth": 110
+        },
+        {
+          "text": "Ver viajes ↗",
+          "href": "#viajes",
+          "height": 54,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 162,
+          "clientWidth": 162
+        },
+        {
+          "text": "Ver todos ↗",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 108,
+          "clientWidth": 108
+        },
+        {
+          "text": "Ver viaje ↗399 €por persona",
+          "href": "/viajes/hossegor-2026-11-20/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗699 €por persona",
+          "href": "/viajes/el-palmar-2026-12-04/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗899 €por persona",
+          "href": "/viajes/marruecos-2027-01-17/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗899 €por persona",
+          "href": "/viajes/marruecos-2027-01-24/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗699 €por persona",
+          "href": "/viajes/fuerteventura-2027-02-12/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗1.299 €por persona",
+          "href": "/viajes/senegal-2027-02-28/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗1.499 €por persona",
+          "href": "/viajes/maldivas-2027-03-21/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "Ver viaje ↗1.499 €por persona",
+          "href": "/viajes/maldivas-2027-03-28/",
+          "height": 80.890625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 367,
+          "clientWidth": 367
+        },
+        {
+          "text": "?¿Dudas con tu nivel? ↓",
+          "href": "#niveles",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 237,
+          "clientWidth": 237
+        },
+        {
+          "text": "Guía de niveles ↗",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 165,
+          "clientWidth": 165
+        },
+        {
+          "text": "NIVEL I↗RookiesEmpiezas en espumas y olas pequeñas.Ver viajes ↗",
+          "href": "/viajes/?nivel=1",
+          "height": 274.359375,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 279,
+          "clientWidth": 279
+        },
+        {
+          "text": "NIVEL II↗AprendicesYa coges olas verdes y recorres la pared.Ver viajes ↗",
+          "href": "/viajes/?nivel=2",
+          "height": 274.359375,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 279,
+          "clientWidth": 279
+        },
+        {
+          "text": "NIVEL III↗RidersTienes autonomía y enlazas maniobras.Ver viajes ↗",
+          "href": "/viajes/?nivel=3",
+          "height": 274.359375,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 279,
+          "clientWidth": 279
+        },
+        {
+          "text": "NIVEL IV↗SupercracksSurfeas olas con fuerza y pules tu técnica.Ver viajes ↗",
+          "href": "/viajes/?nivel=4",
+          "height": 274.359375,
+          "border": "3px",
+          "decoration": "none",
+          "scrollWidth": 279,
+          "clientWidth": 279
+        },
+        {
+          "text": "Escríbenos al WhatsApp",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 156,
+          "clientWidth": 156
+        },
+        {
+          "text": "Conoce nuestra historia ↗",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 225,
+          "clientWidth": 225
+        },
+        {
+          "text": "Ver opiniones en LST ↗",
+          "href": "https://www.letsurftogether.com/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 205,
+          "clientWidth": 205
+        },
+        {
+          "text": "Todas las preguntas ↗",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 198,
+          "clientWidth": 198
+        },
+        {
+          "text": "Guía de niveles ↗",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 165,
+          "clientWidth": 165
+        },
+        {
+          "text": "Ver todos los viajes ↗",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 194,
+          "clientWidth": 194
+        },
+        {
+          "text": "Hablar por WhatsApp ↗",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 54,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 243,
+          "clientWidth": 243
+        },
+        {
+          "text": "Ver viajes y fechas ↗",
+          "href": "/viajes/",
+          "height": 48,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 210,
+          "clientWidth": 210
+        },
+        {
+          "text": "Pregúntanos por WhatsApp",
+          "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 251,
+          "clientWidth": 251
+        },
+        {
+          "text": "",
+          "href": "/",
+          "height": 35.015625,
+          "border": "0px",
+          "decoration": "none",
+          "scrollWidth": 215,
+          "clientWidth": 215
+        },
+        {
+          "text": "Viajes",
+          "href": "/viajes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 55,
+          "clientWidth": 55
+        },
+        {
+          "text": "Niveles",
+          "href": "/niveles/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 63,
+          "clientWidth": 63
+        },
+        {
+          "text": "Conócenos",
+          "href": "/conocenos/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 83,
+          "clientWidth": 83
+        },
+        {
+          "text": "FAQs",
+          "href": "/preguntas-frecuentes/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 51,
+          "clientWidth": 51
+        },
+        {
+          "text": "Cómo reservar",
+          "href": "#reservar",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 103,
+          "clientWidth": 103
+        },
+        {
+          "text": "Instagram ↗",
+          "href": "https://www.instagram.com/letsurftogether/",
+          "height": 44,
+          "border": "1px",
+          "decoration": "none",
+          "scrollWidth": 95,
+          "clientWidth": 95
+        }
+      ],
+      "wa": {
+        "label": "Escríbenos al WhatsApp",
+        "href": "https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.",
+        "trigger": "orientacion",
+        "svg": "true"
+      },
+      "styles": {
+        ".lst-hero-actions .lst-button": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-nav-trip": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-header-trip": {
+          "background": "rgb(234, 89, 52)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        },
+        ".lst-level-help": {
+          "background": "rgba(0, 0, 0, 0)",
+          "color": "rgb(27, 27, 27)",
+          "border": "rgb(234, 89, 52)"
+        }
+      },
+      "focus": [
+        {
+          "text": "Ver todos ↗",
+          "outline": "rgb(234, 89, 52)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "?¿Dudas con tu nivel? ↓",
+          "outline": "rgb(234, 89, 52)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Escríbenos al WhatsApp",
+          "outline": "rgb(27, 27, 27)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Conoce nuestra historia ↗",
+          "outline": "rgb(27, 27, 27)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Todas las preguntas ↗",
+          "outline": "rgb(255, 250, 231)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        },
+        {
+          "text": "Pregúntanos por WhatsApp",
+          "outline": "rgb(255, 250, 231)",
+          "width": "3px",
+          "active": true,
+          "visible": true
+        }
+      ],
+      "reflow": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "failures": []
+      }
+    }
+  ],
+  "errors": [],
+  "result": "PASS"
+}

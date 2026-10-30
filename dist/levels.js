@@ -1,3 +1,4 @@
+import {closeTripDates} from './home.js';
 // A visitor chooses which level to explore; this never evaluates their surfing.
 const names={rookies:['1','I','Rookies'],aprendices:['2','II','Aprendices'],riders:['3','III','Riders'],supercracks:['4','IV','Supercracks']};
 const cards=[...document.querySelectorAll('.guide-level')];
@@ -25,7 +26,10 @@ function showLevel(slug){
   else link.removeAttribute('aria-current');
  });
  filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.guideFilter===(slug??''))));
- trips.forEach(trip=>trip.hidden=!!level&&!trip.dataset.tripLevels.split(' ').includes(level[0]));
+ trips.forEach(trip=>{
+  trip.hidden=!!level&&!trip.dataset.tripLevels.split(' ').includes(level[0]);
+  if(trip.hidden)closeTripDates(trip);
+ });
  document.querySelectorAll('[data-trip-group]').forEach(group=>group.hidden=![...group.querySelectorAll('[data-trip-levels]')].some(trip=>!trip.hidden));
  const count=trips.filter(trip=>!trip.hidden).length;
  const countState=state=>trips.filter(trip=>!trip.hidden&&trip.closest('[data-trip-state]')?.dataset.tripState===state).length;

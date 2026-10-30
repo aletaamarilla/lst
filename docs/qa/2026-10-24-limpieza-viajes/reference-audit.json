@@ -1,0 +1,117 @@
+{
+  "method": "Tracked runtime, build, scripts, tests, Studio, HTML/CSS/JS/JSON searched; archived QA/docs excluded from active consumers. Dynamic build/serve/filter/asset paths inspected manually in review.",
+  "removals": [
+    {
+      "removed": "data/trips.json",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": false
+    },
+    {
+      "removed": "dist/assets/asturias-surf.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/asturias.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/azores-coast.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/azores-surf.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/azores.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/cadiz-session.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/cadiz.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/euskadi-coast.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/euskadi-stay.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/marruecos.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/salvador-17.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/salvador-18.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "dist/assets/salvador-19.webp",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": true
+    },
+    {
+      "removed": "scripts/check-catalog.mjs",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": false
+    },
+    {
+      "removed": "scripts/check-home-cards.mjs",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": false
+    },
+    {
+      "removed": "scripts/check-ux.mjs",
+      "remainingActiveReferences": [],
+      "previousTripDataReference": false
+    }
+  ],
+  "allPublicTripRoutesPreserved": true,
+  "tripRoutes": [
+    "dist/viajes/asturias/index.html",
+    "dist/viajes/azores/index.html",
+    "dist/viajes/cadiz/index.html",
+    "dist/viajes/el-palmar-2026-12-04/index.html",
+    "dist/viajes/el-salvador/index.html",
+    "dist/viajes/euskadi/index.html",
+    "dist/viajes/fuerteventura-2027-02-12/index.html",
+    "dist/viajes/hossegor-2026-11-20/index.html",
+    "dist/viajes/index.html",
+    "dist/viajes/maldivas-2027-03-21/index.html",
+    "dist/viajes/maldivas-2027-03-28/index.html",
+    "dist/viajes/marruecos-2027-01-17/index.html",
+    "dist/viajes/marruecos-2027-01-24/index.html",
+    "dist/viajes/marruecos/index.html",
+    "dist/viajes/senegal-2027-02-28/index.html"
+  ],
+  "guideAndSnapshotIdenticalToBase": {
+    "dist/niveles/index.html": "4c6b92139d3b76e6afc50fb756f288bdcd3e3965fddc70207d8f54f56e169be8",
+    "dist/levels.css": "92b45157970f9944c8891c5ae898e8b85cb3b4df98e4ae5df4c6566ee67317cb",
+    "dist/levels.js": "41664d5553c01d90eec28e7e671216f353994f0506f08fdba340e0b692cfbf27",
+    "dist/app.js": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3",
+    "dist/styles.css": "32cf90e36f701b81b4dfa9abe49f9a3c83857b89d2e1095bca9d5b66d101a098",
+    "dist/catalog-snapshot.json": "5d157729afa056f047a02fd74dc2545eb3d0e6222b663914a26105f7e9add8aa"
+  },
+  "sanityMutationsExecuted": false
+}

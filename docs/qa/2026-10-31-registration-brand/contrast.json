@@ -1,0 +1,413 @@
+{
+  "text": [
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(27, 27, 27)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(255, 250, 231)",
+      "fontSize": "80px",
+      "fontWeight": "400",
+      "selector": ".registration-postcard h1",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(27, 27, 27)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(255, 250, 231)",
+      "fontSize": "10px",
+      "fontWeight": "400",
+      "selector": ".registration-postcard .eyebrow",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(27, 27, 27)",
+        "rgb(234, 89, 52)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "9px",
+      "fontWeight": "400",
+      "selector": ".registration-stamp",
+      "ratio": 4.902406414379292,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "selector": ".registration-trip-date",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(83, 81, 74)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "selector": ".registration-context-note",
+      "ratio": 7.595602539785192,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(83, 81, 74)",
+      "fontSize": "10px",
+      "fontWeight": "400",
+      "selector": ".registration-step-count",
+      "ratio": 7.595602539785192,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "56px",
+      "fontWeight": "400",
+      "selector": ".registration-section h2",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(83, 81, 74)",
+      "fontSize": "15px",
+      "fontWeight": "400",
+      "selector": ".registration-step-intro",
+      "ratio": 7.595602539785192,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(27, 27, 27)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(234, 89, 52)",
+      "fontSize": "30px",
+      "fontWeight": "400",
+      "selector": ".registration-progress button[aria-current=step] .registration-progress-number",
+      "ratio": 4.902406414379292,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(27, 27, 27)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(255, 250, 231)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "selector": ".registration-progress button[aria-current=step] .registration-progress-name",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(83, 81, 74)",
+      "fontSize": "11px",
+      "fontWeight": "400",
+      "selector": ".registration-progress button:disabled",
+      "ratio": 7.595602539785192,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(83, 81, 74)",
+      "fontSize": "10px",
+      "fontWeight": "400",
+      "selector": ".registration-date-picker summary>span:first-child",
+      "ratio": 7.595602539785192,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "16px",
+      "fontWeight": "600",
+      "selector": ".registration-date-picker summary>strong",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(27, 27, 27)"
+      ],
+      "color": "rgb(255, 250, 231)",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "selector": ".selected-date-fare",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "13px",
+      "fontWeight": "500",
+      "selector": ".date-picker-action",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "15px",
+      "fontWeight": "500",
+      "selector": ".entry__label",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgb(234, 89, 52)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "14px",
+      "fontWeight": "500",
+      "selector": ".registration-navigation .button",
+      "ratio": 4.902406414379292,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(83, 81, 74)",
+      "fontSize": "12px",
+      "fontWeight": "400",
+      "selector": ".registration-required-note",
+      "ratio": 7.595602539785192,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "34px",
+      "fontWeight": "400",
+      "selector": ".registration-support>span",
+      "ratio": 16.469911608431392,
+      "passes": true
+    },
+    {
+      "backgrounds": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 250, 231)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "color": "rgb(27, 27, 27)",
+      "fontSize": "14px",
+      "fontWeight": "400",
+      "selector": ".registration-support a",
+      "ratio": 16.469911608431392,
+      "passes": true
+    }
+  ],
+  "borderBefore": 2.49555834167607,
+  "borderAfter": 3.338660158691632
+}

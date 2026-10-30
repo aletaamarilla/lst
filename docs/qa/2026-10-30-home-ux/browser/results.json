@@ -1,0 +1,833 @@
+{
+  "checks": 259,
+  "errors": [],
+  "imageResults": [
+    {
+      "width": 320,
+      "images": [
+        {
+          "src": "http://127.0.0.1:36761/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "images": [
+        {
+          "src": "http://127.0.0.1:36761/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "images": [
+        {
+          "src": "http://127.0.0.1:36761/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "images": [
+        {
+          "src": "http://127.0.0.1:36761/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "images": [
+        {
+          "src": "http://127.0.0.1:36761/assets/home/francia-atardecer.webp",
+          "loaded": true
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        },
+        {
+          "src": "",
+          "loaded": false
+        }
+      ]
+    }
+  ],
+  "layoutResults": [
+    {
+      "label": "normal 320",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 3660.15625,
+            "bottom": 3890.15625,
+            "left": 27,
+            "right": 293,
+            "height": 230
+          },
+          "title": {
+            "top": 3831.15625,
+            "bottom": 3890.15625,
+            "left": 27,
+            "right": 293,
+            "height": 59
+          },
+          "panel": {
+            "top": 3725.15625,
+            "bottom": 3800.75,
+            "left": 37,
+            "right": 283,
+            "height": 75.59375
+          },
+          "level": {
+            "top": 3671.15625,
+            "bottom": 3701.953125,
+            "left": 38,
+            "right": 130.59375,
+            "height": 30.796875
+          },
+          "status": null,
+          "scrollHeight": 76,
+          "clientHeight": 76,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 320",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 8973.375,
+            "bottom": 9598.375,
+            "left": 27,
+            "right": 293,
+            "height": 625
+          },
+          "title": {
+            "top": 9413.375,
+            "bottom": 9598.375,
+            "left": 27,
+            "right": 293,
+            "height": 185
+          },
+          "panel": {
+            "top": 9103.375,
+            "bottom": 9303.75,
+            "left": 37,
+            "right": 283,
+            "height": 200.375
+          },
+          "level": {
+            "top": 8984.375,
+            "bottom": 9065.5625,
+            "left": 38,
+            "right": 188,
+            "height": 81.1875
+          },
+          "status": null,
+          "scrollHeight": 200,
+          "clientHeight": 200,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 390",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 3579.515625,
+            "bottom": 3809.515625,
+            "left": 31,
+            "right": 359,
+            "height": 230
+          },
+          "title": {
+            "top": 3750.515625,
+            "bottom": 3809.515625,
+            "left": 31,
+            "right": 359,
+            "height": 59
+          },
+          "panel": {
+            "top": 3644.515625,
+            "bottom": 3720.109375,
+            "left": 41,
+            "right": 349,
+            "height": 75.59375
+          },
+          "level": {
+            "top": 3590.515625,
+            "bottom": 3621.3125,
+            "left": 42,
+            "right": 134.59375,
+            "height": 30.796875
+          },
+          "status": null,
+          "scrollHeight": 76,
+          "clientHeight": 76,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 390",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 8544.609375,
+            "bottom": 9169.609375,
+            "left": 31,
+            "right": 359,
+            "height": 625
+          },
+          "title": {
+            "top": 8984.609375,
+            "bottom": 9169.609375,
+            "left": 31,
+            "right": 359,
+            "height": 185
+          },
+          "panel": {
+            "top": 8674.609375,
+            "bottom": 8874.984375,
+            "left": 41,
+            "right": 349,
+            "height": 200.375
+          },
+          "level": {
+            "top": 8555.609375,
+            "bottom": 8603.203125,
+            "left": 42,
+            "right": 207.171875,
+            "height": 47.59375
+          },
+          "status": null,
+          "scrollHeight": 200,
+          "clientHeight": 200,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 768",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2497.546875,
+            "bottom": 2757.546875,
+            "left": 403,
+            "right": 727,
+            "height": 260
+          },
+          "title": {
+            "top": 2694.546875,
+            "bottom": 2757.546875,
+            "left": 403,
+            "right": 727,
+            "height": 63
+          },
+          "panel": {
+            "top": 2562.546875,
+            "bottom": 2638.140625,
+            "left": 413,
+            "right": 717,
+            "height": 75.59375
+          },
+          "level": {
+            "top": 2508.546875,
+            "bottom": 2540.734375,
+            "left": 414,
+            "right": 512.640625,
+            "height": 32.1875
+          },
+          "status": null,
+          "scrollHeight": 76,
+          "clientHeight": 76,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 768",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 4914.40625,
+            "bottom": 5555.40625,
+            "left": 403,
+            "right": 727,
+            "height": 641
+          },
+          "title": {
+            "top": 5354.40625,
+            "bottom": 5555.40625,
+            "left": 403,
+            "right": 727,
+            "height": 201
+          },
+          "panel": {
+            "top": 5044.40625,
+            "bottom": 5244.78125,
+            "left": 413,
+            "right": 717,
+            "height": 200.375
+          },
+          "level": {
+            "top": 4925.40625,
+            "bottom": 4975.796875,
+            "left": 414,
+            "right": 591.265625,
+            "height": 50.390625
+          },
+          "status": null,
+          "scrollHeight": 200,
+          "clientHeight": 200,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 1024",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2034.8125,
+            "bottom": 2294.8125,
+            "left": 41,
+            "right": 324.328125,
+            "height": 260
+          },
+          "title": {
+            "top": 2231.8125,
+            "bottom": 2294.8125,
+            "left": 41,
+            "right": 324.328125,
+            "height": 63
+          },
+          "panel": {
+            "top": 2099.8125,
+            "bottom": 2175.40625,
+            "left": 51,
+            "right": 314.328125,
+            "height": 75.59375
+          },
+          "level": {
+            "top": 2045.8125,
+            "bottom": 2078,
+            "left": 52,
+            "right": 150.640625,
+            "height": 32.1875
+          },
+          "status": null,
+          "scrollHeight": 76,
+          "clientHeight": 76,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 1024",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 4296.3125,
+            "bottom": 4937.3125,
+            "left": 41,
+            "right": 324.328125,
+            "height": 641
+          },
+          "title": {
+            "top": 4736.3125,
+            "bottom": 4937.3125,
+            "left": 41,
+            "right": 324.328125,
+            "height": 201
+          },
+          "panel": {
+            "top": 4426.3125,
+            "bottom": 4626.6875,
+            "left": 51,
+            "right": 314.328125,
+            "height": 200.375
+          },
+          "level": {
+            "top": 4307.3125,
+            "bottom": 4394.09375,
+            "left": 52,
+            "right": 219.328125,
+            "height": 86.78125
+          },
+          "status": null,
+          "scrollHeight": 200,
+          "clientHeight": 200,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "normal 1440",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 2035.03125,
+            "bottom": 2295.03125,
+            "left": 117,
+            "right": 488.328125,
+            "height": 260
+          },
+          "title": {
+            "top": 2232.03125,
+            "bottom": 2295.03125,
+            "left": 117,
+            "right": 488.328125,
+            "height": 63
+          },
+          "panel": {
+            "top": 2100.03125,
+            "bottom": 2175.625,
+            "left": 127,
+            "right": 478.328125,
+            "height": 75.59375
+          },
+          "level": {
+            "top": 2046.03125,
+            "bottom": 2078.21875,
+            "left": 128,
+            "right": 226.640625,
+            "height": 32.1875
+          },
+          "status": null,
+          "scrollHeight": 76,
+          "clientHeight": 76,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "text 200% 1440",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 4561.078125,
+            "bottom": 5110.078125,
+            "left": 117,
+            "right": 488.328125,
+            "height": 549
+          },
+          "title": {
+            "top": 5001.078125,
+            "bottom": 5110.078125,
+            "left": 117,
+            "right": 488.328125,
+            "height": 109
+          },
+          "panel": {
+            "top": 4691.078125,
+            "bottom": 4891.453125,
+            "left": 127,
+            "right": 478.328125,
+            "height": 200.375
+          },
+          "level": {
+            "top": 4572.078125,
+            "bottom": 4622.46875,
+            "left": 128,
+            "right": 305.265625,
+            "height": 50.390625
+          },
+          "status": null,
+          "scrollHeight": 200,
+          "clientHeight": 200,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "18 departures on touch",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 432.953125,
+            "bottom": 662.953125,
+            "left": 31,
+            "right": 359,
+            "height": 230
+          },
+          "title": {
+            "top": 603.953125,
+            "bottom": 662.953125,
+            "left": 31,
+            "right": 359,
+            "height": 59
+          },
+          "panel": {
+            "top": 497.953125,
+            "bottom": 590.953125,
+            "left": 41,
+            "right": 349,
+            "height": 93
+          },
+          "level": {
+            "top": 443.953125,
+            "bottom": 474.75,
+            "left": 42,
+            "right": 162.578125,
+            "height": 30.796875
+          },
+          "status": null,
+          "scrollHeight": 696,
+          "clientHeight": 93,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 320 text 100%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 885.59375,
+            "bottom": 1115.59375,
+            "left": 27,
+            "right": 293,
+            "height": 230
+          },
+          "title": {
+            "top": 1056.59375,
+            "bottom": 1115.59375,
+            "left": 27,
+            "right": 293,
+            "height": 59
+          },
+          "panel": {
+            "top": 950.59375,
+            "bottom": 1043.59375,
+            "left": 37,
+            "right": 283,
+            "height": 93
+          },
+          "level": {
+            "top": 896.59375,
+            "bottom": 927.390625,
+            "left": 38,
+            "right": 158.578125,
+            "height": 30.796875
+          },
+          "status": null,
+          "scrollHeight": 696,
+          "clientHeight": 93,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 320 text 200%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1820.515625,
+            "bottom": 2445.515625,
+            "left": 27,
+            "right": 293,
+            "height": 625
+          },
+          "title": {
+            "top": 2260.515625,
+            "bottom": 2445.515625,
+            "left": 27,
+            "right": 293,
+            "height": 185
+          },
+          "panel": {
+            "top": 1950.515625,
+            "bottom": 2234.515625,
+            "left": 37,
+            "right": 283,
+            "height": 284
+          },
+          "level": {
+            "top": 1831.515625,
+            "bottom": 1912.703125,
+            "left": 38,
+            "right": 188,
+            "height": 81.1875
+          },
+          "status": null,
+          "scrollHeight": 1819,
+          "clientHeight": 284,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 768 text 100%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 873.546875,
+            "bottom": 1133.546875,
+            "left": 41,
+            "right": 365,
+            "height": 260
+          },
+          "title": {
+            "top": 1070.546875,
+            "bottom": 1133.546875,
+            "left": 41,
+            "right": 365,
+            "height": 63
+          },
+          "panel": {
+            "top": 938.546875,
+            "bottom": 1057.546875,
+            "left": 51,
+            "right": 355,
+            "height": 119
+          },
+          "level": {
+            "top": 884.546875,
+            "bottom": 916.734375,
+            "left": 52,
+            "right": 180.953125,
+            "height": 32.1875
+          },
+          "status": null,
+          "scrollHeight": 696,
+          "clientHeight": 119,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "long full dates 768 text 200%",
+      "cards": [
+        {
+          "name": "El Palmar",
+          "media": {
+            "top": 1257.078125,
+            "bottom": 1898.078125,
+            "left": 41,
+            "right": 365,
+            "height": 641
+          },
+          "title": {
+            "top": 1697.078125,
+            "bottom": 1898.078125,
+            "left": 41,
+            "right": 365,
+            "height": 201
+          },
+          "panel": {
+            "top": 1387.078125,
+            "bottom": 1671.078125,
+            "left": 51,
+            "right": 355,
+            "height": 284
+          },
+          "level": {
+            "top": 1268.078125,
+            "bottom": 1354.859375,
+            "left": 52,
+            "right": 260,
+            "height": 86.78125
+          },
+          "status": null,
+          "scrollHeight": 1819,
+          "clientHeight": 284,
+          "horizontalOverflow": false
+        }
+      ]
+    },
+    {
+      "label": "native dates without JavaScript",
+      "cards": [
+        {
+          "name": "Maldivas",
+          "media": {
+            "top": 437.515625,
+            "bottom": 667.515625,
+            "left": 31,
+            "right": 359,
+            "height": 230
+          },
+          "title": {
+            "top": 608.515625,
+            "bottom": 667.515625,
+            "left": 31,
+            "right": 359,
+            "height": 59
+          },
+          "panel": {
+            "top": 502.515625,
+            "bottom": 578.109375,
+            "left": 41,
+            "right": 349,
+            "height": 75.59375
+          },
+          "level": {
+            "top": 448.515625,
+            "bottom": 479.3125,
+            "left": 42,
+            "right": 134.59375,
+            "height": 30.796875
+          },
+          "status": null,
+          "scrollHeight": 76,
+          "clientHeight": 76,
+          "horizontalOverflow": false
+        }
+      ]
+    }
+  ]
+}

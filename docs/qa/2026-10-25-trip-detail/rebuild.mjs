@@ -1,0 +1,13 @@
+import {readFile} from 'node:fs/promises';
+import {isDeepStrictEqual} from 'node:util';
+import {adaptTrips} from '../../../scripts/sanity-trips.mjs';
+import {buildSite} from '../../../scripts/build.mjs';
+const raw=JSON.parse(await readFile('artifacts/early-bird-2026-10-25/sanity-published-final.json','utf8'));
+const current=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
+if(!isDeepStrictEqual(adaptTrips(raw),current)) throw Error('La copia retenida no coincide con el snapshot publicado');
+console.log('Equivalencia profunda confirmada: 8 documentos publicados / 6 destinos. Sin lectura de borradores para dist.');
+console.log(await buildSite({read:async()=>raw}));
+const retained=JSON.parse(await readFile('artifacts/early-bird-2026-10-25/sanity-drafts-after.json','utf8'));
+const preview=raw.map(p=>{const d=retained.find(d=>d._id==='drafts.'+p._id);return d?{...p,priceNote:d.priceNote,departures:p.departures.map(pd=>{const dd=d.departures.find(dd=>dd._key===pd._key);return dd?.promotions?{...pd,promotions:dd.promotions}:pd;})}:p;});
+console.log('Previsualización local aislada de promociones retenidas; ninguna escritura remota.');
+console.log(await buildSite({out:'artifacts/trip-detail-2026-10-25/preview',read:async()=>preview}));

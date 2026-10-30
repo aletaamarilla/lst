@@ -1,0 +1,1226 @@
+{
+  "projectId": "q5bj2rn2",
+  "dataset": "production",
+  "verifiedAt": "2026-10-25T17:31:18.643Z",
+  "selectionHash": "9e97a8e207e64f9a56a21257e9a622b7358d795723be8dfa491d4239f5b1bf3e",
+  "retained": 47,
+  "removed": 234,
+  "remainingFromThisImport": 47,
+  "totalImageAssets": 53,
+  "allUnrelatedDocumentsUnchanged": true,
+  "previousDocumentsChangedSinceInitialUpload": [],
+  "originalsUnchanged": true,
+  "tripContentMutation": false,
+  "publication": false,
+  "destinations": [
+    {
+      "destination": "Asturias",
+      "photos": 6
+    },
+    {
+      "destination": "Cantabria",
+      "photos": 6
+    },
+    {
+      "destination": "El Palmar · Cádiz",
+      "photos": 6
+    },
+    {
+      "destination": "Euskadi",
+      "photos": 6
+    },
+    {
+      "destination": "Francia",
+      "photos": 6
+    },
+    {
+      "destination": "Marruecos",
+      "photos": 6
+    },
+    {
+      "destination": "Marruecos · nivel 3",
+      "photos": 5
+    },
+    {
+      "destination": "Senegal",
+      "photos": 6
+    }
+  ],
+  "assets": [
+    {
+      "_id": "image-b9d21cb2c62a86bf931883f49be6081d82aec1ac-2688x1792-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQfMvN",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Asturias. Carpetas originales: ASTURIAS/Asturias_2024_02.jpg",
+      "label": "Asturias",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1792,
+          "width": 2688
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "asturias__Asturias_2024_02.jpg",
+      "sha1hash": "b9d21cb2c62a86bf931883f49be6081d82aec1ac",
+      "size": 1194618,
+      "source": {
+        "id": "b9d21cb2c62a86bf931883f49be6081d82aec1ac",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Asturias — Asturias_2024_02.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/b9d21cb2c62a86bf931883f49be6081d82aec1ac-2688x1792.jpg"
+    },
+    {
+      "_id": "image-5b6c83c233cb09f48f2e4523636111c3a16804bf-6000x4000-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQfNWp",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Asturias. Carpetas originales: ASTURIAS/Asturias_2024_15.jpg",
+      "label": "Asturias",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "asturias__Asturias_2024_15.jpg",
+      "sha1hash": "5b6c83c233cb09f48f2e4523636111c3a16804bf",
+      "size": 4302829,
+      "source": {
+        "id": "5b6c83c233cb09f48f2e4523636111c3a16804bf",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Asturias — Asturias_2024_15.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/5b6c83c233cb09f48f2e4523636111c3a16804bf-6000x4000.jpg"
+    },
+    {
+      "_id": "image-02566eb86766d2e088467cce9ec55d532d702c1e-1920x1280-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8uHbg",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Asturias. Carpetas originales: ASTURIAS/Asturias_2024_27.jpg",
+      "label": "Asturias",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1280,
+          "width": 1920
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "asturias__Asturias_2024_27.jpg",
+      "sha1hash": "02566eb86766d2e088467cce9ec55d532d702c1e",
+      "size": 809983,
+      "source": {
+        "id": "02566eb86766d2e088467cce9ec55d532d702c1e",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Asturias — Asturias_2024_27.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/02566eb86766d2e088467cce9ec55d532d702c1e-1920x1280.jpg"
+    },
+    {
+      "_id": "image-43a427982584017b357d2de4c10af4e25a43b088-1920x1280-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8uJ4q",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Asturias. Carpetas originales: ASTURIAS/Asturias_2024_32.jpg",
+      "label": "Asturias",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1280,
+          "width": 1920
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "asturias__Asturias_2024_32.jpg",
+      "sha1hash": "43a427982584017b357d2de4c10af4e25a43b088",
+      "size": 528214,
+      "source": {
+        "id": "43a427982584017b357d2de4c10af4e25a43b088",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Asturias — Asturias_2024_32.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/43a427982584017b357d2de4c10af4e25a43b088-1920x1280.jpg"
+    },
+    {
+      "_id": "image-b8c0e56127c101d77c93322548edeaa895176f3c-1920x1280-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJGYo",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Asturias. Carpetas originales: ASTURIAS/Asturias_2024_34.jpg",
+      "label": "Asturias",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1280,
+          "width": 1920
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "asturias__Asturias_2024_34.jpg",
+      "sha1hash": "b8c0e56127c101d77c93322548edeaa895176f3c",
+      "size": 630765,
+      "source": {
+        "id": "b8c0e56127c101d77c93322548edeaa895176f3c",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Asturias — Asturias_2024_34.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/b8c0e56127c101d77c93322548edeaa895176f3c-1920x1280.jpg"
+    },
+    {
+      "_id": "image-570a6cae0f36587915fc94a17303b545443ea4e0-1920x1280-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8uOsQ",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Asturias. Carpetas originales: ASTURIAS/Copy of Asturias_2024_01.jpg",
+      "label": "Asturias",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1280,
+          "width": 1920
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "asturias__Copy of Asturias_2024_01.jpg",
+      "sha1hash": "570a6cae0f36587915fc94a17303b545443ea4e0",
+      "size": 866348,
+      "source": {
+        "id": "570a6cae0f36587915fc94a17303b545443ea4e0",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Asturias — Copy of Asturias_2024_01.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/570a6cae0f36587915fc94a17303b545443ea4e0-1920x1280.jpg"
+    },
+    {
+      "_id": "image-1b785b3424c8229029ad92f25e8a4d057cdab5a3-2048x1365-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQfpaF",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Cantabria. Carpetas originales: CANTABRIA/FOTOS URI SEGUNDO GUPO/DSC06295.jpg",
+      "label": "Cantabria",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003663003663004,
+          "height": 1365,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "cantabria__DSC06295.jpg",
+      "sha1hash": "1b785b3424c8229029ad92f25e8a4d057cdab5a3",
+      "size": 532830,
+      "source": {
+        "id": "1b785b3424c8229029ad92f25e8a4d057cdab5a3",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Cantabria — DSC06295.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/1b785b3424c8229029ad92f25e8a4d057cdab5a3-2048x1365.jpg"
+    },
+    {
+      "_id": "image-666199b746e534124cf04a02ed9c319cb743afa0-2048x1365-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJOas",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Cantabria. Carpetas originales: CANTABRIA/FOTOS URI SEGUNDO GUPO/DSC06412.jpg",
+      "label": "Cantabria",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003663003663004,
+          "height": 1365,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "cantabria__DSC06412.jpg",
+      "sha1hash": "666199b746e534124cf04a02ed9c319cb743afa0",
+      "size": 580881,
+      "source": {
+        "id": "666199b746e534124cf04a02ed9c319cb743afa0",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Cantabria — DSC06412.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/666199b746e534124cf04a02ed9c319cb743afa0-2048x1365.jpg"
+    },
+    {
+      "_id": "image-db2c00e99d6c838317a8c89d71085cf9b4face80-2048x1365-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8ucBw",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Cantabria. Carpetas originales: CANTABRIA/FOTOS URI SEGUNDO GUPO/DSC06550.jpg",
+      "label": "Cantabria",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003663003663004,
+          "height": 1365,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "cantabria__DSC06550.jpg",
+      "sha1hash": "db2c00e99d6c838317a8c89d71085cf9b4face80",
+      "size": 357121,
+      "source": {
+        "id": "db2c00e99d6c838317a8c89d71085cf9b4face80",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Cantabria — DSC06550.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/db2c00e99d6c838317a8c89d71085cf9b4face80-2048x1365.jpg"
+    },
+    {
+      "_id": "image-c88c53b82d4a4838d9447ca19351f3aa78f1fdf9-2048x1365-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8urY4",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Cantabria. Carpetas originales: CANTABRIA/FOTOS URI SEGUNDO GUPO/DSC07206.jpg",
+      "label": "Cantabria",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003663003663004,
+          "height": 1365,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "cantabria__DSC07206.jpg",
+      "sha1hash": "c88c53b82d4a4838d9447ca19351f3aa78f1fdf9",
+      "size": 842004,
+      "source": {
+        "id": "c88c53b82d4a4838d9447ca19351f3aa78f1fdf9",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Cantabria — DSC07206.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/c88c53b82d4a4838d9447ca19351f3aa78f1fdf9-2048x1365.jpg"
+    },
+    {
+      "_id": "image-3b5d7bd5edd980480abd49e9c4ec25282db74f69-2048x1365-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgKev",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Cantabria. Carpetas originales: CANTABRIA/uri fotos 1 finde oyambre/DSC05978.jpg",
+      "label": "Cantabria",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003663003663004,
+          "height": 1365,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "cantabria__DSC05978.jpg",
+      "sha1hash": "3b5d7bd5edd980480abd49e9c4ec25282db74f69",
+      "size": 630602,
+      "source": {
+        "id": "3b5d7bd5edd980480abd49e9c4ec25282db74f69",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Cantabria — DSC05978.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/3b5d7bd5edd980480abd49e9c4ec25282db74f69-2048x1365.jpg"
+    },
+    {
+      "_id": "image-9f6a6842b4542c1eab20c4f5ce6cc83fccefce6f-1365x2048-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgOxF",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Cantabria. Carpetas originales: CANTABRIA/uri fotos 1 finde oyambre/DSC06251.jpg",
+      "label": "Cantabria",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 0.66650390625,
+          "height": 2048,
+          "width": 1365
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "cantabria__DSC06251.jpg",
+      "sha1hash": "9f6a6842b4542c1eab20c4f5ce6cc83fccefce6f",
+      "size": 695711,
+      "source": {
+        "id": "9f6a6842b4542c1eab20c4f5ce6cc83fccefce6f",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Cantabria — DSC06251.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/9f6a6842b4542c1eab20c4f5ce6cc83fccefce6f-1365x2048.jpg"
+    },
+    {
+      "_id": "image-deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgPQN",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: El Palmar · Cádiz. Carpetas originales: EL PALMAR- CADIZ/Cádiz_2024_13.jpg",
+      "label": "El Palmar · Cádiz",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 2000,
+          "width": 3000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "el-palmar-cadiz__Cádiz_2024_13.jpg",
+      "sha1hash": "deb7fa1d519b0a5b987727725c9757f2fd94e036",
+      "size": 758103,
+      "source": {
+        "id": "deb7fa1d519b0a5b987727725c9757f2fd94e036",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "El Palmar · Cádiz — Cádiz_2024_13.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg"
+    },
+    {
+      "_id": "image-3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJbzq",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: El Palmar · Cádiz. Carpetas originales: EL PALMAR- CADIZ/Cádiz_2024_159.jpg",
+      "label": "El Palmar · Cádiz",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "el-palmar-cadiz__Cádiz_2024_159.jpg",
+      "sha1hash": "3bad9d0c89c3c4e7a949350ab8e1217b1d415b93",
+      "size": 892975,
+      "source": {
+        "id": "3bad9d0c89c3c4e7a949350ab8e1217b1d415b93",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "El Palmar · Cádiz — Cádiz_2024_159.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg"
+    },
+    {
+      "_id": "image-7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8v3TU",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: El Palmar · Cádiz. Carpetas originales: EL PALMAR- CADIZ/Cádiz_2024_180.jpg",
+      "label": "El Palmar · Cádiz",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "el-palmar-cadiz__Cádiz_2024_180.jpg",
+      "sha1hash": "7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4",
+      "size": 5043468,
+      "source": {
+        "id": "7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "El Palmar · Cádiz — Cádiz_2024_180.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg"
+    },
+    {
+      "_id": "image-738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJdKQ",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: El Palmar · Cádiz. Carpetas originales: EL PALMAR- CADIZ/Cádiz_2024_202.jpg",
+      "label": "El Palmar · Cádiz",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 2000,
+          "width": 3000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "el-palmar-cadiz__Cádiz_2024_202.jpg",
+      "sha1hash": "738ab4859b5ced9985161a3898f57a5a93da112d",
+      "size": 1512101,
+      "source": {
+        "id": "738ab4859b5ced9985161a3898f57a5a93da112d",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "El Palmar · Cádiz — Cádiz_2024_202.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"
+    },
+    {
+      "_id": "image-75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8v3EI",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: El Palmar · Cádiz. Carpetas originales: EL PALMAR- CADIZ/Cádiz_2024_38.jpg",
+      "label": "El Palmar · Cádiz",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "el-palmar-cadiz__Cádiz_2024_38.jpg",
+      "sha1hash": "75c8c25011c079defdb25b6fc28e44ff664d45ac",
+      "size": 624877,
+      "source": {
+        "id": "75c8c25011c079defdb25b6fc28e44ff664d45ac",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "El Palmar · Cádiz — Cádiz_2024_38.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg"
+    },
+    {
+      "_id": "image-6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8v4I8",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: El Palmar · Cádiz. Carpetas originales: EL PALMAR- CADIZ/Cádiz_2024_76.jpg",
+      "label": "El Palmar · Cádiz",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "el-palmar-cadiz__Cádiz_2024_76.jpg",
+      "sha1hash": "6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4",
+      "size": 978128,
+      "source": {
+        "id": "6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "El Palmar · Cádiz — Cádiz_2024_76.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg"
+    },
+    {
+      "_id": "image-7bab21e5e27cce03421a85f731009670b6fddffc-1920x1280-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJdry",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Euskadi. Carpetas originales: EUSKADI/Laga 2024_01.jpg",
+      "label": "Euskadi",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1280,
+          "width": 1920
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "euskadi__Laga 2024_01.jpg",
+      "sha1hash": "7bab21e5e27cce03421a85f731009670b6fddffc",
+      "size": 695140,
+      "source": {
+        "id": "7bab21e5e27cce03421a85f731009670b6fddffc",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Euskadi — Laga 2024_01.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/7bab21e5e27cce03421a85f731009670b6fddffc-1920x1280.jpg"
+    },
+    {
+      "_id": "image-e7bc927bd593ee1748df902ab75fdb49a68bca97-6000x4000-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgSF9",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Euskadi. Carpetas originales: EUSKADI/Laga 2024_16.jpg",
+      "label": "Euskadi",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "euskadi__Laga 2024_16.jpg",
+      "sha1hash": "e7bc927bd593ee1748df902ab75fdb49a68bca97",
+      "size": 4914084,
+      "source": {
+        "id": "e7bc927bd593ee1748df902ab75fdb49a68bca97",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Euskadi — Laga 2024_16.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/e7bc927bd593ee1748df902ab75fdb49a68bca97-6000x4000.jpg"
+    },
+    {
+      "_id": "image-40a39da221b272cf0356f5f404889bc4b59c3054-1647x1124-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJeUg",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Euskadi. Carpetas originales: EUSKADI/Laga 2024_24.jpg",
+      "label": "Euskadi",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.4653024911032029,
+          "height": 1124,
+          "width": 1647
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "euskadi__Laga 2024_24.jpg",
+      "sha1hash": "40a39da221b272cf0356f5f404889bc4b59c3054",
+      "size": 482570,
+      "source": {
+        "id": "40a39da221b272cf0356f5f404889bc4b59c3054",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Euskadi — Laga 2024_24.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/40a39da221b272cf0356f5f404889bc4b59c3054-1647x1124.jpg"
+    },
+    {
+      "_id": "image-4d7518a7a184f04c4ebeef1250b6d1d1f5980413-1920x1280-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgSqb",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Euskadi. Carpetas originales: EUSKADI/Laga 2024_27.jpg",
+      "label": "Euskadi",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 1280,
+          "width": 1920
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "euskadi__Laga 2024_27.jpg",
+      "sha1hash": "4d7518a7a184f04c4ebeef1250b6d1d1f5980413",
+      "size": 748640,
+      "source": {
+        "id": "4d7518a7a184f04c4ebeef1250b6d1d1f5980413",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Euskadi — Laga 2024_27.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/4d7518a7a184f04c4ebeef1250b6d1d1f5980413-1920x1280.jpg"
+    },
+    {
+      "_id": "image-00fd1977aeb61d65738505f87f35eebdc7d5cca3-3000x2000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8v91s",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Euskadi. Carpetas originales: EUSKADI/Laga 2024_30.jpg",
+      "label": "Euskadi",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 2000,
+          "width": 3000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "euskadi__Laga 2024_30.jpg",
+      "sha1hash": "00fd1977aeb61d65738505f87f35eebdc7d5cca3",
+      "size": 1664432,
+      "source": {
+        "id": "00fd1977aeb61d65738505f87f35eebdc7d5cca3",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Euskadi — Laga 2024_30.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/00fd1977aeb61d65738505f87f35eebdc7d5cca3-3000x2000.jpg"
+    },
+    {
+      "_id": "image-6b964f4d7f9f2f9cd1462d58d4faae97ce2b4d05-2000x1333-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgT35",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Euskadi. Carpetas originales: EUSKADI/Laga 2024_31.jpg",
+      "label": "Euskadi",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003750937734435,
+          "height": 1333,
+          "width": 2000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "euskadi__Laga 2024_31.jpg",
+      "sha1hash": "6b964f4d7f9f2f9cd1462d58d4faae97ce2b4d05",
+      "size": 779022,
+      "source": {
+        "id": "6b964f4d7f9f2f9cd1462d58d4faae97ce2b4d05",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Euskadi — Laga 2024_31.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/6b964f4d7f9f2f9cd1462d58d4faae97ce2b4d05-2000x1333.jpg"
+    },
+    {
+      "_id": "image-a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vBt8",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Francia. Carpetas originales: FRANCIA/Francia_2024_01.Calidad.jpg",
+      "label": "Francia",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "francia__Francia_2024_01.Calidad.jpg",
+      "sha1hash": "a5fd08cab9db37c64f81fea5022e4b26f04885dc",
+      "size": 4749092,
+      "source": {
+        "id": "a5fd08cab9db37c64f81fea5022e4b26f04885dc",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Francia — Francia_2024_01.Calidad.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000.jpg"
+    },
+    {
+      "_id": "image-0b9d183d743517ae3c606bb3f8670590a6343261-6000x4000-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJfF8",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Francia. Carpetas originales: FRANCIA/Francia_2024_03.jpg",
+      "label": "Francia",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "francia__Francia_2024_03.jpg",
+      "sha1hash": "0b9d183d743517ae3c606bb3f8670590a6343261",
+      "size": 3059763,
+      "source": {
+        "id": "0b9d183d743517ae3c606bb3f8670590a6343261",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Francia — Francia_2024_03.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/0b9d183d743517ae3c606bb3f8670590a6343261-6000x4000.jpg"
+    },
+    {
+      "_id": "image-8fe534bb806e50d5162bafb968fdfd740d9a7cf5-2000x1333-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vB4U",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Francia. Carpetas originales: FRANCIA/Francia_2024_06.jpg",
+      "label": "Francia",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003750937734435,
+          "height": 1333,
+          "width": 2000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "francia__Francia_2024_06.jpg",
+      "sha1hash": "8fe534bb806e50d5162bafb968fdfd740d9a7cf5",
+      "size": 1397174,
+      "source": {
+        "id": "8fe534bb806e50d5162bafb968fdfd740d9a7cf5",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Francia — Francia_2024_06.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/8fe534bb806e50d5162bafb968fdfd740d9a7cf5-2000x1333.jpg"
+    },
+    {
+      "_id": "image-19a26fe3a9233a36ad79c03048859a4582178a4d-2000x1333-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJekA",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Francia. Carpetas originales: FRANCIA/Francia_2024_11.jpg",
+      "label": "Francia",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003750937734435,
+          "height": 1333,
+          "width": 2000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "francia__Francia_2024_11.jpg",
+      "sha1hash": "19a26fe3a9233a36ad79c03048859a4582178a4d",
+      "size": 422180,
+      "source": {
+        "id": "19a26fe3a9233a36ad79c03048859a4582178a4d",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Francia — Francia_2024_11.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/19a26fe3a9233a36ad79c03048859a4582178a4d-2000x1333.jpg"
+    },
+    {
+      "_id": "image-b1c437b2ec42f515b154a43399de8dd6defd1e07-2000x3000-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJfuQ",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Francia. Carpetas originales: FRANCIA/Francia_2024_30.jpg",
+      "label": "Francia",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 0.6666666666666666,
+          "height": 3000,
+          "width": 2000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "francia__Francia_2024_30.jpg",
+      "sha1hash": "b1c437b2ec42f515b154a43399de8dd6defd1e07",
+      "size": 6107581,
+      "source": {
+        "id": "b1c437b2ec42f515b154a43399de8dd6defd1e07",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Francia — Francia_2024_30.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/b1c437b2ec42f515b154a43399de8dd6defd1e07-2000x3000.jpg"
+    },
+    {
+      "_id": "image-7bfa91884842d1d8400cbb3d5913774ccc17ebb9-2000x1333-png",
+      "_rev": "2D42OFpIbrkQoZrdHWJfk6",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Francia. Carpetas originales: FRANCIA/Francia_2024_31.png",
+      "label": "Francia",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5003750937734435,
+          "height": 1333,
+          "width": 2000
+        }
+      },
+      "mimeType": "image/png",
+      "originalFilename": "francia__Francia_2024_31.png",
+      "sha1hash": "7bfa91884842d1d8400cbb3d5913774ccc17ebb9",
+      "size": 4218269,
+      "source": {
+        "id": "7bfa91884842d1d8400cbb3d5913774ccc17ebb9",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Francia — Francia_2024_31.png",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/7bfa91884842d1d8400cbb3d5913774ccc17ebb9-2000x1333.png"
+    },
+    {
+      "_id": "image-4e9025ec236429f5e20ff15c5f598f9cda61e3c7-6000x4000-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgVnh",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos. Carpetas originales: MARRUECOS/Marruecos_2025_03.jpg",
+      "label": "Marruecos",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos__Marruecos_2025_03.jpg",
+      "sha1hash": "4e9025ec236429f5e20ff15c5f598f9cda61e3c7",
+      "size": 9301260,
+      "source": {
+        "id": "4e9025ec236429f5e20ff15c5f598f9cda61e3c7",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos — Marruecos_2025_03.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/4e9025ec236429f5e20ff15c5f598f9cda61e3c7-6000x4000.jpg"
+    },
+    {
+      "_id": "image-3f73b920974bfe6f9d03ca929564cfb7ed601a39-4000x6000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vFtI",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos. Carpetas originales: MARRUECOS/Marruecos_2025_12.jpg",
+      "label": "Marruecos",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 0.6666666666666666,
+          "height": 6000,
+          "width": 4000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos__Marruecos_2025_12.jpg",
+      "sha1hash": "3f73b920974bfe6f9d03ca929564cfb7ed601a39",
+      "size": 3645097,
+      "source": {
+        "id": "3f73b920974bfe6f9d03ca929564cfb7ed601a39",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos — Marruecos_2025_12.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/3f73b920974bfe6f9d03ca929564cfb7ed601a39-4000x6000.jpg"
+    },
+    {
+      "_id": "image-8c7026876e036835899029696897ef10116e4299-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vG8U",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos. Carpetas originales: MARRUECOS/Marruecos_2025_17.jpg",
+      "label": "Marruecos",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos__Marruecos_2025_17.jpg",
+      "sha1hash": "8c7026876e036835899029696897ef10116e4299",
+      "size": 4654570,
+      "source": {
+        "id": "8c7026876e036835899029696897ef10116e4299",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos — Marruecos_2025_17.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/8c7026876e036835899029696897ef10116e4299-6000x4000.jpg"
+    },
+    {
+      "_id": "image-0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vHHO",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos. Carpetas originales: MARRUECOS/Marruecos_2025_23.jpg",
+      "label": "Marruecos",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos__Marruecos_2025_23.jpg",
+      "sha1hash": "0ada88f03268779e00ebf78f098d58c383d8ea52",
+      "size": 4965887,
+      "source": {
+        "id": "0ada88f03268779e00ebf78f098d58c383d8ea52",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos — Marruecos_2025_23.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000.jpg"
+    },
+    {
+      "_id": "image-4c20dc1dfadca90a6723cea9311f588a662a3fc2-6000x4000-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgYU9",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos. Carpetas originales: MARRUECOS/Marruecos_2025_24.jpg",
+      "label": "Marruecos",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos__Marruecos_2025_24.jpg",
+      "sha1hash": "4c20dc1dfadca90a6723cea9311f588a662a3fc2",
+      "size": 6556258,
+      "source": {
+        "id": "4c20dc1dfadca90a6723cea9311f588a662a3fc2",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos — Marruecos_2025_24.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/4c20dc1dfadca90a6723cea9311f588a662a3fc2-6000x4000.jpg"
+    },
+    {
+      "_id": "image-788359c1354ae26e16b6a9523e640cc6af2c0d5d-6000x4000-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJm1m",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos. Carpetas originales: MARRUECOS/Marruecos_2025_37.jpg",
+      "label": "Marruecos",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos__Marruecos_2025_37.jpg",
+      "sha1hash": "788359c1354ae26e16b6a9523e640cc6af2c0d5d",
+      "size": 4222747,
+      "source": {
+        "id": "788359c1354ae26e16b6a9523e640cc6af2c0d5d",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos — Marruecos_2025_37.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/788359c1354ae26e16b6a9523e640cc6af2c0d5d-6000x4000.jpg"
+    },
+    {
+      "_id": "image-b7e831800babc91734e05475f7a2015bf686238b-6000x4000-jpg",
+      "_rev": "Rhoxsc4mPu1FVC37xziD5A",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos · nivel 3. Carpetas originales: MARRUECOS NIVEL 3/Marruecos_2025_31.jpg",
+      "label": "Marruecos · nivel 3",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos-nivel-3__Marruecos_2025_31.jpg",
+      "sha1hash": "b7e831800babc91734e05475f7a2015bf686238b",
+      "size": 6584097,
+      "source": {
+        "id": "b7e831800babc91734e05475f7a2015bf686238b",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos · nivel 3 — Marruecos_2025_31.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/b7e831800babc91734e05475f7a2015bf686238b-6000x4000.jpg"
+    },
+    {
+      "_id": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg",
+      "_rev": "Rhoxsc4mPu1FVC37xziDJL",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos · nivel 3. Carpetas originales: MARRUECOS NIVEL 3/Marruecos_2025_32.jpg",
+      "label": "Marruecos · nivel 3",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos-nivel-3__Marruecos_2025_32.jpg",
+      "sha1hash": "f0a6564c0b3e0ba86a6900aebc5c082cec87a79f",
+      "size": 6325621,
+      "source": {
+        "id": "f0a6564c0b3e0ba86a6900aebc5c082cec87a79f",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos · nivel 3 — Marruecos_2025_32.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000.jpg"
+    },
+    {
+      "_id": "image-6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQge7h",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos · nivel 3. Carpetas originales: MARRUECOS NIVEL 3/Marruecos_2025_33.jpg",
+      "label": "Marruecos · nivel 3",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 0.6666666666666666,
+          "height": 6000,
+          "width": 4000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos-nivel-3__Marruecos_2025_33.jpg",
+      "sha1hash": "6fff07dd36b9a850d2e1c0d8332da613c65609f2",
+      "size": 6637282,
+      "source": {
+        "id": "6fff07dd36b9a850d2e1c0d8332da613c65609f2",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos · nivel 3 — Marruecos_2025_33.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000.jpg"
+    },
+    {
+      "_id": "image-59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000-jpg",
+      "_rev": "Rhoxsc4mPu1FVC37xziEgP",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos · nivel 3. Carpetas originales: MARRUECOS NIVEL 3/Marruecos_2025_34.jpg",
+      "label": "Marruecos · nivel 3",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos-nivel-3__Marruecos_2025_34.jpg",
+      "sha1hash": "59896744c750b6b4365dbe8ae0cfc208793b9277",
+      "size": 9310560,
+      "source": {
+        "id": "59896744c750b6b4365dbe8ae0cfc208793b9277",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos · nivel 3 — Marruecos_2025_34.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000.jpg"
+    },
+    {
+      "_id": "image-71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vSnU",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Marruecos · nivel 3. Carpetas originales: MARRUECOS NIVEL 3/Marruecos_2025_38.jpg",
+      "label": "Marruecos · nivel 3",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 4000,
+          "width": 6000
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "marruecos-nivel-3__Marruecos_2025_38.jpg",
+      "sha1hash": "71bd33e6c12fc64222ebfb96177becf0288fb6d5",
+      "size": 6405548,
+      "source": {
+        "id": "71bd33e6c12fc64222ebfb96177becf0288fb6d5",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Marruecos · nivel 3 — Marruecos_2025_38.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000.jpg"
+    },
+    {
+      "_id": "image-38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgeKB",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Senegal. Carpetas originales: SENEGAL/WhatsApp Image 2026-10-07 at 13.13.02 (1).jpeg",
+      "label": "Senegal",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.499267935578331,
+          "height": 1366,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "senegal__WhatsApp Image 2026-10-07 at 13.13.02 (1).jpeg",
+      "sha1hash": "38e9a54e13339cbff15a5cc4ada439843a55c289",
+      "size": 478607,
+      "source": {
+        "id": "38e9a54e13339cbff15a5cc4ada439843a55c289",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Senegal — WhatsApp Image 2026-10-07 at 13.13.02 (1).jpeg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366.jpg"
+    },
+    {
+      "_id": "image-f0522a1426f8736e0e609789f08dca9aac9ae73f-2048x1536-jpg",
+      "_rev": "Cm2SmoGHqV8qVMDrb8vTHs",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Senegal. Carpetas originales: SENEGAL/WhatsApp Image 2026-10-07 at 13.13.04 (2).jpeg",
+      "label": "Senegal",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.3333333333333333,
+          "height": 1536,
+          "width": 2048
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "senegal__WhatsApp Image 2026-10-07 at 13.13.04 (2).jpeg",
+      "sha1hash": "f0522a1426f8736e0e609789f08dca9aac9ae73f",
+      "size": 320302,
+      "source": {
+        "id": "f0522a1426f8736e0e609789f08dca9aac9ae73f",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Senegal — WhatsApp Image 2026-10-07 at 13.13.04 (2).jpeg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/f0522a1426f8736e0e609789f08dca9aac9ae73f-2048x1536.jpg"
+    },
+    {
+      "_id": "image-1c429d93b9c8a11219a7dfd27f5bf476013ff6fe-900x500-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJs3y",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Senegal. Carpetas originales: SENEGAL/caption.jpg",
+      "label": "Senegal",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.8,
+          "height": 500,
+          "width": 900
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "senegal__caption.jpg",
+      "sha1hash": "1c429d93b9c8a11219a7dfd27f5bf476013ff6fe",
+      "size": 101538,
+      "source": {
+        "id": "1c429d93b9c8a11219a7dfd27f5bf476013ff6fe",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Senegal — caption.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/1c429d93b9c8a11219a7dfd27f5bf476013ff6fe-900x500.jpg"
+    },
+    {
+      "_id": "image-05230a10d2d244b033278cf34da40f1844c0aafa-5013x3342-jpg",
+      "_rev": "Rhoxsc4mPu1FVC37xziF8l",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Senegal. Carpetas originales: SENEGAL/pexels-andre-o-conor-440742915-36291715.jpg",
+      "label": "Senegal",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 1.5,
+          "height": 3342,
+          "width": 5013
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "senegal__pexels-andre-o-conor-440742915-36291715.jpg",
+      "sha1hash": "05230a10d2d244b033278cf34da40f1844c0aafa",
+      "size": 2780764,
+      "source": {
+        "id": "05230a10d2d244b033278cf34da40f1844c0aafa",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Senegal — pexels-andre-o-conor-440742915-36291715.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/05230a10d2d244b033278cf34da40f1844c0aafa-5013x3342.jpg"
+    },
+    {
+      "_id": "image-c17942ddd74bcb99148ac7cdac3db7c1c49ac739-2428x3237-jpg",
+      "_rev": "2D42OFpIbrkQoZrdHWJsyk",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Senegal. Carpetas originales: SENEGAL/pexels-julesgermainformel-36508881.jpg",
+      "label": "Senegal",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 0.7500772320049428,
+          "height": 3237,
+          "width": 2428
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "senegal__pexels-julesgermainformel-36508881.jpg",
+      "sha1hash": "c17942ddd74bcb99148ac7cdac3db7c1c49ac739",
+      "size": 1051447,
+      "source": {
+        "id": "c17942ddd74bcb99148ac7cdac3db7c1c49ac739",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Senegal — pexels-julesgermainformel-36508881.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/c17942ddd74bcb99148ac7cdac3db7c1c49ac739-2428x3237.jpg"
+    },
+    {
+      "_id": "image-eb0b5ad1c26d077834f63dc7619de4368bfab6e9-1885x2828-jpg",
+      "_rev": "L3ZrvhdiWtwAlFI8eQgfGR",
+      "_type": "sanity.imageAsset",
+      "description": "Fotos por destinos. Destino: Senegal. Carpetas originales: SENEGAL/pexels-pabifaye-11406359.jpg",
+      "label": "Senegal",
+      "metadata": {
+        "dimensions": {
+          "_type": "sanity.imageDimensions",
+          "aspectRatio": 0.6665487977369166,
+          "height": 2828,
+          "width": 1885
+        }
+      },
+      "mimeType": "image/jpeg",
+      "originalFilename": "senegal__pexels-pabifaye-11406359.jpg",
+      "sha1hash": "eb0b5ad1c26d077834f63dc7619de4368bfab6e9",
+      "size": 614231,
+      "source": {
+        "id": "eb0b5ad1c26d077834f63dc7619de4368bfab6e9",
+        "name": "lst-fotos-por-destinos-2026-10-24"
+      },
+      "title": "Senegal — pexels-pabifaye-11406359.jpg",
+      "url": "https://cdn.sanity.io/images/q5bj2rn2/production/eb0b5ad1c26d077834f63dc7619de4368bfab6e9-1885x2828.jpg"
+    }
+  ]
+}

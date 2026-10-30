@@ -1,0 +1,167 @@
+[
+  {
+    "kind": "missing-date",
+    "width": 320,
+    "current": "0",
+    "focus": "VIAJE_SURF",
+    "open": true,
+    "selected": null,
+    "transforms": [
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "kind": "chosen-date",
+    "width": 320,
+    "contextMatches": true,
+    "fareMatches": true,
+    "focus": "SUMMARY",
+    "open": false,
+    "outline": "rgb(27, 27, 27) none 3px",
+    "selected": "8"
+  },
+  {
+    "kind": "keyboard-reopen",
+    "width": 320,
+    "open": true,
+    "overflow": false,
+    "transforms": [
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "kind": "invalid-date-link",
+    "width": 320,
+    "noticeVisible": true,
+    "open": true,
+    "selected": null
+  },
+  {
+    "kind": "invalid-date-recovery",
+    "width": 320,
+    "noticeHidden": true,
+    "open": false,
+    "selected": "7"
+  },
+  {
+    "kind": "valid-date-link",
+    "width": 320,
+    "noticeHidden": true,
+    "open": false,
+    "selected": "8"
+  },
+  {
+    "kind": "missing-date",
+    "width": 390,
+    "current": "0",
+    "focus": "VIAJE_SURF",
+    "open": true,
+    "selected": null,
+    "transforms": [
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "kind": "chosen-date",
+    "width": 390,
+    "contextMatches": true,
+    "fareMatches": true,
+    "focus": "SUMMARY",
+    "open": false,
+    "outline": "rgb(27, 27, 27) none 3px",
+    "selected": "8"
+  },
+  {
+    "kind": "keyboard-reopen",
+    "width": 390,
+    "open": true,
+    "overflow": false,
+    "transforms": [
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "kind": "invalid-date-link",
+    "width": 390,
+    "noticeVisible": true,
+    "open": true,
+    "selected": null
+  },
+  {
+    "kind": "invalid-date-recovery",
+    "width": 390,
+    "noticeHidden": true,
+    "open": false,
+    "selected": "7"
+  },
+  {
+    "kind": "valid-date-link",
+    "width": 390,
+    "noticeHidden": true,
+    "open": false,
+    "selected": "8"
+  },
+  {
+    "kind": "missing-date",
+    "width": 1440,
+    "current": "0",
+    "focus": "VIAJE_SURF",
+    "open": true,
+    "selected": null,
+    "transforms": [
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "kind": "chosen-date",
+    "width": 1440,
+    "contextMatches": true,
+    "fareMatches": true,
+    "focus": "SUMMARY",
+    "open": false,
+    "outline": "rgb(27, 27, 27) none 3px",
+    "selected": "8"
+  },
+  {
+    "kind": "keyboard-reopen",
+    "width": 1440,
+    "open": true,
+    "overflow": false,
+    "transforms": [
+      "none",
+      "none",
+      "none"
+    ]
+  },
+  {
+    "kind": "invalid-date-link",
+    "width": 1440,
+    "noticeVisible": true,
+    "open": true,
+    "selected": null
+  },
+  {
+    "kind": "invalid-date-recovery",
+    "width": 1440,
+    "noticeHidden": true,
+    "open": false,
+    "selected": "7"
+  },
+  {
+    "kind": "valid-date-link",
+    "width": 1440,
+    "noticeHidden": true,
+    "open": false,
+    "selected": "8"
+  }
+]

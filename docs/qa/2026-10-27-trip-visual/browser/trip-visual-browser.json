@@ -1,0 +1,246 @@
+{
+  "viewports": [
+    {
+      "slug": "marruecos",
+      "width": 320,
+      "header": 78,
+      "photoHeight": 132,
+      "stayHeight": 164,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 320,
+      "header": 78,
+      "photoHeight": 132,
+      "stayHeight": 164,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 320,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 320,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 320,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 320,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 320,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 390,
+      "header": 78,
+      "photoHeight": 132,
+      "stayHeight": 164,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 390,
+      "header": 78,
+      "photoHeight": 132,
+      "stayHeight": 164,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 390,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 390,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 390,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 390,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 390,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 768,
+      "header": 78,
+      "photoHeight": 148,
+      "stayHeight": 200,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 768,
+      "header": 78,
+      "photoHeight": 148,
+      "stayHeight": 200,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 768,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 768,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 768,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 768,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 768,
+      "header": 78,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 1024,
+      "header": 88,
+      "photoHeight": 148,
+      "stayHeight": 200,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 1024,
+      "header": 88,
+      "photoHeight": 148,
+      "stayHeight": 200,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 1024,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 1024,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 1024,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 1024,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 1024,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos",
+      "width": 1440,
+      "header": 88,
+      "photoHeight": 148,
+      "stayHeight": 200,
+      "overflow": false
+    },
+    {
+      "slug": "marruecos-avanzado",
+      "width": 1440,
+      "header": 88,
+      "photoHeight": 148,
+      "stayHeight": 200,
+      "overflow": false
+    },
+    {
+      "slug": "maldivas",
+      "width": 1440,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "fuerteventura",
+      "width": 1440,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "hossegor",
+      "width": 1440,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "senegal",
+      "width": 1440,
+      "header": 88,
+      "overflow": false
+    },
+    {
+      "slug": "el-palmar",
+      "width": 1440,
+      "header": 88,
+      "overflow": false
+    }
+  ],
+  "interactions": [
+    "thumbnail click changes main photo and selection without vertical jump",
+    "thumbnail arrows, Home/End and automatic thumbnail horizontal visibility",
+    "real hero swipe synchronizes thumbnails without opening modal",
+    "native horizontal gestures on activities, spots and stay",
+    "mobile registration preserved",
+    "date-specific PDF and Escape focus return",
+    "carousel endpoint and photo modal retain keyboard focus",
+    "section anchor clears the fixed header",
+    "native thumbnails and dates work without JavaScript"
+  ],
+  "errors": []
+}

@@ -1,0 +1,390 @@
+/* LST home: the existing identity, with a documentary cover and a clear booking path. */
+body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
+body.home-modern *,body.home-modern *:before,body.home-modern *:after{box-sizing:border-box}
+body.home-modern :is(h1,h2,h3,h4,p,figure){margin:0}
+body.home-modern :is(h1,h2,h3,h4){color:inherit;overflow-wrap:anywhere}
+body.home-modern a{color:inherit;text-decoration:none}
+body.home-modern img{display:block;width:100%;max-width:100%;height:auto}
+body.home-modern button{font-family:inherit}
+body.home-modern :is(button,a,summary,[tabindex]):focus-visible{outline:3px solid var(--lst-orange);outline-offset:5px;box-shadow:none}
+body.home-modern .lst-width{width:min(1224px,calc(100% - 96px));margin-inline:auto}
+body.home-modern .lst-section{padding-block:88px}
+body.home-modern :is(#viajes,#niveles,#experiencia,#reservar,#nosotros,#dudas){scroll-margin-top:calc(var(--home-header-height) + 20px)}
+body.home-modern h2{max-width:none;font:400 clamp(48px,5vw,72px)/1.02 var(--lst-display);letter-spacing:-.015em}
+body.home-modern .lst-eyebrow{display:flex;align-items:center;gap:10px;font:400 11px/1.65 'Space Mono',monospace;letter-spacing:.035em;text-transform:uppercase}
+body.home-modern .lst-dot{width:7px;height:7px;border-radius:50%;background:var(--lst-orange);flex:0 0 7px}
+body.home-modern .lst-button{display:inline-flex;align-items:center;justify-content:space-between;gap:32px;min-height:54px;padding:14px 23px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:14px;font-weight:600;line-height:1.4;transition:background .18s,color .18s,border-color .18s}
+body.home-modern .lst-button>span{font-size:22px;font-weight:400;line-height:1}
+body.home-modern .lst-button:hover{background:var(--lst-ink);color:var(--lst-paper);border-color:var(--lst-ink)}
+body.home-modern .lst-link{display:inline-flex;align-items:center;gap:18px;min-height:44px;font-size:14px;font-weight:500;line-height:1.5;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+body.home-modern .lst-link>span{font-size:20px;line-height:1}
+body.home-modern .lst-link:hover{text-decoration-thickness:2px}
+/* The original photograph stays light; the brand uses ink on the open sky. */
+body.home-modern .site-header{position:fixed;inset:0 0 auto;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:30px;width:100%;min-height:var(--home-header-height);margin:0;padding:16px max(48px,calc((100% - 1224px)/2));border:0;background:transparent;color:var(--lst-ink);transition:background .2s,color .2s}
+body.home-modern .site-header.lst-width{width:100%;margin-inline:0}
+body.home-modern .site-header:before{display:none}
+body.home-modern .site-header .brand{width:205px;margin:0;flex:0 0 auto}
+body.home-modern .site-header .brand-light{display:none}
+body.home-modern .site-header .brand-dark{display:block}
+body.home-modern .site-header nav{position:static;display:flex;flex-direction:row;align-items:center;gap:28px;margin:0 0 0 auto;padding:0;border:0;background:transparent}
+body.home-modern .site-header nav a{display:inline-flex;align-items:center;gap:18px;min-height:44px;padding:0;color:inherit;font-size:13px;font-weight:500;white-space:nowrap}
+body.home-modern .site-header nav a:hover{text-decoration:underline;text-underline-offset:5px}
+body.home-modern .site-header nav .lst-nav-contact{min-height:44px;padding-inline:19px;border:1px solid currentColor;border-radius:100px;margin-left:6px}
+body.home-modern .lst-header-trip,body.home-modern .menu-toggle{display:none}
+body.home-modern .site-header.is-scrolled,body.home-modern .site-header:has(nav.is-open){background:var(--lst-paper);color:var(--lst-ink);border-bottom:1px solid var(--lst-line)}
+body.home-modern .site-header.is-scrolled .brand-light,body.home-modern .site-header:has(nav.is-open) .brand-light{display:none}
+body.home-modern .site-header.is-scrolled .brand-dark,body.home-modern .site-header:has(nav.is-open) .brand-dark{display:block}
+body.home-modern .static-navigation{position:relative;z-index:35;display:flex;flex-wrap:wrap;gap:6px 20px;width:100%;padding:calc(var(--home-header-height) + 8px) 24px 12px;background:var(--lst-paper)}
+body.home-modern .static-navigation a{display:inline-flex;align-items:center;min-height:44px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+body.home-modern .skip-link{background:var(--lst-ink);color:var(--lst-paper)}
+body.home-modern .skip-link:focus{z-index:100}
+body.home-modern .lst-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-start;width:100%;height:auto;min-height:clamp(650px,76svh,720px);padding:calc(var(--home-header-height) + 64px) 0 24px;background:var(--lst-paper);color:var(--lst-ink)}
+body.home-modern .lst-hero-photo{position:absolute;inset:0;z-index:-3;width:100%;height:100%;object-fit:cover;object-position:60% 64%}
+body.home-modern .lst-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(27,27,27,.48),rgba(27,27,27,.40) 26%,rgba(27,27,27,.22) 56%,rgba(27,27,27,0) 76%)}
+body.home-modern .lst-hero-copy{position:relative;min-width:0;padding-block:0}
+body.home-modern .lst-hero h1{position:relative;isolation:isolate;width:fit-content;max-width:710px;margin-top:20px;font:400 clamp(86px,8.4vw,122px)/.94 var(--lst-display);letter-spacing:-.012em;color:#fff;text-shadow:0 1px 8px rgba(27,27,27,.18)}
+body.home-modern .lst-hero h1 em{font-style:normal;color:inherit}
+body.home-modern .lst-hero-description{max-width:410px;margin-top:24px;color:var(--lst-paper);font-size:16px;line-height:1.65}
+body.home-modern .lst-hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:13px 28px;margin-top:26px}
+body.home-modern .lst-hero-actions .lst-button{background:var(--lst-paper);border-color:rgba(27,27,27,.22);color:var(--lst-ink)}
+body.home-modern .lst-hero-actions .lst-button:hover{background:var(--lst-paper);border-color:var(--lst-ink);color:var(--lst-ink)}
+body.home-modern .lst-hero :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+body.home-modern .lst-hero-meta{position:static;display:flex;margin-top:auto;padding-top:70px;align-items:center;justify-content:space-between;gap:18px;color:var(--lst-paper);font:400 10px/1.5 'Space Mono',monospace}
+body.home-modern .lst-hero-meta>span:last-child{text-align:left}
+body.home-modern .lst-trips{padding-top:74px;padding-bottom:16px}
+body.home-modern .lst-section-header{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:20px}
+body.home-modern .lst-section-header .lst-eyebrow{margin-bottom:12px}
+body.home-modern .lst-section-header>.lst-link{flex-shrink:0}
+body.home-modern .lst-section-intro{max-width:650px;color:var(--lst-muted);font-size:16px;line-height:1.6;margin-bottom:30px}
+/* A quiet lift separates each departure; the next action is always clear. */
+body.home-modern .home-trip-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+body.home-modern .home-trip{display:flex;flex-direction:column;min-width:0;padding:10px;border:1px solid rgba(27,27,27,.14);border-radius:28px;background:var(--lst-paper);box-shadow:0 2px 3px rgba(27,27,27,.035),0 13px 30px rgba(27,27,27,.055)}
+body.home-modern .home-trip-media{position:relative;isolation:isolate;width:100%;min-width:0;aspect-ratio:1.18;border-radius:19px;background:var(--lst-ink);color:var(--lst-on-photo)}
+body.home-modern .home-trip-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:19px}
+body.home-modern .home-trip-media:after{content:'';position:absolute;inset:25% 0 0;z-index:0;pointer-events:none;border-radius:0 0 19px 19px;background:linear-gradient(0deg,rgba(27,27,27,.83),rgba(27,27,27,0))}
+body.home-modern .home-trip-placeholder{height:100%;min-height:260px;display:grid;place-items:center;padding:30px;font:400 48px/1.1 var(--lst-display)}
+body.home-modern .home-trip-level,body.home-modern .home-trip-status{position:absolute;top:14px;left:14px;z-index:1;max-width:calc(100% - 124px);padding:8px 10px;border-radius:100px;background:var(--lst-paper);color:var(--lst-ink);font-size:10px;line-height:1.4;font-weight:500}
+body.home-modern .home-trip-status{top:54px;max-width:calc(100% - 28px);background:var(--lst-ink);color:var(--lst-paper)}
+body.home-modern .home-trip :is(h3,h4){position:absolute;bottom:20px;left:20px;right:20px;z-index:1;font:400 clamp(37px,3.8vw,51px)/1 var(--lst-display);letter-spacing:-.01em;overflow-wrap:anywhere}
+body.home-modern .home-trip-preview{margin-top:17px;padding-inline:10px;color:var(--lst-muted);font-size:13px;line-height:1.6}
+body.home-modern .home-trip-preview small{display:block;margin-top:6px;color:var(--lst-muted);font-size:12px;line-height:1.65}
+body.home-modern .home-trip-link{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;min-height:76px;margin-top:auto;padding:15px 10px 7px;border-radius:4px}
+body.home-modern .home-trip-action{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:38px;max-width:100%;padding:9px 15px;border:1px solid var(--lst-orange);border-radius:100px;background:var(--lst-orange);color:var(--lst-ink);font-size:13px;font-weight:500;line-height:1.4;transition:background .18s,color .18s,border-color .18s}
+body.home-modern .home-trip-action>span{flex-shrink:0;font-size:18px;line-height:1}
+body.home-modern .home-trip-link:hover .home-trip-action{background:var(--lst-ink);color:var(--lst-paper);border-color:var(--lst-ink)}
+body.home-modern .home-trip-price{margin-left:auto;font:400 34px/1.1 var(--lst-display);letter-spacing:-.01em;text-align:right;overflow-wrap:anywhere}
+body.home-modern .home-trip-price small{display:block;margin-top:3px;color:var(--lst-muted);font:400 11px/1.5 'Work Sans',sans-serif;letter-spacing:0}
+body.home-modern .home-trip-dates{position:absolute;inset:0;z-index:2;border:0}
+body.home-modern .home-trip-dates>summary{position:absolute;inset:0;display:block;min-height:44px;padding:0;border-radius:19px;list-style:none;cursor:pointer}
+body.home-modern .home-trip-dates>summary:after,body.home-modern .home-trip-dates>summary::-webkit-details-marker{display:none}
+body.home-modern .home-trip-dates>summary>span{transform:none}
+body.home-modern .home-trip-dates-label{position:absolute;top:10px;right:10px;display:grid;place-items:center;min-height:44px;padding:10px 12px;border-radius:100px;background:var(--lst-ink);color:var(--lst-paper);font-size:10px;font-weight:500;line-height:1.4}
+body.home-modern .dates-label-open{display:none}
+body.home-modern .home-trip-dates[open] .dates-label-open{display:inline}
+body.home-modern .home-trip-dates[open] .dates-label-closed{display:none}
+body.home-modern .home-trip-dates-panel{position:absolute;z-index:3;left:10px;right:10px;bottom:10px;max-height:calc(100% - 70px);overflow:auto;overscroll-behavior:contain;padding:16px;border:1px solid var(--lst-line);border-radius:12px;background:var(--lst-paper);color:var(--lst-ink);font-size:12px;line-height:1.6}
+body.home-modern .home-trip-dates-panel .home-trip-dates-title{margin:0 0 12px;padding:0;color:var(--lst-ink);font:400 28px/1.1 var(--lst-display);letter-spacing:-.01em;overflow-wrap:anywhere}
+body.home-modern .home-trip-departures{margin:0;padding:0;list-style:none}
+body.home-modern .home-trip-departures li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:5px 12px;padding-block:10px;border-top:1px solid var(--lst-line)}
+body.home-modern .home-trip-departures li>span:last-child{font-weight:600}
+body.home-modern .home-trip-dates-panel .home-trip-date-note{margin-top:10px;padding:0;color:var(--lst-muted);font-size:11px;line-height:1.6}
+body.home-modern .home-trip-dates-panel .home-trip-requirement{margin-top:12px;padding:0;color:var(--lst-ink);font-size:12px;line-height:1.6}
+body.home-modern .home-more-trips{margin-top:30px;border-block:1px solid var(--lst-line)}
+body.home-modern .home-more-trips>summary{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:66px;padding-block:16px;color:var(--lst-ink);font-size:16px;line-height:1.5;font-weight:500;list-style:none}
+body.home-modern .home-more-trips>summary::-webkit-details-marker{display:none}
+body.home-modern .home-more-trips>summary>span{color:var(--lst-muted);font-size:12px;line-height:1.5;transform:none}
+body.home-modern .home-more-trips>summary>span>span{display:inline-block;margin-left:10px;font-size:20px}
+body.home-modern .home-more-trips[open]>summary>span>span{transform:rotate(180deg)}
+body.home-modern .home-more-trips>.home-trip-grid{padding-block:16px 30px}
+body.home-modern .lst-trip-note{max-width:680px;margin-top:20px;color:var(--lst-muted);font-size:12px;line-height:1.65}
+body.home-modern .lst-trip-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:24px}
+body.home-modern .lst-trip-actions>.lst-button-outline{min-width:0;max-width:100%;min-height:54px;background:transparent;border-color:var(--lst-ink);color:var(--lst-ink)}
+body.home-modern .lst-trip-actions>.lst-button-outline:hover{background:var(--lst-ink);color:var(--lst-paper)}
+body.home-modern .lst-trip-actions>.lst-link{max-width:100%}
+body.home-modern .lst-trip-actions :is(.lst-button,.lst-link)>span{flex-shrink:0}
+body.home-modern .destination-collection{margin-top:32px;padding-top:25px;border-top:1px solid var(--lst-line)}
+body.home-modern .destination-collection>h3{font:400 38px/1.1 var(--lst-display);letter-spacing:-.01em}
+body.home-modern .destination-collection>p{margin-block:12px 23px;color:var(--lst-muted);font-size:14px}
+/* Small labels retain the original brand typography. */
+body.home-modern .lst-small-index{display:block;color:var(--lst-orange);font:400 11px/1.6 'Space Mono',monospace}
+/* Traveller accounts are short, attributed and connected to the original source. */
+body.home-modern .lst-testimonials{padding-block:44px;background:var(--lst-paper);color:var(--lst-ink);border-block:1px solid var(--lst-line);border-radius:0}
+body.home-modern .lst-quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px;margin-top:24px}
+body.home-modern .lst-quote-grid figure{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding-top:18px;border-top:1px solid var(--lst-line)}
+body.home-modern .lst-quote-grid blockquote{margin:0 0 16px;font:400 20px/1.6 'Work Sans',sans-serif;letter-spacing:-.025em}
+body.home-modern .lst-quote-grid figcaption{margin-top:auto;color:var(--lst-muted);font-size:13px;line-height:1.6}
+body.home-modern .lst-quote-grid figcaption strong{display:block;color:var(--lst-ink);font-weight:600}
+body.home-modern .lst-quote-grid figcaption span{display:block;margin-top:3px}
+body.home-modern .lst-quote-grid figcaption a,body.home-modern .lst-quote-source{display:inline-flex;align-items:center;min-height:44px;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+body.home-modern .lst-level-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+body.home-modern .lst-level-card{display:flex;flex-direction:column;min-width:0;padding:22px 20px 12px;border:1px solid rgba(27,27,27,.24);border-radius:4px 28px 4px 4px;background:var(--lst-paper);box-shadow:0 2px 3px rgba(27,27,27,.025),0 11px 25px rgba(27,27,27,.045);transition:border-color .18s,background .18s}
+body.home-modern .lst-level-card:hover{border-color:var(--lst-ink);background:rgba(234,89,52,.08)}
+body.home-modern .lst-level-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:24px;font:400 11px/1.5 'Space Mono',monospace}
+body.home-modern .lst-level-top>span:last-child{font-size:23px;font-weight:400;color:var(--lst-orange)}
+body.home-modern .lst-level-card h3{margin-top:30px;font:400 clamp(32px,3vw,42px)/1.04 var(--lst-display);letter-spacing:-.01em}
+body.home-modern .lst-level-card p{margin-block:14px 24px;color:var(--lst-muted);font-size:14px;line-height:1.65}
+body.home-modern .lst-level-cta{display:flex;align-items:center;min-height:48px;margin-top:auto;border-top:1px solid var(--lst-line);font-size:12px;font-weight:500;line-height:1.5}
+body.home-modern .lst-level-note{max-width:900px;margin-top:25px;color:var(--lst-muted);font-size:13px;line-height:1.8}
+body.home-modern .lst-level-note a{display:inline-block;color:var(--lst-ink);font-weight:500;text-decoration:underline;text-underline-offset:4px}
+body.home-modern .people{padding:40px 0;background:var(--lst-paper);border:0}
+body.home-modern .lst-people-layout{display:grid;grid-template-columns:.95fr 1.12fr;align-items:center;gap:48px;padding:48px;border-radius:32px;background:var(--lst-orange)}
+body.home-modern .lst-people-copy{min-width:0}
+body.home-modern .lst-people-copy .lst-eyebrow{margin-bottom:20px}
+body.home-modern .lst-people-copy h2{font-size:clamp(48px,4.8vw,68px);margin-bottom:25px}
+body.home-modern .lst-people-copy>p:not(.lst-eyebrow){max-width:450px;margin-top:16px;color:var(--lst-ink);font-size:15px;line-height:1.8}
+body.home-modern .lst-people-copy .lst-link{margin-top:18px}
+body.home-modern .lst-signature{display:block;margin-top:25px;color:var(--lst-ink);font:400 17px/1.5 'Space Mono',monospace}
+body.home-modern .lst-people-photo{min-width:0}
+body.home-modern .lst-people-photo img{aspect-ratio:1.45;object-fit:cover;border-radius:72px 4px 4px 4px}
+body.home-modern .lst-people-photo figcaption{margin-top:14px;color:var(--lst-ink);font-size:11px;line-height:1.6}
+body.home-modern .people :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+body.home-modern .lst-booking{display:grid;grid-template-columns:.95fr 1.12fr;gap:85px}
+body.home-modern .lst-booking-intro{min-width:0}
+body.home-modern .lst-booking-intro .lst-eyebrow{margin-bottom:20px}
+body.home-modern .lst-booking-intro>p:not(.lst-eyebrow){max-width:350px;margin-top:24px;color:var(--lst-muted);font-size:16px;line-height:1.75}
+body.home-modern .lst-booking-intro .lst-button{margin-top:28px}
+body.home-modern .lst-booking-steps{margin:0;padding:0;list-style:none}
+body.home-modern .lst-booking-steps li{display:grid;grid-template-columns:51px minmax(0,1fr);gap:23px;padding-block:27px;border-top:1px solid var(--lst-line)}
+body.home-modern .lst-booking-steps li:first-child{padding-top:5px;border-top:0}
+body.home-modern .lst-booking-steps li:last-child{padding-bottom:0}
+body.home-modern .lst-booking-steps li>span{font:400 43px/1.1 var(--lst-display);letter-spacing:-.01em;color:var(--lst-orange)}
+body.home-modern .lst-booking-steps h3{font:400 33px/1.1 var(--lst-display);letter-spacing:-.01em}
+body.home-modern .lst-booking-steps p{margin-top:12px;color:var(--lst-muted);font-size:15px;line-height:1.75}
+body.home-modern .faq{display:grid;grid-template-columns:.95fr 1.12fr;align-items:start;gap:64px;margin-block:80px 0;padding:48px;border:1px solid var(--lst-ink);border-top:3px solid var(--lst-orange);border-radius:4px 32px 4px 4px;background:var(--lst-paper);color:var(--lst-ink)}
+body.home-modern .lst-faq-intro .lst-eyebrow{margin:0 0 20px;color:var(--lst-ink);font-size:11px}
+body.home-modern .lst-faq-intro .lst-link{margin-top:25px}
+body.home-modern .lst-faq-list{min-width:0;border-top:1px solid var(--lst-line)}
+body.home-modern .lst-faq-list details{border:0;border-bottom:1px solid var(--lst-line);background:transparent}
+body.home-modern .lst-faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:80px;padding:22px 0;color:var(--lst-ink);font-size:16px;line-height:1.5;font-weight:500;cursor:pointer;list-style:none}
+body.home-modern .lst-faq-list summary::-webkit-details-marker{display:none}
+body.home-modern .lst-faq-list summary>span{flex:0 0 24px;color:var(--lst-orange);font-size:27px;line-height:1;text-align:center}
+body.home-modern .lst-faq-list details[open] summary>span{transform:rotate(45deg)}
+body.home-modern .lst-faq-list details>p{max-width:540px;padding:0 35px 25px 0;color:var(--lst-muted);font-size:15px;line-height:1.8}
+body.home-modern .lst-faq-list details>p a{text-decoration:underline;text-underline-offset:4px}
+body.home-modern .lst-closing{padding-block:48px;background:var(--lst-ink);color:var(--lst-paper);text-align:center;border:0;border-radius:36px 36px 0 0}
+body.home-modern .lst-closing .lst-eyebrow{justify-content:center;margin-bottom:18px;color:var(--lst-paper)}
+body.home-modern .lst-closing h2{font-size:clamp(62px,6.7vw,96px);line-height:.98;letter-spacing:-.01em}
+body.home-modern .lst-closing h2 em{color:var(--lst-orange);font-style:normal}
+body.home-modern .lst-closing .lst-button{min-height:48px;margin-top:24px;padding:12px 21px;background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink);font-size:13px}
+body.home-modern .lst-closing .lst-button:hover{background:var(--lst-orange);color:var(--lst-ink);border-color:var(--lst-orange)}
+body.home-modern .lst-closing :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+body.home-modern .lst-closing p:last-child{margin-top:20px;font-size:13px;line-height:1.8}
+body.home-modern .lst-closing p:last-child a{display:inline-block;font-weight:500;text-decoration:underline;text-underline-offset:4px}
+body.home-modern .lst-footer{padding-block:42px 20px;background:var(--lst-paper);color:var(--lst-ink)}
+body.home-modern .lst-footer-top{display:flex;justify-content:space-between;align-items:center;gap:30px;padding-bottom:30px}
+body.home-modern .lst-footer-brand{display:block;width:215px;flex-shrink:0}
+body.home-modern .lst-footer-top>span{color:var(--lst-muted);font:400 11px/1.7 'Space Mono',monospace}
+body.home-modern .lst-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:22px;padding-top:17px;border-top:1px solid var(--lst-line);color:var(--lst-muted);font-size:11px;line-height:1.65}
+body.home-modern .lst-footer-links{display:flex;flex-wrap:wrap;align-items:center;gap:4px 25px}
+body.home-modern .lst-footer-links a{display:inline-flex;align-items:center;gap:5px;min-height:44px}
+body.home-modern .lst-footer-links a:hover{text-decoration:underline;text-underline-offset:5px}
+/* Min-height allows enlarged text to grow the cover instead of clipping it. */
+
+@media(max-width:1100px){
+ body.home-modern .lst-width{width:calc(100% - 64px)}
+ body.home-modern .site-header{padding-inline:32px;gap:22px}
+ body.home-modern .site-header nav{gap:20px}
+ body.home-modern .site-header .brand{width:185px}
+ body.home-modern .lst-hero h1{font-size:86px;max-width:640px}
+ body.home-modern .lst-people-layout,body.home-modern .lst-booking,body.home-modern .faq{gap:48px}
+ body.home-modern .lst-level-grid{gap:12px}
+ body.home-modern .lst-level-card{padding-inline:16px}
+ body.home-modern .lst-quote-grid{gap:40px}
+}
+@media(max-width:999px){
+ body.home-modern{--home-header-height:78px}
+ body.home-modern .site-header{gap:14px;padding-block:15px}
+ body.home-modern .site-header .brand{width:175px;margin-right:auto}
+ body.home-modern .lst-header-trip{display:inline-flex;align-items:center;justify-content:center;gap:13px;min-height:44px;padding:10px 16px;border:1px solid currentColor;border-radius:100px;font-size:12px;line-height:1.4;font-weight:500}
+ body.home-modern .lst-header-trip>span{font-size:18px;line-height:1}
+ body.home-modern .menu-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;flex:0 0 44px;width:44px;min-height:44px;padding:8px;margin:0;border:0;background:none;color:inherit}
+ body.home-modern .menu-toggle span{width:25px;height:2px;background:currentColor}
+ body.home-modern .site-header nav{display:none;position:absolute;top:100%;left:0;right:0;margin:0;padding:12px 32px 22px;border:0;border-bottom:1px solid var(--lst-line);border-radius:0 0 22px 22px;background:var(--lst-paper);color:var(--lst-ink);flex-direction:column;align-items:stretch;gap:0;max-height:calc(100svh - var(--home-header-height));overflow:auto;overscroll-behavior:contain}
+ body.home-modern .site-header nav.is-open{display:flex}
+ body.home-modern .site-header nav a{min-height:49px;padding-block:9px;font-size:16px;white-space:normal}
+ body.home-modern .site-header nav .lst-nav-contact{align-self:flex-start;margin:10px 0 0;padding:10px 19px}
+ body.home-modern .lst-hero{padding-top:calc(var(--home-header-height) + 58px)}
+ body.home-modern .lst-hero h1{font-size:clamp(73px,10vw,92px);max-width:640px}
+ body.home-modern .lst-hero-description{max-width:400px}
+ body.home-modern .home-trip-grid{gap:20px}
+ body.home-modern .home-trip-media{aspect-ratio:1}
+ body.home-modern .home-trip :is(h3,h4){left:16px;right:16px;font-size:39px}
+ body.home-modern .home-trip-level{left:10px;top:13px;padding:7px 8px;font-size:10px;max-width:calc(100% - 112px)}
+ body.home-modern .home-trip-dates-label{padding-inline:10px;font-size:10px}
+ body.home-modern .home-trip-price{font-size:30px}
+ body.home-modern .lst-level-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+ body.home-modern .lst-level-card{padding-inline:23px}
+ body.home-modern .lst-level-card h3{font-size:42px}
+ body.home-modern .lst-level-card p{max-width:260px}
+ body.home-modern .lst-level-cta{font-size:13px}
+ body.home-modern .lst-booking,body.home-modern .faq{gap:38px}
+ body.home-modern .lst-people-layout{gap:44px}
+}
+@media(max-width:760px){
+ body.home-modern .lst-width{width:calc(100% - 44px)}
+ body.home-modern .site-header{padding-inline:22px}
+ body.home-modern .site-header nav{padding-inline:22px}
+ body.home-modern .lst-section{padding-block:60px}
+ body.home-modern h2{font-size:49px}
+ body.home-modern .lst-hero{min-height:clamp(560px,78svh,670px);padding:calc(var(--home-header-height) + 46px) 0 24px;justify-content:flex-start}
+ body.home-modern .lst-hero h1{max-width:540px;margin-top:19px;font-size:clamp(64px,11.4vw,85px);line-height:.96;letter-spacing:-.015em}
+ body.home-modern .lst-hero-description{max-width:370px;margin-top:22px;font-size:15px;line-height:1.75}
+ body.home-modern .lst-hero-actions{margin-top:26px;gap:12px 23px}
+ body.home-modern .lst-hero-photo{object-position:67% 65%}
+ body.home-modern .lst-hero-shade{background:linear-gradient(90deg,rgba(27,27,27,.38),rgba(27,27,27,.30) 60%,rgba(27,27,27,.15))}
+ body.home-modern .lst-hero-meta{font-size:9px;align-items:flex-end}
+ body.home-modern .lst-hero-meta>span:first-child{max-width:180px}
+ body.home-modern .lst-button{min-height:54px;padding:14px 22px;font-size:14px;gap:28px}
+ body.home-modern .lst-link{font-size:13px;gap:14px}
+ body.home-modern .lst-trips{padding-top:48px;padding-bottom:16px}
+ body.home-modern .lst-section-header{align-items:flex-start;gap:14px;margin-bottom:18px}
+ body.home-modern .lst-section-header .lst-eyebrow{margin-bottom:13px}
+ body.home-modern .lst-section-header>.lst-link{margin-top:24px;max-width:115px}
+ body.home-modern .lst-section-intro{margin-bottom:27px;font-size:15px}
+ body.home-modern .home-trip-grid{grid-template-columns:1fr;gap:32px}
+ body.home-modern .home-trip-media{aspect-ratio:1.25}
+ body.home-modern .home-trip-level{max-width:calc(100% - 134px);left:14px;top:15px;padding:9px 10px;font-size:11px}
+ body.home-modern .home-trip-dates-label{min-height:44px;right:11px;top:10px;padding-inline:13px;font-size:11px}
+ body.home-modern .home-trip :is(h3,h4){left:21px;right:21px;bottom:20px;font-size:47px}
+ body.home-modern .home-trip-preview{margin-top:14px;font-size:14px}
+ body.home-modern .home-trip-preview small{font-size:13px}
+ body.home-modern .home-trip-link{min-height:65px}
+ body.home-modern .home-trip-price{font-size:36px}
+ body.home-modern .home-trip-price small{font-size:11px}
+ body.home-modern .home-trip-dates-panel{max-height:calc(100% - 72px);font-size:13px}
+ body.home-modern .home-trip-dates-panel .home-trip-requirement{font-size:13px}
+ body.home-modern .home-more-trips{margin-top:25px}
+ body.home-modern .lst-trip-note{margin-top:19px;font-size:12px}
+ body.home-modern .lst-quote-grid{grid-template-columns:1fr;gap:24px;margin-top:22px}
+ body.home-modern .lst-quote-grid figure{padding-top:18px}
+ body.home-modern .lst-quote-grid blockquote{font-size:20px;margin-bottom:16px}
+ body.home-modern .lst-level-grid{gap:14px}
+ body.home-modern .lst-level-card{padding:19px 16px 10px;border-top-right-radius:25px}
+ body.home-modern .lst-level-top{font-size:10px}
+ body.home-modern .lst-level-card h3{font-size:clamp(31px,6.4vw,42px);margin-top:26px}
+ body.home-modern .lst-level-card p{font-size:14px;margin-block:13px 22px}
+ body.home-modern .lst-level-cta{font-size:12px;min-height:50px}
+ body.home-modern .lst-level-note{margin-top:23px;font-size:13px}
+ body.home-modern .people{padding-block:24px}
+ body.home-modern .lst-people-layout{grid-template-columns:1fr;gap:28px;padding:24px;border-radius:26px}
+ body.home-modern .lst-people-copy h2{font-size:50px;margin-bottom:23px;max-width:520px}
+ body.home-modern .lst-people-copy>p:not(.lst-eyebrow){max-width:500px;font-size:15px}
+ body.home-modern .lst-signature{margin-top:22px;font-size:16px}
+ body.home-modern .lst-people-photo img{border-top-left-radius:54px}
+ body.home-modern .lst-people-photo figcaption{font-size:11px}
+ body.home-modern .lst-booking{grid-template-columns:1fr;gap:39px}
+ body.home-modern .lst-booking-intro>p:not(.lst-eyebrow){max-width:440px;margin-top:23px;font-size:15px}
+ body.home-modern .lst-booking-intro .lst-button{margin-top:25px}
+ body.home-modern .lst-booking-steps li{grid-template-columns:43px minmax(0,1fr);gap:18px;padding-block:25px}
+ body.home-modern .lst-booking-steps li>span{font-size:39px}
+ body.home-modern .lst-booking-steps h3{font-size:32px}
+ body.home-modern .lst-booking-steps p{font-size:15px;margin-top:12px}
+ body.home-modern .faq{grid-template-columns:1fr;gap:30px;margin-block:48px 0;padding:24px;border-radius:4px 26px 4px 4px}
+ body.home-modern .lst-faq-intro h2{font-size:49px}
+ body.home-modern .lst-faq-intro .lst-link{margin-top:18px}
+ body.home-modern .lst-faq-list summary{min-height:78px;font-size:15px;gap:22px}
+ body.home-modern .lst-faq-list details>p{padding-right:25px;font-size:15px}
+ body.home-modern .lst-closing{padding-block:40px;border-radius:27px 27px 0 0}
+ body.home-modern .lst-closing .lst-eyebrow{margin-bottom:18px}
+ body.home-modern .lst-closing h2{font-size:54px}
+ body.home-modern .lst-closing .lst-button{margin-top:22px}
+ body.home-modern .lst-closing p:last-child{max-width:360px;margin:20px auto 0;font-size:12px}
+ body.home-modern .lst-footer{padding-block:37px 20px}
+ body.home-modern .lst-footer-top{flex-direction:column;align-items:flex-start;gap:23px;padding-bottom:27px}
+ body.home-modern .lst-footer-brand{width:210px}
+ body.home-modern .lst-footer-top>span{font-size:11px}
+ body.home-modern .lst-footer-bottom{flex-direction:column;align-items:flex-start;gap:12px;padding-top:23px}
+ body.home-modern .lst-footer-links{gap:0 20px}
+}
+@media(max-width:480px){
+ body.home-modern .site-header{gap:9px}
+ body.home-modern .site-header .brand{width:150px}
+ body.home-modern .lst-header-trip{min-width:0;flex-shrink:1;padding-inline:12px;gap:8px;font-size:11px;white-space:normal}
+ body.home-modern .lst-header-trip>span{flex-shrink:0}
+ body.home-modern .lst-hero h1{font-size:clamp(59px,16.7vw,76px)}
+ body.home-modern .lst-hero .lst-eyebrow{font-size:10px;letter-spacing:.025em}
+ body.home-modern .lst-hero-description{max-width:330px}
+ body.home-modern .lst-hero-actions{gap:11px 21px}
+ body.home-modern .lst-hero-actions .lst-button{font-size:13px;gap:23px;padding-inline:20px}
+ body.home-modern .lst-hero-actions .lst-link{font-size:12px;gap:12px}
+ body.home-modern .lst-section-header{flex-direction:column;gap:2px}
+ body.home-modern .lst-section-header>.lst-link{margin-top:6px;max-width:none}
+ body.home-modern .lst-section-header h2{font-size:48px}
+ body.home-modern .lst-section-header .lst-eyebrow{font-size:10px}
+ body.home-modern .lst-section-intro{margin-top:0}
+ body.home-modern .lst-level-card h3{font-size:32px}
+}
+@media(max-width:359px){
+ body.home-modern .lst-width{width:calc(100% - 36px)}
+ body.home-modern .site-header{padding-inline:18px;gap:7px}
+ body.home-modern .site-header .brand{width:126px}
+ body.home-modern .lst-header-trip{padding-inline:10px;font-size:10px;gap:7px}
+ body.home-modern .lst-hero h1{font-size:57px}
+ body.home-modern .lst-hero-actions{gap:11px 16px}
+ body.home-modern .lst-hero-actions .lst-button{font-size:12px;gap:18px;padding-inline:17px}
+ body.home-modern .lst-hero-actions .lst-link{font-size:12px;gap:10px}
+ body.home-modern .lst-hero-meta{font-size:8px}
+ body.home-modern .lst-level-grid{gap:10px}
+ body.home-modern .lst-level-card{padding-inline:13px}
+ body.home-modern .lst-level-card h3{font-size:29px}
+ body.home-modern .lst-level-card p{font-size:13px}
+ body.home-modern .lst-level-cta{font-size:11px}
+ body.home-modern .lst-people-copy h2,body.home-modern .lst-booking h2,body.home-modern .lst-faq-intro h2{font-size:46px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.home-modern *,body.home-modern *:before,body.home-modern *:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+}
+/* A usable navigation remains in normal document flow without JavaScript. */
+body.home-modern:has(.static-navigation) .site-header{position:relative;background:var(--lst-paper);color:var(--lst-ink);border-bottom:1px solid var(--lst-line)}
+body.home-modern:has(.static-navigation) .site-header .brand-light{display:none}
+body.home-modern:has(.static-navigation) .site-header .brand-dark{display:block}
+body.home-modern:has(.static-navigation) .menu-toggle,body.home-modern:has(.static-navigation) .site-header nav{display:none}
+body.home-modern:has(.static-navigation) .static-navigation{position:static;z-index:auto;padding:12px 24px}
+
+
+/* Attribution keeps its original wording and a readable contrast. */
+body.home-modern .lst-testimonials .lst-small-index{color:var(--lst-ink)}
+
+/* Human stories and surf levels have distinct rhythms within the same identity. */
+body.home-modern .lst-testimonials .lst-section-header{flex-direction:row;align-items:center;gap:28px;margin-bottom:14px}
+body.home-modern .lst-testimonials .lst-section-header>div{min-width:0}
+body.home-modern .lst-testimonials h2{max-width:760px;font-size:48px}
+body.home-modern .lst-review-symbol{width:72px;height:45px;flex:0 0 72px;object-fit:contain}
+body.home-modern .lst-reviews-intro{max-width:600px;margin-top:16px;color:var(--lst-muted);font-size:16px;line-height:1.75}
+body.home-modern .lst-testimonials .lst-small-index{margin-bottom:12px;color:var(--lst-ink)}
+body.home-modern .lst-reviews-note{max-width:760px;margin-top:22px;color:var(--lst-muted);font-size:12px;line-height:1.8}
+body.home-modern .lst-reviews-note a{display:inline-block;min-height:44px;padding-block:10px;color:var(--lst-ink);text-decoration:underline;text-underline-offset:5px}
+body.home-modern .lst-testimonials :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+body.home-modern .lst-levels{background:var(--lst-paper)}
+body.home-modern .lst-level-intro{display:grid;grid-template-columns:1.3fr .85fr;align-items:center;gap:88px;margin-bottom:47px}
+body.home-modern .lst-level-intro>div{min-width:0}
+body.home-modern .lst-level-intro .lst-eyebrow{margin-bottom:18px}
+body.home-modern .lst-level-intro h2{max-width:650px}
+body.home-modern .lst-level-intro .lst-section-intro{max-width:540px;margin-top:22px;margin-bottom:12px}
+body.home-modern .lst-level-photo{min-width:0;width:100%;max-width:410px;justify-self:end}
+body.home-modern .lst-level-photo img{width:100%;aspect-ratio:1.62;object-fit:cover;border-radius:64px 5px 5px 5px;box-shadow:0 4px 15px rgba(27,27,27,.07)}
+body.home-modern .lst-level-photo figcaption{margin-top:11px;color:var(--lst-muted);font-size:11px;line-height:1.6}
+body.home-modern .lst-level-card{border-top:3px solid var(--lst-orange)}
+@media(max-width:999px){
+ body.home-modern .lst-level-intro{grid-template-columns:1.2fr 1fr;gap:36px}
+}
+@media(max-width:760px){
+ body.home-modern .lst-testimonials{padding-block:36px}
+ body.home-modern .lst-testimonials h2{font-size:38px}
+ body.home-modern .lst-testimonials .lst-section-header{gap:16px}
+ body.home-modern .lst-review-symbol{width:42px;height:27px;flex-basis:42px}
+ body.home-modern .lst-reviews-note{margin-top:18px;font-size:12px}
+ body.home-modern .lst-level-intro{grid-template-columns:1fr;gap:27px;margin-bottom:32px}
+ body.home-modern .lst-level-intro .lst-section-intro{margin-top:21px}
+ body.home-modern .lst-level-photo{max-width:460px;justify-self:start}
+ body.home-modern .lst-level-photo img{aspect-ratio:2.05;border-top-left-radius:46px}
+}
+@media(max-width:359px){
+}
+
+
+
+
+
+
+

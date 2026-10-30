@@ -1,0 +1,14 @@
+Validación local · 2026-10-23
+Base: 73dc52dca750482853b1fc5973953ea1675b1fc2; candidata documental sin commit.
+Node: v22.16.0.
+PASS JSON: 8 salidas, IDs únicos, 101 páginas; SHA256 de los 8 PDF coinciden.
+PASS referencias: source.pages dentro del rango de cada PDF (páginas 1-based).
+PASS fechas: fin posterior a inicio y noches coherentes con la diferencia de fechas.
+PASS separación: capacidad positiva; disponibilidad, precio aplicable, fotos y dossier público desconocidos.
+PASS enlaces: cada formulario normalizado existe en las anotaciones de su PDF.
+PASS correcciones visuales: Marruecos nivel 3 = 10; early bird Marruecos = primeras 5.
+PASS npm test: 25/25, 0 fallos. Consumidores actuales; no prueban una integración futura.
+PASS npm run check: 11 páginas; 6 destinos, fichas/catálogo/niveles actualizados, enlaces/anclas/assets, WhatsApp, estados, sintaxis y noindex.
+No se ejecutó build (evitar regenerar dist); check comprueba los generadores con --check.
+No se ejecutó despliegue, importación, consultas Sanity, prueba de formularios ni cotización de vuelos.
+No se realizó revisión independiente de implementación: entrega documental sin cambios funcionales.

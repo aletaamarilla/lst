@@ -2,7 +2,9 @@
 
 Estado operativo 24/10/2026: web estática Node en Vercel `lts-laura-moreno-ferre/lst`, salida `dist/`; Sanity `q5bj2rn2/production`. [Guía actual de edición y publicación](docs/guia-cliente.md). Canal comercial actual: solo WhatsApp; Google Forms retirado de la web, los PDF activos y Studio. Los apartados de revisiones siguientes conservan el historial; sus pendientes antiguos no describen necesariamente el estado actual.
 
-Proyecto independiente de Travelhood. Web estática con la home, Conócenos, la guía de niveles y seis páginas de destino. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
+Implementación local 25/10/2026: añadidas inscripciones Brevo en `/inscripciones/{slug}/`, con el mismo formulario para todos los destinos y categorías por fecha. Las consultas por WhatsApp se conservan. Esta integración y el campo opcional de Studio todavía requieren publicar el código; la descripción de «solo WhatsApp» anterior corresponde al despliegue previo. [Uso, validación y límites](docs/qa/2026-10-25-brevo/README.md).
+
+Proyecto independiente de Travelhood. Web estática con la home, Conócenos, la guía de niveles y fichas de viaje publicadas desde Sanity. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
 
 ## Ejecutar y editar
 
@@ -14,7 +16,7 @@ npm run check
 npm run dev
 ```
 
-Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-Type. La home se edita en dist/index.html. Las páginas de viaje, catálogo, niveles y tarjetas de home se generan desde Sanity publicado mediante `scripts/build.mjs` con `npm run build`. `data/trips.json` se conserva como fixture de compatibilidad; la demo exige salida local explícita fuera de `dist/`. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
+Abrir http://localhost:4175. `npm run dev` conserva una previsualización local de promociones si existe `artifacts/local-trip-preview.json` (copia privada de los borradores preparados). Regenera las cuatro vistas desde las plantillas actuales en cada petición y no escribe en `dist` ni en Sanity. Sin esa copia usa `dist`. `npm run preview` sirve exactamente `dist`, y `npm run build` sigue leyendo solo documentos publicados. El snapshot de desarrollo se identifica como `sanity-local-preview`; no debe usarse como fuente de publicación. El servidor entrega Content-Type y evita caché. La home se edita en dist/index.html. Las páginas de viaje, catálogo, niveles y tarjetas de home se generan desde Sanity publicado mediante `scripts/build.mjs` con `npm run build`. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
 
 ## Estructura
 
@@ -25,16 +27,18 @@ Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-
 - dist/niveles/index.html: guía estática de los cuatro niveles, autonomía y orientación.
 - dist/levels.css: estilos de la guía; reutiliza la cabecera y los tokens compartidos.
 - dist/levels.js: destacado manual del nivel, filtros de viajes e historial.
-- scripts/render-level-trips.mjs: bloque de destinos de la guía generado desde el JSON de viajes.
+- scripts/render-level-trips.mjs: bloque de viajes de la guía generado desde Sanity publicado.
 - dist/styles.css: estilos y tokens originales compartidos.
 - dist/mobile.css: composición de la home desde teléfono, con mejoras para pantallas mayores.
 - dist/app.js: menú móvil y pestañas de nivel.
-- data/trips.json: seis destinos, estados, textos, imágenes y mensajes de consulta.
+- scripts/sanity.mjs y scripts/sanity-trips.mjs: lectura y adaptación del catálogo publicado.
+- dist/catalog-snapshot.json: salida generada de esa lectura; no editar como fuente de datos.
+- scripts/check-sanity-browser.mjs: comprobaciones de navegador de viajes con datos aislados de prueba.
 - scripts/render-trips.mjs: plantilla común para páginas independientes.
-- dist/viajes/*/index.html: páginas publicadas de los seis viajes.
+- dist/viajes/*/index.html: fichas publicadas y avisos de compatibilidad de URLs históricas.
 - dist/trip.css: diseño de detalle desde móvil, barra inferior y ficha lateral de escritorio.
 - dist/trip.js: galería horizontal, popup de fechas, teclado, bloqueo de scroll y retorno del foco.
-- scripts/trip-model.mjs: niveles, salidas, precios y mensajes por fecha.
+- scripts/trip-model.mjs: rango fijo del viaje, salidas, precios y mensajes por fecha.
 - scripts/trip-model.test.mjs: pruebas de fechas únicas/múltiples, niveles y consultas.
 - dist/assets/: material documental de LST, logos sin modificar y fuentes locales.
 - docs/content-inventory.json: datos comerciales, fuentes y pendientes.
@@ -64,13 +68,15 @@ Asturias es la demo solicitada para presentar al cliente: dos salidas (06–08/1
 
 Azores, Euskadi, Marruecos y Cádiz tienen páginas completas de destino con próximas fechas y programa pendientes; sus niveles están configurados como I–IV. Los recuerdos de viajes anteriores y sus fotos se presentan como tales. Sus servicios, alojamientos y precios anteriores no se trasladan a la nueva oferta. Para activar una salida real, actualizar el estado y todos los datos confirmados en data/trips.json y reconstruir las páginas. El sitio no se actualiza automáticamente.
 
-## Fechas y niveles configurables
+## Un programa y un rango fijo por viaje
 
-Cada viaje contiene `departures`, una lista de salidas con `id`, `date`, `start`, `end`, `duration`, `price` opcional y `state`. Una fecha conserva el acceso directo a WhatsApp. Con varias fechas, «Elegir fecha» abre un único popup: desde abajo en móvil y centrado en pantallas mayores. La lista interior admite scroll para muchas salidas; las fechas no se despliegan dentro de la página o la ficha lateral. Cada salida tiene un enlace «Consultar» con destino y fecha en el mensaje, y admite un precio distinto. Una lista vacía muestra las fechas por anunciar.
+Cada viaje define un único `levels` (rango fijo de valores 1–4), requisito de autonomía, programa e inclusiones. Todas sus `departures` comparten ese rango e itinerario. Las fechas solo pueden variar en precio/promociones, disponibilidad, capacidad, pago y dossier. No se admiten niveles, requisitos ni programas propios de una salida: el adaptador rechaza esos datos para evitar mezclar ofertas.
 
-`levels` admite varios valores entre 1 y 4. Si falta o está vacío, se usa «Todos los niveles». El Salvador conserva [2, 3] y el requisito de autonomía; los otros cinco destinos tienen [1, 2, 3, 4] por indicación del cliente. Los niveles ya están configurados aunque el programa de una próxima salida siga pendiente.
+Marruecos I–II (`/viajes/marruecos/`, 17–24 enero 2027) y Marruecos avanzado III (`/viajes/marruecos-avanzado/`, 24–31 enero 2027) son dos viajes independientes. Maldivas II–III mantiene sus dos fechas y un solo programa. La agrupación de documentos antiguos exige igualdad de rango, requisitos y contenido del programa. Los documentos con URL propia mantienen su identidad; las URLs fechadas ya publicadas siguen abriendo el viaje correspondiente, también en las inscripciones.
 
-El dossier se enlaza desde la ficha de reserva de escritorio y desde el resumen de reserva en móvil. Se retiran la navegación interna entre plan/nivel/inclusiones y el enlace al PDF dentro del programa. Las acciones en móvil usan texto sin flechas decorativas. Las inclusiones y exclusiones son bloques estáticos siempre visibles. La galería conserva el gesto horizontal y sus controles se llaman Anterior, Siguiente y Cerrar.
+El detalle muestra el rango en portada, un bloque de requisitos y el programa visible antes de las inclusiones. Solo los viajes con varias fechas abren «Elegir fecha». El selector conserva precios, disponibilidad, condiciones y PDF por fecha, con alternativa nativa sin JavaScript. Galería, foco, WhatsApp e inscripciones Brevo se conservan.
+
+[Alcance y validación de este cambio](docs/qa/2026-10-25-programa-unico/README.md). Las revisiones anteriores de este README son históricas y pueden describir modelos retirados.
 
 ## Consulta y reserva
 
@@ -260,4 +266,4 @@ npm run sanity:import
 
 La última orden solo simula y valida las ocho salidas locales. La comprobación remota de colisiones requiere credencial privada con lectura de borradores; ningún borrador se crea sin `--check-remote --apply`. No se ha ejecutado esa combinación. La lectura de producción usa exclusivamente `SANITY_READ_TOKEN` si hace falta; la importación usa `SANITY_IMPORT_TOKEN`, independiente y solo disponible en el proceso de importación. Nunca usar prefijos públicos ni colocar credenciales en `dist/`, Studio o Git.
 
-Para repetir la presentación anterior de forma aislada: `npm run build:demo -- --out=/tmp/lst-demo` y `node scripts/check.mjs --dir=/tmp/lst-demo --demo`. Esta opción no puede escribir la demo en `dist/`.
+El catálogo de demostración y `build:demo` están retirados. Sanity publicado es la única fuente del build. Las pruebas de filtros, galería, fechas y estados vacíos usan fixtures aislados de QA; no pueden sustituir el catálogo de producción. Las instrucciones sobre `data/trips.json` y comprobadores antiguos en las revisiones históricas anteriores se conservan como registro, no como operación vigente.

@@ -1,0 +1,57 @@
+{
+  "base": "58f338661fc4705364fea08727c836e79b3f2048",
+  "files": [
+    {
+      "file": "dist/styles.css",
+      "sha256": "28451f509d686ff6c8f644d62265fee137fc823427379c40323df0262f51e0b3"
+    },
+    {
+      "file": "dist/home.css",
+      "sha256": "5cc641fefe84762a3707f4489b40a9138680cb179afbd93998c2cfb36ec52ea2"
+    },
+    {
+      "file": "dist/catalog.css",
+      "sha256": "7705a5c6a2094579437d932b4ec9342b0c2d12f7dcdb1faae7e59218b15d108b"
+    },
+    {
+      "file": "dist/viajes/index.html",
+      "sha256": "14ae3a3b483b1df712827f5bb73115fe6387a97ee8602ae507d731a81820aa94"
+    },
+    {
+      "file": "dist/landing.css",
+      "sha256": "2013ffa89453a9703bcd71ab6842330e87739d86c2dc13c15070dea0bed31fc9"
+    },
+    {
+      "file": "dist/levels.css",
+      "sha256": "561324fa87ee4680d8dba815cf6c39a595970f33237554e433a9a159d822a914"
+    },
+    {
+      "file": "dist/niveles/index.html",
+      "sha256": "5a76f4dde1e2328f0aa43c0e5f78b005fe0f745cb8fd9e6efc30e96ffd9f9882"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "4890b4b2ccff795bf6be5e5a513a7753f470b3e53f26f59901df9e2d8cf67b0d"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "2ecbfc800f5c6d5e03431ee9fdf0373f157f3aa0180c604667cc75fae6ae2984"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "c1f9f7ee835fc05228c69723e65510e79880b90be872de8686fc1ec2a15194e6"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "00947b068524b0608cf8ebaea37f1264206bed6c4f8bfca3e22b6f32f5ebb08d"
+    },
+    {
+      "file": "dist/registration.css",
+      "sha256": "31ce0d8022e1008ad5e2d184a6da731ce74d1d9bf6d1b37643585185876a6be3"
+    },
+    {
+      "file": "scripts/check-faqs.mjs",
+      "sha256": "997a3eae50086ea1b198646385960a779f6497cab67d1676e45a9ed7b01a76b3"
+    }
+  ]
+}

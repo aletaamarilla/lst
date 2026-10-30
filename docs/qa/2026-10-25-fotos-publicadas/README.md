@@ -1,0 +1,17 @@
+# Publicación de fotos y arranque local · 25/10/2026
+
+Web disponible en [localhost:4175](http://localhost:4175/viajes/) y Sanity Studio en [localhost:3333](http://localhost:3333). Ambos servidores respondieron HTTP 200. Se mantienen arrancados en las sesiones 49277 (Windows Node) y 88456 (Studio WSL).
+
+Publicadas portada y galería de cinco documentos existentes: El Palmar, Hossegor y Marruecos general con 6 fotos cada uno; Marruecos nivel 3 con 5; Senegal con 6. Total: 29 imágenes de la selección existente, sin subir assets adicionales. La portada reutiliza una imagen de su galería. Las fotos históricas de LST incluyen descripción y contexto de 2024/2025; Senegal conserva procedencia genérica del archivo suministrado, sin atribuir sus imágenes de catálogo a un viaje anterior.
+
+Se conservan precios, fechas, niveles, estados, PDF, programas y todos los campos ajenos a hero/gallery. Los tres documentos de Fuerteventura y Maldivas y los 53 assets permanecen intactos. Asturias, Cantabria y Euskadi siguen en la biblioteca: no se crean viajes ni datos comerciales inexistentes.
+
+[Plan](publication-plan.json), [estado anterior](before.json), [transacción](publication-transaction.json) `L3ZrvhdiWtwAlFI8eU2z2L` y [verificación real](verification.json). Cinco patches en una transacción atómica, con ifRevisionID; se rechazó cualquier borrador o revisión concurrente detectada antes de escribir. No había borradores o versiones pendientes. Una creación simultánea de borrador posterior a esa comprobación no queda bloqueada, pero la operación tampoco la modifica ni publica.
+
+La [web pública](https://lst-sepia.vercel.app/viajes/) se actualizó automáticamente por el webhook existente. [Contraste público](live-verification.json): las cinco fichas responden 200 y coinciden exactamente con las portadas y galerías publicadas. La web pública conserva ocho fichas por fecha del código actualmente desplegado. El código local consolida esas ocho salidas en seis destinos; conserva la galería de la primera fecha de Marruecos. Las cinco fotos de nivel 3 sí están publicadas en su documento y ficha pública por fecha. No se desplegaron los cambios de código locales ajenos a esta tarea.
+
+Validación: vista previa aislada y build local desde Sanity publicado real; scripts/check.mjs PASS 24 páginas en ambas salidas. [Navegador final](published-browser.json): ocho vistas, cuatro destinos a 390 y 1440 px, portada y seis fotos decodificadas por ficha, galería, retorno del foco, ausencia de desbordamiento y cero errores JavaScript. [Prueba previa](preview-browser.json). No se enviaron mensajes ni reservas.
+
+Revisión independiente sin cambios de archivos sobre publish.mjs SHA256 3298340cf22c5e2d98b69d198bc7dfb4b5cd827943a6a0cfc47ea00beed32e29 y candidata 9496580d0d08936267877be958cbb8eabb5d7ec5030f887cecdf8921aa24d170: plan, referencias, preservación de campos y simulaciones de revisiones, borradores y resultado incierto; sin bloqueos. Tras aplicar, contrastó transacción, lecturas finales y modelo público real contra la candidata, sin hallazgos bloqueantes.
+
+Repositorio sobre 58f338661fc4705364fea08727c836e79b3f2048, sin commit de esta tarea; se conserva el amplio trabajo previo. No cambia código fuente de aplicación: se regeneran home, catálogo, guía, snapshot y fichas/alias con las nuevas fotos. [Versión y hashes de salidas generadas](version.json). Nuevos archivos: evidencia en este directorio y utilidades locales ignoradas en artifacts/fotos-destinos.

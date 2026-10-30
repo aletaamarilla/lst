@@ -1,0 +1,41 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "files": [
+    {
+      "file": "dist/landing.css",
+      "sha256": "9cc87d183985d38f88a635b592276e9bcaf66ecbb30546cf7d563cc98d3b33e5"
+    },
+    {
+      "file": "dist/about.css",
+      "sha256": "a27912247ffa61ea3e4db34ffd1e340036ff7fc6b8f2dd9685339ef60d515e31"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "8747d81e31030d3b52a87105ecf6917a5aec7b943b9d3779b426f118788ebaea"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "8364fddaa8bf2972c3d4824d3a91b558973517f7ac2e33cc6e9704d6e98c2984"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "002662ade0c79aa7c8047747fdb547b6b25e088d74b0b0d8553075245f4197bf"
+    },
+    {
+      "file": "scripts/check-about.mjs",
+      "sha256": "4c1c5bb16a1cc197d6f2d924924a71ee059521fc2245d07ddf263b34dc6d947c"
+    },
+    {
+      "file": "scripts/check-faqs.mjs",
+      "sha256": "e004d225a058d62b9470ae2975129c7d6caadd5a3dcd349fa8cb4ca1430d52fa"
+    },
+    {
+      "file": "dist/home.css",
+      "sha256": "738c45d0bfe74b289cc32c2117c830f71631cabda3898c6d0516c084a813639a"
+    },
+    {
+      "file": "dist/app.js",
+      "sha256": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3"
+    }
+  ]
+}

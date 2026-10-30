@@ -1,0 +1,1 @@
+Sin bloqueos. Revisión independiente de los dos archivos respecto a artifacts/faq-character-before y hashes candidate.json. Ocho preguntas/respuestas idénticas, enlaces conservados y npm check40 PASS. Cascada de contraste/foco, controles nativos, orden semántico y capturas de escritorio/respuestas abiertas a320 revisados. Sin edición de implementación.

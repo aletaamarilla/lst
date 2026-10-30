@@ -1,0 +1,119 @@
+[
+  {
+    "width": 320,
+    "cssSha256": "34b43fad8c6c9139181a2563fdfa98d695ec32fb1a914c0c3aa35c9d2788f977",
+    "contrast": {
+      "pixels": 9667,
+      "min": {
+        "contrast": 3.1409452252879704,
+        "x": 237,
+        "y": 171,
+        "background": [
+          161,
+          142,
+          126
+        ]
+      },
+      "p05": {
+        "contrast": 3.6277729402738093,
+        "x": 213,
+        "y": 178,
+        "background": [
+          147,
+          132,
+          115
+        ]
+      },
+      "median": {
+        "contrast": 4.561337893389737,
+        "x": 136,
+        "y": 184,
+        "background": [
+          128,
+          116,
+          101
+        ]
+      },
+      "below3": 0,
+      "method": "Opaque white glyph pixels compared with same rendered background after making only foreground fill transparent; explicit text shadow is retained. Device scale factor 1."
+    }
+  },
+  {
+    "width": 390,
+    "cssSha256": "34b43fad8c6c9139181a2563fdfa98d695ec32fb1a914c0c3aa35c9d2788f977",
+    "contrast": {
+      "pixels": 12776,
+      "min": {
+        "contrast": 3.1739260634249544,
+        "x": 75,
+        "y": 163,
+        "background": [
+          161,
+          141,
+          124
+        ]
+      },
+      "p05": {
+        "contrast": 3.7464661345683092,
+        "x": 270,
+        "y": 192,
+        "background": [
+          146,
+          129,
+          114
+        ]
+      },
+      "median": {
+        "contrast": 4.6111764234358015,
+        "x": 94,
+        "y": 191,
+        "background": [
+          128,
+          115,
+          100
+        ]
+      },
+      "below3": 0,
+      "method": "Opaque white glyph pixels compared with same rendered background after making only foreground fill transparent; explicit text shadow is retained. Device scale factor 1."
+    }
+  },
+  {
+    "width": 1440,
+    "cssSha256": "34b43fad8c6c9139181a2563fdfa98d695ec32fb1a914c0c3aa35c9d2788f977",
+    "contrast": {
+      "pixels": 46088,
+      "min": {
+        "contrast": 3.209663447778314,
+        "x": 428,
+        "y": 209,
+        "background": [
+          161,
+          140,
+          121
+        ]
+      },
+      "p05": {
+        "contrast": 3.8630780346065463,
+        "x": 399,
+        "y": 211,
+        "background": [
+          146,
+          126,
+          111
+        ]
+      },
+      "median": {
+        "contrast": 4.772462754397092,
+        "x": 184,
+        "y": 274,
+        "background": [
+          127,
+          112,
+          99
+        ]
+      },
+      "below3": 0,
+      "method": "Opaque white glyph pixels compared with same rendered background after making only foreground fill transparent; explicit text shadow is retained. Device scale factor 1."
+    }
+  }
+]

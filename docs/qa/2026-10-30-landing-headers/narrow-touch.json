@@ -1,0 +1,84 @@
+[
+  {
+    "route": "niveles",
+    "controls": [
+      {
+        "height": 44,
+        "text": "Ver viajes",
+        "width": 66.390625
+      },
+      {
+        "height": 44,
+        "text": "",
+        "width": 44
+      },
+      {
+        "height": 84,
+        "text": "IRookies↗",
+        "width": 128.5
+      },
+      {
+        "height": 84,
+        "text": "IIAprendices↗",
+        "width": 128.5
+      },
+      {
+        "height": 84,
+        "text": "IIIRiders↗",
+        "width": 128.5
+      },
+      {
+        "height": 84,
+        "text": "IVSupercracks↗",
+        "width": 128.5
+      }
+    ],
+    "height": 568,
+    "overflow": false,
+    "width": 320
+  },
+  {
+    "route": "niveles",
+    "menu": {
+      "bottom": 378.390625,
+      "height": 568,
+      "overflow": false
+    }
+  },
+  {
+    "route": "viajes",
+    "controls": [
+      {
+        "height": 44,
+        "text": "Ver viajes",
+        "width": 66.390625
+      },
+      {
+        "height": 44,
+        "text": "",
+        "width": 44
+      },
+      {
+        "height": 54,
+        "text": "Todos los nivelesI · RookiesII · AprendicesIII · RidersIV · Supercracks",
+        "width": 225
+      },
+      {
+        "height": 48,
+        "text": "Ver todos ×",
+        "width": 123.390625
+      }
+    ],
+    "height": 568,
+    "overflow": false,
+    "width": 320
+  },
+  {
+    "route": "viajes",
+    "menu": {
+      "bottom": 378.390625,
+      "height": 568,
+      "overflow": false
+    }
+  }
+]

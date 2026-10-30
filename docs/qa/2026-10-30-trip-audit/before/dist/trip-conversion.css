@@ -1,0 +1,208 @@
+/* Conversion layer: paper, ink, one sea-green secondary and orange actions. */
+body.trip-designed{--paper:#fffae7;--sea:#164e45;--sea-soft:#e9efea;--line:#d9d8cd;--muted:#535950;background:var(--paper)}
+.trip-designed .trip-shell,.trip-designed .trip-layout{width:calc(100% - 40px)}
+.trip-designed .fine-print{font-size:12px!important;line-height:1.65!important}
+.trip-designed .eyebrow{font-size:11px;letter-spacing:.1em}
+.trip-designed .button{font-size:14px;min-height:48px}
+.trip-designed :is(p,li,dd,blockquote){overflow-wrap:anywhere}
+.trip-designed .site-header{min-height:66px;padding-block:14px}
+.trip-designed .site-header .lst-nav-contact,.trip-designed .site-header.is-scrolled .lst-nav-contact{background:transparent;color:inherit;border:1px solid currentColor}
+.trip-designed .trip-cover{height:290px}
+.trip-designed .trip-cover-copy{padding-top:88px;padding-bottom:28px}
+.trip-designed .trip-cover h1{font-size:clamp(52px,15vw,76px);max-width:12ch}
+.trip-designed .trip-cover h1.trip-title-long{font-size:clamp(42px,12vw,65px)}
+.trip-designed .trip-cover-level{font-size:12px;margin-bottom:10px}
+.trip-designed .cover-thumbnails{display:none}
+.trip-designed .cover-carousel-controls{display:none}
+.cover-gallery-open{position:absolute;right:20px;top:85px;z-index:3;display:flex;align-items:center;gap:9px;min-height:44px;padding:9px 14px;border:1px solid #ffffffa0;border-radius:99px;background:#1b1b1b8c;color:#fff;font:500 12px/1.4 var(--body);cursor:pointer;backdrop-filter:blur(6px)}
+.cover-gallery-open span{font:400 11px var(--mono);opacity:.85}
+.trip-offer-overview{display:grid;gap:22px;padding-block:23px 26px}
+.offer-promise{font:600 23px/1.25 var(--body);letter-spacing:-.04em;max-width:31ch;margin:0 0 19px}
+.offer-facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px;margin:0}
+.offer-facts>div{min-width:0}
+.offer-facts dt{font-size:11px;line-height:1.4;color:var(--muted);margin-bottom:4px}
+.offer-facts dd{font-size:13px;line-height:1.5;font-weight:600;margin:0}
+.offer-facts>div:first-child{grid-column:1/-1}
+.offer-overview-booking{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px 16px;border-top:1px solid var(--line);padding-top:17px}
+.offer-overview-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 9px;grid-column:1;margin:0}
+.offer-overview-price strong{font-size:29px;letter-spacing:-.05em;line-height:1.2}
+.offer-overview-price del{font-size:12px;color:var(--muted)}
+.offer-overview-price>span{flex-basis:100%;font-size:12px;line-height:1.5;color:var(--muted)}
+.offer-overview-booking .trip-offer{grid-column:1/-1;order:3;margin:6px 0 0}
+.offer-overview-booking .trip-offer-label,.offer-overview-booking .trip-offer-condition{font-size:11px}
+.trip-designed .trip-offer{background:var(--sea-soft)}
+.offer-overview-booking .overview-deposit{grid-column:1;font-size:12px;line-height:1.5;color:var(--muted);margin:0}
+.offer-overview-booking>.overview-cta{grid-column:2;grid-row:1/3;min-width:132px;padding-inline:17px}
+.offer-overview-booking>.fine-print{grid-column:1/-1;order:4;margin:5px 0 0}
+.trip-designed .trip-section-nav{display:flex;flex-wrap:wrap;gap:0 23px;padding-block:6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trip-section-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;font-weight:600;text-decoration:none;text-underline-offset:5px}
+.trip-section-nav a:hover{text-decoration:underline}
+.trip-designed .trip-breadcrumb{display:none}
+.trip-designed .trip-summary{padding:12px 0 16px}
+.destination-details{border:0}
+.destination-details>summary{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:48px;font-size:14px;font-weight:500;cursor:pointer;list-style:none}
+.destination-details>summary::-webkit-details-marker{display:none}
+.destination-details[open]>summary>span{transform:rotate(45deg)}
+.destination-details .trip-kickoff{font-size:15px;line-height:1.75;padding:9px 0 18px}
+.trip-designed .trip-block{padding-block:34px}
+.trip-designed .trip-block h2{font-size:clamp(27px,6.5vw,36px);margin-bottom:22px}
+.trip-designed .trip-level{border:0;border-top:3px solid var(--sea);border-radius:0;background:transparent;padding:28px 0;margin:0 0 12px}
+.trip-designed .level-heading{gap:10px;margin-bottom:20px}
+.trip-designed .level-heading h2{margin:0}
+.trip-designed .level-fixed-note{border-color:var(--sea);color:var(--sea);font-size:12px}
+.trip-designed .audience-profiles{gap:18px;margin-top:20px}
+.trip-designed .audience-profiles article{padding:0 0 0 17px;border:0;border-left:2px solid var(--line);border-radius:0;background:transparent}
+.trip-designed .audience-profiles h3{font-size:16px}
+.trip-designed .audience-profiles p,.trip-designed .level-requirement{font-size:14px!important;line-height:1.7}
+.trip-designed .level-actions{margin-top:12px;gap:4px 22px}
+.trip-designed .level-actions .text-link{font-size:13px}
+.group-fit{margin-top:20px;padding:22px;background:var(--sea-soft);border-radius:12px}
+.group-fit-label{font-size:10px;font-weight:600;letter-spacing:.1em;color:var(--sea);margin:0 0 8px}
+.trip-designed .group-fit h3{font:600 23px/1.25 var(--body);letter-spacing:-.035em;margin-bottom:10px}
+.group-fit p:not(.group-fit-label){font-size:14px;line-height:1.7;color:var(--muted)}
+.group-fit-contact{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:8px;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.trip-designed .level-actions a[data-whatsapp]{padding-inline:0;border:0;text-decoration:underline;text-underline-offset:4px;font-size:13px}
+.trip-designed .group-fit-contact{border:0;padding:6px 0;font-size:13px;text-decoration:underline;text-underline-offset:4px;justify-content:flex-start}
+.trip-designed .whatsapp-icon{flex-shrink:0}
+.trip-guest-voice{padding:21px 0;margin:0;border-bottom:1px solid var(--line)}
+.trip-guest-voice blockquote{font:500 20px/1.5 var(--body);letter-spacing:-.02em;margin:0 0 8px}
+.trip-guest-voice figcaption{font-size:12px;color:var(--muted)}
+.trip-designed .trip-alternative{font-size:12px;border:0;margin-top:8px;padding-block:12px;min-height:44px}
+.trip-designed .surf-plan-layout{margin-block:22px;gap:24px}
+.trip-designed .surf-plan-photo img{height:205px;object-position:center 45%}
+.trip-designed .surf-plan-grid{gap:0}
+.trip-designed .surf-plan-grid article{padding-block:17px;gap:14px}
+.trip-designed .surf-plan-grid article:first-child{padding-top:0}
+.trip-designed .surf-plan-grid article>.plan-number{background:var(--sea-soft);border:0;color:var(--sea)}
+.trip-designed .surf-plan-grid h3{font-size:16px}
+.trip-designed .surf-plan-grid p,.trip-designed .plan-item>p{font-size:14px;line-height:1.7}
+.trip-designed .day-rhythm{font-size:14px;line-height:1.7;margin-bottom:24px;color:var(--muted);max-width:65ch}
+.trip-designed .day-rhythm strong{display:block;color:var(--ink);font-size:17px;margin-bottom:6px}
+.trip-designed #spots{background:transparent;border:0;border-radius:0;padding:25px 0 0;margin-block:24px 0}
+.trip-designed #spots h2{font-size:24px}
+.trip-designed .visual-track{display:grid;grid-template-columns:minmax(0,1fr);gap:0;overflow:visible;padding:0;scroll-snap-type:none}
+.trip-designed .visual-card{display:grid;grid-template-columns:112px minmax(0,1fr);align-items:center;gap:17px;border:0;border-top:1px solid var(--line);border-radius:0;padding:18px 0;background:transparent;overflow:visible}
+.trip-designed .visual-card>img{width:112px;height:120px;border-radius:8px;object-position:center}
+.trip-designed .visual-card-copy{padding:0;min-width:0}
+.trip-designed .visual-card-index{font-size:10px;color:var(--sea);margin-bottom:4px}
+.trip-designed .visual-card h3{font-size:17px;line-height:1.3}
+.trip-designed .visual-card p{font-size:14px;line-height:1.65}
+.trip-designed .visual-card:not(:has(>img)){grid-template-columns:1fr;background:transparent}
+.trip-designed .visual-card:not(:has(>img))::before{display:none}
+.trip-designed .trip-programme .trip-team{margin-top:38px;border:0;border-radius:0;padding:28px 0;border-top:1px solid var(--line);background:transparent;gap:24px}
+.trip-designed .trip-team h3{font-size:32px;max-width:18ch}
+.trip-designed .trip-team-copy>p:not(.eyebrow){color:var(--muted);font-size:15px;line-height:1.75}
+.trip-designed .trip-team-roles{font-size:13px}
+.trip-designed .trip-team-portrait img{height:280px}
+.trip-designed .stay-block,.trip-designed .stay-compact{border:0;border-radius:0;background:transparent;padding:34px 0;margin:0}
+.trip-designed .stay-block>p:not(.eyebrow){font-size:15px}
+.trip-designed .stay-carousel-track>.trip-figure{flex-basis:85%}
+.trip-designed .stay-carousel-track img{height:210px;border-radius:10px}
+.trip-designed .trip-costs{border-top:3px solid var(--sea);margin-top:20px}
+.price-decision{display:grid;gap:20px;padding:23px;background:var(--sea-soft);border-radius:12px;margin-bottom:25px}
+.decision-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.decision-price strong{font-size:37px;font-weight:700;letter-spacing:-.05em;line-height:1.2}
+.decision-price del{font-size:16px;color:var(--muted)}
+.price-decision .booking-deposit{background:transparent;border:0;padding:0;margin:0 0 15px}
+.price-decision .booking-deposit p{font-size:14px}
+.price-decision .price-decision-cta{width:100%}
+.trip-designed .trip-costs .booking-conditions{border:0;margin:0 0 27px;padding:0}
+.booking-conditions>h3{font:600 20px/1.4 var(--body);letter-spacing:-.03em;margin-bottom:15px}
+.payment-date{padding-block:17px;border-bottom:1px solid var(--line)}
+.payment-date h3{font-size:14px;margin-bottom:8px}
+.payment-date-fare{font-size:16px;line-height:1.6}
+.payment-date-fare span{display:block;font-size:12px;color:var(--muted)}
+.payment-date .departure-payment{font-size:14px}
+.payment-date .departure-payment summary{font-size:13px;min-height:44px;padding-top:12px}
+.payment-date .payment-terms{font-size:14px;line-height:1.7;margin-top:12px}
+.cancellation-details{margin-top:18px;border-bottom:1px solid var(--line)}
+.cancellation-details summary{font-size:14px;font-weight:600;min-height:48px;cursor:pointer;padding-block:13px}
+.cancellation-details p{font-size:14px;line-height:1.7;margin-bottom:10px}
+.cancellation-details h4{font-size:14px;margin-block:10px}
+.cancellation-details a[data-whatsapp]{margin-bottom:16px}
+.trip-designed .inclusion-grid{gap:24px}
+.trip-designed .inclusion-list,.trip-designed .exclusion-list{background:transparent;border:0;border-radius:0;padding:0}
+.trip-designed .inclusion-list h3{border-bottom:1px solid var(--line);font-size:18px;padding-bottom:15px}
+.trip-designed .inclusion-group h4{font-size:14px}
+.trip-designed .inclusion-list li{font-size:14px;line-height:1.75}
+.trip-designed .trip-faq summary{font-size:15px;line-height:1.5;padding-block:19px}
+.trip-designed .trip-faq details p{font-size:14px;line-height:1.75}
+.trip-designed .trip-reserve{background:var(--ink);border-radius:14px;padding:26px;margin-top:20px}
+.trip-designed .trip-reserve h2{font-size:38px}
+.trip-designed .trip-reserve .reserve-copy>p:not(.eyebrow){font-size:15px;color:var(--paper);line-height:1.7}
+.trip-designed .trip-reserve .reserve-whatsapp{background:transparent;border:1px solid #fffae780;color:var(--paper);font-size:13px}
+.trip-designed .trip-reserve .reserve-whatsapp:hover{background:var(--paper);color:var(--ink)}
+.request-steps{display:grid;list-style:none;padding:0;margin:27px 0 0;gap:20px;border-top:1px solid #fffae740;padding-top:23px}
+.request-steps li{min-width:0}
+.request-steps li>span{display:block;color:#f79479;font:500 11px var(--mono);margin-bottom:8px}
+.request-steps strong{display:block;font-size:14px;line-height:1.5;margin-bottom:5px}
+.request-steps p{font-size:13px;line-height:1.65;color:#dedbcf}
+.trip-designed .trip-reserve .fine-print{color:#dedbcf;margin-top:25px}
+.reserve-conditions-link{display:inline-flex;align-items:center;min-height:44px;font-size:12px;text-decoration:underline;text-underline-offset:4px;color:var(--paper)}
+.trip-designed .booking-card{background:var(--paper);border-color:var(--line);box-shadow:none;border-radius:14px}
+.trip-designed .booking-deposit{background:var(--sea-soft);border-color:transparent}
+.trip-designed .booking-card .booking-card-help{font-size:12px}
+.trip-designed .booking-whatsapp{background:transparent;color:var(--sea);border:0}
+.trip-designed .related-section{background:transparent;border-top:1px solid var(--line);margin-top:48px;padding-top:32px}
+.trip-designed .related-section h2{font-size:25px}
+.trip-designed .trip-dock{padding:12px 20px calc(12px + env(safe-area-inset-bottom));gap:12px;background:var(--paper);border-radius:0;border-top:1px solid var(--line);box-shadow:0 -4px 20px #1b1b1b08}
+.trip-designed .trip-dock .dock-offer{display:none}
+.trip-designed .trip-dock .dock-price strong{font-size:23px}
+.trip-designed .trip-dock .dock-price del{font-size:11px}
+.trip-designed .trip-dock>div>span{font-size:11px}
+.trip-designed .trip-dock .dock-cta{min-width:134px;font-size:14px}
+.trip-designed .trip-dock.is-overview-visible{visibility:hidden;pointer-events:none}
+@media(min-width:600px){
+ .trip-designed .trip-shell,.trip-designed .trip-layout{width:calc(100% - 64px)}
+ .trip-designed .trip-cover{height:360px}
+ .trip-designed .trip-cover h1{font-size:88px}
+ .trip-designed .trip-cover h1.trip-title-long{font-size:72px}
+ .offer-facts{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .offer-facts>div:first-child{grid-column:1/-1}
+ .trip-offer-overview{grid-template-columns:minmax(0,1fr) 255px;gap:32px;padding-block:30px}
+ .offer-overview-booking{display:block;border:0;border-left:1px solid var(--line);padding:0 0 0 25px}
+ .offer-overview-booking>.overview-cta{width:100%;margin-top:13px}
+ .offer-overview-booking>.fine-print{margin-top:9px}
+ .offer-overview-booking .overview-deposit{margin-top:9px}
+ .trip-designed .visual-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+ .trip-designed .visual-card{display:block}
+ .trip-designed .visual-card>img{width:100%;height:185px;margin-bottom:16px}
+ .trip-designed .surf-plan-layout{grid-template-columns:190px minmax(0,1fr)}
+ .trip-designed .surf-plan-photo img{height:100%;min-height:340px}
+ .trip-designed .trip-team-portrait img{height:100%;min-height:315px}
+ .trip-designed .stay-carousel-track>.trip-figure{flex-basis:65%}
+ .price-decision{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:25px}
+ .request-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .trip-designed .trip-reserve{padding:32px}
+}
+@media(min-width:1000px){
+ .trip-designed .trip-shell,.trip-designed .trip-layout{width:min(1180px,calc(100% - 96px))}
+ .trip-designed .trip-cover{height:390px}
+ .trip-designed .trip-cover h1{font-size:100px}
+ .trip-designed .trip-cover-copy{padding-bottom:35px}
+ .cover-gallery-open{top:auto;bottom:30px;right:max(48px,calc((100% - 1180px)/2));font-size:13px}
+ .trip-designed .trip-offer-overview{grid-template-columns:minmax(0,1fr) 300px;gap:44px;padding-block:30px}
+ .offer-promise{font-size:30px;margin-bottom:22px}
+ .offer-facts{display:flex;flex-wrap:wrap;gap:16px 28px}
+ .offer-facts dd{font-size:14px}
+ .offer-overview-booking{border:0;padding-left:0}
+ .trip-designed .trip-layout{gap:44px}
+ .trip-designed .trip-block{padding-block:42px}
+ .trip-designed .trip-level{padding-top:29px}
+ .trip-designed .trip-programme .trip-team{padding-top:30px;padding-bottom:0}
+ .trip-designed .trip-booking{padding-top:25px}
+ .trip-designed .trip-section-nav{gap:36px}
+ .trip-designed .trip-reserve{padding:34px}
+}
+@media(max-width:359px){
+ .offer-overview-booking{column-gap:10px}
+ .offer-overview-booking>.overview-cta{min-width:120px;padding-inline:12px;font-size:13px}
+ .trip-designed .visual-card{grid-template-columns:88px minmax(0,1fr);gap:14px}
+ .trip-designed .visual-card>img{width:88px;height:110px}
+ .trip-designed .trip-dock{padding-inline:16px;gap:9px}
+ .trip-designed .trip-dock .dock-cta{min-width:120px;font-size:13px;padding-inline:12px}
+ .trip-section-nav{column-gap:20px!important}
+ .offer-promise{font-size:21px}
+ .trip-designed .trip-cover{height:270px}
+}
+@media(prefers-reduced-motion:reduce){.trip-designed *{scroll-behavior:auto}}

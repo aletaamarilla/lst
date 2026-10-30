@@ -1,0 +1,20 @@
+
+> lets-surf-together-home@0.1.0 studio:build
+> npm --prefix studio run build --
+
+
+> lets-surf-together-studio@1.0.0 build
+> sanity build
+
+[34mℹ[39m Building with auto-updates enabled
+ ›   Warning: The following local package versions are different from the 
+ ›   versions currently served at runtime.
+ ›   When using auto updates, we recommend that you test locally with the same 
+ ›   versions before deploying. 
+ ›
+ ›    - sanity (local version: 6.19.0, runtime version: 6.20.0)
+ ›    - @sanity/vision (local version: 6.19.0, runtime version: 6.20.0)
+- Clean output folder
+[32m✔[39m Clean output folder (15ms)
+- Build Sanity Studio
+[32m✔[39m Build Sanity Studio (1256ms)

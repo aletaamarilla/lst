@@ -1,0 +1,34 @@
+{
+  "singleRegistration": {
+    "url": "http://127.0.0.1:4179/inscripciones/marruecos/",
+    "heading": "Marruecos."
+  },
+  "multipleDates": {
+    "dates": [
+      {
+        "date": "21 mar 2027 — 28 mar 2027",
+        "fare": "Precio general: 1.499 € 1.399 €por persona",
+        "pdf": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+        "registration": "/inscripciones/maldivas/?salida=maldivas-2027-03-21"
+      },
+      {
+        "date": "28 mar 2027 — 4 abr 2027",
+        "fare": "Precio general: 1.499 € 1.399 €por persona",
+        "pdf": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
+        "registration": "/inscripciones/maldivas/?salida=maldivas-2027-03-28"
+      }
+    ],
+    "open": true
+  },
+  "escape": {
+    "closed": true,
+    "focus": "button dock-cta"
+  },
+  "dateRegistration": {
+    "url": "http://127.0.0.1:4179/inscripciones/maldivas/?salida=maldivas-2027-03-28",
+    "date": [
+      "28 mar 2027 — 4 abr 2027Niveles II–III · 7 noches"
+    ]
+  },
+  "console": []
+}

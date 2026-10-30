@@ -1,0 +1,1126 @@
+{
+  "hashes": [
+    {
+      "file": "dist/index.html",
+      "sha256": "8b2b0c77f6b7c51f3248c04479d4cb100a72711a2702838cce77ab7a1777152a"
+    },
+    {
+      "file": "dist/home.css",
+      "sha256": "63317e28e832b71e08177119ce6dff11df3c645b805ebe67653ffa4d3fc1afee"
+    },
+    {
+      "file": "scripts/check-home-browser.mjs",
+      "sha256": "bd733ca29e97980990c3bfe4370599a54a19bb0770d08fa4b6f95a0df47e0443"
+    }
+  ],
+  "results": [
+    {
+      "width": 320,
+      "normal": {
+        "overflow": false,
+        "order": [
+          {
+            "id": "",
+            "cls": "lst-hero"
+          },
+          {
+            "id": "viajes",
+            "cls": "lst-trips lst-width lst-section"
+          },
+          {
+            "id": "niveles",
+            "cls": "lst-levels lst-section"
+          },
+          {
+            "id": "nosotros",
+            "cls": "people"
+          },
+          {
+            "id": "opiniones",
+            "cls": "lst-testimonials lst-section"
+          },
+          {
+            "id": "dudas",
+            "cls": "faq lst-width lst-section"
+          },
+          {
+            "id": "reservar",
+            "cls": "lst-booking lst-width lst-section"
+          },
+          {
+            "id": "",
+            "cls": "lst-closing"
+          }
+        ],
+        "sections": [
+          {
+            "selector": ".lst-trip-actions",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 127.1875
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-testimonials",
+            "box": {
+              "x": 0,
+              "right": 320,
+              "width": 320,
+              "height": 738.21875
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "36px 0px",
+              "border": "",
+              "borderTop": "1px solid rgba(27, 27, 27, 0.22)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".faq",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 535.953125
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "24px",
+              "border": "",
+              "borderTop": "3px solid rgb(234, 89, 52)",
+              "borderRadius": "4px 26px 4px 4px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-people-copy",
+            "box": {
+              "x": 42,
+              "right": 278,
+              "width": 236,
+              "height": 548.953125
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          }
+        ],
+        "catalogueLinks": [
+          {
+            "text": "Ver todos los viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 69.1875
+            }
+          },
+          {
+            "text": "¿Dudas con tu nivel? ↓",
+            "href": "#niveles",
+            "box": {
+              "x": 18,
+              "right": 180.296875,
+              "width": 162.296875,
+              "height": 44
+            }
+          },
+          {
+            "text": "Ver viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 55.953125,
+              "right": 264.03125,
+              "width": 208.078125,
+              "height": 48
+            }
+          }
+        ],
+        "reviews": {
+          "symbol": {
+            "src": "/assets/brand/symbol-orange.svg",
+            "alt": "",
+            "hidden": "true"
+          },
+          "heading": {
+            "color": "rgb(27, 27, 27)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "38px",
+            "padding": "0px",
+            "border": "0px none rgb(27, 27, 27)",
+            "borderTop": "0px none rgb(27, 27, 27)",
+            "borderRadius": "0px"
+          },
+          "note": {
+            "color": "rgba(27, 27, 27, 0.73)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "12px",
+            "padding": "0px",
+            "border": "0px none rgba(27, 27, 27, 0.73)",
+            "borderTop": "0px none rgba(27, 27, 27, 0.73)",
+            "borderRadius": "0px"
+          }
+        },
+        "faqLabel": "Antes de reservar",
+        "experienceTargets": 1
+      },
+      "focus": "rgb(234, 89, 52) solid 3px",
+      "faqOpens": true,
+      "text200": {
+        "overflow": false,
+        "order": [
+          {
+            "id": "",
+            "cls": "lst-hero"
+          },
+          {
+            "id": "viajes",
+            "cls": "lst-trips lst-width lst-section"
+          },
+          {
+            "id": "niveles",
+            "cls": "lst-levels lst-section"
+          },
+          {
+            "id": "nosotros",
+            "cls": "people"
+          },
+          {
+            "id": "opiniones",
+            "cls": "lst-testimonials lst-section"
+          },
+          {
+            "id": "dudas",
+            "cls": "faq lst-width lst-section"
+          },
+          {
+            "id": "reservar",
+            "cls": "lst-booking lst-width lst-section"
+          },
+          {
+            "id": "",
+            "cls": "lst-closing"
+          }
+        ],
+        "sections": [
+          {
+            "selector": ".lst-trip-actions",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 239.5625
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-testimonials",
+            "box": {
+              "x": 0,
+              "right": 320,
+              "width": 320,
+              "height": 1806.1875
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "36px 0px",
+              "border": "",
+              "borderTop": "1px solid rgba(27, 27, 27, 0.22)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".faq",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 1697.90625
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "24px",
+              "border": "",
+              "borderTop": "3px solid rgb(234, 89, 52)",
+              "borderRadius": "4px 26px 4px 4px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-people-copy",
+            "box": {
+              "x": 42,
+              "right": 278,
+              "width": 236,
+              "height": 1857.609375
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": [
+              {
+                "tag": "P",
+                "cls": "",
+                "box": {
+                  "x": 42,
+                  "right": 278,
+                  "width": 236,
+                  "height": 810
+                },
+                "client": 236,
+                "scroll": 255
+              }
+            ]
+          }
+        ],
+        "catalogueLinks": [
+          {
+            "text": "Ver todos los viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 147.5625
+            }
+          },
+          {
+            "text": "¿Dudas con tu nivel? ↓",
+            "href": "#niveles",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 78
+            }
+          },
+          {
+            "text": "Ver viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 18,
+              "right": 302,
+              "width": 284,
+              "height": 98.78125
+            }
+          }
+        ],
+        "reviews": {
+          "symbol": {
+            "src": "/assets/brand/symbol-orange.svg",
+            "alt": "",
+            "hidden": "true"
+          },
+          "heading": {
+            "color": "rgb(27, 27, 27)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "76px",
+            "padding": "0px",
+            "border": "0px none rgb(27, 27, 27)",
+            "borderTop": "0px none rgb(27, 27, 27)",
+            "borderRadius": "0px"
+          },
+          "note": {
+            "color": "rgba(27, 27, 27, 0.73)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "24px",
+            "padding": "0px",
+            "border": "0px none rgba(27, 27, 27, 0.73)",
+            "borderTop": "0px none rgba(27, 27, 27, 0.73)",
+            "borderRadius": "0px"
+          }
+        },
+        "faqLabel": "Antes de reservar",
+        "experienceTargets": 1
+      }
+    },
+    {
+      "width": 390,
+      "normal": {
+        "overflow": false,
+        "order": [
+          {
+            "id": "",
+            "cls": "lst-hero"
+          },
+          {
+            "id": "viajes",
+            "cls": "lst-trips lst-width lst-section"
+          },
+          {
+            "id": "niveles",
+            "cls": "lst-levels lst-section"
+          },
+          {
+            "id": "nosotros",
+            "cls": "people"
+          },
+          {
+            "id": "opiniones",
+            "cls": "lst-testimonials lst-section"
+          },
+          {
+            "id": "dudas",
+            "cls": "faq lst-width lst-section"
+          },
+          {
+            "id": "reservar",
+            "cls": "lst-booking lst-width lst-section"
+          },
+          {
+            "id": "",
+            "cls": "lst-closing"
+          }
+        ],
+        "sections": [
+          {
+            "selector": ".lst-trip-actions",
+            "box": {
+              "x": 22,
+              "right": 368,
+              "width": 346,
+              "height": 112
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-testimonials",
+            "box": {
+              "x": 0,
+              "right": 390,
+              "width": 390,
+              "height": 738.21875
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "36px 0px",
+              "border": "",
+              "borderTop": "1px solid rgba(27, 27, 27, 0.22)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".faq",
+            "box": {
+              "x": 22,
+              "right": 368,
+              "width": 346,
+              "height": 520.078125
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "24px",
+              "border": "",
+              "borderTop": "3px solid rgb(234, 89, 52)",
+              "borderRadius": "4px 26px 4px 4px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-people-copy",
+            "box": {
+              "x": 46,
+              "right": 344,
+              "width": 298,
+              "height": 476.140625
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          }
+        ],
+        "catalogueLinks": [
+          {
+            "text": "Ver todos los viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 22,
+              "right": 308.8125,
+              "width": 286.8125,
+              "height": 54
+            }
+          },
+          {
+            "text": "¿Dudas con tu nivel? ↓",
+            "href": "#niveles",
+            "box": {
+              "x": 22,
+              "right": 184.296875,
+              "width": 162.296875,
+              "height": 44
+            }
+          },
+          {
+            "text": "Ver viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 90.953125,
+              "right": 299.03125,
+              "width": 208.078125,
+              "height": 48
+            }
+          }
+        ],
+        "reviews": {
+          "symbol": {
+            "src": "/assets/brand/symbol-orange.svg",
+            "alt": "",
+            "hidden": "true"
+          },
+          "heading": {
+            "color": "rgb(27, 27, 27)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "38px",
+            "padding": "0px",
+            "border": "0px none rgb(27, 27, 27)",
+            "borderTop": "0px none rgb(27, 27, 27)",
+            "borderRadius": "0px"
+          },
+          "note": {
+            "color": "rgba(27, 27, 27, 0.73)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "12px",
+            "padding": "0px",
+            "border": "0px none rgba(27, 27, 27, 0.73)",
+            "borderTop": "0px none rgba(27, 27, 27, 0.73)",
+            "borderRadius": "0px"
+          }
+        },
+        "faqLabel": "Antes de reservar",
+        "experienceTargets": 1
+      },
+      "focus": "rgb(234, 89, 52) solid 3px",
+      "faqOpens": true,
+      "text200": {
+        "overflow": false,
+        "order": [
+          {
+            "id": "",
+            "cls": "lst-hero"
+          },
+          {
+            "id": "viajes",
+            "cls": "lst-trips lst-width lst-section"
+          },
+          {
+            "id": "niveles",
+            "cls": "lst-levels lst-section"
+          },
+          {
+            "id": "nosotros",
+            "cls": "people"
+          },
+          {
+            "id": "opiniones",
+            "cls": "lst-testimonials lst-section"
+          },
+          {
+            "id": "dudas",
+            "cls": "faq lst-width lst-section"
+          },
+          {
+            "id": "reservar",
+            "cls": "lst-booking lst-width lst-section"
+          },
+          {
+            "id": "",
+            "cls": "lst-closing"
+          }
+        ],
+        "sections": [
+          {
+            "selector": ".lst-trip-actions",
+            "box": {
+              "x": 22,
+              "right": 368,
+              "width": 346,
+              "height": 166.375
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-testimonials",
+            "box": {
+              "x": 0,
+              "right": 390,
+              "width": 390,
+              "height": 1623.078125
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "36px 0px",
+              "border": "",
+              "borderTop": "1px solid rgba(27, 27, 27, 0.22)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".faq",
+            "box": {
+              "x": 22,
+              "right": 368,
+              "width": 346,
+              "height": 1587.109375
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "24px",
+              "border": "",
+              "borderTop": "3px solid rgb(234, 89, 52)",
+              "borderRadius": "4px 26px 4px 4px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-people-copy",
+            "box": {
+              "x": 46,
+              "right": 344,
+              "width": 298,
+              "height": 1527.296875
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          }
+        ],
+        "catalogueLinks": [
+          {
+            "text": "Ver todos los viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 22,
+              "right": 368,
+              "width": 346,
+              "height": 108.375
+            }
+          },
+          {
+            "text": "¿Dudas con tu nivel? ↓",
+            "href": "#niveles",
+            "box": {
+              "x": 22,
+              "right": 332.578125,
+              "width": 310.578125,
+              "height": 44
+            }
+          },
+          {
+            "text": "Ver viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 22.921875,
+              "right": 367.078125,
+              "width": 344.15625,
+              "height": 70
+            }
+          }
+        ],
+        "reviews": {
+          "symbol": {
+            "src": "/assets/brand/symbol-orange.svg",
+            "alt": "",
+            "hidden": "true"
+          },
+          "heading": {
+            "color": "rgb(27, 27, 27)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "76px",
+            "padding": "0px",
+            "border": "0px none rgb(27, 27, 27)",
+            "borderTop": "0px none rgb(27, 27, 27)",
+            "borderRadius": "0px"
+          },
+          "note": {
+            "color": "rgba(27, 27, 27, 0.73)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "24px",
+            "padding": "0px",
+            "border": "0px none rgba(27, 27, 27, 0.73)",
+            "borderTop": "0px none rgba(27, 27, 27, 0.73)",
+            "borderRadius": "0px"
+          }
+        },
+        "faqLabel": "Antes de reservar",
+        "experienceTargets": 1
+      }
+    },
+    {
+      "width": 1440,
+      "normal": {
+        "overflow": false,
+        "order": [
+          {
+            "id": "",
+            "cls": "lst-hero"
+          },
+          {
+            "id": "viajes",
+            "cls": "lst-trips lst-width lst-section"
+          },
+          {
+            "id": "niveles",
+            "cls": "lst-levels lst-section"
+          },
+          {
+            "id": "nosotros",
+            "cls": "people"
+          },
+          {
+            "id": "opiniones",
+            "cls": "lst-testimonials lst-section"
+          },
+          {
+            "id": "dudas",
+            "cls": "faq lst-width lst-section"
+          },
+          {
+            "id": "reservar",
+            "cls": "lst-booking lst-width lst-section"
+          },
+          {
+            "id": "",
+            "cls": "lst-closing"
+          }
+        ],
+        "sections": [
+          {
+            "selector": ".lst-trip-actions",
+            "box": {
+              "x": 108,
+              "right": 1332,
+              "width": 1224,
+              "height": 54
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-testimonials",
+            "box": {
+              "x": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 414.140625
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "44px 0px",
+              "border": "",
+              "borderTop": "1px solid rgba(27, 27, 27, 0.22)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".faq",
+            "box": {
+              "x": 108,
+              "right": 1332,
+              "width": 1224,
+              "height": 354.015625
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "48px",
+              "border": "",
+              "borderTop": "3px solid rgb(234, 89, 52)",
+              "borderRadius": "4px 32px 4px 4px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-people-copy",
+            "box": {
+              "x": 156,
+              "right": 651.640625,
+              "width": 495.640625,
+              "height": 492.359375
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "16px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          }
+        ],
+        "catalogueLinks": [
+          {
+            "text": "Ver todos los viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 108,
+              "right": 400.8125,
+              "width": 292.8125,
+              "height": 54
+            }
+          },
+          {
+            "text": "¿Dudas con tu nivel? ↓",
+            "href": "#niveles",
+            "box": {
+              "x": 424.8125,
+              "right": 601.359375,
+              "width": 176.546875,
+              "height": 44
+            }
+          },
+          {
+            "text": "Ver viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 613.953125,
+              "right": 826.03125,
+              "width": 212.078125,
+              "height": 48
+            }
+          }
+        ],
+        "reviews": {
+          "symbol": {
+            "src": "/assets/brand/symbol-orange.svg",
+            "alt": "",
+            "hidden": "true"
+          },
+          "heading": {
+            "color": "rgb(27, 27, 27)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "48px",
+            "padding": "0px",
+            "border": "0px none rgb(27, 27, 27)",
+            "borderTop": "0px none rgb(27, 27, 27)",
+            "borderRadius": "0px"
+          },
+          "note": {
+            "color": "rgba(27, 27, 27, 0.73)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "12px",
+            "padding": "0px",
+            "border": "0px none rgba(27, 27, 27, 0.73)",
+            "borderTop": "0px none rgba(27, 27, 27, 0.73)",
+            "borderRadius": "0px"
+          }
+        },
+        "faqLabel": "Antes de reservar",
+        "experienceTargets": 1
+      },
+      "focus": "rgb(234, 89, 52) solid 3px",
+      "faqOpens": true,
+      "text200": {
+        "overflow": false,
+        "order": [
+          {
+            "id": "",
+            "cls": "lst-hero"
+          },
+          {
+            "id": "viajes",
+            "cls": "lst-trips lst-width lst-section"
+          },
+          {
+            "id": "niveles",
+            "cls": "lst-levels lst-section"
+          },
+          {
+            "id": "nosotros",
+            "cls": "people"
+          },
+          {
+            "id": "opiniones",
+            "cls": "lst-testimonials lst-section"
+          },
+          {
+            "id": "dudas",
+            "cls": "faq lst-width lst-section"
+          },
+          {
+            "id": "reservar",
+            "cls": "lst-booking lst-width lst-section"
+          },
+          {
+            "id": "",
+            "cls": "lst-closing"
+          }
+        ],
+        "sections": [
+          {
+            "selector": ".lst-trip-actions",
+            "box": {
+              "x": 108,
+              "right": 1332,
+              "width": 1224,
+              "height": 74
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-testimonials",
+            "box": {
+              "x": 0,
+              "right": 1440,
+              "width": 1440,
+              "height": 862.5625
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "44px 0px",
+              "border": "",
+              "borderTop": "1px solid rgba(27, 27, 27, 0.22)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".faq",
+            "box": {
+              "x": 108,
+              "right": 1332,
+              "width": 1224,
+              "height": 815.59375
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgb(255, 250, 231)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "48px",
+              "border": "",
+              "borderTop": "3px solid rgb(234, 89, 52)",
+              "borderRadius": "4px 32px 4px 4px"
+            },
+            "overflowingDescendants": []
+          },
+          {
+            "selector": ".lst-people-copy",
+            "box": {
+              "x": 156,
+              "right": 651.640625,
+              "width": 495.640625,
+              "height": 1332.96875
+            },
+            "style": {
+              "color": "rgb(27, 27, 27)",
+              "background": "rgba(0, 0, 0, 0)",
+              "backgroundImage": "none",
+              "fontSize": "32px",
+              "padding": "0px",
+              "border": "0px none rgb(27, 27, 27)",
+              "borderTop": "0px none rgb(27, 27, 27)",
+              "borderRadius": "0px"
+            },
+            "overflowingDescendants": []
+          }
+        ],
+        "catalogueLinks": [
+          {
+            "text": "Ver todos los viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 108,
+              "right": 613.625,
+              "width": 505.625,
+              "height": 74
+            }
+          },
+          {
+            "text": "¿Dudas con tu nivel? ↓",
+            "href": "#niveles",
+            "box": {
+              "x": 637.625,
+              "right": 972.71875,
+              "width": 335.09375,
+              "height": 44
+            }
+          },
+          {
+            "text": "Ver viajes y fechas ↗",
+            "href": "/viajes/",
+            "box": {
+              "x": 545.921875,
+              "right": 894.078125,
+              "width": 348.15625,
+              "height": 70
+            }
+          }
+        ],
+        "reviews": {
+          "symbol": {
+            "src": "/assets/brand/symbol-orange.svg",
+            "alt": "",
+            "hidden": "true"
+          },
+          "heading": {
+            "color": "rgb(27, 27, 27)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "96px",
+            "padding": "0px",
+            "border": "0px none rgb(27, 27, 27)",
+            "borderTop": "0px none rgb(27, 27, 27)",
+            "borderRadius": "0px"
+          },
+          "note": {
+            "color": "rgba(27, 27, 27, 0.73)",
+            "background": "rgba(0, 0, 0, 0)",
+            "backgroundImage": "none",
+            "fontSize": "24px",
+            "padding": "0px",
+            "border": "0px none rgba(27, 27, 27, 0.73)",
+            "borderTop": "0px none rgba(27, 27, 27, 0.73)",
+            "borderRadius": "0px"
+          }
+        },
+        "faqLabel": "Antes de reservar",
+        "experienceTargets": 1
+      }
+    }
+  ]
+}

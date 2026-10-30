@@ -1,0 +1,137 @@
+ M README.md
+ D data/trips.json
+ M dist/about.css
+ D dist/assets/asturias-surf.webp
+ D dist/assets/asturias.webp
+ D dist/assets/azores-coast.webp
+ D dist/assets/azores-surf.webp
+ D dist/assets/azores.webp
+ D dist/assets/cadiz-session.webp
+ D dist/assets/cadiz.webp
+ D dist/assets/euskadi-coast.webp
+ D dist/assets/euskadi-stay.webp
+ D dist/assets/marruecos.webp
+ D dist/assets/salvador-17.webp
+ D dist/assets/salvador-18.webp
+ D dist/assets/salvador-19.webp
+ M dist/catalog-filter.js
+ M dist/catalog-snapshot.json
+ M dist/catalog.css
+ M dist/catalog.js
+ M dist/conocenos/index.html
+ M dist/faq.css
+ M dist/index.html
+ M dist/levels.css
+ M dist/levels.js
+ M dist/mobile.css
+ M dist/niveles/index.html
+ M dist/preguntas-frecuentes/index.html
+ M dist/styles.css
+ M dist/trip.css
+ M dist/trip.js
+ M dist/viajes/el-palmar-2026-12-04/index.html
+ M dist/viajes/fuerteventura-2027-02-12/index.html
+ M dist/viajes/hossegor-2026-11-20/index.html
+ M dist/viajes/index.html
+ M dist/viajes/maldivas-2027-03-21/index.html
+ M dist/viajes/maldivas-2027-03-28/index.html
+ M dist/viajes/marruecos-2027-01-17/index.html
+ M dist/viajes/marruecos-2027-01-24/index.html
+ M dist/viajes/marruecos/index.html
+ M dist/viajes/senegal-2027-02-28/index.html
+ M docs/guia-cliente.md
+ M package.json
+ M scripts/build.mjs
+ M scripts/catalog-filter.test.mjs
+ M scripts/check-about.mjs
+ D scripts/check-catalog.mjs
+ M scripts/check-dialogs.mjs
+ M scripts/check-faqs.mjs
+ D scripts/check-home-cards.mjs
+ M scripts/check-levels.mjs
+ M scripts/check-sanity-browser.mjs
+ D scripts/check-ux.mjs
+ M scripts/check.mjs
+ M scripts/render-catalog.mjs
+ M scripts/render-home-trips.mjs
+ M scripts/render-level-trips.mjs
+ M scripts/render-trips.mjs
+ M scripts/sanity-trips.mjs
+ M scripts/sanity.mjs
+ M scripts/sanity.test.mjs
+ M scripts/trip-model.mjs
+ M scripts/trip-model.test.mjs
+ M studio/schemaTypes/trip.ts
+?? dist/assets/fonts/bricolage-grotesque-OFL.txt
+?? dist/assets/fonts/bricolage-grotesque.woff2
+?? dist/assets/home/
+?? dist/home.css
+?? dist/home.js
+?? dist/landing.css
+?? dist/trip-detail.css
+?? dist/viajes/el-palmar/
+?? dist/viajes/fuerteventura/
+?? dist/viajes/hossegor/
+?? dist/viajes/maldivas/
+?? dist/viajes/senegal/
+?? docs/qa/2026-10-19-sanity-studio/
+?? docs/qa/2026-10-23-sanity/
+?? docs/qa/2026-10-24-card-navigation/
+?? docs/qa/2026-10-24-fotos-destinos/
+?? docs/qa/2026-10-24-home-actions/
+?? docs/qa/2026-10-24-home-botones/
+?? docs/qa/2026-10-24-home-calma/
+?? docs/qa/2026-10-24-home-cards/
+?? docs/qa/2026-10-24-home-club/
+?? docs/qa/2026-10-24-home-composicion/
+?? docs/qa/2026-10-24-home-cta/
+?? docs/qa/2026-10-24-home-dates/
+?? docs/qa/2026-10-24-home-decision/
+?? docs/qa/2026-10-24-home-equilibrio/
+?? docs/qa/2026-10-24-home-fechas-sin-bordes/
+?? docs/qa/2026-10-24-home-final-sections/
+?? docs/qa/2026-10-24-home-identidad/
+?? docs/qa/2026-10-24-home-jerarquia/
+?? docs/qa/2026-10-24-home-neutral/
+?? docs/qa/2026-10-24-home-propuesta-02/
+?? docs/qa/2026-10-24-home-propuesta-03/
+?? docs/qa/2026-10-24-home-pulido/
+?? docs/qa/2026-10-24-home-redesign/
+?? docs/qa/2026-10-24-home-superficies/
+?? docs/qa/2026-10-24-home-transitions/
+?? docs/qa/2026-10-24-limpieza-viajes/
+?? docs/qa/2026-10-24-publicacion/
+?? docs/qa/2026-10-24-viajes-unificados/
+?? docs/qa/2026-10-24-whatsapp-only/
+?? docs/qa/2026-10-25-conocenos-faqs/
+?? docs/qa/2026-10-25-early-bird/
+?? docs/qa/2026-10-25-fotos-publicadas/
+?? docs/qa/2026-10-25-landings-caracter/
+?? docs/qa/2026-10-25-landings-ux/
+?? docs/qa/2026-10-25-local-promotions/
+?? docs/qa/2026-10-25-niveles-cards-compartidas/
+?? docs/qa/2026-10-25-niveles-personalidad/
+?? docs/qa/2026-10-25-trip-detail/
+?? docs/qa/2026-10-25-viajes-home/
+?? docs/qa/2026-10-25-viajes-personalidad/
+?? docs/sanity/2026-10-23/README.md
+?? docs/sanity/2026-10-23/evidence-extraction.json
+?? docs/sanity/2026-10-23/implementation/
+?? docs/sanity/2026-10-23/import/
+?? docs/sanity/2026-10-23/validation.txt
+?? docs/sanity/2026-10-23/visual/
+?? scripts/check-catalog-browser.mjs
+?? scripts/check-home-browser.mjs
+?? scripts/check-home-level-actions.mjs
+?? scripts/check-shared-trips.mjs
+?? scripts/home-trips.test.mjs
+?? scripts/render-departure-rows.mjs
+?? scripts/trip-detail.test.mjs
+?? scripts/trip-groups.mjs
+?? scripts/trip-groups.test.mjs
+?? scripts/trip-pricing.d.mts
+?? scripts/trip-pricing.mjs
+?? scripts/trip-pricing.test.mjs
+?? scripts/trip-team.test.mjs
+?? scripts/update-trip-promotions.mjs
+?? studio/schemaTypes/promotions.ts

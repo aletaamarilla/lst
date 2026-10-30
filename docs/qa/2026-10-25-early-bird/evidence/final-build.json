@@ -1,0 +1,15 @@
+{
+  "preview": {
+    "source": "sanity-published",
+    "count": 6,
+    "out": "/home/amfernandez/personalProjects/letsurftogethersystem/artifacts/early-bird-2026-10-25/preview",
+    "kind": "private candidate preview"
+  },
+  "main": {
+    "source": "sanity-published",
+    "count": 6,
+    "out": "/home/amfernandez/personalProjects/letsurftogethersystem/dist",
+    "kind": "actual published CMS data"
+  },
+  "publicDeployment": "pending by user instruction"
+}

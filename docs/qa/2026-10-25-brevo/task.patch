@@ -1,0 +1,1760 @@
+--- before/scripts/build.mjs
++++ scripts/build.mjs
+@@ -4,6 +4,7 @@
+ import {readPublishedTrips} from './sanity.mjs';
+ import {adaptTrips} from './sanity-trips.mjs';
+ import {renderTrip} from './render-trips.mjs';
++import {renderRegistration} from './render-registration.mjs';
+ import {renderCatalog} from './render-catalog.mjs';
+ import {renderLevelTrips} from './render-level-trips.mjs';
+ import {renderHomeTrips} from './render-home-trips.mjs';
+@@ -34,11 +35,23 @@
+       await mkdir(dir, {recursive: true});
+       await writeFile(path.join(dir, 'index.html'), unavailablePage());
+     }
++    // Retain old registration URLs without leaving an unpublished form active.
++    const registrationRoot = path.join(stage, 'inscripciones');
++    const previousRegistrations = await readdir(registrationRoot, {withFileTypes: true}).catch(error => { if (error.code === 'ENOENT') return []; throw error; });
++    for (const entry of previousRegistrations.filter(e => e.isDirectory())) {
++      const dir = path.join(registrationRoot, entry.name);
++      await rm(dir, {recursive: true, force: true});
++      await mkdir(dir, {recursive: true});
++      await writeFile(path.join(dir, 'index.html'), unavailablePage());
++    }
+     for (const trip of trips) {
+       for (const slug of [trip.slug, ...(trip.aliases ?? [])]) {
+         const dir = path.join(stage, 'viajes', slug);
+         await mkdir(dir, {recursive: true});
+         await writeFile(path.join(dir, 'index.html'), renderTrip(trip, trips));
++        const registrationDir = path.join(registrationRoot, slug);
++        await mkdir(registrationDir, {recursive: true});
++        await writeFile(path.join(registrationDir, 'index.html'), renderRegistration(trip, slug));
+       }
+     }
+     for (const [file, render] of [['index.html', renderHomeTrips], ['viajes/index.html', renderCatalog], ['niveles/index.html', renderLevelTrips]]) {
+--- before/scripts/serve.mjs
++++ scripts/serve.mjs
+@@ -7,6 +7,7 @@
+ import {renderCatalog} from './render-catalog.mjs';
+ import {renderLevelTrips} from './render-level-trips.mjs';
+ import {renderTrip} from './render-trips.mjs';
++import {renderRegistration} from './render-registration.mjs';
+ 
+ const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.ttf':'font/ttf','.woff2':'font/woff2'};
+ 
+@@ -24,6 +25,11 @@
+   if(relative==='index.html')return renderHomeTrips(current,trips);
+   if(relative==='viajes/index.html')return renderCatalog(current,trips);
+   if(relative==='niveles/index.html')return renderLevelTrips(current,trips);
++  const registrationSlug=/^inscripciones\/([^/]+)\/index\.html$/.exec(relative)?.[1];
++  if(registrationSlug){
++    const registrationTrip=trips.find(t=>t.slug===registrationSlug||t.aliases?.includes(registrationSlug));
++    return registrationTrip?renderRegistration(registrationTrip,registrationSlug):current;
++  }
+   const slug=/^viajes\/([^/]+)\/index\.html$/.exec(relative)?.[1];
+   const trip=slug&&trips.find(t=>t.slug===slug||t.aliases?.includes(slug));
+   return trip?renderTrip(trip,trips):current;
+--- before/scripts/check.mjs
++++ scripts/check.mjs
+@@ -3,6 +3,8 @@
+ import {departuresFor, departureMessage, levelLabel, isFull} from './trip-model.mjs';
+ import {execFileSync} from 'node:child_process';
+ import {renderTrip} from './render-trips.mjs';
++import {renderRegistration} from './render-registration.mjs';
++import {brevoConfig, registrationDepartures} from './brevo.mjs';
+ import {renderCatalog} from './render-catalog.mjs';
+ import {renderLevelTrips} from './render-level-trips.mjs';
+ import {renderHomeTrips} from './render-home-trips.mjs';
+@@ -13,6 +15,7 @@
+ if(snapshot.source!=='sanity-published')throw Error('El catálogo debe proceder de Sanity publicado');
+ const trips=snapshot.trips;
+ const errors=[];
++execFileSync(process.execPath,['--check',root+'/registration.js']);
+ execFileSync(process.execPath,['--check',root+'/app.js']);
+ execFileSync(process.execPath,['--check',root+'/home.js']);
+ execFileSync(process.execPath,['--check',root+'/trip.js']);
+@@ -24,6 +27,7 @@
+  if(render(current,trips)!==current)errors.push(`Generated view out of date: ${file}`);
+ }
+ for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');if(current!==renderTrip(t,trips))errors.push(`Trip page out of date: ${slug}`);}
++for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const file=path.join(root,'inscripciones',slug,'index.html');const html=await readFile(file,'utf8');if(html!==renderRegistration(t,slug))errors.push(`Registration page out of date: ${slug}`);if(registrationDepartures(t).length&&!html.includes(`action="${brevoConfig.action}"`))errors.push(`Brevo endpoint missing: ${slug}`);}
+ async function walk(dir){const files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else files.push(p);}return files;}
+ const files=await walk(root);
+ const pages=new Map();
+@@ -34,7 +38,7 @@
+  if(!/<header[^>]*>[\s\S]*?href="\/niveles\/"[\s\S]*?<\/header>/.test(html))errors.push(`Missing level guide in header: ${file}`);
+  if((html.match(/<h1\b/g)||[]).length!==1)errors.push(`Expected one page heading: ${file}`);
+  if(!html.includes('noindex,nofollow'))errors.push(`Prototype noindex missing: ${file}`);
+- if(/<form\b|type="email"|mailto:|data-details=/.test(html))errors.push(`Legacy form or modal trip action: ${file}`);
++ if((!file.startsWith(path.join(root,'inscripciones')+path.sep)&&/<form\b|type="email"/.test(html))||/mailto:|data-details=/.test(html))errors.push(`Legacy form or modal trip action: ${file}`);
+  const contacts=[...html.matchAll(/data-whatsapp="([^"]+)" href="([^"]+)"/g)];
+  if(!contacts.length)errors.push(`Missing contact: ${file}`);
+  for(const m of contacts){const u=new URL(m[2]);if(u.origin!=='https://wa.me'||u.pathname!=='/34648189257'||!u.searchParams.get('text'))errors.push(`Invalid WhatsApp: ${file}`);}
+@@ -52,7 +56,7 @@
+ }
+ for(const file of files.filter(f=>f.endsWith('.css'))){const css=await readFile(file,'utf8');for(const m of css.matchAll(/url\(['"]?([^)'" ]+)/g)){if(m[1].startsWith('/'))try{await access(path.join(root,m[1]));}catch{errors.push(`Missing CSS asset ${m[1]}`)}}}
+ // Route expectations grow with trip data; retain all per-page checks above.
+-const routes=['/', '/niveles/', '/conocenos/', '/viajes/', '/preguntas-frecuentes/', ...trips.map(t=>`/viajes/${t.slug}/`)];
++const routes=['/', '/niveles/', '/conocenos/', '/viajes/', '/preguntas-frecuentes/', ...trips.flatMap(t=>[`/viajes/${t.slug}/`,`/inscripciones/${t.slug}/`])];
+ for(const route of routes){if(!pages.has(path.join(root,route,'index.html')))errors.push(`Missing expected route ${route}`);}
+ const guide=pages.get(path.join(root,'niveles/index.html'));
+ if(guide){
+--- before/scripts/render-trips.mjs
++++ scripts/render-trips.mjs
+@@ -1,4 +1,5 @@
+ import {levelLabel, departuresFor, departureMessage, tripMessage, tripFacts, tripPrice, tripPriceDetails, formatPrice, isFull, availabilityLabel, hasDepartureLevels, departureLevelLabel, departureRequirement, levelsFor} from './trip-model.mjs';
++import {registrationUrl} from './brevo.mjs';
+ import {promotionCondition} from './trip-pricing.mjs';
+ import {tripMood, renderQuickFacts, experienceScenes, groupedInclusions} from './trip-experience.mjs';
+ 
+@@ -60,6 +61,7 @@
+  if(dated.length && (departures.length>1 || !trip.dossier)) return dated.map(d=>`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`).join('');
+  return trip.dossier?`<a class="dossier-link" href="${escape(trip.dossier)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier <span class="dossier-format">PDF</span></a>`:'';
+ };
++const registrationLink=(trip,departure,classes='button trip-registration')=>{const href=registrationUrl(trip,departure);return href?`<a class="${classes}" data-registration="${escape(trip.id)}" href="${escape(href)}">Inscribirme${departure?' en esta fecha':''}</a>`:'';};
+ const bookingAction=(trip,label,classes)=>isFull(trip)?contact(trip,'Consultar viaje completo',classes,`¡Hola, LST! Veo que ${trip.name} está completo. Quiero consultar otras opciones con el equipo.`):departuresFor(trip).length>1?`<button type="button" class="${classes}" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Elegir fecha</button>`:contact(trip,label,classes);
+ function dateDialog(trip){
+  const departures=departuresFor(trip);
+@@ -67,7 +69,7 @@
+  const options=departures.map(d=>{
+   const availability=d.availability?availabilityLabel(d):availabilityLabel(trip);
+   const full=d.availability?isFull(d):isFull(trip);
+-  return `<article class="departure-option"><div class="departure-option-top"><p class="departure-option-status">${escape(availability)}</p><div class="departure-option-date"><h3>${escape(d.date)}</h3><span class="departure-option-level">${escape(departureLevelLabel(trip,d))}</span></div><p class="departure-option-meta">${escape(d.duration)}</p>${d.levels?`<p class="departure-level-override">Nivel específico de esta fecha</p>`:''}${departureRequirement(trip,d)?`<p class="departure-option-meta">${escape(departureRequirement(trip,d))}</p>`:''}${d.capacity?.total!=null?`<p class="departure-option-meta">Capacidad: ${d.capacity.total} personas</p>`:''}${d.programme?`<a class="text-link" data-view-programme href="#programa-${escape(d.id)}">Ver programa de esta fecha</a>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div><div class="departure-option-booking">${offerMarkup(trip,d)}<p class="departure-option-price">${fareMarkup(trip,d)}${d.price!==null?'<span>por persona</span>':''}</p>${d.payment?.depositAmount!=null?`<p class="departure-option-meta">Señal: ${formatPrice(d.payment.depositAmount)}</p>`:''}<a class="button departure-enquiry" data-whatsapp="${trip.id}" href="${wa(trip,departureMessage(trip,d))}" data-departure="${escape(d.id)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar ${escape(trip.name)}, ${escape(d.date)}, ${escape(departureLevelLabel(trip,d))}, por WhatsApp">${full?'Consultar alternativas':'Consultar'}</a></div></article>`;
++  return `<article class="departure-option"><div class="departure-option-top"><p class="departure-option-status">${escape(availability)}</p><div class="departure-option-date"><h3>${escape(d.date)}</h3><span class="departure-option-level">${escape(departureLevelLabel(trip,d))}</span></div><p class="departure-option-meta">${escape(d.duration)}</p>${d.levels?`<p class="departure-level-override">Nivel específico de esta fecha</p>`:''}${departureRequirement(trip,d)?`<p class="departure-option-meta">${escape(departureRequirement(trip,d))}</p>`:''}${d.capacity?.total!=null?`<p class="departure-option-meta">Capacidad: ${d.capacity.total} personas</p>`:''}${d.programme?`<a class="text-link" data-view-programme href="#programa-${escape(d.id)}">Ver programa de esta fecha</a>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div><div class="departure-option-booking">${offerMarkup(trip,d)}<p class="departure-option-price">${fareMarkup(trip,d)}${d.price!==null?'<span>por persona</span>':''}</p>${d.payment?.depositAmount!=null?`<p class="departure-option-meta">Señal: ${formatPrice(d.payment.depositAmount)}</p>`:''}${registrationLink(trip,d)}<a class="button departure-enquiry" data-whatsapp="${trip.id}" href="${wa(trip,departureMessage(trip,d))}" data-departure="${escape(d.id)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar ${escape(trip.name)}, ${escape(d.date)}, ${escape(departureLevelLabel(trip,d))}, por WhatsApp">${full?'Consultar alternativas':'Consultar'}</a></div></article>`;
+  }).join('');
+  return `<dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">${escape(trip.name)} / SURFTRIP</p><h2 id="departure-dialog-title">Elige tu fecha.</h2></div><button class="departure-close" type="button">Cerrar</button></div><p id="departure-dialog-description" class="departure-dialog-intro">${hasDepartureLevels(trip)?'Cada fecha tiene su nivel. Revisa sus requisitos y su programa.':'Consulta la salida que te encaje.'}</p><div class="departure-dialog-list">${options}</div><p class="departure-dialog-help">Hablamos por WhatsApp y resolvemos tus dudas antes de reservar.</p></dialog>`;
+ }
+@@ -127,9 +129,9 @@
+ </div></details>
+    ${trip.gallery.length?`<details class="trip-photo-file"><summary>Más fotos. Más ganas de ir. <span>${trip.gallery.length} fotos <span aria-hidden="true">+</span></span></summary><section class="trip-gallery" aria-labelledby="photos-title"><h2 id="photos-title">El álbum de ${escape(trip.name)}.</h2><div class="gallery-track" aria-label="Fotos del destino">${gallery}</div></section></details>`:''}
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Las dudas, fuera de la maleta.</h2>${trip.faqs.length?'':'<p>Viajar por tu cuenta, elegir nivel, preparar la mochila… Empieza por nuestras preguntas frecuentes o cuéntanos tu duda.</p><a class="text-link" href="/preguntas-frecuentes/">Resolver las dudas del viaje</a>'}<div class="faq-list">${trip.faqs.map(([q,a])=>`<details><summary>${escape(q)}<span aria-hidden="true">+</span></summary><p>${escape(a)}</p></details>`).join('')}</div></section>
+-   <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">${real?'TU PLAZA, PASO A PASO':'HABLEMOS DEL PRÓXIMO VIAJE'}</p><h2>${isFull(trip)?'Vamos a por otra ola.':real?'Cierra pestañas.<br>Abre viaje.':`¿Te apetece ${escape(trip.name)}?`}</h2><p>${isFull(trip)?'Esta salida está completa. Puedes consultar otras opciones con el equipo por WhatsApp.':real?'Empieza con un WhatsApp. Te contamos lo que necesitas saber antes de apuntarte.':'Escríbenos por WhatsApp si este destino te interesa. Cuéntanos cuándo podrías viajar y cómo surfeas.'}</p><details class="booking-conditions"><summary>Cómo se paga y cuándo se confirma tu plaza <span aria-hidden="true">+</span></summary>${commercial}<p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p></details><ol class="reservation-steps"><li><span aria-hidden="true">01</span><div><strong>${real?'Nos escribes':'Nos cuentas qué buscas'}</strong><p>${real?'Tu nivel, tu fecha y con quién vienes.':'Destino, fechas que te encajan y experiencia en el agua.'}</p></div></li><li><span aria-hidden="true">02</span><div><strong>${real?'Lo revisamos contigo':'Hablamos de las próximas salidas'}</strong><p>${real?'Nivel, disponibilidad y condiciones claras.':'Te contamos qué información está confirmada y qué falta por anunciar.'}</p></div></li><li><span aria-hidden="true">03</span><div><strong>${real?'Confirmas con el equipo':'Decides cuando tengas los detalles'}</strong><p>${real?'Formalizamos la reserva contigo.':'Cuando exista una salida, podrás revisar el programa y las condiciones antes de reservar.'}</p></div></li></ol>${bookingAction(trip,mainCta,'button reserve-main')}${multiple&&!isFull(trip)?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Consulta tu fecha</h2>${departures.map(d=>`<article><h3>${escape(d.date)} · ${escape(departureLevelLabel(trip,d))}</h3>${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${contact(trip,isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}<p class="fine-print">${real?'El mensaje inicia una consulta; la plaza se confirma con el equipo.':'La consulta no es una reserva ni activa avisos automáticos.'}</p></section>
++   <section id="reservar" class="trip-block trip-reserve"><p class="eyebrow">${real?'TU PLAZA, PASO A PASO':'HABLEMOS DEL PRÓXIMO VIAJE'}</p><h2>${isFull(trip)?'Vamos a por otra ola.':real?'Cierra pestañas.<br>Abre viaje.':`¿Te apetece ${escape(trip.name)}?`}</h2><p>${isFull(trip)?'Esta salida está completa. Puedes consultar otras opciones con el equipo por WhatsApp.':real?'Empieza con un WhatsApp. Te contamos lo que necesitas saber antes de apuntarte.':'Escríbenos por WhatsApp si este destino te interesa. Cuéntanos cuándo podrías viajar y cómo surfeas.'}</p><details class="booking-conditions"><summary>Cómo se paga y cuándo se confirma tu plaza <span aria-hidden="true">+</span></summary>${commercial}<p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p></details><ol class="reservation-steps"><li><span aria-hidden="true">01</span><div><strong>${real?'Nos escribes':'Nos cuentas qué buscas'}</strong><p>${real?'Tu nivel, tu fecha y con quién vienes.':'Destino, fechas que te encajan y experiencia en el agua.'}</p></div></li><li><span aria-hidden="true">02</span><div><strong>${real?'Lo revisamos contigo':'Hablamos de las próximas salidas'}</strong><p>${real?'Nivel, disponibilidad y condiciones claras.':'Te contamos qué información está confirmada y qué falta por anunciar.'}</p></div></li><li><span aria-hidden="true">03</span><div><strong>${real?'Confirmas con el equipo':'Decides cuando tengas los detalles'}</strong><p>${real?'Formalizamos la reserva contigo.':'Cuando exista una salida, podrás revisar el programa y las condiciones antes de reservar.'}</p></div></li></ol>${registrationLink(trip)}${bookingAction(trip,mainCta,'button reserve-main')}${multiple&&!isFull(trip)?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Consulta tu fecha</h2>${departures.map(d=>`<article><h3>${escape(d.date)} · ${escape(departureLevelLabel(trip,d))}</h3>${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${registrationLink(trip,d)}${contact(trip,isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}<p class="fine-print">${real?'El mensaje inicia una consulta; la plaza se confirma con el equipo.':'La consulta no es una reserva ni activa avisos automáticos.'}</p></section>
+   </article>
+-  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><p class="eyebrow">${status(trip)}</p><h2>¿Te vienes<br>o qué?</h2>${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(offer?'Por persona · tarifa vigente para el cupo indicado':summaryPrice(trip))}</p><dl>${allFacts.filter(([k])=>k==='Fechas').map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl>${bookingAction(trip,cta,"button booking-card-cta")}${dossier(trip)}<p class="booking-card-help">${real?'Te orientamos por WhatsApp antes de reservar.':'Consulta las próximas salidas con el equipo.'}</p><a class="booking-card-link" href="#dudas">Tengo una duda</a></div></aside>
++  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><p class="eyebrow">${status(trip)}</p><h2>¿Te vienes<br>o qué?</h2>${offerMarkup(trip,shownDeparture,{date:multiple})}<p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(offer?'Por persona · tarifa vigente para el cupo indicado':summaryPrice(trip))}</p><dl>${allFacts.filter(([k])=>k==='Fechas').map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl>${registrationLink(trip)}${bookingAction(trip,cta,"button booking-card-cta")}${dossier(trip)}<p class="booking-card-help">${real?'Te orientamos por WhatsApp antes de reservar.':'Consulta las próximas salidas con el equipo.'}</p><a class="booking-card-link" href="#dudas">Tengo una duda</a></div></aside>
+  </div>
+  <section class="related-section"><div class="trip-shell"><p class="eyebrow">SIGUE MIRANDO</p><h2>Siempre hay otra ola.</h2><div class="related-list">${related}</div><a class="text-link" href="/#viajes">Ver todos los viajes</a></div></section>
+ </main>
+--- before/scripts/sanity-trips.mjs
++++ scripts/sanity-trips.mjs
+@@ -1,3 +1,4 @@
++import {validateRegistrationMappings} from './brevo.mjs';
+ import {tripName, consolidateTrips, aggregateAvailability} from './trip-groups.mjs';
+ import {departurePricing, validatePromotions} from './trip-pricing.mjs';
+ 
+@@ -35,6 +36,10 @@
+ const pairs = (value, a, b, field) => list(value, field).map(v => [text(v[a], field, true), text(v[b], field, true)]);
+ export function validDate(value) {
+   return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && Number.isFinite(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
++}
++function validateBrevoValue(value) {
++  if (!Number.isSafeInteger(value) || value < 1) throw Error('Valor VIAJE_SURF inválido');
++  return value;
+ }
+ function dates(d) {
+   if (!validDate(d.start) || !validDate(d.end) || d.end < d.start) throw Error('Fechas de salida inválidas');
+@@ -77,6 +82,7 @@
+       ...(d.dossier ? {dossier: httpsUrl(d.dossier, 'departure.dossier')} : {}),
+       ...(d.availability != null ? {availability: validateAvailability(d.availability, slug)} : {}),
+       ...(d.capacity ? {capacity: validateCapacity(d.capacity, slug)} : {}),
++      ...(d.brevoValue != null ? {brevoValue: validateBrevoValue(d.brevoValue)} : {}),
+       ...(d.message ? {message: text(d.message, 'message')} : {}),
+       ...(d.promotions != null ? {promotions: validatePromotions(d.promotions, d.price, d.capacity?.total ?? doc.capacity?.total)} : {})};
+     return {...departure, ...departurePricing(departure, {state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
+@@ -115,5 +121,7 @@
+ export function adaptTrips(documents) {
+   const trips = documents.map(adaptTrip);
+   if (new Set(trips.map(t => t.slug)).size !== trips.length) throw Error('Slugs duplicados en Sanity');
+-  return consolidateTrips(trips);
++  const consolidated = consolidateTrips(trips);
++  validateRegistrationMappings(consolidated);
++  return consolidated;
+ }
+--- before/scripts/trip-detail.test.mjs
++++ scripts/trip-detail.test.mjs
+@@ -22,7 +22,7 @@
+ });
+ 
+ test('date selector keeps the offer and enquiry with its own date, and never borrows a missing price',()=>{
+- const t=trip({departures:[date(),date({id:'two',date:'Otra fecha',price:null,regularPrice:null,promotions:undefined})]});
++ const t=trip({departures:[date(),date({id:'two',date:'Otra fecha',start:'2027-01-01',end:'2027-01-03',price:null,regularPrice:null,promotions:undefined})]});
+  const html=renderTrip(t),options=[...html.matchAll(/<article class="departure-option">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
+  assert.equal(options.length,2);assert.match(options[0],/599 €|100 € de descuento/);assert.match(options[0],/699 €/);
+  assert.match(options[1],/Consultar precio/);assert.doesNotMatch(options[1],/599 €|699 €|Early bird/);
+@@ -54,7 +54,7 @@
+ });
+ 
+ test('native date enquiries remain reachable without JavaScript and keep per-date level and conditions',()=>{
+- const t=trip({departures:[date(),date({id:'rider',date:'Riders',levels:[3],promotions:undefined})]});
++ const t=trip({departures:[date(),date({id:'rider',date:'Riders',start:'2027-01-01',end:'2027-01-03',levels:[3],promotions:undefined})]});
+  const html=renderTrip(t),fallback=html.match(/<noscript>[\s\S]*?<\/noscript>/)[0];
+  assert.match(fallback,/fechas-sin-javascript/);assert.match(fallback,/Nivel III/);assert.match(fallback,/Primeras 8 plazas/);
+  assert.equal((fallback.match(/data-whatsapp=/g)??[]).length,2);
+@@ -74,7 +74,7 @@
+ });
+ 
+ test('no numeric price means no from prefix, while mixed durations are described per departure',()=>{
+- const t=trip({departures:[date({price:null,regularPrice:null,promotions:undefined,duration:'2 noches'}),date({id:'later',date:'Otra salida',price:null,regularPrice:null,promotions:undefined,duration:'7 noches'})]});
++ const t=trip({departures:[date({price:null,regularPrice:null,promotions:undefined,duration:'2 noches'}),date({id:'later',date:'Otra salida',start:'2027-01-01',end:'2027-01-08',price:null,regularPrice:null,promotions:undefined,duration:'7 noches'})]});
+  const html=renderTrip(t);
+  assert.doesNotMatch(html,/Desde Precio|Desde Consultar/);
+  assert.match(html,/<div class="cover-key-facts"><span>Varias salidas<\/span><span>Según la salida<\/span>/);
+--- before/studio/schemaTypes/trip.ts
++++ studio/schemaTypes/trip.ts
+@@ -53,6 +53,7 @@
+         fields: [
+           defineField({name: 'start', title: 'Fecha de inicio', type: 'date', validation: (rule) => rule.required()}),
+           defineField({name: 'end', title: 'Fecha de fin', type: 'date', validation: (rule) => rule.required().min(rule.valueOfField('start'))}),
++          defineField({name: 'brevoValue', title: 'Valor VIAJE_SURF en Brevo (opcional)', type: 'number', description: 'ID numérico de la opción de esta fecha en el formulario Brevo. Debe existir allí antes de publicar. Las ocho salidas del formulario inicial ya están vinculadas por destino y fechas exactas. Rellena este campo para nuevas fechas o si cambia el ID.', validation: rule => rule.integer().min(1)}),
+           defineField({name: 'duration', title: 'Duración (p. ej., 7 noches)', type: 'string'}),
+           defineField({
+             name: 'levels', title: 'Niveles de esta salida (opcional)', type: 'array',
+--- before/dist/trip-detail.css
++++ dist/trip-detail.css
+@@ -344,3 +344,5 @@
+  .scene-copy{padding:20px}
+  .trip-designed .trip-reserve{padding:24px 18px}
+ }
++
++.trip-designed .trip-registration{display:flex;margin:14px 0;justify-content:center;text-align:center}.trip-designed .trip-reserve .trip-registration{background:#1b1b1b;color:#fffae7}.trip-designed .departure-option-booking .trip-registration{font-size:14px}
+--- before/README.md
++++ README.md
+@@ -1,6 +1,8 @@
+ # Let's Surf Together — home y viajes
+ 
+ Estado operativo 24/10/2026: web estática Node en Vercel `lts-laura-moreno-ferre/lst`, salida `dist/`; Sanity `q5bj2rn2/production`. [Guía actual de edición y publicación](docs/guia-cliente.md). Canal comercial actual: solo WhatsApp; Google Forms retirado de la web, los PDF activos y Studio. Los apartados de revisiones siguientes conservan el historial; sus pendientes antiguos no describen necesariamente el estado actual.
++
++Implementación local 25/10/2026: añadidas inscripciones Brevo en `/inscripciones/{slug}/`, con el mismo formulario para todos los destinos y categorías por fecha. Las consultas por WhatsApp se conservan. Esta integración y el campo opcional de Studio todavía requieren publicar el código; la descripción de «solo WhatsApp» anterior corresponde al despliegue previo. [Uso, validación y límites](docs/qa/2026-10-25-brevo/README.md).
+ 
+ Proyecto independiente de Travelhood. Web estática con la home, Conócenos, la guía de niveles y fichas de viaje publicadas desde Sanity. Mantiene los logos originales, Aura, Work Sans, Space Mono y los colores de LST (#EA5934 / #FFFAE7 / #1B1B1B), a partir del cuestionario y los materiales del cliente.
+ 
+--- before/docs/guia-cliente.md
++++ docs/guia-cliente.md
+@@ -5,7 +5,7 @@
+ 1. **Cambiar un precio:** abre el viaje → «Fechas y niveles» → «Salidas» → precio por persona. Revisa condiciones de tarifa, señal y PDF para que coincidan. Pulsa **Publicar**.
+ 2. **Marcar completo:** cambia «Disponibilidad» a **Completo** y publica. Se conserva la ficha con sus fechas/precios y se retira la solicitud de plaza. También puedes elegir **Plazas disponibles**, **Últimas plazas** o **Consultar disponibilidad**. No se usa un contador de plazas libres.
+ 3. **Sustituir el PDF:** en «Programa» → **PDF del viaje**, sube el archivo aprobado y publica. Este archivo tiene prioridad sobre la URL anterior del dossier. Comprueba el enlace «Descargar dossier» en la web.
+-4. **Nueva salida:** crea o duplica un viaje; usa una URL nueva y estable, nombre/fecha/niveles/precio correctos, disponibilidad, programa/inclusiones/exclusiones, fotos con descripción y PDF revisados. Todas las consultas van a WhatsApp. Confirma las condiciones comerciales y publica solo cuando esté completo; mientras tanto déjalo en borrador.
++4. **Nueva salida:** crea o duplica un viaje; usa una URL nueva y estable, nombre/fecha/niveles/precio correctos, disponibilidad, programa/inclusiones/exclusiones, fotos con descripción y PDF revisados. Las consultas siguen en WhatsApp. La integración local de inscripciones Brevo se explica debajo y requiere desplegar el código. Confirma las condiciones comerciales y publica solo cuando esté completo; mientras tanto déjalo en borrador.
+ 
+ 5. **Early bird y otros tramos:** en «Fechas y niveles» → «Salidas», conserva el **Precio general por persona** y añade las **Tarifas reducidas / early bird**. Cada tarifa tiene su precio y un cupo (plaza inicial y final); si el PDF no concreta número, deja ambos vacíos y escribe la condición aprobada, por ejemplo «Plazas limitadas». Marca **Esta es la tarifa vigente** solo en una. Cuando se cubra el cupo, desmárcala; activa el siguiente tramo si existe o deja todas desmarcadas para usar el precio general. Publica para reconstruir la web. Es una selección manual: no cuenta reservas ni muestra plazas restantes. Marcar el viaje o la salida completo retira el descuento. Revisa también condiciones y dossier.
+ 
+@@ -14,3 +14,16 @@
+ Si no ves un cambio, consulta el último despliegue de `lst` en Vercel y su estado **Ready**. Si falla, se conserva la última versión publicada: corrige el contenido indicado y vuelve a publicar. El enlace de reconstrucción es privado y está guardado entre Sanity y Vercel; no debe copiarse a la web. Las consultas abren WhatsApp: la plaza la confirma el equipo; no hay pagos ni inventario automático. Los PDF e imágenes del CDN son accesibles por URL y no deben contener secretos o datos personales privados.
+ 
+ No hay campo de Google Forms en Studio. Los botones de cada salida y de sus PDF llevan a WhatsApp, sin enviar mensajes automáticamente.
++
++
++## Inscripciones Brevo (implementación local, pendiente de despliegue)
++
++Cada destino tiene `/inscripciones/{slug}/`, por ejemplo `/inscripciones/el-palmar/`. Los botones «Inscribirme» de la ficha y del selector llevan al formulario común. Una salida única queda seleccionada; si hay varias, se pide elegir fecha. Los enlaces de una fecha concreta incluyen `?salida={id-de-la-salida}`; los enlaces históricos fechados también seleccionan su fecha. Si esa fecha está completa se exige una nueva elección y se avisa, sin sustituirla automáticamente.
++
++El formulario conserva el destino de envío y los nombres/valores del HTML proporcionado por Brevo. Los campos se envían directamente a Brevo, sin claves API en la web ni guardado en el navegador. WhatsApp sigue disponible para dudas. Enviar la inscripción no cobra ni confirma la reserva.
++
++Las ocho salidas del formulario recibido se vinculan por destino, fecha inicial y final. Para nuevas fechas, crea primero la opción de **VIAJE_SURF** en Brevo y copia su valor numérico al campo **Valor VIAJE_SURF en Brevo** de esa salida en Studio (disponible al desplegar el esquema). No uses el nombre del destino como valor ni reutilices el ID para otra fecha. La construcción rechaza IDs duplicados entre salidas disponibles. Actualiza la configuración común del formulario si cambian sus campos o su URL de envío.
++
++Una fecha completa, un viaje por anunciar o una salida sin correspondencia en Brevo no permite inscripción y conserva la consulta al equipo. Al despublicar el viaje y reconstruir se retira el formulario también de sus rutas antiguas. La disponibilidad es editorial: un formulario ya abierto puede quedar desactualizado hasta recargar; Brevo no es un inventario de reservas.
++
++La recepción en la cuenta del cliente y las automatizaciones/listas/confirmaciones configuradas en Brevo requieren una prueba coordinada con el cliente. Las comprobaciones locales interceptan todos los envíos y no crean contactos.
+--- /dev/null
++++ scripts/brevo.mjs
+@@ -0,0 +1,48 @@
++import {readFileSync} from 'node:fs';
++import {departuresFor, isFull} from './trip-model.mjs';
++
++export const brevoConfig = JSON.parse(readFileSync(new URL('./brevo-config.json', import.meta.url), 'utf8'));
++
++// Values from the client's Brevo export. Match exact dates, never array order.
++export const brevoDepartures = [
++  ['hossegor', '2026-11-20', '2026-11-22', '1'],
++  ['el-palmar', '2026-12-04', '2026-12-08', '2'],
++  ['marruecos', '2027-01-17', '2027-01-24', '3'],
++  ['marruecos', '2027-01-24', '2027-01-31', '4'],
++  ['fuerteventura', '2027-02-12', '2027-02-16', '5'],
++  ['senegal', '2027-02-28', '2027-03-07', '6'],
++  ['maldivas', '2027-03-21', '2027-03-28', '7'],
++  ['maldivas', '2027-03-28', '2027-04-04', '8'],
++];
++
++export function brevoValue(trip, departure) {
++  if (departure.brevoValue != null) {
++    if (!/^[1-9]\d*$/.test(String(departure.brevoValue))) throw Error('Valor VIAJE_SURF inválido');
++    return String(departure.brevoValue);
++  }
++  const destination = trip.slug.replace(/-\d{4}-\d{2}-\d{2}$/, '');
++  return brevoDepartures.find(([slug, start, end]) => slug === destination && start === departure.start && end === departure.end)?.[3] ?? '';
++}
++
++export function registrationDepartures(trip) {
++  if (trip.state !== 'confirmed' || isFull(trip)) return [];
++  const result = departuresFor(trip).filter(d => d.state === 'confirmed' && !isFull(d) && brevoValue(trip, d));
++  const values = result.map(d => brevoValue(trip, d));
++  if (new Set(values).size !== values.length) throw Error(`VIAJE_SURF duplicado: ${trip.slug}`);
++  return result;
++}
++
++export function registrationUrl(trip, departure) {
++  const available = registrationDepartures(trip);
++  if (!available.length || (departure && !available.some(d => d.id === departure.id))) return '';
++  return `/inscripciones/${trip.slug}/${departure ? `?salida=${encodeURIComponent(departure.id)}` : ''}`;
++}
++
++export function validateRegistrationMappings(trips) {
++  const assigned = new Map();
++  for (const trip of trips) for (const departure of registrationDepartures(trip)) {
++    const value = brevoValue(trip, departure);
++    if (assigned.has(value)) throw Error(`VIAJE_SURF ${value} compartido por ${assigned.get(value)} y ${trip.slug}`);
++    assigned.set(value, trip.slug);
++  }
++}
+--- /dev/null
++++ scripts/brevo-config.json
+@@ -0,0 +1,1021 @@
++{
++  "action": "https://2c14f719.sibforms.com/serve/MUIFAPipjPzBjDfW1WqR6BQi61GEnltn2nG9aFCvsswI5CilZNATiP2lN_zq8XwXWBBqqF9Lj8qC4Se0Q8hiJYyCilTBMBRtprcIlMuZIe7o0uqjXiBzBaMW8Fl3-dDPz1s3mDjVKVra-llRSD9jZAhz9fYYNBGdOIeoJUR8LbILZakDmnvPDQqUb4IFr_TDzfz1EzLVtJFv5LSH2Q==",
++  "countries": [
++    {
++      "value": "+93",
++      "label": "+93 AF"
++    },
++    {
++      "value": "+358",
++      "label": "+358 AX"
++    },
++    {
++      "value": "+355",
++      "label": "+355 AL"
++    },
++    {
++      "value": "+213",
++      "label": "+213 DZ"
++    },
++    {
++      "value": "+1684",
++      "label": "+1684 AS"
++    },
++    {
++      "value": "+376",
++      "label": "+376 AD"
++    },
++    {
++      "value": "+244",
++      "label": "+244 AO"
++    },
++    {
++      "value": "+1264",
++      "label": "+1264 AI"
++    },
++    {
++      "value": "+672",
++      "label": "+672 AQ"
++    },
++    {
++      "value": "+1268",
++      "label": "+1268 AG"
++    },
++    {
++      "value": "+54",
++      "label": "+54 AR"
++    },
++    {
++      "value": "+374",
++      "label": "+374 AM"
++    },
++    {
++      "value": "+297",
++      "label": "+297 AW"
++    },
++    {
++      "value": "+61",
++      "label": "+61 AU"
++    },
++    {
++      "value": "+43",
++      "label": "+43 AT"
++    },
++    {
++      "value": "+994",
++      "label": "+994 AZ"
++    },
++    {
++      "value": "+1242",
++      "label": "+1242 BS"
++    },
++    {
++      "value": "+973",
++      "label": "+973 BH"
++    },
++    {
++      "value": "+880",
++      "label": "+880 BD"
++    },
++    {
++      "value": "+1246",
++      "label": "+1246 BB"
++    },
++    {
++      "value": "+375",
++      "label": "+375 BY"
++    },
++    {
++      "value": "+32",
++      "label": "+32 BE"
++    },
++    {
++      "value": "+501",
++      "label": "+501 BZ"
++    },
++    {
++      "value": "+229",
++      "label": "+229 BJ"
++    },
++    {
++      "value": "+1441",
++      "label": "+1441 BM"
++    },
++    {
++      "value": "+975",
++      "label": "+975 BT"
++    },
++    {
++      "value": "+591",
++      "label": "+591 BO"
++    },
++    {
++      "value": "+599",
++      "label": "+599 BQ"
++    },
++    {
++      "value": "+387",
++      "label": "+387 BA"
++    },
++    {
++      "value": "+267",
++      "label": "+267 BW"
++    },
++    {
++      "value": "+47",
++      "label": "+47 BV"
++    },
++    {
++      "value": "+55",
++      "label": "+55 BR"
++    },
++    {
++      "value": "+246",
++      "label": "+246 IO"
++    },
++    {
++      "value": "+673",
++      "label": "+673 BN"
++    },
++    {
++      "value": "+359",
++      "label": "+359 BG"
++    },
++    {
++      "value": "+226",
++      "label": "+226 BF"
++    },
++    {
++      "value": "+257",
++      "label": "+257 BI"
++    },
++    {
++      "value": "+855",
++      "label": "+855 KH"
++    },
++    {
++      "value": "+237",
++      "label": "+237 CM"
++    },
++    {
++      "value": "+1",
++      "label": "+1 CA"
++    },
++    {
++      "value": "+34",
++      "label": "+34 IC"
++    },
++    {
++      "value": "+238",
++      "label": "+238 CV"
++    },
++    {
++      "value": "+1345",
++      "label": "+1345 KY"
++    },
++    {
++      "value": "+236",
++      "label": "+236 CF"
++    },
++    {
++      "value": "+34",
++      "label": "+34 EA"
++    },
++    {
++      "value": "+235",
++      "label": "+235 TD"
++    },
++    {
++      "value": "+56",
++      "label": "+56 CL"
++    },
++    {
++      "value": "+86",
++      "label": "+86 CN"
++    },
++    {
++      "value": "+61",
++      "label": "+61 CX"
++    },
++    {
++      "value": "+61",
++      "label": "+61 CC"
++    },
++    {
++      "value": "+57",
++      "label": "+57 CO"
++    },
++    {
++      "value": "+269",
++      "label": "+269 KM"
++    },
++    {
++      "value": "+242",
++      "label": "+242 CG"
++    },
++    {
++      "value": "+243",
++      "label": "+243 CD"
++    },
++    {
++      "value": "+682",
++      "label": "+682 CK"
++    },
++    {
++      "value": "+506",
++      "label": "+506 CR"
++    },
++    {
++      "value": "+225",
++      "label": "+225 CI"
++    },
++    {
++      "value": "+385",
++      "label": "+385 HR"
++    },
++    {
++      "value": "+53",
++      "label": "+53 CU"
++    },
++    {
++      "value": "+599",
++      "label": "+599 CW"
++    },
++    {
++      "value": "+357",
++      "label": "+357 CY"
++    },
++    {
++      "value": "+420",
++      "label": "+420 CZ"
++    },
++    {
++      "value": "+45",
++      "label": "+45 DK"
++    },
++    {
++      "value": "+253",
++      "label": "+253 DJ"
++    },
++    {
++      "value": "+1767",
++      "label": "+1767 DM"
++    },
++    {
++      "value": "+1809",
++      "label": "+1809 DO"
++    },
++    {
++      "value": "+1829",
++      "label": "+1829 DO"
++    },
++    {
++      "value": "+1849",
++      "label": "+1849 DO"
++    },
++    {
++      "value": "+593",
++      "label": "+593 EC"
++    },
++    {
++      "value": "+20",
++      "label": "+20 EG"
++    },
++    {
++      "value": "+503",
++      "label": "+503 SV"
++    },
++    {
++      "value": "+240",
++      "label": "+240 GQ"
++    },
++    {
++      "value": "+291",
++      "label": "+291 ER"
++    },
++    {
++      "value": "+372",
++      "label": "+372 EE"
++    },
++    {
++      "value": "+251",
++      "label": "+251 ET"
++    },
++    {
++      "value": "+500",
++      "label": "+500 FK"
++    },
++    {
++      "value": "+298",
++      "label": "+298 FO"
++    },
++    {
++      "value": "+679",
++      "label": "+679 FJ"
++    },
++    {
++      "value": "+358",
++      "label": "+358 FI"
++    },
++    {
++      "value": "+33",
++      "label": "+33 FR"
++    },
++    {
++      "value": "+594",
++      "label": "+594 GF"
++    },
++    {
++      "value": "+689",
++      "label": "+689 PF"
++    },
++    {
++      "value": "+262",
++      "label": "+262 TF"
++    },
++    {
++      "value": "+241",
++      "label": "+241 GA"
++    },
++    {
++      "value": "+220",
++      "label": "+220 GM"
++    },
++    {
++      "value": "+995",
++      "label": "+995 GE"
++    },
++    {
++      "value": "+49",
++      "label": "+49 DE"
++    },
++    {
++      "value": "+233",
++      "label": "+233 GH"
++    },
++    {
++      "value": "+350",
++      "label": "+350 GI"
++    },
++    {
++      "value": "+30",
++      "label": "+30 GR"
++    },
++    {
++      "value": "+299",
++      "label": "+299 GL"
++    },
++    {
++      "value": "+1473",
++      "label": "+1473 GD"
++    },
++    {
++      "value": "+590",
++      "label": "+590 GP"
++    },
++    {
++      "value": "+1671",
++      "label": "+1671 GU"
++    },
++    {
++      "value": "+502",
++      "label": "+502 GT"
++    },
++    {
++      "value": "+44",
++      "label": "+44 GG"
++    },
++    {
++      "value": "+224",
++      "label": "+224 GN"
++    },
++    {
++      "value": "+245",
++      "label": "+245 GW"
++    },
++    {
++      "value": "+592",
++      "label": "+592 GY"
++    },
++    {
++      "value": "+509",
++      "label": "+509 HT"
++    },
++    {
++      "value": "+672",
++      "label": "+672 HM"
++    },
++    {
++      "value": "+379",
++      "label": "+379 VA"
++    },
++    {
++      "value": "+504",
++      "label": "+504 HN"
++    },
++    {
++      "value": "+852",
++      "label": "+852 HK"
++    },
++    {
++      "value": "+36",
++      "label": "+36 HU"
++    },
++    {
++      "value": "+354",
++      "label": "+354 IS"
++    },
++    {
++      "value": "+91",
++      "label": "+91 IN"
++    },
++    {
++      "value": "+62",
++      "label": "+62 ID"
++    },
++    {
++      "value": "+98",
++      "label": "+98 IR"
++    },
++    {
++      "value": "+964",
++      "label": "+964 IQ"
++    },
++    {
++      "value": "+353",
++      "label": "+353 IE"
++    },
++    {
++      "value": "+44",
++      "label": "+44 IM"
++    },
++    {
++      "value": "+972",
++      "label": "+972 IL"
++    },
++    {
++      "value": "+39",
++      "label": "+39 IT"
++    },
++    {
++      "value": "+1876",
++      "label": "+1876 JM"
++    },
++    {
++      "value": "+81",
++      "label": "+81 JP"
++    },
++    {
++      "value": "+44",
++      "label": "+44 JE"
++    },
++    {
++      "value": "+962",
++      "label": "+962 JO"
++    },
++    {
++      "value": "+7",
++      "label": "+7 KZ"
++    },
++    {
++      "value": "+254",
++      "label": "+254 KE"
++    },
++    {
++      "value": "+686",
++      "label": "+686 KI"
++    },
++    {
++      "value": "+850",
++      "label": "+850 KP"
++    },
++    {
++      "value": "+82",
++      "label": "+82 KR"
++    },
++    {
++      "value": "+965",
++      "label": "+965 KW"
++    },
++    {
++      "value": "+996",
++      "label": "+996 KG"
++    },
++    {
++      "value": "+856",
++      "label": "+856 LA"
++    },
++    {
++      "value": "+371",
++      "label": "+371 LV"
++    },
++    {
++      "value": "+961",
++      "label": "+961 LB"
++    },
++    {
++      "value": "+266",
++      "label": "+266 LS"
++    },
++    {
++      "value": "+231",
++      "label": "+231 LR"
++    },
++    {
++      "value": "+218",
++      "label": "+218 LY"
++    },
++    {
++      "value": "+423",
++      "label": "+423 LI"
++    },
++    {
++      "value": "+370",
++      "label": "+370 LT"
++    },
++    {
++      "value": "+352",
++      "label": "+352 LU"
++    },
++    {
++      "value": "+853",
++      "label": "+853 MO"
++    },
++    {
++      "value": "+389",
++      "label": "+389 MK"
++    },
++    {
++      "value": "+261",
++      "label": "+261 MG"
++    },
++    {
++      "value": "+265",
++      "label": "+265 MW"
++    },
++    {
++      "value": "+60",
++      "label": "+60 MY"
++    },
++    {
++      "value": "+960",
++      "label": "+960 MV"
++    },
++    {
++      "value": "+223",
++      "label": "+223 ML"
++    },
++    {
++      "value": "+356",
++      "label": "+356 MT"
++    },
++    {
++      "value": "+692",
++      "label": "+692 MH"
++    },
++    {
++      "value": "+596",
++      "label": "+596 MQ"
++    },
++    {
++      "value": "+222",
++      "label": "+222 MR"
++    },
++    {
++      "value": "+230",
++      "label": "+230 MU"
++    },
++    {
++      "value": "+262",
++      "label": "+262 YT"
++    },
++    {
++      "value": "+52",
++      "label": "+52 MX"
++    },
++    {
++      "value": "+691",
++      "label": "+691 FM"
++    },
++    {
++      "value": "+373",
++      "label": "+373 MD"
++    },
++    {
++      "value": "+377",
++      "label": "+377 MC"
++    },
++    {
++      "value": "+976",
++      "label": "+976 MN"
++    },
++    {
++      "value": "+382",
++      "label": "+382 ME"
++    },
++    {
++      "value": "+1664",
++      "label": "+1664 MS"
++    },
++    {
++      "value": "+212",
++      "label": "+212 MA"
++    },
++    {
++      "value": "+258",
++      "label": "+258 MZ"
++    },
++    {
++      "value": "+95",
++      "label": "+95 MM"
++    },
++    {
++      "value": "+264",
++      "label": "+264 NA"
++    },
++    {
++      "value": "+674",
++      "label": "+674 NR"
++    },
++    {
++      "value": "+977",
++      "label": "+977 NP"
++    },
++    {
++      "value": "+31",
++      "label": "+31 NL"
++    },
++    {
++      "value": "+687",
++      "label": "+687 NC"
++    },
++    {
++      "value": "+64",
++      "label": "+64 NZ"
++    },
++    {
++      "value": "+505",
++      "label": "+505 NI"
++    },
++    {
++      "value": "+227",
++      "label": "+227 NE"
++    },
++    {
++      "value": "+234",
++      "label": "+234 NG"
++    },
++    {
++      "value": "+683",
++      "label": "+683 NU"
++    },
++    {
++      "value": "+672",
++      "label": "+672 NF"
++    },
++    {
++      "value": "+1670",
++      "label": "+1670 MP"
++    },
++    {
++      "value": "+47",
++      "label": "+47 NO"
++    },
++    {
++      "value": "+968",
++      "label": "+968 OM"
++    },
++    {
++      "value": "+92",
++      "label": "+92 PK"
++    },
++    {
++      "value": "+680",
++      "label": "+680 PW"
++    },
++    {
++      "value": "+970",
++      "label": "+970 PS"
++    },
++    {
++      "value": "+507",
++      "label": "+507 PA"
++    },
++    {
++      "value": "+675",
++      "label": "+675 PG"
++    },
++    {
++      "value": "+595",
++      "label": "+595 PY"
++    },
++    {
++      "value": "+51",
++      "label": "+51 PE"
++    },
++    {
++      "value": "+63",
++      "label": "+63 PH"
++    },
++    {
++      "value": "+64",
++      "label": "+64 PN"
++    },
++    {
++      "value": "+48",
++      "label": "+48 PL"
++    },
++    {
++      "value": "+351",
++      "label": "+351 PT"
++    },
++    {
++      "value": "+1787",
++      "label": "+1787 PR"
++    },
++    {
++      "value": "+974",
++      "label": "+974 QA"
++    },
++    {
++      "value": "+383",
++      "label": "+383 XK"
++    },
++    {
++      "value": "+262",
++      "label": "+262 RE"
++    },
++    {
++      "value": "+40",
++      "label": "+40 RO"
++    },
++    {
++      "value": "+7",
++      "label": "+7 RU"
++    },
++    {
++      "value": "+250",
++      "label": "+250 RW"
++    },
++    {
++      "value": "+590",
++      "label": "+590 BL"
++    },
++    {
++      "value": "+290",
++      "label": "+290 SH"
++    },
++    {
++      "value": "+1869",
++      "label": "+1869 KN"
++    },
++    {
++      "value": "+1758",
++      "label": "+1758 LC"
++    },
++    {
++      "value": "+590",
++      "label": "+590 MF"
++    },
++    {
++      "value": "+508",
++      "label": "+508 PM"
++    },
++    {
++      "value": "+1784",
++      "label": "+1784 VC"
++    },
++    {
++      "value": "+685",
++      "label": "+685 WS"
++    },
++    {
++      "value": "+378",
++      "label": "+378 SM"
++    },
++    {
++      "value": "+239",
++      "label": "+239 ST"
++    },
++    {
++      "value": "+966",
++      "label": "+966 SA"
++    },
++    {
++      "value": "+221",
++      "label": "+221 SN"
++    },
++    {
++      "value": "+381",
++      "label": "+381 RS"
++    },
++    {
++      "value": "+248",
++      "label": "+248 SC"
++    },
++    {
++      "value": "+232",
++      "label": "+232 SL"
++    },
++    {
++      "value": "+65",
++      "label": "+65 SG"
++    },
++    {
++      "value": "+1721",
++      "label": "+1721 SX"
++    },
++    {
++      "value": "+421",
++      "label": "+421 SK"
++    },
++    {
++      "value": "+386",
++      "label": "+386 SI"
++    },
++    {
++      "value": "+677",
++      "label": "+677 SB"
++    },
++    {
++      "value": "+252",
++      "label": "+252 SO"
++    },
++    {
++      "value": "+27",
++      "label": "+27 ZA"
++    },
++    {
++      "value": "+500",
++      "label": "+500 GS"
++    },
++    {
++      "value": "+211",
++      "label": "+211 SS"
++    },
++    {
++      "value": "+34",
++      "label": "+34 ES"
++    },
++    {
++      "value": "+94",
++      "label": "+94 LK"
++    },
++    {
++      "value": "+249",
++      "label": "+249 SD"
++    },
++    {
++      "value": "+597",
++      "label": "+597 SR"
++    },
++    {
++      "value": "+47",
++      "label": "+47 SJ"
++    },
++    {
++      "value": "+268",
++      "label": "+268 SZ"
++    },
++    {
++      "value": "+46",
++      "label": "+46 SE"
++    },
++    {
++      "value": "+41",
++      "label": "+41 CH"
++    },
++    {
++      "value": "+963",
++      "label": "+963 SY"
++    },
++    {
++      "value": "+886",
++      "label": "+886 TW"
++    },
++    {
++      "value": "+992",
++      "label": "+992 TJ"
++    },
++    {
++      "value": "+255",
++      "label": "+255 TZ"
++    },
++    {
++      "value": "+66",
++      "label": "+66 TH"
++    },
++    {
++      "value": "+670",
++      "label": "+670 TL"
++    },
++    {
++      "value": "+228",
++      "label": "+228 TG"
++    },
++    {
++      "value": "+690",
++      "label": "+690 TK"
++    },
++    {
++      "value": "+676",
++      "label": "+676 TO"
++    },
++    {
++      "value": "+1868",
++      "label": "+1868 TT"
++    },
++    {
++      "value": "+216",
++      "label": "+216 TN"
++    },
++    {
++      "value": "+90",
++      "label": "+90 TR"
++    },
++    {
++      "value": "+993",
++      "label": "+993 TM"
++    },
++    {
++      "value": "+1649",
++      "label": "+1649 TC"
++    },
++    {
++      "value": "+688",
++      "label": "+688 TV"
++    },
++    {
++      "value": "+256",
++      "label": "+256 UG"
++    },
++    {
++      "value": "+380",
++      "label": "+380 UA"
++    },
++    {
++      "value": "+971",
++      "label": "+971 AE"
++    },
++    {
++      "value": "+44",
++      "label": "+44 GB"
++    },
++    {
++      "value": "+1",
++      "label": "+1 US"
++    },
++    {
++      "value": "+246",
++      "label": "+246 UM"
++    },
++    {
++      "value": "+598",
++      "label": "+598 UY"
++    },
++    {
++      "value": "+998",
++      "label": "+998 UZ"
++    },
++    {
++      "value": "+678",
++      "label": "+678 VU"
++    },
++    {
++      "value": "+58",
++      "label": "+58 VE"
++    },
++    {
++      "value": "+84",
++      "label": "+84 VN"
++    },
++    {
++      "value": "+1284",
++      "label": "+1284 VG"
++    },
++    {
++      "value": "+1340",
++      "label": "+1340 VI"
++    },
++    {
++      "value": "+681",
++      "label": "+681 WF"
++    },
++    {
++      "value": "+212",
++      "label": "+212 EH"
++    },
++    {
++      "value": "+967",
++      "label": "+967 YE"
++    },
++    {
++      "value": "+260",
++      "label": "+260 ZM"
++    },
++    {
++      "value": "+263",
++      "label": "+263 ZW"
++    }
++  ]
++}
+--- /dev/null
++++ scripts/render-registration.mjs
+@@ -0,0 +1,32 @@
++import {brevoConfig, brevoValue, registrationDepartures} from './brevo.mjs';
++import {departureLevelLabel} from './trip-model.mjs';
++
++const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++const error = '<label class="entry__error entry__error--primary"></label>';
++const field = (name, label, {required = true, type = 'text', autocomplete = 'off', attrs = '', help = ''} = {}) => `<div class="sib-input sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="${name}">${label}${required ? ' *' : ' (opcional)'}</label><div class="entry__field"><input class="input" type="${type}" id="${name}" name="${name}"${name === 'EMAIL' ? '' : ' maxlength="200"'} autocomplete="${autocomplete}"${required ? ' data-required="true" required' : ''}${help ? ` aria-describedby="help-${name}"` : ''} ${attrs}></div>${help ? `<p class="registration-help" id="help-${name}">${help}</p>` : ''}</div>${error}</div></div>`;
++const choices = (name, title, values) => `<fieldset class="sib-radiobutton-group sib-form-block" data-required="true"><legend>${title} *</legend><div class="form__entry entry_mcq"><div class="form__label-row"><div class="registration-choices">${values.map((label, i) => `<div class="entry__choice"><label><input type="radio" name="${name}" class="input_replaced" value="${i + 1}" required><span class="radio-button"></span><span>${label}</span></label></div>`).join('')}</div></div>${error}</div></fieldset>`;
++const section = (number, title, content) => `<section class="registration-section" aria-labelledby="section-${number}"><h2 id="section-${number}"><span>${number}</span>${title}</h2>${content}</section>`;
++
++function phone() {
++  return `<div class="sib-sms-field sib-form-block"><div class="form__entry entry_block"><div class="form__label-row"><label class="entry__label" for="WHATSAPP">WhatsApp *</label><div class="sib-sms-input-wrapper"><div class="sib-sms-input" data-placeholder="WhatsApp" data-required="true" data-country-code="ES" data-value="" data-attributename="WHATSAPP"><div class="entry__field"><select class="input" name="WHATSAPP__COUNTRY_CODE" aria-label="Prefijo de país de WhatsApp" data-required="true">${brevoConfig.countries.map(c => `<option value="${escape(c.value)}"${c.label === '+34 ES' ? ' selected' : ''}>${escape(c.label)}</option>`).join('')}</select><input type="tel" class="input" id="WHATSAPP" name="WHATSAPP" autocomplete="tel-national" placeholder="Tu número" data-required="true" required></div><div class="sib-sms-tooltip"><div class="sib-sms-tooltip__box">Incluye tu número sin el prefijo del país.</div></div></div></div></div>${error}</div></div>`;
++}
++
++function form(trip, departures, selected, unavailableAlias) {
++  const dates = `<fieldset class="sib-radiobutton-group sib-form-block registration-dates" data-required="true"><legend>Tu fecha para ${escape(trip.name)} *</legend><div class="form__entry entry_mcq"><div class="form__label-row"><div class="registration-choices">${departures.map(d => `<div class="entry__choice"><label><input type="radio" name="VIAJE_SURF" class="input_replaced" value="${brevoValue(trip, d)}" data-departure-id="${escape(d.id)}"${selected?.id === d.id ? ' checked' : ''} required><span class="radio-button"></span><span><strong>${escape(d.date)}</strong><small>${escape(departureLevelLabel(trip, d))} · ${escape(d.duration)}</small></span></label></div>`).join('')}</div></div>${error}</div></fieldset>`;
++  const personal = `<div class="registration-grid">${field('NOMBRE', 'Nombre', {autocomplete:'given-name'})}${field('APELLIDOS', 'Apellidos', {autocomplete:'family-name'})}${field('EMAIL', 'Email', {type:'email', autocomplete:'email'})}${phone()}${field('FECHADENACIMIENTO', 'Fecha de nacimiento', {attrs:'data-type="date" pattern="^([0-2][0-9]|(3)[0-1])(-)(((0)[0-9])|((1)[0-2]))(-)\\d{4}$" title="dd-mm-aaaa" data-format="dd-mm-yyyy" placeholder="dd-mm-aaaa"', help:'Día, mes y año. Por ejemplo: 15-06-1995.'})}${field('DNI', 'DNI / documento de identidad')}${field('DIRECCION', 'Dirección', {autocomplete:'street-address'})}${field('CIUDAD', 'Ciudad', {autocomplete:'address-level2'})}${field('CODIGO_POSTAL', 'Código postal', {autocomplete:'postal-code', attrs:'data-numeric="true" inputmode="numeric" pattern="[0-9]+"'})}${field('PAIS', 'País', {autocomplete:'country-name'})}</div>`;
++  const surf = choices('NIVEL_SURF', '¿Cuál es tu nivel de surf?', ['Nivel 1, iniciación','Nivel 2, nivel base de surf','Nivel 3, intermedio','Nivel 4, controlo']) + '<p class="registration-help"><a href="/niveles/" target="_blank" rel="noopener">Consulta nuestra guía de niveles</a> si tienes dudas.</p>' + choices('TALLA_CAMISETA', 'Talla de camiseta', ['S','M','L','XL']) + choices('CONQUIENVIAJO', '¿Cómo vendrías al surftrip?', ['Sol@ a la aventura!','Acompañad@ o con amigos!']) + field('ACOMPANANTES', 'Si vienes con gente, ¿cuáles son sus nombres?', {required:false}) + choices('MATERIAL', 'En cuanto al material', ['Llevo el mio propio','Alquilaré una tabla']) + field('MATERIAL_MEDIDAS', 'Si vas a alquilar, ¿qué medidas crees que necesitas?', {required:false});
++  const more = field('ALERGIAS_INTOLERANCIAS', '¿Tienes alergias o alguna preferencia alimenticia?', {required:false}) + field('ENFERMEDAD_PROBLEMA', '¿Tienes alguna enfermedad o problema que te impida surfear y viajar de forma segura?', {required:false}) + field('MOTIVA', '¿Qué te motiva para unirte a este viaje con LST?') + choices('CONOCIDO', '¿Cómo has conocido este viaje?', ['Ya he viajado con Lets Surf Together','Recomendaciones de amigos/conocidos','Redes sociales! Mi primer viaje con LST!','Pagina Web','Otros']);
++  return `<div class="sib-form"><div id="sib-form-container" class="sib-form-container"><div id="error-message" class="sib-form-message-panel" role="alert"><div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">Vaya, no hemos podido procesar tu inscripción. Inténtalo de nuevo en unos minutos.</span></div></div><div id="success-message" class="sib-form-message-panel" role="status" tabindex="-1"><div class="sib-form-message-panel__text"><span class="sib-form-message-panel__inner-text">¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.</span></div></div><div id="sib-container" class="sib-container--large sib-container--vertical"><form id="sib-form" method="POST" action="${escape(brevoConfig.action)}" data-type="subscription">${section('01','El viaje empieza aquí.', dates)}<p id="registration-date-error" role="alert"${unavailableAlias ? '' : ' hidden'}>La fecha del enlace no está disponible. Elige una de las fechas que aparecen arriba.</p>${departures.length > 1 ? '<noscript><p>Comprueba y selecciona tu fecha antes de enviar la inscripción.</p></noscript>' : ''}${section('02','Un poco sobre ti.', personal)}${section('03','Tu surf. Tu plan.', surf)}${section('04','Antes de hacer la maleta.', more)}<div class="registration-submit sib-form-block"><p>Los campos con * son obligatorios. Al enviar, tus datos se tramitan a través de Brevo para gestionar esta inscripción. La plaza se confirma con el equipo.</p><button class="sib-form-block__button sib-form-block__button-with-loader button" form="sib-form" type="submit"><svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true"><path d="M256 24a232 232 0 0 1 232 232h-48A184 184 0 0 0 256 72Z"/></svg>Me apunto al viaje</button></div><input type="text" name="email_address_check" value="" class="input--hidden" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="locale" value="es"></form></div></div></div>`;
++}
++
++export function renderRegistration(trip, routeSlug = trip.slug) {
++  const departures = registrationDepartures(trip);
++  const aliasStart = routeSlug !== trip.slug ? /-(\d{4}-\d{2}-\d{2})$/.exec(routeSlug)?.[1] : '';
++  const selected = aliasStart ? departures.find(d => d.start === aliasStart) : departures.length === 1 ? departures[0] : undefined;
++  const contact = `<a class="text-link" data-whatsapp="${escape(trip.id)}" href="https://wa.me/34648189257?text=${encodeURIComponent(`¡Hola, LST! Tengo una duda sobre la inscripción a ${trip.name}.`)}" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a>`;
++  return `<!doctype html>
++<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><meta name="referrer" content="strict-origin-when-cross-origin"><title>Inscripción a ${escape(trip.name)} · Let’s Surf Together</title><meta name="description" content="Inscríbete al viaje de surf a ${escape(trip.name)} con Let’s Surf Together."><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/trip.css"><link rel="stylesheet" href="/registration.css"></head>
++<body class="trip-page registration-page"><a class="skip-link" href="#contenido">Saltar al contenido</a><header class="trip-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126"></a><nav class="trip-header-nav" aria-label="Navegación principal"><a class="trip-back" href="/viajes/${escape(trip.slug)}/">Volver al viaje</a><a class="trip-header-levels" href="/niveles/">Niveles</a></nav></header>
++<main id="contenido" class="registration-shell"><div class="registration-intro"><p class="eyebrow">NOS VEMOS EN EL PICO / INSCRIPCIONES</p><h1>Te vienes a<br><em>${escape(trip.name)}.</em></h1><p>Unas olas, buena compañía y un viaje por delante. Cuéntanos un poco sobre ti y empecemos a prepararlo.</p></div><div class="registration-layout"><aside class="registration-summary"><p class="eyebrow">TU PRÓXIMO SURFTRIP</p>${trip.hero ? `<img src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="600" height="400">` : ''}<h2>${escape(trip.name)}</h2><p>${escape(trip.place)}</p><p>¿Una duda antes de apuntarte?</p>${contact}<p class="registration-help">Enviar el formulario no confirma la reserva ni realiza ningún pago.</p></aside><div class="registration-content">${departures.length ? form(trip, departures, selected, Boolean(aliasStart && !selected)) : `<section class="registration-unavailable"><h2>La inscripción no está disponible.</h2><p>Consulta las próximas salidas y la disponibilidad con el equipo.</p>${contact}</section>`}</div></div></main><footer class="trip-footer trip-shell"><a href="/">Let’s Surf Together</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></footer>${departures.length ? '<script defer src="/registration.js"></script>' : ''}</body></html>
++`;
++}
+--- /dev/null
++++ scripts/registration.test.mjs
+@@ -0,0 +1,110 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFile, mkdtemp, rm} from 'node:fs/promises';
++import os from 'node:os';
++import path from 'node:path';
++import {brevoValue, registrationDepartures, registrationUrl, brevoConfig, validateRegistrationMappings} from './brevo.mjs';
++import {renderRegistration} from './render-registration.mjs';
++import {renderTrip} from './render-trips.mjs';
++import {adaptTrip} from './sanity-trips.mjs';
++import {prepareDrafts} from './import-departures.mjs';
++import {buildSite} from './build.mjs';
++import {createSiteServer, renderPreviewPage} from './serve.mjs';
++const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
++const get=slug=>structuredClone(trips.find(t=>t.slug===slug));
++const inventory=JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json','utf8'));
++const documents=prepareDrafts(inventory).map(doc=>({...doc,_id:doc._id.replace(/^drafts\./,'')}));
++
++test('all eight client categories map by destination and exact start/end, regardless of order',()=>{
++ const expected={hossegor:['1'],'el-palmar':['2'],marruecos:['3','4'],fuerteventura:['5'],senegal:['6'],maldivas:['7','8']};
++ for(const [slug,values] of Object.entries(expected)) {
++  const t=get(slug);assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values);
++  t.departures.reverse();assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values.toReversed());
++ }
++ const t=get('el-palmar');t.departures[0].end='2026-12-09';assert.equal(registrationUrl(t),'');
++ t.slug='otro-destino';assert.equal(brevoValue(t,t.departures[0]),'');
++ t.departures[0].brevoValue=42;assert.equal(brevoValue(t,t.departures[0]),'42');
++});
++
++test('pending, full and unmapped trips expose consultation without a form or signup link',()=>{
++ for(const t of [Object.assign(get('el-palmar'),{state:'upcoming'}),Object.assign(get('el-palmar'),{availability:'full'}),Object.assign(get('el-palmar'),{slug:'sin-mapeo'})]) {
++  assert.equal(registrationUrl(t),'');assert.doesNotMatch(renderRegistration(t),/<form\b|registration.js/);
++  assert.match(renderRegistration(t),/no está disponible/);assert.doesNotMatch(renderTrip(t),/data-registration=/);
++ }
++ const t=get('marruecos');t.departures[0].availability='full';
++ assert.deepEqual(registrationDepartures(t).map(d=>brevoValue(t,d)),['4']);
++ assert.equal(registrationUrl(t,t.departures[0]),'');assert.doesNotMatch(renderRegistration(t),/name="VIAJE_SURF"[^>]*value="3"/);
++});
++
++test('canonical multi-date pages require an explicit date; single and dated aliases preselect correctly',()=>{
++ const t=get('marruecos');assert.doesNotMatch(renderRegistration(t),/name="VIAJE_SURF"[^>]* checked/);
++ assert.match(renderRegistration(t,'marruecos-2027-01-24'),/name="VIAJE_SURF"[^>]*value="4"[^>]* checked/);
++ assert.doesNotMatch(renderRegistration(t,'marruecos-2027-01-24'),/name="VIAJE_SURF"[^>]*value="3"[^>]* checked/);
++ t.departures[0].availability='full';
++ const closedAlias=renderRegistration(t,'marruecos-2027-01-17');
++ assert.doesNotMatch(closedAlias,/name="VIAJE_SURF"[^>]* checked/);
++ assert.match(closedAlias,/id="registration-date-error" role="alert">/);
++ assert.match(renderRegistration(get('hossegor')),/name="VIAJE_SURF"[^>]*value="1"[^>]* checked/);
++ assert.equal(registrationUrl(t,t.departures[1]),'/inscripciones/marruecos/?salida='+t.departures[1].id);
++});
++
++test('Brevo payload keeps every supplied field, category value and required/optional distinction',()=>{
++ const html=renderRegistration(get('el-palmar'));
++ assert(html.includes(`action="${brevoConfig.action}"`));assert.match(html,/method="POST"/);
++ for(const name of ['NOMBRE','APELLIDOS','DIRECCION','CIUDAD','CODIGO_POSTAL','PAIS','WHATSAPP','FECHADENACIMIENTO','DNI','EMAIL','MOTIVA'])assert.match(html,new RegExp(`<input[^>]*name="${name}"[^>]*required`),name);
++ for(const name of ['ACOMPANANTES','MATERIAL_MEDIDAS','ALERGIAS_INTOLERANCIAS','ENFERMEDAD_PROBLEMA']){
++  const input=html.match(new RegExp(`<input[^>]*name="${name}"[^>]*>`))[0];assert(!input.includes('required'),name);
++ }
++ for(const [name,count] of [['NIVEL_SURF',4],['TALLA_CAMISETA',4],['CONQUIENVIAJO',2],['MATERIAL',2],['CONOCIDO',5]]) {
++  assert.equal((html.match(new RegExp(`name="${name}"`,'g'))??[]).length,count);
++  for(let i=1;i<=count;i++)assert.match(html,new RegExp(`name="${name}"[^>]*value="${i}"[^>]*required`));
++ }
++ assert.match(html,/<option value="\+34" selected>\+34 ES/);
++ assert.match(html,/name="email_address_check" value=""/);assert.match(html,/name="locale" value="es"/);
++ assert.doesNotMatch(html,/api-key|localStorage|sessionStorage|main.js|sib-styles.css/);
++});
++
++test('the optional CMS category is validated and preserved without exposing private metadata',()=>{
++ const doc=structuredClone(documents[0]);doc.departures[0].brevoValue=101;doc.departures[0].privateNote='PRIVATE';
++ const trip=adaptTrip(doc);assert.equal(trip.departures[0].brevoValue,101);assert(!JSON.stringify(trip).includes('PRIVATE'));
++ for(const value of [0,-1,1.5,'3',NaN]){doc.departures[0].brevoValue=value;assert.throws(()=>adaptTrip(doc),/VIAJE_SURF/);}
++ const palmar=get('el-palmar'),marruecos=get('marruecos');palmar.departures[0].brevoValue=3;assert.throws(()=>validateRegistrationMappings([palmar,marruecos]),/compartido/);
++ const duplicate=get('marruecos');duplicate.departures[1].brevoValue=3;assert.throws(()=>renderRegistration(duplicate),/duplicado/);
++});
++
++test('registration links are additive and remain available in the native date fallback',()=>{
++ const t=get('marruecos'),html=renderTrip(t);
++ assert.match(html,/class="button reserve-main" data-open-dates/);
++ for(const d of t.departures)assert(html.includes(registrationUrl(t,d)));
++ const noJs=html.match(/<noscript>[\s\S]*?<\/noscript>/)[0];
++ assert.equal((noJs.match(/data-registration=/g)??[]).length,2);
++ assert.equal((noJs.match(/data-whatsapp=/g)??[]).length,2);
++ const copy=get('el-palmar');copy.name='<script>bad</script>';copy.place='"<img>';const rendered=renderRegistration(copy);
++ assert.doesNotMatch(rendered,/<script>bad|<img>/);assert.match(rendered,/&lt;script&gt;bad/);
++});
++
++test('build generates forms and aliases, preserves static serving and removes forms when unpublished',async()=>{
++ const temp=await mkdtemp(path.join(os.tmpdir(),'lst-brevo-'));const out=path.join(temp,'dist');
++ try {
++  await buildSite({out,read:async()=>documents});
++  assert.match(await readFile(path.join(out,'inscripciones/marruecos/index.html'),'utf8'),/name="VIAJE_SURF"/);
++  assert.match(await readFile(path.join(out,'inscripciones/marruecos-2027-01-24/index.html'),'utf8'),/value="4"[^>]* checked/);
++  const server=createSiteServer({root:out});await new Promise(r=>server.listen(0,'127.0.0.1',r));
++  try {
++   const base=`http://127.0.0.1:${server.address().port}`;
++   for(const suffix of ['','/'])assert.equal((await fetch(base+'/inscripciones/el-palmar'+suffix)).status,200);
++   assert.equal((await fetch(base+'/inscripciones/desconocido/')).status,404);
++  } finally {await new Promise(r=>server.close(r));}
++  await buildSite({out,read:async()=>[]});
++  assert.doesNotMatch(await readFile(path.join(out,'inscripciones/marruecos/index.html'),'utf8'),/<form\b/);
++  assert.doesNotMatch(await readFile(path.join(out,'inscripciones/marruecos-2027-01-24/index.html'),'utf8'),/<form\b/);
++ } finally {await rm(temp,{recursive:true,force:true});}
++});
++
++test('local preview uses current registration templates and availability without mutating published output',async()=>{
++ const t=get('el-palmar');const file='dist/inscripciones/el-palmar/index.html';const before=await readFile(file,'utf8');
++ t.availability='full';t.departures[0].availability='full';
++ const preview=renderPreviewPage('inscripciones/el-palmar/index.html',before,[t]);
++ assert.doesNotMatch(preview,/<form\b/);assert.match(preview,/no está disponible/);
++ assert.equal(await readFile(file,'utf8'),before);
++});
+--- /dev/null
++++ scripts/check-registration-browser.mjs
+@@ -0,0 +1,109 @@
++// Optional browser QA. Intercept every external request; never create a Brevo contact.
++import {createRequire} from 'node:module';
++import {readFile, writeFile, mkdir} from 'node:fs/promises';
++import path from 'node:path';
++import assert from 'node:assert/strict';
++import {createSiteServer} from './serve.mjs';
++const require=createRequire(import.meta.url);
++const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE || 'playwright');
++const output=path.resolve(process.env.LST_QA_OUTPUT || 'docs/qa/2026-10-25-brevo/browser');
++await mkdir(output,{recursive:true});
++const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
++const server=createSiteServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
++const origin=`http://127.0.0.1:${server.address().port}`;
++const browser=await chromium.launch({headless:true,executablePath:process.env.LST_CHROMIUM_PATH});
++const errors=[],results=[];let submissions=[],mode='success';
++const check=(name,actual,expected=true)=>{assert.deepEqual(actual,expected,name);results.push(name);};
++async function route(context) {
++ await context.route('https://**/*',async r=>{
++  const u=r.request().url();
++  if(u.startsWith('https://cdn.sanity.io/'))return r.fulfill({body:await readFile('dist/assets/community.webp'),contentType:'image/webp'});
++  if(u.includes('.sibforms.com/serve/')&&r.request().method()==='POST'){
++   submissions.push({url:u,body:r.request().postData()});
++   if(mode==='network')return r.abort('failed');
++   if(mode==='native')return r.fulfill({contentType:'text/html',body:'<h1>Native submission intercepted</h1>'});
++   const body=mode==='malformed'?'not-json':JSON.stringify(mode==='rejected'?{success:false,message:'Revisa tu email.',errors:{EMAIL:'Email rechazado por Brevo.'}}:{success:true,...(mode==='redirect-malformed'?{redirect:'::::'}:mode==='redirect-insecure'?{redirect:'javascript:alert(1)'}:{})});
++   await new Promise(resolve=>setTimeout(resolve,100));
++   return r.fulfill({status:mode==='http'?503:200,headers:{'access-control-allow-origin':'*'},contentType:'application/json',body});
++  }
++  return r.abort();
++ });
++}
++async function fill(page) {
++ for(const [name,value] of Object.entries({NOMBRE:'Prueba',APELLIDOS:'Local',EMAIL:'qa@example.test',WHATSAPP:'600000000',FECHADENACIMIENTO:'15-06-1995',DNI:'DOCUMENTO-PRUEBA',DIRECCION:'Dirección de prueba',CIUDAD:'Madrid',CODIGO_POSTAL:'28001',PAIS:'España',MOTIVA:'Verificación local sin envío real'}))await page.locator(`[name="${name}"]`).fill(value);
++ for(const name of ['NIVEL_SURF','TALLA_CAMISETA','CONQUIENVIAJO','MATERIAL','CONOCIDO'])await page.locator(`[name="${name}"]`).first().check();
++}
++try {
++ for(const width of [320,390,768,1440]) {
++  const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce'});await route(context);
++  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
++  for(const trip of trips) {
++   await page.goto(origin+`/inscripciones/${trip.slug}/`);await page.evaluate(()=>document.fonts.ready);
++   check(`${trip.slug} ${width}: no horizontal overflow`,await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
++   check(`${trip.slug} ${width}: correct trip`,(await page.locator('h1').innerText()).includes(trip.name));
++   check(`${trip.slug} ${width}: native phone prefix`,await page.locator('[name=WHATSAPP__COUNTRY_CODE]').inputValue(),'+34');
++   check(`${trip.slug} ${width}: date selection is explicit`,await page.locator('[name=VIAJE_SURF]:checked').count(),trip.departures.length===1?1:0);
++   check(`${trip.slug} ${width}: controls have accessible labels`,await page.locator('input:not([type=hidden]):not([type=radio]):not([name=email_address_check])').evaluateAll(nodes=>nodes.every(n=>n.labels.length>0)));
++   check(`${trip.slug} ${width}: submit touch target`,(await page.locator('button[type=submit]').boundingBox()).height>=44);
++  }
++  await page.goto(origin+'/inscripciones/marruecos/');
++  await page.screenshot({path:path.join(output,`marruecos-${width}.png`),fullPage:width===390});
++  if(width===320){
++   await page.evaluate(()=>{const nodes=[...document.querySelectorAll('body,body *')];const sizes=nodes.map(e=>parseFloat(getComputedStyle(e).fontSize));nodes.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});
++   check('text at 200% stays within 320px',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
++  }
++  await context.close();
++ }
++ const context=await browser.newContext({viewport:{width:390,height:844}});await route(context);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
++ const trip=trips.find(t=>t.slug==='marruecos'),second=trip.departures[1];
++ await page.goto(origin+`/inscripciones/marruecos/?salida=${second.id}`);
++ check('dated URL selects the second Brevo category',await page.locator('[name=VIAJE_SURF]:checked').inputValue(),'4');
++ await fill(page);
++ await page.locator('[name=FECHADENACIMIENTO]').fill('31-02-1995');
++ check('impossible birth date rejected',await page.locator('#sib-form').evaluate(f=>f.checkValidity()),false);
++ await page.locator('[name=FECHADENACIMIENTO]').fill('15-06-1995');
++ check('valid completed form accepted by native validation',await page.locator('#sib-form').evaluate(f=>f.checkValidity()));
++ mode='success';submissions=[];
++ await page.locator('#sib-form').evaluate(f=>{f.requestSubmit();f.requestSubmit();});
++ await page.waitForSelector('#success-message.sib-form-message-panel--active');
++ check('double submit sends exactly once',submissions.length,1);
++ const payload=submissions[0];check('AJAX endpoint uses Brevo response mode',new URL(payload.url).searchParams.get('isAjax'),'1');
++ for(const [name,value] of [['VIAJE_SURF','4'],['WHATSAPP__COUNTRY_CODE','+34'],['FECHADENACIMIENTO','15-06-1995'],['locale','es']])check(`payload ${name} exact`,payload.body.includes(`name="${name}"\r\n\r\n${value}\r\n`));
++ check('submit disabled after success',await page.locator('button[type=submit]').isDisabled());
++ check('success announced accessibly',await page.locator('#success-message').evaluate(e=>e===document.activeElement));
++ for(const failure of ['rejected','network','malformed','http']) {
++  mode=failure;await page.goto(origin+'/inscripciones/el-palmar/');await fill(page);submissions=[];
++  await page.locator('button[type=submit]').click();await page.waitForSelector('#error-message.sib-form-message-panel--active');
++  check(`${failure}: form data retained`,await page.locator('[name=NOMBRE]').inputValue(),'Prueba');
++  check(`${failure}: manual retry possible`,await page.locator('button[type=submit]').isEnabled());
++  check(`${failure}: no automatic retries`,submissions.length,1);
++  if(failure==='rejected')check('server field error rendered',await page.locator('[name=EMAIL]').locator('xpath=ancestor::div[contains(@class,"form__entry")]').locator('.entry__error').innerText(),'Email rechazado por Brevo.');
++ }
++ for(const redirectMode of ['redirect-malformed','redirect-insecure']) {
++  mode=redirectMode;await page.goto(origin+'/inscripciones/el-palmar/');await fill(page);
++  await page.locator('button[type=submit]').click();await page.waitForSelector('#success-message.sib-form-message-panel--active');
++  check(`${redirectMode}: successful submission stays confirmed`,await page.locator('#error-message').isVisible(),false);
++  check(`${redirectMode}: successful submission cannot be repeated`,await page.locator('button[type=submit]').isDisabled());
++ }
++ await page.goto(origin+'/inscripciones/marruecos/?salida=incorrecta');
++ check('invalid dated URL shows actionable error',await page.locator('#registration-date-error').isVisible());
++ check('invalid dated URL cannot silently choose another trip',await page.locator('[name=VIAJE_SURF]:checked').count(),0);
++ await page.locator('[name=VIAJE_SURF]').last().check();check('choosing a valid date clears URL error',await page.locator('#registration-date-error').isVisible(),false);
++ await page.goto(origin+'/inscripciones/marruecos-2027-01-24/');check('historical route selects matching date',await page.locator('[name=VIAJE_SURF]:checked').inputValue(),'4');
++ await page.goto(origin+'/viajes/marruecos/');await page.locator('[data-open-dates]:visible').first().click();
++ const link=page.locator('#departure-dialog [data-registration]').last();await link.click();
++ check('trip selector links to the chosen registration date',await page.locator('[name=VIAJE_SURF]:checked').inputValue(),'4');
++ check('unknown slug remains 404',(await page.goto(origin+'/inscripciones/desconocido/')).status(),404);
++ await context.close();
++ console.log('Responsive, AJAX payload, error and date-link assertions passed.');
++ const noJs=await browser.newContext({javaScriptEnabled:false,reducedMotion:'reduce',viewport:{width:390,height:844}});await route(noJs);const native=await noJs.newPage();
++ await native.goto(origin+'/inscripciones/hossegor/');check('without JS single date preselected',await native.locator('[name=VIAJE_SURF]:checked').inputValue(),'1');
++ await fill(native);mode='native';submissions=[];await native.locator('button[type=submit]').click();await native.waitForSelector('h1');
++ check('without JS native POST reaches the same endpoint',submissions.length,1);
++ check('native POST does not request AJAX',new URL(submissions[0].url).searchParams.has('isAjax'),false);
++ await native.goto(origin+'/inscripciones/marruecos/');check('without JS multiple dates remain selectable',await native.locator('[name=VIAJE_SURF]').count(),2);
++ await noJs.close();
++ check('no product JavaScript errors',errors,[]);
++ await writeFile(path.join(output,'results.json'),JSON.stringify({checks:results.length,results,errors,externalSubmissions:0},null,2)+'\n');
++ console.log(`PASS: ${results.length} browser assertions at 320/390/768/1440px, exact POST payload, date links/aliases, native fallback, success/rejections/network/invalid JSON/HTTP errors, double submission and 200% text. No external submissions.`);
++} finally {await browser.close();await new Promise(r=>server.close(r));}
+--- /dev/null
++++ dist/registration.js
+@@ -0,0 +1,90 @@
++// Preserve the client's Brevo field names, category IDs and form endpoint.
++// The unenhanced HTML also supports a native POST directly to Brevo.
++const form = document.querySelector('#sib-form');
++const dates = [...document.querySelectorAll('input[name="VIAJE_SURF"]')];
++const requested = new URLSearchParams(location.search).get('salida');
++if (requested !== null) {
++  const selected = dates.find(input => input.dataset.departureId === requested);
++  dates.forEach(input => { input.checked = input === selected; });
++  const notice = document.querySelector('#registration-date-error');
++  notice.hidden = Boolean(selected);
++
++}
++
++dates.forEach(input => input.addEventListener('change', () => { document.querySelector('#registration-date-error').hidden = true; }));
++
++// Do not save personal information to URLs or browser storage.
++const birthDate = document.querySelector('#FECHADENACIMIENTO');
++birthDate?.addEventListener('input', () => {
++  const parts = /^(\d{2})-(\d{2})-(\d{4})$/.exec(birthDate.value);
++  if (!parts) { birthDate.setCustomValidity(''); return; }
++  const [, day, month, year] = parts;
++  const date = new Date(`${year}-${month}-${day}T00:00:00Z`);
++  birthDate.setCustomValidity(Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === `${year}-${month}-${day}` ? '' : 'Introduce una fecha válida.');
++});
++
++if (form) {
++  const button = form.querySelector('button[type="submit"]');
++  const success = document.querySelector('#success-message');
++  const error = document.querySelector('#error-message');
++  const originalError = error.querySelector('span').textContent;
++  let sending = false;
++  let complete = false;
++  const show = (panel, message) => {
++    if (message) panel.querySelector('span').textContent = message;
++    panel.classList.add('sib-form-message-panel--active');
++    panel.setAttribute('tabindex', '-1');
++    panel.focus();
++    panel.scrollIntoView({behavior: 'auto', block: 'center'});
++  };
++  form.addEventListener('input', event => {
++    const entry = event.target.closest('.form__entry');
++    if (entry) entry.querySelector('.entry__error').textContent = '';
++  });
++  form.addEventListener('submit', async event => {
++    event.preventDefault();
++    if (sending || complete || !form.reportValidity()) return;
++    sending = true;
++    button.disabled = true;
++    button.setAttribute('aria-busy', 'true');
++    button.textContent = 'Enviando…';
++    success.classList.remove('sib-form-message-panel--active');
++    error.classList.remove('sib-form-message-panel--active');
++    form.querySelectorAll('.entry__error').forEach(label => { label.textContent = ''; });
++    try {
++      const endpoint = new URL(form.action);
++      // Brevo's embedded form uses this response mode with the same FormData.
++      endpoint.searchParams.set('isAjax', '1');
++      const response = await fetch(endpoint, {method:'POST', body:new FormData(form), credentials:'omit', signal:AbortSignal.timeout(30000)});
++      if (!response.ok) throw Error('Brevo HTTP error');
++      const result = await response.json();
++      if (result.success !== true) {
++        for (const [name, message] of Object.entries(result.errors ?? {})) {
++          const control = form.elements.namedItem(name);
++          const input = control instanceof RadioNodeList ? control[0] : control;
++          const label = input?.closest('.form__entry')?.querySelector('.entry__error');
++          if (label) label.textContent = String(message);
++        }
++        show(error, typeof result.message === 'string' ? result.message : originalError);
++        return;
++      }
++      complete = true;
++      button.textContent = 'Inscripción enviada';
++      show(success, typeof result.message === 'string' ? result.message : '¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.');
++      if (typeof result.redirect === 'string') {
++        try {
++          const redirect = new URL(result.redirect);
++          if (redirect.protocol === 'https:' && !redirect.username && !redirect.password) location.assign(redirect.href);
++        } catch { /* The submission succeeded; retain its confirmation if a redirect is malformed. */ }
++      }
++    } catch {
++      // Preserve the completed fields; never retry a personal-data submission automatically.
++      show(error, 'No hemos podido confirmar el envío. Comprueba tu conexión. Si el problema continúa, consulta con el equipo antes de volver a enviar.');
++    } finally {
++      sending = false;
++      button.removeAttribute('aria-busy');
++      button.disabled = complete;
++      if (!complete) button.textContent = 'Me apunto al viaje';
++    }
++  });
++}
+--- /dev/null
++++ dist/registration.css
+@@ -0,0 +1,70 @@
++/* Brevo stays confined to the registration page; shared brand tokens are reused. */
++.registration-page{background:#fffae7;color:#1b1b1b}
++.registration-page .trip-header{position:relative}
++.registration-shell{max-width:1240px;padding:48px 5vw 80px;margin:auto}
++.registration-intro{max-width:760px;margin-bottom:40px}
++.registration-intro h1{font-family:Aura,serif;font-size:clamp(48px,7vw,94px);font-weight:400;line-height:1.05;margin:20px 0}
++.registration-intro h1 em{font-style:normal;color:#ea5934;overflow-wrap:anywhere}
++.registration-intro>p:last-child{max-width:580px;font-size:18px;line-height:1.65}
++.registration-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:64px;align-items:start}
++.registration-summary{position:sticky;top:28px;min-width:0}
++.registration-summary img{display:block;width:100%;height:185px;object-fit:cover;border-radius:12px;margin:18px 0}
++.registration-summary h2{font-family:Aura,serif;font-size:36px;font-weight:400;margin:16px 0 6px}
++.registration-summary>p{line-height:1.6;margin:12px 0}
++.registration-summary .text-link{display:inline-block;min-height:44px;align-content:center}
++.registration-page .registration-help{font-size:14px;line-height:1.6;color:#4c4b45;margin:8px 0 16px}
++.registration-content{min-width:0}
++.registration-page .sib-form{font-family:'Work Sans',sans-serif;text-align:left;background:transparent;padding:0}
++.registration-page #sib-container{background:transparent;padding:0;text-align:left;max-width:none;overflow:visible;border:0}
++.registration-page .sib-form-container{max-width:none}
++.registration-page .sib-form-block{padding:0;margin:0 0 22px;font-size:16px;min-width:0}
++.registration-section{margin:0 0 32px;padding:28px;background:#fffdf5;border:1px solid #dcd8c7;border-radius:16px}
++.registration-section h2{display:flex;align-items:center;gap:12px;font-size:23px;font-weight:600;line-height:1.3;margin:0 0 28px}
++.registration-section h2>span{font-family:'Space Mono',monospace;font-size:13px;color:#a5361d}
++.registration-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}
++.registration-page .entry__label,.registration-page legend{display:block;font-family:inherit;font-size:15px;font-weight:600;line-height:1.5;white-space:normal;margin:0 0 9px;padding:0;color:#1b1b1b}
++.registration-page fieldset{border:0;min-width:0;padding:0}
++.registration-page .entry__field{background:#fffdf5;border:1px solid #8d8b80;border-radius:8px;min-width:0;margin:0;overflow:hidden}
++.registration-page .entry__field:focus-within{outline:3px solid #ea5934;outline-offset:3px}
++.registration-page #sib-container input.input,.registration-page #sib-container select.input{height:48px;min-height:48px;font:inherit;font-size:16px;color:#1b1b1b;border:0;background:transparent;box-shadow:none;padding:10px 12px;width:100%;min-width:0}
++.registration-page #sib-container .sib-sms-input .entry__field{display:flex}
++.registration-page #sib-container .sib-sms-input select{width:105px;flex:0 0 105px;padding:8px}
++.registration-page #sib-container .sib-sms-input input{flex:1}
++.registration-page .sib-sms-input-wrapper,.registration-page .sib-sms-input{width:100%;min-width:0}
++.registration-page .sib-sms-tooltip{display:none}
++.registration-choices{display:flex;flex-wrap:wrap;gap:10px}
++.registration-page .entry__choice{margin:0;flex:1 1 140px}
++.registration-page .entry__choice label{display:flex;gap:10px;align-items:center;min-height:50px;padding:12px;border:1px solid #8d8b80;border-radius:8px;cursor:pointer;line-height:1.5;overflow-wrap:anywhere}
++.registration-page .entry__choice label:has(input:checked){background:#fce6dd;border-color:#a5361d}
++.registration-page .entry__choice label:has(input:focus-visible){outline:3px solid #ea5934;outline-offset:3px}
++.registration-page #sib-container input[type=radio].input_replaced{position:static;appearance:auto;opacity:1;width:18px;height:18px;flex:0 0 18px;margin:0;accent-color:#a5361d}
++.registration-page .radio-button{display:none}
++.registration-dates .entry__choice{flex-basis:100%}
++.registration-dates small{display:block;font-size:14px;margin-top:4px}
++.registration-page .entry__error{font-size:14px;color:#8c2116;background:#ffeded;line-height:1.5;border-radius:5px}
++.registration-page .entry__error:empty{display:none}
++.registration-page .sib-form-message-panel{display:none;margin:0 0 24px;padding:18px;border-radius:10px;font-size:16px;line-height:1.6}
++.registration-page #error-message{background:#ffeded;color:#661d1d;border:1px solid #b43c31}
++.registration-page #success-message{background:#e7faf0;color:#085229;border:1px solid #2f7c4c}
++.registration-page .sib-form-message-panel--active{display:block}
++.registration-submit p{font-size:14px;line-height:1.65;margin:0 0 18px}
++.registration-page .sib-form-block__button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 25px;border-radius:40px;background:#1b1b1b;color:#fffdf5;font-family:inherit;font-size:16px;font-weight:600;border:0;white-space:normal}
++.registration-page .sib-form-block__button:hover{background:#a5361d}
++.registration-page .sib-form-block__button svg{width:18px;height:18px;fill:currentColor}
++.registration-page .sib-hide-loader-icon{display:none}
++.registration-page .input--hidden{display:none!important}
++.registration-page [hidden]{display:none!important}
++#registration-date-error{padding:16px;background:#ffeded;color:#661d1d;border-radius:8px;margin-bottom:24px}
++.registration-unavailable{padding:28px;border:1px solid #dcd8c7;border-radius:16px}
++.trip-registration{display:block;margin:16px 0}
++@media(max-width:850px){.registration-shell{padding-top:30px}.registration-layout{grid-template-columns:minmax(0,1fr);gap:24px}.registration-intro{margin-bottom:28px}.registration-summary{position:static;border-bottom:1px solid #dcd8c7;padding-bottom:20px}.registration-summary img{display:none}.registration-summary h2{font-size:28px}.registration-summary>.eyebrow{display:none}.registration-summary>p{margin:6px 0}.registration-section{padding:22px}.registration-summary .registration-help{margin-bottom:0}}
++@media(max-width:480px){.registration-shell{padding-inline:16px}.registration-grid{grid-template-columns:minmax(0,1fr)}.registration-section{padding:20px 16px}.registration-section h2{font-size:21px}.registration-intro>p:last-child{font-size:16px}.registration-page .entry__choice{flex-basis:100%}.registration-page .registration-submit button{width:100%}}
++
++.registration-page .form__entry,.registration-page .form__label-row{min-width:0}
++.registration-page .entry__field{display:block}
++.registration-page .entry__error:not(:empty){display:block;padding:10px;margin-top:8px}
++.registration-page .sib-form-message-panel__text{display:block}
++.registration-page .registration-choices .entry__choice label{display:flex;width:100%;box-sizing:border-box}
++.registration-page .registration-choices .entry__choice{display:block}
++.registration-page .sib-form-block__button:disabled{opacity:.65;cursor:wait}
++.registration-page .registration-help a{color:#8d2f19;text-underline-offset:3px}

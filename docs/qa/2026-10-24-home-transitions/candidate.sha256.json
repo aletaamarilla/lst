@@ -1,0 +1,13 @@
+{
+  "baseGit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "files": {
+    "dist/index.html": "20643b7a9e2b06dda0ff8d2e28980b2703dbe41ef320273feb4734cd22d9cec4",
+    "dist/home.css": "7daaf1c17beb5924060d40787c441ea18e40252923b0625c847e5be3096df7f6",
+    "dist/home.js": "aafc9d1980ec085ede47fefc4a550efa9403ae33235bce7323ebfbe4c2c39e5f",
+    "dist/catalog-snapshot.json": "e68265fb86ac95666b33336f099b916d4bf5f41a4517f354800160c5d471f25a",
+    "scripts/render-home-trips.mjs": "9a3570f1c2038b1ec62649c88a1fbaa7533e3fbb14f7e7e07faa6399ce29cd1b",
+    "scripts/trip-model.mjs": "a77b2bc9d4d04b6796aae70d19a8e24b03e79a2accebaf731682d294ef5158bb",
+    "scripts/check-home-browser.mjs": "6e031502f9fd4a5199ce8d90aaf653cc115a9b6996112a7eddf216d452f2c4f7",
+    "scripts/check-home-level-actions.mjs": "f00978cf3502e06d9fe9bc83a1045c998edfe6eca307c39806db3b147d1a587d"
+  }
+}

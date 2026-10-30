@@ -1,0 +1,170 @@
+[
+  {
+    "width": 320,
+    "normal": {
+      "overflow": false,
+      "headerWidth": 320,
+      "heroText": "rgb(27, 27, 27)",
+      "darkLogoVisible": "block",
+      "heroShade": "linear-gradient(rgba(255, 250, 231, 0.14), rgba(255, 250, 231, 0) 62%)",
+      "heroTitle": "¿Te vienes\na surfear?",
+      "opinionsTitle": "Lo que opina la gente que ha viajado",
+      "opinionBackground": "rgb(27, 27, 27)",
+      "levelBackground": "rgb(255, 250, 231)",
+      "cardShadow": "rgba(27, 27, 27, 0.035) 0px 2px 3px 0px, rgba(27, 27, 27, 0.055) 0px 13px 30px 0px",
+      "cta": "rgb(234, 89, 52)",
+      "ctaBox": {
+        "x": 39,
+        "y": 1223.046875,
+        "width": 116.65625,
+        "height": 55.390625,
+        "top": 1223.046875,
+        "right": 155.65625,
+        "bottom": 1278.4375,
+        "left": 39
+      },
+      "price": "399 €\npor persona",
+      "previewSmall": 0,
+      "levels": 4,
+      "unloaded": []
+    },
+    "dates": {
+      "overflow": "auto",
+      "clientHeight": 136,
+      "scrollHeight": 283,
+      "lastNoteBottom": 634.984375,
+      "panelBottom": 651.8125,
+      "requirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud."
+    },
+    "zoom": {
+      "scrollWidth": 320,
+      "width": 320,
+      "headerWidth": 320,
+      "overflows": []
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "normal": {
+      "overflow": false,
+      "headerWidth": 390,
+      "heroText": "rgb(27, 27, 27)",
+      "darkLogoVisible": "block",
+      "heroShade": "linear-gradient(rgba(255, 250, 231, 0.14), rgba(255, 250, 231, 0) 62%)",
+      "heroTitle": "¿Te vienes\na surfear?",
+      "opinionsTitle": "Lo que opina la gente que ha viajado",
+      "opinionBackground": "rgb(27, 27, 27)",
+      "levelBackground": "rgb(255, 250, 231)",
+      "cardShadow": "rgba(27, 27, 27, 0.035) 0px 2px 3px 0px, rgba(27, 27, 27, 0.055) 0px 13px 30px 0px",
+      "cta": "rgb(234, 89, 52)",
+      "ctaBox": {
+        "x": 43,
+        "y": 1223.6875,
+        "width": 132.796875,
+        "height": 55.390625,
+        "top": 1223.6875,
+        "right": 175.796875,
+        "bottom": 1279.078125,
+        "left": 43
+      },
+      "price": "399 €\npor persona",
+      "previewSmall": 0,
+      "levels": 4,
+      "unloaded": []
+    },
+    "dates": {
+      "overflow": "auto",
+      "clientHeight": 185,
+      "scrollHeight": 236,
+      "lastNoteBottom": 684.4375,
+      "panelBottom": 701.453125,
+      "requirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud."
+    },
+    "zoom": {
+      "scrollWidth": 390,
+      "width": 390,
+      "headerWidth": 390,
+      "overflows": []
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "normal": {
+      "overflow": false,
+      "headerWidth": 1440,
+      "heroText": "rgb(27, 27, 27)",
+      "darkLogoVisible": "block",
+      "heroShade": "linear-gradient(rgba(255, 250, 231, 0.14), rgba(255, 250, 231, 0) 62%)",
+      "heroTitle": "¿Te vienes\na surfear?",
+      "opinionsTitle": "Lo que opina la gente que ha viajado",
+      "opinionBackground": "rgb(27, 27, 27)",
+      "levelBackground": "rgb(255, 250, 231)",
+      "cardShadow": "rgba(27, 27, 27, 0.035) 0px 2px 3px 0px, rgba(27, 27, 27, 0.055) 0px 13px 30px 0px",
+      "cta": "rgb(234, 89, 52)",
+      "ctaBox": {
+        "x": 129,
+        "y": 1282.875,
+        "width": 126.65625,
+        "height": 55.390625,
+        "top": 1282.875,
+        "right": 255.65625,
+        "bottom": 1338.265625,
+        "left": 129
+      },
+      "price": "399 €\npor persona",
+      "previewSmall": 0,
+      "levels": 4,
+      "unloaded": []
+    },
+    "dates": {
+      "overflow": "auto",
+      "clientHeight": 212,
+      "scrollHeight": 212,
+      "lastNoteBottom": 764.3125,
+      "panelBottom": 781.3125,
+      "requirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud."
+    },
+    "zoom": {
+      "scrollWidth": 1440,
+      "width": 1440,
+      "headerWidth": 1440,
+      "overflows": []
+    },
+    "errors": []
+  },
+  {
+    "nojs": 320,
+    "nav": {
+      "headerBottom": 78,
+      "fallbackTop": 78,
+      "darkLogo": "block"
+    },
+    "datesOpen": true,
+    "path": "/viajes/"
+  },
+  {
+    "nojs": 390,
+    "nav": {
+      "headerBottom": 78,
+      "fallbackTop": 78,
+      "darkLogo": "block"
+    },
+    "datesOpen": true,
+    "path": "/viajes/"
+  },
+  {
+    "keyboard": {
+      "width": 390,
+      "enterOpens": true,
+      "tabFocusesPanel": true,
+      "scroll": {
+        "scrollTop": 2,
+        "max": 51
+      },
+      "escapeCloses": true,
+      "escapeRestoresFocus": true
+    }
+  }
+]

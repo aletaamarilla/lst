@@ -1,0 +1,331 @@
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/landing.css b/dist/landing.css
+index c1a3048..f8a170a 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/landing.css
++++ b/dist/landing.css
+@@ -8,7 +8,7 @@ body.landing-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):n
+ body.landing-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:7px}
+ body.landing-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+ body.landing-page .eyebrow{font:400 10px/1.7 var(--mono);letter-spacing:.045em;text-transform:uppercase}
+-.landing-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:540px;padding:calc(var(--landing-header-height,78px) + 48px) 0 64px;background:var(--lst-ink);color:var(--lst-paper)}
++.landing-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:flex-end;min-height:540px;padding:calc(var(--landing-header-height,78px) + 48px) 0 4em;background:var(--lst-ink);color:var(--lst-paper)}
+ .landing-hero:before{content:'';position:absolute;inset:0 0 auto;height:calc(var(--landing-header-height,78px) + 120px);z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(15,19,17,.64),rgba(15,19,17,.64) 50%,transparent)}
+ .landing-hero:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(15,19,17,.38),rgba(15,19,17,.12) 28%,rgba(15,19,17,.38) 52%,rgba(15,19,17,.86))}
+ body.landing-page .landing-hero-photo{position:absolute;inset:0;pointer-events:none}
+@@ -40,7 +40,7 @@ body.landing-page:has(.static-navigation) .site-header .brand-dark{display:block
+ body.landing-page:has(.static-navigation) .landing-hero{padding-top:48px}
+ body.landing-page:has(.static-navigation) .site-header :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+ @media(min-width:761px){
+- .landing-hero{min-height:600px;padding-top:calc(var(--landing-header-height,88px) + 72px);padding-bottom:72px}
++ .landing-hero{min-height:600px;padding-top:calc(var(--landing-header-height,88px) + 72px);padding-bottom:4.5em}
+  .landing-hero:after{background:linear-gradient(90deg,rgba(15,19,17,.78),rgba(15,19,17,.48) 45%,rgba(15,19,17,.08)),linear-gradient(180deg,rgba(15,19,17,.3),transparent 30%,rgba(15,19,17,.2))}
+  body.landing-page .landing-hero h1{font-size:clamp(80px,7.5vw,108px)}
+  body.landing-page .landing-hero-description{max-width:430px;font-size:17px}
+@@ -54,3 +54,6 @@ body.landing-page:has(.static-navigation) .site-header :is(a,button):focus-visib
+ body.landing-page .site-header .lst-header-trip,body.landing-page .site-header nav .lst-nav-trip,body.landing-page .site-header .lst-header-trip:hover,body.landing-page .site-header nav .lst-nav-trip:hover{color:inherit}
+ 
+ @media(min-width:1000px){html:has(.landing-page){--landing-header-height:var(--home-header-height,88px)}}
++
++/* Ink protects the orange lettering while keeping the photographic opening. */
++body.landing-page .landing-hero h1 em{font-style:normal;color:var(--lst-orange);background:var(--lst-ink);padding:0 .07em .02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/about.css b/dist/about.css
+index c4dd2ca..ee9bd7c 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/about.css
++++ b/dist/about.css
+@@ -1,66 +1,89 @@
+-/* Conócenos: an editorial story, photographs and short, readable passages. */
++/* LST's voice: direct, sociable and grounded in its own trips. */
+ .about-hero .landing-hero-photo img{object-position:53% 42%}
+-.about-welcome{display:grid;gap:18px;padding-block:36px}
++body.about-page .landing-hero h1{max-width:980px;font-size:clamp(78px,20vw,110px);line-height:.94;letter-spacing:-.015em;text-wrap:initial}
++body.about-page h2 em{font-style:normal;color:var(--lst-orange)}
++body.about-page .landing-hero-description{max-width:360px;font-size:16px;line-height:1.75}
++.about-welcome{padding-block:40px;background:var(--lst-ink);color:var(--lst-paper)}
++.about-welcome-layout{position:relative;display:grid;gap:24px}
++body.about-page .about-welcome h2{margin-top:14px;font-size:48px;line-height:1}
++.about-welcome-copy{max-width:540px}
+ .about-welcome-copy p{font-size:16px;line-height:1.8}
+-.about-welcome-copy p+p{margin-top:14px!important;color:var(--lst-muted)}
+-.about-origin{padding-block:12px 44px}
++.about-welcome-copy p+p{margin-top:14px!important}
++.about-welcome-copy strong{font-weight:600}
++body.about-page .about-welcome-symbol{width:64px;height:auto;margin-top:4px}
++.about-origin{padding-block:48px}
+ .about-origin-layout{display:grid;gap:28px}
+ body.about-page .about-photo img{width:100%;height:auto;border-radius:4px}
+ .about-photo figcaption{padding-top:10px;font-size:11px;line-height:1.6;color:var(--lst-muted)}
+-body.about-page h2{font-size:40px;line-height:1.04;letter-spacing:-.01em}
+-.about-prose h2{margin-block:14px 22px!important}
+-.about-prose>p:not(.eyebrow){font-size:15px;line-height:1.85;color:var(--lst-muted)}
++body.about-page h2{font-size:44px;line-height:1.02;letter-spacing:-.01em}
++.about-prose h2{margin-block:14px 24px!important}
++.about-prose>p:not(.eyebrow){font-size:16px;line-height:1.8}
+ .about-prose>p:not(.eyebrow)+p{margin-top:14px}
+-.about-origin .brand-signature{display:flex;flex-direction:column;gap:8px;margin-top:24px;padding-left:18px;border-left:3px solid var(--lst-orange);font:400 29px/1.2 var(--lst-display)}
++.about-origin .brand-signature{display:flex;flex-direction:column;gap:8px;margin-top:24px;padding-left:18px;border-left:3px solid var(--lst-orange);font:400 32px/1.15 var(--lst-display)}
+ .about-origin .brand-signature span{font:400 11px/1.7 var(--mono);color:var(--lst-muted)}
+-.about-way{padding-block:44px;border-top:1px solid var(--lst-line)}
++.about-way{padding-block:40px 48px;border-top:1px solid var(--lst-line)}
+ .about-section-heading{margin-bottom:28px}
+ .about-section-heading h2{margin-top:14px!important}
+-.about-section-heading>p:last-child{margin-top:18px!important;max-width:480px;font-size:15px;line-height:1.75;color:var(--lst-muted)}
+-.about-moments{display:grid;gap:32px}
++.about-section-heading>p:last-child{margin-top:18px!important;max-width:480px;font-size:15px;line-height:1.8}
++.about-moments{display:grid;gap:36px}
+ .about-moments article{min-width:0}
+ .about-moment-copy{padding-top:20px}
+-body.about-page .about-moments h3{font:600 19px/1.35 var(--body);letter-spacing:-.025em}
+-.about-moments p{margin-top:10px!important;font-size:15px;line-height:1.8;color:var(--lst-muted)}
++.about-moment-index{display:block;margin-bottom:12px;font:400 10px/1.7 var(--mono)}
++body.about-page .about-moments h3{font:400 37px/1.02 var(--lst-display);letter-spacing:-.01em}
++.about-moments p{margin-top:14px!important;font-size:15px;line-height:1.8}
+ body.about-page .about-moments .lst-link{justify-content:flex-start;gap:14px;padding:8px 0;margin-top:10px;border:0;border-radius:0;font-size:13px;text-decoration:underline;text-underline-offset:5px}
+ body.about-page .about-moments .lst-link:hover{background:transparent;color:var(--lst-ink)}
+-.about-team{padding-block:40px 44px;border-top:1px solid var(--lst-line)}
+-.about-team-layout{display:grid;gap:24px}
++body.about-page .about-program-note{margin-top:28px;padding-top:18px;border-top:1px solid var(--lst-line);max-width:720px;font-size:12px;line-height:1.8;color:var(--lst-muted)}
++body.about-page .about-program-note a{text-decoration:underline;text-underline-offset:4px}
++.about-team{padding-block:40px 48px;border-top:1px solid var(--lst-line)}
++.about-team-layout{display:grid;gap:26px}
+ .about-team-heading h2{margin-top:14px!important}
+-.about-team-points{display:grid;gap:22px}
+-body.about-page .about-team h3{font:600 17px/1.5 var(--body);letter-spacing:-.015em;margin-bottom:8px}
+-.about-team-points p{font-size:15px;line-height:1.8;color:var(--lst-muted)}
+-body.about-page .about-team .lst-link{justify-self:start;font-size:13px}
+-.about-respect{display:grid;gap:20px;padding-block:30px 44px;border-top:1px solid var(--lst-line)}
+-body.about-page .about-respect h2{font:600 23px/1.25 var(--body);letter-spacing:-.025em}
+-.about-respect p{max-width:600px;font-size:15px;line-height:1.8;color:var(--lst-muted)}
++.about-team-points{display:grid;gap:24px}
++body.about-page .about-team h3{font:600 17px/1.4 var(--body);letter-spacing:-.015em;margin-bottom:8px}
++.about-team-points p{font-size:15px;line-height:1.8}
++body.about-page .about-team .lst-link{justify-self:start;font-size:13px;background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper)}
++body.about-page .about-team .lst-link:hover{background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink)}
++.about-respect{display:grid;gap:22px;padding-block:32px 48px;border-top:3px solid var(--lst-orange)}
++body.about-page .about-respect h2{font:400 40px/1.04 var(--lst-display);letter-spacing:-.01em}
++.about-respect p{max-width:560px;font-size:15px;line-height:1.8}
++body.about-page .about-next h2 em{font-style:normal;color:var(--lst-ink)}
++@media(max-width:760px){
++ .about-moments article:nth-child(2){display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
++ .about-moments article:nth-child(2)>.about-photo{flex:1 1 8em;min-width:0}
++ .about-moments article:nth-child(2)>.about-moment-copy{flex:1.3 1 11em;min-width:0;padding-top:0}
++}
+ @media(min-width:761px){
+- .about-hero{min-height:640px}
++ .about-hero{min-height:660px}
+  .about-hero .landing-hero-photo img{object-position:50% 48%}
+- .about-welcome{grid-template-columns:1fr 2fr;gap:64px;padding-block:56px}
+- .about-welcome>.eyebrow{padding-top:6px}
+- .about-welcome-copy{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-top:0;max-width:none}
+- .about-welcome-copy p+p{margin-top:0!important}
+- .about-origin{padding-block:8px 80px}
++ body.about-page .landing-hero h1{font-size:clamp(112px,10.5vw,156px)}
++ body.about-page .landing-hero-description{max-width:440px;font-size:17px}
++ .about-welcome{padding-block:52px}
++ .about-welcome-layout{grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding-right:90px}
++ body.about-page .about-welcome h2{font-size:64px}
++ body.about-page .about-welcome-symbol{position:absolute;right:0;top:50%;margin:0;transform:translateY(-50%)}
++ .about-origin{padding-block:80px}
+  .about-origin-layout{grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+- body.about-page h2{font-size:56px}
++ body.about-page h2{font-size:clamp(52px,4.7vw,68px)}
+  .about-way{padding-block:64px 72px}
+- .about-section-heading{display:grid;grid-template-columns:1fr 1fr;gap:0 80px;margin-bottom:36px}
++ .about-section-heading{display:grid;grid-template-columns:1fr 1fr;gap:0 80px;margin-bottom:40px}
+  .about-section-heading .eyebrow{grid-column:1}
+  .about-section-heading h2{grid-column:1;grid-row:2}
+  .about-section-heading>p:last-child{grid-column:2;grid-row:2;align-self:center}
+  .about-moments{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
++ body.about-page .about-moments h3{font-size:44px}
++ .about-moments article:nth-child(2){padding-top:48px}
+  .about-team{padding-block:64px 72px}
+  .about-team-layout{grid-template-columns:1fr 1fr;gap:80px}
+  .about-team-points{padding-top:8px;max-width:530px}
+- .about-respect{grid-template-columns:1fr 1fr;gap:80px;padding-block:36px 64px}
++ .about-respect{grid-template-columns:1fr 1fr;gap:80px;padding-block:40px 64px}
++ body.about-page .about-respect h2{font-size:52px}
+ }
+ @media(min-width:761px) and (max-width:1000px){
+- .about-origin-layout,.about-welcome,.about-team-layout,.about-section-heading,.about-respect{column-gap:36px}
+- .about-moments{gap:20px}
++ .about-origin-layout,.about-team-layout,.about-section-heading,.about-respect{column-gap:36px}
++ .about-welcome-layout{gap:32px;padding-right:0}
++ body.about-page .about-welcome-symbol{display:none}
++ .about-moments{grid-template-columns:minmax(0,1fr);gap:36px}
++ .about-moments article{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
++ .about-moments article:nth-child(2){padding-top:0}
++ .about-moment-copy{padding-top:0}
+ }
+-
+-body.about-page .landing-hero h1{max-width:900px;text-wrap:initial}
+-.about-welcome-copy strong{font-weight:500;color:var(--lst-ink)}
+-
+-@media(min-width:761px) and (max-width:1000px){.about-moments{grid-template-columns:minmax(0,1fr);gap:32px}.about-moments article{display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}.about-moment-copy{padding-top:0}}
+
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/faq.css b/dist/faq.css
+index 3b76018..571ef7a 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/faq.css
++++ b/dist/faq.css
+@@ -1,11 +1,11 @@
+ /* FAQs: compact topics, quiet disclosures and a useful reading width. */
+-.faq-hero{min-height:390px;padding-bottom:56px}
++.faq-hero{min-height:390px;padding-bottom:3.5em}
+ .faq-hero .landing-hero-photo img{object-position:57% 60%}
+ body.faq-page .faq-hero h1{font-size:clamp(52px,13.3vw,72px);max-width:650px}
+ body.faq-page .faq-hero-description{max-width:300px;font-size:15px}
+ .faq-body{padding-block:28px 44px}
+ .faq-context{max-width:680px;font-size:14px;line-height:1.75;color:var(--lst-muted)}
+-body.faq-page .faq-context a,.faq-answers a{text-decoration:underline;text-underline-offset:4px}
++body.faq-page .faq-context a,body.faq-page .faq-answers a{text-decoration:underline;text-underline-offset:4px}
+ .faq-layout{display:grid;gap:32px;margin-top:24px}
+ .faq-sidebar{min-width:0}
+ .faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+@@ -29,7 +29,7 @@ body.faq-page .faq-answers summary:focus-visible{outline-color:var(--lst-ink);ou
+ body.faq-page .faq-answers details>p{max-width:65ch;padding:0 40px 22px 0;font-size:15px;line-height:1.85;color:var(--lst-muted)}
+ body.faq-page .faq-help h2{max-width:500px}
+ @media(min-width:761px){
+- .faq-hero{min-height:440px;padding-bottom:64px}
++ .faq-hero{min-height:440px;padding-bottom:4em}
+  body.faq-page .faq-hero h1{font-size:clamp(76px,7vw,100px)}
+  .faq-hero .landing-hero-photo img{object-position:50% 65%}
+  .faq-body{padding-block:40px 72px}
+@@ -53,3 +53,10 @@ body.faq-page .faq-help h2{max-width:500px}
+ body.faq-page .faq-answers summary>span:after{content:'+';font-size:19px}
+ body.faq-page .faq-answers details[open] summary>span:after{content:'−'}
+ body.faq-page .faq-answers :is(summary,p){overflow-wrap:anywhere}
++/* A direct voice; practical answers remain the main event. */
++body.faq-page .faq-hero h1{max-width:820px;font-size:clamp(48px,12.8vw,72px);text-wrap:initial}
++body.faq-page .faq-hero-description{max-width:380px}
++body.faq-page .faq-help h2 em{font-style:normal;color:var(--lst-ink)}
++body.faq-page .faq-answers details[open]{padding-left:16px;border-left:3px solid var(--lst-orange)}
++body.faq-page .faq-answers details[open] summary{font-weight:600}
++@media(min-width:761px){body.faq-page .faq-hero h1{font-size:clamp(76px,7.1vw,104px)}}
+
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/conocenos.html b/dist/conocenos/index.html
+index ace20bf..8ecb40f 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/conocenos.html
++++ b/dist/conocenos/index.html
+@@ -9,27 +9,28 @@
+ <noscript><nav class="static-navigation lst-width" aria-label="Navegación sin JavaScript"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/" aria-current="page">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></nav></noscript>
+ <section class="landing-hero about-hero" aria-labelledby="about-title">
+  <figure class="landing-hero-photo"><img src="/assets/home/marruecos-grupo.webp" alt="Tres personas de LST se abrazan mirando las dunas al atardecer" width="900" height="600" fetchpriority="high" decoding="async"><figcaption>Un recuerdo con el grupo de LST.</figcaption></figure>
+- <div class="landing-hero-copy lst-width"><p class="eyebrow">CONÓCENOS / LET’S SURF TOGETHER</p><h1 id="about-title">Gente, sal<br>y ganas de repetir.</h1><p class="landing-hero-description">El surf nos reúne. Lo que compartimos hace que queramos volver.</p><a class="landing-hero-link" href="#origen">Te contamos cómo empezó <span aria-hidden="true">↓</span></a></div>
++ <div class="landing-hero-copy lst-width"><p class="eyebrow">ESTO ES LET’S SURF TOGETHER</p><h1 id="about-title">Tú trae<br><em>las ganas.</em></h1><p class="landing-hero-description">Somos LST. Montamos viajes de surf para compartir olas, mesa y esas ganas de volver al agua.</p><a class="landing-hero-link" href="#origen">Te contamos cómo empezó <span aria-hidden="true">↓</span></a></div>
+ </section>
+-<section class="about-welcome lst-width" aria-label="Somos Let’s Surf Together"><p class="eyebrow">SOMOS LET’S SURF TOGETHER</p><div class="about-welcome-copy"><p>Organizamos viajes de surf para aprender, salir de la rutina y compartir la aventura.</p><p><strong>Puedes venir por tu cuenta.</strong> No necesitas conocer a nadie: el viaje se comparte en el agua y en todo lo que pasa entre un baño y el siguiente.</p></div></section>
++<section class="about-welcome" aria-labelledby="together-title"><div class="lst-width about-welcome-layout"><div><p class="eyebrow">EL NOMBRE LO DICE</p><h2 id="together-title">El <em>together</em><br>va en serio.</h2></div><div class="about-welcome-copy"><p><strong>Puedes venir por tu cuenta.</strong> Compartimos los días de surf, las comidas y las conversaciones que siguen al quitarse el neopreno.</p></div><img class="about-welcome-symbol" src="/assets/brand/symbol-orange.svg" alt="" aria-hidden="true" width="72" height="45" loading="lazy"></div></section>
+ <section class="about-origin lst-width" id="origen" aria-labelledby="origin-title"><div class="about-origin-layout">
+- <figure class="about-photo"><img src="/assets/marruecos-day.webp" alt="Siluetas de un paseo en camello en Marruecos al atardecer" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Marruecos, 2025. Un recuerdo de un viaje anterior.</figcaption></figure>
+- <div class="about-prose"><p class="eyebrow">NUESTRA HISTORIA</p><h2 id="origin-title">Todo empezó<br>en Marruecos.</h2><p>Lucas propuso a su comunidad un viaje de prueba: compartir el océano y la aventura con personas con las mismas ganas. Aquel grupo fue el punto de partida.</p><p>Después de un año de pensar, planificar y dar forma a la idea, Let’s Surf Together empezó a funcionar a finales de 2024. Seguimos con la misma intención: disfrutar del surf y abrir el grupo a quien quiera sumarse.</p><div class="brand-signature">Nos vemos en el pico.<span>Lucas · Let’s Surf Together</span></div></div>
++ <figure class="about-photo"><img src="/assets/home/marruecos-comunidad.webp" alt="El grupo de LST comparte un momento durante un viaje a Marruecos" width="1400" height="933" loading="lazy" decoding="async"><figcaption>Marruecos, 2025. Uno de los grupos que vinieron después.</figcaption></figure>
++ <div class="about-prose"><p class="eyebrow">ASÍ EMPEZÓ TODO</p><h2 id="origin-title">Marruecos fue<br><em>el principio.</em></h2><p>Lucas propuso a su comunidad irse a surfear a Marruecos. Se animó un grupo. Hicieron aquel viaje de prueba. Y ahí empezó a tomar forma LST.</p><p>Después vino un año de darle vueltas, preparar y construir. A finales de 2024 arrancó Let’s Surf Together.</p><p>Seguimos en esas: buscar el siguiente baño y hacer sitio a quien tenga ganas de venir.</p><div class="brand-signature">Nos vemos en el pico.<span>Lucas · Let’s Surf Together</span></div></div>
+ </div></section>
+ <section class="about-way lst-width" id="asi-viajamos" aria-labelledby="way-title">
+- <div class="about-section-heading"><p class="eyebrow">ASÍ VIAJAMOS</p><h2 id="way-title">El baño es<br>solo una parte.</h2><p>Aprender algo nuevo. Compartir una mesa. Descubrir un lugar. También viajamos por eso.</p></div>
++ <div class="about-section-heading"><p class="eyebrow">NUESTRO PLAN FAVORITO</p><h2 id="way-title">Hay viaje<br><em>entre los baños.</em></h2><p>En Cádiz hubo una tabla de surfskate. En Marruecos, un atardecer en las dunas. También nos llevamos esos ratos.</p></div>
+  <div class="about-moments">
+-  <article><figure class="about-photo"><img src="/assets/learning.webp" alt="Un grupo observa una demostración de surfskate durante un viaje de LST" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Cádiz, 2024. Aprendiendo fuera del agua.</figcaption></figure><div class="about-moment-copy"><h3>Aprender y volver a probar.</h3><p>Dentro y fuera del agua, nos gusta seguir aprendiendo. Cada viaje concreta sus sesiones y los niveles a los que va dirigido.</p><a class="lst-link" href="/niveles/">Conoce los niveles de surf <span aria-hidden="true">↗</span></a></div></article>
+-  <article><figure class="about-photo"><img src="/assets/after-surf.webp" alt="Participantes de LST sentados en esterillas compartiendo un momento fuera del agua" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Cádiz, 2024. Un rato con el grupo.</figcaption></figure><div class="about-moment-copy"><h3>La mesa también hace grupo.</h3><p>Entre un baño y el siguiente hay comidas, conversaciones y ratos compartidos. No hace falta conocer a nadie antes de venir.</p></div></article>
+-  <article><figure class="about-photo"><img src="/assets/home/francia-atardecer.webp" alt="Dos surfistas caminan hacia el mar con sus tablas al atardecer" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Un recuerdo de nuestros viajes.</figcaption></figure><div class="about-moment-copy"><h3>Salir a descubrir.</h3><p>El surf nos lleva a un lugar; sus paisajes, su comida y su vida cotidiana nos invitan a conocerlo. Los planes dependen de cada programa.</p></div></article>
++  <article><figure class="about-photo"><img src="/assets/learning.webp" alt="Un grupo observa una demostración de surfskate durante un viaje de LST" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Cádiz, 2024. Aprendiendo fuera del agua.</figcaption></figure><div class="about-moment-copy"><span class="about-moment-index" aria-hidden="true">01 / SOBRE LA TABLA</span><h3>Otra vez.<br>Y otra vez.</h3><p>Mirar un movimiento. Intentarlo. Volver a probar. En Cádiz, el aprendizaje también siguió sobre una tabla de surfskate.</p><a class="lst-link" href="/niveles/">Conoce los niveles de surf <span aria-hidden="true">↗</span></a></div></article>
++  <article><figure class="about-photo"><img src="/assets/after-surf.webp" alt="Participantes de LST sentados en esterillas compartiendo un momento fuera del agua" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Cádiz, 2024. Un rato con el grupo.</figcaption></figure><div class="about-moment-copy"><span class="about-moment-index" aria-hidden="true">02 / A LA MESA</span><h3>La sobremesa<br>también cuenta.</h3><p>Compartir mesa, comentar el baño y seguir charlando. El viaje también está en ese rato en el que se te olvida mirar la hora.</p></div></article>
++  <article><figure class="about-photo"><img src="/assets/marruecos-day.webp" alt="Siluetas de un paseo en camello en Marruecos al atardecer" width="1500" height="1000" loading="lazy" decoding="async"><figcaption>Marruecos, 2025. Un atardecer de un viaje anterior.</figcaption></figure><div class="about-moment-copy"><span class="about-moment-index" aria-hidden="true">03 / FUERA DEL AGUA</span><h3>El lugar<br>también se vive.</h3><p>Su comida, sus paisajes, sus costumbres. Ya que el surf nos lleva hasta allí, nos gusta dedicar tiempo a conocerlo.</p></div></article>
+  </div>
++ <p class="about-program-note">Cada destino tiene su plan. Las sesiones y actividades de tu salida están en su <a href="/viajes/">programa de viaje</a>.</p>
+ </section>
+ <section class="about-team lst-width" id="acompanamiento" aria-labelledby="team-title"><div class="about-team-layout">
+- <div class="about-team-heading"><p class="eyebrow">QUIÉN ESTÁ CONTIGO</p><h2 id="team-title">Organizamos.<br>Y nos vamos contigo.</h2></div>
+- <div class="about-team-points"><div><h3>Antes de apuntarte.</h3><p>Hablamos de tu experiencia en el agua, revisamos los niveles del programa y resolvemos tus dudas para que sepas qué esperar.</p></div><div><h3>Durante el viaje.</h3><p>Quienes lo preparamos también lo vivimos con el grupo. En cada ficha encontrarás el acompañamiento previsto; si el programa está pendiente, pregúntanos quién irá y cómo serán las sesiones.</p></div><a class="lst-link" href="/viajes/">Conoce los viajes y su programa</a></div>
++ <div class="about-team-heading"><p class="eyebrow">QUIÉN ESTÁ CONTIGO</p><h2 id="team-title">El equipo<br><em>también se moja.</em></h2></div>
++ <div class="about-team-points"><div><h3>Antes de hacer la mochila.</h3><p>Cuéntanos en qué olas surfeas y dónde necesitas ayuda. Hablamos del nivel del viaje y de lo que quieres saber antes de apuntarte.</p></div><div><h3>Ya en el destino.</h3><p>Quienes montamos los viajes también los vivimos con el grupo. En cada ficha te contamos quién te acompaña y cómo se organizan las sesiones. Si el programa está pendiente, lo hablamos contigo.</p></div><a class="lst-link" href="/viajes/">Conoce los viajes y su programa</a></div>
+ </div></section>
+-<section class="about-respect lst-width" id="respeto" aria-labelledby="respect-title"><h2 id="respect-title">El lugar también importa.</h2><p>Estamos de visita. Compartir las olas empieza por respetar el océano, a quienes surfean allí y sus costumbres. Queremos escuchar y aprender de cada lugar y su comunidad.</p></section>
+-<section class="about-next landing-contact" aria-labelledby="next-title"><div class="lst-width landing-contact-layout"><div><p class="eyebrow">EL SIGUIENTE CAPÍTULO</p><h2 id="next-title">¿Compartimos<br>el próximo baño?</h2></div><div class="landing-contact-copy"><p>Mira los viajes y encuentra el que te apetezca. Si tienes dudas sobre el grupo, tu nivel o cómo viajamos, cuéntanos.</p><div class="about-actions landing-contact-actions"><a class="lst-button" href="/viajes/">Ver viajes y fechas</a><a class="lst-link" data-whatsapp="conocenos" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20vuestra%20historia%20y%20me%20gustar%C3%ADa%20conocer%20mejor%20c%C3%B3mo%20viaj%C3%A1is.%20Quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo%20y%20qui%C3%A9n%20acompa%C3%B1ar%C3%A1%20al%20grupo." target="_blank" rel="noopener noreferrer">Preguntar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
++<section class="about-respect lst-width" id="respeto" aria-labelledby="respect-title"><h2 id="respect-title">Al mar se viene<br><em>con respeto.</em></h2><p>Hay gente que llama hogar a ese lugar. Escuchamos a quienes surfean allí, respetamos el océano y las costumbres del lugar. En cada destino, tenemos presente que estamos de visita.</p></section>
++<section class="about-next landing-contact" aria-labelledby="next-title"><div class="lst-width landing-contact-layout"><div><p class="eyebrow">LAS GANAS YA LAS TIENES</p><h2 id="next-title">Vamos a por<br><em>el siguiente baño.</em></h2></div><div class="landing-contact-copy"><p>Echa un ojo a las salidas. Si hay una que te ronda la cabeza, cuéntanos cuál. Hablamos del grupo, de tu nivel y de cómo sumarte.</p><div class="about-actions landing-contact-actions"><a class="lst-button" href="/viajes/">Ver viajes y fechas</a><a class="lst-link" data-whatsapp="conocenos" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20vuestra%20historia%20y%20me%20gustar%C3%ADa%20conocer%20mejor%20c%C3%B3mo%20viaj%C3%A1is.%20Quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo%20y%20qui%C3%A9n%20acompa%C3%B1ar%C3%A1%20al%20grupo." target="_blank" rel="noopener noreferrer">Preguntar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
+ </main>
+ <footer class="lst-footer"><div class="lst-width"><div class="lst-footer-top"><a class="lst-footer-brand" href="/" aria-label="Let's Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><span>Viajes de surf en grupo.</span></div><div class="lst-footer-bottom"><span>© 2026 Let's Surf Together</span><nav class="lst-footer-links" aria-label="Enlaces de pie de página"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#reservar">Cómo reservar</a><a data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp · +34 648 18 92 57</a><a href="/#experiencia">La experiencia</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">Instagram</a></nav></div></div></footer>
+ <script src="/app.js" type="module"></script>
+
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/faqs.html b/dist/preguntas-frecuentes/index.html
+index 49854fc..fd545e0 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/faqs.html
++++ b/dist/preguntas-frecuentes/index.html
+@@ -9,16 +9,16 @@
+ <noscript><nav class="static-navigation lst-width" aria-label="Navegación sin JavaScript"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/" aria-current="page">FAQs</a></nav></noscript>
+ <section class="landing-hero faq-hero" aria-labelledby="faq-page-title">
+  <figure class="landing-hero-photo"><img src="/assets/home/francia-atardecer.webp" alt="Dos surfistas se acercan al mar con sus tablas al atardecer" width="1500" height="1000" fetchpriority="high" decoding="async"><figcaption>Un recuerdo de nuestros viajes.</figcaption></figure>
+- <div class="landing-hero-copy lst-width"><p class="eyebrow">ANTES DEL PRÓXIMO BAÑO</p><h1 id="faq-page-title">Preguntas<br>frecuentes.</h1><p class="landing-hero-description faq-hero-description">Para que solo te queden ganas de venir.</p></div>
++ <div class="landing-hero-copy lst-width"><p class="eyebrow">PREGUNTAS FRECUENTES</p><h1 id="faq-page-title">Antes del baño,<br><em>las cosas claras.</em></h1><p class="landing-hero-description faq-hero-description">Grupo, nivel, mochila y reserva. Vamos por partes.</p></div>
+ </section>
+-<div class="faq-body lst-width"><p class="faq-context">Aquí tienes lo esencial antes de apuntarte. El programa, los servicios y las condiciones de cada salida están en su <a href="/viajes/">ficha de viaje</a>.</p>
+- <div class="faq-layout"><aside class="faq-sidebar" aria-label="Encuentra tu respuesta"><nav class="faq-index" aria-label="Temas de preguntas frecuentes"><a href="#grupo"><span aria-hidden="true">01</span>El grupo</a><a href="#nivel"><span aria-hidden="true">02</span>Tu nivel</a><a href="#preparacion"><span aria-hidden="true">03</span>El viaje</a><a href="#reserva"><span aria-hidden="true">04</span>La reserva</a></nav><p class="faq-sidebar-note">Cada viaje tiene sus detalles.<br><a href="#faq-help">¿Lo hablamos?</a></p></aside>
+- <div class="faq-content"><section class="faq-topic" id="grupo" aria-labelledby="grupo-title"><div class="faq-topic-heading"><h2 id="grupo-title"><span aria-hidden="true">01</span>Viajar en grupo</h2></div><div class="faq-answers"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Sí. Puedes apuntarte por tu cuenta o con amigos, sin conocer antes al grupo. Las sesiones y los ratos entre baños dan pie a conocerse. Así es nuestra <a href="/conocenos/#asi-viajamos">forma de viajar en LST</a>.</p></details></div></section>
+-<section class="faq-topic" id="nivel" aria-labelledby="nivel-title"><div class="faq-topic-heading"><h2 id="nivel-title"><span aria-hidden="true">02</span>Tu nivel de surf</h2></div><div class="faq-answers"><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Consulta nuestra <a href="/niveles/">guía de niveles</a> y los niveles y requisitos de la <a href="/viajes/">salida que te interesa</a>. Si tienes dudas o estás empezando, cuéntanos cómo surfeas: te orientamos antes de reservar.</p></details></div></section>
+-<section class="faq-topic" id="preparacion" aria-labelledby="preparacion-title"><div class="faq-topic-heading"><h2 id="preparacion-title"><span aria-hidden="true">03</span>Preparar el viaje</h2></div><div class="faq-answers"><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>Depende del viaje. En <a href="/viajes/">cada ficha</a> encontrarás el programa, el alojamiento y los servicios incluidos, además de los gastos que van aparte. Si el programa está por anunciar, esos detalles siguen pendientes.</p></details><details><summary>¿Tengo que llevar tabla y neopreno?<span aria-hidden="true">+</span></summary><p>Revisa el material incluido en la <a href="/viajes/">ficha del viaje</a> y consulta con el equipo qué necesitas llevar. Si necesitas alquilarlo, pregunta por las opciones de ese destino antes de reservar.</p></details><details><summary>¿Cómo organizo la llegada?<span aria-hidden="true">+</span></summary><p>Consulta en la <a href="/viajes/">ficha de tu destino</a> qué desplazamientos y traslados están incluidos. Habla con el equipo sobre la llegada antes de comprar tus billetes; la organización depende de cada viaje.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Cuéntanoslo antes de reservar. Consultamos las opciones del alojamiento y te confirmamos qué se puede adaptar en ese viaje.</p></details></div></section>
+-<section class="faq-topic" id="reserva" aria-labelledby="reserva-title"><div class="faq-topic-heading"><h2 id="reserva-title"><span aria-hidden="true">04</span>Reserva y plaza</h2></div><div class="faq-answers"><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un <a href="/viajes/">viaje</a> y escríbenos por WhatsApp desde su ficha. Revisamos contigo el nivel y la disponibilidad, te explicamos las condiciones y te indicamos los pasos para confirmar la plaza.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>No. El mensaje inicia una consulta. El equipo te explicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details></div></section></div></div>
++<div class="faq-body lst-width"><p class="faq-context">Vamos al grano. El programa, los servicios y las condiciones de cada salida están en su <a href="/viajes/">ficha de viaje</a>.</p>
++ <div class="faq-layout"><aside class="faq-sidebar" aria-label="Encuentra tu respuesta"><nav class="faq-index" aria-label="Temas de preguntas frecuentes"><a href="#grupo"><span aria-hidden="true">01</span>El grupo</a><a href="#nivel"><span aria-hidden="true">02</span>Tu nivel</a><a href="#preparacion"><span aria-hidden="true">03</span>El viaje</a><a href="#reserva"><span aria-hidden="true">04</span>La reserva</a></nav><p class="faq-sidebar-note">Si tu duda no sale aquí,<br><a href="#faq-help">cuéntanosla.</a></p></aside>
++ <div class="faq-content"><section class="faq-topic" id="grupo" aria-labelledby="grupo-title"><div class="faq-topic-heading"><h2 id="grupo-title"><span aria-hidden="true">01</span>Viajar en grupo</h2></div><div class="faq-answers"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Claro. Puedes venir por tu cuenta o con amigos. Las sesiones, las comidas y los ratos entre baños dan pie a conocerse. Aquí tienes nuestra <a href="/conocenos/#asi-viajamos">forma de viajar en LST</a>.</p></details></div></section>
++<section class="faq-topic" id="nivel" aria-labelledby="nivel-title"><div class="faq-topic-heading"><h2 id="nivel-title"><span aria-hidden="true">02</span>Tu nivel de surf</h2></div><div class="faq-answers"><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Cuéntanos cómo surfeas: qué olas coges y dónde necesitas ayuda. Echa un ojo a la <a href="/niveles/">guía de niveles</a> y a los requisitos de la <a href="/viajes/">salida que te interesa</a>. Si estás empezando o tienes dudas, lo vemos contigo antes de reservar.</p></details></div></section>
++<section class="faq-topic" id="preparacion" aria-labelledby="preparacion-title"><div class="faq-topic-heading"><h2 id="preparacion-title"><span aria-hidden="true">03</span>Preparar el viaje</h2></div><div class="faq-answers"><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>En <a href="/viajes/">cada ficha</a> tienes el programa, el alojamiento, lo incluido y los gastos que van aparte. Revisa tu salida: cada viaje tiene su plan. Si el programa está por anunciar, esos detalles siguen pendientes.</p></details><details><summary>¿Tengo que llevar tabla y neopreno?<span aria-hidden="true">+</span></summary><p>Antes de llenar la mochila, mira qué material incluye la <a href="/viajes/">ficha del viaje</a>. Consulta qué necesitas llevar y, si te hace falta alquilar tabla o neopreno, pregunta por las opciones de ese destino antes de reservar.</p></details><details><summary>¿Cómo organizo la llegada?<span aria-hidden="true">+</span></summary><p>Primero hablamos; después, los billetes. Revisa los desplazamientos y traslados incluidos en la <a href="/viajes/">ficha de tu destino</a> y consulta con el equipo cómo llegar. Cada viaje tiene su organización.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Dínoslo antes de reservar. Lo consultamos con el alojamiento y te confirmamos qué se puede adaptar en ese viaje.</p></details></div></section>
++<section class="faq-topic" id="reserva" aria-labelledby="reserva-title"><div class="faq-topic-heading"><h2 id="reserva-title"><span aria-hidden="true">04</span>Reserva y plaza</h2></div><div class="faq-answers"><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un <a href="/viajes/">viaje</a> y escríbenos por WhatsApp desde su ficha. Vemos contigo el nivel y la disponibilidad, te explicamos las condiciones y los pasos para confirmar tu plaza.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>Todavía no. Escribirnos abre la conversación. El equipo te indicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details></div></section></div></div>
+ </div>
+-<section class="faq-help landing-contact" id="faq-help" aria-labelledby="help-title"><div class="lst-width landing-contact-layout"><div><p class="eyebrow">ESTAMOS AL OTRO LADO</p><h2 id="help-title">¿Te queda<br>alguna duda?</h2></div><div class="landing-contact-copy"><p>Cuéntanos qué te gustaría saber y, si ya tienes un viaje en mente, dinos cuál.</p><div class="landing-contact-actions"><a class="lst-button" data-whatsapp="preguntas-frecuentes" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20las%20preguntas%20frecuentes%20y%20me%20queda%20una%20duda%20antes%20de%20elegir%20viaje." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
++<section class="faq-help landing-contact" id="faq-help" aria-labelledby="help-title"><div class="lst-width landing-contact-layout"><div><p class="eyebrow">TE LEEMOS</p><h2 id="help-title">Tu duda<br><em>tiene sitio aquí.</em></h2></div><div class="landing-contact-copy"><p>Cuéntanos qué te ronda la cabeza. Si ya has fichado un viaje, dinos cuál y vamos a lo concreto.</p><div class="landing-contact-actions"><a class="lst-button" data-whatsapp="preguntas-frecuentes" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20las%20preguntas%20frecuentes%20y%20me%20queda%20una%20duda%20antes%20de%20elegir%20viaje." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
+ </main>
+ <footer class="lst-footer"><div class="lst-width"><div class="lst-footer-top"><a class="lst-footer-brand" href="/" aria-label="Let's Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><span>Viajes de surf en grupo.</span></div><div class="lst-footer-bottom"><span>© 2026 Let's Surf Together</span><nav class="lst-footer-links" aria-label="Enlaces de pie de página"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#reservar">Cómo reservar</a><a data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp · +34 648 18 92 57</a><a href="/#experiencia">La experiencia</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">Instagram</a></nav></div></div></footer>
+ <script src="/app.js" type="module"></script>
+
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/check-about.mjs b/scripts/check-about.mjs
+index 1469678..fe77627 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/check-about.mjs
++++ b/scripts/check-about.mjs
+@@ -27,7 +27,7 @@ try{
+    const geometry=await page.evaluate(()=>{
+     const h=document.querySelector('header'),b=h.getBoundingClientRect(),title=document.querySelector('h1').getBoundingClientRect();
+     const overflow=[...document.querySelectorAll('main *')].filter(e=>e.clientWidth&&e.scrollWidth>e.clientWidth+2).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,60)}));
+-    return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headerHeight:b.height,headerPosition:getComputedStyle(h).position,titleTop:title.top,overflow,images:[...document.querySelectorAll('main img')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0,hero:!!i.closest('.landing-hero'),cover:getComputedStyle(i).objectFit==='cover',fullFrame:Math.abs(i.clientWidth/i.clientHeight-i.naturalWidth/i.naturalHeight)<.02})),fonts:{heading:getComputedStyle(document.querySelector('h1')).fontFamily,body:getComputedStyle(document.body).fontFamily,label:getComputedStyle(document.querySelector('.eyebrow')).fontFamily},h1:document.querySelectorAll('h1').length};
++    return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headerHeight:b.height,headerPosition:getComputedStyle(h).position,titleTop:title.top,overflow,images:[...document.querySelectorAll('main img:not([aria-hidden="true"])')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0,hero:!!i.closest('.landing-hero'),cover:getComputedStyle(i).objectFit==='cover',fullFrame:Math.abs(i.clientWidth/i.clientHeight-i.naturalWidth/i.naturalHeight)<.02})),fonts:{heading:getComputedStyle(document.querySelector('h1')).fontFamily,body:getComputedStyle(document.body).fontFamily,label:getComputedStyle(document.querySelector('.eyebrow')).fontFamily},h1:document.querySelectorAll('h1').length};
+    });
+    report.views.push({tag,...geometry});
+    check(tag+' no overflow',geometry.scrollWidth<=width+1&&geometry.overflow.length===0,geometry.overflow);
+@@ -38,6 +38,8 @@ try{
+     await page.evaluate(()=>scrollTo(0,0));
+    }
+    const masthead=await page.locator('.site-header').evaluate(e=>({ink:getComputedStyle(e).color,paper:getComputedStyle(e).backgroundColor,light:getComputedStyle(e.querySelector('.brand-light')).display,dark:getComputedStyle(e.querySelector('.brand-dark')).display}));
++  const heroSpacing=await page.locator('.landing-hero').evaluate(e=>({copyBottom:e.querySelector('.landing-hero-copy').getBoundingClientRect().bottom,captionTop:e.querySelector('figcaption').getBoundingClientRect().top}));
++  check(tag+' photo caption clears copy',heroSpacing.captionTop>=heroSpacing.copyBottom+8,heroSpacing);
+   check(tag+' masthead colours and logo',mode==='no-js'?(masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block'):(masthead.ink==='rgb(255, 250, 231)'&&masthead.light==='block'&&masthead.dark==='none'),masthead);
+   check(tag+' loaded photo cover and complete documentary frames',geometry.images.some(i=>i.hero&&i.loaded&&i.cover)&&geometry.images.every(i=>i.loaded&&(i.hero||i.fullFrame)),geometry.images);
+    check(tag+' retained fonts and heading',geometry.h1===1&&geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&geometry.fonts.label.includes('Space Mono'));
+@@ -72,7 +74,7 @@ try{
+     check(tag+' trips CTA reaches catalog',await page.locator('[data-catalog-trip]').count()===trips.length);
+     await page.goto(base+'/');
+     await page.locator('#nosotros a[href="/conocenos/"]').click();await page.waitForURL(base+'/conocenos/');
+-    check(tag+' home introduction leads to about',(await page.locator('h1').innerText()).replace(/\s+/g,' ')==='Gente, sal y ganas de repetir.');
++    check(tag+' home introduction leads to about',(await page.locator('h1').innerText()).replace(/\s+/g,' ')==='Tú trae las ganas.');
+     await page.goto(base+'/');await photos(page);await page.locator('#nosotros').scrollIntoViewIfNeeded();
+     if([390,1440].includes(width))await page.locator('#nosotros').screenshot({path:path.join(out,'capturas',`home-resumen-${width}.png`),style:'.site-header{visibility:hidden!important}'});
+     for(const t of trips){
+
+diff --git a/docs/qa/2026-10-25-landings-caracter/before/check-faqs.mjs b/scripts/check-faqs.mjs
+index 8ad94a9..201a657 100644
+--- a/docs/qa/2026-10-25-landings-caracter/before/check-faqs.mjs
++++ b/scripts/check-faqs.mjs
+@@ -33,6 +33,8 @@ try{
+   check(tag+' no horizontal overflow',geometry.scrollWidth<=width+1&&geometry.overflow.length===0,geometry);
+   check(tag+' title clears header',geometry.titleTop>=geometry.headerHeight,geometry);
+   const masthead=await page.locator('.site-header').evaluate(e=>({ink:getComputedStyle(e).color,paper:getComputedStyle(e).backgroundColor,light:getComputedStyle(e.querySelector('.brand-light')).display,dark:getComputedStyle(e.querySelector('.brand-dark')).display}));
++  const heroSpacing=await page.locator('.landing-hero').evaluate(e=>({copyBottom:e.querySelector('.landing-hero-copy').getBoundingClientRect().bottom,captionTop:e.querySelector('figcaption').getBoundingClientRect().top}));
++  check(tag+' photo caption clears copy',heroSpacing.captionTop>=heroSpacing.copyBottom+8,heroSpacing);
+   check(tag+' masthead colours and logo',mode==='no-js'?(masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block'):(masthead.ink==='rgb(255, 250, 231)'&&masthead.light==='block'&&masthead.dark==='none'),masthead);
+   check(tag+' photographic opening loaded',await page.locator('.landing-hero-photo img').evaluate(async i=>{await i.decode();return i.naturalWidth>0&&getComputedStyle(i).objectFit==='cover'}));
+   check(tag+' retained fonts',geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&geometry.fonts.label.includes('Space Mono'));
+@@ -44,6 +46,7 @@ try{
+    await summaries.nth(i).focus();await page.keyboard.press(i%2?'Space':'Enter');
+    check(tag+' keyboard opens answer '+i,await summaries.nth(i).evaluate(e=>e.parentElement.open));
+   }
++  check(tag+' answer links are visibly underlined',await page.locator('.faq-answers a').evaluateAll(es=>es.every(e=>getComputedStyle(e).textDecorationLine.includes('underline'))));
+   check(tag+' multiple answers stay open',await page.locator('.faq-answers details[open]').count()===8);
+   const openGeometry=await measure(page);check(tag+' open answers do not overflow',openGeometry.scrollWidth<=width+1&&openGeometry.overflow.length===0,openGeometry.overflow);
+   await summaries.first().focus();await page.keyboard.press('Enter');check(tag+' independent close preserves others',await page.locator('.faq-answers details[open]').count()===7);

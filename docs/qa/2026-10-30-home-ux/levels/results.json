@@ -1,0 +1,5161 @@
+{
+  "testedAt": "2026-10-30T18:11:54.982Z",
+  "checks": 48,
+  "passed": 48,
+  "failed": 0,
+  "hashes": {
+    "dist/index.html": "89d3174356d6e91cd8ee46cc06883c75205f615f4b898b38f4a736e67770a6eb",
+    "dist/home.css": "07cc2b8664865a9c0e95927ac9da99e853bc0253af3a8abecfa479be73eb3998",
+    "dist/home.js": "7530344c799ad91702c825984942c7004cd9aa4060fdb8a09de2916fdf62bd4a",
+    "dist/app.js": "63e7e585dcb3d4784496fc7f39ce3f8146a49348c4b7a5f459d3dd4fe451c0a3",
+    "dist/styles.css": "2af83f3e169b7bce4e6879edbade6706e61e82d2d46d8514d5d11e31696ef3df",
+    "dist/mobile.css": "7fb0639a7fff177d6e12f91066ec4843045c9a572b1eab5906a4672d3d14f83a",
+    "dist/niveles/index.html": "ed74d1976afdced140865084228f04a9e57e47ff561b8c1ff1868f25516945c5",
+    "dist/levels.css": "904eac21ae5c990fad473524691f358acde821dc95dbb385f2db1a2a02636003",
+    "dist/levels.js": "c2e0adb430255050b4a9e58c24297df4f56d2df98cb2ff06e6e29b3df4f556fa",
+    "dist/viajes/index.html": "23b79ade1d2d1aac190c28616ec8b05a4ac8872cb7e087ef71d6bc75deef9679",
+    "dist/catalog.js": "90a062c35ddb7599962a2973c9b89a9e665188de64c8241eb18086390c1ffa42",
+    "dist/catalog-filter.js": "a747c8c1f1b26129f8dd6394da2568ffd5b531d7ca23a76f51e90c44430b0d66"
+  },
+  "results": [
+    {
+      "name": "width 320 normal: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 18,
+            "top": 2765.859375,
+            "right": 302,
+            "bottom": 2945.21875,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 2884.21875,
+                "right": 152.03125,
+                "bottom": 2928.21875,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 168.03125,
+                "top": 2884.21875,
+                "right": 248.734375,
+                "bottom": 2928.21875,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 18,
+            "top": 2957.21875,
+            "right": 302,
+            "bottom": 3136.578125,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 3075.578125,
+                "right": 152.03125,
+                "bottom": 3119.578125,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3075.578125,
+                "right": 248.734375,
+                "bottom": 3119.578125,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 18,
+            "top": 3148.578125,
+            "right": 302,
+            "bottom": 3327.9375,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 35,
+                "top": 3266.9375,
+                "right": 152.03125,
+                "bottom": 3310.9375,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3266.9375,
+                "right": 248.734375,
+                "bottom": 3310.9375,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 18,
+            "top": 3339.9375,
+            "right": 302,
+            "bottom": 3519.296875,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 3458.296875,
+                "right": 152.03125,
+                "bottom": 3502.296875,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3458.296875,
+                "right": 248.734375,
+                "bottom": 3502.296875,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 320 normal: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 18,
+            "top": 2765.859375,
+            "right": 302,
+            "bottom": 2945.21875,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 2884.21875,
+                "right": 152.03125,
+                "bottom": 2928.21875,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 168.03125,
+                "top": 2884.21875,
+                "right": 248.734375,
+                "bottom": 2928.21875,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 18,
+            "top": 2957.21875,
+            "right": 302,
+            "bottom": 3136.578125,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 3075.578125,
+                "right": 152.03125,
+                "bottom": 3119.578125,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3075.578125,
+                "right": 248.734375,
+                "bottom": 3119.578125,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 18,
+            "top": 3148.578125,
+            "right": 302,
+            "bottom": 3327.9375,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 35,
+                "top": 3266.9375,
+                "right": 152.03125,
+                "bottom": 3310.9375,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3266.9375,
+                "right": 248.734375,
+                "bottom": 3310.9375,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 18,
+            "top": 3339.9375,
+            "right": 302,
+            "bottom": 3519.296875,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 3458.296875,
+                "right": 152.03125,
+                "bottom": 3502.296875,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3458.296875,
+                "right": 248.734375,
+                "bottom": 3502.296875,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 320 normal: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 320: each action preserves its own destination and accessible level name",
+      "pass": true,
+      "details": [
+        {
+          "title": "Rookies",
+          "heading": "home-level-rookies-title",
+          "trip": "/viajes/?nivel=1",
+          "more": "/niveles/#rookies",
+          "labels": [
+            "Ver viajes para Rookies",
+            "Saber más sobre el nivel I: Rookies"
+          ]
+        },
+        {
+          "title": "Aprendices",
+          "heading": "home-level-aprendices-title",
+          "trip": "/viajes/?nivel=2",
+          "more": "/niveles/#aprendices",
+          "labels": [
+            "Ver viajes para Aprendices",
+            "Saber más sobre el nivel II: Aprendices"
+          ]
+        },
+        {
+          "title": "Riders",
+          "heading": "home-level-riders-title",
+          "trip": "/viajes/?nivel=3",
+          "more": "/niveles/#riders",
+          "labels": [
+            "Ver viajes para Riders",
+            "Saber más sobre el nivel III: Riders"
+          ]
+        },
+        {
+          "title": "Supercracks",
+          "heading": "home-level-supercracks-title",
+          "trip": "/viajes/?nivel=4",
+          "more": "/niveles/#supercracks",
+          "labels": [
+            "Ver viajes para Supercracks",
+            "Saber más sobre el nivel IV: Supercracks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "width 320 text 200%: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 18,
+            "top": 669.15625,
+            "right": 302,
+            "bottom": 1119.59375,
+            "width": 284,
+            "height": 450.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 983.59375,
+                "right": 203.0625,
+                "bottom": 1036.59375,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 1044.59375,
+                "right": 189.375,
+                "bottom": 1102.59375,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 18,
+            "top": 1131.59375,
+            "right": 302,
+            "bottom": 1697.75,
+            "width": 284,
+            "height": 566.15625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 1561.75,
+                "right": 203.0625,
+                "bottom": 1614.75,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 1622.75,
+                "right": 189.375,
+                "bottom": 1680.75,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 18,
+            "top": 1709.75,
+            "right": 302,
+            "bottom": 2205.1875,
+            "width": 284,
+            "height": 495.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 35,
+                "top": 2069.1875,
+                "right": 203.0625,
+                "bottom": 2122.1875,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 35,
+                "top": 2130.1875,
+                "right": 189.375,
+                "bottom": 2188.1875,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 18,
+            "top": 2217.1875,
+            "right": 302,
+            "bottom": 2738.34375,
+            "width": 284,
+            "height": 521.15625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 2602.34375,
+                "right": 203.0625,
+                "bottom": 2655.34375,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 2663.34375,
+                "right": 189.375,
+                "bottom": 2721.34375,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 320 text 200%: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 18,
+            "top": 669.15625,
+            "right": 302,
+            "bottom": 1119.59375,
+            "width": 284,
+            "height": 450.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 983.59375,
+                "right": 203.0625,
+                "bottom": 1036.59375,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 1044.59375,
+                "right": 189.375,
+                "bottom": 1102.59375,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 18,
+            "top": 1131.59375,
+            "right": 302,
+            "bottom": 1697.75,
+            "width": 284,
+            "height": 566.15625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 1561.75,
+                "right": 203.0625,
+                "bottom": 1614.75,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 1622.75,
+                "right": 189.375,
+                "bottom": 1680.75,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 18,
+            "top": 1709.75,
+            "right": 302,
+            "bottom": 2205.1875,
+            "width": 284,
+            "height": 495.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 35,
+                "top": 2069.1875,
+                "right": 203.0625,
+                "bottom": 2122.1875,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 35,
+                "top": 2130.1875,
+                "right": 189.375,
+                "bottom": 2188.1875,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 18,
+            "top": 2217.1875,
+            "right": 302,
+            "bottom": 2738.34375,
+            "width": 284,
+            "height": 521.15625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 2602.34375,
+                "right": 203.0625,
+                "bottom": 2655.34375,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 2663.34375,
+                "right": 189.375,
+                "bottom": 2721.34375,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 320 text 200%: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 390 normal: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 22,
+            "top": 2637.34375,
+            "right": 368,
+            "bottom": 2816.703125,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 2755.703125,
+                "right": 164.671875,
+                "bottom": 2799.703125,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 180.671875,
+                "top": 2755.703125,
+                "right": 269.546875,
+                "bottom": 2799.703125,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 22,
+            "top": 2828.703125,
+            "right": 368,
+            "bottom": 3008.0625,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 2947.0625,
+                "right": 164.671875,
+                "bottom": 2991.0625,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 180.671875,
+                "top": 2947.0625,
+                "right": 269.546875,
+                "bottom": 2991.0625,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 22,
+            "top": 3020.0625,
+            "right": 368,
+            "bottom": 3199.421875,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 39,
+                "top": 3138.421875,
+                "right": 164.671875,
+                "bottom": 3182.421875,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 180.671875,
+                "top": 3138.421875,
+                "right": 269.546875,
+                "bottom": 3182.421875,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 22,
+            "top": 3211.421875,
+            "right": 368,
+            "bottom": 3390.78125,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 3329.78125,
+                "right": 164.671875,
+                "bottom": 3373.78125,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 180.671875,
+                "top": 3329.78125,
+                "right": 269.546875,
+                "bottom": 3373.78125,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 390 normal: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 22,
+            "top": 2637.34375,
+            "right": 368,
+            "bottom": 2816.703125,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 2755.703125,
+                "right": 164.671875,
+                "bottom": 2799.703125,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 180.671875,
+                "top": 2755.703125,
+                "right": 269.546875,
+                "bottom": 2799.703125,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 22,
+            "top": 2828.703125,
+            "right": 368,
+            "bottom": 3008.0625,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 2947.0625,
+                "right": 164.671875,
+                "bottom": 2991.0625,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 180.671875,
+                "top": 2947.0625,
+                "right": 269.546875,
+                "bottom": 2991.0625,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 22,
+            "top": 3020.0625,
+            "right": 368,
+            "bottom": 3199.421875,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 39,
+                "top": 3138.421875,
+                "right": 164.671875,
+                "bottom": 3182.421875,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 180.671875,
+                "top": 3138.421875,
+                "right": 269.546875,
+                "bottom": 3182.421875,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 22,
+            "top": 3211.421875,
+            "right": 368,
+            "bottom": 3390.78125,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 3329.78125,
+                "right": 164.671875,
+                "bottom": 3373.78125,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 180.671875,
+                "top": 3329.78125,
+                "right": 269.546875,
+                "bottom": 3373.78125,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 390 normal: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 390: each action preserves its own destination and accessible level name",
+      "pass": true,
+      "details": [
+        {
+          "title": "Rookies",
+          "heading": "home-level-rookies-title",
+          "trip": "/viajes/?nivel=1",
+          "more": "/niveles/#rookies",
+          "labels": [
+            "Ver viajes para Rookies",
+            "Saber más sobre el nivel I: Rookies"
+          ]
+        },
+        {
+          "title": "Aprendices",
+          "heading": "home-level-aprendices-title",
+          "trip": "/viajes/?nivel=2",
+          "more": "/niveles/#aprendices",
+          "labels": [
+            "Ver viajes para Aprendices",
+            "Saber más sobre el nivel II: Aprendices"
+          ]
+        },
+        {
+          "title": "Riders",
+          "heading": "home-level-riders-title",
+          "trip": "/viajes/?nivel=3",
+          "more": "/niveles/#riders",
+          "labels": [
+            "Ver viajes para Riders",
+            "Saber más sobre el nivel III: Riders"
+          ]
+        },
+        {
+          "title": "Supercracks",
+          "heading": "home-level-supercracks-title",
+          "trip": "/viajes/?nivel=4",
+          "more": "/niveles/#supercracks",
+          "labels": [
+            "Ver viajes para Supercracks",
+            "Saber más sobre el nivel IV: Supercracks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "width 390 text 200%: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 22,
+            "top": 552.453125,
+            "right": 368,
+            "bottom": 935.171875,
+            "width": 346,
+            "height": 382.71875
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 796.171875,
+                "right": 220.328125,
+                "bottom": 852.171875,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 860.171875,
+                "right": 206.71875,
+                "bottom": 918.171875,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 22,
+            "top": 947.171875,
+            "right": 368,
+            "bottom": 1400.609375,
+            "width": 346,
+            "height": 453.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 1261.609375,
+                "right": 220.328125,
+                "bottom": 1317.609375,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 1325.609375,
+                "right": 206.71875,
+                "bottom": 1383.609375,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 22,
+            "top": 1412.609375,
+            "right": 368,
+            "bottom": 1840.328125,
+            "width": 346,
+            "height": 427.71875
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 39,
+                "top": 1701.328125,
+                "right": 220.328125,
+                "bottom": 1757.328125,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 39,
+                "top": 1765.328125,
+                "right": 206.71875,
+                "bottom": 1823.328125,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 22,
+            "top": 1852.328125,
+            "right": 368,
+            "bottom": 2305.765625,
+            "width": 346,
+            "height": 453.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 2166.765625,
+                "right": 220.328125,
+                "bottom": 2222.765625,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 2230.765625,
+                "right": 206.71875,
+                "bottom": 2288.765625,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 390 text 200%: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 22,
+            "top": 552.453125,
+            "right": 368,
+            "bottom": 935.171875,
+            "width": 346,
+            "height": 382.71875
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 796.171875,
+                "right": 220.328125,
+                "bottom": 852.171875,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 860.171875,
+                "right": 206.71875,
+                "bottom": 918.171875,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 22,
+            "top": 947.171875,
+            "right": 368,
+            "bottom": 1400.609375,
+            "width": 346,
+            "height": 453.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 1261.609375,
+                "right": 220.328125,
+                "bottom": 1317.609375,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 1325.609375,
+                "right": 206.71875,
+                "bottom": 1383.609375,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 22,
+            "top": 1412.609375,
+            "right": 368,
+            "bottom": 1840.328125,
+            "width": 346,
+            "height": 427.71875
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 39,
+                "top": 1701.328125,
+                "right": 220.328125,
+                "bottom": 1757.328125,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 39,
+                "top": 1765.328125,
+                "right": 206.71875,
+                "bottom": 1823.328125,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 22,
+            "top": 1852.328125,
+            "right": 368,
+            "bottom": 2305.765625,
+            "width": 346,
+            "height": 453.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 2166.765625,
+                "right": 220.328125,
+                "bottom": 2222.765625,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 2230.765625,
+                "right": 206.71875,
+                "bottom": 2288.765625,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 390 text 200%: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 768 normal: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 56,
+            "top": 2435.34375,
+            "right": 375,
+            "bottom": 2739.96875,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 2635.96875,
+                "right": 351,
+                "bottom": 2679.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 2682.96875,
+                "right": 351,
+                "bottom": 2726.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 393,
+            "top": 2435.34375,
+            "right": 712,
+            "bottom": 2739.96875,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 2635.96875,
+                "right": 688,
+                "bottom": 2679.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 2682.96875,
+                "right": 688,
+                "bottom": 2726.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 56,
+            "top": 2757.96875,
+            "right": 375,
+            "bottom": 3062.59375,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 80,
+                "top": 2958.59375,
+                "right": 351,
+                "bottom": 3002.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 80,
+                "top": 3005.59375,
+                "right": 351,
+                "bottom": 3049.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 393,
+            "top": 2757.96875,
+            "right": 712,
+            "bottom": 3062.59375,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 2958.59375,
+                "right": 688,
+                "bottom": 3002.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 3005.59375,
+                "right": 688,
+                "bottom": 3049.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 768 normal: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 56,
+            "top": 2435.34375,
+            "right": 375,
+            "bottom": 2739.96875,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 2635.96875,
+                "right": 351,
+                "bottom": 2679.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 2682.96875,
+                "right": 351,
+                "bottom": 2726.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 393,
+            "top": 2435.34375,
+            "right": 712,
+            "bottom": 2739.96875,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 2635.96875,
+                "right": 688,
+                "bottom": 2679.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 2682.96875,
+                "right": 688,
+                "bottom": 2726.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 56,
+            "top": 2757.96875,
+            "right": 375,
+            "bottom": 3062.59375,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 80,
+                "top": 2958.59375,
+                "right": 351,
+                "bottom": 3002.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 80,
+                "top": 3005.59375,
+                "right": 351,
+                "bottom": 3049.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 393,
+            "top": 2757.96875,
+            "right": 712,
+            "bottom": 3062.59375,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 2958.59375,
+                "right": 688,
+                "bottom": 3002.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 3005.59375,
+                "right": 688,
+                "bottom": 3049.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 768 normal: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 768: each action preserves its own destination and accessible level name",
+      "pass": true,
+      "details": [
+        {
+          "title": "Rookies",
+          "heading": "home-level-rookies-title",
+          "trip": "/viajes/?nivel=1",
+          "more": "/niveles/#rookies",
+          "labels": [
+            "Ver viajes para Rookies",
+            "Saber más sobre el nivel I: Rookies"
+          ]
+        },
+        {
+          "title": "Aprendices",
+          "heading": "home-level-aprendices-title",
+          "trip": "/viajes/?nivel=2",
+          "more": "/niveles/#aprendices",
+          "labels": [
+            "Ver viajes para Aprendices",
+            "Saber más sobre el nivel II: Aprendices"
+          ]
+        },
+        {
+          "title": "Riders",
+          "heading": "home-level-riders-title",
+          "trip": "/viajes/?nivel=3",
+          "more": "/niveles/#riders",
+          "labels": [
+            "Ver viajes para Riders",
+            "Saber más sobre el nivel III: Riders"
+          ]
+        },
+        {
+          "title": "Supercracks",
+          "heading": "home-level-supercracks-title",
+          "trip": "/viajes/?nivel=4",
+          "more": "/niveles/#supercracks",
+          "labels": [
+            "Ver viajes para Supercracks",
+            "Saber más sobre el nivel IV: Supercracks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "width 768 text 200%: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 56,
+            "top": 191.0625,
+            "right": 375,
+            "bottom": 733.375,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 605.375,
+                "right": 351,
+                "bottom": 659.375,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 662.375,
+                "right": 351,
+                "bottom": 720.375,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 393,
+            "top": 191.0625,
+            "right": 712,
+            "bottom": 733.375,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 605.375,
+                "right": 688,
+                "bottom": 659.375,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 662.375,
+                "right": 688,
+                "bottom": 720.375,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 56,
+            "top": 751.375,
+            "right": 375,
+            "bottom": 1293.6875,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 80,
+                "top": 1165.6875,
+                "right": 351,
+                "bottom": 1219.6875,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 80,
+                "top": 1222.6875,
+                "right": 351,
+                "bottom": 1280.6875,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 393,
+            "top": 751.375,
+            "right": 712,
+            "bottom": 1293.6875,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 1165.6875,
+                "right": 688,
+                "bottom": 1219.6875,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 1222.6875,
+                "right": 688,
+                "bottom": 1280.6875,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 768 text 200%: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 56,
+            "top": 191.0625,
+            "right": 375,
+            "bottom": 733.375,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 605.375,
+                "right": 351,
+                "bottom": 659.375,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 662.375,
+                "right": 351,
+                "bottom": 720.375,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 393,
+            "top": 191.0625,
+            "right": 712,
+            "bottom": 733.375,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 605.375,
+                "right": 688,
+                "bottom": 659.375,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 662.375,
+                "right": 688,
+                "bottom": 720.375,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 56,
+            "top": 751.375,
+            "right": 375,
+            "bottom": 1293.6875,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 80,
+                "top": 1165.6875,
+                "right": 351,
+                "bottom": 1219.6875,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 80,
+                "top": 1222.6875,
+                "right": 351,
+                "bottom": 1280.6875,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 393,
+            "top": 751.375,
+            "right": 712,
+            "bottom": 1293.6875,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 1165.6875,
+                "right": 688,
+                "bottom": 1219.6875,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 1222.6875,
+                "right": 688,
+                "bottom": 1280.6875,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 768 text 200%: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 1440 normal: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 132,
+            "top": 1979.1875,
+            "right": 412.5,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 2186.046875,
+                "right": 391.5,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 2233.046875,
+                "right": 391.5,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 430.5,
+            "top": 1979.1875,
+            "right": 711,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 2186.046875,
+                "right": 690,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 2233.046875,
+                "right": 690,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 729,
+            "top": 1979.1875,
+            "right": 1009.5,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 750,
+                "top": 2186.046875,
+                "right": 988.5,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 750,
+                "top": 2233.046875,
+                "right": 988.5,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 1027.5,
+            "top": 1979.1875,
+            "right": 1308,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 2186.046875,
+                "right": 1287,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 2233.046875,
+                "right": 1287,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 1440 normal: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 132,
+            "top": 1979.1875,
+            "right": 412.5,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 2186.046875,
+                "right": 391.5,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 2233.046875,
+                "right": 391.5,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 430.5,
+            "top": 1979.1875,
+            "right": 711,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 2186.046875,
+                "right": 690,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 2233.046875,
+                "right": 690,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 729,
+            "top": 1979.1875,
+            "right": 1009.5,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 750,
+                "top": 2186.046875,
+                "right": 988.5,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 750,
+                "top": 2233.046875,
+                "right": 988.5,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 1027.5,
+            "top": 1979.1875,
+            "right": 1308,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 2186.046875,
+                "right": 1287,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 2233.046875,
+                "right": 1287,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 1440 normal: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "width 1440: each action preserves its own destination and accessible level name",
+      "pass": true,
+      "details": [
+        {
+          "title": "Rookies",
+          "heading": "home-level-rookies-title",
+          "trip": "/viajes/?nivel=1",
+          "more": "/niveles/#rookies",
+          "labels": [
+            "Ver viajes para Rookies",
+            "Saber más sobre el nivel I: Rookies"
+          ]
+        },
+        {
+          "title": "Aprendices",
+          "heading": "home-level-aprendices-title",
+          "trip": "/viajes/?nivel=2",
+          "more": "/niveles/#aprendices",
+          "labels": [
+            "Ver viajes para Aprendices",
+            "Saber más sobre el nivel II: Aprendices"
+          ]
+        },
+        {
+          "title": "Riders",
+          "heading": "home-level-riders-title",
+          "trip": "/viajes/?nivel=3",
+          "more": "/niveles/#riders",
+          "labels": [
+            "Ver viajes para Riders",
+            "Saber más sobre el nivel III: Riders"
+          ]
+        },
+        {
+          "title": "Supercracks",
+          "heading": "home-level-supercracks-title",
+          "trip": "/viajes/?nivel=4",
+          "more": "/niveles/#supercracks",
+          "labels": [
+            "Ver viajes para Supercracks",
+            "Saber más sobre el nivel IV: Supercracks"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "width 1440 text 200%: four named cards expose two sibling native links",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 132,
+            "top": 766.671875,
+            "right": 412.5,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 1205.953125,
+                "right": 391.5,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 1262.953125,
+                "right": 391.5,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 430.5,
+            "top": 766.671875,
+            "right": 711,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 1205.953125,
+                "right": 690,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 1262.953125,
+                "right": 690,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 729,
+            "top": 766.671875,
+            "right": 1009.5,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 750,
+                "top": 1205.953125,
+                "right": 988.5,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 750,
+                "top": 1262.953125,
+                "right": 988.5,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 1027.5,
+            "top": 766.671875,
+            "right": 1308,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 1205.953125,
+                "right": 1287,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 1262.953125,
+                "right": 1287,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 1440 text 200%: both actions have 44px targets, no overlap or clipping",
+      "pass": true,
+      "details": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 132,
+            "top": 766.671875,
+            "right": 412.5,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 1205.953125,
+                "right": 391.5,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 1262.953125,
+                "right": 391.5,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 430.5,
+            "top": 766.671875,
+            "right": 711,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 1205.953125,
+                "right": 690,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 1262.953125,
+                "right": 690,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 729,
+            "top": 766.671875,
+            "right": 1009.5,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 750,
+                "top": 1205.953125,
+                "right": 988.5,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 750,
+                "top": 1262.953125,
+                "right": 988.5,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 1027.5,
+            "top": 766.671875,
+            "right": 1308,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 1205.953125,
+                "right": 1287,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 1262.953125,
+                "right": 1287,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "name": "width 1440 text 200%: no horizontal page overflow",
+      "pass": true
+    },
+    {
+      "name": "JS true: Rookies Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS true Rookies: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "rookies",
+        "url": "/niveles/?nivel=rookies#rookies",
+        "active": "rookies",
+        "heading": "Rookies",
+        "headingTop": 215.78125,
+        "headingBottom": 274.578125,
+        "headerBottom": 78,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS true: Aprendices Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS true Aprendices: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "aprendices",
+        "url": "/niveles/?nivel=aprendices#aprendices",
+        "active": "aprendices",
+        "heading": "Aprendices",
+        "headingTop": 216.46875,
+        "headingBottom": 275.265625,
+        "headerBottom": 78,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS true: Riders Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS true Riders: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "riders",
+        "url": "/niveles/?nivel=riders#riders",
+        "active": "riders",
+        "heading": "Riders",
+        "headingTop": 216.0625,
+        "headingBottom": 274.859375,
+        "headerBottom": 78,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS true: Supercracks Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS true Supercracks: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "supercracks",
+        "url": "/niveles/?nivel=supercracks#supercracks",
+        "active": "supercracks",
+        "heading": "Supercracks",
+        "headingTop": 157.359375,
+        "headingBottom": 274.953125,
+        "headerBottom": 78,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS false: Rookies Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS false Rookies: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "rookies",
+        "url": "/niveles/#rookies",
+        "active": "rookies",
+        "heading": "Rookies",
+        "headingTop": 225.78125,
+        "headingBottom": 284.578125,
+        "headerBottom": -896,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS false: Aprendices Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS false Aprendices: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "aprendices",
+        "url": "/niveles/#aprendices",
+        "active": "aprendices",
+        "heading": "Aprendices",
+        "headingTop": 226.46875,
+        "headingBottom": 285.265625,
+        "headerBottom": -1507,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS false: Riders Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS false Riders: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "riders",
+        "url": "/niveles/#riders",
+        "active": "riders",
+        "heading": "Riders",
+        "headingTop": 226.0625,
+        "headingBottom": 284.859375,
+        "headerBottom": -2097,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "JS false: Supercracks Ver viajes opens its catalogue filter",
+      "pass": true
+    },
+    {
+      "name": "JS false Supercracks: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "supercracks",
+        "url": "/niveles/#supercracks",
+        "active": "supercracks",
+        "heading": "Supercracks",
+        "headingTop": 167.359375,
+        "headingBottom": 284.953125,
+        "headerBottom": -2662,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "keyboard Tab reaches sibling Saber más with visible focus",
+      "pass": true
+    },
+    {
+      "name": "keyboard Enter: intended guide section receives focus and its heading clears the fixed header",
+      "pass": true,
+      "details": {
+        "slug": "rookies",
+        "url": "/niveles/?nivel=rookies#rookies",
+        "active": "rookies",
+        "heading": "Rookies",
+        "headingTop": 215.78125,
+        "headingBottom": 274.578125,
+        "headerBottom": 78,
+        "viewportHeight": 900
+      }
+    },
+    {
+      "name": "no page runtime errors",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "tested build remained unchanged during verification",
+      "pass": true
+    }
+  ],
+  "layouts": [
+    {
+      "label": "width 320 normal",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 18,
+            "top": 2765.859375,
+            "right": 302,
+            "bottom": 2945.21875,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 2884.21875,
+                "right": 152.03125,
+                "bottom": 2928.21875,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 168.03125,
+                "top": 2884.21875,
+                "right": 248.734375,
+                "bottom": 2928.21875,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 18,
+            "top": 2957.21875,
+            "right": 302,
+            "bottom": 3136.578125,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 3075.578125,
+                "right": 152.03125,
+                "bottom": 3119.578125,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3075.578125,
+                "right": 248.734375,
+                "bottom": 3119.578125,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 18,
+            "top": 3148.578125,
+            "right": 302,
+            "bottom": 3327.9375,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 35,
+                "top": 3266.9375,
+                "right": 152.03125,
+                "bottom": 3310.9375,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3266.9375,
+                "right": 248.734375,
+                "bottom": 3310.9375,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 18,
+            "top": 3339.9375,
+            "right": 302,
+            "bottom": 3519.296875,
+            "width": 284,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 3458.296875,
+                "right": 152.03125,
+                "bottom": 3502.296875,
+                "width": 117.03125,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 168.03125,
+                "top": 3458.296875,
+                "right": 248.734375,
+                "bottom": 3502.296875,
+                "width": 80.703125,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 320 text 200%",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 18,
+            "top": 669.15625,
+            "right": 302,
+            "bottom": 1119.59375,
+            "width": 284,
+            "height": 450.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 983.59375,
+                "right": 203.0625,
+                "bottom": 1036.59375,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 35,
+                "top": 1044.59375,
+                "right": 189.375,
+                "bottom": 1102.59375,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 18,
+            "top": 1131.59375,
+            "right": 302,
+            "bottom": 1697.75,
+            "width": 284,
+            "height": 566.15625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 1561.75,
+                "right": 203.0625,
+                "bottom": 1614.75,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 35,
+                "top": 1622.75,
+                "right": 189.375,
+                "bottom": 1680.75,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 18,
+            "top": 1709.75,
+            "right": 302,
+            "bottom": 2205.1875,
+            "width": 284,
+            "height": 495.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 35,
+                "top": 2069.1875,
+                "right": 203.0625,
+                "bottom": 2122.1875,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 35,
+                "top": 2130.1875,
+                "right": 189.375,
+                "bottom": 2188.1875,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 18,
+            "top": 2217.1875,
+            "right": 302,
+            "bottom": 2738.34375,
+            "width": 284,
+            "height": 521.15625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 2602.34375,
+                "right": 203.0625,
+                "bottom": 2655.34375,
+                "width": 168.0625,
+                "height": 53
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 35,
+                "top": 2663.34375,
+                "right": 189.375,
+                "bottom": 2721.34375,
+                "width": 154.375,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 390 normal",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 22,
+            "top": 2637.34375,
+            "right": 368,
+            "bottom": 2816.703125,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 2755.703125,
+                "right": 164.671875,
+                "bottom": 2799.703125,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 180.671875,
+                "top": 2755.703125,
+                "right": 269.546875,
+                "bottom": 2799.703125,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 22,
+            "top": 2828.703125,
+            "right": 368,
+            "bottom": 3008.0625,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 2947.0625,
+                "right": 164.671875,
+                "bottom": 2991.0625,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 180.671875,
+                "top": 2947.0625,
+                "right": 269.546875,
+                "bottom": 2991.0625,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 22,
+            "top": 3020.0625,
+            "right": 368,
+            "bottom": 3199.421875,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 39,
+                "top": 3138.421875,
+                "right": 164.671875,
+                "bottom": 3182.421875,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 180.671875,
+                "top": 3138.421875,
+                "right": 269.546875,
+                "bottom": 3182.421875,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 22,
+            "top": 3211.421875,
+            "right": 368,
+            "bottom": 3390.78125,
+            "width": 346,
+            "height": 179.359375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 3329.78125,
+                "right": 164.671875,
+                "bottom": 3373.78125,
+                "width": 125.671875,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 180.671875,
+                "top": 3329.78125,
+                "right": 269.546875,
+                "bottom": 3373.78125,
+                "width": 88.875,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 390 text 200%",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 22,
+            "top": 552.453125,
+            "right": 368,
+            "bottom": 935.171875,
+            "width": 346,
+            "height": 382.71875
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 796.171875,
+                "right": 220.328125,
+                "bottom": 852.171875,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 39,
+                "top": 860.171875,
+                "right": 206.71875,
+                "bottom": 918.171875,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 22,
+            "top": 947.171875,
+            "right": 368,
+            "bottom": 1400.609375,
+            "width": 346,
+            "height": 453.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 1261.609375,
+                "right": 220.328125,
+                "bottom": 1317.609375,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 39,
+                "top": 1325.609375,
+                "right": 206.71875,
+                "bottom": 1383.609375,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 22,
+            "top": 1412.609375,
+            "right": 368,
+            "bottom": 1840.328125,
+            "width": 346,
+            "height": 427.71875
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 39,
+                "top": 1701.328125,
+                "right": 220.328125,
+                "bottom": 1757.328125,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 39,
+                "top": 1765.328125,
+                "right": 206.71875,
+                "bottom": 1823.328125,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 22,
+            "top": 1852.328125,
+            "right": 368,
+            "bottom": 2305.765625,
+            "width": 346,
+            "height": 453.4375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 2166.765625,
+                "right": 220.328125,
+                "bottom": 2222.765625,
+                "width": 181.328125,
+                "height": 56
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 39,
+                "top": 2230.765625,
+                "right": 206.71875,
+                "bottom": 2288.765625,
+                "width": 167.71875,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 768 normal",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 56,
+            "top": 2435.34375,
+            "right": 375,
+            "bottom": 2739.96875,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 2635.96875,
+                "right": 351,
+                "bottom": 2679.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 2682.96875,
+                "right": 351,
+                "bottom": 2726.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 393,
+            "top": 2435.34375,
+            "right": 712,
+            "bottom": 2739.96875,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 2635.96875,
+                "right": 688,
+                "bottom": 2679.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 2682.96875,
+                "right": 688,
+                "bottom": 2726.96875,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 56,
+            "top": 2757.96875,
+            "right": 375,
+            "bottom": 3062.59375,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 80,
+                "top": 2958.59375,
+                "right": 351,
+                "bottom": 3002.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 80,
+                "top": 3005.59375,
+                "right": 351,
+                "bottom": 3049.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 393,
+            "top": 2757.96875,
+            "right": 712,
+            "bottom": 3062.59375,
+            "width": 319,
+            "height": 304.625
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 2958.59375,
+                "right": 688,
+                "bottom": 3002.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 3005.59375,
+                "right": 688,
+                "bottom": 3049.59375,
+                "width": 271,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 768 text 200%",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 56,
+            "top": 191.0625,
+            "right": 375,
+            "bottom": 733.375,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 605.375,
+                "right": 351,
+                "bottom": 659.375,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 80,
+                "top": 662.375,
+                "right": 351,
+                "bottom": 720.375,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 393,
+            "top": 191.0625,
+            "right": 712,
+            "bottom": 733.375,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 605.375,
+                "right": 688,
+                "bottom": 659.375,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 417,
+                "top": 662.375,
+                "right": 688,
+                "bottom": 720.375,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 56,
+            "top": 751.375,
+            "right": 375,
+            "bottom": 1293.6875,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 80,
+                "top": 1165.6875,
+                "right": 351,
+                "bottom": 1219.6875,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 80,
+                "top": 1222.6875,
+                "right": 351,
+                "bottom": 1280.6875,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 393,
+            "top": 751.375,
+            "right": 712,
+            "bottom": 1293.6875,
+            "width": 319,
+            "height": 542.3125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 1165.6875,
+                "right": 688,
+                "bottom": 1219.6875,
+                "width": 271,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 417,
+                "top": 1222.6875,
+                "right": 688,
+                "bottom": 1280.6875,
+                "width": 271,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 1440 normal",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 132,
+            "top": 1979.1875,
+            "right": 412.5,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 2186.046875,
+                "right": 391.5,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 2233.046875,
+                "right": 391.5,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 430.5,
+            "top": 1979.1875,
+            "right": 711,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 2186.046875,
+                "right": 690,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 2233.046875,
+                "right": 690,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 729,
+            "top": 1979.1875,
+            "right": 1009.5,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 750,
+                "top": 2186.046875,
+                "right": 988.5,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 750,
+                "top": 2233.046875,
+                "right": 988.5,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 1027.5,
+            "top": 1979.1875,
+            "right": 1308,
+            "bottom": 2290.046875,
+            "width": 280.5,
+            "height": 310.859375
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 2186.046875,
+                "right": 1287,
+                "bottom": 2230.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 2233.046875,
+                "right": 1287,
+                "bottom": 2277.046875,
+                "width": 238.5,
+                "height": 44
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    },
+    {
+      "label": "width 1440 text 200%",
+      "cards": [
+        {
+          "tag": "ARTICLE",
+          "title": "Rookies",
+          "id": "home-level-rookies-title",
+          "labelledby": "home-level-rookies-title",
+          "bounds": {
+            "left": 132,
+            "top": 766.671875,
+            "right": 412.5,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=1",
+              "label": "Ver viajes para Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 1205.953125,
+                "right": 391.5,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#rookies",
+              "label": "Saber más sobre el nivel I: Rookies",
+              "bounds": {
+                "left": 153,
+                "top": 1262.953125,
+                "right": 391.5,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Aprendices",
+          "id": "home-level-aprendices-title",
+          "labelledby": "home-level-aprendices-title",
+          "bounds": {
+            "left": 430.5,
+            "top": 766.671875,
+            "right": 711,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=2",
+              "label": "Ver viajes para Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 1205.953125,
+                "right": 690,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#aprendices",
+              "label": "Saber más sobre el nivel II: Aprendices",
+              "bounds": {
+                "left": 451.5,
+                "top": 1262.953125,
+                "right": 690,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Riders",
+          "id": "home-level-riders-title",
+          "labelledby": "home-level-riders-title",
+          "bounds": {
+            "left": 729,
+            "top": 766.671875,
+            "right": 1009.5,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=3",
+              "label": "Ver viajes para Riders",
+              "bounds": {
+                "left": 750,
+                "top": 1205.953125,
+                "right": 988.5,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#riders",
+              "label": "Saber más sobre el nivel III: Riders",
+              "bounds": {
+                "left": 750,
+                "top": 1262.953125,
+                "right": 988.5,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        },
+        {
+          "tag": "ARTICLE",
+          "title": "Supercracks",
+          "id": "home-level-supercracks-title",
+          "labelledby": "home-level-supercracks-title",
+          "bounds": {
+            "left": 1027.5,
+            "top": 766.671875,
+            "right": 1308,
+            "bottom": 1333.953125,
+            "width": 280.5,
+            "height": 567.28125
+          },
+          "links": [
+            {
+              "text": "Ver viajes→",
+              "href": "/viajes/?nivel=4",
+              "label": "Ver viajes para Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 1205.953125,
+                "right": 1287,
+                "bottom": 1259.953125,
+                "width": 238.5,
+                "height": 54
+              },
+              "clipped": false
+            },
+            {
+              "text": "Saber más↗",
+              "href": "/niveles/#supercracks",
+              "label": "Saber más sobre el nivel IV: Supercracks",
+              "bounds": {
+                "left": 1048.5,
+                "top": 1262.953125,
+                "right": 1287,
+                "bottom": 1320.953125,
+                "width": 238.5,
+                "height": 58
+              },
+              "clipped": false
+            }
+          ],
+          "nested": false,
+          "sameParent": true,
+          "overlap": false
+        }
+      ]
+    }
+  ],
+  "arrivals": [
+    {
+      "label": "JS true Rookies",
+      "slug": "rookies",
+      "url": "/niveles/?nivel=rookies#rookies",
+      "active": "rookies",
+      "heading": "Rookies",
+      "headingTop": 215.78125,
+      "headingBottom": 274.578125,
+      "headerBottom": 78,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS true Aprendices",
+      "slug": "aprendices",
+      "url": "/niveles/?nivel=aprendices#aprendices",
+      "active": "aprendices",
+      "heading": "Aprendices",
+      "headingTop": 216.46875,
+      "headingBottom": 275.265625,
+      "headerBottom": 78,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS true Riders",
+      "slug": "riders",
+      "url": "/niveles/?nivel=riders#riders",
+      "active": "riders",
+      "heading": "Riders",
+      "headingTop": 216.0625,
+      "headingBottom": 274.859375,
+      "headerBottom": 78,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS true Supercracks",
+      "slug": "supercracks",
+      "url": "/niveles/?nivel=supercracks#supercracks",
+      "active": "supercracks",
+      "heading": "Supercracks",
+      "headingTop": 157.359375,
+      "headingBottom": 274.953125,
+      "headerBottom": 78,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS false Rookies",
+      "slug": "rookies",
+      "url": "/niveles/#rookies",
+      "active": "rookies",
+      "heading": "Rookies",
+      "headingTop": 225.78125,
+      "headingBottom": 284.578125,
+      "headerBottom": -896,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS false Aprendices",
+      "slug": "aprendices",
+      "url": "/niveles/#aprendices",
+      "active": "aprendices",
+      "heading": "Aprendices",
+      "headingTop": 226.46875,
+      "headingBottom": 285.265625,
+      "headerBottom": -1507,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS false Riders",
+      "slug": "riders",
+      "url": "/niveles/#riders",
+      "active": "riders",
+      "heading": "Riders",
+      "headingTop": 226.0625,
+      "headingBottom": 284.859375,
+      "headerBottom": -2097,
+      "viewportHeight": 900
+    },
+    {
+      "label": "JS false Supercracks",
+      "slug": "supercracks",
+      "url": "/niveles/#supercracks",
+      "active": "supercracks",
+      "heading": "Supercracks",
+      "headingTop": 167.359375,
+      "headingBottom": 284.953125,
+      "headerBottom": -2662,
+      "viewportHeight": 900
+    },
+    {
+      "label": "keyboard Enter",
+      "slug": "rookies",
+      "url": "/niveles/?nivel=rookies#rookies",
+      "active": "rookies",
+      "heading": "Rookies",
+      "headingTop": 215.78125,
+      "headingBottom": 274.578125,
+      "headerBottom": 78,
+      "viewportHeight": 900
+    }
+  ],
+  "pageErrors": []
+}

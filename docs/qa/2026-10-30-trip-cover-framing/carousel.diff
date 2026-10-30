@@ -1,0 +1,57 @@
+--- docs/qa/2026-10-30-trip-cover-framing/before/dist/trip.js	2026-10-30 21:12:59.046250634 +0100
++++ dist/trip.js	2026-10-30 21:46:32.078328559 +0100
+@@ -235,11 +235,28 @@
+   const thumbs = [...carousel.querySelectorAll('[data-carousel-thumb]')];
+   const thumbTrack = carousel.querySelector('[data-carousel-thumbnails]');
+   const children = [...track.children];
++  const fullPhotos = carousel.classList.contains('trip-opening-gallery');
+   let selectedThumb = -1;
++  let frameWidth = track.clientWidth;
++  const warmPhoto = selected => {
++    if(!fullPhotos)return;
++    [selected-1,selected,selected+1].forEach(i=>{
++      const image=children[i]?.querySelector('img');
++      if(image&&image.loading!=='eager')image.loading='eager';
++    });
++  };
++  // Every cover frame spans the viewport; the image inside keeps its own ratio.
+   const current = () => children.reduce((best, child, i) => Math.abs(child.offsetLeft - children[0].offsetLeft - track.scrollLeft) < Math.abs(children[best].offsetLeft - children[0].offsetLeft - track.scrollLeft) ? i : best, 0);
+   const update = () => {
++    // Resize can emit scroll before ResizeObserver. Preserve the old selection
++    // before comparing offsets in the new geometry.
++    if(fullPhotos&&track.clientWidth!==frameWidth){
++      frameWidth=track.clientWidth;
++      if(selectedThumb>=0)select(selectedThumb,false);
++    }
+     const focusedControl = document.activeElement;
+     const selected = current();
++    warmPhoto(selected);
+     if (previous) previous.disabled = track.scrollLeft < 2;
+     if (next) next.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 2;
+     if (counter) counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(children.length).padStart(2, '0')}`;
+@@ -255,9 +272,11 @@
+       }
+     }
+   };
+-  const select = selected => {
+-    const child = children[Math.max(0, Math.min(children.length - 1, selected))];
+-    if (child) track.scrollTo({left:child.offsetLeft - children[0].offsetLeft,behavior:reducedMotion.matches?'instant':'smooth'});
++  const select = (selected, animate = true) => {
++    const selectedIndex=Math.max(0,Math.min(children.length-1,selected));
++    const child=children[selectedIndex];
++    warmPhoto(selectedIndex);
++    if (child) track.scrollTo({left:child.offsetLeft-children[0].offsetLeft,behavior:animate&&!reducedMotion.matches?'smooth':'instant'});
+   };
+   previous?.addEventListener('click', () => select(current() - 1));
+   next?.addEventListener('click', () => select(current() + 1));
+@@ -278,6 +297,9 @@
+     event.preventDefault();select(current()+(event.key==='ArrowRight'?1:-1));
+   });
+   track.addEventListener('scroll',update,{passive:true});
+-  new ResizeObserver(update).observe(track);
++  new ResizeObserver(() => {
++    if(fullPhotos&&selectedThumb>=0)select(selectedThumb,false);
++    update();
++  }).observe(track);
+   update();
+ });

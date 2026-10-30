@@ -1,0 +1,1125 @@
+{
+  "transactionId": "L3ZrvhdiWtwAlFI8eP2fun",
+  "results": [
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-marruecos-2027-01-17",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 15
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "marruecos-2027-01-17",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-01-24",
+            "price": 899,
+            "start": "2027-01-17"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/c5d34e8474d7f8552d55575797af32c8f9e4bcd3.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-9b80c9dfe3d1defc4fc7903f5faa84f718dd405a-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a. PDF revisado: conservadas señales fijas y retiradas equivalencias porcentuales inexactas; dossierFile prevalece sobre URL original. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a; 13 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (marruecos-2027-01-17).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 860 € · Por orden de reserva · hasta plaza 5\nTarifa publicada: 899 € · Por orden de reserva · hasta plaza 15\nFormulario extraído, canal aún NO aprobado: https://forms.gle/XVUNbUQcfya4AVq99\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nAclarar reserva fija 270 € frente a 30 % y saldo: no coincide exactamente con ambas tarifas\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":899,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":860,\"label\":\"Early bird\",\"firstPlace\":1,\"lastPlace\":5,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}},{\"amount\":899,\"label\":\"Tarifa publicada\",\"firstPlace\":6,\"lastPlace\":15,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}}],\"source\":{\"pages\":[11]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":270,\"depositPercentPublished\":30,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Más adelante, antes del viaje\",\"balanceAmountPublished\":null,\"balancePercentPublished\":70,\"source\":{\"pages\":[11,13]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/XVUNbUQcfya4AVq99\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":\"Menos de 24–48 h (no revalidado)\",\"source\":{\"pages\":[13]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-c5d34e8474d7f8552d55575797af32c8f9e4bcd3-pdf; SHA256 ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a.\nCanal final: WhatsApp. Formulario externo aplazado porque conserva equivalencias porcentuales inexactas; no se activa en la web hasta corregirlo.",
+        "excludes": [
+          "Vuelos",
+          "Seguro de viaje",
+          "Tablas evolutivas y shortboards: alquiler aparte (p. 5)"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "No te preocupes. Estarás acompañado en todo momento por monitores y el equipo de Let’s Surf Together, y adaptaremos tu progresión a tu nivel.",
+            "question": "¿Y si no sé nada de surf?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "¡Sin problema! Haremos videocorrecciones para tu nivel y nos preocuparemos de que aprendas las pautas para llevar tu surfing al siguiente nivel.",
+            "question": "¿Y si tengo más nivel que el resto?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, pero allí tienes todo el material de iniciación, y además puedes alquilar tablas de mayor nivel.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches en Surf House",
+          "Pensión completa: desayuno, comida y cena",
+          "Clases y coaching adaptados al nivel",
+          "Material de iniciación y neoprenos",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Excursiones y visitas culturales",
+          "Transfers: aeropuerto, spots y actividades",
+          "Fotos y vídeos del viaje",
+          "Acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: con el pie en la arena y la tabla en el\nagua \nDespués de un 2026 lleno de viajes y surftrips increíbles, toca volver a las raíces.\nA recordar por qué nos enamoramos del surf, a conectar con nuestra primera ola\ny con esa sensación de libertad que solo el mar te da.\nEste surftrip está diseñado para quienes quieren dar sus primeros pasos en el\nsurf o mejorar su base, coger confianza en el agua y empezar a disfrutar de las\nprimeras paredes y maniobras sencillas.\nSerá una semana llena de surf, cultura marroquí y momentos compartidos con\nun grupo reducido de personas con la misma pasión.",
+        "levelRequirement": "Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.",
+        "levels": [
+          1,
+          2
+        ],
+        "name": "Marruecos · nivel 1–2",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 270,
+          "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Agadir · Marruecos",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "marruecos-2027-01-17"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Clases y coaching de lunes a sábado; videoanálisis grupal e individual, Animal Flow diario, material de iniciación y neoprenos. Evolutivas/shortboards no incluidos; posible alquiler.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Dunas de Tamri, Zoco de Agadir, mercados locales, surf day en Imsouane y jornada en Paradise Valley.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-marruecos-2027-01-24",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 10
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "marruecos-2027-01-24",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-01-31",
+            "price": 899,
+            "start": "2027-01-24"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d2899332fdb948bd8192747a8c81266548aa9433.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-c9cf845f536df9d5403a5a1aca3ef1b02324f539-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf; SHA256 db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04. PDF revisado: conservadas señales fijas y retiradas equivalencias porcentuales inexactas; dossierFile prevalece sobre URL original. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf; SHA256 db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04; 13 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (marruecos-2027-01-24).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 860 € · Por orden de reserva · hasta plaza 5\nTarifa publicada: 899 € · Por orden de reserva · hasta plaza 10\nFormulario extraído, canal aún NO aprobado: https://forms.gle/3mNhFAThLgK6QDRn6\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nAclarar reserva fija 270 € frente a 30 % y saldo: no coincide exactamente con ambas tarifas\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":899,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":860,\"label\":\"Early bird\",\"firstPlace\":1,\"lastPlace\":5,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}},{\"amount\":899,\"label\":\"Tarifa publicada\",\"firstPlace\":6,\"lastPlace\":10,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}}],\"source\":{\"pages\":[11]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":270,\"depositPercentPublished\":30,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Más adelante, antes del viaje\",\"balanceAmountPublished\":null,\"balancePercentPublished\":70,\"source\":{\"pages\":[11,13]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/3mNhFAThLgK6QDRn6\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":\"Menos de 24–48 h (no revalidado)\",\"source\":{\"pages\":[13]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-d2899332fdb948bd8192747a8c81266548aa9433-pdf; SHA256 db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04.\nCanal final: WhatsApp. Formulario externo aplazado porque conserva equivalencias porcentuales inexactas; no se activa en la web hasta corregirlo.",
+        "excludes": [
+          "Vuelos",
+          "Seguro de viaje",
+          "Tabla propia o alquiler en destino (p. 5; no consta incluido)"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Entonces te encajará mejor el viaje del 17 al 24 de enero, pensado para iniciación e intermedio bajo.",
+            "question": "¿Y si todavía no voy por la pared?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Nivel 3: ser independiente en el agua y pillar tus paredes con tabla corta. Si ya haces maniobras y quieres pulirlas, también es tu viaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, de hecho lo recomendamos en este viaje. Si lo prefieres, también puedes alquilar allí.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos.",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Marruecos · nivel 3 · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Marruecos · nivel 3 · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches en Surf House",
+          "Pensión completa: desayuno, comida y cena",
+          "Surf coaching intensivo con Lucas",
+          "Vídeos todos los días",
+          "4 sesiones de videocorrecciones",
+          "Animal Flow y estiramientos",
+          "Excursiones y visitas culturales",
+          "Transfers: aeropuerto, spots y actividades",
+          "Fotos y vídeos del viaje",
+          "Acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: entrenando duro en el agua y buscando\nnuevos retos \nDespués de un 2026 lleno de olas, aprendizajes y surftrips épicos, toca dar el\nsiguiente paso: que tu surf deje de ser solo coger olas y empiece a fluir.\nPara ganar velocidad y control en la pared, aprender a bombear, colocarte\nmejor en la ola y soltar tus primeros giros con buena técnica. Para sentir que de\nverdad progresas, sesión a sesión.\nUna semana enfocada en progresar en tu surf, con sesiones intensivas, análisis\nen detalle y tiempo para disfrutar de la cultura marroquí.",
+        "levelRequirement": "Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.",
+        "levels": [
+          3
+        ],
+        "name": "Marruecos · nivel 3",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 270,
+          "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Agadir · Marruecos",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "marruecos-2027-01-24"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Coaching con Lucas de lunes a sábado; hasta 2 sesiones al día si las condiciones acompañan; vídeos diarios y 4 videocorrecciones; Animal Flow y movilidad. Tabla propia o alquiler.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Spots anunciados: Imsouane, Anchor Point, Desert Point, Banana y Camel según condiciones. Si el mar descansa o el grupo lo pide, Zoco de Agadir y actividades locales.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-senegal-2027-02-28",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 12
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "senegal-2027-02-28",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-03-07",
+            "price": 1299,
+            "start": "2027-02-28"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d2dda39badca876f59d9c14e60fe5daab2c0a218.pdf",
+        "dossierFile": {
+          "_type": "file",
+          "asset": {
+            "_ref": "file-97dffdb704623e3514d6a92bf8fd3f4916217004-pdf",
+            "_type": "reference"
+          }
+        },
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf; SHA256 1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741. PDF revisado: conservadas señales fijas y retiradas equivalencias porcentuales inexactas; dossierFile prevalece sobre URL original. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf; SHA256 1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741; 14 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (senegal-2027-02-28).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 1269 € · Por orden de reserva · hasta plaza 5\nTarifa publicada: 1299 € · Por orden de reserva · hasta plaza 12\nFormulario extraído, canal aún NO aprobado: https://forms.gle/oNnjdJMaRGnTvuSJ9\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nAclarar reserva fija 325 € frente a 25 % en ambas tarifas\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":1299,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":1269,\"label\":\"Early bird\",\"firstPlace\":1,\"lastPlace\":5,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[12]}},{\"amount\":1299,\"label\":\"Tarifa publicada\",\"firstPlace\":6,\"lastPlace\":12,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[12]}}],\"source\":{\"pages\":[12]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":325,\"depositPercentPublished\":25,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Antes del viaje\",\"balanceAmountPublished\":null,\"balancePercentPublished\":null,\"source\":{\"pages\":[12,14]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/oNnjdJMaRGnTvuSJ9\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":\"Menos de 24–48 h (no revalidado)\",\"source\":{\"pages\":[14]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-d2dda39badca876f59d9c14e60fe5daab2c0a218-pdf; SHA256 1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741.\nCanal final: WhatsApp. Formulario externo aplazado porque conserva equivalencias porcentuales inexactas; no se activa en la web hasta corregirlo.",
+        "excludes": [
+          "Vuelos",
+          "Comidas del mediodía",
+          "Bebidas de la cena del desierto",
+          "Seguro de viaje"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2: ponerte de pie con soltura, coger tus propias olas y empezar a surfear paredes. Si estás empezando, este no es tu viaje, pero tenemos otros pensados para ti.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Hay vuelos a Dakar a muy buen precio desde España. Te asesoramos y crearemos un grupo de WhatsApp para coordinarnos y volar juntos. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "No hace falta: el material está incluido todo el día. Si prefieres surfear con tu tabla, también puedes traerla.",
+            "question": "¿Tengo que llevar mi tabla?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "No están incluidas, pero hay opciones locales muy ricas y económicas. Desayuno y cena sí van incluidos todos los días.",
+            "question": "¿Y las comidas del mediodía?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Senegal · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Senegal · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches de alojamiento, una en el desierto",
+          "Desayuno y cena todos los días",
+          "Surf todos los días con clases o surf guiding",
+          "Material de surf",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Desierto de Lompoul y Lago Rosa",
+          "Isla de Gorée con barco, entrada y guía",
+          "Almadies y mercado artesanal",
+          "Transfers: aeropuerto y excursiones",
+          "Fotos y vídeos del viaje y acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nUNA AVENTURA DE SURF EN ÁFRICA\nHay viajes que se recuerdan toda la vida, y este es uno de ellos \nNos vamos a Senegal, al punto más occidental de África, a surfear olas atlánticas\ncon sol, en un país lleno de color, ritmo y energía.\nSerá una semana para mejorar tu surf en las olas de Senegal, vivir una aventura\nen el desierto de Lompoul, ver el Lago Rosa y descubrir la Isla de Gorée.\nTodo con un grupo reducido de 12 personas con la misma pasión, con el estilo de\nsiempre de LST: surf, coaching, buen rollo y momentos que no se olvidan.\nLa familia LST en un viaje anterior",
+        "levelRequirement": "Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.",
+        "levels": [
+          2
+        ],
+        "name": "Senegal",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 325,
+          "terms": "Señal fija de 325 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Dakar · Senegal",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "senegal-2027-02-28"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surf camp sin nombre; habitaciones compartidas, mosquiteras, taquilla, jardín, comedor, coworking, rooftop, wifi y agua potable. Una noche en tiendas en Lompoul (p. 7)."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Surf diario con clases o guiding según condiciones; material todo el día; videoanálisis, Animal Flow y fotos/vídeos.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Lompoul, Lago Rosa, Gorée con barco/entrada/guía, Almadies y mercado; transfers incluidos.",
+            "title": "Programa 2"
+          },
+          {
+            "_key": "program-3",
+            "_type": "storyItem",
+            "text": "Una noche en tiendas en Lompoul, atardecer, cena y desayuno; bebidas de la cena excluidas. Lago Rosa al volver.",
+            "title": "Programa 3"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-el-palmar-2026-12-04",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking",
+          "applicationUrl": "https://forms.gle/Gmej3QWiKTHbuTo98"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 30
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "el-palmar-2026-12-04",
+            "_type": "departure",
+            "duration": "4 noches",
+            "end": "2026-12-08",
+            "price": 699,
+            "start": "2026-12-04"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/ad258244540fb13e8f973c889ce1a56013e6f6fc.pdf",
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 5. LST_EL_PALMAR_SURFTRIP_-_PUENTE_DE_DICIEMBRE.pdf; SHA256 8cf425e8b13cfbfbbba426095507b5d546be3ad7fa97771a68e2f36606987fc1. PDF original conserva sus tramos documentales. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 5. LST_EL_PALMAR_SURFTRIP_-_PUENTE_DE_DICIEMBRE.pdf; SHA256 8cf425e8b13cfbfbbba426095507b5d546be3ad7fa97771a68e2f36606987fc1; 12 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (el-palmar-2026-12-04).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 599 € · Por orden de reserva · hasta plaza 8\nTarifa publicada: 649 € · Por orden de reserva · hasta plaza 20\nTarifa publicada: 699 € · Por orden de reserva · hasta plaza 30\nFormulario extraído, canal aún NO aprobado: https://forms.gle/Gmej3QWiKTHbuTo98\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nDeterminar tramo vigente; no existe una tarifa general única en el PDF\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":null,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":599,\"label\":\"Early bird\",\"firstPlace\":1,\"lastPlace\":8,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[10]}},{\"amount\":649,\"label\":\"Tarifa publicada\",\"firstPlace\":9,\"lastPlace\":20,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[10]}},{\"amount\":699,\"label\":\"Tarifa publicada\",\"firstPlace\":21,\"lastPlace\":30,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[10]}}],\"source\":{\"pages\":[10]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":250,\"depositPercentPublished\":null,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Más adelante; sin fecha concreta\",\"balanceAmountPublished\":null,\"balancePercentPublished\":null,\"source\":{\"pages\":[10,11]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/Gmej3QWiKTHbuTo98\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":null,\"source\":{\"pages\":[11,12]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-ad258244540fb13e8f973c889ce1a56013e6f6fc-pdf; SHA256 8cf425e8b13cfbfbbba426095507b5d546be3ad7fa97771a68e2f36606987fc1.",
+        "excludes": [
+          "Transporte (coches compartidos)"
+        ],
+        "faqs": [],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "El Palmar · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "El Palmar · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "4 noches en Nexo Surfhouse, a 200 m de la playa",
+          "Pensión completa: cena del viernes a comida del martes",
+          "4 clases de surf en 3 grupos según nivel",
+          "Material y seguro de la escuela local",
+          "Videocorrecciones por grupos",
+          "Surfskate en pista privada",
+          "Animal Flow y movilidad",
+          "Visita a Conil",
+          "Barbacoa, juegos y actividades de grupo",
+          "Fiesta temática de los 80 y 90"
+        ],
+        "intro": "Let’s Surf Together\nEn Let’s Surf Together creemos que un surftrip no es solo surfear.\nEs compartir, aprender y vivir una experiencia que se queda contigo mucho\ndespués de volver a casa \nEste puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con\nmás ambiente surfero del sur, y queremos que formes parte de ello.\nSerán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel,\nvideocorrecciones para pulir cada detalle de tu técnica, surfskate en pista\nprivada y Animal Flow para sentirte ágil dentro y fuera del agua.\nY fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche\ncon fiesta temática de los 80 y 90 \nEs el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve\nencantadaaaa.",
+        "levelRequirement": "Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).",
+        "levels": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "name": "El Palmar",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 250,
+          "terms": "Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Vejer de la Frontera · Cádiz",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "el-palmar-2026-12-04"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Nexo Surfhouse, 200 m de playa; habitaciones dobles/triples, jardín, azotea, pista de surfskate, ping pong, barbacoa, comedor, cafetería y parking. Petición de compartir habitación en formulario."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "4 clases de sábado a martes; tres grupos y videocorrecciones. Material y seguro de escuela local.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Surfskate con horarios por grupo; Animal Flow y movilidad diarios.",
+            "title": "Programa 2"
+          },
+          {
+            "_key": "program-3",
+            "_type": "storyItem",
+            "text": "Visita a Conil, ping pong, juegos y barbacoa.",
+            "title": "Programa 3"
+          },
+          {
+            "_key": "program-4",
+            "_type": "storyItem",
+            "text": "Viernes: bienvenida. Sábado: ambiente y posiblemente música en directo. Domingo: juegos en casa. Lunes: fiesta 80/90; planes opcionales y respeto al descanso.",
+            "title": "Programa 4"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-fuerteventura-2027-02-12",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking",
+          "applicationUrl": "https://forms.gle/pY8QksJYRBTKV3hY8"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 12
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "fuerteventura-2027-02-12",
+            "_type": "departure",
+            "duration": "4 noches",
+            "end": "2027-02-16",
+            "price": 699,
+            "start": "2027-02-12"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b49d95e5b29c389a69dfe1de2cdd082acc32f2fc.pdf",
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 8. LST_FUERTEVENTURA_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 507b631675d95e54f0ba5f6da3e8f6dbc77287a2f197910a2aaf9a8a71ef7bc7. PDF original conserva sus tramos documentales. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 8. LST_FUERTEVENTURA_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 507b631675d95e54f0ba5f6da3e8f6dbc77287a2f197910a2aaf9a8a71ef7bc7; 11 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (fuerteventura-2027-02-12).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 649 € · Por orden de reserva · hasta plaza 4\nTarifa publicada: 699 € · Por orden de reserva · hasta plaza 12\nFormulario extraído, canal aún NO aprobado: https://forms.gle/pY8QksJYRBTKV3hY8\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":699,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":649,\"label\":\"Early bird\",\"firstPlace\":1,\"lastPlace\":4,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[9]}},{\"amount\":699,\"label\":\"Tarifa publicada\",\"firstPlace\":5,\"lastPlace\":12,\"condition\":\"Por orden de reserva\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[9]}}],\"source\":{\"pages\":[9]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":250,\"depositPercentPublished\":null,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Antes del viaje\",\"balanceAmountPublished\":null,\"balancePercentPublished\":null,\"source\":{\"pages\":[9,11]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/pY8QksJYRBTKV3hY8\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"Contacto personal\",\"responseTimePublished\":null,\"source\":{\"pages\":[11]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-b49d95e5b29c389a69dfe1de2cdd082acc32f2fc-pdf; SHA256 507b631675d95e54f0ba5f6da3e8f6dbc77287a2f197910a2aaf9a8a71ef7bc7.",
+        "excludes": [
+          "Vuelos",
+          "2 cenas libres en el pueblo",
+          "Seguro de viaje"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "¡Perfecto! El grupo de iniciación empieza desde cero, con técnica básica, espumas y mucha confianza en el agua.",
+            "question": "¿Y si no he surfeado nunca?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Irás al grupo intermedio, a coger paredes y seguir la línea de la ola, con videoanálisis para seguir aprendiendo.",
+            "question": "¿Y si ya tengo algo de nivel?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "No: tabla y neopreno están incluidos en las clases. Si tienes tu propio neopreno, puedes traerlo.",
+            "question": "¿Tengo que llevar material?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "En avión. Te asesoramos con los vuelos y crearemos un grupo para volar juntos. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Desayunos y comidas todos los días y 2 cenas en casa. Las otras 2 cenas son libres en el pueblo.",
+            "question": "¿Qué comidas están incluidas?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Fuerteventura · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Fuerteventura · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "4 noches en casa para el grupo",
+          "Desayunos y comidas todos los días y 2 cenas en casa",
+          "4 clases de surf adaptadas al nivel con material",
+          "3 sesiones de videoanálisis por grupos",
+          "Animal Flow y movilidad todas las mañanas",
+          "Actividades de tarde: dunas, volcán, estrellas, surfskate y sorpresas",
+          "Transfers: aeropuerto, surf y actividades",
+          "Fotos y vídeos del viaje y acompañamiento 24h",
+          "Asesoría de vuelos y descuento en seguro"
+        ],
+        "intro": "Let’s Surf Together\nESCÁPATE DEL INVIERNO A SURFEAR\n¿Te imaginas escaparte del invierno a surfear con sol, buen clima y olas en una\nde las islas más bonitas de Canarias? \nEste surftrip está pensado tanto para quienes quieren dar sus primeros pasos en\nel surf como para quienes ya se defienden y quieren seguir aprendiendo cosas\nnuevas.\nSerán 5 días llenos de surf, volcanes, dunas, atardeceres y momentos\ncompartidos con un grupo reducido de 12 personas con la misma pasión.",
+        "levelRequirement": "Iniciación e intermedio; 2 grupos según nivel.",
+        "levels": [
+          1,
+          2
+        ],
+        "name": "Fuerteventura",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 250,
+          "terms": "Señal fija de 250 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Canarias · España",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "fuerteventura-2027-02-12"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Casa para el grupo sin nombre; no se especifica distribución de habitaciones."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "4 clases de sábado a martes, material incluido; 2 grupos y 3 videoanálisis; Animal Flow todas las mañanas.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Día orientativo: movilidad, clase, comida, videoanálisis y plan de tarde; no constituye itinerario cerrado.",
+            "title": "Programa 2"
+          },
+          {
+            "_key": "program-3",
+            "_type": "storyItem",
+            "text": "Dunas de Corralejo, volcán Calderón Hondo, noche de estrellas, surfskate y paseo por Corralejo; sorpresas sin concretar.",
+            "title": "Programa 3"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-hossegor-2026-11-20",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking",
+          "applicationUrl": "https://forms.gle/sserHWdhwvDMVxYQ6"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 6
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "hossegor-2026-11-20",
+            "_type": "departure",
+            "duration": "2 noches",
+            "end": "2026-11-22",
+            "price": 399,
+            "start": "2026-11-20"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e488fd20ae30f867a6a1f162b67ada09d267d015.pdf",
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 3. Fuente: 4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276. PDF original conserva sus tramos documentales. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276; 12 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (hossegor-2026-11-20).\nTarifas del PDF, vigencia NO confirmada:\nTarifa publicada: 399 € · Por persona\nFormulario extraído, canal aún NO aprobado: https://forms.gle/sserHWdhwvDMVxYQ6\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":399,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":399,\"label\":\"Tarifa publicada\",\"firstPlace\":null,\"lastPlace\":null,\"condition\":\"Por persona\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[10]}}],\"source\":{\"pages\":[10]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":200,\"depositPercentPublished\":null,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Antes del viaje\",\"balanceAmountPublished\":199,\"balancePercentPublished\":null,\"source\":{\"pages\":[10,12]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/sserHWdhwvDMVxYQ6\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":\"Menos de 24–48 h (no revalidado)\",\"source\":{\"pages\":[12]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-e488fd20ae30f867a6a1f162b67ada09d267d015-pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276.",
+        "excludes": [
+          "Material de surf (alquiler posible)",
+          "Transporte (coches compartidos)",
+          "Seguro de viaje"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Sí: cada uno trae su tabla y su neopreno. Si te falta algo, allí podrás alquilarlo.",
+            "question": "¿Tengo que llevar mi material?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "En coche. Crearemos un grupo de WhatsApp con las personas que reserven para compartir coche y gastos desde cada ciudad.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Si las condiciones no son buenas para el viaje, lo cancelamos y puedes elegir entre reembolso o bono para otro viaje.",
+            "question": "¿Qué pasa si no hay olas buenas?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Sí. Con nuestro enlace de IATI Seguros tienes un 5 % de descuento; te lo pasamos al confirmar la plaza.",
+            "question": "¿El seguro de viaje es obligatorio?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Hossegor · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Hossegor · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "2 noches en surfhouse",
+          "Pensión completa: cena del viernes a desayuno del domingo",
+          "Coaching en todas las sesiones con seguimiento individual de Lucas",
+          "Vídeos de todas las sesiones",
+          "Videoanálisis grupal e individual",
+          "Animal Flow y estiramientos",
+          "Teoría del mar, condiciones y forecast"
+        ],
+        "intro": "Let’s Surf Together\nUN FINDE PARA SUBIR DE NIVEL\nUn finde para dar un salto de calidad en tu surf en una de las mecas del surf\neuropeo \nNos vamos a Hossegor con un grupo muy reducido de solo 6 personas, para\nque Lucas pueda hacer un seguimiento individualizado de cada uno durante\ntodo el fin de semana.\nAnalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de\nverdad necesitas para mejorar: dentro del agua, en vídeo y en la teoría del mar.\nY todo con el ambiente de siempre de LST: surf, buena comida y buen rollo en\nuna surfhouse con muy buena energía.",
+        "levelRequirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
+        "levels": [
+          2,
+          3
+        ],
+        "name": "Hossegor",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 200,
+          "terms": "Señal fija de 200 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Landas · Francia",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "hossegor-2026-11-20"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Surfhouse con jardín; nombre y habitaciones no indicados."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Coaching en todas las sesiones con Lucas; grabación, videoanálisis grupal e individual, Animal Flow y estiramientos.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Teoría del mar: swell y periodo, viento y mareas, elección de pico.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-maldivas-2027-03-21",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking",
+          "applicationUrl": "https://forms.gle/nDxuYXFPq4XZx6B2A"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 10
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "maldivas-2027-03-21",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-03-28",
+            "price": 1499,
+            "start": "2027-03-21"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d5614a40b8754b05890d82ae0dc6a0f42bc85817.pdf",
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 4. Fuente: 10. Maldivas_Surftrip_Semana_Santa_2027_LST.pdf; SHA256 4910e2e3343fe674105e4f5bbec347681a8465f44ae3e2d003b9197b30dd2f5b. PDF original conserva sus tramos documentales. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 10. Maldivas_Surftrip_Semana_Santa_2027_LST.pdf; SHA256 4910e2e3343fe674105e4f5bbec347681a8465f44ae3e2d003b9197b30dd2f5b; 13 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (maldivas-2027-03-21).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 1399 € · Plazas limitadas sin cupo indicado\nTarifa publicada: 1499 € · Sin early bird\nFormulario extraído, canal aún NO aprobado: https://forms.gle/nDxuYXFPq4XZx6B2A\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nConfirmar cupo early bird; el PDF solo dice plazas limitadas\nAclarar material de surf y seguro: no se declaran incluidos ni explícitamente excluidos (solo descuento en seguro)\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":1499,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":1399,\"label\":\"Early bird\",\"firstPlace\":null,\"lastPlace\":null,\"condition\":\"Plazas limitadas sin cupo indicado\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}},{\"amount\":1499,\"label\":\"Tarifa publicada\",\"firstPlace\":null,\"lastPlace\":null,\"condition\":\"Sin early bird\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}}],\"source\":{\"pages\":[11]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":500,\"depositPercentPublished\":null,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Un mes antes del viaje\",\"balanceAmountPublished\":null,\"balancePercentPublished\":null,\"source\":{\"pages\":[11,13]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/nDxuYXFPq4XZx6B2A\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":null,\"source\":{\"pages\":[13]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-d5614a40b8754b05890d82ae0dc6a0f42bc85817-pdf; SHA256 4910e2e3343fe674105e4f5bbec347681a8465f44ae3e2d003b9197b30dd2f5b.",
+        "excludes": [
+          "Vuelos"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra.",
+            "question": "¿Están incluidos los vuelos?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos.",
+            "question": "¿Puedo llegar antes o quedarme más días?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "500 € para reservar tu plaza y el resto un mes antes del viaje.",
+            "question": "¿Cómo se paga?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional.",
+            "question": "¿Y si no hay olas?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Maldivas · Semana Santa · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Maldivas · Semana Santa · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches en hotel en primera línea de playa",
+          "Pensión completa: desayuno, comida y cena",
+          "Surf en barco 2 veces al día",
+          "Coaching en todas las sesiones con seguimiento individual de Lucas",
+          "Fotos y vídeos profesionales",
+          "Videoanálisis grupal e individual",
+          "Animal Flow cada mañana",
+          "Transfers aeropuerto–isla–aeropuerto y a los spots",
+          "Actividades de grupo y snorkel opcional",
+          "Wifi, acompañamiento 24h y asesoría de vuelos",
+          "Descuento en seguro de viaje"
+        ],
+        "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
+        "levelRequirement": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+        "levels": [
+          2,
+          3
+        ],
+        "name": "Maldivas · Semana Santa",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 500,
+          "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Thulusdhoo · Atolón de Malé Norte",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "maldivas-2027-03-21"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Hotel sin nombre, primera línea de playa en Thulusdhoo; habitaciones dobles/triples, wifi."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Surf en barco 2 veces al día según condiciones; coaching Lucas; fotos/vídeos; videoanálisis cada tarde y Animal Flow cada mañana.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Plan B opcional si no hay olas o el grupo quiere descansar: snorkel en arrecife; animales no garantizados, delfines con suerte; paseos, playa y sunsets.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    },
+    {
+      "document": {
+        "_createdAt": "2026-10-23T18:18:02Z",
+        "_id": "drafts.lst-maldivas-2027-03-28",
+        "_rev": "L3ZrvhdiWtwAlFI8eP2fun",
+        "_type": "trip",
+        "_updatedAt": "2026-10-24T10:59:41Z",
+        "availability": "available",
+        "booking": {
+          "_type": "booking",
+          "applicationUrl": "https://forms.gle/ps3zG2BRLwK8UkB3A"
+        },
+        "capacity": {
+          "_type": "capacity",
+          "total": 10
+        },
+        "checkedAt": "2026-10-24",
+        "departures": [
+          {
+            "_key": "maldivas-2027-03-28",
+            "_type": "departure",
+            "duration": "7 noches",
+            "end": "2027-04-04",
+            "price": 1499,
+            "start": "2027-03-28"
+          }
+        ],
+        "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/cccb17697b4a3d97c57525bf6d7f224ca6e26d1e.pdf",
+        "editorialNotes": "Aprobación del usuario en chat el 24/10/2026: todos los materiales aprobados; todos tienen plazas. Disponibilidad manual sin contador. Web con tarifa general sin promociones y señal fija, sin equivalencia porcentual. Fotos extraídas del dossier aprobado, página 4. Fuente: 11. Maldivas_Surftrip_Pascua_2027_LST.pdf; SHA256 75f8a899bb33e8962549d78990095ddc20ee041ca1bd509705a3ff73634db8a4. PDF original conserva sus tramos documentales. Revisión editorial para publicación el 24/10/2026.\n\nTrazabilidad anterior (histórica, superada por la aprobación):\nBORRADOR: revisión comercial y de textos necesaria antes de publicar.\nFuente: 11. Maldivas_Surftrip_Pascua_2027_LST.pdf; SHA256 75f8a899bb33e8962549d78990095ddc20ee041ca1bd509705a3ff73634db8a4; 13 páginas. Inventario local: docs/sanity/2026-10-23/salidas.json (maldivas-2027-03-28).\nTarifas del PDF, vigencia NO confirmada:\nEarly bird: 1399 € · Plazas limitadas sin cupo indicado\nTarifa publicada: 1499 € · Sin early bird\nFormulario extraído, canal aún NO aprobado: https://forms.gle/ps3zG2BRLwK8UkB3A\nConfirmar disponibilidad y vigencia de tarifas/condiciones\nAprobar material fotográfico; PDF original adjunto, revisión editorial pendiente.\nResolver formulario externo frente a WhatsApp de la web\nConfirmar cupo early bird; el PDF solo dice plazas limitadas\nAclarar material de surf y seguro: no se declaran incluidos ni explícitamente excluidos (solo descuento en seguro)\nConfirmar señal y fotos autorizadas. PDF original adjunto; no acredita vigencia comercial. La fecha de revisión documental no acredita vigencia comercial.\nDatos documentales íntegros (NO confirman vigencia):\n{\"pricing\":{\"currency\":\"EUR\",\"unit\":\"person\",\"generalAmountPublished\":1499,\"effectiveAmount\":null,\"tariffs\":[{\"amount\":1399,\"label\":\"Early bird\",\"firstPlace\":null,\"lastPlace\":null,\"condition\":\"Plazas limitadas sin cupo indicado\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}},{\"amount\":1499,\"label\":\"Tarifa publicada\",\"firstPlace\":null,\"lastPlace\":null,\"condition\":\"Sin early bird\",\"currentValidity\":\"unconfirmed\",\"source\":{\"pages\":[11]}}],\"source\":{\"pages\":[11]},\"validityStatus\":\"unconfirmed\"},\"payment\":{\"depositAmount\":500,\"depositPercentPublished\":null,\"depositDue\":\"Al confirmar\",\"balanceDue\":\"Un mes antes del viaje\",\"balanceAmountPublished\":null,\"balancePercentPublished\":null,\"source\":{\"pages\":[11,13]},\"currentValidity\":\"unconfirmed\"},\"booking\":{\"formUrl\":\"https://forms.gle/ps3zG2BRLwK8UkB3A\",\"processPublished\":\"Formulario → revisión/contacto → pago y confirmación\",\"contactChannelPublished\":\"WhatsApp\",\"responseTimePublished\":null,\"source\":{\"pages\":[13]},\"webDecision\":\"pending\"}}\nLote: lst-reviewed-2026-10-23. PDF: file-cccb17697b4a3d97c57525bf6d7f224ca6e26d1e-pdf; SHA256 75f8a899bb33e8962549d78990095ddc20ee041ca1bd509705a3ff73634db8a4.",
+        "excludes": [
+          "Vuelos"
+        ],
+        "faqs": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra.",
+            "question": "¿Están incluidos los vuelos?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos.",
+            "question": "¿Puedo llegar antes o quedarme más días?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "500 € para reservar tu plaza y el resto un mes antes del viaje.",
+            "question": "¿Cómo se paga?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional.",
+            "question": "¿Y si no hay olas?"
+          }
+        ],
+        "gallery": [
+          {
+            "_key": "dossier-photo",
+            "_type": "image",
+            "alt": "Maldivas · Pascua · fotografía del dossier de LST",
+            "asset": {
+              "_ref": "image-1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200-jpg",
+              "_type": "reference"
+            },
+            "caption": "Fotografía del dossier de LST."
+          }
+        ],
+        "hero": {
+          "_type": "image",
+          "alt": "Maldivas · Pascua · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200-jpg",
+            "_type": "reference"
+          }
+        },
+        "includes": [
+          "7 noches en hotel en primera línea de playa",
+          "Pensión completa: desayuno, comida y cena",
+          "Surf en barco 2 veces al día",
+          "Coaching en todas las sesiones con seguimiento individual de Lucas",
+          "Fotos y vídeos profesionales",
+          "Videoanálisis grupal e individual",
+          "Animal Flow cada mañana",
+          "Transfers aeropuerto–isla–aeropuerto y a los spots",
+          "Actividades de grupo y snorkel opcional",
+          "Wifi, acompañamiento 24h y asesoría de vuelos",
+          "Descuento en seguro de viaje"
+        ],
+        "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
+        "levelRequirement": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
+        "levels": [
+          2,
+          3
+        ],
+        "name": "Maldivas · Pascua",
+        "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
+        "payment": {
+          "_type": "payment",
+          "depositAmount": 500,
+          "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+        },
+        "place": "Thulusdhoo · Atolón de Malé Norte",
+        "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+        "slug": {
+          "_type": "slug",
+          "current": "maldivas-2027-03-28"
+        },
+        "state": "confirmed",
+        "stay": {
+          "_type": "stay",
+          "text": "Hotel sin nombre, primera línea de playa en Thulusdhoo; habitaciones dobles/triples, wifi."
+        },
+        "story": [
+          {
+            "_key": "program-1",
+            "_type": "storyItem",
+            "text": "Surf en barco 2 veces al día según condiciones; coaching Lucas; fotos/vídeos; videoanálisis cada tarde y Animal Flow cada mañana.",
+            "title": "Programa 1"
+          },
+          {
+            "_key": "program-2",
+            "_type": "storyItem",
+            "text": "Plan B opcional si no hay olas o el grupo quiere descansar: snorkel en arrecife; animales no garantizados, delfines con suerte; paseos, playa y sunsets.",
+            "title": "Programa 2"
+          }
+        ]
+      },
+      "operation": "update"
+    }
+  ]
+}

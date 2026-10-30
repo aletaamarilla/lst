@@ -1,0 +1,31 @@
+{
+  "reviewer": "/root/review_early_bird",
+  "result": "closed, no remaining blockers",
+  "manifestSha256": "f4ddb679cc2f3fd040c055ee69643655d072778192fcdda784007ff17630e9a7",
+  "independentTests": {
+    "passed": 24,
+    "scope": "local-preview, pricing, home"
+  },
+  "reviewedEvidence": {
+    "fullTests": 83,
+    "staticPages": 24,
+    "browserViews": 12,
+    "screenshots": 4
+  },
+  "actualLocalhost": {
+    "routes": [
+      "/",
+      "/viajes/",
+      "/niveles/",
+      "/viajes/el-palmar/"
+    ],
+    "status": 200,
+    "header": "X-LST-Data-Source: sanity-local-preview",
+    "privateDataRoute": 404,
+    "independentUbuntuRead": true,
+    "windowsRead": "runtime.json"
+  },
+  "distOffers": 0,
+  "publishedWrites": 0,
+  "deployment": "pending"
+}

@@ -1,0 +1,190 @@
+diff --git a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/scripts/serve.mjs b/home/amfernandez/personalProjects/letsurftogethersystem/scripts/serve.mjs
+old mode 100644
+new mode 100755
+index 6abb6aa..6734450
+--- a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/scripts/serve.mjs
++++ b/home/amfernandez/personalProjects/letsurftogethersystem/scripts/serve.mjs
+@@ -1,6 +1,65 @@
+ import http from 'node:http';
+ import {readFile, stat} from 'node:fs/promises';
+ import path from 'node:path';
+-const root=path.resolve('dist');
++import {fileURLToPath} from 'node:url';
++import {adaptTrips} from './sanity-trips.mjs';
++import {renderHomeTrips} from './render-home-trips.mjs';
++import {renderCatalog} from './render-catalog.mjs';
++import {renderLevelTrips} from './render-level-trips.mjs';
++import {renderTrip} from './render-trips.mjs';
++
+ const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.ttf':'font/ttf','.woff2':'font/woff2'};
+-http.createServer(async(req,res)=>{try{const url=new URL(req.url,'http://localhost');const name=decodeURIComponent(url.pathname);let file=path.resolve(root,'.'+name);if(file!==root&&!file.startsWith(root+path.sep))throw Error('Invalid path');if((await stat(file)).isDirectory())file=path.join(file,'index.html');res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-cache','X-Content-Type-Options':'nosniff'});res.end(await readFile(file));}catch{res.writeHead(404,{'Content-Type':'text/plain; charset=utf-8'});res.end('No encontrado');}}).listen(4175,'0.0.0.0',()=>console.log('Local: http://localhost:4175'));
++
++export async function readLocalPreview(file='artifacts/local-trip-preview.json') {
++  let content;
++  try { content=await readFile(file,'utf8'); }
++  catch(error) { if(error.code==='ENOENT')return null;throw error; }
++  const data=JSON.parse(content);
++  if(data.source!=='sanity-drafts-local'||!Array.isArray(data.documents))throw Error('La copia local de promociones no tiene un formato válido.');
++  return adaptTrips(data.documents);
++}
++
++export function renderPreviewPage(relative, current, trips) {
++  if(relative==='catalog-snapshot.json')return JSON.stringify({source:'sanity-local-preview',trips},null,2)+'\n';
++  if(relative==='index.html')return renderHomeTrips(current,trips);
++  if(relative==='viajes/index.html')return renderCatalog(current,trips);
++  if(relative==='niveles/index.html')return renderLevelTrips(current,trips);
++  const slug=/^viajes\/([^/]+)\/index\.html$/.exec(relative)?.[1];
++  const trip=slug&&trips.find(t=>t.slug===slug||t.aliases?.includes(slug));
++  return trip?renderTrip(trip,trips):current;
++}
++
++export function createSiteServer({root=path.resolve('dist'),previewTrips=null}={}) {
++  root=path.resolve(root);
++  return http.createServer(async(req,res)=>{
++    try {
++      const url=new URL(req.url,'http://localhost');
++      const name=decodeURIComponent(url.pathname);
++      let file=path.resolve(root,'.'+name);
++      if(file!==root&&!file.startsWith(root+path.sep))throw Error('Invalid path');
++      if((await stat(file)).isDirectory())file=path.join(file,'index.html');
++      const extension=path.extname(file);
++      let content=await readFile(file);
++      // Render against current templates on each request, without modifying release output.
++      if(previewTrips&&(extension==='.html'||path.basename(file)==='catalog-snapshot.json')) {
++        const relative=path.relative(root,file).split(path.sep).join('/');
++        content=renderPreviewPage(relative,content.toString('utf8'),previewTrips);
++      }
++      res.writeHead(200,{'Content-Type':types[extension]||'application/octet-stream','Cache-Control':'no-cache','X-Content-Type-Options':'nosniff','X-LST-Data-Source':previewTrips?'sanity-local-preview':'dist'});
++      res.end(content);
++    } catch {
++      res.writeHead(404,{'Content-Type':'text/plain; charset=utf-8'});
++      res.end('No encontrado');
++    }
++  });
++}
++
++if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
++  const args=process.argv.slice(2);
++  if(args.some(arg=>arg!=='--local-preview'))throw Error('Uso: serve.mjs [--local-preview]');
++  const previewTrips=args.includes('--local-preview')?await readLocalPreview():null;
++  createSiteServer({previewTrips}).listen(4175,previewTrips?'127.0.0.1':'0.0.0.0',()=>{
++    console.log('Local: http://localhost:4175');
++    console.log(previewTrips?'Promociones en vista local; dist y Sanity no se modifican.':'Datos de dist.');
++  });
++}
+diff --git a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/package.json b/home/amfernandez/personalProjects/letsurftogethersystem/package.json
+index ce8d420..0d2d20f 100644
+--- a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/package.json
++++ b/home/amfernandez/personalProjects/letsurftogethersystem/package.json
+@@ -4,7 +4,7 @@
+   "version": "0.1.0",
+   "type": "module",
+   "scripts": {
+-    "dev": "node scripts/serve.mjs",
++    "dev": "node scripts/serve.mjs --local-preview",
+     "preview": "node scripts/serve.mjs",
+     "check": "node scripts/check.mjs",
+     "build": "node scripts/build.mjs",
+diff --git a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/scripts/render-catalog.mjs b/home/amfernandez/personalProjects/letsurftogethersystem/scripts/render-catalog.mjs
+index 2812c5e..e0e4c46 100644
+--- a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/scripts/render-catalog.mjs
++++ b/home/amfernandez/personalProjects/letsurftogethersystem/scripts/render-catalog.mjs
+@@ -11,7 +11,7 @@ export function renderCatalog(current, trips) {
+     start: departuresFor(trip).map(d => d.start).filter(Boolean).sort()[0] || '9999',
+   })).sort((a, b) => a.start.localeCompare(b.start) || a.order - b.order).map(({trip}) => {
+     const departures = departuresFor(trip).map(d => ({start: d.start, end: d.end, levels: departureLevels(trip, d)}));
+-    return renderHomeTrip(trip, {heading: 'h2', idPrefix: 'catalog'})
++    return renderHomeTrip(trip, {heading: 'h2', idPrefix: 'catalog', compact: true})
+       .replace('<article class="home-trip', `<article data-catalog-trip data-levels="${levelsFor(trip).join(' ')}" data-departures="${escape(JSON.stringify(departures))}" class="catalog-card home-trip`)
+       .replace('class="home-trip-link"', 'class="home-trip-link catalog-card-link"');
+   }).join('\n');
+@@ -27,4 +27,4 @@ export function renderCatalog(current, trips) {
+   return current.replace(markers, `<!-- catalog:start -->\n${content}\n<!-- catalog:end -->`)
+     .replace(/<!-- catalog-dates:start -->[\s\S]*?<!-- catalog-dates:end -->/,
+       `<!-- catalog-dates:start -->${dateOptions}<!-- catalog-dates:end -->`);
+-}
++}
+diff --git a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/dist/home.css b/home/amfernandez/personalProjects/letsurftogethersystem/dist/home.css
+index 2931305..305c57c 100644
+--- a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/dist/home.css
++++ b/home/amfernandez/personalProjects/letsurftogethersystem/dist/home.css
+@@ -669,7 +669,7 @@ body.home-modern .home-trip[data-compact-home] .home-trip-media{min-height:260px
+ body.home-modern .home-trip[data-compact-home] .home-trip-media:before{height:260px;aspect-ratio:auto}
+ body.home-modern .home-trip[data-compact-home] .home-trip-photo{border-radius:17px}
+ body.home-modern .home-trip[data-compact-home] .home-trip-media:after{border-radius:0 0 17px 17px}
+-body.home-modern .home-trip[data-compact-home] :is(h3,h4){padding:0 17px 17px;font-size:46px}
++body.home-modern .home-trip[data-compact-home] :is(h2,h3,h4){padding:0 17px 17px;font-size:46px}
+ body.home-modern .home-trip[data-compact-home] .home-trip-level{top:11px;left:11px;font-size:11px;padding:9px}
+ body.home-modern .home-trip[data-compact-home] .home-trip-media:has(.home-trip-status){grid-template-rows:minmax(max(9em,calc(22em - 208px)),1fr) auto}
+ body.home-modern .home-trip[data-compact-home] .home-trip-dates>summary{inset:10px 10px auto auto}
+diff --git a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/README.md b/home/amfernandez/personalProjects/letsurftogethersystem/README.md
+index cfb810d..cdf3ffc 100644
+--- a/home/amfernandez/personalProjects/letsurftogethersystem/docs/qa/2026-10-25-local-promotions/before/README.md
++++ b/home/amfernandez/personalProjects/letsurftogethersystem/README.md
+@@ -14,7 +14,7 @@ npm run check
+ npm run dev
+ ```
+ 
+-Abrir http://localhost:4175. El servidor sirve exclusivamente dist/ con Content-Type. La home se edita en dist/index.html. Las páginas de viaje, catálogo, niveles y tarjetas de home se generan desde Sanity publicado mediante `scripts/build.mjs` con `npm run build`. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
++Abrir http://localhost:4175. `npm run dev` conserva una previsualización local de promociones si existe `artifacts/local-trip-preview.json` (copia privada de los borradores preparados). Regenera las cuatro vistas desde las plantillas actuales en cada petición y no escribe en `dist` ni en Sanity. Sin esa copia usa `dist`. `npm run preview` sirve exactamente `dist`, y `npm run build` sigue leyendo solo documentos publicados. El snapshot de desarrollo se identifica como `sanity-local-preview`; no debe usarse como fuente de publicación. El servidor entrega Content-Type y evita caché. La home se edita en dist/index.html. Las páginas de viaje, catálogo, niveles y tarjetas de home se generan desde Sanity publicado mediante `scripts/build.mjs` con `npm run build`. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
+ 
+ ## Estructura
+ 
+diff --git a/home/amfernandez/personalProjects/letsurftogethersystem/scripts/local-preview.test.mjs b/home/amfernandez/personalProjects/letsurftogethersystem/scripts/local-preview.test.mjs
+new file mode 100755
+index 0000000..5afd951
+--- /dev/null
++++ b/home/amfernandez/personalProjects/letsurftogethersystem/scripts/local-preview.test.mjs
+@@ -0,0 +1,52 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFile,mkdtemp,writeFile,rm} from 'node:fs/promises';
++import os from 'node:os';
++import path from 'node:path';
++import {once} from 'node:events';
++import {createSiteServer,readLocalPreview} from './serve.mjs';
++
++const snapshot=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8'));
++const trips=structuredClone(snapshot.trips);
++const trip=trips.find(t=>t.slug==='el-palmar');
++trip.departures[0]={...trip.departures[0],price:699,regularPrice:699,promotions:[{label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true}]};
++
++test('local offers survive navigation through home, levels, catalogue and canonical/historical details without altering dist',async()=>{
++ const files=['index.html','niveles/index.html','viajes/index.html','viajes/el-palmar/index.html','viajes/el-palmar-2026-12-04/index.html','catalog-snapshot.json'];
++ const before=await Promise.all(files.map(f=>readFile('dist/'+f,'utf8')));
++ const server=createSiteServer({previewTrips:trips});server.listen(0,'127.0.0.1');await once(server,'listening');
++ try {
++  const origin=`http://127.0.0.1:${server.address().port}`;
++  for(const route of ['/','/niveles/','/viajes/','/viajes/el-palmar/','/viajes/el-palmar-2026-12-04/']) {
++   const response=await fetch(origin+route),html=await response.text();
++   assert.equal(response.status,200,route);
++   assert.equal(response.headers.get('x-lst-data-source'),'sanity-local-preview');
++   assert.match(html,/100 € de descuento/,route);assert.match(html,/599 €/);assert.match(html,/Primeras 8 plazas/);assert([...html.matchAll(/<del>([\s\S]*?)<\/del>/g)].some(([,text])=>text.replace(/<[^>]+>/g,'').includes('699 €')));
++   if(route==='/viajes/')assert.match(html,/class="catalog-card home-trip" data-compact-home/);
++  }
++  const preview=await fetch(origin+'/catalog-snapshot.json').then(r=>r.json());
++  assert.equal(preview.source,'sanity-local-preview');
++  assert.equal((await fetch(origin+'/scripts/serve.mjs')).status,404);
++  assert.equal((await fetch(origin+'/artifacts/local-trip-preview.json')).status,404);
++ } finally {await new Promise(r=>server.close(r));}
++ assert.deepEqual(await Promise.all(files.map(f=>readFile('dist/'+f,'utf8'))),before);
++});
++
++test('published preview remains byte-for-byte dist without the explicit local-preview option',async()=>{
++ const server=createSiteServer();server.listen(0,'127.0.0.1');await once(server,'listening');
++ try {
++  const origin=`http://127.0.0.1:${server.address().port}`;
++  for(const file of ['index.html','catalog-snapshot.json'])assert.equal(await fetch(origin+'/'+file).then(r=>r.text()),await readFile('dist/'+file,'utf8'));
++ } finally {await new Promise(r=>server.close(r));}
++});
++
++test('missing local configuration falls back to dist; an invalid configuration fails visibly',async()=>{
++ const dir=await mkdtemp(path.join(os.tmpdir(),'lst-local-preview-'));
++ try {
++  const file=path.join(dir,'preview.json');assert.equal(await readLocalPreview(file),null);
++  await writeFile(file,JSON.stringify({source:'unexpected',documents:[]}));
++  await assert.rejects(readLocalPreview(file),/formato válido/);
++  await writeFile(file,JSON.stringify({source:'sanity-drafts-local',documents:[{}]}));
++  await assert.rejects(readLocalPreview(file));
++ } finally {await rm(dir,{recursive:true,force:true});}
++});

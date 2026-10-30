@@ -1,0 +1,57 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "deployed": false,
+  "files": {
+    "dist/index.html": "89d3174356d6e91cd8ee46cc06883c75205f615f4b898b38f4a736e67770a6eb",
+    "dist/home.css": "07cc2b8664865a9c0e95927ac9da99e853bc0253af3a8abecfa479be73eb3998",
+    "scripts/render-home-trips.mjs": "0914d06ca2f25cda3a4028e727e0a68c7335df3a50f5d1dc1339782458cd9f4d",
+    "scripts/home-trips.test.mjs": "43031990357ca4b6d2a3448c91c9cba640c93ae7b3458b72673c5f5d83fed21d",
+    "scripts/check-home-browser.mjs": "ebf0f17ed3373b4a4d86b135cf71898b33ccfedde8db096139fbbafc050e08b0",
+    "scripts/trip-pricing.test.mjs": "81a5fb862d038bd898e42e7786b1c629a24f1d6e855117c64dd0c503b7ca11a2",
+    "scripts/check-home-level-actions.mjs": "5bc5c1beb6ff4459f280bbdfb50298c38599c65e02557561b86b63301a1ea236"
+  },
+  "acceptance": {
+    "identity": "Aura, Work Sans, orange/cream/ink, original hero and closing preserved",
+    "hero": "Value proposition and anchor CTA added",
+    "cards": "Larger dates/levels, quieter promotions with unchanged commercial values, current currency grouped",
+    "dates": "Homepage hides redundant zero/single departure controls; catalogue and guide retain original markup",
+    "mobile": "Single column compact level cards, no forced word breaks; compact cream booking steps; 44px controls",
+    "booking": "Home describes application, review and confirmation; WhatsApp remains help",
+    "people": "Existing figure byte-identical; accompaniment explained using existing about content",
+    "photos": "Two home cards use photographs from their own galleries; shared covers unchanged",
+    "reviews": "Two verified short literal quotes with explanatory context and link to original source"
+  },
+  "validation": {
+    "unitTests": "164/164 PASS, npm test",
+    "static": "PASS, node scripts/check.mjs, 40 pages",
+    "homeBrowser": "259 PASS, 320/390/768/1024/1440, text200%, keyboard/touch/multiple/long dates/noJS",
+    "levelActions": "48/48 PASS, 320/390/768/1440, text200%, filters, guide anchors, keyboard, noJS",
+    "sharedStyles": "4 Chromium baseline/candidate comparisons PASS: 55 card elements each in catalogue and guide at 390/1440. Full computed style evidence in shared-styles.json.",
+    "desktopPriceAlignment": "All three highlighted price rows at document y=1260; final-browser.json."
+  },
+  "independentReview": {
+    "result": "No blocking defects found on final implementation hashes",
+    "evidence": "Baseline/candidate comparison of all 7 published and 7 preview cards: catalogue and guide byte-identical; Lucas figure byte-identical. Final price grouping and flex-wrap reviewed. Independent CUA and 320/text200 capture review; final Senegal visual check by implementer.",
+    "candidate": {
+      "dist/index.html": "89d3174356d6e91cd8ee46cc06883c75205f615f4b898b38f4a736e67770a6eb",
+      "dist/home.css": "07cc2b8664865a9c0e95927ac9da99e853bc0253af3a8abecfa479be73eb3998",
+      "scripts/render-home-trips.mjs": "0914d06ca2f25cda3a4028e727e0a68c7335df3a50f5d1dc1339782458cd9f4d"
+    },
+    "resolved": [
+      "Grouped current amount and currency in Senegal at 320 px.",
+      "New CSS explicitly excludes catalogue and guide; previous CSS prefix unchanged."
+    ]
+  },
+  "limitations": [
+    "Local Chromium and responsive widths; no physical device, Safari or Firefox validation.",
+    "Original company legal identity not supplied; no invented legal content or terms.",
+    "CMS, forms, prices, policies and publication not modified.",
+    "Home regenerated from existing published snapshot; local preview retains the existing draft promotions."
+  ],
+  "sources": [
+    "https://www.letsurftogether.com/",
+    "dist/conocenos/index.html",
+    "scripts/trip-sales-content.mjs"
+  ]
+}

@@ -1,0 +1,676 @@
+--- /dev/null
++++ b/scripts/trip-groups.mjs
+@@ -0,0 +1,65 @@
++// Editorial names describe the destination; dates and levels belong to departures.
++export function tripName(name) {
++  return name.replace(/\s*·\s*(?:nivel(?:es)?\s+[\dIVX,\s–—-]+|Semana Santa(?:\s+\d{4})?|Pascua(?:\s+\d{4})?)\s*$/i, '').trim();
++}
++
++const programmeFields = ['intro', 'storyTitle', 'storyLabel', 'storyIntro', 'story', 'includes', 'excludes', 'inclusionsNote', 'faqs', 'levelTitle', 'levelText', 'levelChecks', 'stay', 'team'];
++const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
++const pickProgramme = trip => Object.fromEntries(programmeFields.filter(k => trip[k] !== undefined).map(k => [k, trip[k]]));
++export const aggregateAvailability = departures => !departures.length ? 'enquiry' : departures.every(d => d.availability === 'full') ? 'full'
++  : departures.some(d => d.availability === 'available') ? 'available'
++  : departures.some(d => d.availability === 'last_places') ? 'last_places' : 'enquiry';
++
++// The existing import uses destination-YYYY-MM-DD slugs. Consolidate those
++// documents for presentation, keeping every original URL and programme intact.
++// Custom slugs and single documents with several dates keep their own identity.
++export function consolidateTrips(trips) {
++  const groups = new Map();
++  for (const trip of trips) {
++    const destination = trip.slug.replace(/-\d{4}-\d{2}-\d{2}$/, '');
++    const key = JSON.stringify([destination, trip.name]);
++    if (!groups.has(key)) groups.set(key, []);
++    groups.get(key).push(trip);
++  }
++  const result = [];
++  for (const members of groups.values()) {
++    if (members.length === 1 && !/-\d{4}-\d{2}-\d{2}$/.test(members[0].slug)) { result.push(members[0]); continue; }
++    members.sort((a, b) => (a.departures[0]?.start ?? '9999').localeCompare(b.departures[0]?.start ?? '9999'));
++    const first = members[0];
++    const slug = first.slug.replace(/-\d{4}-\d{2}-\d{2}$/, '');
++    const differing = programmeFields.filter(k => members.some(t => !same(t[k], first[k])));
++    const trip = {...first, state: members.some(t => t.state === 'confirmed') ? 'confirmed' : 'upcoming', id: slug, slug, aliases: members.map(t => t.slug).filter(alias => alias !== slug), departures: [],
++      dossier: members.length === 1 ? first.dossier : '', capacity: members.length === 1 ? first.capacity : {total: null, available: null}};
++    for (const key of differing) trip[key] = Array.isArray(first[key])
++      ? first[key].filter(value => members.every(t => t[key]?.some(v => same(value, v))))
++      : undefined;
++    if (!trip.intro) trip.intro = 'Elige tu fecha para consultar el nivel, el programa y los servicios de cada salida.';
++    if (!trip.levelText) trip.levelText = 'Consulta el nivel y los requisitos de cada fecha antes de apuntarte.';
++    if (!trip.levelTitle) trip.levelTitle = 'Tu nivel de surf.';
++    if (!trip.storyTitle) trip.storyTitle = 'El programa.';
++    if (!trip.storyLabel) trip.storyLabel = 'EL VIAJE';
++    trip.storyIntro ??= '';
++    trip.inclusionsNote ??= '';
++    for (const member of members) {
++      for (const departure of member.departures) {
++        trip.departures.push({...departure,
++          ...(departure.levels || same(member.levels, first.levels) ? {} : {levels: member.levels}),
++          levelRequirement: departure.levelRequirement ?? member.levelRequirement,
++          dossier: departure.dossier || member.dossier,
++          availability: departure.availability ?? member.availability,
++          capacity: departure.capacity ?? member.capacity,
++          payment: member.payment,
++          ...(differing.length ? {programme: pickProgramme(member)} : {}),
++        });
++      }
++    }
++    if (new Set(trip.departures.map(d => d.id)).size !== trip.departures.length) throw Error('Claves de salida duplicadas al unificar viajes');
++    trip.departures.sort((a, b) => a.start.localeCompare(b.start));
++    trip.availability = aggregateAvailability(trip.departures);
++    if (!members.every(t => same(t.payment, first.payment))) trip.payment = {depositAmount: null, terms: ''};
++    result.push(trip);
++  }
++  const routes = result.flatMap(t => [t.slug, ...(t.aliases ?? [])]);
++  if (new Set(routes).size !== routes.length) throw Error('Colisión de rutas al unificar viajes');
++  return result;
++}
+--- /dev/null
++++ b/scripts/trip-groups.test.mjs
+@@ -0,0 +1,182 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {readFile, mkdtemp, rm} from 'node:fs/promises';
++import os from 'node:os';
++import path from 'node:path';
++import {prepareDrafts} from './import-departures.mjs';
++import {adaptTrip, adaptTrips} from './sanity-trips.mjs';
++import {tripName} from './trip-groups.mjs';
++import {levelsFor, departureLevels, departureLevelLabel, levelLabel, departureMessage, tripFacts} from './trip-model.mjs';
++import {renderTrip} from './render-trips.mjs';
++import {renderCatalog} from './render-catalog.mjs';
++import {renderHomeTrips} from './render-home-trips.mjs';
++import {renderLevelTrips} from './render-level-trips.mjs';
++import {buildSite} from './build.mjs';
++
++const inventory=JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json','utf8'));
++const documents=()=>prepareDrafts(inventory).map(d=>({...d,_id:d._id.slice(7),availability:'available',
++ dossier:'https://example.com/'+d.slug.current+'.pdf',
++ departures:d.departures.map(x=>({...x,price:899}))}));
++const find=(docs,slug)=>docs.find(d=>d.slug.current===slug);
++const morocco=['marruecos-2027-01-17','marruecos-2027-01-24'];
++const maldives=['maldivas-2027-03-21','maldivas-2027-03-28'];
++
++test('editorial destination names exclude levels and seasonal date labels',()=>{
++ for(const name of ['Marruecos · nivel 1–2','Marruecos · nivel 3','Marruecos · niveles II–III'])assert.equal(tripName(name),'Marruecos');
++ for(const name of ['Maldivas · Semana Santa','Maldivas · Pascua'])assert.equal(tripName(name),'Maldivas');
++ assert.equal(tripName('El Palmar'),'El Palmar');
++ assert.equal(tripName('Costa · Ruta norte'),'Costa · Ruta norte');
++});
++
++test('six destinations consolidate eight documents without changing the source or losing date PDFs',()=>{
++ const docs=documents(),before=structuredClone(docs);
++ const trips=adaptTrips(docs);
++ assert.equal(trips.length,6);
++ assert.deepEqual(docs,before);
++ assert.deepEqual(trips.map(t=>t.name).sort(),['El Palmar','Fuerteventura','Hossegor','Maldivas','Marruecos','Senegal']);
++ const trip=trips.find(t=>t.slug==='maldivas');
++ assert.deepEqual(trip.aliases,maldives);
++ assert.equal(trip.departures.length,2);
++ assert.deepEqual(trip.departures.map(d=>d.dossier),maldives.map(slug=>'https://example.com/'+slug+'.pdf'));
++ assert.deepEqual(trip.departures.map(d=>departureLevels(trip,d)),[[2,3],[2,3]]);
++ assert.equal(trip.capacity.total,null);
++ assert(trip.departures.every(d=>d.capacity.total===10));
++ const html=renderTrip(trip,trips);
++ for(const d of trip.departures){assert(html.includes(d.dossier));assert(html.includes(d.date));assert(html.includes(encodeURIComponent(departureMessage(trip,d))));}
++ assert(!html.includes('departure-programmes-title'));
++});
++
++test('Morocco defaults to I-II and its later date overrides to III, retaining distinct programmes',()=>{
++ const docs=documents(),trip=adaptTrips(docs).find(t=>t.slug==='marruecos');
++ assert.deepEqual(trip.levels,[1,2]);
++ assert.equal(trip.departures[0].levels,undefined);
++ assert.deepEqual(trip.departures[1].levels,[3]);
++ assert.deepEqual(levelsFor(trip),[1,2,3]);
++ assert.equal(levelLabel(trip),'Nivel según la fecha');
++ assert.equal(departureLevelLabel(trip,trip.departures[0]),'Niveles I–II');
++ assert.equal(departureLevelLabel(trip,trip.departures[1]),'Nivel III');
++ assert(!trip.includes.includes('Material de iniciación y neoprenos'));
++ for(let i=0;i<2;i++){
++  const source=adaptTrip(find(docs,morocco[i]));
++  assert.deepEqual(trip.departures[i].programme.includes,source.includes);
++  assert.deepEqual(trip.departures[i].programme.excludes,source.excludes);
++  assert.deepEqual(trip.departures[i].programme.story,source.story);
++  assert.equal(trip.departures[i].dossier,source.dossier);
++ }
++ const html=renderTrip(trip);
++ assert.match(html,/<h1 id="trip-title">Marruecos<\/h1>/);
++ const second=html.split('id="programa-'+morocco[1]+'"')[1].split('</div></details>')[0];
++ assert(second.includes('Surf coaching intensivo con Lucas'));
++ assert(!second.includes('Material de iniciación y neoprenos'));
++ assert(second.includes('Tabla propia o alquiler'));
++ assert.match(departureMessage(trip,trip.departures[1]),/Nivel III/);
++ assert.equal(tripFacts(trip)[2][1],'Nivel según la fecha');
++});
++
++test('level overrides inherit when absent or cleared, and replace rather than widen the default',()=>{
++ const doc=documents()[0];
++ doc.slug.current='test-trip';doc.levels=[1,2];
++ doc.departures.push({...doc.departures[0],_key:'second',levels:[3],levelRequirement:'Autonomía',dossier:'https://example.com/second.pdf'});
++ let trip=adaptTrip(doc);
++ assert.deepEqual(departureLevels(trip,trip.departures[0]),[1,2]);
++ assert.deepEqual(departureLevels(trip,trip.departures[1]),[3]);
++ assert.deepEqual(levelsFor(trip),[1,2,3]);
++ assert.equal(trip.departures[1].levelRequirement,'Autonomía');
++ assert.equal(trip.departures[1].dossier,'https://example.com/second.pdf');
++ doc.departures[0].levels=[3];trip=adaptTrip(doc);
++ assert.deepEqual(levelsFor(trip),[3]); // Default levels do not match a date overridden to III.
++ doc.departures[1].levels=[];trip=adaptTrip(doc);
++ assert.deepEqual(departureLevels(trip,trip.departures[1]),[1,2]);
++ for(const levels of [[0],[5],[2,2],'3']){
++  doc.departures[1].levels=levels;
++  assert.throws(()=>adaptTrip(doc),/Niveles inválidos/);
++ }
++ doc.departures[1].levels=[3];doc.departures[1].dossier='javascript:alert(1)';
++ assert.throws(()=>adaptTrip(doc),/HTTPS/);
++});
++
++test('home, catalogue and guide render one Morocco with dates linked to effective levels',()=>{
++ const trip=adaptTrips(documents()).find(t=>t.slug==='marruecos');
++ for(const html of [
++  renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->',[trip]),
++  renderCatalog('<!-- catalog:start --><!-- catalog:end -->',[trip]),
++  renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->',[trip]),
++ ]){
++  for(const d of trip.departures){assert(html.includes(d.date));assert(html.includes(departureLevelLabel(trip,d)));}
++  assert(html.includes('Nivel según la fecha'));
++  assert(!/<h[1-4][^>]*>Marruecos · nivel/i.test(html));
++ }
++ const catalog=renderCatalog('<!-- catalog:start --><!-- catalog:end -->',[trip]);
++ assert.equal((catalog.match(/data-catalog-trip/g)||[]).length,1);
++ assert(catalog.includes('data-levels="1 2 3"'));
++});
++
++test('grouped departure status and capacity stay separate, including full versus available',()=>{
++ const docs=documents().filter(d=>maldives.includes(d.slug.current));
++ docs[0].availability='full';docs[1].availability='available';
++ let trip=adaptTrips(docs)[0],html=renderTrip(trip);
++ assert.equal(trip.availability,'available');
++ assert(html.includes('Consultar alternativas'));
++ assert(html.includes('Completo'));
++ assert(html.includes('Plazas disponibles'));
++ assert.deepEqual(trip.departures.map(d=>d.availability),['full','available']);
++ docs[1].availability='full';trip=adaptTrips(docs)[0];html=renderTrip(trip);
++ assert.equal(trip.availability,'full');
++ assert(!html.includes('data-open-dates'));
++ for(const d of trip.departures)assert(html.includes(d.dossier));
++});
++
++test('canonical and old date URLs survive consolidation and withdrawal without stale content',async()=>{
++ const dir=await mkdtemp(path.join(os.tmpdir(),'lst-unified-'));
++ const docs=documents().filter(d=>maldives.includes(d.slug.current));
++ const out=path.join(dir,'site');
++ try{
++  await buildSite({out,read:async()=>docs});
++  const canonical=await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8');
++  for(const slug of maldives)assert.equal(await readFile(path.join(out,'viajes',slug,'index.html'),'utf8'),canonical);
++  await buildSite({out,template:out,read:async()=>[docs[0]]});
++  assert.match(await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8'),/Maldivas/);
++  assert.match(await readFile(path.join(out,'viajes',maldives[1],'index.html'),'utf8'),/no está publicado/);
++  await buildSite({out,template:out,read:async()=>[]});
++  assert.match(await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8'),/no está publicado/);
++ }finally{await rm(dir,{recursive:true,force:true});}
++});
++
++test('a single CMS document inherits its default PDF per date and an available override reopens the selector',()=>{
++ const doc=documents()[0];
++ doc.slug.current='native-trip';doc.availability='full';
++ doc.departures.push({...doc.departures[0],_key:'second',dossier:'https://example.com/special.pdf'});
++ doc.departures[0].availability='available';
++ const trip=adaptTrips([doc])[0],html=renderTrip(trip);
++ assert.equal(trip.availability,'available');
++ assert(html.includes('id="departure-dialog"'));
++ const first=html.split('class="departure-option"')[1].split('</article>')[0];
++ const second=html.split('class="departure-option"')[2].split('</article>')[0];
++ assert(first.includes(doc.dossier));
++ assert(first.includes('Plazas disponibles'));
++ assert(second.includes('https://example.com/special.pdf'));
++ assert(second.includes('Completo'));
++});
++
++test('pending destinations never become full and mixed state dates share one stable route',()=>{
++ const docs=documents().filter(d=>morocco.includes(d.slug.current));
++ docs[1].state='upcoming';docs[1].departures=[];docs[1].availability='enquiry';
++ const pending=adaptTrips([docs[1]])[0];
++ assert.equal(pending.state,'upcoming');
++ assert.equal(pending.availability,'enquiry');
++ assert.equal(pending.departures.length,0);
++ const trip=adaptTrips(docs)[0];
++ assert.equal(adaptTrips(docs).length,1);
++ assert.equal(trip.state,'confirmed');
++ assert.equal(trip.slug,'marruecos');
++ assert.equal(trip.departures.length,1);
++ assert.equal(trip.availability,'available');
++ assert(trip.aliases.includes(morocco[1]));
++});
++
++test('clearing a date autonomy requirement restores the trip default',()=>{
++ const doc=documents()[0];doc.departures[0].levelRequirement='';
++ const trip=adaptTrip(doc);
++ assert.equal(trip.departures[0].levelRequirement,undefined);
++ assert(renderTrip(trip).includes(doc.levelRequirement));
++});
+--- a/scripts/sanity-trips.mjs
++++ b/scripts/sanity-trips.mjs
+@@ -1,3 +1,5 @@
++import {tripName, consolidateTrips, aggregateAvailability} from './trip-groups.mjs';
++
+ const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+ const optional = value => value == null || value === '';
+ const text = (value, field, required = false) => {
+@@ -39,6 +41,22 @@
+   return `${fmt.format(new Date(d.start))} — ${fmt.format(new Date(d.end))}`;
+ }
+ 
++function validateLevels(value, slug) {
++  if (Array.isArray(value) && !value.length) return undefined;
++  if (!Array.isArray(value) || !value.length || new Set(value).size !== value.length || value.some(v => !Number.isInteger(v) || v < 1 || v > 4)) throw Error(`Niveles inválidos: ${slug}`);
++  return value;
++}
++function validateAvailability(value, slug) {
++  if (!['available', 'last_places', 'full', 'enquiry'].includes(value)) throw Error(`Disponibilidad inválida: ${slug}`);
++  return value;
++}
++function validateCapacity(value, slug) {
++  const capacity = {total: value.total ?? null, available: value.available ?? null};
++  for (const key of ['total', 'available']) if (capacity[key] != null && (!Number.isInteger(capacity[key]) || capacity[key] < (key === 'total' ? 1 : 0))) throw Error(`Capacidad inválida: ${slug}`);
++  if (capacity.available != null && capacity.total != null && capacity.available > capacity.total) throw Error(`Disponibilidad superior a capacidad: ${slug}`);
++  return capacity;
++}
++
+ export function adaptTrip(doc) {
+   if (doc._type !== 'trip' || !doc._id || /^(drafts|versions)\./.test(doc._id)) throw Error('Documento no publicado');
+   const slug = doc.slug?.current;
+@@ -46,23 +64,30 @@
+   if (!['confirmed', 'upcoming'].includes(doc.state)) throw Error(`Estado inválido: ${slug}`);
+   if (!Array.isArray(doc.levels) || !doc.levels.length || new Set(doc.levels).size !== doc.levels.length || doc.levels.some(v => !Number.isInteger(v) || v < 1 || v > 4)) throw Error(`Niveles inválidos: ${slug}`);
+   if (doc.availability != null && !['available', 'last_places', 'full', 'enquiry'].includes(doc.availability)) throw Error(`Disponibilidad inválida: ${slug}`);
++  const name = tripName(text(doc.name, 'name', true));
+   const keys = new Set();
+   const departures = list(doc.departures, 'departures').map(d => {
+     if (!/^[A-Za-z0-9_-]+$/.test(d._key ?? '') || keys.has(d._key)) throw Error(`Clave de salida inválida: ${slug}`);
+     keys.add(d._key);
+     return {id: d._key, date: dates(d), start: d.start, end: d.end, duration: text(d.duration, 'duration') || 'Por confirmar',
+-      price: positive(d.price, 'price'), state: doc.state, ...(d.message ? {message: text(d.message, 'message')} : {})};
++      price: positive(d.price, 'price'), state: doc.state,
++      ...(d.levels != null ? {levels: validateLevels(d.levels, slug)} : {}),
++      ...(d.levelRequirement ? {levelRequirement: text(d.levelRequirement, 'departure.levelRequirement')} : {}),
++      ...(d.dossier ? {dossier: httpsUrl(d.dossier, 'departure.dossier')} : {}),
++      ...(d.availability != null ? {availability: validateAvailability(d.availability, slug)} : {}),
++      ...(d.capacity ? {capacity: validateCapacity(d.capacity, slug)} : {}),
++      ...(d.message ? {message: text(d.message, 'message')} : {})};
+   });
+   if (doc.state === 'confirmed' && !departures.length) throw Error(`Faltan fechas: ${slug}`);
+   const capacity = {total: doc.capacity?.total ?? null, available: doc.capacity?.available ?? null};
+   for (const key of ['total', 'available']) if (capacity[key] != null && (!Number.isInteger(capacity[key]) || capacity[key] < (key === 'total' ? 1 : 0))) throw Error(`Capacidad inválida: ${slug}`);
+   if (capacity.available != null && capacity.total != null && capacity.available > capacity.total) throw Error(`Disponibilidad superior a capacidad: ${slug}`);
+   const depositAmount = positive(doc.payment?.depositAmount, 'depositAmount');
+-  const result = {id: slug, slug, name: text(doc.name, 'name', true), place: text(doc.place, 'place'), state: doc.state,
++  const result = {id: slug, slug, name, place: text(doc.place, 'place'), state: doc.state,
+     availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : doc.capacity?.available > 0 ? 'available' : 'enquiry'),
+     levels: doc.levels, levelRequirement: text(doc.levelRequirement, 'levelRequirement'), departures,
+     hero: image(doc.hero, 'hero'), heroAlt: text(doc.hero?.alt, 'hero.alt'), heroPosition: '50% 50%',
+-    tagline: text(doc.tagline, 'tagline') || doc.name, intro: text(doc.intro, 'intro'),
++    tagline: !doc.tagline || doc.tagline === doc.name ? name : text(doc.tagline, 'tagline'), intro: text(doc.intro, 'intro'),
+     notice: text(doc.notice, 'notice') || 'Consulta la disponibilidad con el equipo.',
+     priceNote: text(doc.priceNote, 'priceNote'),
+     storyTitle: text(doc.storyTitle, 'storyTitle') || 'El programa.', storyLabel: text(doc.storyLabel, 'storyLabel') || 'EL VIAJE',
+@@ -73,8 +98,12 @@
+     inclusionsNote: text(doc.inclusionsNote, 'inclusionsNote'), faqs: pairs(doc.faqs, 'question', 'answer', 'faqs'),
+     dossier: httpsUrl(doc.dossier, 'dossier'),
+     payment: {depositAmount, terms: text(doc.payment?.terms, 'payment.terms')}, capacity,
+-    message: `¡Hola, LST! Me interesa ${doc.name}. ¿Podemos consultar las próximas salidas?`, cms: true,
++    message: `¡Hola, LST! Me interesa ${name}. ¿Podemos consultar las próximas salidas?`, cms: true,
+   };
++  if (departures.some(d => d.availability != null)) {
++    for (const d of departures) d.availability ??= result.availability;
++    result.availability = aggregateAvailability(departures);
++  }
+   if (doc.stay) result.stay = {title: text(doc.stay.title, 'stay.title'), name: text(doc.stay.name, 'stay.name'), text: text(doc.stay.text, 'stay.text'), note: text(doc.stay.note, 'stay.note'), image: image(doc.stay.image, 'stay.image'), alt: text(doc.stay.image?.alt, 'stay.alt')};
+   if (doc.team) result.team = {title: text(doc.team.title, 'team.title'), text: text(doc.team.text, 'team.text')};
+   return result;
+@@ -83,5 +112,5 @@
+ export function adaptTrips(documents) {
+   const trips = documents.map(adaptTrip);
+   if (new Set(trips.map(t => t.slug)).size !== trips.length) throw Error('Slugs duplicados en Sanity');
+-  return trips;
++  return consolidateTrips(trips);
+ }
+--- a/scripts/trip-model.mjs
++++ b/scripts/trip-model.mjs
+@@ -1,7 +1,7 @@
+ const ALL_LEVELS = Object.freeze([1, 2, 3, 4]);
+ const ROMAN = ['I', 'II', 'III', 'IV'];
+ 
+-export function levelsFor(trip) {
++function configuredLevels(trip) {
+   const configured = trip.levels ?? ALL_LEVELS;
+   if (!Array.isArray(configured)) throw new Error(`Invalid levels: ${trip.id}`);
+   if (!configured.length) return [...ALL_LEVELS];
+@@ -11,15 +11,25 @@
+   return [...new Set(configured)].sort((a, b) => a - b);
+ }
+ 
+-export function levelLabel(trip) {
+-  const levels = levelsFor(trip);
++export const departureLevels = (trip, departure) => configuredLevels({id: trip.id, levels: departure.levels?.length ? departure.levels : trip.levels});
++export const departureRequirement = (trip, departure) => departure.levelRequirement || trip.levelRequirement || '';
++export const hasDepartureLevels = trip => (trip.departures ?? []).some(d => d.levels != null && JSON.stringify(departureLevels(trip, d)) !== JSON.stringify(configuredLevels(trip)));
++
++export function levelsFor(trip) {
++  if (!trip.departures?.length) return configuredLevels(trip);
++  return [...new Set(trip.departures.flatMap(d => departureLevels(trip, d)))].sort((a, b) => a - b);
++}
++
++const labelFor = levels => {
+   if (levels.length === 4) return 'Todos los niveles';
+   const consecutive = levels.every((level, i) => !i || level === levels[i - 1] + 1);
+   const label = consecutive && levels.length > 1
+     ? `${ROMAN[levels[0] - 1]}–${ROMAN[levels.at(-1) - 1]}`
+     : levels.map(level => ROMAN[level - 1]).join(', ');
+   return `${levels.length === 1 ? 'Nivel' : 'Niveles'} ${label}`;
+-}
++};
++export const departureLevelLabel = (trip, departure) => labelFor(departureLevels(trip, departure));
++export const levelLabel = trip => hasDepartureLevels(trip) ? 'Nivel según la fecha' : labelFor(levelsFor(trip));
+ 
+ export function departuresFor(trip) {
+   const source = trip.departures ?? [];
+@@ -35,6 +45,9 @@
+       duration: departure.duration ?? 'Por confirmar',
+       price: departure.price ?? null,
+       state: departure.state ?? trip.state,
++      dossier: departure.dossier || trip.dossier || '',
++      availability: departure.availability ?? trip.availability,
++      capacity: departure.capacity ?? trip.capacity,
+     };
+     if (result.price !== null && (!Number.isFinite(result.price) || result.price <= 0)) {
+       throw new Error(`Invalid departure price: ${trip.id}/${departure.id}`);
+@@ -47,7 +60,8 @@
+ }
+ 
+ export function departureMessage(trip, departure) {
+-  return departure.message ?? `¡Hola, LST! Me interesa el viaje a ${trip.name} del ${departure.date}. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?`;
++  if ((departure.availability ?? trip.availability) === 'full') return `¡Hola, LST! Veo que la salida a ${trip.name} del ${departure.date} está completa. Quiero consultar otras opciones.`;
++  return departure.message ?? `¡Hola, LST! Me interesa el viaje a ${trip.name} del ${departure.date}${hasDepartureLevels(trip) ? ` (${departureLevelLabel(trip, departure)})` : ''}. ¿Podemos consultar la disponibilidad y cómo reservar esta salida?`;
+ }
+ 
+ export function tripMessage(trip) {
+@@ -64,7 +78,7 @@
+       : departures[0]?.date ?? 'Por anunciar'],
+     ['Duración', durations.length === 1
+       ? durations[0] : departures.length ? 'Según la salida' : 'Por confirmar'],
+-    ['Nivel de surf', `${levelLabel(trip)}${trip.levelRequirement ? ` · ${trip.levelRequirement}` : ''}`],
++    ['Nivel de surf', `${levelLabel(trip)}${trip.levelRequirement && !hasDepartureLevels(trip) ? ` · ${trip.levelRequirement}` : ''}`],
+   ];
+ }
+ 
+--- a/scripts/render-trips.mjs
++++ b/scripts/render-trips.mjs
+@@ -1,4 +1,4 @@
+-import {levelLabel, departuresFor, departureMessage, tripMessage, tripFacts, tripPrice, formatPrice, isFull, availabilityLabel} from './trip-model.mjs';
++import {levelLabel, departuresFor, departureMessage, tripMessage, tripFacts, tripPrice, formatPrice, isFull, availabilityLabel, hasDepartureLevels, departureLevelLabel, departureRequirement} from './trip-model.mjs';
+ 
+ // Reuse literal services from this programme; do not infer names or transfer staff between trips.
+ export function accompanimentItems(trip) {
+@@ -17,13 +17,32 @@
+ const status=trip=>availabilityLabel(trip).toLocaleUpperCase('es');
+ const price=tripPrice;
+ const summaryPrice=trip=>departuresFor(trip).some(d=>d.price!==null)?trip.priceNote:'Precio y programa por confirmar';
+-const dossier=trip=>trip.dossier?`<a class="dossier-link" href="${escape(trip.dossier)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier <span class="dossier-format">PDF</span></a>`:'';
++const dossier=trip=>{
++ const departures=departuresFor(trip);
++ const dated=departures.filter(d=>d.dossier);
++ if(dated.length && (departures.length>1 || !trip.dossier)) return dated.map(d=>`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`).join('');
++ return trip.dossier?`<a class="dossier-link" href="${escape(trip.dossier)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier <span class="dossier-format">PDF</span></a>`:'';
++};
+ const bookingAction=(trip,label,classes)=>isFull(trip)?contact(trip,'Consultar viaje completo',classes,`¡Hola, LST! Veo que ${trip.name} está completo. Quiero consultar otras opciones con el equipo.`):departuresFor(trip).length>1?`<button type="button" class="${classes}" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Elegir fecha ${arrow()}</button>`:contact(trip,label,classes);
+ function dateDialog(trip){
+  const departures=departuresFor(trip);
+  if(departures.length<2)return '';
+- const options=departures.map(d=>`<article class="departure-option"><div class="departure-option-top"><p class="departure-option-status">Salida confirmada</p><h3>${escape(d.date)}</h3><p class="departure-option-meta">${escape(d.duration)} · ${escape(levelLabel(trip))}</p></div><div class="departure-option-booking"><p class="departure-option-price"><strong>${d.price!==null?formatPrice(d.price):'Consultar precio'}</strong>${d.price!==null?'<span>por persona</span>':''}</p>${`<a class="button departure-enquiry" data-whatsapp="${trip.id}" href="${wa(trip,departureMessage(trip,d))}" data-departure="${escape(d.id)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar ${escape(trip.name)}, ${escape(d.date)}, por WhatsApp">Consultar ${arrow()}</a>`}</div></article>`).join('');
+- return `<dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">${escape(trip.name)} / SURFTRIP</p><h2 id="departure-dialog-title">Elige tu fecha.</h2></div><button class="departure-close" type="button">Cerrar</button></div><p id="departure-dialog-description" class="departure-dialog-intro">Consulta la salida que te encaje.</p><div class="departure-dialog-list">${options}</div><p class="departure-dialog-help">Hablamos por WhatsApp y resolvemos tus dudas antes de reservar.</p></dialog>`;
++ const options=departures.map(d=>{
++  const availability=d.availability?availabilityLabel(d):availabilityLabel(trip);
++  const full=d.availability?isFull(d):isFull(trip);
++  return `<article class="departure-option"><div class="departure-option-top"><p class="departure-option-status">${escape(availability)}</p><h3>${escape(d.date)}</h3><p class="departure-option-meta">${escape(d.duration)} · ${escape(departureLevelLabel(trip,d))}</p>${d.levels?`<p class="departure-level-override">Nivel específico de esta fecha</p>`:''}${departureRequirement(trip,d)?`<p class="departure-option-meta">${escape(departureRequirement(trip,d))}</p>`:''}${d.capacity?.total!=null?`<p class="departure-option-meta">Capacidad: ${d.capacity.total} personas</p>`:''}${d.programme?`<a class="text-link" data-view-programme href="#programa-${escape(d.id)}">Ver programa de esta fecha</a>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div><div class="departure-option-booking"><p class="departure-option-price"><strong>${d.price!==null?formatPrice(d.price):'Consultar precio'}</strong>${d.price!==null?'<span>por persona</span>':''}</p>${d.payment?.depositAmount!=null?`<p class="departure-option-meta">Señal: ${formatPrice(d.payment.depositAmount)}</p>`:''}<a class="button departure-enquiry" data-whatsapp="${trip.id}" href="${wa(trip,departureMessage(trip,d))}" data-departure="${escape(d.id)}" target="_blank" rel="noopener noreferrer" aria-label="Consultar ${escape(trip.name)}, ${escape(d.date)}, ${escape(departureLevelLabel(trip,d))}, por WhatsApp">${full?'Consultar alternativas':'Consultar'} ${arrow()}</a></div></article>`;
++ }).join('');
++ return `<dialog class="departure-dialog" id="departure-dialog" aria-labelledby="departure-dialog-title" aria-describedby="departure-dialog-description"><div class="departure-dialog-heading"><div><p class="eyebrow">${escape(trip.name)} / SURFTRIP</p><h2 id="departure-dialog-title">Elige tu fecha.</h2></div><button class="departure-close" type="button">Cerrar</button></div><p id="departure-dialog-description" class="departure-dialog-intro">${hasDepartureLevels(trip)?'Cada fecha tiene su nivel. Revisa sus requisitos y su programa.':'Consulta la salida que te encaje.'}</p><div class="departure-dialog-list">${options}</div><p class="departure-dialog-help">Hablamos por WhatsApp y resolvemos tus dudas antes de reservar.</p></dialog>`;
++}
++
++function departureProgrammes(trip) {
++ const departures=departuresFor(trip).filter(d=>d.programme);
++ if(!departures.length)return '';
++ const list=items=>items?.length?`<ul>${items.map(item=>`<li>${escape(item)}</li>`).join('')}</ul>`:'';
++ return `<section class="trip-block departure-programmes" aria-labelledby="departure-programmes-title"><p class="eyebrow">CADA FECHA, SU PROGRAMA</p><h2 id="departure-programmes-title">Elige la salida que encaja contigo.</h2><p>Consulta el nivel, las sesiones y el material de cada fecha.</p>${departures.map(d=>{
++ const p=d.programme;
++ return `<details class="departure-programme" id="programa-${escape(d.id)}"><summary><span>${escape(d.date)}</span><span>${escape(departureLevelLabel(trip,d))}</span></summary><div class="departure-programme-copy"><p>${escape(departureRequirement(trip,d))}</p>${list(p.levelChecks)}${p.levelText && p.levelText!==departureRequirement(trip,d)?`<p>${escape(p.levelText)}</p>`:''}${p.intro?`<p>${escape(p.intro)}</p>`:''}${p.storyIntro?`<p>${escape(p.storyIntro)}</p>`:''}${(p.story??[]).map(([title,copy])=>`<h3>${escape(title)}</h3><p>${escape(copy)}</p>`).join('')}${p.includes?.length?`<h3>Incluido en esta fecha</h3>${list(p.includes)}`:''}${p.excludes?.length?`<h3>No incluido en esta fecha</h3>${list(p.excludes)}`:''}${p.inclusionsNote?`<p class="fine-print">${escape(p.inclusionsNote)}</p>`:''}${p.stay?`<h3>${escape(p.stay.title)}</h3><p>${escape(p.stay.name)}</p><p>${escape(p.stay.text)}</p><p class="fine-print">${escape(p.stay.note)}</p>`:''}${p.team?`<h3>${escape(p.team.title)}</h3><p>${escape(p.team.text)}</p>`:''}${p.faqs?.length?`<h3>Dudas de esta salida</h3>${p.faqs.map(([q,a])=>`<details><summary>${escape(q)}</summary><p>${escape(a)}</p></details>`).join('')}`:''}${d.capacity?.total!=null?`<p class="fine-print">Capacidad de esta salida: ${d.capacity.total} personas.</p>`:''}${d.payment?.terms?`<p class="fine-print">${escape(d.payment.terms)}</p>`:''}${d.dossier?`<a class="dossier-link" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer">Descargar dossier · ${escape(d.date)} <span class="dossier-format">PDF</span></a>`:''}</div></details>`;
++ }).join('')}</section>`;
+ }
+ 
+ export function renderTrip(trip, trips = []){
+@@ -37,7 +56,7 @@
+ const accompaniment=accompanimentItems(trip);
+ const description=real?`Surftrip a ${trip.name}. ${multiple?`${departures.length} fechas${isFull(trip)?' · Completo':' disponibles'}`:firstDeparture?.date??'Consulta las fechas'}. ${levelLabel(trip)}. Consulta tu plaza con LST por WhatsApp.`:`Conoce los viajes de surf de LST a ${trip.name}. ${levelLabel(trip)}. Próximas fechas y programa por anunciar. Consulta el destino por WhatsApp.`;
+ const allFacts=facts(trip);
+-const mobileOptions=trip.dossier?`<div class="mobile-booking-options">${dossier(trip)}</div>`:"";
++const mobileOptions=(trip.dossier||departures.some(d=>d.dossier))?`<div class="mobile-booking-options">${dossier(trip)}</div>`:"";
+ const commercial=`<dl class="trip-facts">${trip.payment?.depositAmount!=null?`<div><dt>Señal</dt><dd>${formatPrice(trip.payment.depositAmount)}</dd></div>`:''}${trip.capacity?.total!=null?`<div><dt>Capacidad total</dt><dd>${trip.capacity.total} personas</dd></div>`:''}<div><dt>Disponibilidad</dt><dd>${escape(availabilityLabel(trip))}</dd></div></dl>${trip.payment?.terms?`<p class="fine-print">${escape(trip.payment.terms)}</p>`:''}<p class="fine-print">Solicitar plaza inicia una consulta; la confirmación se acuerda con el equipo.</p>`;
+ const photoSlides=trip.gallery.map(([img,alt,caption],i)=>`<figure class="photo-slide" aria-label="Foto ${i+1} de ${trip.gallery.length}"><img src="${escape(img)}" alt="${escape(alt)}" width="1000" height="600" loading="lazy" decoding="async"><figcaption>${escape(caption)}</figcaption></figure>`).join("\n");
+ const gallery=trip.gallery.map(([img,alt,caption],i)=>`<figure><button class="gallery-photo" type="button" data-photo="${i}" aria-label="Ampliar foto ${i+1}: ${escape(alt)}"><img src="${escape(img)}" alt="${escape(alt)}" width="1000" height="600" loading="lazy" decoding="async"><span aria-hidden="true">+</span></button><figcaption>${escape(caption)}</figcaption></figure>`).join('\n');
+@@ -55,9 +74,10 @@
+  <div class="trip-layout">
+   <article class="trip-content">
+    <section class="trip-summary" aria-labelledby="trip-summary-title"><p class="eyebrow">LET’S SURF TOGETHER / SURFTRIP</p><h2 id="trip-summary-title">${escape(trip.tagline)}</h2><p>${escape(trip.intro)}</p><dl class="trip-facts">${allFacts.map(([k,v])=>`<div><dt>${escape(k)}</dt><dd>${escape(v)}</dd></div>`).join('')}</dl><p class="trip-notice">${escape(isFull(trip)?'Esta salida está completa. Consulta otras opciones con el equipo.':trip.notice)}</p>${commercial}${isFull(trip)&&multiple?`<dl class="trip-facts">${departures.map(d=>`<div><dt>${escape(d.date)}</dt><dd>${escape(d.duration)} · ${d.price!==null?formatPrice(d.price):'Consultar precio'} · Completo</dd></div>`).join('')}</dl>`:''}${mobileOptions}</section>
++   ${departureProgrammes(trip)}
+    ${trip.story.length||trip.storyIntro?`<section id="plan" class="trip-block"><p class="eyebrow">${escape(trip.storyLabel)}</p><h2>${escape(trip.storyTitle)}</h2><p>${escape(trip.storyIntro)}</p><div class="plan-list">${story}</div></section>`:""}
+    ${trip.gallery.length?`<section class="trip-block trip-gallery" aria-labelledby="photos-title"><div class="gallery-heading"><div><p class="eyebrow">FOTOS DE LST</p><h2 id="photos-title">Un vistazo a ${escape(trip.name)}.</h2></div><span class="gallery-hint">Desliza y toca para ampliar</span></div><div class="gallery-track" aria-label="Fotos del destino">${gallery}</div></section>`:""}
+-   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>${escape(trip.levelTitle)}</h2><p>${escape(trip.levelText)}</p>${trip.levelChecks?`<ul>${trip.levelChecks.map(s=>`<li>${escape(s)}</li>`).join('')}</ul>`:''}<a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</section>
++   <section id="nivel" class="trip-block trip-level"><p class="eyebrow">ANTES DE APUNTARTE</p><h2>${escape(trip.levelTitle)}</h2><p>${escape(trip.levelText)}</p>${hasDepartureLevels(trip)?`<ul class="departure-level-list">${departures.map(d=>`<li><strong>${escape(d.date)} · ${escape(departureLevelLabel(trip,d))}</strong><span>${escape(departureRequirement(trip,d))}</span></li>`).join('')}</ul>`:''}${trip.levelChecks?`<ul>${trip.levelChecks.map(s=>`<li>${escape(s)}</li>`).join('')}</ul>`:''}<a class="text-link" href="/niveles/">Ver la guía de niveles</a>${contact(trip,'Consultar mi nivel','button button-level',`¡Hola, LST! Me interesa ${trip.name}, pero quiero consultar si mi nivel de surf encaja. ¿Podéis orientarme?`)}</section>
+    ${stay}${inclusions}
+    <section class="trip-block trip-team"><p class="eyebrow">VIAJAR CON LST</p><h2>${escape(team?.title??'Quién te acompañará.')}</h2><p>${escape(team?.text??(real?'Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones de esta salida.':`El próximo programa de ${trip.name} está pendiente. Consulta con LST quién acompañará al grupo y cómo se organizarán las sesiones antes de decidirte.`))}</p>${accompaniment.length ? `<p class="trip-team-programme">El programa de esta salida recoge:</p><ul class="trip-team-roles">${accompaniment.map(item=>`<li>${escape(item)}</li>`).join('')}</ul>` : ''}<a class="text-link" href="/conocenos/#acompanamiento">Conoce cómo viajamos en LST</a>${contact(trip,'Consultar el acompañamiento','button button-small trip-team-contact',`¡Hola, LST! Me interesa ${trip.name}. ¿Quién acompaña al grupo, quién imparte las sesiones de surf y qué apoyo tenemos antes y durante esta salida?`)}</section>
+    <section id="dudas" class="trip-block trip-faq"><p class="eyebrow">LAS DUDAS ANTES DEL VIAJE</p><h2>Antes de hacer la mochila.</h2><div class="faq-list">${trip.faqs.map(([q,a])=>`<details><summary>${escape(q)}<span aria-hidden="true">+</span></summary><p>${escape(a)}</p></details>`).join('')}</div></section>
+@@ -72,5 +92,5 @@
+ <dialog class="photo-dialog" aria-labelledby="photo-title"><div class="photo-heading"><div><p id="photo-title">Fotos de ${escape(trip.name)}</p><p class="photo-instruction">Desliza para ver más</p></div><button class="photo-close" type="button" aria-label="Cerrar fotos">Cerrar</button></div><div class="photo-strip" tabindex="0" role="region" aria-label="Galería de fotos, desplazamiento horizontal">${photoSlides}</div><div class="photo-controls"><button type="button" data-photo-prev aria-label="Foto anterior">Anterior</button><span class="photo-counter" aria-live="polite" aria-atomic="true">1 / ${trip.gallery.length}</span><button type="button" data-photo-next aria-label="Foto siguiente">Siguiente</button></div></dialog>
+ ${isFull(trip)?'':dateDialog(trip)}
+ <script src="/trip.js" type="module"></script></body></html>
+-`;
++`.replace(/[ \t]+$/gm, '');
+ }
+--- a/scripts/render-home-trips.mjs
++++ b/scripts/render-home-trips.mjs
+@@ -1,4 +1,4 @@
+-import {departuresFor, levelLabel, tripPrice, availabilityLabel} from './trip-model.mjs';
++import {departuresFor, levelLabel, tripPrice, availabilityLabel, hasDepartureLevels, departureLevelLabel} from './trip-model.mjs';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+ 
+@@ -12,7 +12,7 @@
+     const firstDate = [...departures].sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999'))[0];
+     const preview = firstDate ? firstDate.date : 'Fechas por anunciar';
+     const status = availability === 'Plazas disponibles' ? '' : `<span class="home-trip-status">${escape(availability)}</span>`;
+-    const dates = departures.length ? `<ul class="home-trip-departures">${departures.map(d => `<li><span>${escape(d.date)}</span></li>`).join('')}</ul>` : '<p>Fechas por anunciar</p>';
++    const dates = departures.length ? `<ul class="home-trip-departures">${departures.map(d => `<li><span>${escape(d.date)}</span>${hasDepartureLevels(trip) ? `<span class="home-trip-date-level">${escape(departureLevelLabel(trip, d))}</span>` : ''}</li>`).join('')}</ul>` : '<p>Fechas por anunciar</p>';
+     return `<article class="home-trip${dated ? '' : ' home-trip-pending'}" aria-labelledby="trip-${id}-title">
+ <div class="home-trip-media">${trip.hero ? `<img class="home-trip-photo" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt || trip.name)}" width="1000" height="600" loading="lazy" decoding="async">` : '<div class="home-trip-placeholder" aria-hidden="true">LST</div>'}
+ <span class="home-trip-level">${escape(levelLabel(trip))}</span>${status}<${heading} id="trip-${id}-title">${escape(trip.name)}</${heading}>
+--- a/scripts/render-catalog.mjs
++++ b/scripts/render-catalog.mjs
+@@ -1,4 +1,4 @@
+-import {levelsFor, tripFacts, availabilityLabel} from './trip-model.mjs';
++import {levelsFor, tripFacts, availabilityLabel, hasDepartureLevels, departuresFor, departureLevelLabel} from './trip-model.mjs';
+ 
+ const escape = value => String(value).replace(/[&<>"']/g, c => ({
+   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+@@ -12,7 +12,7 @@
+   ${trip.hero?`<img class="catalog-photo" src="${escape(trip.hero)}" alt="${escape(trip.heroAlt)}" width="1000" height="667" loading="lazy" decoding="async" style="object-position:${escape(trip.heroPosition ?? '50% 50%')}">`:""}
+   <div class="catalog-card-copy"><p class="catalog-card-state">${escape(availabilityLabel(trip))}</p>
+    <h2 id="catalog-${escape(trip.id)}-title">${escape(trip.name)}</h2>
+-   <p class="catalog-date">${dated ? escape(facts[0][1]) : 'Fechas y programa por anunciar'}</p>${dated ? `
++   <p class="catalog-date">${dated ? hasDepartureLevels(trip) ? departuresFor(trip).map(d => `${escape(d.date)} · ${escape(departureLevelLabel(trip, d))}`).join('<br>') : escape(facts[0][1]) : 'Fechas y programa por anunciar'}</p>${dated ? `
+    <p class="catalog-duration">${escape(facts[1][1])}</p>` : ''}
+    <p class="catalog-level">${escape(facts[2][1])}</p>
+    <span class="button catalog-action" id="catalog-${escape(trip.id)}-action">${dated ? 'Ver viaje' : 'Ver destino'} <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></span>
+--- a/scripts/render-level-trips.mjs
++++ b/scripts/render-level-trips.mjs
+@@ -1,7 +1,7 @@
+-import {levelsFor, tripFacts, availabilityLabel} from './trip-model.mjs';
++import {levelsFor, tripFacts, availabilityLabel, hasDepartureLevels, departuresFor, departureLevelLabel, levelLabel} from './trip-model.mjs';
+ const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ export function renderLevelTrips(current, trips) {
+-const card=trip=>`<a class="guide-trip-card" data-trip-levels="${levelsFor(trip).join(' ')}" data-trip-name="${escape(trip.name)}" href="/viajes/${trip.slug}/">${trip.hero?`<img src="${escape(trip.hero)}" alt="" width="1000" height="600" loading="lazy" decoding="async">`:""}<div><h4>${escape(trip.name)}</h4><p class="guide-trip-date">${escape(availabilityLabel(trip)) + ' · '}${trip.state==='confirmed'?escape(tripFacts(trip)[0][1]):'Fechas por anunciar'}</p><p class="guide-trip-levels">${escape(tripFacts(trip)[2][1])}</p><span class="guide-trip-action">${trip.state==='confirmed'?'Ver el viaje a':'Conocer'} ${escape(trip.name)}</span></div></a>`;
++const card=trip=>`<a class="guide-trip-card" data-trip-levels="${levelsFor(trip).join(' ')}" data-trip-name="${escape(trip.name)}" href="/viajes/${trip.slug}/">${trip.hero?`<img src="${escape(trip.hero)}" alt="" width="1000" height="600" loading="lazy" decoding="async">`:""}<div><h4>${escape(trip.name)}</h4><p class="guide-trip-date">${escape(availabilityLabel(trip)) + ' · '}${trip.state==='confirmed'?escape(tripFacts(trip)[0][1]):'Fechas por anunciar'}</p><p class="guide-trip-levels">${hasDepartureLevels(trip) ? levelLabel(trip) + ':<br>' + departuresFor(trip).map(d => `${escape(d.date)} · ${escape(departureLevelLabel(trip, d))}`).join('<br>') : escape(tripFacts(trip)[2][1])}</p><span class="guide-trip-action">${trip.state==='confirmed'?'Ver el viaje a':'Conocer'} ${escape(trip.name)}</span></div></a>`;
+ const groups=[['confirmed','Viajes con fecha'],['upcoming','Destinos por anunciar']].map(([state,title])=>{
+  const group=trips.filter(trip=>trip.state===state);if(!group.length)return '';
+  if(state==='upcoming')return `<details class="guide-trip-group guide-trip-pending" data-trip-group data-trip-state="upcoming"><summary><span>Otros destinos por anunciar</span><span class="guide-pending-count" data-guide-pending-count>${group.length}</span><span class="guide-pending-toggle" aria-hidden="true">+</span></summary><p class="guide-pending-intro">Sus próximas fechas y programas están pendientes de anuncio.</p><div class="guide-trips-grid">${group.map(card).join('\n')}</div></details>`;
+--- a/scripts/build.mjs
++++ b/scripts/build.mjs
+@@ -35,9 +35,11 @@
+       await writeFile(path.join(dir, 'index.html'), unavailablePage());
+     }
+     for (const trip of trips) {
+-      const dir = path.join(stage, 'viajes', trip.slug);
+-      await mkdir(dir, {recursive: true});
+-      await writeFile(path.join(dir, 'index.html'), renderTrip(trip, trips));
++      for (const slug of [trip.slug, ...(trip.aliases ?? [])]) {
++        const dir = path.join(stage, 'viajes', slug);
++        await mkdir(dir, {recursive: true});
++        await writeFile(path.join(dir, 'index.html'), renderTrip(trip, trips));
++      }
+     }
+     for (const [file, render] of [['index.html', renderHomeTrips], ['viajes/index.html', renderCatalog], ['niveles/index.html', renderLevelTrips]]) {
+       const output = path.join(stage, file);
+--- a/scripts/check.mjs
++++ b/scripts/check.mjs
+@@ -23,7 +23,7 @@
+  const current=await readFile(path.join(root,file),'utf8');
+  if(render(current,trips)!==current)errors.push(`Generated view out of date: ${file}`);
+ }
+-for(const t of trips){const current=await readFile(path.join(root,'viajes',t.slug,'index.html'),'utf8');if(current!==renderTrip(t,trips))errors.push(`Trip page out of date: ${t.slug}`);}
++for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');if(current!==renderTrip(t,trips))errors.push(`Trip page out of date: ${slug}`);}
+ async function walk(dir){const files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else files.push(p);}return files;}
+ const files=await walk(root);
+ const pages=new Map();
+--- a/scripts/sanity.mjs
++++ b/scripts/sanity.mjs
+@@ -28,6 +28,7 @@
+   return querySanity(`*[_type == "trip" && !(_id in path("drafts.**")) && !(_id in path("versions.**"))] | order(_createdAt asc, _id asc) {
+     ..., "dossier": coalesce(dossierFile.asset->url, dossier), "hero": hero{..., "url": asset->url},
+     "gallery": gallery[]{..., "url": asset->url},
++    "departures": departures[]{..., "dossier": coalesce(dossierFile.asset->url, dossier)},
+     "stay": stay{..., "image": image{..., "url": asset->url}}
+   }`, {...options, token: env.SANITY_READ_TOKEN, perspective: 'published'});
+ }
+--- a/studio/schemaTypes/trip.ts
++++ b/studio/schemaTypes/trip.ts
+@@ -10,7 +10,11 @@
+     {name: 'program', title: 'Programa'},
+   ],
+   fields: [
+-    defineField({name: 'name', title: 'Nombre del destino', type: 'string', group: 'content', validation: (rule) => rule.required()}),
++    defineField({
++      name: 'name', title: 'Nombre del destino', type: 'string', group: 'content',
++      description: 'Usa el nombre del destino sin niveles. Indica el nivel general en «Niveles de surf» y las diferencias en cada salida.',
++      validation: (rule) => rule.required().custom(value => !value || !/\b(?:nivel(?:es)?|rookies|aprendices|riders|supercracks)\b/i.test(value) || 'El nombre del viaje no puede incluir el nivel. Usa los campos de niveles del viaje o de la salida.'),
++    }),
+     defineField({
+       name: 'slug', title: 'URL del destino', type: 'slug', group: 'content',
+       description: 'Conserva la URL de los destinos ya publicados.',
+@@ -32,23 +36,40 @@
+     defineField({name: 'availability', title: 'Disponibilidad', type: 'string', group: 'departures', initialValue: 'available', options: {list: [{title: 'Plazas disponibles', value: 'available'}, {title: 'Últimas plazas', value: 'last_places'}, {title: 'Completo', value: 'full'}, {title: 'Consultar disponibilidad', value: 'enquiry'}], layout: 'radio'}, description: 'Estado manual sin contador de plazas. Publica para actualizar la web.'}),
+     defineField({
+       name: 'levels', title: 'Niveles de surf', type: 'array', group: 'departures',
+-      description: 'Selecciona los niveles adecuados para este viaje.',
++      description: 'Niveles generales del viaje. Cada salida los hereda salvo que indiques otros niveles en esa fecha.',
+       of: [defineArrayMember({type: 'number', options: {list: [
+         {title: 'I · Rookies', value: 1}, {title: 'II · Aprendices', value: 2},
+         {title: 'III · Riders', value: 3}, {title: 'IV · Supercracks', value: 4},
+       ]}, validation: (rule) => rule.integer().min(1).max(4)})],
+       validation: (rule) => rule.required().min(1).unique(),
+     }),
+-    defineField({name: 'levelRequirement', title: 'Requisito de autonomía', type: 'string', group: 'departures'}),
++    defineField({name: 'levelRequirement', title: 'Requisito de autonomía', type: 'string', group: 'departures', description: 'Requisito general. Cada salida lo hereda salvo que indiques uno propio para esa fecha.'}),
+     defineField({
+       name: 'departures', title: 'Salidas', type: 'array', group: 'departures',
++      description: 'Crea un solo viaje por destino y añade aquí sus distintas fechas. Los niveles, la disponibilidad, la capacidad y el dossier generales se heredan salvo que indiques valores propios en una salida.',
+       of: [defineArrayMember({
+         name: 'departure', title: 'Salida', type: 'object',
+         fields: [
+           defineField({name: 'start', title: 'Fecha de inicio', type: 'date', validation: (rule) => rule.required()}),
+           defineField({name: 'end', title: 'Fecha de fin', type: 'date', validation: (rule) => rule.required().min(rule.valueOfField('start'))}),
+           defineField({name: 'duration', title: 'Duración (p. ej., 7 noches)', type: 'string'}),
++          defineField({
++            name: 'levels', title: 'Niveles de esta salida (opcional)', type: 'array',
++            description: 'Vacío = hereda los niveles generales del viaje. Rellena solo si esta fecha tiene otros niveles.',
++            of: [defineArrayMember({type: 'number', options: {list: [
++              {title: 'I · Rookies', value: 1}, {title: 'II · Aprendices', value: 2},
++              {title: 'III · Riders', value: 3}, {title: 'IV · Supercracks', value: 4},
++            ]}, validation: (rule) => rule.integer().min(1).max(4)})],
++            validation: (rule) => rule.unique(),
++          }),
++          defineField({name: 'levelRequirement', title: 'Requisito de autonomía de esta salida (opcional)', type: 'string', description: 'Vacío = hereda el requisito general del viaje.'}),
++          defineField({name: 'availability', title: 'Disponibilidad de esta salida (opcional)', type: 'string', options: {list: [{title: 'Plazas disponibles', value: 'available'}, {title: 'Últimas plazas', value: 'last_places'}, {title: 'Completo', value: 'full'}, {title: 'Consultar disponibilidad', value: 'enquiry'}], layout: 'radio'}, description: 'Vacío = hereda la disponibilidad general del viaje. Estado manual para esta fecha.'}),
++          defineField({name: 'capacity', title: 'Capacidad de esta salida (opcional)', type: 'object', description: 'Vacío = hereda la capacidad general del viaje.', fields: [
++            defineField({name: 'total', title: 'Capacidad total', type: 'number', validation: r => r.integer().min(1)}),
++          ]}),
+           defineField({name: 'price', title: 'Precio por persona (€)', type: 'number', description: 'Precio vigente manual. Vacío = por confirmar. No se seleccionan promociones por cupo.', validation: (rule) => rule.greaterThan(0).precision(2)}),
++          defineField({name: 'dossierFile', title: 'PDF de esta salida (opcional)', type: 'file', options: {accept: 'application/pdf'}, description: 'PDF específico de esta fecha. Tiene prioridad sobre la URL de esta salida. Sin PDF ni URL propios, se usa el dossier general del viaje.'}),
++          defineField({name: 'dossier', title: 'URL del dossier de esta salida (opcional)', type: 'url', description: 'URL específica de esta fecha si no adjuntas un PDF propio. Vacío = usa el dossier general del viaje.', validation: (rule) => rule.uri({scheme: ['https']})}),
+           defineField({name: 'message', title: 'Mensaje de consulta por WhatsApp', type: 'text', rows: 3}),
+         ],
+         preview: {select: {title: 'start', subtitle: 'duration'}},
+--- a/dist/trip.js
++++ b/dist/trip.js
+@@ -174,3 +174,23 @@
+   const datesObserver = new ResizeObserver(fitDates);
+   [departureDialog, ...fixedParts].forEach(part => datesObserver.observe(part));
+ }
++
++// Programme links leave the modal and open the matching date in the page.
++document.querySelectorAll('[data-view-programme]').forEach(link => {
++  link.addEventListener('click', event => {
++    const programme = document.getElementById(link.hash.slice(1));
++    if (!programme) return;
++    event.preventDefault();
++    const dialog = link.closest('dialog');
++    const reveal = () => {
++      programme.open = true;
++      history.replaceState(null, '', link.hash);
++      programme.scrollIntoView({behavior: 'instant', block: 'start'});
++      programme.querySelector('summary').focus({preventScroll: true});
++    };
++    if (dialog?.open) {
++      dialog.addEventListener('close', () => requestAnimationFrame(reveal), {once: true});
++      dialog.close();
++    } else reveal();
++  });
++});
+--- a/dist/trip.css
++++ b/dist/trip.css
+@@ -224,3 +224,17 @@
+ .trip-team-roles{padding-left:20px;margin:10px 0 18px;font-size:15px;line-height:1.65}
+ .trip-team-roles li+li{margin-top:8px}
+ .trip-team .trip-team-contact{display:flex;width:fit-content;margin-top:14px;white-space:normal}
++
++/* Programme details remain attached to their own departure. */
++.departure-level-override{font-size:12px;line-height:1.5;color:#a33417;margin:7px 0}
++.departure-level-list{list-style:none;padding:0}
++.departure-level-list li{margin:16px 0}
++.departure-level-list strong,.departure-level-list span{display:block}
++.departure-programme{border-block-end:1px solid var(--line);margin-top:16px}
++.departure-programme>summary{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px 0;cursor:pointer;font-weight:600;min-height:48px}
++.departure-programme>summary span:last-child{font-size:14px;color:#a33417}
++.departure-programme-copy{padding:0 0 24px;font-size:15px;line-height:1.65}
++.trip-page .departure-programme-copy h3{font-size:20px;line-height:1.35;margin:24px 0 10px}
++.departure-programme-copy ul{padding-left:20px;margin-block:14px}
++.departure-programme-copy details{margin-top:16px}
++.departure-programme:target{scroll-margin-top:calc(var(--trip-header-height,72px) + 20px)}
+--- a/dist/home.css
++++ b/dist/home.css
+@@ -516,3 +516,5 @@
+  body.home-modern .lst-level-actions a{padding-inline:8px;font-size:11px;gap:5px}
+  body.home-modern .lst-booking{padding-inline:18px}
+ }
++
++.home-trip-date-level{display:block;font-size:12px;margin-top:4px}

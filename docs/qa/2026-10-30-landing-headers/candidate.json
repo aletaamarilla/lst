@@ -1,0 +1,41 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "files": [
+    {
+      "path": "dist/catalog.css",
+      "sha256": "7d609b0bf7b7688bd79eadeb2615823a22d66e21aee3fc097985ceafc7e06281"
+    },
+    {
+      "path": "dist/levels.css",
+      "sha256": "f09eebdf94db768058b8131df41933d993cc0c226c781c7cd3fce09cc51bfff5"
+    },
+    {
+      "path": "dist/viajes/index.html",
+      "sha256": "2f6d4b2b5e06bb3904a836d4d144cd6e2624e57187298a63f9226f292a6c52cd"
+    },
+    {
+      "path": "dist/niveles/index.html",
+      "sha256": "05911e45550d0e40b1c4204e3d0366ecd81524be087685de1f3ab1c918eea496"
+    },
+    {
+      "path": "dist/catalog.js",
+      "sha256": "5e84bb69302d510a872e8cb475cae9ded16bb0e79437acfc75de26c91d45a6c7"
+    },
+    {
+      "path": "scripts/render-catalog.mjs",
+      "sha256": "ad92f5b6c2b5cbf7d310b3013e6ac5286ec0cea2e1db6ba4476201c28c6b1e44"
+    },
+    {
+      "path": "scripts/catalog-filter.test.mjs",
+      "sha256": "063a1c77c14ee6669fabecc8d32fcf4ddee574af8839ccd0761a253b04356d1c"
+    },
+    {
+      "path": "scripts/check-catalog-browser.mjs",
+      "sha256": "31c60a0186684aa5320e4c63bb82765c4c34d5cb558e153ade8e50a79a806dfe"
+    },
+    {
+      "path": "scripts/catalog-ui.test.mjs",
+      "sha256": "d0d2798c4a826a3ad1c56bfaf17895be6e5b2ee67034a52b2985ea9f8d5aca3c"
+    }
+  ]
+}

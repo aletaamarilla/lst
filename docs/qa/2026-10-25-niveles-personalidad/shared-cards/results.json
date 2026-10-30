@@ -1,0 +1,1296 @@
+{
+  "checks": [
+    {
+      "name": "320-text100 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "320-text100 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "320-text100 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "320-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320-text100 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "320-text100 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "320-text100 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "320-text100 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "320-text100 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "320-text100 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "320-text100 history restores level",
+      "pass": true
+    },
+    {
+      "name": "390-text100 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "390-text100 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "390-text100 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "390-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390-text100 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "390-text100 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "390-text100 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "390-text100 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "390-text100 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "390-text100 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "390-text100 history restores level",
+      "pass": true
+    },
+    {
+      "name": "768-text100 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "768-text100 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "768-text100 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "768-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768-text100 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "768-text100 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "768-text100 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "768-text100 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "768-text100 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "768-text100 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "768-text100 history restores level",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "1024-text100 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "1024-text100 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "1024-text100 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "1024-text100 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "1024-text100 history restores level",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "1440-text100 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "1440-text100 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "1440-text100 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "1440-text100 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "1440-text100 history restores level",
+      "pass": true
+    },
+    {
+      "name": "320-text200 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "320-text200 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "320-text200 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "320-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "320-text200 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "320-text200 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "320-text200 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "320-text200 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "320-text200 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "320-text200 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "320-text200 history restores level",
+      "pass": true
+    },
+    {
+      "name": "390-text200 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "390-text200 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "390-text200 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "390-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "390-text200 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "390-text200 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "390-text200 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "390-text200 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "390-text200 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "390-text200 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "390-text200 history restores level",
+      "pass": true
+    },
+    {
+      "name": "768-text200 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "768-text200 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "768-text200 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "768-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "768-text200 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "768-text200 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "768-text200 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "768-text200 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "768-text200 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "768-text200 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "768-text200 history restores level",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 same component styles as home",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 shared compact cards",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 all four levels readable",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 primary actions fit with touch targets",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 one shared level enquiry",
+      "pass": true
+    },
+    {
+      "name": "1440-text200 retains filter rookies",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 retains filter aprendices",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ],
+        "expected": [
+          "El Palmar",
+          "Fuerteventura",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos",
+          "Senegal"
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 retains filter riders",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ],
+        "expected": [
+          "El Palmar",
+          "Hossegor",
+          "Maldivas",
+          "Marruecos"
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 retains filter supercracks",
+      "pass": true,
+      "detail": {
+        "shown": [
+          "El Palmar"
+        ],
+        "expected": [
+          "El Palmar"
+        ]
+      }
+    },
+    {
+      "name": "1440-text200 history restores level",
+      "pass": true
+    },
+    {
+      "name": "/ 320 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/ 320 text100 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 1386.59375,
+          "bottom": 1505.59375,
+          "left": 37,
+          "right": 283,
+          "height": 119
+        },
+        "title": {
+          "top": 1518.59375,
+          "bottom": 1581.59375,
+          "left": 27,
+          "right": 293,
+          "height": 63
+        },
+        "media": {
+          "top": 1321.59375,
+          "bottom": 1581.59375,
+          "left": 27,
+          "right": 293,
+          "height": 260
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/ 320 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/ 320 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "/ 768 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/ 768 text100 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 938.546875,
+          "bottom": 1057.546875,
+          "left": 413,
+          "right": 717,
+          "height": 119
+        },
+        "title": {
+          "top": 1070.546875,
+          "bottom": 1133.546875,
+          "left": 403,
+          "right": 727,
+          "height": 63
+        },
+        "media": {
+          "top": 873.546875,
+          "bottom": 1133.546875,
+          "left": 403,
+          "right": 727,
+          "height": 260
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/ 768 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/ 768 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "/ 1440 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/ 1440 text100 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 963.03125,
+          "bottom": 1082.03125,
+          "left": 544.328125,
+          "right": 895.65625,
+          "height": 119
+        },
+        "title": {
+          "top": 1095.03125,
+          "bottom": 1158.03125,
+          "left": 534.328125,
+          "right": 905.65625,
+          "height": 63
+        },
+        "media": {
+          "top": 898.03125,
+          "bottom": 1158.03125,
+          "left": 534.328125,
+          "right": 905.65625,
+          "height": 260
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/ 1440 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/ 1440 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "/ 320 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/ 320 text200 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 2942.40625,
+          "bottom": 3226.40625,
+          "left": 37,
+          "right": 283,
+          "height": 284
+        },
+        "title": {
+          "top": 3252.40625,
+          "bottom": 3545.40625,
+          "left": 27,
+          "right": 293,
+          "height": 293
+        },
+        "media": {
+          "top": 2812.40625,
+          "bottom": 3545.40625,
+          "left": 27,
+          "right": 293,
+          "height": 733
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/ 320 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/ 320 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 320 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 320 text100 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 4651.5,
+          "bottom": 4770.5,
+          "left": 37,
+          "right": 283,
+          "height": 119
+        },
+        "title": {
+          "top": 4783.5,
+          "bottom": 4846.5,
+          "left": 27,
+          "right": 293,
+          "height": 63
+        },
+        "media": {
+          "top": 4586.5,
+          "bottom": 4846.5,
+          "left": 27,
+          "right": 293,
+          "height": 260
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/niveles/ 320 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 320 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320 hiding a pinned card closes dates",
+      "pass": true
+    },
+    {
+      "name": "320 pending destination still available",
+      "pass": true
+    },
+    {
+      "name": "320 native pending group opens",
+      "pass": true
+    },
+    {
+      "name": "320 reappearing dates open on first activation",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 768 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 768 text100 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 3278.53125,
+          "bottom": 3397.53125,
+          "left": 67,
+          "right": 355,
+          "height": 119
+        },
+        "title": {
+          "top": 3410.53125,
+          "bottom": 3473.53125,
+          "left": 57,
+          "right": 365,
+          "height": 63
+        },
+        "media": {
+          "top": 3213.53125,
+          "bottom": 3473.53125,
+          "left": 57,
+          "right": 365,
+          "height": 260
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/niveles/ 768 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 768 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "768 hiding a pinned card closes dates",
+      "pass": true
+    },
+    {
+      "name": "768 pending destination still available",
+      "pass": true
+    },
+    {
+      "name": "768 native pending group opens",
+      "pass": true
+    },
+    {
+      "name": "768 reappearing dates open on first activation",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 1440 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 1440 text100 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 3101.34375,
+          "bottom": 3220.34375,
+          "left": 127,
+          "right": 478.328125,
+          "height": 119
+        },
+        "title": {
+          "top": 3233.34375,
+          "bottom": 3296.34375,
+          "left": 117,
+          "right": 488.328125,
+          "height": 63
+        },
+        "media": {
+          "top": 3036.34375,
+          "bottom": 3296.34375,
+          "left": 117,
+          "right": 488.328125,
+          "height": 260
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/niveles/ 1440 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 1440 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "1440 hiding a pinned card closes dates",
+      "pass": true
+    },
+    {
+      "name": "1440 pending destination still available",
+      "pass": true
+    },
+    {
+      "name": "1440 native pending group opens",
+      "pass": true
+    },
+    {
+      "name": "1440 reappearing dates open on first activation",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 320 fixture active price and saving",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 320 text200 date panel contained above title",
+      "pass": true,
+      "detail": {
+        "panel": {
+          "top": 10629.21875,
+          "bottom": 10913.21875,
+          "left": 37,
+          "right": 283,
+          "height": 284
+        },
+        "title": {
+          "top": 10939.21875,
+          "bottom": 11232.21875,
+          "left": 27,
+          "right": 293,
+          "height": 293
+        },
+        "media": {
+          "top": 10499.21875,
+          "bottom": 11232.21875,
+          "left": 27,
+          "right": 293,
+          "height": 733
+        },
+        "overflow": false
+      }
+    },
+    {
+      "name": "/niveles/ 320 keyboard opens dates",
+      "pass": true
+    },
+    {
+      "name": "/niveles/ 320 Escape closes and restores focus",
+      "pass": true
+    },
+    {
+      "name": "320 hiding a pinned card closes dates",
+      "pass": true
+    },
+    {
+      "name": "320 pending destination still available",
+      "pass": true
+    },
+    {
+      "name": "320 native pending group opens",
+      "pass": true
+    },
+    {
+      "name": "320 reappearing dates open on first activation",
+      "pass": true
+    },
+    {
+      "name": "touch opens shared dates",
+      "pass": true
+    },
+    {
+      "name": "touch closes shared dates",
+      "pass": true
+    },
+    {
+      "name": "shared card navigates to original trip",
+      "pass": true
+    },
+    {
+      "name": "without JS static levels and trip groups remain",
+      "pass": true
+    },
+    {
+      "name": "without JS pending trip opens",
+      "pass": true
+    },
+    {
+      "name": "JS false native dates remain usable",
+      "pass": true
+    },
+    {
+      "name": "JS false native level navigation",
+      "pass": true
+    },
+    {
+      "name": "JS true native dates remain usable",
+      "pass": true
+    },
+    {
+      "name": "JS true native level navigation",
+      "pass": true
+    },
+    {
+      "name": "no JavaScript errors",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "contacts": []
+}

@@ -1,0 +1,29 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "files": [
+    {
+      "file": "dist/about.css",
+      "sha256": "0539f342a70222bbf817915c40af0b0958a2abea1cc4bb48286fd7218b4ea11b"
+    },
+    {
+      "file": "dist/faq.css",
+      "sha256": "b46ce9be33e3559652800e1fe2f7a1f9dbfdb86255bd59fb42ba968a3ced9100"
+    },
+    {
+      "file": "dist/conocenos/index.html",
+      "sha256": "07ec2f363b3f016cb07e7afad3579e6181e895312d82c75720609526566df482"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "5e410a60433253f05dcff0af13b91d3b24b2a45ceb777ebd759ca75be8d96d68"
+    },
+    {
+      "file": "scripts/check-about.mjs",
+      "sha256": "03b33d804268dce9b04b60ca39ab8cdba991b6826b9509a318e89cf33dfa664d"
+    },
+    {
+      "file": "dist/home.css",
+      "sha256": "c4b68516d1622aac86b64215f9ec4560442e8b392ff1e30ba80959eaa05d0ee0"
+    }
+  ]
+}

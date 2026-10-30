@@ -1,0 +1,242 @@
+[
+  {
+    "route": "niveles",
+    "client": 305,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 78,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 339.75,
+      "top": 222.15625
+    },
+    "hero": {
+      "height": 570,
+      "width": 305,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 305,
+    "selects": 0,
+    "viewport": 320
+  },
+  {
+    "route": "viajes",
+    "client": 305,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 78,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 406.5,
+      "top": 229.859375
+    },
+    "hero": {
+      "height": 540,
+      "width": 305,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 305,
+    "selects": 1,
+    "viewport": 320
+  },
+  {
+    "route": "niveles",
+    "client": 375,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 78,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 339.75,
+      "top": 222.15625
+    },
+    "hero": {
+      "height": 570,
+      "width": 375,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 375,
+    "selects": 0,
+    "viewport": 390
+  },
+  {
+    "route": "viajes",
+    "client": 375,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 78,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 406.5,
+      "top": 286.6875
+    },
+    "hero": {
+      "height": 540,
+      "width": 375,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 375,
+    "selects": 1,
+    "viewport": 390
+  },
+  {
+    "route": "niveles",
+    "client": 753,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 78,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 447.90625,
+      "top": 291.125
+    },
+    "hero": {
+      "height": 600,
+      "width": 753,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 753,
+    "selects": 0,
+    "viewport": 768
+  },
+  {
+    "route": "viajes",
+    "client": 753,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 78,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 451.90625,
+      "top": 286.53125
+    },
+    "hero": {
+      "height": 600,
+      "width": 753,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 753,
+    "selects": 1,
+    "viewport": 768
+  },
+  {
+    "route": "niveles",
+    "client": 1009,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 88,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 447.90625,
+      "top": 291.125
+    },
+    "hero": {
+      "height": 600,
+      "width": 1009,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 1009,
+    "selects": 0,
+    "viewport": 1024
+  },
+  {
+    "route": "viajes",
+    "client": 1009,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 88,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 451.90625,
+      "top": 286.53125
+    },
+    "hero": {
+      "height": 600,
+      "width": 1009,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 1009,
+    "selects": 1,
+    "viewport": 1024
+  },
+  {
+    "route": "niveles",
+    "client": 1425,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 88,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 447.90625,
+      "top": 236.25
+    },
+    "hero": {
+      "height": 600,
+      "width": 1425,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 1425,
+    "selects": 0,
+    "viewport": 1440
+  },
+  {
+    "route": "viajes",
+    "client": 1425,
+    "header": {
+      "bg": "rgba(0, 0, 0, 0)",
+      "color": "rgb(255, 250, 231)",
+      "dark": "none",
+      "height": 88,
+      "light": "block"
+    },
+    "heading": {
+      "bottom": 451.90625,
+      "top": 231.09375
+    },
+    "hero": {
+      "height": 600,
+      "width": 1425,
+      "x": 0
+    },
+    "overflowElements": [],
+    "scroll": 1425,
+    "selects": 1,
+    "viewport": 1440
+  }
+]

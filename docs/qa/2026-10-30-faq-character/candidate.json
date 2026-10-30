@@ -1,0 +1,14 @@
+{
+  "baseGit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "comparison": "artifacts/faq-character-before (estado al comenzar esta revisión)",
+  "files": [
+    {
+      "file": "dist/faq.css",
+      "sha256": "99cffdf4f46b210f547ba7aaa09fcd56edeca508ad5c01dbca4eb735589b7e78"
+    },
+    {
+      "file": "dist/preguntas-frecuentes/index.html",
+      "sha256": "14fbf5ba43648aa073ce3b1f935d079306c4d15ded794dc7cf585b189ed7395d"
+    }
+  ]
+}

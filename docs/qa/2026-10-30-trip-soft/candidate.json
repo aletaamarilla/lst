@@ -1,0 +1,14 @@
+{
+  "base": "58f338661fc4705364fea08727c836e79b3f2048",
+  "uncommitted": true,
+  "changed": [
+    "dist/trip-conversion.css"
+  ],
+  "sha256": "d3f9e3196b85a8755d2a98bac852d0ff48c28b02c4fdcc0bfd688f5ea6fb4b2a",
+  "unchanged": {
+    "dist/trip.js": "f0f61ea396438e227aba3ee745ac2873b565a4e5d4d45a1a047093a25b455b21",
+    "scripts/render-trips.mjs": "e742d75197a4433c70eba329cee85fdd8c625f0300410ce27639c270d78ede44"
+  },
+  "background": "#FFFAE7",
+  "cardSurface": "#FCF5E2"
+}

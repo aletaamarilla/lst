@@ -8,6 +8,7 @@ const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
 const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-about');
 fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
+const trips=JSON.parse(fs.readFileSync('dist/catalog-snapshot.json')).trips;
 const report={checks:[],issues:[],errors:[],views:[]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
@@ -18,7 +19,7 @@ try{
    const height=width===1440?1000:844, tag=`${width}-${mode}`;
    const context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce',javaScriptEnabled:mode!=='no-js',hasTouch:width<700});
    const external=[];
-   await context.route('https://**/*',route=>{external.push(route.request().url());return route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Consulta interceptada localmente</title>'});});
+   await context.route('https://**/*',route=>{if(new URL(route.request().url()).hostname==='cdn.sanity.io')return route.continue();external.push(route.request().url());return route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Consulta interceptada localmente</title>'});});
    const page=await context.newPage();page.on('pageerror',e=>report.errors.push({tag,message:e.message}));
    check(tag+' HTTP 200',(await page.goto(base+'/conocenos/')).status()===200);
    await page.evaluate(()=>document.fonts.ready);await photos(page);
@@ -26,7 +27,7 @@ try{
    const geometry=await page.evaluate(()=>{
     const h=document.querySelector('header'),b=h.getBoundingClientRect(),title=document.querySelector('h1').getBoundingClientRect();
     const overflow=[...document.querySelectorAll('main *')].filter(e=>e.clientWidth&&e.scrollWidth>e.clientWidth+2).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,60)}));
-    return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headerHeight:b.height,headerPosition:getComputedStyle(h).position,titleTop:title.top,overflow,images:[...document.querySelectorAll('main img')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0,fullFrame:Math.abs(i.clientWidth/i.clientHeight-i.naturalWidth/i.naturalHeight)<.02})),fonts:{heading:getComputedStyle(document.querySelector('h1')).fontFamily,body:getComputedStyle(document.body).fontFamily,label:getComputedStyle(document.querySelector('.eyebrow')).fontFamily},h1:document.querySelectorAll('h1').length};
+    return {width:innerWidth,scrollWidth:document.documentElement.scrollWidth,headerHeight:b.height,headerPosition:getComputedStyle(h).position,titleTop:title.top,overflow,images:[...document.querySelectorAll('main img:not([aria-hidden="true"])')].map(i=>({src:i.getAttribute('src'),loaded:i.complete&&i.naturalWidth>0,hero:!!i.closest('.landing-hero'),cover:getComputedStyle(i).objectFit==='cover',fullFrame:Math.abs(i.clientWidth/i.clientHeight-i.naturalWidth/i.naturalHeight)<.02})),fonts:{heading:getComputedStyle(document.querySelector('h1')).fontFamily,body:getComputedStyle(document.body).fontFamily,label:getComputedStyle(document.querySelector('.eyebrow')).fontFamily},h1:document.querySelectorAll('h1').length};
    });
    report.views.push({tag,...geometry});
    check(tag+' no overflow',geometry.scrollWidth<=width+1&&geometry.overflow.length===0,geometry.overflow);
@@ -36,7 +37,11 @@ try{
     check(tag+' native header stays visible on scroll',await page.locator('.site-header').evaluate(e=>{const r=e.getBoundingClientRect();return Math.abs(r.top)<1&&r.bottom>0}));
     await page.evaluate(()=>scrollTo(0,0));
    }
-   check(tag+' complete documentary frames',geometry.images.every(i=>i.loaded&&i.fullFrame),geometry.images);
+   const masthead=await page.locator('.site-header').evaluate(e=>({ink:getComputedStyle(e).color,paper:getComputedStyle(e).backgroundColor,light:getComputedStyle(e.querySelector('.brand-light')).display,dark:getComputedStyle(e.querySelector('.brand-dark')).display}));
+  const heroSpacing=await page.locator('.landing-hero').evaluate(e=>({copyBottom:e.querySelector('.landing-hero-copy').getBoundingClientRect().bottom,captionTop:e.querySelector('figcaption').getBoundingClientRect().top}));
+  check(tag+' photo caption clears copy',heroSpacing.captionTop>=heroSpacing.copyBottom+8,heroSpacing);
+  check(tag+' masthead colours and logo',mode==='no-js'?(masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block'):(masthead.ink==='rgb(255, 250, 231)'&&masthead.light==='block'&&masthead.dark==='none'),masthead);
+  check(tag+' loaded photo cover and complete documentary frames',geometry.images.some(i=>i.hero&&i.loaded&&i.cover)&&geometry.images.every(i=>i.loaded&&(i.hero||i.fullFrame)),geometry.images);
    check(tag+' retained fonts and heading',geometry.h1===1&&geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&geometry.fonts.label.includes('Space Mono'));
    const mainText=await page.locator('main').innerText();
    check(tag+' required content',mainText.includes('Lucas')&&mainText.includes('Nos vemos en el pico.')&&mainText.includes('Marruecos')&&mainText.includes('La plaza se confirma con el equipo.'));
@@ -66,16 +71,15 @@ try{
     const popup=page.waitForEvent('popup');await contact.click();const p=await popup;await p.waitForLoadState();await p.close();
     check(tag+' WhatsApp consult intercepted',external.length===1&&external[0].startsWith('https://wa.me/34648189257?')&&new URL(external[0]).searchParams.get('text').includes('quién acompañará'));
     await page.locator('.about-actions a[href="/viajes/"]').click();await page.waitForURL(base+'/viajes/');
-    check(tag+' trips CTA reaches catalog',await page.locator('[data-catalog-trip]').count()===6);
+    check(tag+' trips CTA reaches catalog',await page.locator('[data-catalog-trip]').count()===trips.length);
     await page.goto(base+'/');
     await page.locator('#nosotros a[href="/conocenos/"]').click();await page.waitForURL(base+'/conocenos/');
-    check(tag+' home introduction leads to about',await page.locator('h1').innerText()==='Gente, sal\ny ganas\nde repetir.');
+    check(tag+' home introduction leads to about',(await page.locator('h1').innerText()).replace(/\s+/g,' ')==='Tú trae las ganas.');
     await page.goto(base+'/');await photos(page);await page.locator('#nosotros').scrollIntoViewIfNeeded();
     if([390,1440].includes(width))await page.locator('#nosotros').screenshot({path:path.join(out,'capturas',`home-resumen-${width}.png`),style:'.site-header{visibility:hidden!important}'});
-    const trips=JSON.parse(fs.readFileSync('data/trips.json'));
     for(const t of trips){
      await page.goto(base+`/viajes/${t.slug}/`);
-     const team=page.locator('.trip-team');check(tag+' '+t.slug+' team text preserved',(await team.innerText()).includes(t.state==='confirmed'?t.team.text:'está pendiente'));
+     const team=page.locator('.trip-team');check(tag+' '+t.slug+' team text preserved',(await team.innerText()).includes(t.state==='confirmed'?(t.team?.text||'Consulta con LST'):'está pendiente'));
      await team.getByRole('link',{name:'Conoce cómo viajamos en LST'}).click();await page.waitForURL(base+'/conocenos/#acompanamiento');
      const position=await page.evaluate(()=>({top:document.querySelector('#team-title').getBoundingClientRect().top,header:document.querySelector('header').getBoundingClientRect().bottom}));
      check(tag+' '+t.slug+' accompaniment reachable',position.top>=position.header-1,position);
@@ -89,7 +93,7 @@ try{
  for(const width of [390,1440]){
   const context=await browser.newContext({viewport:{width,height:500}});await context.route('https://**/*',r=>r.abort());const page=await context.newPage();await page.goto(base+'/conocenos/');await page.evaluate(()=>document.fonts.ready);
   await page.keyboard.press('Tab');check(width+' skip link focus',await page.locator('.skip-link').evaluate(e=>e===document.activeElement));await page.keyboard.press('Enter');check(width+' skip link target',await page.locator('main').evaluate(e=>e===document.activeElement));
-  await page.getByRole('link',{name:'Te contamos cómo empezó'}).click();await page.waitForFunction(()=>Math.abs(document.querySelector('#origen').getBoundingClientRect().top-document.querySelector('header').getBoundingClientRect().height-12)<3);
+  await page.getByRole('link',{name:'Te contamos cómo empezó'}).click();await page.waitForFunction(()=>Math.abs(document.querySelector('#origen').getBoundingClientRect().top-document.querySelector('header').getBoundingClientRect().height-20)<3);
   check(width+' smooth scroll arrival',await page.locator('#origin-title').evaluate(e=>e.getBoundingClientRect().top>=document.querySelector('header').getBoundingClientRect().bottom));
   await page.screenshot({path:path.join(out,'capturas',`pantalla-baja-${width}.png`)});await context.close();
  }

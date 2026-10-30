@@ -1,57 +1,128 @@
-/* FAQ layout, built on the shared LST styles. */
-.faq-page .site-header{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
-.faq-page .site-header .brand-light{display:none}
-.faq-page .site-header .brand-dark{display:block}
-.faq-page .menu-toggle span{background:var(--ink)}
-.faq-page .site-header .header-cta{background:var(--orange);color:var(--ink);border-color:var(--ink)}
-.faq-page .site-header .header-cta:hover{background:var(--ink);color:var(--paper)}
-.faq-page .site-header :is(a,button):focus-visible{outline-color:var(--ink)}
-.faq-page main{padding-top:var(--home-header-height,70px)}
-.faq-page main[tabindex="-1"]:focus{outline:none;box-shadow:none}
-.faq-intro{display:grid;gap:22px;padding-block:34px 28px}
-.faq-intro .eyebrow{font-size:11px;margin-bottom:16px}
-.faq-intro h1{font:400 clamp(48px,13.5vw,80px)/1 var(--display);letter-spacing:-.02em}
-.faq-intro-copy{max-width:40em;line-height:1.65}
-.faq-intro-copy>p:first-child{font-weight:600;margin-bottom:10px}
-.faq-intro-copy a,.faq-answers a{text-underline-offset:4px;text-decoration-thickness:1px}
-.faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink);margin-bottom:8px}
-.faq-index a{display:flex;flex-direction:column;gap:8px;min-height:100px;padding:14px;font-size:14px;line-height:1.5;font-weight:600;text-decoration:none;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
-.faq-index a span{font:400 12px/1.4 var(--mono)}
-.faq-index a:is(:hover,:focus-visible){background:var(--orange)}
-.faq-topic{display:grid;gap:20px;padding-block:34px;border-bottom:1px solid var(--ink)}
-.faq-topic:last-child{border-bottom:0;padding-bottom:44px}
-.faq-topic-heading .eyebrow{font-size:11px;margin-bottom:10px;color:var(--muted)}
-.faq-topic h2{font-size:32px;line-height:1.12;max-width:14ch}
-.faq-answers{min-width:0}
-.faq-answers details:first-child{border-top:1px solid var(--line)}
-.faq-page .faq-answers summary{min-height:64px;font-size:16px;line-height:1.5;font-weight:600;gap:16px;padding-block:18px;padding-inline-end:.6em}
-.faq-answers summary>span{flex:none;color:var(--ink)}
-.faq-page .faq-answers details>p{font-size:16px;color:var(--ink);line-height:1.7;max-width:65ch;padding:0 16px 22px 0}
-.faq-help{background:var(--ink);color:var(--paper);padding-block:38px}
-.faq-help-layout{display:grid;gap:24px}
-.faq-help h2{font-size:44px;line-height:1.08}
-.faq-help .eyebrow{font-size:11px}
-.faq-help-layout>div>p:not(.eyebrow){max-width:38em;line-height:1.65}
-.faq-help .button{margin-block:22px 14px;min-height:52px;width:100%;text-align:center}
-.faq-help .faq-help-note{font-size:14px}
-.faq-help .button:focus-visible{outline-color:var(--paper);box-shadow:0 0 0 6px var(--ink)}
-@media(min-width:700px){
- .faq-intro{grid-template-columns:1fr 1fr;align-items:center;gap:36px;padding-block:48px}
- .faq-index{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:16px}
- .faq-index a{padding:18px;min-height:112px}
- .faq-topic{grid-template-columns:1fr 1.5fr;gap:36px;padding-block:40px}
- .faq-topic h2{font-size:38px}
- .faq-help-layout{grid-template-columns:1fr 1.5fr;gap:36px;align-items:center}
- .faq-help .button{width:auto}
+/* LST FAQs: poster type, a useful trip-board and four distinct chapters. */
+body.faq-page .site-header,
+body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)){background:var(--lst-paper);color:var(--lst-ink);border-bottom:1px solid var(--lst-line)}
+body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-light{display:none}
+body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-dark{display:block}
+body.faq-page .site-header :is(a,button):focus-visible,
+body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+.faq-hero{padding:calc(var(--landing-header-height,78px) + 44px) 0 48px;background:var(--lst-paper);color:var(--lst-ink)}
+.faq-hero-layout{display:grid;align-items:center;gap:38px}
+.faq-hero-copy,.faq-sidebar,.faq-content,.faq-answers{min-width:0}
+body.faq-page .faq-hero .eyebrow{display:inline-block;margin-bottom:24px;padding:7px 11px;border:1px solid var(--lst-ink);background:var(--lst-orange);color:var(--lst-ink);transform:rotate(-2deg)}
+body.faq-page .faq-hero h1{max-width:760px;font:400 clamp(48px,12.5vw,78px)/1.08 var(--lst-display);letter-spacing:-.015em;text-wrap:initial}
+body.faq-page .faq-hero h1 em{display:inline-block;max-width:100%;margin-top:8px;padding:0 .09em .08em;background:var(--lst-ink);color:var(--lst-paper);font-style:normal;transform:rotate(-2deg);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+body.faq-page .faq-hero-description{max-width:440px;margin-top:28px;font-size:16px;line-height:1.7;color:var(--lst-muted)}
+/* The topic links behave like the rest of the site: four native anchors, no filter. */
+.faq-sidebar{position:relative;padding:24px;border:1px solid var(--lst-ink);border-radius:4px 28px 4px 4px;background:var(--lst-ink);color:var(--lst-paper);box-shadow:5px 5px 0 var(--lst-orange);transform:rotate(1.5deg)}
+body.faq-page .faq-index-label{font:400 35px/1.1 var(--lst-display);margin:0 0 15px}
+.faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+body.faq-page .faq-index a{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr) 14px;grid-template-rows:auto auto;align-items:center;gap:3px 10px;min-height:86px;padding:15px 0;border-bottom:1px solid #fffae747;color:var(--lst-paper);text-decoration:none;line-height:1.4}
+.faq-index .lst-line-icon{grid-column:1;grid-row:1/3;width:30px;height:30px}
+.faq-index-number{grid-column:2;grid-row:1;align-self:end;font:400 10px/1.5 var(--mono);color:#ded9c8}
+.faq-index-title{grid-column:2;grid-row:2;align-self:start;overflow-wrap:anywhere;font:400 27px/1.1 var(--lst-display)}
+.faq-index-arrow{grid-column:3;grid-row:1/3;font-size:19px;color:var(--lst-orange)}
+body.faq-page .faq-index a:hover .faq-index-title{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:5px}
+body.faq-page .faq-sidebar-note{margin-top:18px;font-size:13px;line-height:1.8;color:#ded9c8}
+.faq-sidebar-note br{display:none}
+body.faq-page .faq-sidebar-note a{display:inline-flex;align-items:center;min-height:44px;color:var(--lst-paper);text-decoration:underline;text-underline-offset:5px}
+body.faq-page .faq-sidebar a:focus-visible{outline:3px solid var(--lst-paper);outline-offset:4px}
+.faq-body{padding-block:0 56px}
+.faq-context{padding-block:24px;border-block:1px solid var(--lst-line);font-size:15px;line-height:1.8;color:var(--lst-muted)}
+body.faq-page :is(.faq-context,.faq-answers) a{text-decoration:underline;text-underline-offset:4px}
+.faq-layout{margin-top:36px}
+.faq-content{display:grid;gap:38px}
+.faq-topic{min-width:0}
+.faq-topic-heading{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.faq-topic-heading>.lst-line-icon{flex:0 0 40px;width:40px;height:40px}
+body.faq-page .faq-topic h2{font:400 38px/1.06 var(--lst-display);letter-spacing:-.015em;min-width:0}
+.faq-topic h2>span:first-child{display:block;margin-bottom:7px;font:400 10px/1.5 var(--mono);letter-spacing:.06em;color:var(--lst-muted)}
+.faq-topic-label{font:inherit}
+.faq-answers{border-top:2px solid var(--lst-ink)}
+body.faq-page .faq-answers details{border:0;border-bottom:1px solid var(--lst-line);border-radius:0;background:transparent;overflow:visible;min-width:0}
+body.faq-page .faq-answers summary{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:78px;padding:22px 0;background:transparent;color:inherit;font:500 16px/1.6 var(--body);list-style:none;cursor:pointer}
+body.faq-page .faq-answers summary::-webkit-details-marker{display:none}
+body.faq-page .faq-answers summary>span{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border:1px solid var(--lst-line);border-radius:50%;font-size:0;line-height:1;font-weight:400;color:var(--lst-ink);transition:background .18s,border-color .18s;transform:none}
+body.faq-page .faq-answers summary>span:after{content:'+';font-size:22px}
+body.faq-page .faq-answers details[open] summary>span:after{content:'−'}
+body.faq-page .faq-answers details[open] summary>span{background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper)}
+body.faq-page .faq-answers summary:hover>span{border-color:var(--lst-orange)}
+body.faq-page .faq-answers summary:focus-visible{outline:3px solid var(--lst-ink);outline-offset:4px}
+body.faq-page .faq-answers details>p{max-width:67ch;padding:0 14px 26px 18px;border-left:2px solid var(--lst-orange);font-size:16px;line-height:1.85;color:var(--lst-muted)}
+body.faq-page .faq-answers details[open] summary{font-weight:600}
+body.faq-page .faq-answers :is(summary,p){overflow-wrap:anywhere}
+/* A packing chapter and a contrasting reservation chapter break the long-list rhythm. */
+.faq-topic#preparacion{padding-top:32px;border-top:1px solid var(--lst-ink)}
+.faq-topic#preparacion .faq-topic-label{padding:0 .08em .07em;background:var(--lst-orange);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.faq-topic#reserva{padding:26px 22px 30px;border-radius:4px 32px 4px 4px;background:var(--lst-ink);color:var(--lst-paper)}
+.faq-topic#reserva h2>span:first-child{color:#ded9c8}
+.faq-topic#reserva .faq-answers{--lst-line:#fffae747;border-top-color:var(--lst-paper)}
+body.faq-page .faq-topic#reserva .faq-answers details>p{color:#e4dfcf}
+body.faq-page .faq-topic#reserva .faq-answers summary>span{color:var(--lst-paper)}
+body.faq-page .faq-topic#reserva .faq-answers details[open] summary>span{background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink)}
+body.faq-page .faq-topic#reserva .faq-answers summary:focus-visible{outline-color:var(--lst-paper)}
+/* An open invitation to the team, rather than another framed category. */
+body.faq-page .faq-help{background:var(--lst-paper);color:var(--lst-ink);padding-block:44px;border-top:1px solid var(--lst-line)}
+body.faq-page .faq-help .lst-line-icon{width:42px;height:42px;margin-bottom:20px}
+body.faq-page .faq-help .eyebrow{color:var(--lst-ink)}
+body.faq-page .faq-help h2{max-width:530px;font-size:clamp(44px,6vw,68px)}
+body.faq-page .faq-help h2 em{font-style:normal;color:inherit}
+body.faq-page .faq-help .landing-contact-note{color:var(--lst-muted)}
+body.faq-page .faq-help .lst-button{background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper)}
+body.faq-page .faq-help .lst-button:hover{background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink)}
+body.faq-page .faq-help :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+@media(min-width:761px){
+ .faq-hero{padding-top:calc(var(--landing-header-height,88px) + 58px);padding-bottom:62px}
+ body.faq-page .faq-hero h1{font-size:clamp(76px,7.1vw,100px)}
+ .faq-hero-layout{grid-template-columns:minmax(0,1.4fr) minmax(0,.85fr);gap:64px}
+ .faq-sidebar{padding:26px}
+ .faq-content{grid-template-columns:repeat(2,minmax(0,1fr));gap:52px 48px}
+ .faq-layout{margin-top:48px}
+ body.faq-page .faq-topic h2{font-size:46px}
+ .faq-topic#preparacion,.faq-topic#reserva{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,.65fr) minmax(0,1.35fr);gap:48px;align-items:start}
+ .faq-topic#preparacion{padding-block:44px 0}
+ .faq-topic#preparacion .faq-topic-heading,.faq-topic#reserva .faq-topic-heading{display:block;margin-bottom:0}
+ .faq-topic#preparacion .faq-topic-heading>.lst-line-icon,.faq-topic#reserva .faq-topic-heading>.lst-line-icon{width:52px;height:52px;margin-bottom:20px}
+ .faq-topic#preparacion h2,.faq-topic#reserva h2{max-width:9ch;font-size:56px;line-height:1.12}
+ .faq-topic#preparacion h2>span:first-child,.faq-topic#reserva h2>span:first-child{margin-bottom:14px}
+ .faq-topic#reserva{padding:38px}
+ .faq-body{padding-bottom:64px}
+ body.faq-page .faq-help{padding-block:54px 64px}
 }
-@media(min-width:1100px){
- .faq-intro{padding-block:64px;gap:80px}
- .faq-intro h1{font-size:96px}
- .faq-intro-copy{font-size:18px}
- .faq-topic{gap:80px;padding-block:48px}
- .faq-topic h2{font-size:44px}
- .faq-index a{font-size:16px;padding:20px 24px}
- .faq-help{padding-block:60px}
- .faq-help-layout{gap:80px}
- .faq-help h2{font-size:64px}
+@media(min-width:761px) and (max-width:1100px){
+ .faq-hero-layout{gap:36px;grid-template-columns:minmax(0,1.3fr) minmax(0,.9fr)}
+ body.faq-page .faq-hero h1{font-size:clamp(60px,7.1vw,78px)}
+ .faq-sidebar{padding:22px}
+ .faq-index{column-gap:16px}
+ .faq-index-arrow{display:none}
+ body.faq-page .faq-index a{grid-template-columns:26px minmax(0,1fr);column-gap:8px}
+ .faq-index .lst-line-icon{width:26px;height:26px}
+ .faq-index-title{font-size:25px}
+ .faq-content{column-gap:32px}
+ .faq-topic#preparacion,.faq-topic#reserva{gap:30px}
 }
+@media(max-width:760px){
+ .faq-sidebar{padding:20px;transform:rotate(1deg)}
+ .faq-index{column-gap:18px}
+ .faq-index-arrow{display:none}
+ body.faq-page .faq-index a{grid-template-columns:28px minmax(0,1fr);gap:3px 10px;min-height:78px;padding-block:12px}
+ .faq-index .lst-line-icon{width:28px;height:28px}
+ .faq-index-title{font-size:24px}
+ body.faq-page .faq-sidebar-note{margin-top:12px;font-size:12px}
+ .faq-topic#preparacion .faq-topic-heading{margin-bottom:28px}
+ .faq-topic#reserva .faq-topic-heading{align-items:flex-start}
+}
+@media(max-width:359px){
+ .faq-hero{padding-top:calc(var(--landing-header-height,78px) + 32px)}
+ body.faq-page .faq-hero h1{font-size:43px}
+ body.faq-page .faq-hero h1 em{font-size:.94em}
+ body.faq-page .faq-index-label{font-size:30px}
+ .faq-sidebar{padding:18px}
+ .faq-index{column-gap:16px}
+ body.faq-page .faq-index a{grid-template-columns:24px minmax(0,1fr);column-gap:8px}
+ .faq-index .lst-line-icon{width:24px;height:24px}
+ .faq-index-title{font-size:21px}
+ body.faq-page .faq-topic h2{font-size:34px}
+ .faq-topic#reserva{padding-inline:20px}
+ body.faq-page .faq-answers summary{font-size:15px;gap:12px}
+}
+@media(prefers-reduced-motion:reduce){body.faq-page .faq-answers summary>span{transition:none}}

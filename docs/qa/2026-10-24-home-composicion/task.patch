@@ -1,0 +1,162 @@
+diff --git a/docs/qa/2026-10-24-home-composicion/before/home.css b/dist/home.css
+index f1f163c..5c66e70 100644
+--- a/docs/qa/2026-10-24-home-composicion/before/home.css
++++ b/dist/home.css
+@@ -1,5 +1,5 @@
+-/* LST home: original brand colors, with white inset surfaces against the cream canvas. */
+-body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-surface:#fff;--lst-card:#fff;--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
++/* LST home: original identity, surf photography and a clear booking path. */
++body.home-modern{--lst-paper:#FFFAE7;--lst-ink:#1B1B1B;--lst-orange:#EA5934;--lst-card:#fff;--lst-muted:rgba(27,27,27,.73);--lst-line:rgba(27,27,27,.22);--lst-on-photo:#FFFAE7;--lst-display:Aura,Impact,sans-serif;--home-header-height:88px;background:var(--lst-paper);color:var(--lst-ink);font:400 16px/1.65 'Work Sans',Arial,sans-serif;text-align:left;color-scheme:light}
+ body.home-modern *,body.home-modern *:before,body.home-modern *:after{box-sizing:border-box}
+ body.home-modern :is(h1,h2,h3,h4,p,figure){margin:0}
+ body.home-modern :is(h1,h2,h3,h4){color:inherit;overflow-wrap:anywhere}
+@@ -116,15 +116,15 @@ body.home-modern .lst-quote-grid figcaption{margin-top:auto;color:var(--lst-mute
+ body.home-modern .lst-quote-grid figcaption strong{display:block;color:var(--lst-ink);font-weight:600}
+ body.home-modern .lst-quote-grid figcaption span{display:block;margin-top:3px}
+ body.home-modern .lst-quote-grid figcaption a,body.home-modern .lst-quote-source{display:inline-flex;align-items:center;min-height:44px;font-size:11px;text-decoration:underline;text-underline-offset:4px}
+-body.home-modern .lst-level-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
++body.home-modern .lst-level-grid{position:relative;z-index:1;margin:-28px 24px 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+ body.home-modern .lst-level-card{display:flex;flex-direction:column;min-width:0;padding:22px 20px 12px;border:1px solid rgba(27,27,27,.24);border-radius:4px 28px 4px 4px;background:var(--lst-paper);box-shadow:0 2px 3px rgba(27,27,27,.025),0 11px 25px rgba(27,27,27,.045);transition:border-color .18s,background .18s}
+-body.home-modern .lst-level-card:hover{border-color:var(--lst-ink);background:rgba(234,89,52,.08)}
++body.home-modern .lst-level-card:hover{border-color:var(--lst-ink);background:var(--lst-paper)}
+ body.home-modern .lst-level-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:24px;font:400 11px/1.5 'Space Mono',monospace}
+ body.home-modern .lst-level-top>span:last-child{font-size:23px;font-weight:400;color:var(--lst-orange)}
+ body.home-modern .lst-level-card h3{margin-top:30px;font:400 clamp(32px,3vw,42px)/1.04 var(--lst-display);letter-spacing:-.01em}
+-body.home-modern .lst-level-card p{margin-block:14px 24px;color:var(--lst-muted);font-size:14px;line-height:1.65}
++body.home-modern .lst-level-card p{overflow-wrap:anywhere;margin-block:14px 24px;color:var(--lst-muted);font-size:14px;line-height:1.65}
+ body.home-modern .lst-level-cta{display:flex;align-items:center;min-height:48px;margin-top:auto;border-top:1px solid var(--lst-line);font-size:12px;font-weight:500;line-height:1.5}
+-body.home-modern .lst-level-note{max-width:900px;margin-top:25px;color:var(--lst-muted);font-size:13px;line-height:1.8}
++body.home-modern .lst-level-note{margin-inline:24px;max-width:900px;margin-top:25px;color:var(--lst-muted);font-size:13px;line-height:1.8}
+ body.home-modern .lst-level-note a{display:inline-block;color:var(--lst-ink);font-weight:500;text-decoration:underline;text-underline-offset:4px}
+ body.home-modern .people{padding:40px 0;background:var(--lst-paper);border:0}
+ body.home-modern .lst-people-layout{display:grid;grid-template-columns:.95fr 1.12fr;align-items:center;gap:48px;padding:48px;border-radius:32px;background:var(--lst-orange)}
+@@ -150,9 +150,11 @@ body.home-modern .lst-booking-steps li:last-child{padding-bottom:0}
+ body.home-modern .lst-booking-steps li>span{font:400 43px/1.1 var(--lst-display);letter-spacing:-.01em;color:var(--lst-orange)}
+ body.home-modern .lst-booking-steps h3{font:400 33px/1.1 var(--lst-display);letter-spacing:-.01em}
+ body.home-modern .lst-booking-steps p{margin-top:12px;color:var(--lst-muted);font-size:15px;line-height:1.75}
+-body.home-modern .faq{display:grid;grid-template-columns:.95fr 1.12fr;align-items:start;gap:64px;margin-block:80px 0;padding:48px;border:1px solid var(--lst-ink);border-top:1px solid var(--lst-ink);border-radius:4px 32px 4px 4px;background:var(--lst-surface);color:var(--lst-ink)}
+-body.home-modern .lst-faq-intro .lst-eyebrow{margin:0 0 20px;color:var(--lst-ink);font-size:11px}
+-body.home-modern .lst-faq-intro .lst-link{margin-top:25px}
++body.home-modern .faq{display:grid;grid-template-columns:.8fr 1.2fr;align-items:start;gap:56px;margin-block:80px 0;padding:0;border:0;border-radius:0;background:var(--lst-paper);color:var(--lst-ink)}
++body.home-modern .lst-faq-intro{padding:32px;background:var(--lst-ink);color:var(--lst-paper);border-radius:28px 4px 28px 4px}
++body.home-modern .lst-faq-intro h2{font-size:52px}
++body.home-modern .lst-faq-intro .lst-eyebrow{margin:0 0 16px;color:var(--lst-orange);font-size:11px}
++body.home-modern .lst-faq-intro .lst-link{margin-top:22px}
+ body.home-modern .lst-faq-list{min-width:0;border-top:1px solid var(--lst-line)}
+ body.home-modern .lst-faq-list details{border:0;border-bottom:1px solid var(--lst-line);background:transparent}
+ body.home-modern .lst-faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:80px;padding:22px 0;color:var(--lst-ink);font-size:16px;line-height:1.5;font-weight:500;cursor:pointer;list-style:none}
+@@ -279,9 +281,9 @@ body.home-modern .lst-footer-links a:hover{text-decoration:underline;text-underl
+  body.home-modern .lst-booking-steps li>span{font-size:39px}
+  body.home-modern .lst-booking-steps h3{font-size:32px}
+  body.home-modern .lst-booking-steps p{font-size:15px;margin-top:12px}
+- body.home-modern .faq{grid-template-columns:1fr;gap:30px;margin-block:48px 0;padding:24px;border-radius:4px 26px 4px 4px}
+- body.home-modern .lst-faq-intro h2{font-size:49px}
+- body.home-modern .lst-faq-intro .lst-link{margin-top:18px}
++ body.home-modern .faq{grid-template-columns:1fr;gap:24px;margin-block:48px 0;padding:0;border-radius:0}
++ body.home-modern .lst-faq-intro h2{font-size:42px}
++ body.home-modern .lst-faq-intro .lst-link{margin:0;align-self:end;gap:8px;font-size:12px;line-height:1.6}
+  body.home-modern .lst-faq-list summary{min-height:78px;font-size:15px;gap:22px}
+  body.home-modern .lst-faq-list details>p{padding-right:25px;font-size:15px}
+  body.home-modern .lst-closing{padding-block:40px;border-radius:27px 27px 0 0}
+@@ -355,16 +357,17 @@ body.home-modern .lst-testimonials .lst-small-index{margin-bottom:12px;color:var
+ body.home-modern .lst-reviews-note{max-width:760px;margin-top:22px;color:var(--lst-muted);font-size:12px;line-height:1.8}
+ body.home-modern .lst-reviews-note a{display:inline-block;min-height:44px;padding-block:10px;color:var(--lst-ink);text-decoration:underline;text-underline-offset:5px}
+ body.home-modern .lst-testimonials :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+-body.home-modern .lst-levels{background:var(--lst-surface);border:1px solid var(--lst-line);border-radius:36px}
++body.home-modern .lst-levels{padding-block:0 72px;background:var(--lst-paper);border:0;border-radius:0}
+ body.home-modern :is(.lst-levels,.faq) :is(a,button,summary):focus-visible{outline-color:var(--lst-ink)}
+-body.home-modern .lst-level-intro{display:grid;grid-template-columns:1.3fr .85fr;align-items:center;gap:88px;margin-bottom:47px}
+-body.home-modern .lst-level-intro>div{min-width:0}
++body.home-modern .lst-level-intro{position:relative;isolation:isolate;display:block;overflow:hidden;min-height:390px;padding:52px 48px 88px;margin-bottom:0;border-radius:36px;background:var(--lst-ink);color:var(--lst-paper)}
++body.home-modern .lst-level-intro>div{position:relative;min-width:0;max-width:620px}
++body.home-modern .lst-level-photo:after{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(27,27,27,.8),rgba(27,27,27,.72) 56%,rgba(27,27,27,.2))}
+ body.home-modern .lst-level-intro .lst-eyebrow{margin-bottom:18px}
+ body.home-modern .lst-level-intro h2{max-width:650px}
+-body.home-modern .lst-level-intro .lst-section-intro{max-width:540px;margin-top:22px;margin-bottom:12px}
+-body.home-modern .lst-level-photo{min-width:0;width:100%;max-width:410px;justify-self:end}
+-body.home-modern .lst-level-photo img{width:100%;aspect-ratio:1.62;object-fit:cover;border-radius:64px 5px 5px 5px;box-shadow:0 4px 15px rgba(27,27,27,.07)}
+-body.home-modern .lst-level-photo figcaption{margin-top:11px;color:var(--lst-muted);font-size:11px;line-height:1.6}
++body.home-modern .lst-level-intro .lst-section-intro{max-width:480px;margin-top:22px;margin-bottom:12px;color:var(--lst-paper)}
++body.home-modern .lst-level-photo{position:absolute;inset:0;z-index:-2;min-width:0;width:100%;max-width:none;height:100%}
++body.home-modern .lst-level-photo img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:55% 55%;border-radius:0;box-shadow:none}
++body.home-modern .lst-level-photo figcaption{position:absolute;z-index:2;top:16px;right:20px;margin:0;padding:5px 10px;border-radius:50px;background:rgba(27,27,27,.8);color:var(--lst-paper);font-size:10px;line-height:1.6}
+ body.home-modern .lst-level-card{border-top:3px solid var(--lst-orange)}
+ @media(max-width:999px){
+  body.home-modern .lst-level-intro{grid-template-columns:1.2fr 1fr;gap:36px}
+@@ -375,11 +378,12 @@ body.home-modern .lst-level-card{border-top:3px solid var(--lst-orange)}
+  body.home-modern .lst-testimonials .lst-section-header{gap:16px}
+  body.home-modern .lst-review-symbol{width:42px;height:27px;flex-basis:42px}
+  body.home-modern .lst-reviews-note{margin-top:18px;font-size:12px}
+- body.home-modern .lst-levels{border-radius:26px}
+- body.home-modern .lst-level-intro{grid-template-columns:1fr;gap:27px;margin-bottom:32px}
++ body.home-modern .lst-levels{padding-block:0 48px;border-radius:0}
++ body.home-modern .lst-levels>.lst-width{width:100%}
++ body.home-modern .lst-level-intro{min-height:0;padding:48px 22px 68px;border-radius:26px}
+  body.home-modern .lst-level-intro .lst-section-intro{margin-top:21px}
+- body.home-modern .lst-level-photo{max-width:460px;justify-self:start}
+- body.home-modern .lst-level-photo img{aspect-ratio:2.05;border-top-left-radius:46px}
++ body.home-modern .lst-level-photo{max-width:none}
++ body.home-modern .lst-level-photo img{object-position:58% 50%}
+ }
+ @media(max-width:359px){
+ }
+@@ -390,3 +394,25 @@ body.home-modern .lst-level-card{border-top:3px solid var(--lst-orange)}
+ 
+ 
+ 
++
++/* Contrast follows each photographic or ink heading, not the whole section. */
++body.home-modern :is(.lst-level-intro,.lst-faq-intro) :is(a,button):focus-visible{outline-color:var(--lst-paper)}
++@media(max-width:999px){
++ body.home-modern .lst-level-photo:after{background:rgba(27,27,27,.72)}
++}
++@media(max-width:760px){
++ body.home-modern .lst-level-photo figcaption{top:14px;right:14px;font-size:10px}
++ body.home-modern .lst-level-grid{margin:-24px 22px 0}
++ body.home-modern .lst-level-note{margin-inline:22px}
++ body.home-modern .lst-faq-intro{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px 16px;padding:24px;border-radius:24px 24px 4px 4px}
++ body.home-modern .lst-faq-intro .lst-eyebrow{flex-basis:100%;margin:0}
++ body.home-modern .lst-faq-intro h2{flex:1 1 168px;min-width:0}
++ body.home-modern .lst-faq-intro .lst-link{flex:0 1 92px;max-width:100%}
++}
++@media(max-width:359px){
++ body.home-modern .lst-level-intro{padding-inline:18px}
++ body.home-modern .lst-level-grid{margin-inline:18px}
++ body.home-modern .lst-level-note{margin-inline:18px}
++ body.home-modern .lst-faq-intro h2{flex-basis:100%}
++ body.home-modern .lst-faq-intro .lst-link{align-self:flex-start}
++}
+diff --git a/docs/qa/2026-10-24-home-composicion/before/check-home-browser.mjs b/scripts/check-home-browser.mjs
+index 7971d9d..f7916e0 100644
+--- a/docs/qa/2026-10-24-home-composicion/before/check-home-browser.mjs
++++ b/scripts/check-home-browser.mjs
+@@ -41,8 +41,8 @@ try{
+   assert.equal(await page.locator('.home-trip-preview small').count(),0);checks++;
+   ok(await page.locator('.home-trip-action').first().evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(234, 89, 52)'&&getComputedStyle(e).borderTopColor==='rgb(234, 89, 52)'&&e.getBoundingClientRect().height>=32&&e.getBoundingClientRect().height<=40),'trip action has a subtle visual weight');
+   ok(await page.locator('.home-trip-link').first().evaluate(e=>e.getBoundingClientRect().height>=44),'trip link keeps its touch target');
+-  ok(await page.evaluate(()=>{const bg=sel=>{let e=document.querySelector(sel);while(e){const c=getComputedStyle(e).backgroundColor;if(c!=='rgba(0, 0, 0, 0)')return c;e=e.parentElement;}};const s=getComputedStyle(document.querySelector('.faq'));return bg('.faq')!==bg('.lst-testimonials')&&bg('.faq')!==bg('.lst-booking')&&bg('.faq')===bg('.lst-levels')&&parseFloat(s.borderTopLeftRadius)>0&&parseFloat(s.borderTopWidth)>0;}),'FAQs visibly separate opinions and booking through their effective backgrounds');
+-  ok(await page.evaluate(()=>{const section=getComputedStyle(document.querySelector('.lst-levels')).backgroundColor,paper=getComputedStyle(document.body).backgroundColor;return section!==paper&&section!=='rgba(0, 0, 0, 0)'&&[...document.querySelectorAll('.lst-level-card')].every(e=>getComputedStyle(e).backgroundColor===paper);}), 'level section has its own surface behind the original cream cards');
++  ok(await page.evaluate(()=>{const panel=getComputedStyle(document.querySelector('.faq')),header=getComputedStyle(document.querySelector('.lst-faq-intro'));return panel.backgroundColor==='rgb(255, 250, 231)'&&parseFloat(panel.borderTopWidth)===0&&header.backgroundColor==='rgb(27, 27, 27)'&&header.color==='rgb(255, 250, 231)'&&document.querySelector('.lst-faq-list').getBoundingClientRect().width>0;}),'FAQs separate their compact ink heading from the open question list');
++  ok(await page.evaluate(()=>{const intro=document.querySelector('.lst-level-intro'),r=intro.getBoundingClientRect(),photo=document.querySelector('.lst-level-photo img').getBoundingClientRect(),grid=document.querySelector('.lst-level-grid').getBoundingClientRect(),paper=getComputedStyle(document.body).backgroundColor;return getComputedStyle(intro).color===paper&&Math.abs(photo.width-r.width)<1&&Math.abs(photo.height-r.height)<1&&grid.top<r.bottom&&r.bottom-grid.top<=32&&[...document.querySelectorAll('.lst-level-card')].every(e=>getComputedStyle(e).backgroundColor===paper);}), 'level cards overlap a compact photographic introduction without changing their cream surface');
+   ok(await page.evaluate(()=>{const paper=getComputedStyle(document.body).backgroundColor;return [...document.querySelectorAll('.home-trip')].every(e=>{const s=getComputedStyle(e);return s.backgroundColor==='rgb(255, 255, 255)'&&s.backgroundColor!==paper&&s.boxShadow!=='none';});}),'trip cards have a distinct light surface and contained depth');
+   ok(await page.locator('.lst-hero h1').evaluate(e=>getComputedStyle(e).color==='rgb(255, 255, 255)'),'hero title is white');
+   ok(await page.evaluate(()=>getComputedStyle(document.querySelector('.lst-closing')).backgroundColor==='rgb(27, 27, 27)'&&['.lst-testimonials','.people','.faq','.lst-footer'].every(sel=>!['rgb(27, 27, 27)','rgb(234, 89, 52)'].includes(getComputedStyle(document.querySelector(sel)).backgroundColor))),'closing is the single large dark section');
+@@ -53,8 +53,8 @@ try{
+   ok(await page.evaluate(()=>document.querySelector('.lst-trip-actions a').getAttribute('href')==='/viajes/'&&document.querySelector('.lst-trip-actions .lst-link').getAttribute('href')==='#niveles'&&document.querySelector('.lst-closing .lst-button').getAttribute('href')==='/viajes/'),'catalogue and level routes support the next decision without looping to the same cards');
+   ok(await page.evaluate(()=>['.lst-testimonials','.faq'].every(sel=>getComputedStyle(document.querySelector(sel)).backgroundImage==='none')),'section surfaces remain flat rather than relying on gradients');
+   assert.equal(await page.locator('.lst-quote-grid blockquote').count(),2);checks++;
+-  const focusFailures=await page.evaluate(()=>{const details=[...document.querySelectorAll('.lst-faq-list details')],states=details.map(e=>e.open);details.forEach(e=>e.open=true);const failures=[...document.querySelectorAll('.lst-levels a,.faq a,.faq summary')].map(e=>{e.focus();const s=getComputedStyle(e);return {text:e.textContent.slice(0,50),visibleFocus:e.matches(':focus-visible'),active:e===document.activeElement,color:s.outlineColor,width:s.outlineWidth};}).filter(s=>!s.visibleFocus||s.color!=='rgb(27, 27, 27)'||parseFloat(s.width)<3);details.forEach((e,i)=>e.open=states[i]);return failures;});
+-  ok(focusFailures.length===0,'neutral panels retain a high contrast keyboard focus: '+JSON.stringify(focusFailures));
++  const focusFailures=await page.evaluate(()=>{const details=[...document.querySelectorAll('.lst-faq-list details')],states=details.map(e=>e.open);details.forEach(e=>e.open=true);const failures=[...document.querySelectorAll('.lst-levels a,.faq a,.faq summary')].map(e=>{e.focus();const s=getComputedStyle(e);return {text:e.textContent.slice(0,50),visibleFocus:e.matches(':focus-visible'),active:e===document.activeElement,color:s.outlineColor,expected:e.closest('.lst-level-intro,.lst-faq-intro')?'rgb(255, 250, 231)':'rgb(27, 27, 27)',width:s.outlineWidth};}).filter(s=>!s.visibleFocus||!s.active||s.color!==s.expected||parseFloat(s.width)<3);details.forEach((e,i)=>e.open=states[i]);return failures;});
++  ok(focusFailures.length===0,'photographic and ink headings retain a readable keyboard focus: '+JSON.stringify(focusFailures));
+   await page.locator('#viajes').scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>document.querySelector('.site-header').classList.contains('is-scrolled'));
+   ok(await page.locator('.site-header').evaluate(e=>e.classList.contains('is-scrolled')),'scrolled navigation state');
+@@ -84,6 +84,7 @@ try{
+   if(width<1000){await page.locator('.menu-toggle').click();ok(await page.locator('#main-nav').isVisible(),'mobile menu opens');await page.keyboard.press('Escape');ok(!await page.locator('#main-nav').isVisible(),'mobile menu escape');}
+   await page.goto(base);await page.evaluate(()=>{const es=[...document.querySelectorAll('body,body *')];const sizes=es.map(e=>parseFloat(getComputedStyle(e).fontSize));es.forEach((e,i)=>e.style.fontSize=`${sizes[i]*2}px`);});
+   ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`200% overflow ${width}: ${JSON.stringify(await overflow(page))}`);
++  ok(await page.locator('.lst-level-card p').evaluateAll(es=>es.every(e=>e.scrollWidth<=e.clientWidth+1)),`level descriptions stay inside their cards at200% (${width})`);
+   await page.close();
+  }
+  fixtureMode=true;

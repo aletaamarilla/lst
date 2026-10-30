@@ -1,0 +1,42 @@
+{
+  "projectId": "q5bj2rn2",
+  "dataset": "production",
+  "at": "2026-10-25T17:44:07.644Z",
+  "candidateHash": "9496580d0d08936267877be958cbb8eabb5d7ec5030f887cecdf8921aa24d170",
+  "publishedDocuments": 5,
+  "onlyHeroAndGalleryChanged": true,
+  "unrelatedDocumentsUnchanged": true,
+  "imageAssetCount": 53,
+  "trips": [
+    {
+      "slug": "el-palmar",
+      "photos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg"
+    },
+    {
+      "slug": "fuerteventura",
+      "photos": 1,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044.jpg"
+    },
+    {
+      "slug": "hossegor",
+      "photos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000.jpg"
+    },
+    {
+      "slug": "maldivas",
+      "photos": 1,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg"
+    },
+    {
+      "slug": "marruecos",
+      "photos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000.jpg"
+    },
+    {
+      "slug": "senegal",
+      "photos": 6,
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366.jpg"
+    }
+  ]
+}

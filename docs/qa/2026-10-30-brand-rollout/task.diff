@@ -1,0 +1,537 @@
+diff --git a/artifacts/brand-rollout-before/dist/styles.css b/dist/styles.css
+index 107a9ce..ae920f3 100644
+--- a/artifacts/brand-rollout-before/dist/styles.css
++++ b/dist/styles.css
+@@ -80,3 +80,6 @@
+ .departure-row:first-child{border-top:0}
+ .departure-row-date{min-width:0;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+ .catalog-date-heading{margin-top:12px;font-size:13px}
++
++/* Shared line icons follow the 24px, 1.7 stroke system of Plan de surf. */
++.lst-line-icon{display:block;flex-shrink:0;width:32px;height:32px;color:inherit}
+diff --git a/artifacts/brand-rollout-before/dist/home.css b/dist/home.css
+index 8c8d116..e61bcbd 100644
+--- a/artifacts/brand-rollout-before/dist/home.css
++++ b/dist/home.css
+@@ -27,7 +27,7 @@ body.home-modern .site-header .brand{width:205px;margin:0;flex:0 0 auto}
+ body.home-modern .site-header .brand-light{display:none}
+ body.home-modern .site-header .brand-dark{display:block}
+ body.home-modern .site-header nav{position:static;display:flex;flex-direction:row;align-items:center;gap:8px;margin:0 0 0 auto;padding:0;border:0;background:transparent}
+-body.home-modern .site-header nav a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding:8px 3px;border:0;border-radius:0;background:transparent;color:inherit;font-size:13px;font-weight:500;white-space:nowrap;text-underline-offset:7px;transition:color .18s}
++body.home-modern .site-header nav a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:44px;padding:8px 3px;border:0;border-radius:0;background:transparent;color:inherit;font-size:13px;font-weight:500;min-width:44px;white-space:nowrap;text-underline-offset:7px;transition:color .18s}
+ body.home-modern .site-header nav a:hover{background:transparent;color:inherit;text-decoration:underline;text-decoration-color:var(--lst-orange);text-decoration-thickness:1px}
+ body.home-modern .site-header nav .lst-nav-contact{min-height:44px;padding-inline:3px;border:0;border-radius:0;margin-left:10px}
+ body.home-modern .lst-header-trip,body.home-modern .menu-toggle{display:none}
+@@ -122,7 +122,7 @@ body.home-modern .lst-level-cta{display:inline-flex;align-items:center;justify-c
+ body.home-modern .lst-level-note{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-inline:24px;max-width:900px;margin-top:25px;color:var(--lst-muted);font-size:13px;line-height:1.8}
+ body.home-modern .lst-level-note a{display:inline-flex;color:var(--lst-ink);font-weight:500;text-decoration:none}
+ body.home-modern .people{padding:40px 0;background:var(--lst-paper);border:0}
+-body.home-modern .lst-people-layout{display:grid;grid-template-columns:.95fr 1.12fr;align-items:center;gap:48px;padding:48px;border-radius:32px;background:var(--lst-orange)}
++body.home-modern .lst-people-layout{display:grid;grid-template-columns:.95fr 1.12fr;align-items:center;gap:48px;padding:48px 0;border-top:1px solid var(--lst-ink);border-bottom:1px solid var(--lst-line);border-radius:0;background:var(--lst-paper)}
+ body.home-modern .lst-people-copy{min-width:0}
+ body.home-modern .lst-people-copy .lst-eyebrow{margin-bottom:20px}
+ body.home-modern .lst-people-copy h2{font-size:clamp(48px,4.8vw,68px);margin-bottom:25px}
+@@ -130,7 +130,7 @@ body.home-modern .lst-people-copy>p:not(.lst-eyebrow){max-width:450px;margin-top
+ body.home-modern .lst-people-copy .lst-link{margin-top:18px}
+ body.home-modern .lst-signature{display:block;margin-top:25px;color:var(--lst-ink);font:400 17px/1.5 'Space Mono',monospace}
+ body.home-modern .lst-people-photo{min-width:0}
+-body.home-modern .lst-people-photo img{aspect-ratio:1.45;object-fit:cover;border-radius:72px 4px 4px 4px}
++body.home-modern .lst-people-photo img{aspect-ratio:1.45;object-fit:cover;border-radius:4px 28px 4px 4px}
+ body.home-modern .lst-people-photo figcaption{margin-top:14px;color:var(--lst-ink);font-size:11px;line-height:1.6}
+ body.home-modern .people :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+ body.home-modern .lst-booking{display:grid;grid-template-columns:.95fr 1.12fr;gap:85px}
+@@ -262,7 +262,7 @@ body.home-modern .lst-footer-links a:hover{border-color:var(--lst-orange);backgr
+  body.home-modern .lst-level-cta{font-size:12px;min-height:50px}
+  body.home-modern .lst-level-note{margin-top:23px;font-size:13px}
+  body.home-modern .people{padding-block:24px}
+- body.home-modern .lst-people-layout{grid-template-columns:1fr;gap:28px;padding:24px;border-radius:26px}
++ body.home-modern .lst-people-layout{grid-template-columns:1fr;gap:28px;padding:32px 0;border-radius:0}
+  body.home-modern .lst-people-copy h2{font-size:50px;margin-bottom:23px;max-width:520px}
+  body.home-modern .lst-people-copy>p:not(.lst-eyebrow){max-width:500px;font-size:15px}
+  body.home-modern .lst-signature{margin-top:22px;font-size:16px}
+@@ -680,8 +680,8 @@ body.home-modern .home-trip[data-compact-home] .home-trip-preview-label{position
+ body.home-modern .home-trip[data-compact-home] .home-trip-preview-date{margin:0;text-align:left}
+ body.home-modern .home-trip[data-compact-home] .home-trip-duration{margin-left:auto;white-space:nowrap}
+ body.home-modern .home-trip[data-compact-home] .home-trip-booking{margin-top:auto}
+-body.home-modern .home-trip[data-compact-home] .home-trip-saving{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:3px 8px;padding:8px 10px;border-radius:13px 13px 0 0;background:var(--lst-orange);color:var(--lst-ink)}
+-body.home-modern .home-trip[data-compact-home] .home-trip-saving strong{font:400 clamp(18px,6.7cqw,23px)/1.15 var(--lst-display);white-space:nowrap}
++body.home-modern .home-trip[data-compact-home] .home-trip-saving{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:3px 8px;padding:8px 10px;border-radius:0;background:transparent;color:var(--lst-ink);border-left:2px solid var(--lst-orange)}
++body.home-modern .home-trip[data-compact-home] .home-trip-saving strong{font:600 14px/1.5 var(--body);white-space:normal}
+ body.home-modern .home-trip[data-compact-home] .home-trip-saving>span{font:500 11px/1.4 'Work Sans',sans-serif;text-align:right}
+ body.home-modern .home-trip[data-compact-home] .home-trip-link{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;min-height:76px;padding:10px 12px;border-radius:13px}
+ body.home-modern .home-trip[data-compact-home] .home-trip-booking.has-offer .home-trip-link{border-radius:0 0 13px 13px}
+@@ -773,3 +773,19 @@ body.home-modern:not(.catalog-page):not(.levels-page) .lst-booking-note{margin-t
+  body.home-modern:not(.catalog-page):not(.levels-page) .lst-booking-steps p{font-size:15px}
+  body.home-modern:not(.catalog-page):not(.levels-page) .lst-booking-note{margin-top:22px}
+ }
++
++/* Shared navigation remains readable across the different page compositions. */
++body.home-modern .lst-footer-links a{font-size:13px}
++body.home-modern .lst-footer{border-top:1px solid var(--lst-line)}
++body.home-modern:not(.catalog-page):not(.levels-page) .home-trip[data-compact-home] .home-trip-saving{border-left:0}
++
++/* Community deserves a strong chapter, with the original documentary photograph. */
++body.home-modern .lst-people-layout{padding:44px;border:0;border-radius:4px 36px 4px 4px;background:var(--lst-ink);color:var(--lst-paper)}
++body.home-modern .lst-people-copy>p:not(.lst-eyebrow),body.home-modern .lst-people-photo figcaption{color:var(--lst-paper)}
++body.home-modern .lst-people-copy .lst-eyebrow,body.home-modern .lst-people-copy .lst-signature{color:var(--lst-orange)}
++body.home-modern .lst-people-copy .lst-story-cta{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
++body.home-modern .lst-people-copy .lst-story-cta:hover{background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink)}
++body.home-modern .lst-people-layout a:focus-visible{outline-color:var(--lst-paper)}
++body.home-modern .home-trip[data-compact-home] .home-trip-saving strong{font:400 clamp(18px,6.7cqw,23px)/1.15 var(--lst-display)}
++body.home-modern:not(.catalog-page):not(.levels-page) .home-trip[data-compact-home] .home-trip-saving strong{font:500 13px/1.5 var(--body)}
++@media(max-width:760px){body.home-modern .lst-people-layout{padding:28px 24px;gap:30px}}
+diff --git a/artifacts/brand-rollout-before/dist/catalog.css b/dist/catalog.css
+index 630b667..dab0474 100644
+--- a/artifacts/brand-rollout-before/dist/catalog.css
++++ b/dist/catalog.css
+@@ -1,5 +1,5 @@
+ /* Catalogue shares the home identity, navigation, footer and trip cards. */
+-body.catalog-page .site-header{background:var(--lst-orange);border-bottom:1px solid rgba(27,27,27,.22)}
++body.catalog-page .site-header{background:var(--lst-paper);border-bottom:1px solid var(--lst-line)}
+ body.catalog-page .site-header.is-scrolled,body.catalog-page .site-header:has(nav.is-open){background:var(--lst-paper)}
+ body.catalog-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+ body.catalog-page .site-header nav .lst-nav-contact{padding:9px 18px;border-radius:100px;background:var(--lst-ink);color:var(--lst-paper)}
+@@ -8,23 +8,23 @@ body.catalog-page .site-header:not(.is-scrolled) nav [aria-current=page]{text-de
+ body.catalog-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:7px}
+ body.catalog-page main{padding-top:var(--home-header-height)}
+ body.catalog-page main[tabindex="-1"]:focus{outline:none;box-shadow:none}
+-/* An orange surf poster with a photograph held like a printed memory. */
+-body.catalog-page .catalog-intro{position:relative;isolation:isolate;padding-block:44px 104px;background:var(--lst-orange)}
+-body.catalog-page .catalog-intro:after{content:'';position:absolute;inset:auto 0 -1px;height:20px;background:var(--lst-paper);clip-path:polygon(0 65%,4% 38%,9% 63%,14% 36%,20% 60%,26% 33%,32% 60%,38% 35%,45% 64%,52% 38%,59% 60%,66% 31%,73% 61%,80% 36%,87% 62%,94% 35%,100% 62%,100% 100%,0 100%);pointer-events:none}
++/* A surf poster on cream: angled type, a printed memory and an orange edge. */
++body.catalog-page .catalog-intro{position:relative;isolation:isolate;padding-block:44px 96px;background:var(--lst-paper)}
++
+ body.catalog-page .catalog-intro-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:56px}
+ body.catalog-page .catalog-intro-content{position:relative;z-index:1;min-width:0}
+ body.catalog-page .catalog-intro .lst-eyebrow{max-width:32em;margin-bottom:26px;font-size:10px;letter-spacing:.035em}
+ body.catalog-page .catalog-intro h1{max-width:760px;font:400 clamp(64px,6.4vw,92px)/1.02 var(--lst-display);letter-spacing:-.015em}
+ body.catalog-page .catalog-intro h1 em{display:inline-block;margin-top:8px;padding:0 .12em .07em;background:var(--lst-ink);color:var(--lst-paper);font-style:normal;transform:rotate(-3deg)}
+ body.catalog-page .catalog-intro-copy{max-width:32em;margin-top:28px;color:var(--lst-ink);font-size:15px;line-height:1.65}
+-body.catalog-page .catalog-postcard{position:relative;width:100%;max-width:385px;margin:0 10px 0 auto;padding:11px 11px 16px;background:var(--lst-paper);box-shadow:10px 12px 0 var(--lst-ink);transform:rotate(5deg)}
++body.catalog-page .catalog-postcard{position:relative;width:100%;max-width:385px;margin:0 10px 0 auto;padding:11px 11px 16px;background:var(--lst-paper);border:1px solid var(--lst-ink);border-radius:0;box-shadow:9px 10px 0 var(--lst-ink);transform:rotate(4deg)}
+ body.catalog-page .catalog-postcard-photo{overflow:hidden;aspect-ratio:1.08}
+ body.catalog-page .catalog-postcard-photo img{width:100%;height:100%;object-fit:cover;object-position:60% 64%}
+ body.catalog-page .catalog-postcard figcaption{padding:14px 4px 0;font:400 clamp(24px,2.4vw,33px)/1.1 var(--lst-display)}
+-body.catalog-page .catalog-stamp{position:absolute;top:-26px;right:-20px;display:grid;place-items:center;width:92px;aspect-ratio:1;border:2px solid var(--lst-ink);border-radius:50%;background:var(--lst-paper);transform:rotate(-14deg)}
++body.catalog-page .catalog-stamp{position:absolute;top:-26px;right:-20px;display:grid;place-items:center;width:92px;aspect-ratio:1;border:2px solid var(--lst-ink);border-radius:50%;background:var(--lst-orange);transform:rotate(-14deg)}
+ body.catalog-page .catalog-stamp img{width:65px;height:auto}
+ /* Controls are steady and readable inside a contrasting, offset printed panel. */
+-body.catalog-page .catalog-filters{position:relative;z-index:2;display:flex;align-items:end;flex-wrap:wrap;gap:18px 28px;margin-top:-42px;padding:28px 32px 32px;border:0;border-radius:4px 28px 4px 4px;background:var(--lst-ink);color:var(--lst-paper);box-shadow:7px 7px 0 var(--lst-orange)}
++body.catalog-page .catalog-filters{position:relative;z-index:2;display:flex;align-items:end;flex-wrap:wrap;gap:18px 28px;margin-top:-42px;padding:28px 32px 32px;border:0;border-radius:4px 28px 4px 4px;background:var(--lst-ink);color:var(--lst-paper);box-shadow:5px 5px 0 var(--lst-orange)}
+ body.catalog-page .catalog-field{flex:1 1 260px;min-width:0}
+ body.catalog-page .catalog-field label{display:flex;align-items:baseline;gap:12px;margin:0 0 12px;color:var(--lst-paper);font:400 32px/1.1 var(--lst-display)}
+ body.catalog-page .catalog-field label:before{content:'01 /';color:var(--lst-orange);font:400 11px/1.5 'Space Mono',monospace}
+@@ -63,12 +63,12 @@ body.catalog-page .lst-footer{border-top:1px solid var(--lst-line)}
+  body.catalog-page .catalog-intro h1{font-size:clamp(53px,9.4vw,74px)}
+  body.catalog-page .catalog-intro h1 em{margin-top:5px}
+  body.catalog-page .catalog-intro-copy{margin-top:20px;font-size:14px}
+- body.catalog-page .catalog-postcard{width:80%;max-width:330px;margin:0 12px 0 auto;padding:8px 8px 12px;box-shadow:7px 8px 0 var(--lst-ink);transform:rotate(4deg)}
++ body.catalog-page .catalog-postcard{width:80%;max-width:330px;margin:0 12px 0 auto;padding:8px 8px 12px;box-shadow:6px 7px 0 var(--lst-ink);transform:rotate(4deg)}
+  body.catalog-page .catalog-postcard-photo{aspect-ratio:1.8}
+  body.catalog-page .catalog-postcard figcaption{padding-top:10px;font-size:25px}
+  body.catalog-page .catalog-stamp{top:-19px;right:-14px;width:68px}
+  body.catalog-page .catalog-stamp img{width:48px}
+- body.catalog-page .catalog-filters{gap:22px 18px;margin-top:-28px;padding:24px 22px;border-radius:4px 24px 4px 4px;box-shadow:5px 5px 0 var(--lst-orange)}
++ body.catalog-page .catalog-filters{gap:22px 18px;margin-top:-28px;padding:24px 22px;border-radius:4px 24px 4px 4px;box-shadow:4px 4px 0 var(--lst-orange)}
+  body.catalog-page .catalog-field{flex:1 1 calc(50% - 9px)}
+  body.catalog-page .catalog-field label{margin-bottom:10px;font-size:30px}
+  body.catalog-page .catalog-clear{min-height:44px;margin-left:auto;padding-block:9px}
+diff --git a/artifacts/brand-rollout-before/dist/viajes/index.html b/dist/viajes/index.html
+index e2229a5..fd1111f 100644
+--- a/artifacts/brand-rollout-before/dist/viajes/index.html
++++ b/dist/viajes/index.html
+@@ -14,7 +14,7 @@
+     <h1 id="catalog-title">Busca tu<br><em>próxima ola.</em></h1>
+     <p class="catalog-intro-copy">Mira qué viajes encajan con tu nivel y cuándo puedes venir.</p>
+    </div>
+-   <figure class="catalog-postcard"><div class="catalog-postcard-photo"><img src="/assets/surf-session.webp" alt="Una surfista de LST recorre una ola cerca de la orilla" width="1600" height="1066" fetchpriority="high" decoding="async"></div><figcaption>Un baño con el grupo.</figcaption><span class="catalog-stamp" aria-hidden="true"><img src="/assets/brand/symbol-orange.svg" alt="" width="72" height="45"></span></figure>
++   <figure class="catalog-postcard"><div class="catalog-postcard-photo"><img src="/assets/surf-session.webp" alt="Una surfista de LST recorre una ola cerca de la orilla" width="1600" height="1066" fetchpriority="high" decoding="async"></div><figcaption>Un baño con el grupo.</figcaption><span class="catalog-stamp" aria-hidden="true"><img src="/assets/brand/symbol-black.svg" alt="" width="72" height="45"></span></figure>
+   </div>
+  </section>
+  <section class="catalog lst-width" aria-label="Catálogo de viajes">
+diff --git a/artifacts/brand-rollout-before/dist/landing.css b/dist/landing.css
+index f8a170a..0b99071 100644
+--- a/artifacts/brand-rollout-before/dist/landing.css
++++ b/dist/landing.css
+@@ -22,17 +22,17 @@ body.landing-page .landing-hero-link{display:inline-flex;align-items:center;gap:
+ .landing-hero-link span{font-size:20px;color:var(--lst-orange)}
+ body.landing-page .landing-hero a:focus-visible{outline-color:var(--lst-paper)}
+ body.landing-page :is(section[id],.faq-topic){scroll-margin-top:calc(var(--landing-header-height,78px) + 20px)}
+-.landing-contact{padding-block:44px;background:var(--lst-orange)}
++.landing-contact{padding-block:48px;background:var(--lst-ink);color:var(--lst-paper)}
+ .landing-contact-layout{display:grid;gap:24px}
+ body.landing-page .landing-contact h2{max-width:600px;margin-top:14px;font-size:44px;line-height:1.04}
+ .landing-contact-copy>p:first-child{max-width:460px;font-size:15px;line-height:1.75}
+ .landing-contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+-body.landing-page .landing-contact .lst-button{justify-content:center;max-width:100%;min-height:48px;padding:13px 20px;background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper);font-size:13px}
++body.landing-page .landing-contact .lst-button{justify-content:center;max-width:100%;min-height:48px;padding:13px 20px;background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink);font-size:14px}
+ body.landing-page .landing-contact .lst-button:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
+-body.landing-page .landing-contact .lst-link{min-height:48px;border-color:rgba(27,27,27,.5);font-size:13px}
+-body.landing-page .landing-contact .lst-link:hover{background:var(--lst-paper);border-color:var(--lst-paper)}
+-body.landing-page .landing-contact .landing-contact-note{margin-top:16px;font-size:12px;line-height:1.7}
+-body.landing-page .landing-contact :is(a,button):focus-visible{outline-color:var(--lst-ink)}
++body.landing-page .landing-contact .lst-link{min-height:48px;border-color:rgba(255,250,231,.5);color:var(--lst-paper);font-size:14px}
++body.landing-page .landing-contact .lst-link:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
++body.landing-page .landing-contact .landing-contact-note{margin-top:16px;font-size:13px;line-height:1.7;color:#ded9c8}
++body.landing-page .landing-contact :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+ /* Static navigation remains visible and usable when scripting is unavailable. */
+ body.landing-page:has(.static-navigation) .site-header{position:sticky;top:0;background:var(--lst-paper);color:var(--lst-ink);border-bottom:1px solid var(--lst-line)}
+ body.landing-page:has(.static-navigation) .site-header .brand-light{display:none}
+diff --git a/artifacts/brand-rollout-before/dist/levels.css b/dist/levels.css
+index 5dc62ef..1f36cf4 100644
+--- a/artifacts/brand-rollout-before/dist/levels.css
++++ b/dist/levels.css
+@@ -25,14 +25,14 @@ body.levels-page .guide-intro-visual :is(a,button):focus-visible{outline-color:v
+ .guide-stamp{position:absolute;right:60px;bottom:72px;width:154px;height:154px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;background:var(--orange);color:var(--ink);border-radius:50%;transform:rotate(9deg)}
+ .guide-stamp span{font:400 8px/1.5 var(--mono);white-space:nowrap}
+ .guide-stamp strong{font:400 34px/1 var(--display)}
+-.guide-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--orange);color:var(--ink);border-radius:0 0 28px 28px;padding:0 12px}
++.guide-index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--ink);color:var(--paper);border-radius:0 0 28px 28px;padding:0 12px}
+ .guide-index a{display:flex;align-items:center;gap:12px;min-height:88px;min-width:0;padding:18px 16px;position:relative}
+-.guide-index a+a{border-left:1px solid rgba(27,27,27,.28)}
+-.guide-index-number{font:400 13px/1.5 var(--mono);max-width:26px;flex:0 0 26px}
++.guide-index a+a{border-left:1px solid rgba(255,250,231,.28)}
++.guide-index-number{font:400 13px/1.5 var(--mono);color:var(--orange);max-width:26px;flex:0 0 26px}
+ .guide-index strong{font:400 clamp(26px,2.5vw,35px)/1.05 var(--display);overflow-wrap:anywhere}
+ .guide-index-arrow{margin-left:auto;font-size:20px;line-height:1}
+ .guide-index a:hover,.guide-index a[aria-current=location]{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:1px}
+-body.levels-page .guide-index a:focus-visible{outline-color:var(--ink);outline-offset:-5px}
++body.levels-page .guide-index a:focus-visible{outline-color:var(--paper);outline-offset:-5px}
+ .guide-content{padding-bottom:24px}
+ .guide-section-intro{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;padding-bottom:28px}
+ .guide-section-intro .eyebrow{margin-bottom:12px!important}
+@@ -41,7 +41,7 @@ body.levels-page .guide-section-intro h2{font-size:60px;line-height:1}
+ .guide-levels-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+ .guide-level{--poster-bg:var(--paper);--poster-ink:var(--ink);--poster-muted:var(--muted);--poster-line:var(--lst-line);display:flex;flex-direction:column;min-width:0;border:1px solid var(--poster-line);border-radius:4px 34px 4px 4px;overflow:hidden;background:var(--poster-bg);color:var(--poster-ink)}
+ .guide-level:nth-child(even){margin-top:32px}
+-.guide-level--aprendices{--poster-bg:var(--orange);--poster-muted:var(--ink);--poster-line:rgba(27,27,27,.28)}
++.guide-level--aprendices{--poster-bg:var(--paper);--poster-muted:var(--muted);--poster-line:var(--lst-line)}
+ .guide-level--riders{--poster-bg:var(--ink);--poster-ink:var(--paper);--poster-muted:#dfd8c3;--poster-line:rgba(255,250,231,.32)}
+ .guide-level-media{position:relative;isolation:isolate;display:flex;align-items:flex-end;min-height:clamp(220px,30svh,290px);padding:28px;overflow:hidden;background:var(--ink);color:var(--paper)}
+ .guide-level-media:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(27,27,27,.4),rgba(27,27,27,.03) 70%)}
+@@ -100,10 +100,10 @@ body.levels-page .guide-trip-group h3{font:400 30px/1.1 var(--display);margin-bo
+ .guide-trip-pending>.guide-pending-intro{padding:0 16px 18px;font-size:13px;color:var(--muted)}
+ .guide-trip-pending .home-trip-grid{padding:0 16px 16px}
+ 
+-.guide-help{padding:36px 40px;background:var(--orange);border-radius:32px;margin-top:4px}
++.guide-help{padding:40px 0;background:transparent;border-top:2px solid var(--ink);border-radius:0;margin-top:4px}
+ .guide-help-layout{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+ body.levels-page .guide-help h2{font-size:clamp(56px,6vw,78px);line-height:.98;margin-bottom:22px}
+-.guide-help-copy>p:not(.eyebrow){font-size:15px;line-height:1.75;max-width:340px}
++.guide-help-copy>p:not(.eyebrow){font-size:16px;line-height:1.75;max-width:420px}
+ body.levels-page .guide-help .guide-contact{background:var(--ink);color:var(--paper);border-color:var(--ink);font-size:13px;margin-top:24px}
+ .guide-contact svg{width:18px;height:18px;flex-shrink:0}
+ body.levels-page .guide-help .guide-contact:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+@@ -119,13 +119,24 @@ body.levels-page .guide-next h2{font-size:40px;line-height:1.03}
+  body.levels-page .section-width{width:calc(100% - 40px)}
+  body.levels-page main{padding-top:calc(var(--home-header-height,70px) + 18px)}
+  .guide-intro{padding-bottom:40px}.guide-intro-visual{padding:30px 24px 132px;min-height:440px;border-radius:26px 26px 0 0;align-items:flex-start}.guide-intro h1{font-size:clamp(68px,15vw,98px)}.guide-lead{font-size:14px;max-width:260px}.guide-stamp{width:94px;height:94px;right:18px;bottom:22px;padding:10px;gap:5px}.guide-stamp span{font-size:5px}.guide-stamp strong{font-size:21px}.guide-stamp svg{width:40px;height:14px}.guide-photo figcaption{left:24px;right:120px;bottom:24px;font-size:8px}
+- .guide-index{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 8px;border-radius:0 0 24px 24px}.guide-index a{display:grid;grid-template-columns:minmax(0,1fr) 16px;min-height:84px;padding:15px 10px;gap:7px 8px}.guide-index a:nth-child(3){border-left:0}.guide-index a:nth-child(n+3){border-top:1px solid rgba(27,27,27,.28)}.guide-index-number{font-size:10px;max-width:none;grid-column:1;grid-row:1}.guide-index strong{font:600 16px/1.35 var(--body);grid-column:1;grid-row:2}.guide-index-arrow{font-size:16px;grid-column:2;grid-row:1/3;align-self:center;margin-left:0}
++ .guide-index{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 8px;border-radius:0 0 24px 24px}.guide-index a{display:grid;grid-template-columns:minmax(0,1fr) 16px;min-height:84px;padding:15px 10px;gap:7px 8px}.guide-index a:nth-child(3){border-left:0}.guide-index a:nth-child(n+3){border-top:1px solid rgba(255,250,231,.28)}.guide-index-number{font-size:10px;max-width:none;grid-column:1;grid-row:1}.guide-index strong{font:600 16px/1.35 var(--body);grid-column:1;grid-row:2}.guide-index-arrow{font-size:16px;grid-column:2;grid-row:1/3;align-self:center;margin-left:0}
+  .guide-section-intro{display:block;padding-bottom:22px}.guide-section-intro>p{max-width:none;margin-top:14px!important;padding:0;font-size:13px}body.levels-page .guide-section-intro h2{font-size:48px}.guide-section-intro .eyebrow{font-size:9px}
+  .guide-levels-grid{grid-template-columns:1fr;gap:22px}.guide-level:nth-child(even){margin-top:0}.guide-level-media{min-height:220px;padding:24px 22px}.guide-level-number{font-size:84px;top:16px;right:22px}.guide-level-heading .eyebrow{font-size:9px}body.levels-page .guide-level h2{font-size:60px}.guide-level-body{padding:22px 22px 0}body.levels-page .guide-level-hook{font-size:30px;margin-bottom:16px}.guide-definition{font-size:14px;line-height:1.75}.guide-practice{margin-top:18px;padding:18px 22px}.guide-practice p{font-size:13px}.guide-level-actions{padding:0 22px 22px;gap:8px}.guide-reading-note{font-size:11px}
+  .guide-autonomy{margin-top:18px;margin-bottom:36px;padding:26px 24px}.guide-autonomy-layout{grid-template-columns:1fr;gap:20px}body.levels-page .guide-autonomy h2{font-size:37px}.guide-autonomy p:not(.eyebrow){font-size:13px}
+  .guide-trips{padding-block:34px 40px}body.levels-page .guide-trips h2{font-size:48px}
+- .guide-help{padding:28px 24px}.guide-help-layout{grid-template-columns:1fr;gap:26px}body.levels-page .guide-help h2{font-size:60px}.guide-help-copy>p:not(.eyebrow){font-size:14px}body.levels-page .guide-help-photo img{aspect-ratio:1.5;border-top-left-radius:44px}.guide-help .guide-contact{max-width:100%;text-align:center}
++ .guide-help{padding:32px 0}.guide-help-layout{grid-template-columns:1fr;gap:26px}body.levels-page .guide-help h2{font-size:60px}.guide-help-copy>p:not(.eyebrow){font-size:14px}body.levels-page .guide-help-photo img{aspect-ratio:1.5;border-top-left-radius:44px}.guide-help .guide-contact{max-width:100%;text-align:center}
+  .guide-next{gap:20px;padding-block:26px}body.levels-page .guide-next h2{font-size:33px}.guide-next>.button{font-size:12px;padding-inline:14px}
+ }
+-@media(max-width:359px){body.levels-page .section-width{width:calc(100% - 36px)}.guide-intro-visual{padding-inline:20px}.guide-intro h1{font-size:64px}.guide-index{padding-inline:6px}.guide-index a{padding-inline:8px;gap:7px}.guide-index-number{flex-basis:20px;font-size:11px}.guide-index strong{font-size:14px}.guide-index-arrow{font-size:14px}.guide-level-body,.guide-level-media,.guide-practice,.guide-level-actions{padding-inline:18px}body.levels-page .guide-level h2{font-size:46px}.guide-autonomy{padding-inline:20px}.guide-help{padding-inline:20px}.guide-next{flex-direction:column;align-items:flex-start}.guide-next>.button{width:100%}}
++@media(max-width:359px){body.levels-page .section-width{width:calc(100% - 36px)}.guide-intro-visual{padding-inline:20px}.guide-intro h1{font-size:64px}.guide-index{padding-inline:6px}.guide-index a{padding-inline:8px;gap:7px}.guide-index-number{flex-basis:20px;font-size:11px}.guide-index strong{font-size:14px}.guide-index-arrow{font-size:14px}.guide-level-body,.guide-level-media,.guide-practice,.guide-level-actions{padding-inline:18px}body.levels-page .guide-level h2{font-size:46px}.guide-autonomy{padding-inline:20px}.guide-help{padding-inline:0}.guide-next{flex-direction:column;align-items:flex-start}.guide-next>.button{width:100%}}
+ @media(prefers-reduced-motion:reduce){.guide-level-photo{transition:none}.guide-level:hover .guide-level-photo{transform:none}}
++
++/* Each level keeps its own rhythm; colour is a chapter accent. */
++.guide-level--aprendices .guide-level-body{padding-bottom:24px;background:var(--orange);color:var(--ink)}
++.guide-level--aprendices .guide-definition{color:var(--ink)}
++.guide-level--aprendices .guide-practice{margin-top:0}
++.guide-index{border-bottom:4px solid var(--orange)}
++.guide-help-heading{position:relative;padding:32px;background:var(--ink);color:var(--paper);border-radius:4px 32px 4px 4px}
++body.levels-page .guide-help-heading .eyebrow{color:var(--paper)}
++body.levels-page .guide-help h2{margin-bottom:0}
++body.levels-page .guide-help h2 em{font-style:normal;color:var(--orange)}
++@media(max-width:760px){.guide-help-heading{padding:28px 24px}}
+diff --git a/artifacts/brand-rollout-before/dist/niveles/index.html b/dist/niveles/index.html
+index 953a8a1..a9b831e 100644
+--- a/artifacts/brand-rollout-before/dist/niveles/index.html
++++ b/dist/niveles/index.html
+@@ -88,8 +88,7 @@
+ <p class="guide-trips-empty" hidden>No hay viajes publicados para este nivel. Consulta con LST qué opciones hay para ti.</p></section>
+ <!-- level-trips:end -->
+  <section class="guide-help section-width" id="orientacion" aria-labelledby="orientation-title" tabindex="-1"><div class="guide-help-layout">
+-  <div class="guide-help-copy"><p class="eyebrow">LO VEMOS CONTIGO</p><h2 id="orientation-title">¿Entre dos<br>niveles?</h2><p>Cuéntanos cómo surfeas y qué apoyo necesitas. Encontramos tu viaje contigo.</p><a class="button guide-contact" data-guide-enquiry data-whatsapp="nivel" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>Lo hablamos por WhatsApp</span></a><p class="guide-note">El equipo confirma el nivel. Consultar no confirma una plaza.</p></div>
+-  <figure class="guide-help-photo"><img src="/assets/community.webp" width="1066" height="1600" alt="Dos personas con tablas comparten un momento en la playa" loading="lazy" decoding="async"><figcaption>Un recuerdo de LST, entre baños.</figcaption></figure>
++  <div class="guide-help-heading"><p class="eyebrow">LO VEMOS CONTIGO</p><h2 id="orientation-title">¿Entre dos<br><em>niveles?</em></h2></div><div class="guide-help-copy"><p>Cuéntanos cómo surfeas y qué apoyo necesitas. Encontramos tu viaje contigo.</p><a class="button guide-contact" data-guide-enquiry data-whatsapp="nivel" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Quiero%20consultar%20mi%20nivel%20de%20surf%20y%20saber%20si%20encajo%20en%20un%20viaje.%20%C2%BFPod%C3%A9is%20orientarme%3F" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a9 9 0 0 1-13.2 8L3 21l1.5-4.8A9 9 0 1 1 21 11.5Z"/><path d="m8.2 7.2 1.5 3-1.1 1.1a9 9 0 0 0 4.1 4.1l1.1-1.1 3 1.5c-.4 1.1-1.2 1.8-2.5 1.7-4.5-.4-7.6-3.5-8-8-.1-1.2.6-2 1.9-2.3Z"/></svg><span>Lo hablamos por WhatsApp</span></a><p class="guide-note">El equipo confirma el nivel. Consultar no confirma una plaza.</p></div>
+  </div></section>
+  <section class="guide-next section-width" aria-labelledby="next-title"><div><h2 id="next-title">La próxima ola,<br>en grupo.</h2></div><a class="button" href="/viajes/">Ver viajes y fechas</a></section>
+ </main>
+diff --git a/artifacts/brand-rollout-before/dist/about.css b/dist/about.css
+index ee9bd7c..380def5 100644
+--- a/artifacts/brand-rollout-before/dist/about.css
++++ b/dist/about.css
+@@ -46,7 +46,7 @@ body.about-page .about-team .lst-link:hover{background:var(--lst-orange);border-
+ .about-respect{display:grid;gap:22px;padding-block:32px 48px;border-top:3px solid var(--lst-orange)}
+ body.about-page .about-respect h2{font:400 40px/1.04 var(--lst-display);letter-spacing:-.01em}
+ .about-respect p{max-width:560px;font-size:15px;line-height:1.8}
+-body.about-page .about-next h2 em{font-style:normal;color:var(--lst-ink)}
++body.about-page .about-next h2 em{font-style:normal;color:var(--lst-paper)}
+ @media(max-width:760px){
+  .about-moments article:nth-child(2){display:flex;flex-wrap:wrap;gap:22px;align-items:flex-start}
+  .about-moments article:nth-child(2)>.about-photo{flex:1 1 8em;min-width:0}
+@@ -87,3 +87,17 @@ body.about-page .about-next h2 em{font-style:normal;color:var(--lst-ink)}
+  .about-moments article:nth-child(2){padding-top:0}
+  .about-moment-copy{padding-top:0}
+ }
++
++/* Practical team information uses the same line icons as the travel plan. */
++.about-team-points>div{position:relative;padding-left:48px}
++.about-team-points .lst-line-icon{position:absolute;left:0;top:0}
++body.about-page .landing-contact h2{color:var(--lst-paper)}
++
++/* The story ends as an invitation on paper, with a last piece of poster type. */
++body.about-page .about-next{background:var(--lst-paper);color:var(--lst-ink);border-top:1px solid var(--lst-ink)}
++body.about-page .about-next h2{color:var(--lst-ink)}
++body.about-page .about-next h2 em{display:inline-block;padding:0 .09em .06em;margin-top:7px;background:var(--lst-ink);color:var(--lst-paper);transform:rotate(-2deg)}
++body.about-page .about-next .lst-link{border-color:var(--lst-ink);color:var(--lst-ink)}
++body.about-page .about-next .lst-link:hover{background:var(--lst-ink);color:var(--lst-paper)}
++body.about-page .about-next .landing-contact-note{color:var(--lst-muted)}
++body.about-page .about-next :is(a,button):focus-visible{outline-color:var(--lst-ink)}
+diff --git a/artifacts/brand-rollout-before/dist/conocenos/index.html b/dist/conocenos/index.html
+index e4f18a7..fd5e9b4 100644
+--- a/artifacts/brand-rollout-before/dist/conocenos/index.html
++++ b/dist/conocenos/index.html
+@@ -27,7 +27,7 @@
+ </section>
+ <section class="about-team lst-width" id="acompanamiento" aria-labelledby="team-title"><div class="about-team-layout">
+  <div class="about-team-heading"><p class="eyebrow">QUIÉN ESTÁ CONTIGO</p><h2 id="team-title">El equipo<br><em>también se moja.</em></h2></div>
+- <div class="about-team-points"><div><h3>Antes de hacer la mochila.</h3><p>Cuéntanos en qué olas surfeas y dónde necesitas ayuda. Hablamos del nivel del viaje y de lo que quieres saber antes de apuntarte.</p></div><div><h3>Ya en el destino.</h3><p>Quienes montamos los viajes también los vivimos con el grupo. En cada ficha te contamos quién te acompaña y cómo se organizan las sesiones. Si el programa está pendiente, lo hablamos contigo.</p></div><a class="lst-link" href="/viajes/">Conoce los viajes y su programa</a></div>
++ <div class="about-team-points"><div><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="14" height="15" rx="3"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M5 12h14M9 21v1m6-1v1"/><path stroke="#EA5934" d="M12 10v4"/></svg><h3>Antes de hacer la mochila.</h3><p>Cuéntanos en qué olas surfeas y dónde necesitas ayuda. Hablamos del nivel del viaje y de lo que quieres saber antes de apuntarte.</p></div><div><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3"/><path stroke="#EA5934" d="M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></svg><h3>Ya en el destino.</h3><p>Quienes montamos los viajes también los vivimos con el grupo. En cada ficha te contamos quién te acompaña y cómo se organizan las sesiones. Si el programa está pendiente, lo hablamos contigo.</p></div><a class="lst-link" href="/viajes/">Conoce los viajes y su programa</a></div>
+ </div></section>
+ <section class="about-respect lst-width" id="respeto" aria-labelledby="respect-title"><h2 id="respect-title">Al mar se viene<br><em>con respeto.</em></h2><p>Hay gente que llama hogar a ese lugar. Escuchamos a quienes surfean allí, respetamos el océano y las costumbres del lugar. En cada destino, tenemos presente que estamos de visita.</p></section>
+ <section class="about-next landing-contact" aria-labelledby="next-title"><div class="lst-width landing-contact-layout"><div><p class="eyebrow">LAS GANAS YA LAS TIENES</p><h2 id="next-title">Vamos a por<br><em>el siguiente baño.</em></h2></div><div class="landing-contact-copy"><p>Echa un ojo a las salidas. Si hay una que te ronda la cabeza, cuéntanos cuál. Hablamos del grupo, de tu nivel y de cómo sumarte.</p><div class="about-actions landing-contact-actions"><a class="lst-button" href="/viajes/">Ver viajes y fechas</a><a class="lst-link" data-whatsapp="conocenos" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20vuestra%20historia%20y%20me%20gustar%C3%ADa%20conocer%20mejor%20c%C3%B3mo%20viaj%C3%A1is.%20Quiero%20consultar%20qu%C3%A9%20viaje%20encaja%20conmigo%20y%20qui%C3%A9n%20acompa%C3%B1ar%C3%A1%20al%20grupo." target="_blank" rel="noopener noreferrer">Preguntar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
+diff --git a/artifacts/brand-rollout-before/dist/faq.css b/dist/faq.css
+index 571ef7a..1a1c451 100644
+--- a/artifacts/brand-rollout-before/dist/faq.css
++++ b/dist/faq.css
+@@ -1,62 +1,78 @@
+-/* FAQs: compact topics, quiet disclosures and a useful reading width. */
+-.faq-hero{min-height:390px;padding-bottom:3.5em}
+-.faq-hero .landing-hero-photo img{object-position:57% 60%}
+-body.faq-page .faq-hero h1{font-size:clamp(52px,13.3vw,72px);max-width:650px}
+-body.faq-page .faq-hero-description{max-width:300px;font-size:15px}
+-.faq-body{padding-block:28px 44px}
+-.faq-context{max-width:680px;font-size:14px;line-height:1.75;color:var(--lst-muted)}
+-body.faq-page .faq-context a,body.faq-page .faq-answers a{text-decoration:underline;text-underline-offset:4px}
+-.faq-layout{display:grid;gap:32px;margin-top:24px}
+-.faq-sidebar{min-width:0}
+-.faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+-body.faq-page .faq-index a{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border:1px solid var(--lst-line);border-radius:6px;font-size:13px;font-weight:500;line-height:1.5;overflow-wrap:anywhere;transition:border-color .18s,background .18s}
+-.faq-index a span{font:400 10px/1.5 var(--mono);color:var(--lst-muted)}
+-body.faq-page .faq-index a:hover{border-color:var(--lst-orange);background:var(--lst-orange)}
++/* FAQs: a paper opening, a useful topic index and generous native disclosures. */
++body.faq-page .site-header,
++body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)){background:var(--lst-paper);color:var(--lst-ink);border-bottom:1px solid var(--lst-line)}
++body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-light{display:none}
++body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-dark{display:block}
++body.faq-page .site-header :is(a,button):focus-visible,
++body.faq-page:not(:has(.static-navigation)) .site-header:not(.is-scrolled):not(:has(nav.is-open)) :is(a,button):focus-visible{outline-color:var(--lst-ink)}
++.faq-hero{padding:calc(var(--landing-header-height,78px) + 44px) 0 38px;background:var(--lst-paper);color:var(--lst-ink)}
++.faq-hero-copy{position:relative;min-width:0}
++body.faq-page .faq-hero .eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px}
++.faq-hero .eyebrow:before{content:'';width:24px;height:2px;background:var(--lst-orange)}
++body.faq-page .faq-hero h1{max-width:850px;font:400 clamp(48px,12.2vw,74px)/1.03 var(--lst-display);letter-spacing:-.015em;text-wrap:balance}
++body.faq-page .faq-hero h1 em{font-style:normal;text-decoration:underline;text-decoration-color:var(--lst-orange);text-decoration-thickness:3px;text-underline-offset:9px}
++body.faq-page .faq-hero-description{max-width:440px;margin-top:26px;font-size:16px;line-height:1.7;color:var(--lst-muted)}
++.faq-body{padding-block:0 56px}
++.faq-context{padding-block:24px;border-top:1px solid var(--lst-ink);font-size:15px;line-height:1.8;color:var(--lst-muted);max-width:none}
++body.faq-page :is(.faq-context,.faq-answers) a{text-decoration:underline;text-underline-offset:4px}
++.faq-layout{display:grid;gap:36px;margin-top:8px;align-items:start}
++.faq-sidebar,.faq-content{min-width:0}
++.faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px}
++body.faq-page .faq-index a{position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;gap:8px 10px;min-height:76px;padding:15px 0;border-bottom:1px solid var(--lst-line);font-size:14px;font-weight:500;line-height:1.5;overflow-wrap:anywhere;text-decoration:none}
++.faq-index .lst-line-icon{width:28px;height:28px;grid-column:1}
++.faq-index-number{display:none}
++body.faq-page .faq-index a:hover{border-bottom-color:var(--lst-ink);text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:5px}
+ .faq-sidebar-note{display:none}
+-.faq-content{min-width:0}
+-.faq-topic+.faq-topic{margin-top:32px}
+-.faq-topic-heading{margin-bottom:14px}
+-body.faq-page .faq-topic h2{display:flex;align-items:baseline;gap:12px;font:600 20px/1.4 var(--body);letter-spacing:-.025em}
+-.faq-topic h2>span{font:400 10px/1.7 var(--mono);color:var(--lst-orange)}
+-.faq-answers{border-top:1px solid var(--lst-line)}
++.faq-topic+.faq-topic{margin-top:42px}
++.faq-topic-heading{display:flex;align-items:center;gap:16px;margin-bottom:18px}
++.faq-topic-heading>.lst-line-icon{flex:0 0 36px;width:36px;height:36px}
++body.faq-page .faq-topic h2{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 10px;font:400 34px/1.1 var(--lst-display);letter-spacing:-.015em}
++.faq-topic h2>span{font:400 10px/1.6 var(--mono);align-self:center;color:var(--lst-muted)}
++.faq-answers{border-top:2px solid var(--lst-ink)}
+ body.faq-page .faq-answers details{border:0;border-bottom:1px solid var(--lst-line);border-radius:0;background:transparent;overflow:visible;min-width:0}
+-body.faq-page .faq-answers summary{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:64px;padding:18px 0;border-radius:0;background:transparent;color:var(--lst-ink);font-size:15px;font-weight:500;line-height:1.6;list-style:none}
++body.faq-page .faq-answers summary{display:flex;justify-content:space-between;align-items:center;gap:18px;min-height:76px;padding:21px 0;background:transparent;color:var(--lst-ink);font:500 16px/1.6 var(--body);list-style:none;cursor:pointer}
+ body.faq-page .faq-answers summary::-webkit-details-marker{display:none}
+-body.faq-page .faq-answers summary>span{display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;border:1px solid var(--lst-line);border-radius:50%;font-size:0;line-height:1;font-weight:400;color:var(--lst-ink);transition:background .18s}
+-body.faq-page .faq-answers details[open] summary>span{transform:none;background:var(--lst-orange);border-color:var(--lst-orange)}
++body.faq-page .faq-answers summary>span{display:grid;place-items:center;flex:0 0 32px;width:32px;height:32px;border:1px solid var(--lst-line);border-radius:50%;font-size:0;line-height:1;font-weight:400;color:var(--lst-ink);transition:background .18s,border-color .18s;transform:none}
++body.faq-page .faq-answers summary>span:after{content:'+';font-size:22px}
++body.faq-page .faq-answers details[open] summary>span:after{content:'−'}
++body.faq-page .faq-answers details[open] summary>span{background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper)}
+ body.faq-page .faq-answers summary:hover>span{border-color:var(--lst-orange)}
+-body.faq-page .faq-answers summary:focus-visible{outline-color:var(--lst-ink);outline-offset:4px}
+-body.faq-page .faq-answers details>p{max-width:65ch;padding:0 40px 22px 0;font-size:15px;line-height:1.85;color:var(--lst-muted)}
+-body.faq-page .faq-help h2{max-width:500px}
++body.faq-page .faq-answers summary:focus-visible{outline:3px solid var(--lst-ink);outline-offset:4px}
++body.faq-page .faq-answers details>p{max-width:67ch;padding:0 22px 26px 18px;border-left:2px solid var(--lst-orange);font-size:16px;line-height:1.85;color:var(--lst-muted)}
++body.faq-page .faq-answers details[open] summary{font-weight:600}
++body.faq-page .faq-answers :is(summary,p){overflow-wrap:anywhere}
++body.faq-page .faq-help .lst-line-icon{width:40px;height:40px;margin-bottom:24px}
++body.faq-page .faq-help h2{max-width:530px}
++body.faq-page .faq-help h2 em{font-style:normal;color:inherit}
++body.faq-page .faq-help .eyebrow{color:var(--lst-paper)}
+ @media(min-width:761px){
+- .faq-hero{min-height:440px;padding-bottom:4em}
+- body.faq-page .faq-hero h1{font-size:clamp(76px,7vw,100px)}
+- .faq-hero .landing-hero-photo img{object-position:50% 65%}
+- .faq-body{padding-block:40px 72px}
+- .faq-context{margin-left:calc(240px + 64px)!important}
+- .faq-layout{grid-template-columns:240px minmax(0,1fr);gap:64px;margin-top:36px;align-items:start}
++ .faq-hero{padding-top:calc(var(--landing-header-height,88px) + 66px);padding-bottom:52px}
++ body.faq-page .faq-hero h1{font-size:clamp(76px,7.7vw,112px);max-width:900px}
++ .faq-hero-copy:after{content:'?';position:absolute;right:18px;top:12px;display:block;font:400 230px/1 var(--lst-display);transform:rotate(9deg);color:var(--lst-ink);text-shadow:6px 5px 0 var(--lst-orange);pointer-events:none}
++ .faq-hero-copy{padding-right:180px}
++ .faq-context{padding-block:28px;max-width:none}
++ .faq-layout{grid-template-columns:220px minmax(0,1fr);gap:64px;margin-top:26px}
+  .faq-sidebar{position:sticky;top:calc(var(--landing-header-height,88px) + 28px)}
+- .faq-index{grid-template-columns:minmax(0,1fr);gap:4px}
+- body.faq-page .faq-index a{border:0;padding:12px 14px}
+- .faq-sidebar-note{display:block;margin-top:28px!important;padding:24px 14px 0;border-top:1px solid var(--lst-line);font-size:13px;line-height:1.8;color:var(--lst-muted)}
++ .faq-index{grid-template-columns:1fr;gap:0}
++ body.faq-page .faq-index a{grid-template-columns:28px minmax(0,1fr);min-height:78px;padding:16px 10px}
++ .faq-sidebar-note{display:block;margin-top:30px!important;padding:0 10px;font-size:14px;line-height:1.8;color:var(--lst-muted)}
+  body.faq-page .faq-sidebar-note a{display:inline-flex;align-items:center;min-height:44px;color:var(--lst-ink);text-decoration:underline;text-underline-offset:5px}
+- .faq-topic+.faq-topic{margin-top:40px}
+- body.faq-page .faq-topic h2{font-size:23px}
+- body.faq-page .faq-answers summary{font-size:16px;min-height:70px}
+- body.faq-page .faq-answers details>p{font-size:15px}
++ .faq-topic+.faq-topic{margin-top:54px}
++ body.faq-page .faq-topic h2{font-size:40px}
++ body.faq-page .faq-answers summary{font-size:17px;min-height:80px}
++ .faq-body{padding-bottom:80px}
+ }
+-@media(min-width:761px) and (max-width:1000px){
+- .faq-layout{grid-template-columns:180px minmax(0,1fr);gap:32px}
+- .faq-context{margin-left:212px!important}
++@media(min-width:761px) and (max-width:1100px){
++ .faq-layout{grid-template-columns:175px minmax(0,1fr);gap:32px}
++ .faq-hero-copy{padding-right:120px}
++ .faq-hero-copy:after{font-size:175px;right:0;top:30px}
+ }
+-
+-body.faq-page .faq-answers summary>span:after{content:'+';font-size:19px}
+-body.faq-page .faq-answers details[open] summary>span:after{content:'−'}
+-body.faq-page .faq-answers :is(summary,p){overflow-wrap:anywhere}
+-/* A direct voice; practical answers remain the main event. */
+-body.faq-page .faq-hero h1{max-width:820px;font-size:clamp(48px,12.8vw,72px);text-wrap:initial}
+-body.faq-page .faq-hero-description{max-width:380px}
+-body.faq-page .faq-help h2 em{font-style:normal;color:var(--lst-ink)}
+-body.faq-page .faq-answers details[open]{padding-left:16px;border-left:3px solid var(--lst-orange)}
+-body.faq-page .faq-answers details[open] summary{font-weight:600}
+-@media(min-width:761px){body.faq-page .faq-hero h1{font-size:clamp(76px,7.1vw,104px)}}
++@media(max-width:359px){
++ .faq-hero{padding-top:calc(var(--landing-header-height,78px) + 32px)}
++ body.faq-page .faq-hero h1{font-size:43px}
++ .faq-index{gap:0 12px}
++ body.faq-page .faq-index a{gap:8px;font-size:13px}
++ body.faq-page .faq-topic h2{font-size:31px}
++ body.faq-page .faq-answers summary{font-size:15px;gap:12px}
++}
++@media(prefers-reduced-motion:reduce){body.faq-page .faq-answers summary>span{transition:none}}
+diff --git a/artifacts/brand-rollout-before/dist/preguntas-frecuentes/index.html b/dist/preguntas-frecuentes/index.html
+index fd545e0..6ca4f93 100644
+--- a/artifacts/brand-rollout-before/dist/preguntas-frecuentes/index.html
++++ b/dist/preguntas-frecuentes/index.html
+@@ -7,18 +7,17 @@
+ <header class="site-header"><a class="brand" href="/" aria-label="Let's Surf Together, inicio"><img class="brand-light" src="/assets/brand/logo-white.svg" alt="Let's Surf Together" width="774" height="126"><img class="brand-dark" src="/assets/brand/logo-black.svg" alt="" width="774" height="126" aria-hidden="true"></a><a class="lst-header-trip" href="/viajes/">Ver viajes</a><button class="menu-toggle" aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú"><span></span><span></span></button><nav id="main-nav" aria-label="Navegación principal"><a class="lst-nav-trip" href="/viajes/">Ver viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/" aria-current="page">FAQs</a><a class="lst-nav-contact" data-whatsapp="orientacion" href="https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf." target="_blank" rel="noopener noreferrer">Hablamos</a></nav></header>
+ <main id="contenido" tabindex="-1">
+ <noscript><nav class="static-navigation lst-width" aria-label="Navegación sin JavaScript"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/" aria-current="page">FAQs</a></nav></noscript>
+-<section class="landing-hero faq-hero" aria-labelledby="faq-page-title">
+- <figure class="landing-hero-photo"><img src="/assets/home/francia-atardecer.webp" alt="Dos surfistas se acercan al mar con sus tablas al atardecer" width="1500" height="1000" fetchpriority="high" decoding="async"><figcaption>Un recuerdo de nuestros viajes.</figcaption></figure>
+- <div class="landing-hero-copy lst-width"><p class="eyebrow">PREGUNTAS FRECUENTES</p><h1 id="faq-page-title">Antes del baño,<br><em>las cosas claras.</em></h1><p class="landing-hero-description faq-hero-description">Grupo, nivel, mochila y reserva. Vamos por partes.</p></div>
++<section class="faq-hero" aria-labelledby="faq-page-title">
++ <div class="faq-hero-copy lst-width"><p class="eyebrow">PREGUNTAS FRECUENTES</p><h1 id="faq-page-title">Antes del baño,<br><em>las cosas claras.</em></h1><p class="landing-hero-description faq-hero-description">Grupo, nivel, mochila y reserva. Vamos por partes.</p></div>
+ </section>
+ <div class="faq-body lst-width"><p class="faq-context">Vamos al grano. El programa, los servicios y las condiciones de cada salida están en su <a href="/viajes/">ficha de viaje</a>.</p>
+- <div class="faq-layout"><aside class="faq-sidebar" aria-label="Encuentra tu respuesta"><nav class="faq-index" aria-label="Temas de preguntas frecuentes"><a href="#grupo"><span aria-hidden="true">01</span>El grupo</a><a href="#nivel"><span aria-hidden="true">02</span>Tu nivel</a><a href="#preparacion"><span aria-hidden="true">03</span>El viaje</a><a href="#reserva"><span aria-hidden="true">04</span>La reserva</a></nav><p class="faq-sidebar-note">Si tu duda no sale aquí,<br><a href="#faq-help">cuéntanosla.</a></p></aside>
+- <div class="faq-content"><section class="faq-topic" id="grupo" aria-labelledby="grupo-title"><div class="faq-topic-heading"><h2 id="grupo-title"><span aria-hidden="true">01</span>Viajar en grupo</h2></div><div class="faq-answers"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Claro. Puedes venir por tu cuenta o con amigos. Las sesiones, las comidas y los ratos entre baños dan pie a conocerse. Aquí tienes nuestra <a href="/conocenos/#asi-viajamos">forma de viajar en LST</a>.</p></details></div></section>
+-<section class="faq-topic" id="nivel" aria-labelledby="nivel-title"><div class="faq-topic-heading"><h2 id="nivel-title"><span aria-hidden="true">02</span>Tu nivel de surf</h2></div><div class="faq-answers"><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Cuéntanos cómo surfeas: qué olas coges y dónde necesitas ayuda. Echa un ojo a la <a href="/niveles/">guía de niveles</a> y a los requisitos de la <a href="/viajes/">salida que te interesa</a>. Si estás empezando o tienes dudas, lo vemos contigo antes de reservar.</p></details></div></section>
+-<section class="faq-topic" id="preparacion" aria-labelledby="preparacion-title"><div class="faq-topic-heading"><h2 id="preparacion-title"><span aria-hidden="true">03</span>Preparar el viaje</h2></div><div class="faq-answers"><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>En <a href="/viajes/">cada ficha</a> tienes el programa, el alojamiento, lo incluido y los gastos que van aparte. Revisa tu salida: cada viaje tiene su plan. Si el programa está por anunciar, esos detalles siguen pendientes.</p></details><details><summary>¿Tengo que llevar tabla y neopreno?<span aria-hidden="true">+</span></summary><p>Antes de llenar la mochila, mira qué material incluye la <a href="/viajes/">ficha del viaje</a>. Consulta qué necesitas llevar y, si te hace falta alquilar tabla o neopreno, pregunta por las opciones de ese destino antes de reservar.</p></details><details><summary>¿Cómo organizo la llegada?<span aria-hidden="true">+</span></summary><p>Primero hablamos; después, los billetes. Revisa los desplazamientos y traslados incluidos en la <a href="/viajes/">ficha de tu destino</a> y consulta con el equipo cómo llegar. Cada viaje tiene su organización.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Dínoslo antes de reservar. Lo consultamos con el alojamiento y te confirmamos qué se puede adaptar en ese viaje.</p></details></div></section>
+-<section class="faq-topic" id="reserva" aria-labelledby="reserva-title"><div class="faq-topic-heading"><h2 id="reserva-title"><span aria-hidden="true">04</span>Reserva y plaza</h2></div><div class="faq-answers"><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un <a href="/viajes/">viaje</a> y escríbenos por WhatsApp desde su ficha. Vemos contigo el nivel y la disponibilidad, te explicamos las condiciones y los pasos para confirmar tu plaza.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>Todavía no. Escribirnos abre la conversación. El equipo te indicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details></div></section></div></div>
++ <div class="faq-layout"><aside class="faq-sidebar" aria-label="Encuentra tu respuesta"><nav class="faq-index" aria-label="Temas de preguntas frecuentes"><a href="#grupo"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3"/><path stroke="#EA5934" d="M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></svg><span class="faq-index-number" aria-hidden="true">01</span>El grupo</a><a href="#nivel"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16c4-1 4-10 10-11 3-.5 6 1 7 4-3-2-7-1-7 2 0 2 2 3 5 3h3"/><path stroke="#EA5934" d="M3 20c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/></svg><span class="faq-index-number" aria-hidden="true">02</span>Tu nivel</a><a href="#preparacion"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="14" height="15" rx="3"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M5 12h14M9 21v1m6-1v1"/><path stroke="#EA5934" d="M12 10v4"/></svg><span class="faq-index-number" aria-hidden="true">03</span>El viaje</a><a href="#reserva"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18"/><path stroke="#EA5934" d="m8 16 3 2 5-4"/></svg><span class="faq-index-number" aria-hidden="true">04</span>La reserva</a></nav><p class="faq-sidebar-note">Si tu duda no sale aquí,<br><a href="#faq-help">cuéntanosla.</a></p></aside>
++ <div class="faq-content"><section class="faq-topic" id="grupo" aria-labelledby="grupo-title"><div class="faq-topic-heading"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3"/><path stroke="#EA5934" d="M16 4a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"/></svg><h2 id="grupo-title"><span aria-hidden="true">01</span>Viajar en grupo</h2></div><div class="faq-answers"><details><summary>¿Puedo venir solo o sola?<span aria-hidden="true">+</span></summary><p>Claro. Puedes venir por tu cuenta o con amigos. Las sesiones, las comidas y los ratos entre baños dan pie a conocerse. Aquí tienes nuestra <a href="/conocenos/#asi-viajamos">forma de viajar en LST</a>.</p></details></div></section>
++<section class="faq-topic" id="nivel" aria-labelledby="nivel-title"><div class="faq-topic-heading"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16c4-1 4-10 10-11 3-.5 6 1 7 4-3-2-7-1-7 2 0 2 2 3 5 3h3"/><path stroke="#EA5934" d="M3 20c3 0 3-2 6-2s3 2 6 2 3-2 6-2"/></svg><h2 id="nivel-title"><span aria-hidden="true">02</span>Tu nivel de surf</h2></div><div class="faq-answers"><details><summary>¿Cómo sé si tengo nivel suficiente?<span aria-hidden="true">+</span></summary><p>Cuéntanos cómo surfeas: qué olas coges y dónde necesitas ayuda. Echa un ojo a la <a href="/niveles/">guía de niveles</a> y a los requisitos de la <a href="/viajes/">salida que te interesa</a>. Si estás empezando o tienes dudas, lo vemos contigo antes de reservar.</p></details></div></section>
++<section class="faq-topic" id="preparacion" aria-labelledby="preparacion-title"><div class="faq-topic-heading"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="6" width="14" height="15" rx="3"/><path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M5 12h14M9 21v1m6-1v1"/><path stroke="#EA5934" d="M12 10v4"/></svg><h2 id="preparacion-title"><span aria-hidden="true">03</span>Preparar el viaje</h2></div><div class="faq-answers"><details><summary>¿Qué incluye el precio?<span aria-hidden="true">+</span></summary><p>En <a href="/viajes/">cada ficha</a> tienes el programa, el alojamiento, lo incluido y los gastos que van aparte. Revisa tu salida: cada viaje tiene su plan. Si el programa está por anunciar, esos detalles siguen pendientes.</p></details><details><summary>¿Tengo que llevar tabla y neopreno?<span aria-hidden="true">+</span></summary><p>Antes de llenar la mochila, mira qué material incluye la <a href="/viajes/">ficha del viaje</a>. Consulta qué necesitas llevar y, si te hace falta alquilar tabla o neopreno, pregunta por las opciones de ese destino antes de reservar.</p></details><details><summary>¿Cómo organizo la llegada?<span aria-hidden="true">+</span></summary><p>Primero hablamos; después, los billetes. Revisa los desplazamientos y traslados incluidos en la <a href="/viajes/">ficha de tu destino</a> y consulta con el equipo cómo llegar. Cada viaje tiene su organización.</p></details><details><summary>¿Y si tengo una necesidad alimentaria?<span aria-hidden="true">+</span></summary><p>Dínoslo antes de reservar. Lo consultamos con el alojamiento y te confirmamos qué se puede adaptar en ese viaje.</p></details></div></section>
++<section class="faq-topic" id="reserva" aria-labelledby="reserva-title"><div class="faq-topic-heading"><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 11h18"/><path stroke="#EA5934" d="m8 16 3 2 5-4"/></svg><h2 id="reserva-title"><span aria-hidden="true">04</span>Reserva y plaza</h2></div><div class="faq-answers"><details><summary>¿Cómo reservo?<span aria-hidden="true">+</span></summary><p>Elige un <a href="/viajes/">viaje</a> y escríbenos por WhatsApp desde su ficha. Vemos contigo el nivel y la disponibilidad, te explicamos las condiciones y los pasos para confirmar tu plaza.</p></details><details><summary>¿Mi plaza está reservada al escribir por WhatsApp?<span aria-hidden="true">+</span></summary><p>Todavía no. Escribirnos abre la conversación. El equipo te indicará cómo formalizar la reserva y cuándo queda confirmada tu plaza.</p></details></div></section></div></div>
+ </div>
+-<section class="faq-help landing-contact" id="faq-help" aria-labelledby="help-title"><div class="lst-width landing-contact-layout"><div><p class="eyebrow">TE LEEMOS</p><h2 id="help-title">Tu duda<br><em>tiene sitio aquí.</em></h2></div><div class="landing-contact-copy"><p>Cuéntanos qué te ronda la cabeza. Si ya has fichado un viaje, dinos cuál y vamos a lo concreto.</p><div class="landing-contact-actions"><a class="lst-button" data-whatsapp="preguntas-frecuentes" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20las%20preguntas%20frecuentes%20y%20me%20queda%20una%20duda%20antes%20de%20elegir%20viaje." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
++<section class="faq-help landing-contact" id="faq-help" aria-labelledby="help-title"><div class="lst-width landing-contact-layout"><div><svg class="lst-line-icon" aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11a8 8 0 0 1-8 8H8l-5 3v-7a8 8 0 1 1 18-4Z"/><path stroke="#EA5934" d="M8 10h8m-8 4h5"/></svg><p class="eyebrow">TE LEEMOS</p><h2 id="help-title">Tu duda<br><em>tiene sitio aquí.</em></h2></div><div class="landing-contact-copy"><p>Cuéntanos qué te ronda la cabeza. Si ya has fichado un viaje, dinos cuál y vamos a lo concreto.</p><div class="landing-contact-actions"><a class="lst-button" data-whatsapp="preguntas-frecuentes" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20He%20le%C3%ADdo%20las%20preguntas%20frecuentes%20y%20me%20queda%20una%20duda%20antes%20de%20elegir%20viaje." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></div><p class="landing-contact-note">El mensaje inicia una consulta. La plaza se confirma con el equipo.</p></div></div></section>
+ </main>
+ <footer class="lst-footer"><div class="lst-width"><div class="lst-footer-top"><a class="lst-footer-brand" href="/" aria-label="Let's Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let's Surf Together" width="774" height="126" loading="lazy"></a><span>Viajes de surf en grupo.</span></div><div class="lst-footer-bottom"><span>© 2026 Let's Surf Together</span><nav class="lst-footer-links" aria-label="Enlaces de pie de página"><a href="/viajes/">Viajes</a><a href="/niveles/">Niveles</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a><a href="/#reservar">Cómo reservar</a><a data-whatsapp="orientacion" href="https://wa.me/34648189257?text=%C2%A1Hola%2C%20LST%21%20Me%20gustar%C3%ADa%20apuntarme%20a%20uno%20de%20vuestros%20viajes%20de%20surf.%20%C2%BFMe%20ayud%C3%A1is%20con%20las%20fechas%2C%20el%20nivel%20y%20la%20reserva%3F" target="_blank" rel="noopener noreferrer">WhatsApp · +34 648 18 92 57</a><a href="/#experiencia">La experiencia</a><a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">Instagram</a></nav></div></div></footer>
+ <script src="/app.js" type="module"></script>
+diff --git a/artifacts/brand-rollout-before/dist/registration.css b/dist/registration.css
+index 21cf3ce..6783cca 100644
+--- a/artifacts/brand-rollout-before/dist/registration.css
++++ b/dist/registration.css
+@@ -14,7 +14,7 @@
+ .registration-postcard h1{font:400 clamp(48px,5.8vw,82px)/1.02 var(--display);letter-spacing:-.02em;overflow-wrap:anywhere;margin:0 0 14px}
+ .registration-postcard h1>span{color:var(--orange)}
+ .registration-postcard-copy>p:last-child{font-size:17px;line-height:1.45}
+-.registration-stamp{position:absolute;right:22px;top:22px;border-radius:50%;width:90px;height:90px;display:grid;place-content:center;background:var(--orange);color:var(--ink);font:400 10px/1.5 var(--mono);text-align:center;transform:rotate(9deg)}
++.registration-stamp{position:absolute;right:22px;top:22px;border-radius:50%;width:90px;height:90px;display:grid;place-content:center;background:var(--orange);color:var(--ink);border:1px solid var(--ink);font:400 10px/1.5 var(--mono);text-align:center;transform:rotate(9deg)}
+ .registration-trip-date{font:400 11px/1.7 var(--mono);margin:20px 0 8px}
+ .registration-context-note{font-size:14px;line-height:1.65;color:var(--muted)}
+ .registration-content{min-width:0;padding-top:3px}
+@@ -37,7 +37,7 @@
+ .registration-page .entry__label,.registration-page legend{display:block;font:500 13px/1.6 var(--body);color:var(--ink);margin:0 0 8px;padding:0;white-space:normal}
+ .registration-page .entry__label>span{font-size:11px;font-weight:400;color:var(--muted)}
+ .registration-page fieldset{border:0;min-width:0;padding:0}
+-.registration-page .entry__field{display:block;border:1px solid #cbc4b2;border-radius:13px;min-width:0;background:#fffdf6;transition:border-color .16s,box-shadow .16s,background .16s}
++.registration-page .entry__field{display:block;border:1px solid #cbc4b2;border-radius:4px 16px 4px 4px;min-width:0;background:#fffdf6;transition:border-color .16s,box-shadow .16s,background .16s}
+ .registration-page .entry__field:focus-within{border-color:#bd3e1d;box-shadow:0 0 0 3px #ea593426;background:#fffefb}
+ .registration-page input.input,.registration-page select.input{height:auto;min-height:54px;width:100%;min-width:0;padding:14px 15px;border:0;border-radius:12px;background:transparent;color:var(--ink);font:400 16px/1.5 var(--body);box-shadow:none;outline:none}
+ .registration-page input.input::placeholder{color:#858173;opacity:1;font-size:14px}
+@@ -98,7 +98,7 @@
+ @media(hover:hover){.registration-page .entry__field:hover:not(:focus-within){border-color:#9d9582}}
+ 
+ /* Keep the booking context compact so the first fields are close to the action. */
+-.registration-page{--sea:#164e45;--muted:#535950}
++.registration-page{--sea:var(--ink);--muted:#53514a}
+ .registration-page .entry__choice label:has(input:checked){background:var(--sea);border-color:var(--sea)}
+ .registration-page .registration-required-note{font-size:12px}
+ .registration-page .registration-step-intro{font-size:15px;line-height:1.65}
+@@ -148,3 +148,8 @@
+  .registration-page .registration-contact-grid{grid-template-columns:1fr}
+  .registration-page .registration-contact-grid>*{grid-column:1}
+ }
++
++/* Keep the form functional and compact, with a high-contrast keyboard cue. */
++.registration-page :is(a,button,summary):focus-visible{outline:3px solid #a33417;outline-offset:4px}
++.registration-page .entry__field:focus-within{outline:2px solid var(--ink);outline-offset:3px;box-shadow:none}
++.registration-page .registration-support a,.registration-page .registration-footer a{display:inline-flex;align-items:center;min-height:44px;font-size:13px}
+diff --git a/artifacts/brand-rollout-before/scripts/check-faqs.mjs b/scripts/check-faqs.mjs
+index 201a657..58f1327 100644
+--- a/artifacts/brand-rollout-before/scripts/check-faqs.mjs
++++ b/scripts/check-faqs.mjs
+@@ -33,10 +33,11 @@ try{
+   check(tag+' no horizontal overflow',geometry.scrollWidth<=width+1&&geometry.overflow.length===0,geometry);
+   check(tag+' title clears header',geometry.titleTop>=geometry.headerHeight,geometry);
+   const masthead=await page.locator('.site-header').evaluate(e=>({ink:getComputedStyle(e).color,paper:getComputedStyle(e).backgroundColor,light:getComputedStyle(e.querySelector('.brand-light')).display,dark:getComputedStyle(e.querySelector('.brand-dark')).display}));
+-  const heroSpacing=await page.locator('.landing-hero').evaluate(e=>({copyBottom:e.querySelector('.landing-hero-copy').getBoundingClientRect().bottom,captionTop:e.querySelector('figcaption').getBoundingClientRect().top}));
+-  check(tag+' photo caption clears copy',heroSpacing.captionTop>=heroSpacing.copyBottom+8,heroSpacing);
+-  check(tag+' masthead colours and logo',mode==='no-js'?(masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block'):(masthead.ink==='rgb(255, 250, 231)'&&masthead.light==='block'&&masthead.dark==='none'),masthead);
+-  check(tag+' photographic opening loaded',await page.locator('.landing-hero-photo img').evaluate(async i=>{await i.decode();return i.naturalWidth>0&&getComputedStyle(i).objectFit==='cover'}));
++  const heroSpacing=await page.locator('.faq-hero').evaluate(e=>({copyTop:e.querySelector('h1').getBoundingClientRect().top,headerBottom:document.querySelector('header').getBoundingClientRect().bottom}));
++  check(tag+' paper opening clears header',heroSpacing.copyTop>=heroSpacing.headerBottom,heroSpacing);
++  check(tag+' masthead colours and logo',masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block',masthead);
++  check(tag+' opening uses typography without a repeated photo',await page.locator('.faq-hero img').count()===0);
++  check(tag+' useful category icons',await page.locator('.faq-topic-heading > svg[aria-hidden="true"]').count()===4);
+   check(tag+' retained fonts',geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&geometry.fonts.label.includes('Space Mono'));
+   await page.keyboard.press('Tab');check(tag+' skip-link first',await page.locator('.skip-link').evaluate(e=>e===document.activeElement));
+   await page.keyboard.press('Enter');check(tag+' skip-link focuses main',await page.locator('main').evaluate(e=>e===document.activeElement));

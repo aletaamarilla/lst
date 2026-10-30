@@ -1,0 +1,5 @@
+{
+  source: 'sanity-published',
+  count: 8,
+  out: '/tmp/lst-publication-candidate'
+}

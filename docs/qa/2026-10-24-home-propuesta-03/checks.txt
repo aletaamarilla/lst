@@ -1,0 +1,4 @@
+PASS: 9 comprobaciones funcionales del fragmento ejecutado.
+PASS: node --check render.mjs y serve.mjs.
+PASS: generación desde snapshot.
+Revisión independiente: sin bloqueos, candidata 03.

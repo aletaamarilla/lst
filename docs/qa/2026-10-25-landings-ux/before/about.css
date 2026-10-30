@@ -1,0 +1,82 @@
+/* Conócenos follows the home composition; documentary photos retain their full frame. */
+body.about-page .site-header{background:var(--lst-paper);border-bottom:1px solid var(--lst-line)}
+body.about-page .site-header nav [aria-current=page]{text-decoration:underline;text-decoration-color:var(--lst-orange);text-underline-offset:7px}
+html:has(.about-page){scroll-padding-top:0}
+body.about-page main{padding-top:var(--home-header-height,88px)}
+body.about-page main[tabindex="-1"]:focus{outline:none;box-shadow:none}
+body.about-page :is(#origen,#asi-viajamos,#acompanamiento,#respeto){scroll-margin-top:calc(var(--home-header-height,88px) + 20px)}
+body.about-page .eyebrow{font:400 11px/1.65 var(--mono);letter-spacing:.035em;margin-bottom:18px}
+body.about-page h2{font-size:clamp(48px,5vw,64px);line-height:1.03;margin-bottom:24px}
+body.about-page h3{font:400 32px/1.1 var(--lst-display);letter-spacing:-.015em;margin-bottom:12px}
+body.about-page main p:not(.eyebrow){font-size:15px;line-height:1.8}
+body.about-page .text-link{margin-top:20px;font-size:13px;font-weight:500}
+.about-section{padding-block:80px}
+.about-intro{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;padding-block:64px 72px}
+body.about-page .about-intro h1{font:400 clamp(72px,7.2vw,104px)/.98 var(--lst-display);letter-spacing:-.015em;margin-bottom:26px}
+.about-intro-copy>p:not(.eyebrow){max-width:37em;margin-bottom:16px;color:var(--lst-muted)}
+body.about-page .about-intro-copy .about-lead{font-size:18px;color:var(--lst-ink)}
+body.about-page .about-photo img{width:100%;height:auto;border-radius:28px 4px 28px 4px}
+.about-photo figcaption{max-width:65ch;padding-top:12px;font-size:11px;line-height:1.7;color:var(--lst-muted)}
+body.about-page .about-origin{padding:46px 48px;background:var(--lst-orange);border-radius:36px 4px 36px 4px}
+.about-origin-layout,.about-respect,.about-next-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:72px;align-items:start}
+.about-prose>p:not(.eyebrow)+p{margin-top:16px}
+.about-origin .brand-signature{margin-top:26px;padding-top:22px;border-top:1px solid rgba(27,27,27,.35);font:400 22px/1.3 var(--lst-display)}
+.about-origin .brand-signature span{display:block;margin-top:10px;font:400 11px/1.6 var(--mono)}
+.about-section-heading{max-width:650px;margin-bottom:36px}
+.about-section-heading>p:last-child{max-width:34em;color:var(--lst-muted)}
+.about-way-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+.about-moments article{display:grid;grid-template-columns:32px minmax(0,1fr);gap:18px;padding-block:24px;border-top:1px solid var(--lst-line)}
+.about-moments article:first-child{padding-top:0;border-top:0}
+.about-moments article:last-child{padding-bottom:0}
+.about-number{padding-top:4px;font:400 12px/1.65 var(--mono);color:var(--lst-orange)}
+.about-moments p{color:var(--lst-muted)}
+body.about-page .about-memory{width:60%;margin:48px 0 0 auto}
+body.about-page .about-team{padding:48px;background:var(--lst-ink);color:var(--lst-paper);border-radius:36px 4px 36px 4px}
+.about-team-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+.about-team .about-photo figcaption{color:var(--lst-paper)}
+body.about-page .about-team .text-link{border-color:rgba(255,250,231,.58)}
+body.about-page .about-team :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+.about-respect .about-prose{padding-top:34px;color:var(--lst-muted)}
+.about-next{padding-block:56px;background:var(--lst-ink);color:var(--lst-paper);border-radius:36px 36px 0 0}
+.about-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+body.about-page .about-actions .lst-button{justify-content:center;min-height:48px;padding:12px 18px;gap:12px;font-size:13px;text-align:center}
+body.about-page .about-actions .lst-link{border-color:rgba(255,250,231,.58);min-height:48px;font-size:13px}
+body.about-page .about-actions .lst-link:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
+body.about-page .about-actions .lst-button:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
+body.about-page .about-next .about-note{margin-top:18px;font-size:12px}
+body.about-page .about-next :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+@media(max-width:1100px){
+ .about-intro{gap:40px}
+ .about-origin-layout,.about-respect,.about-next-layout{gap:40px}
+ .about-way-grid,.about-team-layout{gap:36px}
+ body.about-page .about-origin,body.about-page .about-team{padding:36px 32px}
+}
+@media(max-width:760px){
+ .about-intro{grid-template-columns:minmax(0,1fr);gap:30px;padding-block:38px 48px}
+ body.about-page .about-intro h1{font-size:clamp(64px,15vw,86px);margin-bottom:22px}
+ body.about-page .about-intro-copy .about-lead{font-size:17px}
+ body.about-page h2{font-size:48px}
+ body.about-page h3{font-size:30px}
+ body.about-page main p:not(.eyebrow){font-size:14px}
+ body.about-page .eyebrow{font-size:10px}
+ .about-section{padding-block:48px}
+ .about-origin-layout,.about-respect,.about-next-layout,.about-team-layout,.about-way-grid{grid-template-columns:minmax(0,1fr);gap:26px}
+ body.about-page .about-origin,body.about-page .about-team{padding:28px 24px;border-radius:28px 4px 28px 4px}
+ body.about-page .about-photo img{border-radius:24px 4px 24px 4px}
+ .about-section-heading{margin-bottom:28px}
+ .about-moments article{gap:14px;padding-block:22px}
+ body.about-page .about-memory{width:100%;margin-top:32px}
+ .about-respect .about-prose{padding-top:0}
+ .about-next{padding-block:40px;border-radius:27px 27px 0 0}
+ .about-next-layout{gap:0}
+ .about-actions{margin-top:24px}
+ .about-actions a{flex:1 1 15em}
+}
+@media(max-width:359px){
+ body.about-page .about-origin,body.about-page .about-team{padding-inline:20px}
+ body.about-page h2{font-size:44px}
+}
+
+
+body.about-page:has(.static-navigation) .site-header{position:sticky;top:0}
+body.about-page:has(.static-navigation) main{padding-top:0}

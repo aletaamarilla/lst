@@ -1,0 +1,32 @@
+{
+  "repository": "aletaamarilla/lst",
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "scope": {
+    "dist/niveles/index.html": "d294d39a97081eba82119199e3e6a9f9933b9aa2651db698e3db8367c047905a",
+    "dist/levels.css": "904eac21ae5c990fad473524691f358acde821dc95dbb385f2db1a2a02636003"
+  },
+  "preservedOwnDependencies": {
+    "dist/levels.js": {
+      "sha256": "c2e0adb430255050b4a9e58c24297df4f56d2df98cb2ff06e6e29b3df4f556fa",
+      "unchanged": true
+    },
+    "dist/home.js": {
+      "sha256": "7530344c799ad91702c825984942c7004cd9aa4060fdb8a09de2916fdf62bd4a",
+      "unchanged": true
+    },
+    "scripts/render-level-trips.mjs": {
+      "sha256": "195457782af6bc4a4b364c55a973b88d8c1d24de6f51e5200c2397eebd543b11",
+      "unchanged": true
+    },
+    "scripts/render-home-trips.mjs": {
+      "sha256": "44c453cddf07c9ebe513975c191bc8149d9f50fedf31805c4d9bdd8d8b11efc7",
+      "unchanged": true
+    }
+  },
+  "sharedCss": {
+    "atStart": "e1933f6313d421f183558583de0041386b1174cf8ebc4ad0fbfaeb79d555049c",
+    "visualQA": "738c45d0bfe74b289cc32c2117c830f71631cabda3898c6d0516c084a813639a",
+    "current": "738c45d0bfe74b289cc32c2117c830f71631cabda3898c6d0516c084a813639a"
+  }
+}

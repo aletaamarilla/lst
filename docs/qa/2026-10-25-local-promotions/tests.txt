@@ -1,0 +1,512 @@
+
+> lets-surf-together-home@0.1.0 test
+> node --test scripts/*.test.mjs
+
+TAP version 13
+# Subtest: level all and month preserve compatible destinations
+ok 1 - level all and month preserve compatible destinations
+  ---
+  duration_ms: 1.970271
+  type: 'test'
+  ...
+# Subtest: level 1 and month preserve compatible destinations
+ok 2 - level 1 and month preserve compatible destinations
+  ---
+  duration_ms: 0.384615
+  type: 'test'
+  ...
+# Subtest: level 2 and month preserve compatible destinations
+ok 3 - level 2 and month preserve compatible destinations
+  ---
+  duration_ms: 0.143245
+  type: 'test'
+  ...
+# Subtest: level 3 and month preserve compatible destinations
+ok 4 - level 3 and month preserve compatible destinations
+  ---
+  duration_ms: 0.122242
+  type: 'test'
+  ...
+# Subtest: level 4 and month preserve compatible destinations
+ok 5 - level 4 and month preserve compatible destinations
+  ---
+  duration_ms: 0.259543
+  type: 'test'
+  ...
+# Subtest: recognises exact numeric levels and calendar months; ignores obsolete states
+ok 6 - recognises exact numeric levels and calendar months; ignores obsolete states
+  ---
+  duration_ms: 1.453745
+  type: 'test'
+  ...
+# Subtest: months include both ends, year boundaries and valid leap days
+ok 7 - months include both ends, year boundaries and valid leap days
+  ---
+  duration_ms: 0.443113
+  type: 'test'
+  ...
+# Subtest: level and date must match the same departure, including non-consecutive levels
+ok 8 - level and date must match the same departure, including non-consecutive levels
+  ---
+  duration_ms: 0.299563
+  type: 'test'
+  ...
+# Subtest: missing, null and empty levels retain model defaults
+ok 9 - missing, null and empty levels retain model defaults
+  ---
+  duration_ms: 0.660421
+  type: 'test'
+  ...
+# Subtest: filtering, empty results and clearing never mutate trips
+ok 10 - filtering, empty results and clearing never mutate trips
+  ---
+  duration_ms: 0.576242
+  type: 'test'
+  ...
+# Subtest: catalogue renders every trip once, shared home cards and generated month options
+ok 11 - catalogue renders every trip once, shared home cards and generated month options
+  ---
+  duration_ms: 33.721688
+  type: 'test'
+  ...
+# Subtest: home date panel contains only departures, while price and one direct trip link stay outside
+ok 12 - home date panel contains only departures, while price and one direct trip link stay outside
+  ---
+  duration_ms: 19.888142
+  type: 'test'
+  ...
+# Subtest: missing and mixed prices never inherit an obsolete trip price
+ok 13 - missing and mixed prices never inherit an obsolete trip price
+  ---
+  duration_ms: 0.616041
+  type: 'test'
+  ...
+# Subtest: all published trips remain reachable, with three chronological highlights
+ok 14 - all published trips remain reachable, with three chronological highlights
+  ---
+  duration_ms: 2.072333
+  type: 'test'
+  ...
+# Subtest: full, pending, missing photographs, unusual names and empty catalogue stay honest and safe
+ok 15 - full, pending, missing photographs, unusual names and empty catalogue stay honest and safe
+  ---
+  duration_ms: 1.017666
+  type: 'test'
+  ...
+# Subtest: preview labels the earliest departure and preserves its direct-link description
+ok 16 - preview labels the earliest departure and preserves its direct-link description
+  ---
+  duration_ms: 0.636181
+  type: 'test'
+  ...
+# Subtest: pending cards keep the next-date label without inventing a departure
+ok 17 - pending cards keep the next-date label without inventing a departure
+  ---
+  duration_ms: 0.232789
+  type: 'test'
+  ...
+# Subtest: date text is escaped in the panel and preview
+ok 18 - date text is escaped in the panel and preview
+  ---
+  duration_ms: 0.328807
+  type: 'test'
+  ...
+# Subtest: published next dates compact on the card without changing full departure dates
+ok 19 - published next dates compact on the card without changing full departure dates
+  ---
+  duration_ms: 0.360232
+  type: 'test'
+  ...
+# Subtest: level trips share home cards, pricing and date controls while retaining filter metadata
+ok 20 - level trips share home cards, pricing and date controls while retaining filter metadata
+  ---
+  duration_ms: 1.079065
+  type: 'test'
+  ...
+# Subtest: empty level collections preserve the help and native empty-state contract
+ok 21 - empty level collections preserve the help and native empty-state contract
+  ---
+  duration_ms: 0.358666
+  type: 'test'
+  ...
+# Subtest: local offers survive navigation through home, levels, catalogue and canonical/historical details without altering dist
+ok 22 - local offers survive navigation through home, levels, catalogue and canonical/historical details without altering dist
+  ---
+  duration_ms: 74.255829
+  type: 'test'
+  ...
+# Subtest: published preview remains byte-for-byte dist without the explicit local-preview option
+ok 23 - published preview remains byte-for-byte dist without the explicit local-preview option
+  ---
+  duration_ms: 8.765416
+  type: 'test'
+  ...
+# Subtest: missing local configuration falls back to dist; an invalid configuration fails visibly
+ok 24 - missing local configuration falls back to dist; an invalid configuration fails visibly
+  ---
+  duration_ms: 4.948808
+  type: 'test'
+  ...
+# Subtest: production explicitly requests published perspective, fixed target and separate private reader
+ok 25 - production explicitly requests published perspective, fixed target and separate private reader
+  ---
+  duration_ms: 1.637753
+  type: 'test'
+  ...
+# Subtest: an importer token is never reused as a production reader; failures do not leak credentials or bodies
+ok 26 - an importer token is never reused as a production reader; failures do not leak credentials or bodies
+  ---
+  duration_ms: 0.841852
+  type: 'test'
+  ...
+# Subtest: raw inspection uses importer token only; mutation is create-only and draft-only
+ok 27 - raw inspection uses importer token only; mutation is create-only and draft-only
+  ---
+  duration_ms: 2.223922
+  type: 'test'
+  ...
+# Subtest: adapter rejects drafts/releases, invalid business data, unsafe URLs and duplicate routes
+ok 28 - adapter rejects drafts/releases, invalid business data, unsafe URLs and duplicate routes
+  ---
+  duration_ms: 2.731614
+  type: 'test'
+  ...
+# Subtest: manual price, deposit and availability stay independent; decimals are not rounded to euros
+ok 29 - manual price, deposit and availability stay independent; decimals are not rounded to euros
+  ---
+  duration_ms: 7.617842
+  type: 'test'
+  ...
+# Subtest: optional content is omitted without fake services, photos or undefined markup; default request stays contextual WhatsApp
+ok 30 - optional content is omitted without fake services, photos or undefined markup; default request stays contextual WhatsApp
+  ---
+  duration_ms: 0.976263
+  type: 'test'
+  ...
+# Subtest: legacy application URLs are discarded and every booking placement uses contextual WhatsApp
+ok 31 - legacy application URLs are discarded and every booking placement uses contextual WhatsApp
+  ---
+  duration_ms: 2.373053
+  type: 'test'
+  ...
+# Subtest: public snapshot whitelists fields and strips internal notes and unknown nested metadata
+ok 32 - public snapshot whitelists fields and strips internal notes and unknown nested metadata
+  ---
+  duration_ms: 0.349856
+  type: 'test'
+  ...
+# Subtest: editorial tariff text is escaped instead of executing markup in a published card
+ok 33 - editorial tariff text is escaped instead of executing markup in a published card
+  ---
+  duration_ms: 0.889399
+  type: 'test'
+  ...
+# Subtest: exclusions and conditions remain visible independently of optional included services
+ok 34 - exclusions and conditions remain visible independently of optional included services
+  ---
+  duration_ms: 1.246454
+  type: 'test'
+  ...
+# Subtest: one read supplies home, catalogue, levels and details; stale demo content disappears and routes stay reachable
+ok 35 - one read supplies home, catalogue, levels and details; stale demo content disappears and routes stay reachable
+  ---
+  duration_ms: 175.269601
+  type: 'test'
+  ...
+# Subtest: reading/validation/render errors preserve the last output
+ok 36 - reading/validation/render errors preserve the last output
+  ---
+  duration_ms: 3.148807
+  type: 'test'
+  ...
+# Subtest: specific eight-draft mapping keeps unknown prices/availability, source distinctions and fixed deposits
+ok 37 - specific eight-draft mapping keeps unknown prices/availability, source distinctions and fixed deposits
+  ---
+  duration_ms: 1.247586
+  type: 'test'
+  ...
+# Subtest: collision detection covers IDs, slugs, drafts, published and release versions; existing manual edits are skipped
+ok 38 - collision detection covers IDs, slugs, drafts, published and release versions; existing manual edits are skipped
+  ---
+  duration_ms: 0.484446
+  type: 'test'
+  ...
+# Subtest: remote preflight includes a different document type without slug occupying a reserved ID
+ok 39 - remote preflight includes a different document type without slug occupying a reserved ID
+  ---
+  duration_ms: 1.734492
+  type: 'test'
+  ...
+# Subtest: dry run has zero writes; full validation and authenticated collision checks precede a single transaction
+ok 40 - dry run has zero writes; full validation and authenticated collision checks precede a single transaction
+  ---
+  duration_ms: 8.360169
+  type: 'test'
+  ...
+# Subtest: a full trip remains visible with dates/prices, suppresses applications and date choices, and can reopen
+ok 41 - a full trip remains visible with dates/prices, suppresses applications and date choices, and can reopen
+  ---
+  duration_ms: 5.545473
+  type: 'test'
+  ...
+# Subtest: manual availability labels have no free-place counts and override obsolete quantities
+ok 42 - manual availability labels have no free-place counts and override obsolete quantities
+  ---
+  duration_ms: 2.219159
+  type: 'test'
+  ...
+# Subtest: old documents without manual status retain enquiry when no availability was confirmed
+ok 43 - old documents without manual status retain enquiry when no availability was confirmed
+  ---
+  duration_ms: 0.371523
+  type: 'test'
+  ...
+# Subtest: trip details show the same active price, general price, saving and cup at all booking placements
+ok 44 - trip details show the same active price, general price, saving and cup at all booking placements
+  ---
+  duration_ms: 24.216826
+  type: 'test'
+  ...
+# Subtest: date selector keeps the offer and enquiry with its own date, and never borrows a missing price
+ok 45 - date selector keeps the offer and enquiry with its own date, and never borrows a missing price
+  ---
+  duration_ms: 1.512906
+  type: 'test'
+  ...
+# Subtest: full, inactive and pending tariffs never advertise a discount
+ok 46 - full, inactive and pending tariffs never advertise a discount
+  ---
+  duration_ms: 3.32493
+  type: 'test'
+  ...
+# Subtest: the price for a later promoted date names that date without changing the earliest trip facts
+ok 47 - the price for a later promoted date names that date without changing the earliest trip facts
+  ---
+  duration_ms: 0.928631
+  type: 'test'
+  ...
+# Subtest: unknown cup, fractional savings and editor labels remain exact and escaped
+ok 48 - unknown cup, fractional savings and editor labels remain exact and escaped
+  ---
+  duration_ms: 1.197013
+  type: 'test'
+  ...
+# Subtest: native date enquiries remain reachable without JavaScript and keep per-date level and conditions
+ok 49 - native date enquiries remain reachable without JavaScript and keep per-date level and conditions
+  ---
+  duration_ms: 1.479498
+  type: 'test'
+  ...
+# Subtest: the original service copy and restriction content are preserved while PDF headings are cleaned
+ok 50 - the original service copy and restriction content are preserved while PDF headings are cleaned
+  ---
+  duration_ms: 0.84239
+  type: 'test'
+  ...
+# Subtest: uppercase editorial conditions survive PDF typography cleanup
+ok 51 - uppercase editorial conditions survive PDF typography cleanup
+  ---
+  duration_ms: 0.639663
+  type: 'test'
+  ...
+# Subtest: no numeric price means no from prefix, while mixed durations are described per departure
+ok 52 - no numeric price means no from prefix, while mixed durations are described per departure
+  ---
+  duration_ms: 1.331345
+  type: 'test'
+  ...
+# Subtest: the reading journey preserves custom programme titles, visible services and a useful FAQ fallback
+ok 53 - the reading journey preserves custom programme titles, visible services and a useful FAQ fallback
+  ---
+  duration_ms: 0.870002
+  type: 'test'
+  ...
+# Subtest: editorial destination names exclude levels and seasonal date labels
+ok 54 - editorial destination names exclude levels and seasonal date labels
+  ---
+  duration_ms: 1.158719
+  type: 'test'
+  ...
+# Subtest: six destinations consolidate eight documents without changing the source or losing date PDFs
+ok 55 - six destinations consolidate eight documents without changing the source or losing date PDFs
+  ---
+  duration_ms: 30.772355
+  type: 'test'
+  ...
+# Subtest: Morocco defaults to I-II and its later date overrides to III, retaining distinct programmes
+ok 56 - Morocco defaults to I-II and its later date overrides to III, retaining distinct programmes
+  ---
+  duration_ms: 3.734918
+  type: 'test'
+  ...
+# Subtest: level overrides inherit when absent or cleared, and replace rather than widen the default
+ok 57 - level overrides inherit when absent or cleared, and replace rather than widen the default
+  ---
+  duration_ms: 2.604101
+  type: 'test'
+  ...
+# Subtest: home, catalogue and guide render one Morocco with dates linked to effective levels
+ok 58 - home, catalogue and guide render one Morocco with dates linked to effective levels
+  ---
+  duration_ms: 3.397574
+  type: 'test'
+  ...
+# Subtest: grouped departure status and capacity stay separate, including full versus available
+ok 59 - grouped departure status and capacity stay separate, including full versus available
+  ---
+  duration_ms: 3.798205
+  type: 'test'
+  ...
+# Subtest: canonical and old date URLs survive consolidation and withdrawal without stale content
+ok 60 - canonical and old date URLs survive consolidation and withdrawal without stale content
+  ---
+  duration_ms: 238.837566
+  type: 'test'
+  ...
+# Subtest: a single CMS document inherits its default PDF per date and an available override reopens the selector
+ok 61 - a single CMS document inherits its default PDF per date and an available override reopens the selector
+  ---
+  duration_ms: 1.59214
+  type: 'test'
+  ...
+# Subtest: pending destinations never become full and mixed state dates share one stable route
+ok 62 - pending destinations never become full and mixed state dates share one stable route
+  ---
+  duration_ms: 1.354264
+  type: 'test'
+  ...
+# Subtest: clearing a date autonomy requirement restores the trip default
+ok 63 - clearing a date autonomy requirement restores the trip default
+  ---
+  duration_ms: 1.141966
+  type: 'test'
+  ...
+# Subtest: levels default to all four; explicit restrictions remain configured
+ok 64 - levels default to all four; explicit restrictions remain configured
+  ---
+  duration_ms: 1.760544
+  type: 'test'
+  ...
+# Subtest: single departure retains its date, duration, price and enquiry context
+ok 65 - single departure retains its date, duration, price and enquiry context
+  ---
+  duration_ms: 16.320179
+  type: 'test'
+  ...
+# Subtest: multiple departures retain distinct dates, prices and WhatsApp messages
+ok 66 - multiple departures retain distinct dates, prices and WhatsApp messages
+  ---
+  duration_ms: 0.550824
+  type: 'test'
+  ...
+# Subtest: pending destinations keep all levels and do not manufacture dates or prices
+ok 67 - pending destinations keep all levels and do not manufacture dates or prices
+  ---
+  duration_ms: 0.195775
+  type: 'test'
+  ...
+# Subtest: obsolete top-level dates and prices never supply a departure
+ok 68 - obsolete top-level dates and prices never supply a departure
+  ---
+  duration_ms: 0.22125
+  type: 'test'
+  ...
+# Subtest: published general, active offer and repeated normalization stay independent
+ok 69 - published general, active offer and repeated normalization stay independent
+  ---
+  duration_ms: 17.710699
+  type: 'test'
+  ...
+# Subtest: manual stage change and closing a cup use the correct current tariff
+ok 70 - manual stage change and closing a cup use the correct current tariff
+  ---
+  duration_ms: 0.446474
+  type: 'test'
+  ...
+# Subtest: unknown cup stays textual and never becomes an invented remaining count
+ok 71 - unknown cup stays textual and never becomes an invented remaining count
+  ---
+  duration_ms: 2.05693
+  type: 'test'
+  ...
+# Subtest: invalid amounts, ambiguous active stages, overlapping cups and impossible capacity are rejected
+ok 72 - invalid amounts, ambiguous active stages, overlapping cups and impossible capacity are rejected
+  ---
+  duration_ms: 0.612725
+  type: 'test'
+  ...
+# Subtest: full and future departures never advertise their early bird
+ok 73 - full and future departures never advertise their early bird
+  ---
+  duration_ms: 0.814676
+  type: 'test'
+  ...
+# Subtest: a full priced departure cannot supply a fare for an available unpriced date
+ok 74 - a full priced departure cannot supply a fare for an available unpriced date
+  ---
+  duration_ms: 1.38951
+  type: 'test'
+  ...
+# Subtest: the card pairs savings, regular fare and date from the same selected departure
+ok 75 - the card pairs savings, regular fare and date from the same selected departure
+  ---
+  duration_ms: 0.956761
+  type: 'test'
+  ...
+# Subtest: legacy price-only journeys keep their price values and no extra pricing properties
+ok 76 - legacy price-only journeys keep their price values and no extra pricing properties
+  ---
+  duration_ms: 0.327835
+  type: 'test'
+  ...
+# Subtest: promotional conditions are escaped in the card
+ok 77 - promotional conditions are escaped in the card
+  ---
+  duration_ms: 0.630433
+  type: 'test'
+  ...
+# Subtest: PDF plan covers exactly seven discounted departures and preserves general fares, signals and other fields
+ok 78 - PDF plan covers exactly seven discounted departures and preserves general fares, signals and other fields
+  ---
+  duration_ms: 2.583507
+  type: 'test'
+  ...
+# Subtest: CMS rerun preserves the editor selection; stale revisions, drafts and changed general fares block writes
+ok 79 - CMS rerun preserves the editor selection; stale revisions, drafts and changed general fares block writes
+  ---
+  duration_ms: 1.635898
+  type: 'test'
+  ...
+# Subtest: accompaniment reuses exact services from its own confirmed departure without borrowing staff
+ok 80 - accompaniment reuses exact services from its own confirmed departure without borrowing staff
+  ---
+  duration_ms: 1.456937
+  type: 'test'
+  ...
+# Subtest: pending programmes and explicit editorial team text retain their own authority
+ok 81 - pending programmes and explicit editorial team text retain their own authority
+  ---
+  duration_ms: 0.164205
+  type: 'test'
+  ...
+# Subtest: rendered accompaniment is escaped and its enquiry retains destination and existing WhatsApp channel
+ok 82 - rendered accompaniment is escaped and its enquiry retains destination and existing WhatsApp channel
+  ---
+  duration_ms: 4.948304
+  type: 'test'
+  ...
+# Subtest: a destination without confirmed staff keeps a candid enquiry without asserting named people
+ok 83 - a destination without confirmed staff keeps a candid enquiry without asserting named people
+  ---
+  duration_ms: 0.742088
+  type: 'test'
+  ...
+1..83
+# tests 83
+# suites 0
+# pass 83
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 367.48144

@@ -1,0 +1,52 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "committed": false,
+  "modifiedFiles": [
+    "scripts/render-registration.mjs",
+    "dist/registration.js",
+    "dist/registration.css",
+    "scripts/registration.test.mjs",
+    "scripts/check-registration-browser.mjs"
+  ],
+  "newImplementationFiles": [],
+  "generatedFiles": [
+    "dist/inscripciones/el-palmar/index.html",
+    "dist/inscripciones/el-palmar-2026-12-04/index.html",
+    "dist/inscripciones/fuerteventura/index.html",
+    "dist/inscripciones/fuerteventura-2027-02-12/index.html",
+    "dist/inscripciones/hossegor/index.html",
+    "dist/inscripciones/hossegor-2026-11-20/index.html",
+    "dist/inscripciones/maldivas/index.html",
+    "dist/inscripciones/maldivas-2027-03-21/index.html",
+    "dist/inscripciones/maldivas-2027-03-28/index.html",
+    "dist/inscripciones/marruecos/index.html",
+    "dist/inscripciones/marruecos-2027-01-17/index.html",
+    "dist/inscripciones/marruecos-avanzado/index.html",
+    "dist/inscripciones/marruecos-2027-01-24/index.html",
+    "dist/inscripciones/senegal/index.html",
+    "dist/inscripciones/senegal-2027-02-28/index.html"
+  ],
+  "sha256": {
+    "scripts/render-registration.mjs": "a9d2cf748bfa6d92c526caebcd6db3e8f830e715953d0d60817df2ca695cd5ad",
+    "dist/registration.js": "1fb7f1dbd81ce3a7a84494c33cda50b56a50deac6714a7806b009c0c5bbd7235",
+    "dist/registration.css": "c197852576552d950735f04fef5821490fed368e36a86456c1abd36015b2dad6",
+    "scripts/registration.test.mjs": "6a6e622add9f23be8b5f219a39c89eecb89b1677586c1e84461e2ccc72e1127b",
+    "scripts/check-registration-browser.mjs": "02bf1032d61716e51c81d7d3206f24fb770b4dc436e18baaa6c294fc2704616d",
+    "dist/inscripciones/el-palmar/index.html": "c2bae291e9eb03c59ee9b41000e6df40abaa73b4ba33eb5a0127e90a2cb6e9b0",
+    "dist/inscripciones/el-palmar-2026-12-04/index.html": "c2bae291e9eb03c59ee9b41000e6df40abaa73b4ba33eb5a0127e90a2cb6e9b0",
+    "dist/inscripciones/fuerteventura/index.html": "1782f99a95eca0d75b5f24fe9624a6c9fdf0794238fe9469d73c9123f41765c4",
+    "dist/inscripciones/fuerteventura-2027-02-12/index.html": "1782f99a95eca0d75b5f24fe9624a6c9fdf0794238fe9469d73c9123f41765c4",
+    "dist/inscripciones/hossegor/index.html": "862ddd812beb3cb93c9e18b460e6c36c2642527b171918e293349cd624bb16a6",
+    "dist/inscripciones/hossegor-2026-11-20/index.html": "862ddd812beb3cb93c9e18b460e6c36c2642527b171918e293349cd624bb16a6",
+    "dist/inscripciones/maldivas/index.html": "6cd0f57f88b8bb55f467cae9fa98ca643200022ea247dbbc391b2ac1b166e49e",
+    "dist/inscripciones/maldivas-2027-03-21/index.html": "976a5a9e161fd46821f695a37fc10c4d8d5939f94a2f245a4282c3109b1852bf",
+    "dist/inscripciones/maldivas-2027-03-28/index.html": "4ebab1a22efdcc727dcf293cee0f174a667ce089419bc3dfd29523c0a278b1aa",
+    "dist/inscripciones/marruecos/index.html": "2cb3d29b4babbd825cda4d6489d81e5f5fa912631954cc9bf1bac4146d436ff3",
+    "dist/inscripciones/marruecos-2027-01-17/index.html": "2cb3d29b4babbd825cda4d6489d81e5f5fa912631954cc9bf1bac4146d436ff3",
+    "dist/inscripciones/marruecos-avanzado/index.html": "40ff292e368905f77a1e78ff975dd5c24dcbbd6f2b8d50dadc043afe49ef3f75",
+    "dist/inscripciones/marruecos-2027-01-24/index.html": "40ff292e368905f77a1e78ff975dd5c24dcbbd6f2b8d50dadc043afe49ef3f75",
+    "dist/inscripciones/senegal/index.html": "cd98838a52e72086a65319015a2be02ed6325b0b15d5365924cdf29ad4f11f8c",
+    "dist/inscripciones/senegal-2027-02-28/index.html": "cd98838a52e72086a65319015a2be02ed6325b0b15d5365924cdf29ad4f11f8c"
+  },
+  "publicSnapshotUnchanged": true
+}

@@ -1,0 +1,6 @@
+date-state 320 true false
+date-state 390 true false
+date-state 768 false true
+date-state 1024 false true
+date-state 1440 true false
+PASS: 473 browser assertions; 320, 390, 768, 1024, 1440px, level/month combinations, same-departure matching, month boundaries, history, legacy and invalid URLs, dates, keyboard, menu, no JavaScript and enlarged text.

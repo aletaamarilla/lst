@@ -1,0 +1,24 @@
+--- docs/qa/2026-10-30-trip-intro-emphasis/before/trip-conversion.css	2026-10-30 21:10:15.394259836 +0100
++++ dist/trip-conversion.css	2026-10-30 21:10:57.262265481 +0100
+@@ -348,9 +348,11 @@
+ .trip-designed .essentials-footer{margin-top:10px;gap:4px 24px}
+ .trip-designed .trip-layout{padding-top:54px}
+ .trip-designed .trip-summary{padding:0 0 54px;margin:0}
++.trip-designed .destination-details{padding:22px 26px 26px;border:1px solid #d7ccb4;border-left:4px solid var(--orange);border-radius:4px 24px 4px 4px;background:#fffdf5}
+ .trip-designed .destination-details>summary{font:400 36px/1.1 var(--display);min-height:52px;letter-spacing:-.01em}
+-.trip-designed .destination-details>summary>span{font:400 24px/1 var(--body)}
+-.trip-designed .destination-details .trip-kickoff{max-width:58ch;padding-top:20px;font-size:19px;line-height:1.75;color:var(--muted)}
++.trip-designed .destination-details>summary>span{font:400 24px/1 var(--body);color:#ad3e21}
++.trip-designed .destination-details>summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
++.trip-designed .destination-details .trip-kickoff{max-width:58ch;padding-top:16px;font-size:19px;line-height:1.75;color:var(--ink)}
+ .trip-designed .trip-block{padding-block:64px}
+ .trip-designed .trip-level{padding:20px 0 0;margin:0;border:0}
+ .trip-designed .level-heading{gap:14px 20px;margin-bottom:28px}
+@@ -427,6 +429,7 @@
+  .trip-designed .trip-essential-facts dd{font-size:13px}
+  .trip-designed .trip-layout{padding-top:34px}
+  .trip-designed .trip-summary{padding-bottom:40px}
++ .trip-designed .destination-details{padding:18px 20px 22px}
+  .trip-designed .destination-details>summary{font-size:32px}
+  .trip-designed .destination-details .trip-kickoff{font-size:17px;line-height:1.75;padding-top:16px}
+  .trip-designed .trip-block{padding-block:48px}

@@ -1,0 +1,165 @@
+{
+  "mutations": [
+    {
+      "patch": {
+        "id": "lst-el-palmar-2026-12-04",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-60afab26acc133e104425a4ee00eac97e85ffd73-pdf"
+            }
+          },
+          "editorialNotes": "Fuente documental: 5. LST_EL_PALMAR_SURFTRIP_-_PUENTE_DE_DICIEMBRE.pdf; SHA256 8cf425e8b13cfbfbbba426095507b5d546be3ad7fa97771a68e2f36606987fc1. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json.",
+          "stay.text": "Nexo Surfhouse, 200 m de playa; habitaciones dobles/triples, jardín, azotea, pista de surfskate, ping pong, barbacoa, comedor, cafetería y parking. Petición de compartir habitación por WhatsApp."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-fuerteventura-2027-02-12",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b7879c83c36282f4442bdf858399c5025e41a1f3.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-b7879c83c36282f4442bdf858399c5025e41a1f3-pdf"
+            }
+          },
+          "editorialNotes": "Fuente documental: 8. LST_FUERTEVENTURA_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 507b631675d95e54f0ba5f6da3e8f6dbc77287a2f197910a2aaf9a8a71ef7bc7. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-hossegor-2026-11-20",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/43061e730eef28c167ef8029233ecba7745bbba0.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-43061e730eef28c167ef8029233ecba7745bbba0-pdf"
+            }
+          },
+          "editorialNotes": "Fuente documental: 4. LST_HOSSEGOR_SURFTRIP_-_NIVEL_2-3.pdf; SHA256 3728877bae14cbe5066ba97f7459ade011afa4173e0575394b9dbed9d9fe9276. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-maldivas-2027-03-21",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-d53e33596750353b022553e1dff49fcb8f566f46-pdf"
+            }
+          },
+          "editorialNotes": "Fuente documental: 10. Maldivas_Surftrip_Semana_Santa_2027_LST.pdf; SHA256 4910e2e3343fe674105e4f5bbec347681a8465f44ae3e2d003b9197b30dd2f5b. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-maldivas-2027-03-28",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_type": "reference",
+              "_ref": "file-e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b-pdf"
+            }
+          },
+          "editorialNotes": "Fuente documental: 11. Maldivas_Surftrip_Pascua_2027_LST.pdf; SHA256 75f8a899bb33e8962549d78990095ddc20ee041ca1bd509705a3ff73634db8a4. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-marruecos-2027-01-17",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/74619b7a61bfd57cdd564c3c7d6b66f498a1f2e4.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_ref": "file-74619b7a61bfd57cdd564c3c7d6b66f498a1f2e4-pdf",
+              "_type": "reference"
+            }
+          },
+          "editorialNotes": "Fuente documental: 6. LST_MARRUECOS_1_SURFTRIP_-_NIVEL_1-2.pdf; SHA256 ab5e3d009cfd6fb3f37d8b7c920a61eed359011ac8dafc519b85cf310753fc7a. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-marruecos-2027-01-24",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b34680337a58903344c224ebaac131396dde9cee.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_ref": "file-b34680337a58903344c224ebaac131396dde9cee-pdf",
+              "_type": "reference"
+            }
+          },
+          "editorialNotes": "Fuente documental: 7. LST_MARRUECOS_2_SURFTRIP_-_NIVEL_3.pdf; SHA256 db8c1a26e39c50198814f0c9402dae42c1f327856f4accd016ff862d052bdd04. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    },
+    {
+      "patch": {
+        "id": "lst-senegal-2027-02-28",
+        "ifRevisionID": "2D42OFpIbrkQoZrdHVJ2Zy",
+        "unset": [
+          "booking"
+        ],
+        "set": {
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/1c6585b5e6d9da48c203406925a1d34569699475.pdf",
+          "dossierFile": {
+            "_type": "file",
+            "asset": {
+              "_ref": "file-1c6585b5e6d9da48c203406925a1d34569699475-pdf",
+              "_type": "reference"
+            }
+          },
+          "editorialNotes": "Fuente documental: 9. LST_SENEGAL_SURFTRIP_-_NIVEL_2.pdf; SHA256 1d106b9f56a711722d08998ea0ccfa745f915f1e8aab4b3244948a9ebbee7741. Datos comerciales y materiales aprobados por el usuario el 24/10/2026. Canal único actualizado por petición del usuario: WhatsApp +34 648 189 257. Las reservas se confirman con el equipo. Historial anterior conservado localmente en docs/qa/2026-10-24-whatsapp-only/before.json."
+        }
+      }
+    }
+  ]
+}

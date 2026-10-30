@@ -1,0 +1,3552 @@
+{
+  "startHashes": {
+    "scripts/render-trips.mjs": "c841039d3c2cb5b52f119048e3129ef9af21be0a7a4623fc19917795238ffabb",
+    "dist/trip-detail.css": "ada42de348ed9c970fefb52979c07e1f470d064d5b91b9773b94b8a6ce5253ed",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13"
+  },
+  "checks": [
+    {
+      "label": "320/el-palmar no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/el-palmar compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3410.890625,
+          "width": 113,
+          "height": 60,
+          "top": 3410.890625,
+          "right": 155,
+          "bottom": 3470.890625,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3410.890625,
+          "width": 113,
+          "height": 60,
+          "top": 3410.890625,
+          "right": 278,
+          "bottom": 3470.890625,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/el-palmar no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/el-palmar section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/fuerteventura compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3342.171875,
+          "width": 113,
+          "height": 60,
+          "top": 3342.171875,
+          "right": 155,
+          "bottom": 3402.171875,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3342.171875,
+          "width": 113,
+          "height": 60,
+          "top": 3342.171875,
+          "right": 278,
+          "bottom": 3402.171875,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/fuerteventura no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/fuerteventura section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/hossegor compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3412.8125,
+          "width": 113,
+          "height": 60,
+          "top": 3412.8125,
+          "right": 155,
+          "bottom": 3472.8125,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3412.8125,
+          "width": 113,
+          "height": 60,
+          "top": 3412.8125,
+          "right": 278,
+          "bottom": 3472.8125,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/hossegor no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/hossegor section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/maldivas compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3327.40625,
+          "width": 113,
+          "height": 60,
+          "top": 3327.40625,
+          "right": 155,
+          "bottom": 3387.40625,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3327.40625,
+          "width": 113,
+          "height": 60,
+          "top": 3327.40625,
+          "right": 278,
+          "bottom": 3387.40625,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/maldivas no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas trip-header-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas trip-summary-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas booking-card-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas reserve-main Fechas",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas dock-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas no PDF outside date choices",
+      "pass": true
+    },
+    {
+      "label": "320/maldivas section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/marruecos compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3320.78125,
+          "width": 113,
+          "height": 60,
+          "top": 3320.78125,
+          "right": 155,
+          "bottom": 3380.78125,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3320.78125,
+          "width": 113,
+          "height": 60,
+          "top": 3320.78125,
+          "right": 278,
+          "bottom": 3380.78125,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/marruecos no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/marruecos-avanzado compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3351.984375,
+          "width": 113,
+          "height": 60,
+          "top": 3351.984375,
+          "right": 155,
+          "bottom": 3411.984375,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3351.984375,
+          "width": 113,
+          "height": 60,
+          "top": 3351.984375,
+          "right": 278,
+          "bottom": 3411.984375,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/marruecos-avanzado no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/marruecos-avanzado section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320/senegal no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "320/senegal compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "320/senegal level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3358.390625,
+          "width": 113,
+          "height": 60,
+          "top": 3358.390625,
+          "right": 155,
+          "bottom": 3418.390625,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 3358.390625,
+          "width": 113,
+          "height": 60,
+          "top": 3358.390625,
+          "right": 278,
+          "bottom": 3418.390625,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "320/senegal no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "320/senegal Lucas named",
+      "pass": true
+    },
+    {
+      "label": "320/senegal conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "320/senegal no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "320/senegal trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/senegal trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/senegal booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/senegal reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "320/senegal dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "320/senegal section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "320 standard modal opens",
+      "pass": true
+    },
+    {
+      "label": "320 standard close initially focused",
+      "pass": true
+    },
+    {
+      "label": "320 standard close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 208.9375,
+          "y": 119,
+          "width": 90.0625,
+          "height": 44,
+          "top": 119,
+          "right": 299,
+          "bottom": 163,
+          "left": 208.9375
+        }
+      }
+    },
+    {
+      "label": "320 standard no modal horizontal overflow",
+      "pass": true
+    },
+    {
+      "label": "320 standard two dates",
+      "pass": true
+    },
+    {
+      "label": "320 standard 0 PDF href",
+      "pass": true
+    },
+    {
+      "label": "320 standard 0 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "320 standard 0 registration href",
+      "pass": true
+    },
+    {
+      "label": "320 standard 0 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 233.359375,
+          "y": 373.59375,
+          "width": 65.640625,
+          "height": 48,
+          "top": 373.59375,
+          "right": 299,
+          "bottom": 421.59375,
+          "left": 233.359375
+        }
+      }
+    },
+    {
+      "label": "320 standard 1 PDF href",
+      "pass": true
+    },
+    {
+      "label": "320 standard 1 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "320 standard 1 registration href",
+      "pass": true
+    },
+    {
+      "label": "320 standard 1 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 233.359375,
+          "y": 743.15625,
+          "width": 65.640625,
+          "height": 48,
+          "top": 743.15625,
+          "right": 299,
+          "bottom": 791.15625,
+          "left": 233.359375
+        }
+      }
+    },
+    {
+      "label": "320 standard reverse tab stays in dialog",
+      "pass": true
+    },
+    {
+      "label": "320 standard tab wraps to close",
+      "pass": true
+    },
+    {
+      "label": "320 standard Escape closes",
+      "pass": true
+    },
+    {
+      "label": "320 standard focus and reading restored",
+      "pass": true,
+      "detail": {
+        "reading": 0,
+        "after": 0
+      }
+    },
+    {
+      "label": "320 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "320 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/el-palmar compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3291.484375,
+          "width": 148,
+          "height": 60,
+          "top": 3291.484375,
+          "right": 190,
+          "bottom": 3351.484375,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3291.484375,
+          "width": 148,
+          "height": 60,
+          "top": 3291.484375,
+          "right": 348,
+          "bottom": 3351.484375,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/el-palmar no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/el-palmar section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/fuerteventura compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3241.25,
+          "width": 148,
+          "height": 60,
+          "top": 3241.25,
+          "right": 190,
+          "bottom": 3301.25,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3241.25,
+          "width": 148,
+          "height": 60,
+          "top": 3241.25,
+          "right": 348,
+          "bottom": 3301.25,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/fuerteventura no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/fuerteventura section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/hossegor compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3291.25,
+          "width": 148,
+          "height": 60,
+          "top": 3291.25,
+          "right": 190,
+          "bottom": 3351.25,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3291.25,
+          "width": 148,
+          "height": 60,
+          "top": 3291.25,
+          "right": 348,
+          "bottom": 3351.25,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/hossegor no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/hossegor section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/maldivas compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3183.609375,
+          "width": 148,
+          "height": 60,
+          "top": 3183.609375,
+          "right": 190,
+          "bottom": 3243.609375,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3183.609375,
+          "width": 148,
+          "height": 60,
+          "top": 3183.609375,
+          "right": 348,
+          "bottom": 3243.609375,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/maldivas no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas trip-header-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas trip-summary-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas booking-card-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas reserve-main Fechas",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas dock-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas no PDF outside date choices",
+      "pass": true
+    },
+    {
+      "label": "390/maldivas section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/marruecos compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3222.21875,
+          "width": 148,
+          "height": 60,
+          "top": 3222.21875,
+          "right": 190,
+          "bottom": 3282.21875,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3222.21875,
+          "width": 148,
+          "height": 60,
+          "top": 3222.21875,
+          "right": 348,
+          "bottom": 3282.21875,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/marruecos no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/marruecos-avanzado compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3271.203125,
+          "width": 148,
+          "height": 60,
+          "top": 3271.203125,
+          "right": 190,
+          "bottom": 3331.203125,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3271.203125,
+          "width": 148,
+          "height": 60,
+          "top": 3271.203125,
+          "right": 348,
+          "bottom": 3331.203125,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/marruecos-avanzado no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/marruecos-avanzado section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390/senegal no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 390,
+        "scrollWidth": 390
+      }
+    },
+    {
+      "label": "390/senegal compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "390/senegal level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 3269.8125,
+          "width": 148,
+          "height": 60,
+          "top": 3269.8125,
+          "right": 190,
+          "bottom": 3329.8125,
+          "left": 42
+        },
+        {
+          "x": 200,
+          "y": 3269.8125,
+          "width": 148,
+          "height": 60,
+          "top": 3269.8125,
+          "right": 348,
+          "bottom": 3329.8125,
+          "left": 200
+        }
+      ]
+    },
+    {
+      "label": "390/senegal no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "390/senegal Lucas named",
+      "pass": true
+    },
+    {
+      "label": "390/senegal conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "390/senegal no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "390/senegal trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/senegal trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/senegal booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/senegal reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "390/senegal dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "390/senegal section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "390 standard modal opens",
+      "pass": true
+    },
+    {
+      "label": "390 standard close initially focused",
+      "pass": true
+    },
+    {
+      "label": "390 standard close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 278.9375,
+          "y": 119,
+          "width": 90.0625,
+          "height": 44,
+          "top": 119,
+          "right": 369,
+          "bottom": 163,
+          "left": 278.9375
+        }
+      }
+    },
+    {
+      "label": "390 standard no modal horizontal overflow",
+      "pass": true
+    },
+    {
+      "label": "390 standard two dates",
+      "pass": true
+    },
+    {
+      "label": "390 standard 0 PDF href",
+      "pass": true
+    },
+    {
+      "label": "390 standard 0 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "390 standard 0 registration href",
+      "pass": true
+    },
+    {
+      "label": "390 standard 0 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 303.359375,
+          "y": 348.75,
+          "width": 65.640625,
+          "height": 48,
+          "top": 348.75,
+          "right": 369,
+          "bottom": 396.75,
+          "left": 303.359375
+        }
+      }
+    },
+    {
+      "label": "390 standard 1 PDF href",
+      "pass": true
+    },
+    {
+      "label": "390 standard 1 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "390 standard 1 registration href",
+      "pass": true
+    },
+    {
+      "label": "390 standard 1 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 303.359375,
+          "y": 721.125,
+          "width": 65.640625,
+          "height": 48,
+          "top": 721.125,
+          "right": 369,
+          "bottom": 769.125,
+          "left": 303.359375
+        }
+      }
+    },
+    {
+      "label": "390 standard reverse tab stays in dialog",
+      "pass": true
+    },
+    {
+      "label": "390 standard tab wraps to close",
+      "pass": true
+    },
+    {
+      "label": "390 standard Escape closes",
+      "pass": true
+    },
+    {
+      "label": "390 standard focus and reading restored",
+      "pass": true,
+      "detail": {
+        "reading": 0,
+        "after": 0
+      }
+    },
+    {
+      "label": "390 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "390 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/el-palmar compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2554.265625,
+          "width": 225,
+          "height": 48,
+          "top": 2554.265625,
+          "right": 289,
+          "bottom": 2602.265625,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2554.265625,
+          "width": 225,
+          "height": 48,
+          "top": 2554.265625,
+          "right": 524,
+          "bottom": 2602.265625,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/el-palmar no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/el-palmar section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/fuerteventura compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2524.96875,
+          "width": 225,
+          "height": 48,
+          "top": 2524.96875,
+          "right": 289,
+          "bottom": 2572.96875,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2524.96875,
+          "width": 225,
+          "height": 48,
+          "top": 2524.96875,
+          "right": 524,
+          "bottom": 2572.96875,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/fuerteventura no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/fuerteventura section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/hossegor compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2573.765625,
+          "width": 225,
+          "height": 48,
+          "top": 2573.765625,
+          "right": 289,
+          "bottom": 2621.765625,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2573.765625,
+          "width": 225,
+          "height": 48,
+          "top": 2573.765625,
+          "right": 524,
+          "bottom": 2621.765625,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/hossegor no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/hossegor section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/maldivas compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2515.15625,
+          "width": 225,
+          "height": 48,
+          "top": 2515.15625,
+          "right": 289,
+          "bottom": 2563.15625,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2515.15625,
+          "width": 225,
+          "height": 48,
+          "top": 2515.15625,
+          "right": 524,
+          "bottom": 2563.15625,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/maldivas no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas trip-header-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas trip-summary-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas booking-card-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas reserve-main Fechas",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas dock-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas no PDF outside date choices",
+      "pass": true
+    },
+    {
+      "label": "768/maldivas section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/marruecos compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2554.265625,
+          "width": 225,
+          "height": 48,
+          "top": 2554.265625,
+          "right": 289,
+          "bottom": 2602.265625,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2554.265625,
+          "width": 225,
+          "height": 48,
+          "top": 2554.265625,
+          "right": 524,
+          "bottom": 2602.265625,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/marruecos no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/marruecos-avanzado compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2578.0625,
+          "width": 225,
+          "height": 48,
+          "top": 2578.0625,
+          "right": 289,
+          "bottom": 2626.0625,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2578.0625,
+          "width": 225,
+          "height": 48,
+          "top": 2578.0625,
+          "right": 524,
+          "bottom": 2626.0625,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/marruecos-avanzado no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/marruecos-avanzado section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768/senegal no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 768,
+        "scrollWidth": 768
+      }
+    },
+    {
+      "label": "768/senegal compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "768/senegal level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 64,
+          "y": 2551.671875,
+          "width": 225,
+          "height": 48,
+          "top": 2551.671875,
+          "right": 289,
+          "bottom": 2599.671875,
+          "left": 64
+        },
+        {
+          "x": 299,
+          "y": 2551.671875,
+          "width": 225,
+          "height": 48,
+          "top": 2551.671875,
+          "right": 524,
+          "bottom": 2599.671875,
+          "left": 299
+        }
+      ]
+    },
+    {
+      "label": "768/senegal no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "768/senegal Lucas named",
+      "pass": true
+    },
+    {
+      "label": "768/senegal conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "768/senegal no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "768/senegal trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/senegal trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/senegal booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/senegal reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "768/senegal dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "768/senegal section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "768 standard modal opens",
+      "pass": true
+    },
+    {
+      "label": "768 standard close initially focused",
+      "pass": true
+    },
+    {
+      "label": "768 standard close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 612.9375,
+          "y": 80,
+          "width": 90.0625,
+          "height": 44,
+          "top": 80,
+          "right": 703,
+          "bottom": 124,
+          "left": 612.9375
+        }
+      }
+    },
+    {
+      "label": "768 standard no modal horizontal overflow",
+      "pass": true
+    },
+    {
+      "label": "768 standard two dates",
+      "pass": true
+    },
+    {
+      "label": "768 standard 0 PDF href",
+      "pass": true
+    },
+    {
+      "label": "768 standard 0 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "768 standard 0 registration href",
+      "pass": true
+    },
+    {
+      "label": "768 standard 0 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 387.359375,
+          "y": 330.75,
+          "width": 65.640625,
+          "height": 48,
+          "top": 330.75,
+          "right": 453,
+          "bottom": 378.75,
+          "left": 387.359375
+        }
+      }
+    },
+    {
+      "label": "768 standard 1 PDF href",
+      "pass": true
+    },
+    {
+      "label": "768 standard 1 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "768 standard 1 registration href",
+      "pass": true
+    },
+    {
+      "label": "768 standard 1 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 387.359375,
+          "y": 627.6875,
+          "width": 65.640625,
+          "height": 48,
+          "top": 627.6875,
+          "right": 453,
+          "bottom": 675.6875,
+          "left": 387.359375
+        }
+      }
+    },
+    {
+      "label": "768 standard reverse tab stays in dialog",
+      "pass": true
+    },
+    {
+      "label": "768 standard tab wraps to close",
+      "pass": true
+    },
+    {
+      "label": "768 standard Escape closes",
+      "pass": true
+    },
+    {
+      "label": "768 standard focus and reading restored",
+      "pass": true,
+      "detail": {
+        "reading": 0,
+        "after": 0
+      }
+    },
+    {
+      "label": "768 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "768 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/el-palmar sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "699 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "4 dic 2026 — 8 dic 2026",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "4 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Todos los niveles",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Descargar dossier PDF",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "PDF",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/el-palmar compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2498.578125,
+          "width": 225,
+          "height": 48,
+          "top": 2498.578125,
+          "right": 367,
+          "bottom": 2546.578125,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2498.578125,
+          "width": 225,
+          "height": 48,
+          "top": 2498.578125,
+          "right": 602,
+          "bottom": 2546.578125,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/el-palmar no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/el-palmar section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/fuerteventura sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "699 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "12 feb 2027 — 16 feb 2027",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "4 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Niveles I–II",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Descargar dossier PDF",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "PDF",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/fuerteventura compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2394.8125,
+          "width": 225,
+          "height": 48,
+          "top": 2394.8125,
+          "right": 367,
+          "bottom": 2442.8125,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2394.8125,
+          "width": 225,
+          "height": 48,
+          "top": 2394.8125,
+          "right": 602,
+          "bottom": 2442.8125,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/fuerteventura no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/fuerteventura section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/hossegor sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "399 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "20 nov 2026 — 22 nov 2026",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "2 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Niveles II–III",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Descargar dossier PDF",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "PDF",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/hossegor compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2518.078125,
+          "width": 225,
+          "height": 48,
+          "top": 2518.078125,
+          "right": 367,
+          "bottom": 2566.078125,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2518.078125,
+          "width": 225,
+          "height": 48,
+          "top": 2518.078125,
+          "right": 602,
+          "bottom": 2566.078125,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/hossegor no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/hossegor section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/maldivas sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "1.499 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "2 salidas",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "7 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Niveles II–III",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/maldivas compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2519.46875,
+          "width": 225,
+          "height": 48,
+          "top": 2519.46875,
+          "right": 367,
+          "bottom": 2567.46875,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2519.46875,
+          "width": 225,
+          "height": 48,
+          "top": 2519.46875,
+          "right": 602,
+          "bottom": 2567.46875,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/maldivas no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas trip-header-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas trip-summary-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas booking-card-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas reserve-main Fechas",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas dock-cta Fechas",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas no PDF outside date choices",
+      "pass": true
+    },
+    {
+      "label": "1440/maldivas section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/marruecos sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "899 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "17 ene 2027 — 24 ene 2027",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "7 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Niveles I–II",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Descargar dossier PDF",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "PDF",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/marruecos compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2424.109375,
+          "width": 225,
+          "height": 48,
+          "top": 2424.109375,
+          "right": 367,
+          "bottom": 2472.109375,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2424.109375,
+          "width": 225,
+          "height": 48,
+          "top": 2424.109375,
+          "right": 602,
+          "bottom": 2472.109375,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/marruecos no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/marruecos-avanzado sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "899 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "24 ene 2027 — 31 ene 2027",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "7 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Nivel III",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Descargar dossier PDF",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "PDF",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/marruecos-avanzado compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2554.640625,
+          "width": 225,
+          "height": 48,
+          "top": 2554.640625,
+          "right": 367,
+          "bottom": 2602.640625,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2554.640625,
+          "width": 225,
+          "height": 48,
+          "top": 2554.640625,
+          "right": 602,
+          "bottom": 2602.640625,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/marruecos-avanzado no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/marruecos-avanzado section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 1440,
+        "scrollWidth": 1440
+      }
+    },
+    {
+      "label": "1440/senegal sidebar text contrast",
+      "pass": true,
+      "detail": [
+        {
+          "text": "¿Te vieneso qué?",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "1.299 €",
+          "ratio": 16.469911608431392,
+          "required": 3,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Fechas",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "28 feb 2027 — 7 mar 2027",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Duración",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "7 noches",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Nivel de surf",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Nivel II",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Descargar dossier PDF",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "PDF",
+          "ratio": 6.202596742398598,
+          "required": 4.5,
+          "color": "rgb(97, 94, 84)"
+        },
+        {
+          "text": "Inscríbete con el formulario. Revisaremos tu solicitud antes de confirmar la plaza.",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        },
+        {
+          "text": "Tengo una duda",
+          "ratio": 16.469911608431392,
+          "required": 4.5,
+          "color": "rgb(27, 27, 27)"
+        }
+      ]
+    },
+    {
+      "label": "1440/senegal compact sidebar level",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal level actions same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 142,
+          "y": 2495.984375,
+          "width": 225,
+          "height": 48,
+          "top": 2495.984375,
+          "right": 367,
+          "bottom": 2543.984375,
+          "left": 142
+        },
+        {
+          "x": 377,
+          "y": 2495.984375,
+          "width": 225,
+          "height": 48,
+          "top": 2495.984375,
+          "right": 602,
+          "bottom": 2543.984375,
+          "left": 377
+        }
+      ]
+    },
+    {
+      "label": "1440/senegal no-photo stay compact",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal Lucas named",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal conventional inclusion labels",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal no WhatsApp onboarding",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal trip-header-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal trip-summary-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal booking-card-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal reserve-main registration",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal dock-cta registration",
+      "pass": true
+    },
+    {
+      "label": "1440/senegal section navigation destinations valid",
+      "pass": true
+    },
+    {
+      "label": "1440 standard modal opens",
+      "pass": true
+    },
+    {
+      "label": "1440 standard close initially focused",
+      "pass": true
+    },
+    {
+      "label": "1440 standard close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 986.9375,
+          "y": 80,
+          "width": 90.0625,
+          "height": 44,
+          "top": 80,
+          "right": 1077,
+          "bottom": 124,
+          "left": 986.9375
+        }
+      }
+    },
+    {
+      "label": "1440 standard no modal horizontal overflow",
+      "pass": true
+    },
+    {
+      "label": "1440 standard two dates",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 0 PDF href",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 0 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 0 registration href",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 0 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 761.359375,
+          "y": 330.75,
+          "width": 65.640625,
+          "height": 48,
+          "top": 330.75,
+          "right": 827,
+          "bottom": 378.75,
+          "left": 761.359375
+        }
+      }
+    },
+    {
+      "label": "1440 standard 1 PDF href",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 1 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 1 registration href",
+      "pass": true
+    },
+    {
+      "label": "1440 standard 1 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 761.359375,
+          "y": 627.6875,
+          "width": 65.640625,
+          "height": 48,
+          "top": 627.6875,
+          "right": 827,
+          "bottom": 675.6875,
+          "left": 761.359375
+        }
+      }
+    },
+    {
+      "label": "1440 standard reverse tab stays in dialog",
+      "pass": true
+    },
+    {
+      "label": "1440 standard tab wraps to close",
+      "pass": true
+    },
+    {
+      "label": "1440 standard Escape closes",
+      "pass": true
+    },
+    {
+      "label": "1440 standard focus and reading restored",
+      "pass": true,
+      "detail": {
+        "reading": 766,
+        "after": 766
+      }
+    },
+    {
+      "label": "1440 gallery opens",
+      "pass": true
+    },
+    {
+      "label": "1440 gallery closes",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "text200 jstrue levels same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 7469.953125,
+          "width": 113,
+          "height": 132,
+          "top": 7469.953125,
+          "right": 155,
+          "bottom": 7601.953125,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 7469.953125,
+          "width": 113,
+          "height": 132,
+          "top": 7469.953125,
+          "right": 278,
+          "bottom": 7601.953125,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "text200 jstrue modal opens",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue close initially focused",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue close visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 158.90625,
+          "y": 92.8125,
+          "width": 140.09375,
+          "height": 64,
+          "top": 92.8125,
+          "right": 299,
+          "bottom": 156.8125,
+          "left": 158.90625
+        }
+      }
+    },
+    {
+      "label": "text200 jstrue no modal horizontal overflow",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue two dates",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 0 PDF href",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 0 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 0 registration href",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 0 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 167.734375,
+          "y": 385.6875,
+          "width": 131.265625,
+          "height": 72,
+          "top": 385.6875,
+          "right": 299,
+          "bottom": 457.6875,
+          "left": 167.734375
+        }
+      }
+    },
+    {
+      "label": "text200 jstrue 1 PDF href",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 1 PDF beside date DOM",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 1 registration href",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue 1 PDF visible",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 167.734375,
+          "y": 385.609375,
+          "width": 131.265625,
+          "height": 72,
+          "top": 385.609375,
+          "right": 299,
+          "bottom": 457.609375,
+          "left": 167.734375
+        }
+      }
+    },
+    {
+      "label": "text200 jstrue reverse tab stays in dialog",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue tab wraps to close",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue Escape closes",
+      "pass": true
+    },
+    {
+      "label": "text200 jstrue focus and reading restored",
+      "pass": true,
+      "detail": {
+        "reading": 6887,
+        "after": 6887
+      }
+    },
+    {
+      "label": "text200 jsfalse no page overflow",
+      "pass": true,
+      "detail": {
+        "ok": true,
+        "width": 320,
+        "scrollWidth": 320
+      }
+    },
+    {
+      "label": "text200 jsfalse levels same row",
+      "pass": true,
+      "detail": [
+        {
+          "x": 42,
+          "y": 7402.765625,
+          "width": 113,
+          "height": 132,
+          "top": 7402.765625,
+          "right": 155,
+          "bottom": 7534.765625,
+          "left": 42
+        },
+        {
+          "x": 165,
+          "y": 7402.765625,
+          "width": 113,
+          "height": 132,
+          "top": 7402.765625,
+          "right": 278,
+          "bottom": 7534.765625,
+          "left": 165
+        }
+      ]
+    },
+    {
+      "label": "text200 jsfalse native dates visible",
+      "pass": true
+    },
+    {
+      "label": "text200 jsfalse two native PDFs",
+      "pass": true
+    },
+    {
+      "label": "text200 jsfalse two native registrations",
+      "pass": true
+    },
+    {
+      "label": "text200 jsfalse native exact PDF mapping",
+      "pass": true
+    },
+    {
+      "label": "global full retains two PDFs",
+      "pass": true
+    },
+    {
+      "label": "global full suppresses registrations",
+      "pass": true
+    },
+    {
+      "label": "global full labels every date complete",
+      "pass": true
+    },
+    {
+      "label": "global full offers alternatives",
+      "pass": true
+    },
+    {
+      "label": "long dates focus reaches last enquiry",
+      "pass": true
+    },
+    {
+      "label": "long dates last enquiry visible",
+      "pass": true
+    },
+    {
+      "label": "long dates close remains reachable",
+      "pass": true
+    },
+    {
+      "label": "real hero image loaded",
+      "pass": true
+    },
+    {
+      "label": "no browser exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "issues": [],
+  "errors": [],
+  "screenshots": [
+    "maldivas-dates-320.png",
+    "maldivas-dates-390.png",
+    "maldivas-level-390.png",
+    "maldivas-programme-390.png",
+    "maldivas-dates-768.png",
+    "maldivas-dates-1440.png",
+    "maldivas-level-1440.png",
+    "maldivas-programme-1440.png",
+    "maldivas-level-text200-jstrue.png",
+    "maldivas-dates-text200.png",
+    "maldivas-level-text200-jsfalse.png",
+    "maldivas-native-dates-text200.png",
+    "long-dates-last.png",
+    "real-el-palmar-cover-1440.png",
+    "real-el-palmar-level-1440.png",
+    "real-el-palmar-programme-1440.png",
+    "real-el-palmar-cover-390.png",
+    "real-el-palmar-experience-390.png"
+  ],
+  "endHashes": {
+    "scripts/render-trips.mjs": "c841039d3c2cb5b52f119048e3129ef9af21be0a7a4623fc19917795238ffabb",
+    "dist/trip-detail.css": "ada42de348ed9c970fefb52979c07e1f470d064d5b91b9773b94b8a6ce5253ed",
+    "dist/trip.js": "ef85741b19c1d190d7275671c97e989ef5d2c0947f3f9ef0877922c3131cde13"
+  },
+  "total": 485,
+  "failed": 0
+}

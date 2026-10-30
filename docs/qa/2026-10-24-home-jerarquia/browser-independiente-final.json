@@ -1,0 +1,125 @@
+[
+  {
+    "width": 320,
+    "normal": {
+      "overflow": false,
+      "ctaHeight": 38.1875,
+      "ctaFont": "13px",
+      "ctaWeight": "500",
+      "ctaAnchorHeight": 81.09375,
+      "faqBackground": "rgb(27, 27, 27)",
+      "faqColor": "rgb(255, 250, 231)",
+      "faqSummaryColor": "rgb(255, 250, 231)",
+      "faqAnswerColor": "rgba(255, 250, 231, 0.85)",
+      "bookingEffectiveBackground": "rgb(255, 250, 231)",
+      "faqBeforeBooking": true,
+      "experienceBlocks": 0,
+      "experienceAnchor": "opiniones",
+      "levels": 4,
+      "unloaded": []
+    },
+    "faqOpenStates": [
+      true,
+      true,
+      false
+    ],
+    "zoom": {
+      "overflow": false,
+      "ctaHeight": 56.390625,
+      "ctaAnchorHeight": 205.578125,
+      "overflows": []
+    },
+    "anchor200": {
+      "headerBottom": 108,
+      "targetTop": 189.515625,
+      "headingTop": 189.515625
+    },
+    "errors": []
+  },
+  {
+    "width": 390,
+    "normal": {
+      "overflow": false,
+      "ctaHeight": 38.1875,
+      "ctaFont": "13px",
+      "ctaWeight": "500",
+      "ctaAnchorHeight": 81.09375,
+      "faqBackground": "rgb(27, 27, 27)",
+      "faqColor": "rgb(255, 250, 231)",
+      "faqSummaryColor": "rgb(255, 250, 231)",
+      "faqAnswerColor": "rgba(255, 250, 231, 0.85)",
+      "bookingEffectiveBackground": "rgb(255, 250, 231)",
+      "faqBeforeBooking": true,
+      "experienceBlocks": 0,
+      "experienceAnchor": "opiniones",
+      "levels": 4,
+      "unloaded": []
+    },
+    "faqOpenStates": [
+      true,
+      true,
+      false
+    ],
+    "zoom": {
+      "overflow": false,
+      "ctaHeight": 56.390625,
+      "ctaAnchorHeight": 205.578125,
+      "overflows": []
+    },
+    "anchor200": {
+      "headerBottom": 113.59375,
+      "targetTop": 189.8125,
+      "headingTop": 189.8125
+    },
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "normal": {
+      "overflow": false,
+      "ctaHeight": 38.1875,
+      "ctaFont": "13px",
+      "ctaWeight": "500",
+      "ctaAnchorHeight": 78.890625,
+      "faqBackground": "rgb(27, 27, 27)",
+      "faqColor": "rgb(255, 250, 231)",
+      "faqSummaryColor": "rgb(255, 250, 231)",
+      "faqAnswerColor": "rgba(255, 250, 231, 0.85)",
+      "bookingEffectiveBackground": "rgb(255, 250, 231)",
+      "faqBeforeBooking": true,
+      "experienceBlocks": 0,
+      "experienceAnchor": "opiniones",
+      "levels": 4,
+      "unloaded": []
+    },
+    "faqOpenStates": [
+      true,
+      true,
+      false
+    ],
+    "zoom": {
+      "overflow": false,
+      "ctaHeight": 56.390625,
+      "ctaAnchorHeight": 201.1875,
+      "overflows": []
+    },
+    "anchor200": {
+      "headerBottom": 88,
+      "targetTop": 200.296875,
+      "headingTop": 200.296875
+    },
+    "errors": []
+  },
+  {
+    "nojs": 320,
+    "faqOpens": true,
+    "datesOpen": true,
+    "path": "/viajes/"
+  },
+  {
+    "nojs": 390,
+    "faqOpens": true,
+    "datesOpen": true,
+    "path": "/viajes/"
+  }
+]

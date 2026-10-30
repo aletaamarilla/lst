@@ -1,0 +1,92 @@
+{
+  "body": {
+    "fg": "#5b6258",
+    "bg": "#f8f5e9",
+    "ratio": 5.769559235927534
+  },
+  "level dark": {
+    "fg": "#5b6258",
+    "bg": "#e9ecdf",
+    "ratio": 5.259347832064101
+  },
+  "visual card even": {
+    "fg": "#5b6258",
+    "bg": "#e3eadf",
+    "ratio": 5.131047238859437
+  },
+  "profile": {
+    "fg": "#5b6258",
+    "bg": "#f3f1e2",
+    "ratio": 5.548233093867536
+  },
+  "stay dark": {
+    "fg": "#5b6258",
+    "bg": "#e5e9d7",
+    "ratio": 5.09131469482083
+  },
+  "available badge": {
+    "fg": "#315c3c",
+    "bg": "#dcebdc",
+    "ratio": 6.219942368242304
+  },
+  "limited badge": {
+    "fg": "#665017",
+    "bg": "#eee3bb",
+    "ratio": 5.9970188949028
+  },
+  "quiet badge": {
+    "fg": "#455846",
+    "bg": "#e2e8e1",
+    "ratio": 6.160526624198418
+  },
+  "promotion badge": {
+    "fg": "#31583c",
+    "bg": "#dceadd",
+    "ratio": 6.503893435604479
+  },
+  "price note": {
+    "fg": "#515d50",
+    "bg": "#f3f1e5",
+    "ratio": 6.110779494909769
+  },
+  "duration chip": {
+    "fg": "#425440",
+    "bg": "#e1e7dc",
+    "ratio": 6.474961068025966
+  },
+  "level chip": {
+    "fg": "#405866",
+    "bg": "#e2e8ec",
+    "ratio": 6.054576164537943
+  },
+  "deposit note": {
+    "fg": "#465f67",
+    "bg": "#dfebef",
+    "ratio": 5.582429242420538
+  },
+  "deposit amount": {
+    "fg": "#203d47",
+    "bg": "#dfebef",
+    "ratio": 9.488068074204541
+  },
+  "CTA": {
+    "fg": "#1b1b1b",
+    "bg": "#ea5934",
+    "ratio": 4.902406414379292
+  },
+  "CTA hover": {
+    "fg": "#fffae7",
+    "bg": "#1b1b1b",
+    "ratio": 16.469911608431392
+  },
+  "dossier hover": {
+    "fg": "#8a361e",
+    "bg": "#f3f1e5",
+    "ratio": 7.051388949157764
+  },
+  "WhatsApp link": {
+    "fg": "#24603f",
+    "bg": "#f3f1e5",
+    "ratio": 6.569109900159389
+  }
+}

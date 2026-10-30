@@ -2,8 +2,8 @@
   "source": "sanity-published",
   "trips": [
     {
-      "id": "el-palmar-2026-12-04",
-      "slug": "el-palmar-2026-12-04",
+      "id": "el-palmar",
+      "slug": "el-palmar",
       "name": "El Palmar",
       "place": "Vejer de la Frontera · Cádiz",
       "state": "confirmed",
@@ -23,11 +23,21 @@
           "end": "2026-12-08",
           "duration": "4 noches",
           "price": 699,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 30,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 250,
+            "terms": "Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
-      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
-      "heroAlt": "El Palmar · fotografía del dossier de LST",
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg",
+      "heroAlt": "Foto de grupo junto a una bandera de LST en El Palmar, 2024.",
       "heroPosition": "50% 50%",
       "tagline": "El Palmar",
       "intro": "Let’s Surf Together\nEn Let’s Surf Together creemos que un surftrip no es solo surfear.\nEs compartir, aprender y vivir una experiencia que se queda contigo mucho\ndespués de volver a casa \nEste puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con\nmás ambiente surfero del sur, y queremos que formes parte de ello.\nSerán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel,\nvideocorrecciones para pulir cada detalle de tu técnica, surfskate en pista\nprivada y Animal Flow para sentirte ágil dentro y fuera del agua.\nY fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche\ncon fiesta temática de los 80 y 90 \nEs el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve\nencantadaaaa.",
@@ -56,12 +66,36 @@
       ],
       "gallery": [
         [
-          "https://cdn.sanity.io/images/q5bj2rn2/production/893d1deca947d5cc7815c9af2c00240bdfa6e32b-1364x1145.jpg",
-          "El Palmar · fotografía del dossier de LST",
-          "Fotografía del dossier de LST."
+          "https://cdn.sanity.io/images/q5bj2rn2/production/deb7fa1d519b0a5b987727725c9757f2fd94e036-3000x2000.jpg",
+          "Grupo junto a la playa con una bandera de LST en El Palmar, 2024.",
+          "Recuerdo de un viaje de LST a El Palmar en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/3bad9d0c89c3c4e7a949350ab8e1217b1d415b93-6000x4000.jpg",
+          "Práctica de surfskate en grupo en El Palmar, 2024.",
+          "Recuerdo de un viaje de LST a El Palmar en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/7a70ee0d509adc02dea6b54bf8e34ae3c5a9a7f4-6000x4000.jpg",
+          "Sesión de estiramientos sobre una terraza en El Palmar, 2024.",
+          "Recuerdo de un viaje de LST a El Palmar en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/738ab4859b5ced9985161a3898f57a5a93da112d-3000x2000.jpg",
+          "Foto de grupo junto a una bandera de LST en El Palmar, 2024.",
+          "Recuerdo de un viaje de LST a El Palmar en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/75c8c25011c079defdb25b6fc28e44ff664d45ac-6000x4000.jpg",
+          "Explicación de surf en la playa de El Palmar, 2024.",
+          "Recuerdo de un viaje de LST a El Palmar en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000.jpg",
+          "Surfista deslizándose en una ola en El Palmar, 2024.",
+          "Recuerdo de un viaje de LST a El Palmar en 2024."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Todos los niveles; 3 grupos: iniciación, al pico y coaching de maniobras (p. 5).",
       "levelChecks": [],
       "includes": [
@@ -99,11 +133,14 @@
         "note": "",
         "image": "",
         "alt": ""
-      }
+      },
+      "aliases": [
+        "el-palmar-2026-12-04"
+      ]
     },
     {
-      "id": "fuerteventura-2027-02-12",
-      "slug": "fuerteventura-2027-02-12",
+      "id": "fuerteventura",
+      "slug": "fuerteventura",
       "name": "Fuerteventura",
       "place": "Canarias · España",
       "state": "confirmed",
@@ -121,7 +158,17 @@
           "end": "2027-02-16",
           "duration": "4 noches",
           "price": 699,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b7879c83c36282f4442bdf858399c5025e41a1f3.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 12,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 250,
+            "terms": "Señal fija de 250 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
       "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044.jpg",
@@ -155,7 +202,6 @@
           "Fotografía del dossier de LST."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Iniciación e intermedio; 2 grupos según nivel.",
       "levelChecks": [],
       "includes": [
@@ -215,11 +261,14 @@
         "note": "",
         "image": "",
         "alt": ""
-      }
+      },
+      "aliases": [
+        "fuerteventura-2027-02-12"
+      ]
     },
     {
-      "id": "hossegor-2026-11-20",
-      "slug": "hossegor-2026-11-20",
+      "id": "hossegor",
+      "slug": "hossegor",
       "name": "Hossegor",
       "place": "Landas · Francia",
       "state": "confirmed",
@@ -237,11 +286,21 @@
           "end": "2026-11-22",
           "duration": "2 noches",
           "price": 399,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/43061e730eef28c167ef8029233ecba7745bbba0.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 6,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 200,
+            "terms": "Señal fija de 200 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
-      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
-      "heroAlt": "Hossegor · fotografía del dossier de LST",
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000.jpg",
+      "heroAlt": "Grupo de LST con su bandera entre los árboles en Francia, 2024.",
       "heroPosition": "50% 50%",
       "tagline": "Hossegor",
       "intro": "Let’s Surf Together\nUN FINDE PARA SUBIR DE NIVEL\nUn finde para dar un salto de calidad en tu surf en una de las mecas del surf\neuropeo \nNos vamos a Hossegor con un grupo muy reducido de solo 6 personas, para\nque Lucas pueda hacer un seguimiento individualizado de cada uno durante\ntodo el fin de semana.\nAnalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de\nverdad necesitas para mejorar: dentro del agua, en vídeo y en la teoría del mar.\nY todo con el ambiente de siempre de LST: surf, buena comida y buen rollo en\nuna surfhouse con muy buena energía.",
@@ -262,12 +321,36 @@
       ],
       "gallery": [
         [
-          "https://cdn.sanity.io/images/q5bj2rn2/production/71be8d00313a49d7a901a151120c4c2a547b825d-1322x1044.jpg",
-          "Hossegor · fotografía del dossier de LST",
-          "Fotografía del dossier de LST."
+          "https://cdn.sanity.io/images/q5bj2rn2/production/a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000.jpg",
+          "Grupo de LST con su bandera entre los árboles en Francia, 2024.",
+          "Recuerdo de un viaje de LST a Francia en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/0b9d183d743517ae3c606bb3f8670590a6343261-6000x4000.jpg",
+          "Grupo con tablas observando el mar en Francia, 2024.",
+          "Recuerdo de un viaje de LST a Francia en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/8fe534bb806e50d5162bafb968fdfd740d9a7cf5-2000x1333.jpg",
+          "Grupo conversando al aire libre en Francia, 2024.",
+          "Recuerdo de un viaje de LST a Francia en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/19a26fe3a9233a36ad79c03048859a4582178a4d-2000x1333.jpg",
+          "Surfistas caminando hacia la playa al atardecer en Francia, 2024.",
+          "Recuerdo de un viaje de LST a Francia en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/b1c437b2ec42f515b154a43399de8dd6defd1e07-2000x3000.jpg",
+          "Práctica de surfskate en una rampa en Francia, 2024.",
+          "Recuerdo de un viaje de LST a Francia en 2024."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/7bfa91884842d1d8400cbb3d5913774ccc17ebb9-2000x1333.png",
+          "Surfista descendiendo una ola en Francia, 2024.",
+          "Recuerdo de un viaje de LST a Francia en 2024."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
       "levelChecks": [],
       "includes": [
@@ -325,12 +408,15 @@
         "note": "",
         "image": "",
         "alt": ""
-      }
+      },
+      "aliases": [
+        "hossegor-2026-11-20"
+      ]
     },
     {
-      "id": "maldivas-2027-03-21",
-      "slug": "maldivas-2027-03-21",
-      "name": "Maldivas · Semana Santa",
+      "id": "maldivas",
+      "slug": "maldivas",
+      "name": "Maldivas",
       "place": "Thulusdhoo · Atolón de Malé Norte",
       "state": "confirmed",
       "availability": "available",
@@ -347,13 +433,42 @@
           "end": "2027-03-28",
           "duration": "7 noches",
           "price": 1499,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 10,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 500,
+            "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
+        },
+        {
+          "id": "maldivas-2027-03-28",
+          "date": "28 mar 2027 — 4 abr 2027",
+          "start": "2027-03-28",
+          "end": "2027-04-04",
+          "duration": "7 noches",
+          "price": 1499,
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 10,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 500,
+            "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
       "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
       "heroAlt": "Maldivas · Semana Santa · fotografía del dossier de LST",
       "heroPosition": "50% 50%",
-      "tagline": "Maldivas · Semana Santa",
+      "tagline": "Maldivas",
       "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
       "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
@@ -377,7 +492,6 @@
           "Fotografía del dossier de LST."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
       "levelChecks": [],
       "includes": [
@@ -419,16 +533,16 @@
           "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional."
         ]
       ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+      "dossier": "",
       "payment": {
         "depositAmount": 500,
         "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
       },
       "capacity": {
-        "total": 10,
+        "total": null,
         "available": null
       },
-      "message": "¡Hola, LST! Me interesa Maldivas · Semana Santa. ¿Podemos consultar las próximas salidas?",
+      "message": "¡Hola, LST! Me interesa Maldivas. ¿Podemos consultar las próximas salidas?",
       "cms": true,
       "stay": {
         "title": "",
@@ -437,124 +551,16 @@
         "note": "",
         "image": "",
         "alt": ""
-      }
+      },
+      "aliases": [
+        "maldivas-2027-03-21",
+        "maldivas-2027-03-28"
+      ]
     },
     {
-      "id": "maldivas-2027-03-28",
-      "slug": "maldivas-2027-03-28",
-      "name": "Maldivas · Pascua",
-      "place": "Thulusdhoo · Atolón de Malé Norte",
-      "state": "confirmed",
-      "availability": "available",
-      "levels": [
-        2,
-        3
-      ],
-      "levelRequirement": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
-      "departures": [
-        {
-          "id": "maldivas-2027-03-28",
-          "date": "28 mar 2027 — 4 abr 2027",
-          "start": "2027-03-28",
-          "end": "2027-04-04",
-          "duration": "7 noches",
-          "price": 1499,
-          "state": "confirmed"
-        }
-      ],
-      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
-      "heroAlt": "Maldivas · Pascua · fotografía del dossier de LST",
-      "heroPosition": "50% 50%",
-      "tagline": "Maldivas · Pascua",
-      "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
-      "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
-      "storyTitle": "El programa.",
-      "storyLabel": "EL VIAJE",
-      "storyIntro": "",
-      "story": [
-        [
-          "Programa 1",
-          "Surf en barco 2 veces al día según condiciones; coaching Lucas; fotos/vídeos; videoanálisis cada tarde y Animal Flow cada mañana."
-        ],
-        [
-          "Programa 2",
-          "Plan B opcional si no hay olas o el grupo quiere descansar: snorkel en arrecife; animales no garantizados, delfines con suerte; paseos, playa y sunsets."
-        ]
-      ],
-      "gallery": [
-        [
-          "https://cdn.sanity.io/images/q5bj2rn2/production/1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200.jpg",
-          "Maldivas · Pascua · fotografía del dossier de LST",
-          "Fotografía del dossier de LST."
-        ]
-      ],
-      "levelTitle": "Tu nivel de surf.",
-      "levelText": "Independencia en el agua: remontar solo, coger olas propias e ir por la pared. Nivel 2: fluir/bombear/primeros giros; nivel 3: pulir maniobras.",
-      "levelChecks": [],
-      "includes": [
-        "7 noches en hotel en primera línea de playa",
-        "Pensión completa: desayuno, comida y cena",
-        "Surf en barco 2 veces al día",
-        "Coaching en todas las sesiones con seguimiento individual de Lucas",
-        "Fotos y vídeos profesionales",
-        "Videoanálisis grupal e individual",
-        "Animal Flow cada mañana",
-        "Transfers aeropuerto–isla–aeropuerto y a los spots",
-        "Actividades de grupo y snorkel opcional",
-        "Wifi, acompañamiento 24h y asesoría de vuelos",
-        "Descuento en seguro de viaje"
-      ],
-      "excludes": [
-        "Vuelos"
-      ],
-      "inclusionsNote": "",
-      "faqs": [
-        [
-          "¿Qué nivel necesito?",
-          "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
-        ],
-        [
-          "¿Están incluidos los vuelos?",
-          "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra."
-        ],
-        [
-          "¿Puedo llegar antes o quedarme más días?",
-          "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos."
-        ],
-        [
-          "¿Cómo se paga?",
-          "500 € para reservar tu plaza y el resto un mes antes del viaje."
-        ],
-        [
-          "¿Y si no hay olas?",
-          "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional."
-        ]
-      ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
-      "payment": {
-        "depositAmount": 500,
-        "terms": "Señal fija de 500 € al confirmar. Resto: Un mes antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
-      },
-      "capacity": {
-        "total": 10,
-        "available": null
-      },
-      "message": "¡Hola, LST! Me interesa Maldivas · Pascua. ¿Podemos consultar las próximas salidas?",
-      "cms": true,
-      "stay": {
-        "title": "",
-        "name": "",
-        "text": "Hotel sin nombre, primera línea de playa en Thulusdhoo; habitaciones dobles/triples, wifi.",
-        "note": "",
-        "image": "",
-        "alt": ""
-      }
-    },
-    {
-      "id": "marruecos-2027-01-17",
-      "slug": "marruecos-2027-01-17",
-      "name": "Marruecos · nivel 1–2",
+      "id": "marruecos",
+      "slug": "marruecos",
+      "name": "Marruecos",
       "place": "Agadir · Marruecos",
       "state": "confirmed",
       "availability": "available",
@@ -571,13 +577,23 @@
           "end": "2027-01-24",
           "duration": "7 noches",
           "price": 899,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/5c6db16bd916a52f50354b5f50aac1bb98b84c69.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 15,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 270,
+            "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
-      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
-      "heroAlt": "Marruecos · nivel 1–2 · fotografía del dossier de LST",
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000.jpg",
+      "heroAlt": "Grupo reunido junto a tablas de surf en Marruecos, 2025.",
       "heroPosition": "50% 50%",
-      "tagline": "Marruecos · nivel 1–2",
+      "tagline": "Marruecos",
       "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: con el pie en la arena y la tabla en el\nagua \nDespués de un 2026 lleno de viajes y surftrips increíbles, toca volver a las raíces.\nA recordar por qué nos enamoramos del surf, a conectar con nuestra primera ola\ny con esa sensación de libertad que solo el mar te da.\nEste surftrip está diseñado para quienes quieren dar sus primeros pasos en el\nsurf o mejorar su base, coger confianza en el agua y empezar a disfrutar de las\nprimeras paredes y maniobras sencillas.\nSerá una semana llena de surf, cultura marroquí y momentos compartidos con\nun grupo reducido de personas con la misma pasión.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
       "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
@@ -596,12 +612,36 @@
       ],
       "gallery": [
         [
-          "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
-          "Marruecos · nivel 1–2 · fotografía del dossier de LST",
-          "Fotografía del dossier de LST."
+          "https://cdn.sanity.io/images/q5bj2rn2/production/4e9025ec236429f5e20ff15c5f598f9cda61e3c7-6000x4000.jpg",
+          "Sesión de estiramientos en una terraza de Marruecos, 2025.",
+          "Recuerdo de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/3f73b920974bfe6f9d03ca929564cfb7ed601a39-4000x6000.jpg",
+          "Puesto de zumo de naranja en un mercado de Marruecos, 2025.",
+          "Recuerdo de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/8c7026876e036835899029696897ef10116e4299-6000x4000.jpg",
+          "Excursión con camellos junto a las dunas en Marruecos, 2025.",
+          "Recuerdo de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000.jpg",
+          "Grupo reunido junto a tablas de surf en Marruecos, 2025.",
+          "Recuerdo de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/4c20dc1dfadca90a6723cea9311f588a662a3fc2-6000x4000.jpg",
+          "Surfista sobre una ola al atardecer en Marruecos, 2025.",
+          "Recuerdo de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/788359c1354ae26e16b6a9523e640cc6af2c0d5d-6000x4000.jpg",
+          "Barcas en la playa al atardecer en Marruecos, 2025.",
+          "Recuerdo de un viaje de LST a Marruecos en 2025."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Iniciación e intermedio bajo: de espumas a primeras paredes y maniobras sencillas.",
       "levelChecks": [],
       "includes": [
@@ -654,21 +694,126 @@
         "total": 15,
         "available": null
       },
-      "message": "¡Hola, LST! Me interesa Marruecos · nivel 1–2. ¿Podemos consultar las próximas salidas?",
+      "message": "¡Hola, LST! Me interesa Marruecos. ¿Podemos consultar las próximas salidas?",
       "cms": true,
+      "destinationDescription": "Una tierra de colores, sonidos y sabores, donde el desierto se encuentra con el Atlántico. Una semana entre el azul del océano y el ocre de las montañas para empezar a surfear, descubrir la cultura marroquí y compartir la experiencia con un grupo con las mismas ganas de aprender.",
+      "spotsNote": "El spot de cada sesión se elige según el mar y el nivel del grupo. Fotografías del dossier y de viajes anteriores.",
+      "destinationFacts": [
+        "Costa atlántica",
+        "7 noches de surf y cultura"
+      ],
+      "activities": [
+        {
+          "title": "Dunas de Tamri",
+          "text": "Atardecer entre dunas frente al Atlántico.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/8b73781cb2124591349bcf9ba8a6a4e9fc915e7b-556x524.webp",
+          "alt": "Grupo de LST contemplando las dunas de Tamri."
+        },
+        {
+          "title": "Zoco de Agadir",
+          "text": "Colores, especias y vida local.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/ea21d6a8eddd052bbc5e50e8e9c556efc0f2c60b-556x524.webp",
+          "alt": "Puestos del zoco de Agadir, fotografía del dossier de LST."
+        },
+        {
+          "title": "Mercados locales",
+          "text": "Para vivir el Marruecos más auténtico.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524.webp",
+          "alt": "Grupo de LST junto a puestos locales en Marruecos."
+        },
+        {
+          "title": "Surf day en Imsouane",
+          "text": "Un día de surf para seguir aprendiendo y compartir las olas.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/87d2fc5a007de4b3bcfed09677e81639f0b0f2e0-556x524.webp",
+          "alt": "Surf al atardecer, fotografía del programa de Imsouane."
+        },
+        {
+          "title": "Paradise Valley",
+          "text": "Una jornada entre montañas, palmeras y piscinas naturales.",
+          "image": "",
+          "alt": ""
+        }
+      ],
+      "spots": [
+        {
+          "title": "Imsouane",
+          "text": "Una jornada para aprender y disfrutar de sus paredes, si las condiciones acompañan.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/87d2fc5a007de4b3bcfed09677e81639f0b0f2e0-556x524.webp",
+          "alt": "Surf al atardecer en una fotografía del dossier de Marruecos."
+        },
+        {
+          "title": "Costa de Agadir",
+          "text": "Nos movemos por la costa buscando olas que encajen con el nivel del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524.webp",
+          "alt": "Una jornada del grupo de LST junto a la costa marroquí."
+        }
+      ],
+      "surfPlan": [
+        [
+          "Clases y coaching",
+          "De lunes a sábado, adaptados a tu nivel y con monitores y el equipo de LST."
+        ],
+        [
+          "Videoanálisis",
+          "Correcciones grupales e individuales para entender tu progreso."
+        ],
+        [
+          "Animal Flow y estiramientos",
+          "Cada día preparamos cuerpo y mente antes de entrar al agua."
+        ],
+        [
+          "Material y neopreno",
+          "Material de iniciación incluido. Evolutivas y shortboards: alquiler aparte."
+        ]
+      ],
+      "audience": {
+        "text": "Para quien quiere empezar o consolidar su base en el surf, ganar confianza en el agua y disfrutar de sus primeras paredes y maniobras sencillas.",
+        "objective": "Sentirte seguro, entender el océano y disfrutar de tus primeras olas con confianza.",
+        "profiles": [
+          [
+            "Nivel I · Iniciación",
+            "Tus primeros pasos: espumas, ponerte de pie y entender cómo funciona el océano."
+          ],
+          [
+            "Nivel II · Intermedio bajo",
+            "Ya te pones de pie y quieres coger paredes, seguir la línea de la ola y hacer tus primeras maniobras."
+          ]
+        ]
+      },
       "stay": {
         "title": "",
         "name": "",
         "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales.",
         "note": "",
         "image": "",
-        "alt": ""
-      }
+        "alt": "",
+        "gallery": [
+          [
+            "https://cdn.sanity.io/images/q5bj2rn2/production/a71c2001f22226c628c84105014e2e638bbc3496-1440x960.webp",
+            "Ejemplo de terraza de una surf house marroquí.",
+            "Una terraza para desconectar."
+          ],
+          [
+            "https://cdn.sanity.io/images/q5bj2rn2/production/2a1acb5b9a7cb85bdb464ac72a7f85dc8fe59c15-1440x960.webp",
+            "Ejemplo de habitación compartida en una surf house.",
+            "Descanso después de las olas."
+          ],
+          [
+            "https://cdn.sanity.io/images/q5bj2rn2/production/d191c109756ef3cb85f0dae931a5794f054f60be-1440x960.webp",
+            "Ejemplo de salón de una surf house marroquí.",
+            "La vida en la casa."
+          ]
+        ],
+        "galleryNote": "Imágenes de ejemplo generadas para mostrar el ambiente. Las fotos del alojamiento definitivo se actualizarán aquí."
+      },
+      "aliases": [
+        "marruecos-2027-01-17"
+      ]
     },
     {
-      "id": "marruecos-2027-01-24",
-      "slug": "marruecos-2027-01-24",
-      "name": "Marruecos · nivel 3",
+      "id": "marruecos-avanzado",
+      "slug": "marruecos-avanzado",
+      "name": "Marruecos avanzado",
       "place": "Agadir · Marruecos",
       "state": "confirmed",
       "availability": "available",
@@ -684,13 +829,23 @@
           "end": "2027-01-31",
           "duration": "7 noches",
           "price": 899,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/2c75a88174e3071f85f59b20c8684fffdcca10f1.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 10,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 270,
+            "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
-      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
-      "heroAlt": "Marruecos · nivel 3 · fotografía del dossier de LST",
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000.jpg",
+      "heroAlt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
       "heroPosition": "50% 50%",
-      "tagline": "Marruecos · nivel 3",
+      "tagline": "Marruecos avanzado",
       "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: entrenando duro en el agua y buscando\nnuevos retos \nDespués de un 2026 lleno de olas, aprendizajes y surftrips épicos, toca dar el\nsiguiente paso: que tu surf deje de ser solo coger olas y empiece a fluir.\nPara ganar velocidad y control en la pared, aprender a bombear, colocarte\nmejor en la ola y soltar tus primeros giros con buena técnica. Para sentir que de\nverdad progresas, sesión a sesión.\nUna semana enfocada en progresar en tu surf, con sesiones intensivas, análisis\nen detalle y tiempo para disfrutar de la cultura marroquí.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
       "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
@@ -709,12 +864,31 @@
       ],
       "gallery": [
         [
-          "https://cdn.sanity.io/images/q5bj2rn2/production/7d70c5c08570fdcc723c911629a043901ac258c5-1322x1044.jpg",
-          "Marruecos · nivel 3 · fotografía del dossier de LST",
-          "Fotografía del dossier de LST."
+          "https://cdn.sanity.io/images/q5bj2rn2/production/b7e831800babc91734e05475f7a2015bf686238b-6000x4000.jpg",
+          "Surfista girando sobre una ola en Marruecos, 2025.",
+          "Sesión de surf de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000.jpg",
+          "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
+          "Sesión de surf de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000.jpg",
+          "Surfista sobre una ola vista desde la playa en Marruecos, 2025.",
+          "Sesión de surf de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000.jpg",
+          "Surfista al pie de una ola rompiendo en Marruecos, 2025.",
+          "Sesión de surf de un viaje de LST a Marruecos en 2025."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000.jpg",
+          "Surfista deslizándose junto a la espuma de una ola en Marruecos, 2025.",
+          "Sesión de surf de un viaje de LST a Marruecos en 2025."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Independencia en el agua obligatoria; remontar solo, coger olas propias y paredes con tabla corta. También primeras maniobras.",
       "levelChecks": [],
       "includes": [
@@ -767,20 +941,121 @@
         "total": 10,
         "available": null
       },
-      "message": "¡Hola, LST! Me interesa Marruecos · nivel 3. ¿Podemos consultar las próximas salidas?",
+      "message": "¡Hola, LST! Me interesa Marruecos. ¿Podemos consultar las próximas salidas?",
       "cms": true,
+      "destinationDescription": "Una semana entre el Atlántico y la cultura marroquí para dar el siguiente paso en tu surf. Sesiones intensivas, análisis en detalle y tiempo para descubrir Agadir con un grupo que comparte las mismas ganas de progresar.",
+      "spotsNote": "Spots previstos, sujetos a las condiciones del mar. Las fotografías muestran sesiones anteriores de LST en Marruecos; no identifican cada spot.",
+      "destinationFacts": [
+        "Costa atlántica",
+        "7 noches de surf y cultura"
+      ],
+      "activities": [
+        {
+          "title": "Zoco de Agadir",
+          "text": "Si el mar descansa o el grupo lo pide, nos acercamos a sus colores y sabores.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/ea21d6a8eddd052bbc5e50e8e9c556efc0f2c60b-556x524.webp",
+          "alt": "Puestos del zoco de Agadir, fotografía del dossier de LST."
+        },
+        {
+          "title": "Vida local",
+          "text": "Tiempo para descubrir Marruecos entre sesiones, según el ritmo del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/604f524c98ad3f4912bc59ec07d99b3d628301eb-556x524.webp",
+          "alt": "Grupo de LST en la costa de Marruecos."
+        }
+      ],
+      "spots": [
+        {
+          "title": "Imsouane",
+          "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/b7e831800babc91734e05475f7a2015bf686238b-6000x4000.jpg",
+          "alt": "Surfista girando sobre una ola en Marruecos, 2025."
+        },
+        {
+          "title": "Anchor Point",
+          "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000.jpg",
+          "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025."
+        },
+        {
+          "title": "Desert Point",
+          "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/6fff07dd36b9a850d2e1c0d8332da613c65609f2-4000x6000.jpg",
+          "alt": "Surfista sobre una ola vista desde la playa en Marruecos, 2025."
+        },
+        {
+          "title": "Banana",
+          "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/59896744c750b6b4365dbe8ae0cfc208793b9277-6000x4000.jpg",
+          "alt": "Surfista al pie de una ola rompiendo en Marruecos, 2025."
+        },
+        {
+          "title": "Camel",
+          "text": "Una de las opciones del programa. Elegimos las sesiones según las condiciones y el nivel del grupo.",
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/71bd33e6c12fc64222ebfb96177becf0288fb6d5-6000x4000.jpg",
+          "alt": "Surfista deslizándose junto a la espuma de una ola en Marruecos, 2025."
+        }
+      ],
+      "surfPlan": [
+        [
+          "Coaching con Lucas",
+          "De lunes a sábado, con acompañamiento en el agua."
+        ],
+        [
+          "Hasta dos sesiones al día",
+          "Siempre que las condiciones acompañen."
+        ],
+        [
+          "Vídeos y correcciones",
+          "Vídeos diarios y cuatro sesiones de videocorrecciones grupales e individuales."
+        ],
+        [
+          "Movilidad y material",
+          "Animal Flow cada mañana. Trae tu tabla; también puedes alquilar en destino."
+        ]
+      ],
+      "audience": {
+        "text": "Necesitas independencia en el agua: remontar solo, coger tus propias olas y recorrer la pared con tabla corta. A partir de esa base, trabajaremos velocidad, control y primeras maniobras.",
+        "objective": "Ganar velocidad y control en la pared, colocarte mejor y pulir tu técnica.",
+        "profiles": [
+          [
+            "Nivel III · Riders",
+            "Ya surfeas la pared con autonomía y quieres que tus giros empiecen a fluir."
+          ]
+        ]
+      },
       "stay": {
         "title": "",
         "name": "",
         "text": "Surf House local sin nombre; habitaciones dobles/triples/cuádruples, zonas comunes, opciones vegetarianas y especiales.",
         "note": "",
         "image": "",
-        "alt": ""
-      }
+        "alt": "",
+        "gallery": [
+          [
+            "https://cdn.sanity.io/images/q5bj2rn2/production/a71c2001f22226c628c84105014e2e638bbc3496-1440x960.webp",
+            "Ejemplo de terraza de una surf house marroquí.",
+            "Una terraza para desconectar."
+          ],
+          [
+            "https://cdn.sanity.io/images/q5bj2rn2/production/2a1acb5b9a7cb85bdb464ac72a7f85dc8fe59c15-1440x960.webp",
+            "Ejemplo de habitación compartida en una surf house.",
+            "Descanso después de las olas."
+          ],
+          [
+            "https://cdn.sanity.io/images/q5bj2rn2/production/d191c109756ef3cb85f0dae931a5794f054f60be-1440x960.webp",
+            "Ejemplo de salón de una surf house marroquí.",
+            "La vida en la casa."
+          ]
+        ],
+        "galleryNote": "Imágenes de ejemplo generadas para mostrar el ambiente. Las fotos del alojamiento definitivo se actualizarán aquí."
+      },
+      "aliases": [
+        "marruecos-2027-01-24"
+      ]
     },
     {
-      "id": "senegal-2027-02-28",
-      "slug": "senegal-2027-02-28",
+      "id": "senegal",
+      "slug": "senegal",
       "name": "Senegal",
       "place": "Dakar · Senegal",
       "state": "confirmed",
@@ -797,11 +1072,21 @@
           "end": "2027-03-07",
           "duration": "7 noches",
           "price": 1299,
-          "state": "confirmed"
+          "state": "confirmed",
+          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/0265db128ef6c50005e0754e1437cd11aa3957fd.pdf",
+          "availability": "available",
+          "capacity": {
+            "total": 12,
+            "available": null
+          },
+          "payment": {
+            "depositAmount": 325,
+            "terms": "Señal fija de 325 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
+          }
         }
       ],
-      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044.jpg",
-      "heroAlt": "Senegal · fotografía del dossier de LST",
+      "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366.jpg",
+      "heroAlt": "Surfista girando sobre una ola del archivo de Senegal.",
       "heroPosition": "50% 50%",
       "tagline": "Senegal",
       "intro": "Let’s Surf Together\nUNA AVENTURA DE SURF EN ÁFRICA\nHay viajes que se recuerdan toda la vida, y este es uno de ellos \nNos vamos a Senegal, al punto más occidental de África, a surfear olas atlánticas\ncon sol, en un país lleno de color, ritmo y energía.\nSerá una semana para mejorar tu surf en las olas de Senegal, vivir una aventura\nen el desierto de Lompoul, ver el Lago Rosa y descubrir la Isla de Gorée.\nTodo con un grupo reducido de 12 personas con la misma pasión, con el estilo de\nsiempre de LST: surf, coaching, buen rollo y momentos que no se olvidan.\nLa familia LST en un viaje anterior",
@@ -826,12 +1111,36 @@
       ],
       "gallery": [
         [
-          "https://cdn.sanity.io/images/q5bj2rn2/production/75362e9bc098ddee07d7d54697dd6a4854d8238a-1322x1044.jpg",
-          "Senegal · fotografía del dossier de LST",
-          "Fotografía del dossier de LST."
+          "https://cdn.sanity.io/images/q5bj2rn2/production/38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366.jpg",
+          "Surfista girando sobre una ola del archivo de Senegal.",
+          "Fotografía del archivo de Senegal facilitado a LST."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/f0522a1426f8736e0e609789f08dca9aac9ae73f-2048x1536.jpg",
+          "Interior colorido con una tabla de surf del archivo de Senegal.",
+          "Fotografía del archivo de Senegal facilitado a LST."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/1c429d93b9c8a11219a7dfd27f5bf476013ff6fe-900x500.jpg",
+          "Campamento de tiendas junto a las dunas del archivo de Senegal.",
+          "Fotografía del archivo de Senegal facilitado a LST."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/05230a10d2d244b033278cf34da40f1844c0aafa-5013x3342.jpg",
+          "Olas llegando a la costa del archivo de Senegal.",
+          "Fotografía del archivo de Senegal facilitado a LST."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/c17942ddd74bcb99148ac7cdac3db7c1c49ac739-2428x3237.jpg",
+          "Calle de un mercado del archivo de Senegal.",
+          "Fotografía del archivo de Senegal facilitado a LST."
+        ],
+        [
+          "https://cdn.sanity.io/images/q5bj2rn2/production/eb0b5ad1c26d077834f63dc7619de4368bfab6e9-1885x2828.jpg",
+          "Barcas de pesca decoradas del archivo de Senegal.",
+          "Fotografía del archivo de Senegal facilitado a LST."
         ]
       ],
-      "levelTitle": "Tu nivel de surf.",
       "levelText": "Ha dejado atrás la iniciación: se pone de pie con soltura, coge olas propias y empieza paredes. Revisión de solicitud.",
       "levelChecks": [],
       "includes": [
@@ -895,7 +1204,10 @@
         "note": "",
         "image": "",
         "alt": ""
-      }
+      },
+      "aliases": [
+        "senegal-2027-02-28"
+      ]
     }
   ]
 }

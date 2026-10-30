@@ -1,0 +1,55 @@
+/* FAQs: compact topics, quiet disclosures and a useful reading width. */
+.faq-hero{min-height:390px;padding-bottom:56px}
+.faq-hero .landing-hero-photo img{object-position:57% 60%}
+body.faq-page .faq-hero h1{font-size:clamp(52px,13.3vw,72px);max-width:650px}
+body.faq-page .faq-hero-description{max-width:300px;font-size:15px}
+.faq-body{padding-block:28px 44px}
+.faq-context{max-width:680px;font-size:14px;line-height:1.75;color:var(--lst-muted)}
+body.faq-page .faq-context a,.faq-answers a{text-decoration:underline;text-underline-offset:4px}
+.faq-layout{display:grid;gap:32px;margin-top:24px}
+.faq-sidebar{min-width:0}
+.faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+body.faq-page .faq-index a{display:flex;align-items:center;gap:12px;min-height:48px;padding:12px 16px;border:1px solid var(--lst-line);border-radius:6px;font-size:13px;font-weight:500;line-height:1.5;overflow-wrap:anywhere;transition:border-color .18s,background .18s}
+.faq-index a span{font:400 10px/1.5 var(--mono);color:var(--lst-muted)}
+body.faq-page .faq-index a:hover{border-color:var(--lst-orange);background:var(--lst-orange)}
+.faq-sidebar-note{display:none}
+.faq-content{min-width:0}
+.faq-topic+.faq-topic{margin-top:32px}
+.faq-topic-heading{margin-bottom:14px}
+body.faq-page .faq-topic h2{display:flex;align-items:baseline;gap:12px;font:600 20px/1.4 var(--body);letter-spacing:-.025em}
+.faq-topic h2>span{font:400 10px/1.7 var(--mono);color:var(--lst-orange)}
+.faq-answers{border-top:1px solid var(--lst-line)}
+body.faq-page .faq-answers details{border:0;border-bottom:1px solid var(--lst-line);border-radius:0;background:transparent;overflow:visible;min-width:0}
+body.faq-page .faq-answers summary{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:64px;padding:18px 0;border-radius:0;background:transparent;color:var(--lst-ink);font-size:15px;font-weight:500;line-height:1.6;list-style:none}
+body.faq-page .faq-answers summary::-webkit-details-marker{display:none}
+body.faq-page .faq-answers summary>span{display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;border:1px solid var(--lst-line);border-radius:50%;font-size:0;line-height:1;font-weight:400;color:var(--lst-ink);transition:background .18s}
+body.faq-page .faq-answers details[open] summary>span{transform:none;background:var(--lst-orange);border-color:var(--lst-orange)}
+body.faq-page .faq-answers summary:hover>span{border-color:var(--lst-orange)}
+body.faq-page .faq-answers summary:focus-visible{outline-color:var(--lst-ink);outline-offset:4px}
+body.faq-page .faq-answers details>p{max-width:65ch;padding:0 40px 22px 0;font-size:15px;line-height:1.85;color:var(--lst-muted)}
+body.faq-page .faq-help h2{max-width:500px}
+@media(min-width:761px){
+ .faq-hero{min-height:440px;padding-bottom:64px}
+ body.faq-page .faq-hero h1{font-size:clamp(76px,7vw,100px)}
+ .faq-hero .landing-hero-photo img{object-position:50% 65%}
+ .faq-body{padding-block:40px 72px}
+ .faq-context{margin-left:calc(240px + 64px)!important}
+ .faq-layout{grid-template-columns:240px minmax(0,1fr);gap:64px;margin-top:36px;align-items:start}
+ .faq-sidebar{position:sticky;top:calc(var(--landing-header-height,88px) + 28px)}
+ .faq-index{grid-template-columns:minmax(0,1fr);gap:4px}
+ body.faq-page .faq-index a{border:0;padding:12px 14px}
+ .faq-sidebar-note{display:block;margin-top:28px!important;padding:24px 14px 0;border-top:1px solid var(--lst-line);font-size:13px;line-height:1.8;color:var(--lst-muted)}
+ body.faq-page .faq-sidebar-note a{display:inline-flex;align-items:center;min-height:44px;color:var(--lst-ink);text-decoration:underline;text-underline-offset:5px}
+ .faq-topic+.faq-topic{margin-top:40px}
+ body.faq-page .faq-topic h2{font-size:23px}
+ body.faq-page .faq-answers summary{font-size:16px;min-height:70px}
+ body.faq-page .faq-answers details>p{font-size:15px}
+}
+@media(min-width:761px) and (max-width:1000px){
+ .faq-layout{grid-template-columns:180px minmax(0,1fr);gap:32px}
+ .faq-context{margin-left:212px!important}
+}
+
+body.faq-page .faq-answers summary>span:after{content:'+';font-size:19px}
+body.faq-page .faq-answers details[open] summary>span:after{content:'−'}
+body.faq-page .faq-answers :is(summary,p){overflow-wrap:anywhere}

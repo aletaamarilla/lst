@@ -1,0 +1,25 @@
+{
+  "baseCommit": "58f338661fc4705364fea08727c836e79b3f2048",
+  "uncommitted": true,
+  "files": {
+    "scripts/render-trips.mjs": "981a0ef83b4bb23fc32f7ed10cee9fd7e389cc79da18e17adbeb5c0648a59859",
+    "dist/trip.js": "4f2b3dfba37989494a8c3098887c5cde77d856e5a473c41f73268689157e8fcc",
+    "dist/trip-detail.css": "d2a38175ebeb9216a0e97e2f8b1f1ad3e9ad4a3ee7047cf93b7fe74012e32d52",
+    "scripts/trip-editorial.test.mjs": "560ff58884fb86c591cb0ca444cf317483bb7ea4ff7258d61e538a64f297b882",
+    "dist/viajes/el-palmar/index.html": "36c9eb1ea9bdab920e4eccb50779effc921140c0ee81e21aa7716bd6810aa294",
+    "dist/viajes/el-palmar-2026-12-04/index.html": "36c9eb1ea9bdab920e4eccb50779effc921140c0ee81e21aa7716bd6810aa294",
+    "dist/viajes/fuerteventura/index.html": "bb402094795f2abe2824518f4526f1e5f0bceca6671fba01f87f6c8eaf72fbf0",
+    "dist/viajes/fuerteventura-2027-02-12/index.html": "bb402094795f2abe2824518f4526f1e5f0bceca6671fba01f87f6c8eaf72fbf0",
+    "dist/viajes/hossegor/index.html": "306fb71b6eb9842f106bf50761a7510ce5274704d4e4402d40d0c5a220cf5ecd",
+    "dist/viajes/hossegor-2026-11-20/index.html": "306fb71b6eb9842f106bf50761a7510ce5274704d4e4402d40d0c5a220cf5ecd",
+    "dist/viajes/maldivas/index.html": "f3b4e5646ae7e6cc91b6c2c9eb6007c7e30b078d1cbf3fe5b956e3f328261670",
+    "dist/viajes/maldivas-2027-03-21/index.html": "f3b4e5646ae7e6cc91b6c2c9eb6007c7e30b078d1cbf3fe5b956e3f328261670",
+    "dist/viajes/maldivas-2027-03-28/index.html": "f3b4e5646ae7e6cc91b6c2c9eb6007c7e30b078d1cbf3fe5b956e3f328261670",
+    "dist/viajes/marruecos/index.html": "8e38ce32c2afbe560df8af6a24060460e446c65a7194d6231977710361ed82fc",
+    "dist/viajes/marruecos-2027-01-17/index.html": "8e38ce32c2afbe560df8af6a24060460e446c65a7194d6231977710361ed82fc",
+    "dist/viajes/marruecos-avanzado/index.html": "9200c1eecda540456426c7fc40883c50c604c412fe0f2aab7befe3cbe3804b18",
+    "dist/viajes/marruecos-2027-01-24/index.html": "9200c1eecda540456426c7fc40883c50c604c412fe0f2aab7befe3cbe3804b18",
+    "dist/viajes/senegal/index.html": "f052c401c9862c3d31e00ba77351cad3255d17a16470b7dfa0900bf524587188",
+    "dist/viajes/senegal-2027-02-28/index.html": "f052c401c9862c3d31e00ba77351cad3255d17a16470b7dfa0900bf524587188"
+  }
+}

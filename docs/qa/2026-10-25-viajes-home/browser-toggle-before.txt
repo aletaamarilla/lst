@@ -1,0 +1,19 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: date control toggles on first click after hiding and restoring its card
+
+false !== true
+
+    at ok (file://wsl$/Ubuntu/home/amfernandez/personalProjects/letsurftogethersystem/scripts/check-catalog-browser.mjs:38:33)
+    at file://wsl$/Ubuntu/home/amfernandez/personalProjects/letsurftogethersystem/scripts/check-catalog-browser.mjs:83:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,21 @@
+{
+  "head": "58f338661fc4705364fea08727c836e79b3f2048",
+  "state": "uncommitted",
+  "implementation": {
+    "scripts/serve.mjs": "5c7e86f287272121f8081a540a33eaced24124fbc8016654ff659a5def1aa344",
+    "package.json": "7afa272b004979ccbc4197bb87caf9d431d1afd810f73ea23ad05103d2d77e18",
+    "scripts/render-catalog.mjs": "2bcbb2f8dc9a3ef539bbc53e04438a42ba861550ff08b82d739d2de3fc5376ce",
+    "dist/home.css": "abed63733437ae483179a0e4117254916b14e3e865eae7b22b436a89cd032a8b",
+    "README.md": "b81f93f159898d254386e7a50aeb59c47d3f5b08ead04d92bcd3b6d2b4669b20",
+    "scripts/local-preview.test.mjs": "4e9a41d9405697c572fb386caa70b32b430a0195475f6250490b5cca383a3bb1"
+  },
+  "localData": {
+    "path": "artifacts/local-trip-preview.json",
+    "ignored": true,
+    "sha256": "5039447775c9d7e2f54a5a9079a1db6b61f745d9a4e4599bf0b48e9bb9a4beb5"
+  },
+  "publishedWrites": 0,
+  "generated": {
+    "dist/viajes/index.html": "fb3b7376027c6d6283fed57ac80b0cabb8ddac3de791b7cfec080de7902bc8b1"
+  }
+}
