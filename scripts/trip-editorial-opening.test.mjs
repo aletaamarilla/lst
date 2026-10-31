@@ -23,7 +23,7 @@ test('the title, duration and concise facts are outside the photograph, with no 
 });
 
 test('community has its own photograph and testimony without duplicating that photo in the host block',()=>{
- const html=renderTrip(morocco,trips);
+ const html=renderTrip({...morocco,testimonial:{context:'Sobre llegar sin conocer al grupo',quote:'Una experiencia para repetir.',author:'Laura',trip:'Marruecos · viaje anterior'},team:{title:'Lucas, tu coordinador.',text:'El equipo de esta salida.'}},trips);
  const community=html.slice(html.indexOf('class="trip-community'),html.indexOf('id="plan"'));
  assert.match(community,/community-moment|community-copy/);assert.match(community,/Laura · Marruecos · viaje anterior/);
  const host=html.match(/<section class="trip-block trip-team">[\s\S]*?<\/section>/)[0];

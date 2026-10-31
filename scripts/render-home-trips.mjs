@@ -1,7 +1,6 @@
 import {renderDepartureRows} from './render-departure-rows.mjs';
 import {departuresFor, levelLabel, tripPrice, tripPriceDetails, formatPrice, availabilityLabel} from './trip-model.mjs';
 import {promotionCondition} from './trip-pricing.mjs';
-import {salesPitch} from './trip-sales-content.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 
@@ -34,12 +33,9 @@ export function renderHomeTrip(trip, {heading, idPrefix = 'trip', compact = fals
     const footer = compact ? `<div class="home-trip-booking${offer ? ' has-offer' : ''}">${discount}<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts${offer ? ` ${idPrefix}-${id}-offer` : ''}" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-price">${offer ? `<del>${escape(formatPrice(pricing.departure.regularPrice))}</del>` : ''}${currentPrice}</span><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span></a></div>` : `<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span><span class="home-trip-price">${currentPrice}</span></a>`;
     const status = availability === 'Plazas disponibles' ? '' : `<span class="home-trip-status">${escape(availability)}</span>`;
     const dates = `<a class="home-trip-dates-link" href="/viajes/${escape(trip.slug)}/" aria-label="Ver viaje de ${escape(trip.name)}">${departures.length ? renderDepartureRows(trip, 'home-trip-departures') : '<p>Fechas por anunciar</p>'}</a>`;
-    // Editorial choices apply only to the home; other consumers keep their cover.
-    const photoSubject = {hossegor: /observando el mar/i, 'el-palmar': /surfista deslizándose/i}[trip.slug];
-    const photo = homepage && photoSubject ? trip.gallery?.find(([, alt]) => photoSubject.test(alt)) : null;
-    const [image, imageAlt] = photo || [trip.hero, trip.heroAlt || trip.name];
+    const [image, imageAlt] = homepage && trip.cardImage ? [trip.cardImage, trip.cardImageAlt] : [trip.hero, trip.heroAlt || trip.name];
     const dateControl = !homepage || departures.length > 1;
-    const description = homepage && dated ? `<p class="home-trip-description">${escape(salesPitch(trip).title)}</p>` : '';
+    const description = homepage && dated && trip.tagline && trip.tagline !== trip.name ? `<p class="home-trip-description">${escape(trip.tagline)}</p>` : '';
     return `<article class="home-trip${dated ? '' : ' home-trip-pending'}" ${compact ? 'data-compact-home ' : ''}aria-labelledby="${idPrefix}-${id}-title">
 <div class="home-trip-media">${image ? `<img class="home-trip-photo" src="${escape(image)}" alt="${escape(imageAlt)}" width="1000" height="600" loading="lazy" decoding="async">` : '<div class="home-trip-placeholder" aria-hidden="true">LST</div>'}
 <span class="home-trip-level">${escape(levelLabel(trip))}</span>${status}<${heading} id="${idPrefix}-${id}-title">${escape(trip.name)}</${heading}>

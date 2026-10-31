@@ -11,19 +11,13 @@ const bySlug = slug => {
 };
 const practicalText = trip => practicalDetails(trip).map(item => item.text).join(' ');
 const allText = trip => JSON.stringify([salesPitch(trip), practicalDetails(trip), salesFaqs(trip)]);
-const currentSlugs = ['el-palmar', 'hossegor', 'marruecos', 'marruecos-avanzado', 'fuerteventura', 'senegal', 'maldivas'];
 
-test('seven current destinations receive distinct editorial framing without changing their source data', () => {
-  const selected = currentSlugs.map(bySlug), before = structuredClone(selected);
-  const pitches = selected.map(salesPitch);
-  assert.equal(new Set(pitches.map(pitch => pitch.title)).size, currentSlugs.length);
-  for (const pitch of pitches) {
-    assert(pitch.text.length > 40);
-    assert(pitch.highlights.length > 0);
-    assert.doesNotMatch(JSON.stringify(pitch), /Programa [1-4]|\(p\. \d|liarla|excusas/i);
-  }
-  for (const trip of selected) { practicalDetails(trip); salesFaqs(trip); }
-  assert.deepEqual(selected, before);
+test('editorial framing comes from CMS fields regardless of the destination slug', () => {
+  const trip = {...bySlug('el-palmar'), tagline: 'Una frase nueva.', destinationDescription: 'Un texto aprobado & propio.'};
+  const before = structuredClone(trip);
+  assert.deepEqual(salesPitch(trip), {title: trip.tagline, text: trip.destinationDescription});
+  assert.deepEqual(salesPitch({...trip, slug: 'otro-destino'}), salesPitch(trip));
+  assert.deepEqual(trip, before);
 });
 
 test('meal arrangements remain specific: full board, two free dinners, or lunches paid separately', () => {
@@ -85,7 +79,6 @@ test('Maldivas retains optional snorkel without promising sightings and replaces
 
 test('upcoming destinations never advertise services left in their CMS document', () => {
   const pending = {...structuredClone(bySlug('maldivas')), state: 'upcoming'};
-  assert.deepEqual(salesPitch(pending).highlights, []);
   assert.deepEqual(practicalDetails(pending), []);
   assert.deepEqual(salesFaqs(pending), []);
   assert.doesNotMatch(salesPitch(pending).text, /Lucas|pensión completa|snorkel|incluido/i);
@@ -93,11 +86,9 @@ test('upcoming destinations never advertise services left in their CMS document'
 
 test('unknown destinations and removed services have no inherited itinerary or material claims', () => {
   const unknown = {slug: 'nuevo-destino', state: 'confirmed', includes: [], excludes: [], story: []};
-  assert.equal(salesPitch(unknown).highlights.length, 0);
   assert.deepEqual(practicalDetails(unknown), []);
   assert.deepEqual(salesFaqs(unknown), []);
   const changed = {...bySlug('maldivas'), includes: [], excludes: [], story: []};
-  assert.equal(salesPitch(changed).highlights.length, 0);
   assert.deepEqual(practicalDetails(changed), []);
   assert.deepEqual(salesFaqs(changed), []);
   assert.doesNotMatch(allText(changed), /Lucas|snorkel|Transfers|pensión completa/i);
@@ -106,10 +97,6 @@ test('unknown destinations and removed services have no inherited itinerary or m
 
 test('snorkel optionality is only asserted when the current inclusion explicitly says so', () => {
   const trip = {...bySlug('maldivas'), includes: ['Surf en barco 2 veces al día', 'Snorkel en arrecife', 'Excursiones opcionales'], story: []};
-  const highlight = salesPitch(trip).highlights.find(item => /snorkel/i.test(item.text));
-  assert(highlight);
-  assert.match(highlight.text, /Snorkel en arrecife/);
-  assert.doesNotMatch(highlight.text, /snorkel[^.]*opcional/i);
   assert(!salesFaqs(trip).some(([q]) => q === '¿Y si no hay olas?'));
   const explicit = {...trip, includes: [...trip.includes, 'Actividades de grupo y snorkel opcional']};
   assert(salesFaqs(explicit).some(([q, a]) => q === '¿Y si no hay olas?' && /^El snorkel es una actividad opcional/.test(a)));

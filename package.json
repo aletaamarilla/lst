@@ -13,6 +13,8 @@
     "studio:build": "npm --prefix studio run build --",
     "studio:check": "npm --prefix studio run check --",
     "studio:deploy": "npm --prefix studio run deploy --",
-    "sanity:import": "node scripts/import-departures.mjs"
+    "sanity:import": "node scripts/import-departures.mjs",
+    "sanity:editorial": "node scripts/migrate-trip-editorial.mjs",
+    "sanity:editorial:publish": "node scripts/publish-trip-editorial.mjs"
   }
 }

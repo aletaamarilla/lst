@@ -137,9 +137,9 @@ test('home removes redundant date controls without changing shared catalogue and
   assert.match(renderHomeTrips(shell,[value]), /data-home-dates/);
 });
 
-test('home selects photographs only from the corresponding gallery and falls back to the CMS cover', () => {
-  const value=trip('hossegor',{hero:'/cover.webp',heroAlt:'Portada',gallery:[['/coast.webp','Grupo observando el mar','Viaje anterior']]});
-  assert.match(renderHomeTrips(shell,[value]), /src="\/coast.webp"/);
+test('home uses the explicit CMS card photograph and otherwise falls back to the cover', () => {
+  const value=trip('hossegor',{hero:'/cover.webp',heroAlt:'Portada',cardImage:'/selected.webp',cardImageAlt:'Foto elegida',gallery:[['/coast.webp','Grupo observando el mar','Viaje anterior']]});
+  assert.match(renderHomeTrips(shell,[value]), /src="\/selected.webp" alt="Foto elegida"/);
   assert.match(renderHomeTrip(value,{compact:true}), /src="\/cover.webp"/);
-  assert.match(renderHomeTrips(shell,[{...value,gallery:[]}]), /src="\/cover.webp"/);
+  assert.match(renderHomeTrips(shell,[{...value,cardImage:undefined}]), /src="\/cover.webp"/);
 });

@@ -16,6 +16,22 @@ Si no ves un cambio, consulta el último despliegue de `lst` en Vercel y su esta
 No hay campo de Google Forms en Studio. Los botones de cada salida y de sus PDF llevan a WhatsApp, sin enviar mensajes automáticamente.
 
 
+## Contenido de cada viaje
+
+En «Destino» puedes cambiar la descripción «¿Por qué este destino?», la **Frase de la tarjeta**, la portada y la **Foto de la tarjeta de inicio**. Sin foto de tarjeta se usa la portada; sin frase no se muestra texto adicional. La galería conserva el orden que elijas. No hace falta cambiar el nombre del destino ni las descripciones de otras fotos para elegir qué imagen aparece.
+
+En «Programa» se editan los títulos y textos del plan, actividades, spots, alojamiento, inclusiones, exclusiones y acompañamiento. Los títulos del programa se muestran literalmente. El nombre y el texto del acompañamiento salen de ese viaje; sin información no se atribuye un coordinador concreto.
+
+Si un documento muestra **Contenido compartido del viaje**, contiene una fecha adicional de un viaje ya agrupado. Abre el documento enlazado para editar sus textos, fotos o programa. Los controles compartidos se ocultan en la fecha adicional para evitar cambios sin efecto; sus fechas, tarifas, disponibilidad, capacidad, PDF y condiciones propias siguen siendo editables. Para añadir nuevas fechas, usa preferentemente la lista «Salidas» del viaje principal.
+
+Las FAQs propias tienen prioridad sobre las sugerencias generales para la misma pregunta. Las condiciones de cancelación pueden mantenerse aquí o en las condiciones del viaje, según el contenido aprobado. La «Opinión de un viajero» es opcional: al retirarla desaparece de la ficha y no se recupera una cita por el nombre del destino.
+
+En cada salida puedes indicar **Señal y condiciones de esta salida**. Cada campo vacío hereda el valor general del viaje. Si las señales difieren entre fechas, el resumen no anuncia una señal común: cada fecha conserva la suya. Capacidad es el máximo del grupo; disponibilidad es un estado manual, no un contador de reservas.
+
+Los campos antiguos de presentación y antetítulo que la plantilla ya no utiliza quedan ocultos en Studio para no ofrecer controles sin efecto; sus datos se conservan para compatibilidad. La home general, el diseño, navegación y formularios se mantienen en código.
+
+La ampliación del esquema debe desplegarse para editar estos campos desde el Studio alojado. La migración editorial y el orden de publicación están documentados en [Migración editorial](sanity/2026-10-31-editorial/README.md). La vista local carga su copia al iniciar: los cambios en Studio necesitan publicarse/reconstruirse o volver a preparar la copia local y reiniciar el servidor.
+
 ## Inscripciones Brevo (implementación local, pendiente de despliegue)
 
 Cada destino tiene `/inscripciones/{slug}/`, por ejemplo `/inscripciones/el-palmar/`. Los botones «Inscribirme» de la ficha y del selector llevan al formulario común. Una salida única queda seleccionada; si hay varias, se pide elegir fecha. Los enlaces de una fecha concreta incluyen `?salida={id-de-la-salida}`; los enlaces históricos fechados también seleccionan su fecha. Si esa fecha está completa se exige una nueva elección y se avisa, sin sustituirla automáticamente.

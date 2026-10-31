@@ -1,0 +1,50 @@
+{
+  "tests": {
+    "exitCode": 0
+  },
+  "check": {
+    "exitCode": 0
+  },
+  "studio-types": {
+    "exitCode": 0
+  },
+  "studio-build": {
+    "exitCode": 0
+  },
+  "diff-check": {
+    "exitCode": 0
+  },
+  "http": {
+    "pages": {
+      "/": {
+        "status": 200,
+        "source": "sanity-local-preview",
+        "bytes": 24723
+      },
+      "/viajes/": {
+        "status": 200,
+        "source": "sanity-local-preview",
+        "bytes": 19262
+      },
+      "/niveles/": {
+        "status": 200,
+        "source": "sanity-local-preview",
+        "bytes": 30072
+      },
+      "/viajes/maldivas/": {
+        "status": 200,
+        "source": "sanity-local-preview",
+        "bytes": 39272
+      },
+      "/inscripciones/maldivas/": {
+        "status": 200,
+        "source": "sanity-local-preview",
+        "bytes": 31873
+      }
+    },
+    "trips": 7,
+    "departures": 8,
+    "editorialFields": true
+  },
+  "studioEvidence": "El esquema y sus dependencias no cambiaron desde la compilaci\u00f3n y comprobaci\u00f3n de tipos guardadas; los \u00faltimos cambios afectan solo a la migraci\u00f3n y sus pruebas."
+}

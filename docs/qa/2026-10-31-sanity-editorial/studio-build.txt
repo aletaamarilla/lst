@@ -1,0 +1,15 @@
+
+> lets-surf-together-home@0.1.0 studio:build
+> npm --prefix studio run build -- --no-auto-updates
+
+
+> lets-surf-together-studio@1.0.0 build
+> sanity build --no-auto-updates
+
+ ›   Warning: The --no-auto-updates flag is deprecated for deploy and build 
+ ›   commands. Set the autoUpdates option in the deployment section of 
+ ›   sanity.cli.ts or sanity.cli.js instead.
+- Clean output folder
+[32m✔[39m Clean output folder (26ms)
+- Build Sanity Studio
+[32m✔[39m Build Sanity Studio (2522ms)

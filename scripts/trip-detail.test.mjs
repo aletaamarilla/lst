@@ -219,14 +219,14 @@ test('trip navigation exposes the same pages as the rest of the site and loads b
  for(const href of ['/viajes/','/niveles/','/conocenos/','/preguntas-frecuentes/'])assert(native.includes('href="'+href+'"'));
 });
 
-test('sales FAQs preserve editorial conditions while replacing stale imported flight-price claims',()=>{
+test('CMS FAQs take precedence over generated suggestions without duplicating questions',()=>{
  const condition=['¿Qué pasa si cambian las condiciones?','Puedes elegir entre reembolso o bono si cancelamos por las condiciones del mar.'];
  const insurance=['¿El seguro de viaje es obligatorio?','Sí, debes contratar un seguro de viaje antes de participar.'];
- const staleFlight=['¿Están incluidos los vuelos?','No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo.'];
+ const staleFlight=['¿Están incluidos los vuelos?','Los vuelos se contratan por separado. Consúltanos los horarios de esta salida.'];
  const t=trip({faqs:[condition,insurance,staleFlight],excludes:['Vuelos','Seguro de viaje']});
  const section=renderTrip(t).match(/<section id="dudas"[\s\S]*?<\/section>/)[0];
  for(const value of [...condition,...insurance])assert(section.includes(escape(value)));
- assert(section.includes(escape(staleFlight[0])));assert(!section.includes(escape(staleFlight[1])));
+ assert(section.includes(escape(staleFlight[0])));assert(section.includes(escape(staleFlight[1])));
  assert.equal(section.split(escape(staleFlight[0])).length-1,1);
  const pending=renderTrip({...t,state:'upcoming',departures:[]}).match(/<section id="dudas"[\s\S]*?<\/section>/)[0];
  for(const value of [...condition,...insurance])assert(pending.includes(escape(value)));

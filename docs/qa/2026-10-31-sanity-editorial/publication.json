@@ -1,0 +1,25 @@
+{
+  "studio": {
+    "url": "https://lets-surf-together.sanity.studio/",
+    "schemaCount": 1,
+    "autoUpdates": true,
+    "assetsMatched": 1,
+    "activeDeploymentId": "ydcq39t0kbkbc4amuezekzqo",
+    "schemaDescriptorId": "uEiANl8PrF8Be1o8KABUtMTP0WU5xWzL-ZT9fI9Og3xNvWA"
+  },
+  "sanity": {
+    "publishedDocuments": 8,
+    "atomic": true,
+    "retainedPriorDrafts": 7,
+    "earlyBirdsStillUnpublished": true,
+    "commercialDataUnchanged": true
+  },
+  "web": {
+    "source": "sanity-published",
+    "trips": 7,
+    "departures": 8,
+    "maldivesDates": 2,
+    "snapshotSha256": "8fda6e91b3fb3d2ac44805c3d53d8da5c5cf7617c0b2c2089fbf5b7cd3eeba86"
+  },
+  "phase": "Sanity publicado y salida local validada antes de subir main"
+}

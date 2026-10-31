@@ -1,3 +1,4 @@
+import {sharedTripContentFields} from './trip-content-fields.mjs';
 import {validateRegistrationMappings} from './brevo.mjs';
 import {tripName, consolidateTrips, aggregateAvailability} from './trip-groups.mjs';
 import {departurePricing, validatePromotions} from './trip-pricing.mjs';
@@ -78,6 +79,7 @@ export function adaptTrip(doc) {
       ...(d.capacity ? {capacity: validateCapacity(d.capacity, slug)} : {}),
       ...(d.brevoValue != null ? {brevoValue: validateBrevoValue(d.brevoValue)} : {}),
       ...(d.message ? {message: text(d.message, 'message')} : {}),
+      ...(d.payment ? {payment: {depositAmount: positive(d.payment.depositAmount ?? doc.payment?.depositAmount, 'departure.payment.depositAmount'), terms: text(d.payment.terms, 'departure.payment.terms') || text(doc.payment?.terms, 'payment.terms')}} : {}),
       ...(d.promotions != null ? {promotions: validatePromotions(d.promotions, d.price, d.capacity?.total ?? doc.capacity?.total)} : {})};
     return {...departure, ...departurePricing(departure, {state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
   });
@@ -118,12 +120,21 @@ export function adaptTrip(doc) {
   if (doc.stay) result.stay = {title: text(doc.stay.title, 'stay.title'), name: text(doc.stay.name, 'stay.name'), text: text(doc.stay.text, 'stay.text'), note: text(doc.stay.note, 'stay.note'), image: image(doc.stay.image, 'stay.image'), alt: text(doc.stay.image?.alt, 'stay.alt')};
   if (doc.stay?.gallery != null) result.stay.gallery = list(doc.stay.gallery, 'stay.gallery').map(v => [image(v, 'stay.gallery'), text(v.alt, 'stay.gallery.alt', true), text(v.caption, 'stay.gallery.caption')]);
   if (doc.stay?.galleryNote != null) result.stay.galleryNote = text(doc.stay.galleryNote, 'stay.galleryNote');
+  if (doc.cardImage) { result.cardImage = image(doc.cardImage, 'cardImage'); result.cardImageAlt = text(doc.cardImage.alt, 'cardImage.alt', true); }
+  if (doc.testimonial) result.testimonial = {context: text(doc.testimonial.context, 'testimonial.context'), quote: text(doc.testimonial.quote, 'testimonial.quote', true), author: text(doc.testimonial.author, 'testimonial.author', true), trip: text(doc.testimonial.trip, 'testimonial.trip')};
   if (doc.team) result.team = {title: text(doc.team.title, 'team.title'), text: text(doc.team.text, 'team.text')};
   return result;
 }
 
 export function adaptTrips(documents) {
-  const trips = documents.map(adaptTrip);
+  const trips = documents.map(doc => {
+    if (!doc.editorialSource) return adaptTrip(doc);
+    const id = doc.editorialSource._ref;
+    const source = documents.find(candidate => candidate._id === id);
+    if (!source || source._type !== 'trip' || source === doc || source.editorialSource || /^(drafts|versions)\./.test(id ?? '')) throw Error('Referencia de contenido inválida: ' + doc._id);
+    const shared = Object.fromEntries(sharedTripContentFields.map(field => [field, source[field]]));
+    return adaptTrip({...doc, ...shared});
+  });
   if (new Set(trips.map(t => t.slug)).size !== trips.length) throw Error('Slugs duplicados en Sanity');
   const consolidated = consolidateTrips(trips);
   validateRegistrationMappings(consolidated);

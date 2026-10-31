@@ -1,5 +1,6 @@
-import {defineArrayMember, defineField, defineType} from 'sanity'
+import {defineArrayMember, defineField, defineType, type ConditionalPropertyCallbackContext} from 'sanity'
 import {promotionsField} from './promotions'
+import {sharedTripContentFields} from '../../scripts/trip-content-fields.mjs'
 
 const editorialCards = (name: string, title: string) => defineField({name, title, type: 'array', group: 'program', of: [defineArrayMember({
   name: 'visualCard', type: 'object', fields: [
@@ -19,6 +20,7 @@ export const trip = defineType({
     {name: 'program', title: 'Programa'},
   ],
   fields: [
+    defineField({name: 'editorialSource', title: 'Contenido compartido del viaje', type: 'reference', to: [{type: 'trip'}], group: 'content', readOnly: true, hidden: ({document}) => !document?.editorialSource, description: 'Esta fecha comparte los textos, fotos, nivel y programa del viaje enlazado. Abre ese documento para cambiar el contenido común; aquí puedes editar las salidas y sus condiciones propias.'}),
     defineField({
       name: 'name', title: 'Nombre del destino', type: 'string', group: 'content',
       description: 'Da un nombre propio a cada viaje, por ejemplo «Marruecos» o «Marruecos avanzado». Cada viaje tiene un rango de nivel y un único programa.',
@@ -30,16 +32,16 @@ export const trip = defineType({
       options: {source: 'name', maxLength: 96}, validation: (rule) => rule.required().custom(value => !value?.current || /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.current) || 'Usa minúsculas, números y guiones'),
     }),
     defineField({name: 'place', title: 'Lugar / región', type: 'string', group: 'content'}),
-    defineField({name: 'tagline', title: 'Titular', type: 'string', group: 'content'}),
+    defineField({name: 'tagline', title: 'Frase de la tarjeta', type: 'string', group: 'content', description: 'Texto breve para la tarjeta de la home. Si queda vacío no se muestra una frase adicional.'}),
     defineField({name: 'destinationDescription', title: '¿Por qué este destino?', type: 'text', rows: 3, group: 'content', description: 'Presentación breve que aparece justo después de la portada.'}),
     defineField({name: 'destinationFacts', title: 'Datos breves bajo la portada', type: 'array', group: 'content', description: 'Por ejemplo «Costa atlántica» o «Surf y cultura». No repitas el lugar.', of: [defineArrayMember({type: 'string'})]}),
     defineField({name: 'audience', title: '¿Para quién es este viaje?', type: 'object', group: 'departures', description: 'Describe solo los niveles configurados para este viaje. El requisito de autonomía se conserva debajo.', fields: [
-      defineField({name: 'text', title: 'Introducción breve', type: 'text', rows: 2}),
+      defineField({name: 'text', title: 'Introducción anterior', type: 'text', rows: 2, hidden: true}),
       defineField({name: 'profiles', title: 'Perfiles de nivel', type: 'array', of: [defineArrayMember({type: 'object', name: 'audienceProfile', fields: [
         defineField({name: 'title', title: 'Nivel y nombre', type: 'string', validation: r => r.required()}),
         defineField({name: 'text', title: 'Descripción breve', type: 'text', rows: 2, validation: r => r.required()}),
       ]})]}),
-      defineField({name: 'objective', title: 'Objetivo del viaje', type: 'text', rows: 2}),
+      defineField({name: 'objective', title: 'Objetivo anterior', type: 'text', rows: 2, hidden: true}),
     ]}),
     editorialCards('activities', 'Actividades y excursiones'),
     editorialCards('spots', 'Spots de surf'),
@@ -48,11 +50,12 @@ export const trip = defineType({
       defineField({name: 'title', title: 'Título', type: 'string', validation: r => r.required()}),
       defineField({name: 'text', title: 'Descripción', type: 'text', rows: 2, validation: r => r.required()}),
     ]})]}),
-    defineField({name: 'intro', title: 'Presentación', type: 'text', rows: 4, group: 'content'}),
+    defineField({name: 'intro', title: 'Presentación anterior', type: 'text', group: 'content', hidden: true}),
     defineField({
       name: 'hero', title: 'Foto de portada', type: 'image', group: 'content', options: {hotspot: true},
       fields: [defineField({name: 'alt', title: 'Descripción de la imagen', type: 'string', validation: (rule) => rule.required()})],
     }),
+    defineField({name: 'cardImage', title: 'Foto de la tarjeta de inicio', type: 'image', group: 'content', options: {hotspot: true}, description: 'Opcional. Si queda vacía se usa la portada; no depende del nombre del destino ni de la descripción de otras fotos.', fields: [defineField({name: 'alt', title: 'Descripción de la foto', type: 'string', validation: r => r.required()})]}),
     defineField({
       name: 'state', title: 'Estado del viaje', type: 'string', group: 'departures', initialValue: 'upcoming',
       options: {list: [{title: 'Próximas fechas por anunciar', value: 'upcoming'}, {title: 'Con fechas', value: 'confirmed'}], layout: 'radio'},
@@ -88,6 +91,10 @@ export const trip = defineType({
           promotionsField,
           defineField({name: 'dossierFile', title: 'PDF de esta salida (opcional)', type: 'file', options: {accept: 'application/pdf'}, description: 'PDF específico de esta fecha. Tiene prioridad sobre la URL de esta salida. Sin PDF ni URL propios, se usa el dossier general del viaje.'}),
           defineField({name: 'dossier', title: 'URL del dossier de esta salida (opcional)', type: 'url', description: 'URL específica de esta fecha si no adjuntas un PDF propio. Vacío = usa el dossier general del viaje.', validation: (rule) => rule.uri({scheme: ['https']})}),
+          defineField({name: 'payment', title: 'Señal y condiciones de esta salida', type: 'object', description: 'Opcional. Cada campo vacío hereda el valor general del viaje.', fields: [
+            defineField({name: 'depositAmount', title: 'Señal fija (€)', type: 'number', validation: r => r.greaterThan(0).precision(2)}),
+            defineField({name: 'terms', title: 'Condiciones de pago y cancelación', type: 'text'}),
+          ]}),
           defineField({name: 'message', title: 'Mensaje de consulta por WhatsApp', type: 'text', rows: 3}),
         ],
         preview: {select: {title: 'start', subtitle: 'duration'}},
@@ -117,7 +124,7 @@ export const trip = defineType({
     defineField({name: 'dossierFile', title: 'PDF del viaje', type: 'file', group: 'program', options: {accept: 'application/pdf'}, description: 'Sube o sustituye el PDF aprobado. Este archivo tiene prioridad sobre la URL anterior.'}),
     defineField({name: 'dossier', title: 'URL anterior del dossier (opcional)', type: 'url', group: 'program', validation: (rule) => rule.uri({scheme: ['https']})}),
     defineField({name: 'storyTitle', title: 'Título del programa', type: 'string', group: 'program'}),
-    defineField({name: 'storyLabel', title: 'Antetítulo del programa', type: 'string', group: 'program'}),
+    defineField({name: 'storyLabel', title: 'Antetítulo anterior', type: 'string', group: 'program', hidden: true}),
     defineField({name: 'storyIntro', title: 'Introducción del programa', type: 'text', group: 'program'}),
     defineField({name: 'story', title: 'Programa', type: 'array', group: 'program', of: [defineArrayMember({
       name: 'storyItem', type: 'object', fields: [
@@ -146,20 +153,27 @@ export const trip = defineType({
       defineField({name: 'galleryNote', title: 'Nota sobre las fotos', type: 'string', description: 'Identifica aquí las imágenes de ejemplo hasta sustituirlas por fotografías del alojamiento real.'}),
       defineField({name: 'image', title: 'Foto', type: 'image', options: {hotspot: true}, fields: [defineField({name: 'alt', title: 'Descripción de la foto', type: 'string'})]}),
     ]}),
+    defineField({name: 'testimonial', title: 'Opinión de un viajero', type: 'object', group: 'content', description: 'Opcional. Usa una opinión real y autorizada de este viaje.', fields: [
+      defineField({name: 'context', title: 'Contexto', type: 'string'}),
+      defineField({name: 'quote', title: 'Cita', type: 'text', validation: r => r.required()}),
+      defineField({name: 'author', title: 'Nombre', type: 'string', validation: r => r.required()}),
+      defineField({name: 'trip', title: 'Viaje y fecha de la experiencia', type: 'string'}),
+    ]}),
     defineField({name: 'team', title: 'Acompañamiento', type: 'object', group: 'program', fields: [
       defineField({name: 'title', title: 'Título', type: 'string'}),
       defineField({name: 'text', title: 'Descripción', type: 'text'}),
     ]}),
     defineField({name: 'payment', title: 'Señal y condiciones', type: 'object', group: 'departures', fields: [
       defineField({name: 'depositAmount', title: 'Señal fija (€)', type: 'number', description: 'Importe manual. No se calcula desde porcentajes o tarifas.', validation: r => r.greaterThan(0).precision(2)}),
-      defineField({name: 'terms', title: 'Condiciones de pago', type: 'text', description: 'Texto editorial aprobado; aclarar contradicciones antes de publicar.'}),
+      defineField({name: 'terms', title: 'Condiciones de pago y cancelación', type: 'text', description: 'Texto editorial aprobado; aclarar contradicciones antes de publicar.'}),
     ]}),
     defineField({name: 'capacity', title: 'Capacidad y disponibilidad manual', type: 'object', group: 'departures', fields: [
       defineField({name: 'total', title: 'Capacidad total', type: 'number', validation: r => r.integer().min(1)}),
     ]}),
+    defineField({name: 'editorialMigration', title: 'Migración editorial', type: 'object', hidden: true, readOnly: true, fields: [defineField({name: 'version', type: 'string'}), defineField({name: 'sourceRevision', type: 'string'})]}),
     defineField({name: 'editorialNotes', title: 'Fuentes y pendientes internos', type: 'text', group: 'program', description: 'Solo Studio; no se publica en la web.'}),
     defineField({name: 'source', title: 'Fuente de los datos', type: 'url', group: 'program', validation: r => r.uri({scheme: ['https']})}),
     defineField({name: 'checkedAt', title: 'Fecha de revisión de los datos', type: 'date', group: 'program'}),
-  ],
+  ].map(field => sharedTripContentFields.includes(field.name) && !('hidden' in field && field.hidden === true) ? {...field, hidden: ({document}: ConditionalPropertyCallbackContext) => !!document?.editorialSource} : field),
   preview: {select: {title: 'name', subtitle: 'place', media: 'hero'}},
 })

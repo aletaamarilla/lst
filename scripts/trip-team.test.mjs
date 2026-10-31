@@ -22,7 +22,7 @@ test('pending programmes and explicit editorial team text retain their own autho
  assert.deepEqual(accompanimentItems({state:'confirmed'}),[]);
 });
 
-test('confirmed accompaniment identifies Lucas as coordinator and preserves exact escaped programme services',()=>{
+test('a legacy trip without editorial staff preserves services without inventing a named coordinator',()=>{
  const trip={...fixture(),includes:['Coaching con Lucas <olas> & técnica','Acompañamiento 24h']};
  delete trip.team;
  const html=renderTrip(trip);
@@ -30,8 +30,8 @@ test('confirmed accompaniment identifies Lucas as coordinator and preserves exac
  assert.match(section,/Coaching con Lucas &lt;olas&gt; &amp; técnica/);
  assert.doesNotMatch(section,/<olas>/);
  assert.match(section,/Acompañamiento 24h/);
- assert.match(section,/COORDINADOR DEL VIAJE/);assert.match(section,/Lucas, tu coordinador\./);
- assert.match(section,/persona de referencia/);assert.doesNotMatch(section,/comparte las sesiones|<img/);
+ assert.doesNotMatch(section,/COORDINADOR DEL VIAJE|Lucas, tu coordinador/);
+ assert.match(section,/quién acompaña esta salida/);assert.doesNotMatch(section,/comparte las sesiones|<img/);
  assert.doesNotMatch(section,/Consulta con LST quién|Consultar el acompañamiento|Quién acompaña|data-whatsapp=/);
 });
 
@@ -42,11 +42,11 @@ test('explicit editorial accompaniment remains authoritative and escaped',()=>{
  assert.doesNotMatch(section,/Lucas, tu coordinador|COORDINADOR DEL VIAJE|Coaching histórico|Consulta con LST quién|Consultar el acompañamiento/);
 });
 
-test('the previous generic Lucas heading gains the confirmed coordinator role while retaining editorial details',()=>{
+test('existing CMS team headings and descriptions remain literal without destination-specific rewriting',()=>{
  const trip={...fixture(),team:{title:'Lucas va contigo.',text:'Texto propio sobre el acompañamiento & el grupo.'}};
  const before=structuredClone(trip);
  const section=renderTrip(trip).match(/<section class="trip-block trip-team">([\s\S]*?)<\/section>/)[1];
- assert.match(section,/COORDINADOR DEL VIAJE/);assert.match(section,/Lucas, tu coordinador\./);
+ assert.match(section,/Lucas va contigo\./);assert.doesNotMatch(section,/COORDINADOR DEL VIAJE/);
  assert.match(section,/Texto propio sobre el acompañamiento &amp; el grupo\./);
  assert.doesNotMatch(section,/<img|lucas-concept-ai/);assert.deepEqual(trip,before);
 });

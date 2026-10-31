@@ -1,0 +1,758 @@
+{
+  "version": 1,
+  "projectId": "q5bj2rn2",
+  "dataset": "production",
+  "trips": [
+    {
+      "id": "lst-el-palmar-2026-12-04",
+      "slug": "el-palmar-2026-12-04",
+      "setIfMissing": {
+        "tagline": "Tu próxima escapada sabe a sal.",
+        "destinationDescription": "Cambiar de ritmo, dedicarle tiempo al surf y compartir los ratos entre baño y baño. El Palmar es una invitación a hacer sitio a todo eso.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Surfista deslizándose en una ola en El Palmar, 2024.",
+          "asset": {
+            "_ref": "image-6ed3ea3bbf2e52a8b8c9853915d858d4131df6b4-6000x4000-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        }
+      },
+      "storyTitles": {
+        "program-1": "Al agua, cada día.",
+        "program-2": "El surf también se entrena fuera.",
+        "program-3": "Después de la última ola.",
+        "program-4": "El plan cuando cae el sol."
+      },
+      "faqs": {
+        "before": [],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Tengo que participar en todos los planes?",
+            "answer": "Puedes vivir los ratos libres a tu ritmo. La fiesta y los planes fuera del agua son una invitación a compartir; también hay espacio para descansar, respetando los horarios del grupo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-fuerteventura-2027-02-12",
+      "slug": "fuerteventura-2027-02-12",
+      "setIfMissing": {
+        "tagline": "Una pausa con sabor a isla.",
+        "destinationDescription": "Hacer hueco al surf, bajar el ritmo y mirar alrededor. Fuerteventura invita a una escapada que se vive tanto dentro del agua como en los ratos de tierra.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Fuerteventura · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-5d24c67ed525b4e8d204e18dffdcb7e8bd973cc6-1322x1044-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        }
+      },
+      "storyTitles": {
+        "program-1": "Más sesiones. Más recursos.",
+        "program-2": "Un día con ritmo de isla.",
+        "program-3": "La isla también se vive fuera del agua."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "¡Perfecto! El grupo de iniciación empieza desde cero, con técnica básica, espumas y mucha confianza en el agua.",
+            "question": "¿Y si no he surfeado nunca?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Irás al grupo intermedio, a coger paredes y seguir la línea de la ola, con videoanálisis para seguir aprendiendo.",
+            "question": "¿Y si ya tengo algo de nivel?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "No: tabla y neopreno están incluidos en las clases. Si tienes tu propio neopreno, puedes traerlo.",
+            "question": "¿Tengo que llevar material?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "En avión. Te asesoramos con los vuelos y crearemos un grupo para volar juntos. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Desayunos y comidas todos los días y 2 cenas en casa. Las otras 2 cenas son libres en el pueblo.",
+            "question": "¿Qué comidas están incluidas?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Están incluidos los vuelos?",
+            "answer": "Los vuelos no están incluidos en el precio del viaje. Consulta con el equipo qué horarios encajan con el programa antes de comprarlos. Las tarifas dependen de la compañía y del momento de compra."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Y si no he surfeado nunca?",
+            "answer": "¡Perfecto! El grupo de iniciación empieza desde cero, con técnica básica, espumas y mucha confianza en el agua."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Y si ya tengo algo de nivel?",
+            "answer": "Irás al grupo intermedio, a coger paredes y seguir la línea de la ola, con videoanálisis para seguir aprendiendo."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Tengo que llevar material?",
+            "answer": "No: tabla y neopreno están incluidos en las clases. Si tienes tu propio neopreno, puedes traerlo."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿Cómo llego hasta allí?",
+            "answer": "En avión. Te asesoramos con los vuelos y crearemos un grupo para volar juntos. Desde el aeropuerto, todos los traslados están incluidos."
+          },
+          {
+            "_key": "faq-editorial-6",
+            "_type": "faq",
+            "question": "¿Qué comidas están incluidas?",
+            "answer": "Desayunos y comidas todos los días y 2 cenas en casa. Las otras 2 cenas son libres en el pueblo."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-hossegor-2026-11-20",
+      "slug": "hossegor-2026-11-20",
+      "setIfMissing": {
+        "tagline": "Un fin de semana para mirar tu surf de otra manera.",
+        "destinationDescription": "A veces lo que apetece es parar, concentrarse en el agua y dedicarle atención a esos detalles que se escapan en el día a día. Ese es el espíritu de este viaje a Hossegor.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Grupo con tablas observando el mar en Francia, 2024.",
+          "asset": {
+            "_ref": "image-0b9d183d743517ae3c606bb3f8670590a6343261-6000x4000-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        }
+      },
+      "storyTitles": {
+        "program-1": "Tu surf, visto con otros ojos.",
+        "program-2": "Aprender a leer el mar."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Sí: cada uno trae su tabla y su neopreno. Si te falta algo, allí podrás alquilarlo.",
+            "question": "¿Tengo que llevar mi material?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "En coche. Crearemos un grupo de WhatsApp con las personas que reserven para compartir coche y gastos desde cada ciudad.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Si las condiciones no son buenas para el viaje, lo cancelamos y puedes elegir entre reembolso o bono para otro viaje.",
+            "question": "¿Qué pasa si no hay olas buenas?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Sí. Con nuestro enlace de IATI Seguros tienes un 5 % de descuento; te lo pasamos al confirmar la plaza.",
+            "question": "¿El seguro de viaje es obligatorio?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Qué nivel necesito?",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Tengo que llevar mi material?",
+            "answer": "Sí: cada uno trae su tabla y su neopreno. Si te falta algo, allí podrás alquilarlo."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Cómo llego hasta allí?",
+            "answer": "En coche. Crearemos un grupo de WhatsApp con las personas que reserven para compartir coche y gastos desde cada ciudad."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Qué pasa si no hay olas buenas?",
+            "answer": "Si las condiciones no son buenas para el viaje, lo cancelamos y puedes elegir entre reembolso o bono para otro viaje."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿El seguro de viaje es obligatorio?",
+            "answer": "Sí. Con nuestro enlace de IATI Seguros tienes un 5 % de descuento; te lo pasamos al confirmar la plaza."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-maldivas-2027-03-21",
+      "slug": "maldivas-2027-03-21",
+      "setIfMissing": {
+        "tagline": "Haz sitio a una semana mirando al mar.",
+        "destinationDescription": "Desconectar del calendario de siempre y dedicarle tiempo a lo que te gusta. Un viaje a Maldivas para disfrutar del surf y saborear también los momentos entre sesiones.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Maldivas · Semana Santa · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        }
+      },
+      "storyTitles": {
+        "program-1": "De la primera sesión al último sunset.",
+        "program-2": "Si el mar pide una pausa."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra.",
+            "question": "¿Están incluidos los vuelos?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos.",
+            "question": "¿Puedo llegar antes o quedarme más días?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "500 € para reservar tu plaza y el resto un mes antes del viaje.",
+            "question": "¿Cómo se paga?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional.",
+            "question": "¿Y si no hay olas?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Están incluidos los vuelos?",
+            "answer": "Los vuelos no están incluidos en el precio del viaje. Consulta con el equipo qué horarios encajan con el programa antes de comprarlos. Las tarifas dependen de la compañía y del momento de compra."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Y si no hay olas?",
+            "answer": "El snorkel es una actividad opcional dentro del programa, como alternativa al surf o para descansar. Los encuentros con animales dependen de la naturaleza."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Qué nivel necesito?",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Puedo llegar antes o quedarme más días?",
+            "answer": "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿Cómo se paga?",
+            "answer": "500 € para reservar tu plaza y el resto un mes antes del viaje."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-maldivas-2027-03-28",
+      "slug": "maldivas-2027-03-28",
+      "setIfMissing": {
+        "tagline": "Haz sitio a una semana mirando al mar.",
+        "destinationDescription": "Desconectar del calendario de siempre y dedicarle tiempo a lo que te gusta. Un viaje a Maldivas para disfrutar del surf y saborear también los momentos entre sesiones.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Maldivas · Pascua · fotografía del dossier de LST",
+          "asset": {
+            "_ref": "image-1fc4cfdac33a6304e967b8fd38aaacdff3dc1a0c-1800x1200-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        },
+        "editorialSource": {
+          "_type": "reference",
+          "_ref": "lst-maldivas-2027-03-21"
+        }
+      },
+      "storyTitles": {
+        "program-1": "De la primera sesión al último sunset.",
+        "program-2": "Si el mar pide una pausa."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "No. Ahora mismo hay vuelos por 1.000 – 1.300 € y suben con el tiempo, así que mejor cogerlos cuanto antes. Te asesoramos en la compra.",
+            "question": "¿Están incluidos los vuelos?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos.",
+            "question": "¿Puedo llegar antes o quedarme más días?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "500 € para reservar tu plaza y el resto un mes antes del viaje.",
+            "question": "¿Cómo se paga?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "El plan principal es surfear, pero si un día no hay olas o el grupo quiere descansar, cambiamos el planning y vamos a hacer snorkel con mantarrayas, tortugas y peces de arrecife. Es opcional.",
+            "question": "¿Y si no hay olas?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Están incluidos los vuelos?",
+            "answer": "Los vuelos no están incluidos en el precio del viaje. Consulta con el equipo qué horarios encajan con el programa antes de comprarlos. Las tarifas dependen de la compañía y del momento de compra."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Y si no hay olas?",
+            "answer": "El snorkel es una actividad opcional dentro del programa, como alternativa al surf o para descansar. Los encuentros con animales dependen de la naturaleza."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Qué nivel necesito?",
+            "answer": "Nivel 2 o 3: ser independiente en el agua, remontar solo y coger tus propias olas. Revisamos cada solicitud para que el grupo encaje."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Puedo llegar antes o quedarme más días?",
+            "answer": "Claro. Solo sumamos las noches extra en el hotel y te ayudamos a organizarlo con tus vuelos."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿Cómo se paga?",
+            "answer": "500 € para reservar tu plaza y el resto un mes antes del viaje."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-marruecos-2027-01-17",
+      "slug": "marruecos-2027-01-17",
+      "setIfMissing": {
+        "tagline": "Un viaje para encontrar tu ritmo en el agua.",
+        "destinationDescription": "Hay mucho que disfrutar mientras aprendes: el primer baño, las conversaciones después de surfear y las ganas de volver al mar. Una semana para vivir Marruecos desde esa ilusión.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Grupo reunido junto a tablas de surf en Marruecos, 2025.",
+          "asset": {
+            "_ref": "image-0ada88f03268779e00ebf78f098d58c383d8ea52-6000x4000-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        },
+        "testimonial": {
+          "context": "Sobre llegar sin conocer al grupo",
+          "quote": "«[…] y muchos de nosotros íbamos solos!»",
+          "author": "Laura",
+          "trip": "Marruecos · viaje anterior"
+        }
+      },
+      "storyTitles": {
+        "program-1": "Tu surf empieza aquí.",
+        "program-2": "Marruecos también se vive fuera del agua."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "No te preocupes. Estarás acompañado en todo momento por monitores y el equipo de Let’s Surf Together, y adaptaremos tu progresión a tu nivel.",
+            "question": "¿Y si no sé nada de surf?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "¡Sin problema! Haremos videocorrecciones para tu nivel y nos preocuparemos de que aprendas las pautas para llevar tu surfing al siguiente nivel.",
+            "question": "¿Y si tengo más nivel que el resto?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, pero allí tienes todo el material de iniciación, y además puedes alquilar tablas de mayor nivel.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Están incluidos los vuelos?",
+            "answer": "Los vuelos no están incluidos en el precio del viaje. Consulta con el equipo qué horarios encajan con el programa antes de comprarlos. Las tarifas dependen de la compañía y del momento de compra."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Y si no sé nada de surf?",
+            "answer": "No te preocupes. Estarás acompañado en todo momento por monitores y el equipo de Let’s Surf Together, y adaptaremos tu progresión a tu nivel."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Y si tengo más nivel que el resto?",
+            "answer": "¡Sin problema! Haremos videocorrecciones para tu nivel y nos preocuparemos de que aprendas las pautas para llevar tu surfing al siguiente nivel."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Cómo llego hasta allí?",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿Puedo llevar mi tabla?",
+            "answer": "Sí, pero allí tienes todo el material de iniciación, y además puedes alquilar tablas de mayor nivel."
+          },
+          {
+            "_key": "faq-editorial-6",
+            "_type": "faq",
+            "question": "¿Qué pasa si cambian las condiciones del mar?",
+            "answer": "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-marruecos-2027-01-24",
+      "slug": "marruecos-2027-01-24",
+      "setIfMissing": {
+        "tagline": "Dale tiempo a tu surf.",
+        "destinationDescription": "Si ya te mueves con autonomía en el agua, este viaje es una oportunidad para dedicarle una semana a tu técnica y disfrutar del ritmo de Marruecos entre sesiones.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Surfista realizando un giro en la parte alta de una ola en Marruecos, 2025.",
+          "asset": {
+            "_ref": "image-f0a6564c0b3e0ba86a6900aebc5c082cec87a79f-6000x4000-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        }
+      },
+      "storyTitles": {
+        "program-1": "Coaching para dar el siguiente paso.",
+        "program-2": "Leer el mar. Elegir la ola."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Entonces te encajará mejor el viaje del 17 al 24 de enero, pensado para iniciación e intermedio bajo.",
+            "question": "¿Y si todavía no voy por la pared?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Nivel 3: ser independiente en el agua y pillar tus paredes con tabla corta. Si ya haces maniobras y quieres pulirlas, también es tu viaje.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "Sí, de hecho lo recomendamos en este viaje. Si lo prefieres, también puedes alquilar allí.",
+            "question": "¿Puedo llevar mi tabla?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos.",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Están incluidos los vuelos?",
+            "answer": "Los vuelos no están incluidos en el precio del viaje. Consulta con el equipo qué horarios encajan con el programa antes de comprarlos. Las tarifas dependen de la compañía y del momento de compra."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Y si todavía no voy por la pared?",
+            "answer": "Entonces te encajará mejor el viaje del 17 al 24 de enero, pensado para iniciación e intermedio bajo."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Qué nivel necesito?",
+            "answer": "Nivel 3: ser independiente en el agua y pillar tus paredes con tabla corta. Si ya haces maniobras y quieres pulirlas, también es tu viaje."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Cómo llego hasta allí?",
+            "answer": "Los vuelos no están incluidos, pero crearemos un grupo de WhatsApp para coordinarnos y coger todos los mismos vuelos de Madrid a Agadir. Desde el aeropuerto, todos los traslados están incluidos."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿Puedo llevar mi tabla?",
+            "answer": "Sí, de hecho lo recomendamos en este viaje. Si lo prefieres, también puedes alquilar allí."
+          },
+          {
+            "_key": "faq-editorial-6",
+            "_type": "faq",
+            "question": "¿Qué pasa si cambian las condiciones del mar?",
+            "answer": "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lst-senegal-2027-02-28",
+      "slug": "senegal-2027-02-28",
+      "setIfMissing": {
+        "tagline": "Una semana que va más allá de las olas.",
+        "destinationDescription": "Surfear es el punto de partida. El resto lo pone la curiosidad por descubrir Senegal y compartir una forma distinta de pasar los días.",
+        "cardImage": {
+          "_type": "image",
+          "alt": "Surfista girando sobre una ola del archivo de Senegal.",
+          "asset": {
+            "_ref": "image-38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366-jpg",
+            "_type": "reference"
+          }
+        },
+        "team": {
+          "title": "Lucas, tu coordinador.",
+          "text": "Lucas coordina el viaje, acompaña al grupo y es tu persona de referencia durante la experiencia."
+        }
+      },
+      "storyTitles": {
+        "program-1": "Surfear. Revisar. Volver al agua.",
+        "program-2": "Otro ritmo fuera del agua.",
+        "program-3": "Una noche bajo otro cielo."
+      },
+      "faqs": {
+        "before": [
+          {
+            "_key": "faq-1",
+            "_type": "faq",
+            "answer": "Nivel 2: ponerte de pie con soltura, coger tus propias olas y empezar a surfear paredes. Si estás empezando, este no es tu viaje, pero tenemos otros pensados para ti.",
+            "question": "¿Qué nivel necesito?"
+          },
+          {
+            "_key": "faq-2",
+            "_type": "faq",
+            "answer": "Hay vuelos a Dakar a muy buen precio desde España. Te asesoramos y crearemos un grupo de WhatsApp para coordinarnos y volar juntos. Desde el aeropuerto, todos los traslados están incluidos.",
+            "question": "¿Cómo llego hasta allí?"
+          },
+          {
+            "_key": "faq-3",
+            "_type": "faq",
+            "answer": "No hace falta: el material está incluido todo el día. Si prefieres surfear con tu tabla, también puedes traerla.",
+            "question": "¿Tengo que llevar mi tabla?"
+          },
+          {
+            "_key": "faq-4",
+            "_type": "faq",
+            "answer": "No están incluidas, pero hay opciones locales muy ricas y económicas. Desayuno y cena sí van incluidos todos los días.",
+            "question": "¿Y las comidas del mediodía?"
+          },
+          {
+            "_key": "faq-5",
+            "_type": "faq",
+            "answer": "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)",
+            "question": "¿Qué pasa si cambian las condiciones del mar?"
+          }
+        ],
+        "after": [
+          {
+            "_key": "faq-editorial-0",
+            "_type": "faq",
+            "question": "¿El programa de surf es fijo?",
+            "answer": "El surf depende de las condiciones del mar. El programa te ayuda a conocer la propuesta del viaje; consulta con el equipo cómo se organizan las sesiones y qué puede variar."
+          },
+          {
+            "_key": "faq-editorial-1",
+            "_type": "faq",
+            "question": "¿Están incluidos los vuelos?",
+            "answer": "Los vuelos no están incluidos en el precio del viaje. Consulta con el equipo qué horarios encajan con el programa antes de comprarlos. Las tarifas dependen de la compañía y del momento de compra."
+          },
+          {
+            "_key": "faq-editorial-2",
+            "_type": "faq",
+            "question": "¿Qué nivel necesito?",
+            "answer": "Nivel 2: ponerte de pie con soltura, coger tus propias olas y empezar a surfear paredes. Si estás empezando, este no es tu viaje, pero tenemos otros pensados para ti."
+          },
+          {
+            "_key": "faq-editorial-3",
+            "_type": "faq",
+            "question": "¿Cómo llego hasta allí?",
+            "answer": "Hay vuelos a Dakar a muy buen precio desde España. Te asesoramos y crearemos un grupo de WhatsApp para coordinarnos y volar juntos. Desde el aeropuerto, todos los traslados están incluidos."
+          },
+          {
+            "_key": "faq-editorial-4",
+            "_type": "faq",
+            "question": "¿Tengo que llevar mi tabla?",
+            "answer": "No hace falta: el material está incluido todo el día. Si prefieres surfear con tu tabla, también puedes traerla."
+          },
+          {
+            "_key": "faq-editorial-5",
+            "_type": "faq",
+            "question": "¿Y las comidas del mediodía?",
+            "answer": "No están incluidas, pero hay opciones locales muy ricas y económicas. Desayuno y cena sí van incluidos todos los días."
+          },
+          {
+            "_key": "faq-editorial-6",
+            "_type": "faq",
+            "question": "¿Qué pasa si cambian las condiciones del mar?",
+            "answer": "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)"
+          }
+        ]
+      }
+    }
+  ]
+}

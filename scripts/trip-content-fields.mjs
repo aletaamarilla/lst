@@ -1,0 +1,2 @@
+// Content inherited by an additional-date document; commercial values stay with its own departures.
+export const sharedTripContentFields = Object.freeze(["name","place","tagline","destinationDescription","destinationFacts","hero","cardImage","gallery","audience","activities","spots","spotsNote","surfPlan","intro","levelRequirement","levels","storyTitle","storyLabel","storyIntro","story","includes","excludes","inclusionsNote","faqs","levelText","levelChecks","stay","team","testimonial","priceNote","notice"]);
