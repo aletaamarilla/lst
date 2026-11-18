@@ -62,8 +62,8 @@ test('the card pairs savings, regular fare and date from the same selected depar
   const value = trip({departures: [departure({price: 999, promotions: undefined}), departure({id: 'two', start: '2027-02-01', date: '1 feb 2027', price: 699, promotions: [offer({price: 649, lastPlace: 4})]})]});
   const html = renderHomeTrips(shell, [value]);
   assert.match(html, /50 € de descuento/);
-  assert.match(html.replace(/<span class="home-trip-current">([^<]*)<\/span>/g, '$1'), /<del>699 €<\/del>Desde 649 €/);
-  assert.match(html, /Fecha de la tarifa<\/span><span class="home-trip-preview-date">1 feb 2027/);
+  assert.match(html, /<small class="hp-from">desde<\/small><del>699 €<\/del><span>649 €<\/span>/);
+  assert.match(html, /<span class="hp-tag hp-tag-date">Tarifa del 1 feb<\/span>/);
   assert.match(html, /Primeras 4 plazas/);
   assert.doesNotMatch(html, /<del>999 €/);
   assert.doesNotMatch(renderHomeTrip(value, {heading: 'h2', idPrefix: 'catalog'}), /data-compact-home|home-trip-saving|<del>/);

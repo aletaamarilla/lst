@@ -1,5 +1,6 @@
 import {renderDepartureRows} from './render-departure-rows.mjs';
-import {departuresFor, levelLabel, tripPrice, tripPriceDetails, formatPrice, availabilityLabel} from './trip-model.mjs';
+import {departuresFor, levelLabel, levelsFor, tripPrice, tripPriceDetails, formatPrice, availabilityLabel} from './trip-model.mjs';
+import {registrationDepartures, registrationUrl} from './brevo.mjs';
 import {promotionCondition} from './trip-pricing.mjs';
 import {sizedPhoto, photoSrcset} from './photo.mjs';
 
@@ -48,15 +49,134 @@ ${dateControl ? `<details class="home-trip-dates" data-home-dates><summary aria-
 </div><p class="home-trip-preview" id="${idPrefix}-${id}-facts"><span class="home-trip-preview-label">${escape(previewLabel)}</span><span class="home-trip-preview-date">${escape(preview)}</span>${compact && shownDate?.duration && shownDate.duration !== 'Por confirmar' ? `<span class="home-trip-duration">${escape(shownDate.duration)}</span>` : ''}</p>${description}${footer}</article>`;
 }
 
+// ---------------------------------------------------------------------------
+// Home page: every commercial fact (dates, prices, levels, availability, the
+// next departure) comes from the published catalogue. The hand-written page
+// only provides the layout and the generation regions.
+
+const WHATSAPP = 'https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consultar%20un%20viaje%20de%20surf.';
+const ticketWidths = [500, 800, 1200];
+const ticketSizes = '(min-width: 1000px) 33vw, (min-width: 720px) 50vw, 84vw';
+// Level filters on the home: beginners, intermediate, and autonomous surfers.
+export const homeLevelFilters = [['all', 'Todas', 'Todos los niveles'], ['1', 'Empiezo', 'Nivel 1 · Iniciación'], ['2', 'Me defiendo', 'Nivel 2 · Base'], ['3', 'Voy suelto', 'Niveles 3 y 4']];
+// Same rule as home.js: "Voy suelto" groups the autonomous levels 3 and 4.
+export const matchesLevelFilter = (trip, filter) => filter === 'all' || (filter === '3' ? levelsFor(trip).some(l => l >= 3) : levelsFor(trip).includes(Number(filter)));
+// A wave that grows with the level; "Todas" stacks the small and the big one.
+const filterWaves = {
+  all: '<path d="M2 30c8-2 14-12 24-12s14 10 22 12" /><path d="M2 30c10-4 16-24 30-24 9 0 12 8 8 12" />',
+  1: '<path d="M2 30c8 0 12-4 20-4s14 4 24 4" />',
+  2: '<path d="M2 30c10-2 14-14 26-14 7 0 9 6 6 9" />',
+  3: '<path d="M2 30c10-4 14-26 30-26 10 0 14 9 9 14-3 3-8 1-7-3" />',
+};
+const filterButton = (trips, [value, label, detail], i) => {
+  const count = trips.filter(t => matchesLevelFilter(t, value)).length;
+  return `<button class="hp-chip" type="button" data-filter="${value}" aria-pressed="${i === 0}"><svg class="hp-chip-wave" viewBox="0 0 50 34" aria-hidden="true">${filterWaves[value]}</svg><span class="hp-chip-label">${label}</span><span class="hp-chip-detail">${detail}</span><span class="hp-chip-count" aria-label="${count} ${count === 1 ? 'viaje' : 'viajes'}">${count}</span></button>`;
+};
+
+const firstStart = trip => departuresFor(trip).map(d => d.start).filter(Boolean).sort()[0];
+const chronological = trips => trips.filter(t => t.state === 'confirmed').map((trip, order) => ({trip, order, start: firstStart(trip)}))
+  .sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999') || a.order - b.order).map(t => t.trip);
+// Short label for a tag: "20–22 nov", "28 feb – 7 mar".
+const shortDate = value => compactDate(value).replace(/ \d{4}$/, '');
+const levelRange = trip => {
+  const levels = levelsFor(trip);
+  if (levels.length === 4) return 'Todos';
+  const consecutive = levels.every((level, i) => !i || level === levels[i - 1] + 1);
+  return consecutive && levels.length > 1 ? `${levels[0]}–${levels.at(-1)}` : levels.join(', ');
+};
+const levelBar = trip => {
+  const levels = levelsFor(trip);
+  return `<span class="hp-lvbar" aria-label="${escape(levelLabel(trip))}">${[1, 2, 3, 4].map(l => `<i${levels.includes(l) ? ' class="on"' : ''}></i>`).join('')}<em aria-hidden="true">${escape(levelRange(trip))}</em></span>`;
+};
+const photo = (trip, width) => {
+  const image = trip.cardImage || trip.hero;
+  return image ? {src: sizedPhoto(image, width), srcset: photoSrcset(image, ticketWidths), alt: trip.cardImage ? trip.cardImageAlt : (trip.heroAlt || trip.name)} : null;
+};
+const whatsappLink = (label, className = '') => `<a class="${className}" data-whatsapp="orientacion" href="${WHATSAPP}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+
+// The departure a visitor can actually request first: dated, open and with a form.
+export function nextDeparture(trips) {
+  for (const trip of chronological(trips)) {
+    const departure = registrationDepartures(trip).sort((a, b) => (a.start || '').localeCompare(b.start || ''))[0];
+    if (departure) return {trip, departure};
+  }
+  return null;
+}
+
+export function renderHomeTicket(trip) {
+  const id = escape(trip.id);
+  const departures = departuresFor(trip);
+  const dated = trip.state === 'confirmed';
+  const sorted = [...departures].sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999'));
+  const first = sorted[0];
+  const {departure: fare, from} = tripPriceDetails(trip);
+  const offer = fare?.promotion;
+  const availability = availabilityLabel(trip);
+  const href = `/viajes/${escape(trip.slug)}/`;
+  const image = photo(trip, 800);
+  // An offer always shows the date of the departure that carries it.
+  const shown = offer ? fare : first;
+  const dateTag = !dated || !shown ? 'Por anunciar'
+    : offer && departures.length > 1 ? `Tarifa del ${shortDate(shown.date)}`
+    : departures.length > 1 ? `${departures.length} fechas · desde ${shortDate(shown.date)}` : shortDate(shown.date);
+  const status = availability === 'Últimas plazas' ? `<span class="hp-tag hp-tag-hot">Últimas plazas</span>`
+    : availability === 'Completo' ? `<span class="hp-tag hp-tag-soft">Completo</span>`
+    : offer ? `<span class="hp-tag hp-tag-hot">${escape(offer.label || 'Oferta')}</span>` : '';
+  const duration = shown?.duration && shown.duration !== 'Por confirmar' ? shown.duration : '';
+  const area = trip.place ? String(trip.place).split('·').at(-1).trim() : '';
+  const facts = [duration, area].filter(Boolean).map(escape).join(' · ');
+  const price = fare
+    ? `<p class="hp-price">${from ? '<small class="hp-from">desde</small>' : ''}${offer ? `<del>${escape(formatPrice(fare.regularPrice))}</del>` : ''}<span>${escape(formatPrice(fare.price))}</span><small>por persona</small></p>`
+    : `<p class="hp-price hp-price-tbc"><span>${escape(tripPrice(trip))}</span></p>`;
+  const saving = offer ? Math.round((fare.regularPrice - fare.price) * 100) / 100 : 0;
+  const condition = offer ? `<p class="hp-offer"><strong>${escape(formatPrice(saving))} de descuento</strong> · ${escape(promotionCondition(offer))}</p>` : '';
+  const tagline = dated && trip.tagline && trip.tagline !== trip.name ? `<p class="hp-tagline">${escape(trip.tagline)}</p>` : '';
+  const action = `<a class="hp-btn" href="${href}" aria-label="Ver viaje de ${escape(trip.name)}">${dated ? 'Ver viaje' : 'Ver destino'}</a>`;
+  return `<article class="hp-ticket" data-levels="${levelsFor(trip).join(' ')}" aria-labelledby="ticket-${id}-title">
+<a class="hp-ticket-media" href="${href}" tabindex="-1" aria-hidden="true">${image ? `<img src="${escape(image.src)}"${image.srcset ? ` srcset="${escape(image.srcset)}" sizes="${ticketSizes}"` : ''} alt="${escape(image.alt)}" width="800" height="860" loading="lazy" decoding="async">` : '<span class="hp-ticket-placeholder" aria-hidden="true">LST</span>'}<span class="hp-tag hp-tag-date">${escape(dateTag)}</span>${status}</a>
+<h3 class="hp-ticket-name" id="ticket-${id}-title"><a href="${href}">${escape(trip.name)}</a></h3>
+<div class="hp-stub"><div class="hp-stub-top"><div class="hp-facts">${facts ? `<span>${facts}</span>` : ''}${levelBar(trip)}</div>${price}</div>${tagline}${condition}<div class="hp-acts">${action}</div></div>
+</article>`;
+}
+
+// The trip list is required; the hero, stats and mobile bar regions are optional.
+const region = (current, name, content, required = false) => {
+  const markers = new RegExp(`<!-- ${name}:start -->[\\s\\S]*?<!-- ${name}:end -->`);
+  if (!markers.test(current)) { if (required) throw Error('Missing home trip generation region'); return current; }
+  return current.replace(markers, () => `<!-- ${name}:start -->${content}<!-- ${name}:end -->`);
+};
+
 export function renderHomeTrips(current, trips) {
-  const card = trip => renderHomeTrip(trip, {compact: true, homepage: true});
-  // Start with the nearest departure. Keep all published trips in the HTML,
-  // including destinations without dates and the native expandable collection.
-  const dated = trips.filter(t => t.state === 'confirmed').map((trip, order) => ({trip, order, start: departuresFor(trip).map(d => d.start).filter(Boolean).sort()[0]})).sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999') || a.order - b.order).map(t => t.trip);
+  const dated = chronological(trips);
   const pending = trips.filter(t => t.state === 'upcoming');
-  const more = dated.slice(3);
-  const content = `${!trips.length ? '<p role="status">No hay viajes publicados en este momento. Puedes consultar las próximas salidas con el equipo.</p>' : ''}<div id="trip-content" class="home-trip-grid">${dated.slice(0, 3).map(card).join('\n')}</div>${more.length ? `<details class="home-more-trips"><summary>Más viajes <span>${more.length} ${more.length === 1 ? 'viaje' : 'viajes'} <span aria-hidden="true">↓</span></span></summary><div class="home-trip-grid">${more.map(card).join('\n')}</div></details>` : ''}${pending.length ? `<section class="destination-collection" aria-labelledby="more-destinations-title"><h3 id="more-destinations-title">Próximos viajes por anunciar</h3><p>Estamos preparando las próximas fechas.</p><div class="home-trip-grid home-trip-grid-pending">${pending.map(card).join('\n')}</div></section>` : ''}`;
-  const markers = /<!-- home-trips:start -->[\s\S]*?<!-- home-trips:end -->/;
-  if (!markers.test(current)) throw Error('Missing home trip generation region');
-  return current.replace(markers, `<!-- home-trips:start -->\n${content}\n<!-- home-trips:end -->`);
+  const next = nextDeparture(trips);
+  const open = trips.flatMap(t => registrationDepartures(t));
+  const prices = trips.filter(t => t.state === 'confirmed').map(t => tripPriceDetails(t).departure?.price).filter(Number.isFinite);
+
+  const tickets = `${!trips.length ? '<p class="hp-empty" role="status">No hay viajes publicados en este momento. Puedes consultar las próximas salidas con el equipo.</p>' : ''}${dated.length ? `<div class="hp-chips" role="group" aria-label="¿Cómo surfeas? Filtra las salidas por nivel">${homeLevelFilters.map((filter, i) => filterButton(dated, filter, i)).join('')}</div>
+<div class="hp-rail" id="trip-content" tabindex="0" aria-label="Salidas">${dated.map(renderHomeTicket).join('\n')}</div>
+<p class="hp-filter-empty" hidden>No hay salidas para ese nivel ahora mismo. ${whatsappLink('Cuéntanos cómo surfeas', 'hp-inline')} y te orientamos.</p>
+<div class="hp-railnav" aria-hidden="true"><span class="hp-count"></span><span class="hp-dots"></span><span>Desliza →</span></div>` : ''}${pending.length ? `<div class="hp-pending"><h3>Próximamente</h3><ul>${pending.map(t => `<li><a href="/viajes/${escape(t.slug)}/">${escape(t.name)}</a></li>`).join('')}</ul><p>Estamos preparando las fechas.</p></div>` : ''}`;
+
+  const nextCard = next ? (() => {
+    const image = photo(next.trip, 200);
+    const availability = availabilityLabel(next.trip);
+    return `<a class="hp-next" href="/viajes/${escape(next.trip.slug)}/">${image ? `<img src="${escape(image.src)}" alt="" width="88" height="88" decoding="async">` : ''}<span class="hp-next-body"><span class="hp-next-k">Próxima salida</span><strong>${escape(next.trip.name)}</strong><span class="hp-next-row"><span>${escape(compactDate(next.departure.date))}${next.departure.price ? ` · ${escape(formatPrice(next.departure.price))}` : ''}</span><span class="hp-next-go">${availability === 'Últimas plazas' ? 'Últimas plazas' : 'Ver viaje'}</span></span></span></a>`;
+  })() : '';
+
+  const bar = next
+    ? `<nav class="hp-bar" aria-label="Próxima salida"><a class="hp-bar-info" href="/viajes/${escape(next.trip.slug)}/"><span>Próxima salida</span><strong>${escape(next.trip.name)}${next.departure.price ? ` · ${escape(formatPrice(next.departure.price))}` : ''}</strong></a><span class="hp-bar-acts">${whatsappLink('<span class="hp-sr">WhatsApp</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.6 8.6 0 0 1-12.7 7.5L3 20.5l1.5-4.7A8.6 8.6 0 1 1 20.5 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>', 'hp-bar-wa')}<a class="hp-btn" href="${escape(registrationUrl(next.trip, next.departure))}">Solicitar</a></span></nav>`
+    : `<nav class="hp-bar" aria-label="Contacto"><a class="hp-bar-info" href="/viajes/"><span>Viajes de surf</span><strong>Ver todas las salidas</strong></a><span class="hp-bar-acts">${whatsappLink('WhatsApp', 'hp-btn')}</span></nav>`;
+
+  const stats = `<div class="hp-stat"><strong>${open.length}</strong><span>${open.length === 1 ? 'salida abierta' : 'salidas abiertas'} a inscripción</span></div><div class="hp-stat"><strong>1–4</strong><span>niveles, de cero a crack</span></div>${prices.length ? `<div class="hp-stat"><strong>${escape(formatPrice(Math.min(...prices)))}</strong><span>desde, por persona</span></div>` : ''}`;
+
+  // Short destination names rotate in the hero after "¿Te vienes a…".
+  const words = [...new Set(dated.map(t => t.name).filter(name => name.length <= 10))];
+
+  let html = region(current, 'home-trips', `\n${tickets}\n`, true);
+  html = region(html, 'home-next', nextCard);
+  html = region(html, 'home-bar', bar);
+  html = region(html, 'home-stats', stats);
+  html = region(html, 'home-words', `<span class="hp-rot" aria-hidden="true" data-words="${escape(JSON.stringify(words.map(w => `${w}?`)))}"><span>surfear?</span></span>`);
+  return html;
 }

@@ -1,10 +1,12 @@
-// Optional real-browser coverage of the guide and every home/trip integration.
+// Optional real-browser coverage of the level guide (/niveles/): level tabs,
+// sublevel ladder and cards, the quick test, trips by level and integrations.
 // Uses an existing browser installation; no dependency added.
 import {createRequire} from 'node:module';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {levelsFor} from './trip-model.mjs';
+import {SURF_LEVELS, SUBLEVELS, COMPETITION, LEVEL_TEST} from './surf-levels.mjs';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
@@ -12,159 +14,158 @@ const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-levels-verificat
 fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
 const trips=JSON.parse(fs.readFileSync('dist/catalog-snapshot.json')).trips;
 const hasPending=trips.some(t=>t.state==='upcoming');
-const slugs=['rookies','aprendices','riders','supercracks'];
-const report={checks:[],issues:[],errors:[],whatsapp:[],routes:['/','/niveles/',...trips.map(t=>`/viajes/${t.slug}/`)]};
+const steps=[...SUBLEVELS.map(s=>s.c),...COMPETITION.subs.map(s=>s.c)];
+const report={checks:[],issues:[],errors:[],whatsapp:[],routes:['/niveles/',...trips.map(t=>`/viajes/${t.slug}/`)]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
 async function context(options){
  const c=await browser.newContext({reducedMotion:'reduce',...options});
- await c.route('https://**/*',async r=>{const u=new URL(r.request().url());if(u.hostname==='cdn.sanity.io'){await r.continue();}else if(u.hostname==='wa.me'){report.whatsapp.push(u.href);await r.fulfill({contentType:'text/plain',body:'Consulta interceptada localmente; no se envía ningún mensaje.'});}else await r.abort();});
+ await c.route('https://**/*',async r=>{const u=new URL(r.request().url());if(u.hostname==='cdn.sanity.io'){await r.continue();}else if(['wa.me','chat.whatsapp.com','www.instagram.com'].includes(u.hostname)){report.whatsapp.push(u.href);await r.fulfill({contentType:'text/plain',body:'Enlace interceptado localmente; no se envía ningún mensaje.'});}else await r.abort();});
  c.on('page',p=>p.on('pageerror',e=>report.errors.push(e.message)));
  return c;
 }
 const enlarge=async(p,zoom)=>{if(zoom===2){await p.evaluate(()=>{const els=[...document.querySelectorAll('body,body *')],sizes=els.map(e=>parseFloat(getComputedStyle(e).fontSize));els.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});await p.waitForTimeout(80);}};
 const geometry=async(p,selector)=>p.locator(selector).evaluate(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,header:document.querySelector('.site-header').getBoundingClientRect().bottom};});
+const visiblePanels=p=>p.locator('[data-level-panel]').evaluateAll(els=>els.filter(e=>!e.hidden).map(e=>e.dataset.levelPanel));
+const shownTrips=p=>p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.querySelector('.home-trip-link').pathname.split('/')[2]).sort());
+const datedFor=level=>trips.filter(t=>t.state==='confirmed'&&levelsFor(t).includes(level)).map(t=>t.slug).sort();
+const answer=async(p,yes)=>p.locator(`[data-level-test] [data-answer="${yes?'yes':'no'}"]`).click();
 try{
- for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1024,900,1],[1440,900,1],[320,320,1],[390,360,1],[320,740,2],[390,844,2],[768,1024,2],[1024,900,2],[1440,900,2]]){
+ for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1024,900,1],[1440,900,1],[390,360,1],[320,740,2],[390,844,2],[1440,900,2]]){
   const tag=`${width}x${height}-text${zoom*100}`;
   const c=await context({viewport:{width,height}}),p=await c.newPage();
   check(tag+' HTTP',(await p.goto(base+'/niveles/')).status()===200);
   await p.evaluate(()=>document.fonts.ready);
   await enlarge(p,zoom);
-  await p.waitForTimeout(80);
   check(tag+' no horizontal overflow',await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
-  check(tag+' four levels visible without tabs',(await p.locator('.guide-level:visible').count())===4);
   check(tag+' fixed header',await p.locator('.site-header').evaluate(e=>getComputedStyle(e).position==='fixed'));
   const title=await geometry(p,'#guide-title');check(tag+' title below header',title.top>=title.header,title);
-  const external=await p.locator('main a[href^="http"]').evaluateAll(links=>links.map(a=>a.href).filter(href=>new URL(href).hostname!=='wa.me'));
+  const external=await p.locator('main a[href^="http"]').evaluateAll(links=>links.map(a=>a.href).filter(href=>!['wa.me','www.instagram.com'].includes(new URL(href).hostname)));
   check(tag+' no legacy or external content links',external.length===0,external);
-  check(tag+' level numerals stay on one line',await p.locator('.guide-index-number').evaluateAll(els=>els.every(e=>e.getBoundingClientRect().height<=parseFloat(getComputedStyle(e).lineHeight)+1)));
-  check(tag+' one shared help block',await p.locator('[data-guide-enquiry]').count()===1&&await p.locator('.guide-trips-help').count()===0);
+  check(tag+' three phases',await p.locator('.lv-phase').count()===3);
+  check(tag+' five level tabs',await p.locator('[data-level-tab]:visible').count()===5);
+  check(tag+' one level panel at a time',JSON.stringify(await visiblePanels(p))==='["1"]',await visiblePanels(p));
+  check(tag+' ladder lists every sublevel',JSON.stringify(await p.locator('[data-step]').evaluateAll(els=>els.map(e=>e.dataset.step)))===JSON.stringify(steps));
+  check(tag+' one shared help block',await p.locator('[data-guide-enquiry]').count()===1);
   if(hasPending)check(tag+' pending destinations initially folded',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
   if(zoom===1&&[390,1440].includes(width)&&height>500){
-   if(hasPending)await p.locator('.guide-trip-pending summary').click();
-   for(const img of await p.locator('main img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>new Promise((resolve,reject)=>{if(e.complete)return e.naturalWidth?resolve():reject(Error('Image failed: '+e.src));e.addEventListener('load',resolve,{once:true});e.addEventListener('error',()=>reject(Error('Image failed: '+e.src)),{once:true});}));}if(hasPending)await p.locator('.guide-trip-pending summary').click();await p.evaluate(()=>scrollTo(0,0));
+   for(const img of await p.locator('main img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>new Promise((resolve,reject)=>{if(e.complete)return e.naturalWidth?resolve():reject(Error('Image failed: '+e.src));e.addEventListener('load',resolve,{once:true});e.addEventListener('error',()=>reject(Error('Image failed: '+e.src)),{once:true});}));}
    check(tag+' photographs loaded',await p.locator('main img').evaluateAll(imgs=>imgs.every(img=>img.complete&&img.naturalWidth>0)));
+   await p.evaluate(()=>scrollTo(0,0));
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-portada.png`)});
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-completa.png`),fullPage:true});
   }
-  for(const slug of slugs){
-   await p.locator(`.guide-index a[href="#${slug}"]`).click();
-   const rect=await geometry(p,`#${slug}`);check(tag+' anchor '+slug,rect.top>=rect.header-1&&rect.top<=rect.header+20,rect);
-   await p.waitForFunction(s=>document.getElementById(s).classList.contains('is-arriving'),slug);
-   check(tag+' brief arrival cue '+slug,await p.locator('.guide-level.is-arriving').evaluateAll((els,slug)=>els.length===1&&els[0].id===slug,slug));
-   await p.waitForFunction(()=>!document.querySelector('.guide-level.is-arriving'));
-   check(tag+' highlight expires '+slug,await p.locator(`#${slug}`).evaluate(e=>getComputedStyle(e).borderLeftColor!=='rgb(234, 89, 52)'&&getComputedStyle(e.querySelector('.guide-level-heading')).backgroundColor==='rgb(27, 27, 27)'));
-   const actions=await p.locator(`#${slug} .guide-level-actions a`).evaluateAll(els=>els.map(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,width:r.width,height:r.height,scroll:e.scrollWidth,client:e.clientWidth,label:e.getAttribute('aria-label')};}));
-   check(tag+' compact card actions '+slug,actions.length===2&&actions.every(a=>a.height>=44&&a.scroll<=a.client&&a.label),actions);
-   if(zoom===1)check(tag+' card actions on one row '+slug,Math.abs(actions[0].top-actions[1].top)<1&&actions[0].right<actions[1].left,actions);
-   check(tag+' selected index '+slug,await p.locator('.guide-index [aria-current=location]').getAttribute('href')==='#'+slug);
-   check(tag+' anchor focus '+slug,await p.evaluate(s=>document.activeElement.id===s,slug));
+  // Level tabs: one panel, its URL and its trips.
+  for(const level of [...SURF_LEVELS.map(l=>l.n),5]){
+   await p.locator(`[data-level-tab="${level}"]`).click();
+   check(tag+' tab shows level '+level,JSON.stringify(await visiblePanels(p))===JSON.stringify([String(level)]));
+   check(tag+' tab current '+level,await p.locator(`[data-level-tab="${level}"]`).getAttribute('aria-current')==='true');
+   check(tag+' tab URL '+level,new URL(p.url()).hash==='#nivel-'+level&&new URL(p.url()).searchParams.get('nivel')===(level<=4?String(level):null),p.url());
+   if(level<=4)check(tag+' tab filters trips '+level,JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(level)));
+   const tab=await p.locator(`[data-level-tab="${level}"]`).evaluate(e=>{const r=e.getBoundingClientRect();return {height:r.height,clipped:e.scrollWidth>e.clientWidth+1};});
+   check(tag+' tab touch target '+level,tab.height>=44&&!tab.clipped,tab);
+   const head=await geometry(p,`#nivel-${level}`);check(tag+' level head below header '+level,head.top>=head.header-1,head);
   }
-  for(const [index,slug] of slugs.entries()){
-   await p.locator(`#${slug} .guide-level-cta`).click();
-   await p.waitForURL(base+`/viajes/?nivel=${index+1}`);
-   check(tag+' catalog context '+slug,await p.locator('#catalog-level').inputValue()===String(index+1));
-   await p.goBack();await p.evaluate(()=>document.fonts.ready);await enlarge(p,zoom);
-   await p.locator(`[data-guide-filter="${slug}"]`).click();
-   check(tag+' travel context '+slug,new URL(p.url()).searchParams.get('nivel')===slug&&new URL(p.url()).hash==='#viajes-por-nivel');
-   const expectedDated=trips.filter(t=>t.state==='confirmed'&&levelsFor(t).includes(index+1)).map(t=>t.slug).sort();
-   const datedShown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.querySelector('.home-trip-link').pathname.split('/')[2]).sort());
-   check(tag+' prioritises dated trips '+slug,JSON.stringify(datedShown)===JSON.stringify(expectedDated),{datedShown,expectedDated});
-   const pendingCount=trips.filter(t=>t.state==='upcoming'&&levelsFor(t).includes(index+1)).length;
-   if(hasPending){
-   check(tag+' pending matching count '+slug,await p.locator('[data-guide-pending-count]').innerText()===String(pendingCount));
-   if(pendingCount>0){
-   await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');
-   check(tag+' pending opens with keyboard '+slug,await p.locator('.guide-trip-pending').evaluate(e=>e.open));
-   const disclosure=await p.locator('.guide-trip-pending').evaluate(e=>{const summary=e.querySelector('summary'),r=summary.getBoundingClientRect(),title=summary.firstElementChild.getBoundingClientRect(),intro=e.querySelector('.guide-pending-intro').getBoundingClientRect();return {upright:[...summary.children].slice(0,2).every(e=>getComputedStyle(e).transform==='none'),contained:title.top>=r.top&&title.bottom<=r.bottom&&title.left>=r.left&&title.right<=r.right,introGap:intro.top-r.bottom};});
-   check(tag+' disclosure text stays in place '+slug,disclosure.upright&&disclosure.contained&&disclosure.introGap>=0&&disclosure.introGap<24,disclosure);
-   const expected=trips.filter(t=>levelsFor(t).includes(index+1)).map(t=>t.slug).sort();
-   const shown=await p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.querySelector('.home-trip-link').pathname.split('/')[2]).sort());
-   check(tag+' configured matching trips '+slug,JSON.stringify(shown)===JSON.stringify(expected),{shown,expected});
-   await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Space');
-   check(tag+' pending closes with keyboard '+slug,await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
-   }
-   }
-   const message=new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text');
-   check(tag+' selected enquiry '+slug,message.includes(['Rookies','Aprendices','Riders','Supercracks'][index])&&message.includes('autonomía'));
-   const cardContact=p.locator(`#${slug} .guide-level-enquiry`);await cardContact.focus();const contactTab=c.waitForEvent('page');await p.keyboard.press('Enter');const contactPage=await contactTab;await contactPage.waitForLoadState();await contactPage.close();
-   check(tag+' card WhatsApp context '+slug,new URL(await cardContact.getAttribute('href')).searchParams.get('text').includes(['Rookies','Aprendices','Riders','Supercracks'][index]));
+  // Ladder: opens and reveals the sublevel card.
+  await p.locator('[data-step="2.3"]').click();
+  check(tag+' ladder opens sublevel',await p.locator('#subnivel-2-3').evaluate(e=>e.open)&&JSON.stringify(await visiblePanels(p))==='["2"]');
+  check(tag+' ladder URL',new URL(p.url()).hash==='#subnivel-2-3');
+  const summary=await p.locator('#subnivel-2-3 summary').evaluate(e=>({upright:[...e.children].every(c=>getComputedStyle(c).transform==='none'),top:e.getBoundingClientRect().top,header:document.querySelector('.site-header').getBoundingClientRect().bottom}));
+  check(tag+' sublevel heading upright and below header',summary.upright&&summary.top>=summary.header-1,summary);
+  for(const box of await p.locator('#subnivel-2-3 [data-can]').all())await box.check();
+  check(tag+' all «Ya hace» suggests next sublevel',await p.locator('#subnivel-2-3 [data-can-hint]').isVisible());
+  await p.locator('#subnivel-2-3 [data-can]').first().uncheck();
+  check(tag+' hint hides again',await p.locator('#subnivel-2-3 [data-can-hint]').isHidden());
+  // Quick test: five «Sí» then «Todavía no» places the visitor in 2.2.
+  await p.locator('#test').scrollIntoViewIfNeeded();
+  check(tag+' test first question',(await p.locator('.lv-q-count').innerText()).includes(`1 de ${LEVEL_TEST.length}`));
+  await answer(p,true);await answer(p,false);await p.locator('[data-level-test] [data-back]').click();
+  check(tag+' test back keeps answers',(await p.locator('.lv-q-count').innerText()).startsWith('Pregunta 2'));
+  for(let i=0;i<4;i++)await answer(p,true);
+  await answer(p,false);
+  check(tag+' test result 2.2',await p.locator('.lv-result-code').innerText()==='2.2'&&(await p.locator('.lv-result h3').innerText())==='Cambio de tabla');
+  check(tag+' result stored',await p.evaluate(()=>localStorage.getItem('lstLevel'))==='2.2');
+  check(tag+' ladder marks result',await p.locator('[data-step="2.2"]').evaluate(e=>e.classList.contains('is-mine')));
+  const actions=await p.locator('.lv-result-actions :is(a,button)').evaluateAll(els=>els.map(e=>{const r=e.getBoundingClientRect();return {text:e.textContent.trim(),height:r.height,clipped:e.scrollWidth>e.clientWidth+1};}));
+  check(tag+' result actions fit',actions.every(a=>a.height>=44&&!a.clipped),actions);
+  await p.locator('[data-level-test] [data-trips]').click();
+  check(tag+' result filters trips',JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(2))&&new URL(p.url()).searchParams.get('nivel')==='2');
+  const message=new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text');
+  check(tag+' enquiry carries the result',message.includes('2.2')&&message.includes('autonomía'),message);
+  await p.locator('[data-level-test] [data-see]').click();
+  check(tag+' result opens its sublevel',await p.locator('#subnivel-2-2').evaluate(e=>e.open));
+  await p.locator('[data-level-test] [data-yes]').click();
+  check(tag+' agreeing shows the community',await p.locator('[data-level-test] [data-thanks] a[href^="https://chat.whatsapp.com/"]').isVisible());
+  // Disagreeing lets the visitor choose a sublevel by hand.
+  await p.locator('[data-level-test] [data-restart]').first().click();
+  for(let i=0;i<3;i++)await answer(p,true);
+  await answer(p,false);
+  check(tag+' second result 1.3',await p.locator('.lv-result-code').innerText()==='1.3');
+  await p.locator('[data-level-test] [data-no]').click();await p.locator('[data-level-test] [data-choose-open]').click();
+  check(tag+' choose mode',await p.locator('[data-pickbar]').isVisible());
+  await p.locator('[data-level-tab="3"]').click();await p.locator('#subnivel-3-1 summary').click();await p.locator('[data-choose="3.1"]').click();
+  check(tag+' chosen level',await p.locator('.lv-result-code').innerText()==='3.1'&&await p.locator('[data-pickbar]').isHidden()&&await p.locator('[data-choose="3.1"]').isHidden());
+  await p.reload();await p.evaluate(()=>document.fonts.ready);
+  check(tag+' reload restores result',await p.locator('.lv-result-code').innerText()==='3.1'&&await p.locator('[data-step="3.1"]').evaluate(e=>e.classList.contains('is-mine')));
+  await p.evaluate(()=>localStorage.clear());
+  // Trips filters.
+  for(const {n,name} of SURF_LEVELS){
+   await p.locator(`[data-guide-filter="${n}"]`).click();
+   check(tag+' travel context '+n,new URL(p.url()).searchParams.get('nivel')===String(n)&&new URL(p.url()).hash==='#viajes-por-nivel');
+   check(tag+' prioritises dated trips '+n,JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(n)));
+   const pendingCount=trips.filter(t=>t.state==='upcoming'&&levelsFor(t).includes(n)).length;
+   if(hasPending)check(tag+' pending matching count '+n,await p.locator('[data-guide-pending-count]').innerText()===String(pendingCount));
+   check(tag+' selected enquiry '+n,new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text').includes(name));
   }
   await p.locator('[data-guide-filter=""]').click();
-  check(tag+' all leaves no highlighted card',await p.locator('.guide-level.is-arriving').count()===0);
-  check(tag+' all shows dated trips first',await p.locator('.guide-trip-card:visible').count()===trips.filter(t=>t.state==='confirmed').length);
-  if(hasPending)await p.locator('.guide-trip-pending summary').click();check(tag+' all pending remain available',await p.locator('.guide-trip-card:visible').count()===trips.length);
-  await p.goto(base+'/niveles/#aprendices');await p.evaluate(()=>document.fonts.ready);
-  let rect=await geometry(p,'#aprendices');check(`${width}x${height} direct URL anchor at default text size`,rect.top>=rect.header-1,rect);
+  check(tag+' all shows dated trips',await p.locator('.guide-trip-card:visible').count()===trips.filter(t=>t.state==='confirmed').length);
   await p.goto(base+'/niveles/');await p.evaluate(()=>document.fonts.ready);await enlarge(p,zoom);
   check(tag+' mobile/direct levels access',await p.locator(width<1000?'.header-levels':'#main-nav a[href="/niveles/"]').isVisible());
-  if(width<1000){
-   await p.locator('.menu-toggle').focus();await p.keyboard.press('Enter');await p.keyboard.press('Tab');
-   check(tag+' menu first tab',await p.evaluate(()=>document.activeElement===document.querySelector('#main-nav a')));
-   await p.keyboard.press('Escape');check(tag+' Escape returns focus',await p.evaluate(()=>document.activeElement.matches('.menu-toggle')&&document.querySelector('.menu-toggle').getAttribute('aria-expanded')==='false'));
-   await p.keyboard.press('Enter');await p.locator('.nav-whatsapp').focus();
-   const opened=c.waitForEvent('page');await p.keyboard.press('Enter');const popup=await opened;await popup.waitForLoadState();await popup.close();
-   check(tag+' menu WhatsApp closes and restores focus',await p.evaluate(()=>document.activeElement.matches('.menu-toggle')&&!document.querySelector('#main-nav').classList.contains('is-open')));
-  }
   await p.locator('.skip-link').focus();await p.keyboard.press('Enter');
   check(tag+' skip link',await p.evaluate(()=>document.activeElement.id==='contenido'));
-  // Traverse the whole page by keyboard, including the guide and consultation.
-  for(let n=0;n<45;n++){
+  for(let n=0;n<60;n++){
    await p.keyboard.press('Tab');
-   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=e.matches('.skip-link')?0:document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:r.top>=h-1&&r.bottom<=innerHeight+1};});
+   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:r.top>=h-1&&r.bottom<=innerHeight+1};});
    if(focus)check(tag+' keyboard focus visible',focus.visible,focus);
   }
-  const link=p.locator('#orientacion [data-whatsapp]');await link.focus();
-  const opened=c.waitForEvent('page');await p.keyboard.press('Enter');const popup=await opened;await popup.waitForLoadState();await popup.close();
-  check(tag+' level WhatsApp context',new URL(await link.getAttribute('href')).searchParams.get('text')==='¡Hola, LST! Quiero consultar mi nivel de surf y saber si encajo en un viaje. ¿Podéis orientarme?');
   await p.locator('.guide-next a').click();
   await p.locator('[data-catalog-filters]').waitFor({state:'visible'});
   check(tag+' explore full catalog',new URL(p.url()).pathname==='/viajes/'&&await p.locator('[data-catalog-trip]:visible').count()===trips.length);
-  rect=await geometry(p,'#catalog-title');check(`${width}x${height} catalog below header at default text size`,rect.top>=rect.header-1,rect);
   await c.close();
  }
- // Integration through every rendered route, including all four home tabs.
+ // Direct and legacy URLs.
+ {
+  const c=await context({viewport:{width:390,height:844}}),p=await c.newPage();
+  await p.goto(base+'/niveles/#nivel-4');check('direct level URL',JSON.stringify(await visiblePanels(p))==='["4"]');
+  await p.goto(base+'/niveles/#subnivel-3-2');check('direct sublevel URL',await p.locator('#subnivel-3-2').evaluate(e=>e.open)&&JSON.stringify(await visiblePanels(p))==='["3"]');
+  await p.goto(base+'/niveles/#riders');check('legacy anchor opens level 3',JSON.stringify(await visiblePanels(p))==='["3"]'&&new URL(p.url()).hash==='#nivel-3');
+  await p.goto(base+'/niveles/?nivel=aprendices#viajes-por-nivel');check('legacy travel filter',await p.locator('[data-guide-filter="2"]').getAttribute('aria-pressed')==='true');
+  await p.goto(base+'/niveles/');await p.locator('[data-guide-filter="1"]').click();await p.locator('[data-guide-filter="3"]').click();
+  await p.reload();check('reload restores travel level',await p.locator('[data-guide-filter="3"]').getAttribute('aria-pressed')==='true');
+  await p.goBack();check('back restores level 1 trips',await p.locator('[data-guide-filter="1"]').getAttribute('aria-pressed')==='true');
+  await p.goForward();check('forward restores level 3 trips',await p.locator('[data-guide-filter="3"]').getAttribute('aria-pressed')==='true');
+  await c.close();
+ }
+ // Every trip page links to the guide.
  for(const width of [390,1440]){
   const c=await context({viewport:{width,height:900}}),p=await c.newPage();
-  await p.goto(base+'/');check(width+' home header levels',await p.locator(width<1000?'.header-levels':'#main-nav a[href="/niveles/"]').isVisible());await p.locator('.journeys-level-link').click();check(width+' calendar to guide',new URL(p.url()).pathname==='/niveles/');
-  await p.goto(base+'/#niveles');await p.locator('[data-level="1"]').focus();await p.keyboard.press('End');check(width+' home tabs End key',await p.locator('#level-source').getAttribute('href')==='/niveles/#supercracks');await p.keyboard.press('ArrowLeft');check(width+' home tabs ArrowLeft key',await p.locator('#level-source').getAttribute('href')==='/niveles/#riders');
-  for(const [i,slug] of slugs.entries()){
-   await p.goto(base+'/#niveles');await p.locator(`[data-level="${i+1}"]`).click();await p.locator('#level-source').click();
-   check(width+' home tab to '+slug,new URL(p.url()).pathname==='/niveles/'&&new URL(p.url()).hash==='#'+slug);
-  }
   for(const trip of trips){await p.goto(base+`/viajes/${trip.slug}/`);check(width+' '+trip.slug+' header has levels',await p.locator('.trip-header a[href="/niveles/"]').isVisible());await p.locator('.trip-level a[href="/niveles/"]').click();check(width+' '+trip.slug+' to guide',new URL(p.url()).pathname==='/niveles/');}
   await c.close();
  }
- const historyContext=await context({viewport:{width:390,height:844}}),historyPage=await historyContext.newPage();
- await historyPage.goto(base+'/niveles/#rookies');await historyPage.locator('[data-guide-filter="rookies"]').click();await historyPage.locator('[data-guide-filter="riders"]').click();
- const bordered=()=>historyPage.locator('.guide-level').evaluateAll(els=>els.filter(e=>getComputedStyle(e).borderLeftColor==='rgb(234, 89, 52)').map(e=>e.id));
- check('travel filter does not highlight a card',JSON.stringify(await bordered())==='[]');
- await historyPage.reload();check('reload restores selected travel level',await historyPage.locator('[data-guide-filter="riders"]').getAttribute('aria-pressed')==='true');
- await historyPage.goBack();check('back restores Rookies trips',await historyPage.locator('[data-guide-filter="rookies"]').getAttribute('aria-pressed')==='true');
- await historyPage.goForward();check('forward restores Riders trips',await historyPage.locator('[data-guide-filter="riders"]').getAttribute('aria-pressed')==='true');
- await historyPage.locator('[data-guide-filter=""]').click();check('all clears obsolete target',JSON.stringify(await bordered())==='[]');
- await historyPage.goto(base+'/niveles/#rookies');await historyPage.waitForFunction(()=>new URL(location.href).searchParams.get('nivel')==='rookies'&&document.querySelector('[data-guide-filter=rookies]').getAttribute('aria-pressed')==='true');const beforeUrl=historyPage.url();const newTabPromise=historyContext.waitForEvent('page');await historyPage.locator('.guide-index a[href="#riders"]').click({modifiers:['Control']});const newTab=await newTabPromise;await newTab.waitForLoadState();await newTab.close();
- check('modified click keeps current context',historyPage.url()===beforeUrl&&await historyPage.locator('.guide-level.is-arriving').count()===0&&await historyPage.locator('[data-guide-filter="rookies"]').getAttribute('aria-pressed')==='true',{beforeUrl,afterUrl:historyPage.url()});
- await historyContext.close();
- for(const width of [320,390,1440]){
-  const motionContext=await context({viewport:{width,height:844},reducedMotion:'no-preference'}),motionPage=await motionContext.newPage();
-  await motionPage.goto(base+'/niveles/');await motionPage.evaluate(()=>document.fonts.ready);
-  for(const slug of ['supercracks','supercracks','rookies']){
-   const link=motionPage.locator(`.guide-index a[href="#${slug}"]`);
-   await link.focus();await motionPage.keyboard.press('Enter');
-   await motionPage.waitForFunction(s=>document.getElementById(s).classList.contains('is-arriving'),slug);
-   const rect=await geometry(motionPage,`#${slug}`);
-   check(width+' smooth arrival cue at destination '+slug,rect.top>=rect.header-1&&rect.top<=rect.header+20,rect);
-   await motionPage.waitForFunction(()=>!document.querySelector('.is-arriving'));await motionPage.waitForTimeout(220);
-   check(width+' smooth cue clears with focus retained '+slug,await motionPage.locator(`#${slug}`).evaluate(e=>e===document.activeElement&&getComputedStyle(e.querySelector('.guide-level-heading')).backgroundColor==='rgb(27, 27, 27)'));
-  }
-  await motionContext.close();
- }
+ // Without JavaScript the whole guide stays readable.
  const c=await context({viewport:{width:390,height:844},javaScriptEnabled:false}),p=await c.newPage();
- await p.goto(base+'/niveles/');check('static content without JS',await p.locator('.guide-level:visible').count()===4);await p.locator('.guide-index a[href="#riders"]').click();check('native anchor without JS',new URL(p.url()).hash==='#riders');if(hasPending)check('pending folded without JS',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));if(hasPending){await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');}check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);check('no persistent highlight without JS',await p.locator('#riders').evaluate(e=>getComputedStyle(e).borderLeftColor!=='rgb(234, 89, 52)'));check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);await c.close();
- for(const href of report.whatsapp){const u=new URL(href);check('WhatsApp destination',u.origin==='https://wa.me'&&u.pathname==='/34648189257'&&!!u.searchParams.get('text'));}
- check('shared script has no page errors',report.errors.length===0,report.errors);
+ await p.goto(base+'/niveles/');
+ check('all levels without JS',await p.locator('.lv-level:visible').count()===5);
+ check('every sublevel without JS',await p.locator('.lv-sub').count()===SUBLEVELS.length);
+ await p.locator('[data-step="3.3"]').click();check('native ladder anchor without JS',new URL(p.url()).hash==='#subnivel-3-3');
+ await p.locator('#subnivel-3-3 summary').click();check('native disclosure without JS',await p.locator('#subnivel-3-3').evaluate(e=>e.open));
+ check('test explains it needs JS',(await p.locator('[data-level-test]').innerText()).includes('JavaScript'));
+ if(hasPending){await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');}
+ check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);
+ check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);
+ await c.close();
+ for(const href of report.whatsapp){const u=new URL(href);if(u.hostname==='wa.me')check('WhatsApp destination',u.pathname==='/34648189257'&&!!u.searchParams.get('text'));}
+ check('guide script has no page errors',report.errors.length===0,report.errors);
 } finally {await browser.close();fs.writeFileSync(path.join(out,'browser.json'),JSON.stringify(report,null,2)+'\n');}
 console.log(JSON.stringify({checks:report.checks.length,issues:report.issues,errors:report.errors,whatsapp:report.whatsapp.length},null,2));
 if(report.issues.length)process.exitCode=1;

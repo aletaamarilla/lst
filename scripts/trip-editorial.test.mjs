@@ -14,7 +14,7 @@ test('the cover keeps the photograph clear and the destination identity follows 
  const t=adaptTrip(editorial()),html=renderTrip(t),cover=html.match(/<section class="trip-cover"[\s\S]*?<\/section>/)[0];
  const identity=html.match(/<section class="trip-essentials[\s\S]*?<\/section>/)[0];
  assert.equal((html.match(/<h1\b/g)||[]).length,1);
- assert(identity.includes(t.name));assert.match(identity,/Niveles I–II/);
+ assert(identity.includes(t.name));assert.match(identity,/Niveles 1–2/);
  assert.match(identity,/trip-meta-duration/);assert(identity.includes(t.departures[0].duration));
  assert.doesNotMatch(cover,/<h1|trip-cover-copy/);
  assert.doesNotMatch(cover,/trip-breadcrumb|trip-cover-cta|Quiero vivir|trip-hero-fare/);

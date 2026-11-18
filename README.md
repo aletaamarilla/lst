@@ -29,7 +29,7 @@ Sin variables (local, previsualizaciones y el `dist` versionado) todo queda en `
 
 ## Estructura
 
-- dist/index.html: home, calendario y resumen de niveles.
+- dist/index.html: home comercial. `scripts/render-home-trips.mjs` genera desde Sanity publicado los billetes de viaje, la próxima salida, las cifras, la barra móvil y los destinos del hero (regiones `home-*`).
 - dist/conocenos/index.html: presentación, historia y forma de viajar de LST.
 - dist/about.css: composición responsive de Conócenos, con cabecera y navegación compartidas.
 - scripts/check-about.mjs: comprobaciones opcionales de navegador para Conócenos y sus entradas.
@@ -38,6 +38,8 @@ Sin variables (local, previsualizaciones y el `dist` versionado) todo queda en `
 - dist/levels.js: destacado manual del nivel, filtros de viajes e historial.
 - scripts/render-level-trips.mjs: bloque de viajes de la guía generado desde Sanity publicado.
 - dist/styles.css: estilos y tokens originales compartidos.
+- dist/homepage.css: diseño comercial de la home (desde móvil): hero, cifras, billetes de viaje, pasos de reserva y barra fija.
+- dist/home.js: palabra rotatoria del hero, filtros por nivel de los billetes y test de nivel.
 - dist/mobile.css: composición de la home desde teléfono, con mejoras para pantallas mayores.
 - dist/app.js: menú móvil y pestañas de nivel.
 - scripts/sanity.mjs y scripts/sanity-trips.mjs: lectura y adaptación del catálogo publicado.

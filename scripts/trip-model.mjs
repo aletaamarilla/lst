@@ -1,6 +1,5 @@
 import {departurePricing} from './trip-pricing.mjs';
 const ALL_LEVELS = Object.freeze([1, 2, 3, 4]);
-const ROMAN = ['I', 'II', 'III', 'IV'];
 
 function configuredLevels(trip) {
   const configured = trip.levels ?? ALL_LEVELS;
@@ -18,8 +17,8 @@ const labelFor = levels => {
   if (levels.length === 4) return 'Todos los niveles';
   const consecutive = levels.every((level, i) => !i || level === levels[i - 1] + 1);
   const label = consecutive && levels.length > 1
-    ? `${ROMAN[levels[0] - 1]}–${ROMAN[levels.at(-1) - 1]}`
-    : levels.map(level => ROMAN[level - 1]).join(', ');
+    ? `${levels[0]}–${levels.at(-1)}`
+    : levels.join(', ');
   return `${levels.length === 1 ? 'Nivel' : 'Niveles'} ${label}`;
 };
 export const levelLabel = trip => labelFor(levelsFor(trip));

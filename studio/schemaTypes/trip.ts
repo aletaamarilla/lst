@@ -67,8 +67,8 @@ export const trip = defineType({
       name: 'levels', title: 'Rango de nivel del viaje', type: 'array', group: 'departures',
       description: 'Rango fijo para todas las fechas de este viaje. Si cambia el nivel o el programa, crea otro viaje con su propia URL.',
       of: [defineArrayMember({type: 'number', options: {list: [
-        {title: 'I · Rookies', value: 1}, {title: 'II · Aprendices', value: 2},
-        {title: 'III · Riders', value: 3}, {title: 'IV · Supercracks', value: 4},
+        {title: '1 · Iniciación', value: 1}, {title: '2 · Base', value: 2},
+        {title: '3 · Intermedio', value: 3}, {title: '4 · Avanzado', value: 4},
       ]}, validation: (rule) => rule.integer().min(1).max(4)})],
       validation: (rule) => rule.required().min(1).unique(),
     }),

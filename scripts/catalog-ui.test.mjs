@@ -13,7 +13,7 @@ async function catalogue(t, query = '', cards = ['1 2', '3', '4']) {
   let url = new URL('https://lst.test/viajes/' + query);
   const events = new Map();
   const element = extra => Object.defineProperties({hidden: false, addEventListener(type, fn) { events.set(this.id + ':' + type, fn); }}, Object.getOwnPropertyDescriptors(extra));
-  const labels = {'': 'Todos los niveles', 1: 'I · Rookies', 2: 'II · Aprendices', 3: 'III · Riders', 4: 'IV · Supercracks'};
+  const labels = {'': 'Todos los niveles', 1: '1 · Iniciación', 2: '2 · Base', 3: '3 · Intermedio', 4: '4 · Avanzado'};
   const level = element({id: 'level', value: '', get selectedOptions() { return [{textContent: labels[this.value]}]; }, focus(options) { this.focused = options; }});
   const clear = element({id: 'clear'});
   const emptyClear = element({id: 'empty-clear'});
@@ -60,7 +60,7 @@ test('level links and changes preserve unrelated query and hash, with back and f
   assert.equal(ui.url().hash, '#catalog-results');
   assert.equal(ui.url().searchParams.has('fecha'), false);
   assert.equal(ui.url().searchParams.has('estado'), false);
-  assert.equal(ui.status.textContent, '1 de 3 viajes · I · Rookies.');
+  assert.equal(ui.status.textContent, '1 de 3 viajes · 1 · Iniciación.');
   ui.back();
   assert.equal(ui.level.value, '3');
   assert.equal(ui.visible().length, 1);

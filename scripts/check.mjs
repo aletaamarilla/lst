@@ -71,12 +71,13 @@ const routes=['/', '/niveles/', '/conocenos/', '/viajes/', '/preguntas-frecuente
 for(const route of routes){if(!pages.has(path.join(root,route,'index.html')))errors.push(`Missing expected route ${route}`);}
 const guide=pages.get(path.join(root,'niveles/index.html'));
 if(guide){
- for(const [,href] of guide.html.matchAll(/<a\b[^>]*href="([^"]+)"/g)){if(/^https?:/.test(href)&&new URL(href).hostname!=='wa.me')errors.push(`Guide must not send visitors to an external content page: ${href}`);}
- for(const level of ['rookies','aprendices','riders','supercracks']){
-  if(!guide.ids.has(level)||!guide.html.includes(`href="#${level}"`))errors.push(`Missing direct level navigation: ${level}`);
- }
- if(/role="tablist"|<input\b|<select\b/.test(guide.html))errors.push('Level guide must remain static and directly readable');
- for(const anchor of ['autonomia','orientacion'])if(!guide.ids.has(anchor))errors.push(`Missing level guidance section ${anchor}`);
+ for(const [,href] of guide.html.matchAll(/<a\b[^>]*href="([^"]+)"/g)){if(/^https?:/.test(href)&&!['wa.me','www.instagram.com'].includes(new URL(href).hostname))errors.push(`Guide must not send visitors to an external content page: ${href}`);}
+ // The guide is generated from scripts/surf-levels.mjs: levels 1–4, the competition route and every sublevel.
+ if(!guide.html.includes('<!-- level-guide:start -->'))errors.push('Missing level guide generation markers');
+ for(const level of [1,2,3,4,5])if(!guide.ids.has(`nivel-${level}`)||!guide.html.includes(`href="#nivel-${level}"`))errors.push(`Missing direct level navigation: nivel-${level}`);
+ for(const sub of ['1-1','1-2','1-3','2-1','2-2','2-3','3-1','3-2','3-3','4-1','4-2','4-3'])if(!guide.ids.has(`subnivel-${sub}`))errors.push(`Missing sublevel ${sub}`);
+ for(const anchor of ['test','orientacion','viajes-por-nivel'])if(!guide.ids.has(anchor))errors.push(`Missing level guidance section ${anchor}`);
+ if(/Rookies|Aprendices|Supercracks/.test(guide.html))errors.push('Level guide must use the current level names');
  if(!guide.html.includes('href="/viajes/"'))errors.push('Level guide must link to the catalog');
  for(const level of [1,2,3,4])if(!guide.html.includes(`href="/viajes/?nivel=${level}"`))errors.push(`Missing catalog entry for level ${level}`);
  if(!guide.html.includes('src="/app.js"'))errors.push('Level guide must use shared navigation');

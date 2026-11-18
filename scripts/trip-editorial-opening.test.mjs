@@ -18,7 +18,7 @@ test('the title, duration and concise facts are outside the photograph, with no 
  const meta=html.match(/<section class="trip-essentials[\s\S]*?<\/section>/)[0];
  assert.match(cover,/--trip-cover-ratio:6000 \/ 4000/);assert.doesNotMatch(cover,/<h1|trip-cover-level/);
  assert.match(meta,/<h1 id="trip-title">Marruecos<\/h1>/);
- for(const text of ['7 noches','17–24 ene 2027','Niveles I–II','Hasta 15 personas','Costa atlántica'])assert(meta.includes(text));
+ for(const text of ['7 noches','17–24 ene 2027','Niveles 1–2','Hasta 15 personas','Costa atlántica'])assert(meta.includes(text));
  assert.doesNotMatch(meta,/°C|desértico|clima/i);assert.deepEqual(morocco,before);
 });
 

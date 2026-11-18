@@ -97,7 +97,7 @@ test('the sidebar keeps the range concise and the level section retains requirem
  const t=trip({levels:[2,3],levelRequirement:requirement,levelText:requirement}),html=renderTrip(t);
  const sidebar=html.match(/<aside class="trip-booking"[\s\S]*?<\/aside>/)[0];
  const level=html.match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
- assert.match(sidebar,/Niveles II–III/);assert(!sidebar.includes(requirement));
+ assert.match(sidebar,/Niveles 2–3/);assert(!sidebar.includes(requirement));
  assert(level.includes(requirement));
  const actions=level.match(/<div class="level-actions">([\s\S]*?)<\/div>/)?.[1];
  assert(actions,'The level guide remains available');

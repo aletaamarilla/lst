@@ -1,121 +1,125 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {renderHomeTrips, renderHomeTrip} from './render-home-trips.mjs';
+import {renderHomeTrips, renderHomeTrip, renderHomeTicket, nextDeparture} from './render-home-trips.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
 
 const shell = '<!-- home-trips:start --><!-- home-trips:end -->';
+const page = '<!-- home-words:start --><!-- home-words:end --><!-- home-next:start --><!-- home-next:end --><!-- home-stats:start --><!-- home-stats:end -->' + shell + '<!-- home-bar:start --><!-- home-bar:end -->';
 const departure = (id, start, price) => ({id, start, date: `${start} — fin`, price, duration: '4 noches', state: 'confirmed'});
 const trip = (id, changes = {}) => ({id, slug: id, name: `Viaje ${id}`, state: 'confirmed', availability: 'available', levels: [1, 2], departures: [departure('one', '2027-01-01', 399)], ...changes});
+// Brevo only maps real client departures; this one has a registration form.
+const hossegor = (changes = {}) => trip('hossegor', {name: 'Hossegor', levels: [2, 3], departures: [{...departure('h1', '2026-11-20', 399), end: '2026-11-22', date: '20 nov 2026 — 22 nov 2026', duration: '2 noches'}], ...changes});
 
-const panelFor = html => html.match(/<div class="home-trip-dates-panel"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? null;
-const priceFor = html => html.match(/<span class="home-trip-price">([\s\S]*?)<\/span>(?=<span class="home-trip-action"|<\/a>)/)[1].replace(/<span class="home-trip-current">([^<]*)<\/span>/g, '$1');
+const tickets = html => html.match(/<article class="hp-ticket"[\s\S]*?<\/article>/g) ?? [];
+const priceOf = html => html.match(/<p class="hp-price[^"]*">([\s\S]*?)<\/p>/)[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const tagOf = html => html.match(/<span class="hp-tag hp-tag-date">([^<]*)<\/span>/)[1];
 
-test('home date panel contains only departures, while price and one direct trip link stay outside', () => {
-  const html = renderHomeTrips(shell, [trip('multi', {departures: [departure('one', '2027-01-01', 399.5), departure('two', '2027-02-01', 450)]})]);
-  assert.match(html, /<details class="home-trip-dates"/);
-  assert.match(html, /<summary aria-label="Ver fechas de Viaje multi"/);
-  assert.match(html, /2027-01-01 — fin/);
-  assert.match(html, /2027-02-01 — fin/);
-  const panel = panelFor(html);
-  assert.equal(panel, '<a class="home-trip-dates-link" href="/viajes/multi/" aria-label="Ver viaje de Viaje multi"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">2027-01-01 — fin</span></li><li class="departure-row"><span class="departure-row-date">2027-02-01 — fin</span></li></ul></a>');
-  assert.doesNotMatch(panel, /€|Precio|Consulta|disponib|home-trip-dates-title|home-trip-date-note/);
-  assert.equal(priceFor(html), 'Desde 399,5 €<small>por persona</small>');
-  assert.equal((html.match(/href="\/viajes\/multi\/"/g) ?? []).length, 2);
-  assert.doesNotMatch(html, /<details[^>]*\sopen[\s>]/);
-  assert.match(html, /role="region" tabindex="0" aria-label="Fechas de Viaje multi"/);
+test('every published trip gets one ticket, in chronological order, with a direct link', () => {
+  const ids = ['04', '02', '01', '03', '05', '08', '07', '06'];
+  const html = renderHomeTrips(shell, ids.map(id => trip(id, {departures: [departure(id, `2027-01-${id}`, 399)]})));
+  const list = tickets(html);
+  assert.equal(list.length, 8);
+  assert.deepEqual(list.map(t => t.match(/href="\/viajes\/(\d+)\/"/)[1]), [...ids].sort());
+  for (const id of ids) assert.match(html, new RegExp(`href="/viajes/${id}/"`));
+  assert.doesNotMatch(html, /home-more-trips|<details/);
+});
+
+test('tickets expose levels for filtering and a filter for each level group', () => {
+  const html = renderHomeTrips(shell, [trip('a', {levels: [3, 1]}), trip('b', {levels: []})]);
+  assert.match(html, /data-levels="1 3"/);
+  assert.match(html, /data-levels="1 2 3 4"/);
+  for (const filter of ['all', '1', '2', '3']) assert.match(html, new RegExp(`data-filter="${filter}"`));
+  assert.match(html, /data-filter="all" aria-pressed="true">[\s\S]*?<span class="hp-chip-label">Todas<\/span>/);
+  // Each filter shows how many trips it keeps: all 2, level I 2, level II 1, levels III-IV 2.
+  for (const [filter, count] of [['all', 2], ['1', 2], ['2', 1], ['3', 2]]) assert.match(html, new RegExp(`data-filter="${filter}"[^]*?<span class="hp-chip-count" aria-label="${count} viajes?">${count}</span>`));
+  // The bar lights levels 1 and 3; the label follows the site-wide level notation.
+  assert.match(html, /<i class="on"><\/i><i><\/i><i class="on"><\/i><i><\/i><em aria-hidden="true">[^<]+<\/em>/);
 });
 
 test('missing and mixed prices never inherit an obsolete trip price', () => {
   let html = renderHomeTrips(shell, [trip('missing', {price: 100, departures: [departure('one', '2027-01-01', null)]})]);
-  assert.equal(priceFor(html), 'Precio por confirmar');
-  assert.doesNotMatch(html, /100 €/);
-  assert.doesNotMatch(html, /<small>por persona/);
+  assert.equal(priceOf(html), 'Precio por confirmar');
+  assert.doesNotMatch(html, /100 €|por persona/);
   html = renderHomeTrips(shell, [trip('mixed', {departures: [departure('one', '2027-01-01', 499), departure('two', '2027-02-01', null)]})]);
-  assert.equal(priceFor(html), 'Desde 499 €<small>por persona</small>');
-  assert.doesNotMatch(panelFor(html), /Precio|€/);
+  assert.equal(priceOf(html), 'desde 499 € por persona');
+  html = renderHomeTrips(shell, [trip('multi', {departures: [departure('one', '2027-01-01', 399.5), departure('two', '2027-02-01', 450)]})]);
+  assert.equal(priceOf(html), 'desde 399,5 € por persona');
+  assert.equal(tagOf(html), '2 fechas · desde 2027-01-01 — fin');
 });
 
-test('all published trips remain reachable, with three chronological highlights', () => {
-  const html = renderHomeTrips(shell, ['04', '02', '01', '03', '05', '08', '07', '06'].map(id => trip(id, {departures: [departure(id, `2027-01-${id}`, 399)]})));
-  const featured = html.split('<details class="home-more-trips">')[0];
-  assert.equal((featured.match(/class="home-trip"/g) ?? []).length, 3);
-  assert.equal((html.match(/class="home-trip"/g) ?? []).length, 8);
-  assert(featured.indexOf('/viajes/01/') < featured.indexOf('/viajes/02/'));
-  for (const id of ['01', '02', '03', '04', '05', '06', '07', '08']) assert.match(html, new RegExp(`href="/viajes/${id}/"`));
+test('dates are compact on the ticket and taken from the earliest departure', () => {
+  const sameMonth = trip('nov', {departures: [{...departure('one', '2026-11-20', 399), date: '20 nov 2026 — 22 nov 2026'}]});
+  const acrossMonths = trip('mar', {departures: [{...departure('one', '2027-02-28', 399), date: '28 feb 2027 — 7 mar 2027'}]});
+  const later = trip('later', {departures: [{...departure('b', '2027-05-01', 399), date: '1 may 2027 — 3 may 2027'}, {...departure('a', '2027-04-01', 399), date: '1 abr 2027 — 3 abr 2027'}]});
+  assert.equal(tagOf(renderHomeTicket(sameMonth)), '20–22 nov');
+  assert.equal(tagOf(renderHomeTicket(acrossMonths)), '28 feb – 7 mar');
+  assert.equal(tagOf(renderHomeTicket(later)), '2 fechas · desde 1–3 abr');
 });
 
 test('full, pending, missing photographs, unusual names and empty catalogue stay honest and safe', () => {
   const html = renderHomeTrips(shell, [trip('full', {name: 'Mar & <olas>', availability: 'full'}), trip('pending', {state: 'upcoming', departures: []})]);
-  assert.match(html, /Completo/);
-  assert.match(html, /Por anunciar/);
+  assert.match(html, /hp-tag-soft">Completo/);
   assert.match(html, /Mar &amp; &lt;olas&gt;/);
-  assert.match(html, /home-trip-placeholder/);
-  assert.doesNotMatch(html, /undefined|NaN|<img[^>]+src=""|forms\.gle/);
+  assert.match(html, /hp-ticket-placeholder/);
+  assert.match(html, /<div class="hp-pending"><h3>Próximamente<\/h3><ul><li><a href="\/viajes\/pending\/">Viaje pending<\/a>/);
+  assert.doesNotMatch(html, /undefined|NaN|<img[^>]+src=""|forms\.gle|Solicitar plaza/);
   assert.match(renderHomeTrips(shell, []), /No hay viajes publicados/);
   assert.throws(() => renderHomeTrips('', []), /Missing home trip/);
 });
 
-test('preview labels the earliest departure and preserves its direct-link description', () => {
-  const html = renderHomeTrips(shell, [trip('independent', {levelRequirement: 'Independencia en el agua: remontar solo.', departures: [departure('later', '2027-02-01', 450), departure('first', '2027-01-01', 399)]})]);
-  const preview = html.match(/<p class="home-trip-preview" id="trip-independent-facts">([\s\S]*?)<\/p>/)[1];
-  assert.equal(preview, '<span class="home-trip-preview-label">Próx. fecha</span><span class="home-trip-preview-date">2027-01-01 — fin</span><span class="home-trip-duration">4 noches</span>');
-  assert.doesNotMatch(preview, /2 fechas|Independencia|<small>/);
-  assert.match(html, /aria-describedby="trip-independent-facts"/);
-  assert.match(html, /aria-labelledby="trip-independent-action trip-independent-title"/);
-  assert.match(html, /id="trip-independent-action"/);
-  assert.doesNotMatch(panelFor(html), /Independencia|Precio|€|disponib|Consulta/);
-  assert.doesNotMatch(html, /home-trip-requirement/);
+test('each ticket has one action, Ver viaje, to the trip page; registration lives in the next-departure card and bar', () => {
+  for (const value of [hossegor(), hossegor({availability: 'full'}), trip('unmapped')]) {
+    const html = renderHomeTicket(value);
+    assert.equal((html.match(/class="hp-btn/g) ?? []).length, 1);
+    assert.match(html, new RegExp(`<a class="hp-btn" href="/viajes/${value.slug}/"[^>]*>Ver viaje</a>`));
+    assert.doesNotMatch(html, /Solicitar plaza|inscripciones|Programa/);
+  }
+  assert.match(renderHomeTicket(trip('pending', {state: 'upcoming', departures: []})), />Ver destino</);
+  assert.match(renderHomeTicket(hossegor({availability: 'last_places'})), /hp-tag-hot">Últimas plazas/);
 });
 
-test('pending cards keep the next-date label without inventing a departure', () => {
-  const html = renderHomeTrips(shell, [trip('pending', {state: 'upcoming', departures: []})]);
-  assert.equal(panelFor(html), null);
-  assert.match(html, /id="trip-pending-facts"><span class="home-trip-preview-label">Próx. fecha<\/span><span class="home-trip-preview-date">Por anunciar<\/span><\/p>/);
-  assert.match(html, /aria-describedby="trip-pending-facts"/);
-  assert.match(html, /<h4 id="trip-pending-title">/);
-  assert.match(html, /Ver destino/);
-  assert.doesNotMatch(html, /data-home-dates/);
+test('the next departure, stats and mobile bar come from requestable departures only', () => {
+  assert.equal(nextDeparture([trip('unmapped')]), null);
+  const html = renderHomeTrips(page, [trip('cheap', {departures: [departure('c', '2027-01-01', 199)]}), hossegor()]);
+  assert.match(html, /<a class="hp-next" href="\/viajes\/hossegor\/">[\s\S]*<strong>Hossegor<\/strong>[\s\S]*20–22 nov 2026 · 399 €/);
+  assert.match(html, /<nav class="hp-bar"[\s\S]*href="\/inscripciones\/hossegor\/\?salida=h1">Solicitar/);
+  assert.match(html, /<strong>1<\/strong><span>salida abierta a inscripción/);
+  assert.match(html, /<strong>199 €<\/strong><span>desde, por persona/);
+  // Long names would not fit the hero line, so only short ones rotate.
+  assert.match(html, /data-words="\[&quot;Hossegor\?&quot;\]"/);
+  const none = renderHomeTrips(page, [trip('unmapped')]);
+  assert.match(none, /<!-- home-next:start --><!-- home-next:end -->/);
+  assert.match(none, /<nav class="hp-bar" aria-label="Contacto">[\s\S]*data-whatsapp="orientacion"/);
+  assert.equal(renderHomeTrips(html, [trip('cheap', {departures: [departure('c', '2027-01-01', 199)]}), hossegor()]), html);
 });
 
-test('date text is escaped in the panel and preview', () => {
-  const date = '1 < 8 & "marzo"';
-  const html = renderHomeTrips(shell, [trip('escaped', {departures: [{...departure('one', '2027-03-01', 399), date}, departure('two', '2027-04-01', 450)]})]);
-  assert.equal(panelFor(html), '<a class="home-trip-dates-link" href="/viajes/escaped/" aria-label="Ver viaje de Viaje escaped"><ul class="home-trip-departures departure-rows"><li class="departure-row"><span class="departure-row-date">1 &lt; 8 &amp; &quot;marzo&quot;</span></li><li class="departure-row"><span class="departure-row-date">2027-04-01 — fin</span></li></ul></a>');
-  assert.match(html, /Próx. fecha<\/span><span class="home-trip-preview-date">1 &lt; 8 &amp; &quot;marzo&quot;<\/span>/);
+test('date text, taglines and photo descriptions are escaped', () => {
+  const html = renderHomeTicket(trip('escaped', {tagline: 'Sal & <mar>', cardImage: '/a.webp', cardImageAlt: 'Foto "propia"', departures: [{...departure('one', '2027-03-01', 399), date: '1 < 8 & "marzo"'}]}));
+  assert.equal(tagOf(html), '1 &lt; 8 &amp; &quot;marzo&quot;');
+  assert.match(html, /<p class="hp-tagline">Sal &amp; &lt;mar&gt;<\/p>/);
+  assert.match(html, /alt="Foto &quot;propia&quot;"/);
 });
 
-
-test('published next dates compact on the card without changing full departure dates', () => {
-  const sameMonth = trip('nov', {departures: [{...departure('one', '2026-11-20', 399), end: '2026-11-22', date: '20 nov 2026 — 22 nov 2026'}]});
-  const acrossMonths = trip('mar', {departures: [{...departure('one', '2027-02-28', 399), end: '2027-03-07', date: '28 feb 2027 — 7 mar 2027'}]});
-  const september = trip('sept', {departures: [{...departure('one', '2027-09-02', 399), end: '2027-09-08', date: '2 sept 2027 — 8 sept 2027'}]});
-  const html = renderHomeTrips(shell, [sameMonth, acrossMonths, september]);
-  assert.match(html, /<span class="home-trip-preview-date">20–22 nov 2026<\/span>/);
-  assert.match(html, /<span class="home-trip-preview-date">28 feb – 7 mar 2027<\/span>/);
-  assert.match(html, /<span class="home-trip-preview-date">2–8 sept 2027<\/span>/);
-  assert.match(renderHomeTrip(sameMonth), /20 nov 2026 — 22 nov 2026/);
-  assert.doesNotMatch(html, /data-home-dates/);
+test('home uses the explicit CMS card photograph and otherwise falls back to the cover', () => {
+  const value = trip('hossegor', {hero: '/cover.webp', heroAlt: 'Portada', cardImage: '/selected.webp', cardImageAlt: 'Foto elegida'});
+  assert.match(renderHomeTrips(shell, [value]), /src="\/selected.webp" alt="Foto elegida"/);
+  assert.match(renderHomeTrip(value, {compact: true}), /src="\/cover.webp"/);
+  assert.match(renderHomeTrips(shell, [{...value, cardImage: undefined}]), /src="\/cover.webp" alt="Portada"/);
 });
 
-
-test('level trips share home cards, pricing and date controls while retaining filter metadata', () => {
+test('level guide cards keep their shared card, date controls and filter metadata', () => {
   const values = [
     trip('multi', {name: 'Mar & <olas>', departures: [departure('one', '2027-01-01', 399.5), departure('two', '2027-02-01', 450)]}),
     trip('full', {availability: 'full'}),
     trip('pending', {state: 'upcoming', departures: []}),
   ];
   for (const value of values) {
-    const home = renderHomeTrips(shell, [value]);
     const guide = renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->', [value]);
-    if (value.departures.length > 1) assert.equal(panelFor(guide), panelFor(home));
-    else { assert.equal(panelFor(home), null); assert.match(guide, /data-home-dates/); }
-    assert.equal(priceFor(guide), priceFor(home));
     assert.match(guide, /<article data-trip-levels="1 2" data-trip-name=/);
     assert.match(guide, /class="home-trip guide-trip-card(?: home-trip-pending)?" data-compact-home/);
     assert.match(guide, new RegExp('id="guide-trip-' + value.id + '-title"'));
-    assert.match(guide, /class="home-trip-grid"/);
-    assert.doesNotMatch(guide, /guide-trip-date|guide-trip-action|guide-trip-levels|<a class="guide-trip-card"/);
     if (value.state === 'upcoming') assert.match(guide, /<details class="guide-trip-group guide-trip-pending"/);
+    else assert.match(guide, /data-home-dates/);
   }
 });
 
@@ -124,22 +128,4 @@ test('empty level collections preserve the help and native empty-state contract'
   assert.match(html, /No hay viajes publicados para este nivel/);
   assert.doesNotMatch(html, /<article/);
   assert.throws(() => renderLevelTrips('', []), /Missing guide trip generation markers/);
-});
-
-
-test('home removes redundant date controls without changing shared catalogue and guide cards', () => {
-  for (const departures of [[], [departure('one', '2027-01-01', 399)]]) {
-    const value=trip('one-date', {departures});
-    assert.doesNotMatch(renderHomeTrips(shell,[value]), /data-home-dates/);
-    assert.match(renderHomeTrip(value,{compact:true}), /data-home-dates/);
-  }
-  const value=trip('multiple', {departures:[departure('one','2027-01-01',399),departure('two','2027-02-01',450)]});
-  assert.match(renderHomeTrips(shell,[value]), /data-home-dates/);
-});
-
-test('home uses the explicit CMS card photograph and otherwise falls back to the cover', () => {
-  const value=trip('hossegor',{hero:'/cover.webp',heroAlt:'Portada',cardImage:'/selected.webp',cardImageAlt:'Foto elegida',gallery:[['/coast.webp','Grupo observando el mar','Viaje anterior']]});
-  assert.match(renderHomeTrips(shell,[value]), /src="\/selected.webp" alt="Foto elegida"/);
-  assert.match(renderHomeTrip(value,{compact:true}), /src="\/cover.webp"/);
-  assert.match(renderHomeTrips(shell,[{...value,cardImage:undefined}]), /src="\/cover.webp"/);
 });

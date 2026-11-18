@@ -1,3 +1,6 @@
+import {levelTitle} from './surf-levels.mjs';
+export {surfLevelOptions} from './surf-levels.mjs';
+
 // Presentation helpers. Programme text, prices and availability remain owned by the CMS.
 export function programmeSummary(trip) {
   if (trip.state !== 'confirmed') return [];
@@ -6,10 +9,13 @@ export function programmeSummary(trip) {
   return [...new Set(patterns.map(pattern => items.find(item => pattern.test(item))).filter(Boolean))];
 }
 
-export const surfLevelOptions = ['I · Rookies — Iniciación', 'II · Aprendices — Primeras paredes', 'III · Riders — Mejorar maniobras', 'IV · Supercracks — Surf avanzado'];
-
+// Sanity profile titles may still use the old Roman numerals or names
+// («Nivel II · Intermedio bajo»): show the current level name instead.
+const ROMAN_LEVELS = {I: 1, II: 2, III: 3, IV: 4};
 export function levelProfileTitle(title) {
-  return new Map([['Nivel I · Iniciación', 'Nivel I · Rookies'], ['Nivel II · Intermedio bajo', 'Nivel II · Aprendices']]).get(title) ?? title;
+  const match = /^Nivel\s+(IV|I{1,3}|[1-4])\b/.exec(title ?? '');
+  if (!match) return title;
+  return levelTitle(ROMAN_LEVELS[match[1]] ?? Number(match[1]));
 }
 
 export function compactDepartureDate(departure) {

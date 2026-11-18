@@ -55,8 +55,8 @@ test('inclusions and exclusions remain clear without the removed payment and can
 
 test('level names agree with the guide while custom editorial headings and numeric Brevo values survive',()=>{
   const html=renderTrip(morocco,trips),form=renderRegistration(morocco);
-  for(const name of ['Rookies','Aprendices']){assert(html.includes(name));assert(form.includes(name));}
-  for(const [value,label] of [[1,'Rookies'],[2,'Aprendices'],[3,'Riders'],[4,'Supercracks']])assert.match(form,new RegExp(`name="NIVEL_SURF" value="${value}" required><span>[^<]*${label}`));
+  for(const name of ['Iniciación','Base']){assert(html.includes(name));assert(form.includes(name));}
+  for(const [value,label] of [[1,'Iniciación'],[2,'Base'],[3,'Intermedio'],[4,'Avanzado']])assert.match(form,new RegExp(`name="NIVEL_SURF" value="${value}" required><span>[^<]*${label}`));
   assert.equal(levelProfileTitle('Mi grupo especial'),'Mi grupo especial');assert.equal(levelProfileTitle('toString'),'toString');
   assert(form.includes('data-date-picker open'));assert(form.includes('data-selected-fare'));
   assert(form.includes('Enviar solicitud'));assert.equal((form.match(/data-registration-step="/g)||[]).length,5);

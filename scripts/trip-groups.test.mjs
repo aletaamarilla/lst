@@ -33,7 +33,7 @@ test('eight source dates become seven trips: two Morocco programmes and one Mald
  assert.deepEqual(trips.map(t=>t.name).sort(),['El Palmar','Fuerteventura','Hossegor','Maldivas','Marruecos','Marruecos avanzado','Senegal']);
  const trip=trips.find(t=>t.slug==='maldivas');
  assert.deepEqual(trip.aliases,maldives);assert.equal(trip.departures.length,2);
- assert.deepEqual(levelsFor(trip),[2,3]);assert.equal(levelLabel(trip),'Niveles II–III');
+ assert.deepEqual(levelsFor(trip),[2,3]);assert.equal(levelLabel(trip),'Niveles 2–3');
  assert.deepEqual(trip.departures.map(d=>d.dossier),maldives.map(slug=>'https://example.com/'+slug+'.pdf'));
  assert(trip.departures.every(d=>d.capacity.total===10));
  for(const d of trip.departures){assert.equal(d.levels,undefined);assert.equal(d.programme,undefined);assert(renderTrip(trip).includes(encodeURIComponent(departureMessage(trip,d))));}
@@ -55,7 +55,7 @@ test('each Morocco product retains its own programme, material, requirements and
  assert(basic.includes.includes('Material de iniciación y neoprenos'));
  assert(!advanced.includes.includes('Material de iniciación y neoprenos'));
  assert(advanced.includes.includes('Surf coaching intensivo con Lucas'));
- assert.equal(tripFacts(advanced)[2][1],'Nivel III · '+advanced.levelRequirement);
+ assert.equal(tripFacts(advanced)[2][1],'Nivel 3 · '+advanced.levelRequirement);
 });
 
 test('stale per-date levels, requirements or programmes fail before publication',()=>{
@@ -80,7 +80,7 @@ test('all discovery views expose independent Morocco cards with a fixed range',(
  const trips=adaptTrips(documents()).filter(t=>t.slug.startsWith('marruecos'));
  for(const html of [renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->',trips),renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips),renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->',trips)]){
   assert(html.includes('/viajes/marruecos/'));assert(html.includes('/viajes/marruecos-avanzado/'));
-  assert(html.includes('Marruecos avanzado'));assert(html.includes('Niveles I–II'));assert(html.includes('Nivel III'));
+  assert(html.includes('Marruecos avanzado'));assert(html.includes('Niveles 1–2'));assert(html.includes('Nivel 3'));
   assert(!html.includes('Nivel según la fecha'));
  }
  const catalog=renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips);
