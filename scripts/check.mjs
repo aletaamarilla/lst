@@ -8,6 +8,8 @@ import {brevoConfig, registrationDepartures} from './brevo.mjs';
 import {renderCatalog} from './render-catalog.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
 import {renderHomeTrips} from './render-home-trips.mjs';
+import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
+const site=siteConfig();
 const root=path.resolve(process.argv.find(a=>a.startsWith('--dir='))?.slice(6)??'dist');
 const args=process.argv.slice(2);
 if(args.some(a=>!a.startsWith('--dir=')))throw Error('Uso: check.mjs [--dir=/ruta/local]');
@@ -26,8 +28,8 @@ for(const [file,render] of [['index.html',renderHomeTrips],['viajes/index.html',
  const current=await readFile(path.join(root,file),'utf8');
  if(render(current,trips)!==current)errors.push(`Generated view out of date: ${file}`);
 }
-for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');if(current!==renderTrip(t,trips))errors.push(`Trip page out of date: ${slug}`);}
-for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const file=path.join(root,'inscripciones',slug,'index.html');const html=await readFile(file,'utf8');if(html!==renderRegistration(t,slug))errors.push(`Registration page out of date: ${slug}`);if(registrationDepartures(t).length&&!html.includes(`action="${brevoConfig.action}"`))errors.push(`Brevo endpoint missing: ${slug}`);}
+for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');if(current!==applySiteMeta(renderTrip(t,trips),pageMeta(`/viajes/${slug}/`,trips,site),site))errors.push(`Trip page out of date: ${slug}`);}
+for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const file=path.join(root,'inscripciones',slug,'index.html');const html=await readFile(file,'utf8');if(html!==applySiteMeta(renderRegistration(t,slug),pageMeta(`/inscripciones/${slug}/`,trips,site),site))errors.push(`Registration page out of date: ${slug}`);if(registrationDepartures(t).length&&!html.includes(`action="${brevoConfig.action}"`))errors.push(`Brevo endpoint missing: ${slug}`);}
 async function walk(dir){const files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else files.push(p);}return files;}
 const files=await walk(root);
 const pages=new Map();
@@ -37,7 +39,7 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
  pages.set(file,{html,ids});
  if(!file.startsWith(path.join(root,'inscripciones')+path.sep)&&!/<header[^>]*>[\s\S]*?href="\/niveles\/"[\s\S]*?<\/header>/.test(html))errors.push(`Missing level guide in header: ${file}`);
  if((html.match(/<h1\b/g)||[]).length!==1)errors.push(`Expected one page heading: ${file}`);
- if(!html.includes('noindex,nofollow'))errors.push(`Prototype noindex missing: ${file}`);
+ if(applySiteMeta(html,pageMeta(routeOf(path.relative(root,file)),trips,site),site)!==html)errors.push(`Robots/canonical out of date for this deployment: ${file}`);
  if((!file.startsWith(path.join(root,'inscripciones')+path.sep)&&/<form\b|type="email"/.test(html))||/mailto:|data-details=/.test(html))errors.push(`Legacy form or modal trip action: ${file}`);
  const contacts=[...html.matchAll(/data-whatsapp="([^"]+)" href="([^"]+)"/g)];
  if(!contacts.length)errors.push(`Missing contact: ${file}`);
@@ -55,6 +57,12 @@ for(const [file,{html,ids}] of pages){
  }
 }
 for(const file of files.filter(f=>f.endsWith('.css'))){const css=await readFile(file,'utf8');for(const m of css.matchAll(/url\(['"]?([^)'" ]+)/g)){if(m[1].startsWith('/'))try{await access(path.join(root,m[1]));}catch{errors.push(`Missing CSS asset ${m[1]}`)}}}
+// Crawler files must describe exactly the pages of this deployment.
+const publicRoutes=[...pages.keys()].map(file=>routeOf(path.relative(root,file)));
+for(const [name,expected] of [['robots.txt',robotsTxt(site)],['sitemap.xml',sitemapXml(publicRoutes,trips,site)]]){
+ const current=await readFile(path.join(root,name),'utf8').catch(()=>null);
+ if(current!==expected)errors.push(`${name} missing or out of date for this deployment`);
+}
 // Route expectations grow with trip data; retain all per-page checks above.
 const routes=['/', '/niveles/', '/conocenos/', '/viajes/', '/preguntas-frecuentes/', ...trips.flatMap(t=>[`/viajes/${t.slug}/`,`/inscripciones/${t.slug}/`])];
 for(const route of routes){if(!pages.has(path.join(root,route,'index.html')))errors.push(`Missing expected route ${route}`);}
@@ -121,4 +129,4 @@ for(const route of ['/niveles/','/conocenos/','/viajes/','/preguntas-frecuentes/
 const homeFaq=home.match(/<section class="faq\b[\s\S]*?<\/section>/)?.[0]??'';
 if(!homeFaq.includes('href="/preguntas-frecuentes/"')||(homeFaq.match(/<details>/g)??[]).length>3)errors.push('Keep a short home FAQ summary with a link to all questions');
 if(errors.length)throw Error(errors.join('\n'));
-console.log(`PASS: ${pages.size} pages, independent routes, all local links/anchors/assets, contextual WhatsApp, published catalogue, optional data and pending states, modal dates and fixed inclusions, JavaScript and noindex.`);
+console.log(`PASS: ${pages.size} pages, independent routes, all local links/anchors/assets, contextual WhatsApp, published catalogue, optional data and pending states, modal dates and fixed inclusions, JavaScript, robots/canonical (${site.indexable?'indexable':'noindex'} at ${site.origin}), robots.txt and sitemap.`);

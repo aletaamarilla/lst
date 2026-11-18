@@ -1,8 +1,13 @@
 import {renderDepartureRows} from './render-departure-rows.mjs';
 import {departuresFor, levelLabel, tripPrice, tripPriceDetails, formatPrice, availabilityLabel} from './trip-model.mjs';
 import {promotionCondition} from './trip-pricing.mjs';
+import {sizedPhoto, photoSrcset} from './photo.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+
+// Cards span one, two or three columns depending on the viewport.
+const cardWidths = [500, 1000, 1600];
+const cardSizes = '(min-width: 1100px) 33vw, (min-width: 700px) 50vw, 100vw';
 
 // Keep the next date on one line when the published range allows it.
 const compactDate = value => {
@@ -37,7 +42,7 @@ export function renderHomeTrip(trip, {heading, idPrefix = 'trip', compact = fals
     const dateControl = !homepage || departures.length > 1;
     const description = homepage && dated && trip.tagline && trip.tagline !== trip.name ? `<p class="home-trip-description">${escape(trip.tagline)}</p>` : '';
     return `<article class="home-trip${dated ? '' : ' home-trip-pending'}" ${compact ? 'data-compact-home ' : ''}aria-labelledby="${idPrefix}-${id}-title">
-<div class="home-trip-media">${image ? `<img class="home-trip-photo" src="${escape(image)}" alt="${escape(imageAlt)}" width="1000" height="600" loading="lazy" decoding="async">` : '<div class="home-trip-placeholder" aria-hidden="true">LST</div>'}
+<div class="home-trip-media">${image ? `<img class="home-trip-photo" src="${escape(sizedPhoto(image, 1000))}"${photoSrcset(image, cardWidths) ? ` srcset="${escape(photoSrcset(image, cardWidths))}" sizes="${cardSizes}"` : ''} alt="${escape(imageAlt)}" width="1000" height="600" loading="lazy" decoding="async">` : '<div class="home-trip-placeholder" aria-hidden="true">LST</div>'}
 <span class="home-trip-level">${escape(levelLabel(trip))}</span>${status}<${heading} id="${idPrefix}-${id}-title">${escape(trip.name)}</${heading}>
 ${dateControl ? `<details class="home-trip-dates" data-home-dates><summary aria-label="Ver fechas de ${escape(trip.name)}"><span class="home-trip-dates-label"><span class="dates-label-closed">Ver fechas</span><span class="dates-label-open">Cerrar ×</span></span></summary><div class="home-trip-dates-panel" role="region" tabindex="0" aria-label="Fechas de ${escape(trip.name)}">${dates}</div></details>` : ''}
 </div><p class="home-trip-preview" id="${idPrefix}-${id}-facts"><span class="home-trip-preview-label">${escape(previewLabel)}</span><span class="home-trip-preview-date">${escape(preview)}</span>${compact && shownDate?.duration && shownDate.duration !== 'Por confirmar' ? `<span class="home-trip-duration">${escape(shownDate.duration)}</span>` : ''}</p>${description}${footer}</article>`;

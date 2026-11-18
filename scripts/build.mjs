@@ -8,13 +8,24 @@ import {renderRegistration} from './render-registration.mjs';
 import {renderCatalog} from './render-catalog.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
 import {renderHomeTrips} from './render-home-trips.mjs';
+import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
 
 export const legacySlugs = ['el-salvador', 'asturias', 'azores', 'euskadi', 'marruecos', 'cadiz'];
 export function unavailablePage() {
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFAE7"><title>Viaje no disponible · Let’s Surf Together</title><meta name="description" content="Consulta las próximas salidas de Let’s Surf Together."><link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"><link rel="preload" href="/assets/fonts/aura.ttf" as="font" type="font/ttf" crossorigin><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/trip.css"></head><body class="trip-page"><a class="skip-link" href="#contenido">Saltar al contenido</a><header class="trip-header"><a class="brand" href="/" aria-label="Let’s Surf Together, inicio"><img src="/assets/brand/logo-black.svg" alt="Let’s Surf Together" width="774" height="126"></a><nav class="trip-header-nav" aria-label="Navegación principal"><a class="trip-back" href="/viajes/">Viajes</a><a class="trip-header-levels" href="/niveles/">Niveles</a></nav></header><main id="contenido" class="trip-shell section-space"><section class="trip-summary"><p class="eyebrow">VIAJES DE SURF</p><h1>Este viaje no está publicado.</h1><p>Consulta las próximas salidas con el equipo.</p><p><a class="text-link" href="/viajes/">Ver todos los viajes</a></p><a class="button" data-whatsapp="general" href="https://wa.me/34648189257?text=Hola%20LST%2C%20quiero%20consultar%20las%20pr%C3%B3ximas%20salidas." target="_blank" rel="noopener noreferrer">Consultar por WhatsApp</a></section></main><footer class="trip-footer trip-shell"><a href="/">Let’s Surf Together</a><a href="/conocenos/">Conócenos</a><a href="/preguntas-frecuentes/">FAQs</a></footer></body></html>`;
 }
 
-export async function buildSite({out = 'dist', read = readPublishedTrips, template = 'dist'} = {}) {
+async function htmlFiles(dir, base = dir) {
+  const found = [];
+  for (const entry of await readdir(dir, {withFileTypes: true})) {
+    const file = path.join(dir, entry.name);
+    if (entry.isDirectory()) found.push(...await htmlFiles(file, base));
+    else if (entry.name === 'index.html') found.push(path.relative(base, file));
+  }
+  return found;
+}
+
+export async function buildSite({out = 'dist', read = readPublishedTrips, template = 'dist', site = siteConfig()} = {}) {
   const target = path.resolve(out);
   // Fetch once and validate everything before touching the existing output.
   const trips = adaptTrips(await read());
@@ -58,6 +69,16 @@ export async function buildSite({out = 'dist', read = readPublishedTrips, templa
       const output = path.join(stage, file);
       await writeFile(output, render(await readFile(output, 'utf8'), trips));
     }
+    // Canonical URL and indexing for every page, then the crawler files that list them.
+    const routes = [];
+    for (const file of await htmlFiles(stage)) {
+      const route = routeOf(file);
+      routes.push(route);
+      const output = path.join(stage, file);
+      await writeFile(output, applySiteMeta(await readFile(output, 'utf8'), pageMeta(route, trips, site), site));
+    }
+    await writeFile(path.join(stage, 'robots.txt'), robotsTxt(site));
+    await writeFile(path.join(stage, 'sitemap.xml'), sitemapXml(routes, trips, site));
     // Only the whitelisted public model; never tokens, raw CMS documents or import evidence.
     await writeFile(path.join(stage, 'catalog-snapshot.json'), JSON.stringify({source: 'sanity-published', trips}, null, 2) + '\n');
     try { await rename(target, backup); moved = true; } catch (error) { if (error.code !== 'ENOENT') throw error; }

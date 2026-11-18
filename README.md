@@ -18,6 +18,15 @@ npm run dev
 
 Abrir http://localhost:4175. `npm run dev` conserva una previsualización local de promociones si existe `artifacts/local-trip-preview.json` (copia privada de los borradores preparados). Regenera las cuatro vistas desde las plantillas actuales en cada petición y no escribe en `dist` ni en Sanity. Sin esa copia usa `dist`. `npm run preview` sirve exactamente `dist`, y `npm run build` sigue leyendo solo documentos publicados. El snapshot de desarrollo se identifica como `sanity-local-preview`; no debe usarse como fuente de publicación. El servidor entrega Content-Type y evita caché. La home se edita en dist/index.html. Las páginas de viaje, catálogo, niveles y tarjetas de home se generan desde Sanity publicado mediante `scripts/build.mjs` con `npm run build`. Las salidas HTML se versionan para despliegue estático. El comprobador verifica que no estén desactualizadas.
 
+## Dominio e indexación
+
+El build decide el dominio público y si los buscadores pueden indexar, según dos variables de entorno (ver `scripts/site-meta.mjs`):
+
+- `SITE_URL`: dominio definitivo, por ejemplo `https://www.letsurftogether.com`. Sin ella se usa la URL de pruebas.
+- `SITE_INDEXABLE=1`: abre la indexación. Exige `SITE_URL` con el dominio definitivo; el build falla si apunta a `*.vercel.app`.
+
+Sin variables (local, previsualizaciones y el `dist` versionado) todo queda en `noindex` y `robots.txt` bloquea el rastreo. Para el lanzamiento, definir ambas solo en el entorno **Production** de Vercel y redesplegar. El build escribe `canonical`, `og:url`, `robots.txt` y `sitemap.xml`; las inscripciones y los avisos de viaje no publicado nunca se indexan, y las URLs fechadas apuntan como canónica a la ficha principal. `npm run check` comprueba que todo coincide con las variables del entorno donde se ejecuta.
+
 ## Estructura
 
 - dist/index.html: home, calendario y resumen de niveles.
