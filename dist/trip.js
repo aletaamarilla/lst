@@ -179,6 +179,28 @@ if (departureDialog) {
   [departureDialog, ...fixedParts].forEach(part => datesObserver.observe(part));
 }
 
+// Section menu: marks the section being read and keeps its chip visible.
+const sectionNav = document.querySelector('.tp-sections');
+if (sectionNav && 'IntersectionObserver' in window) {
+  const links = new Map([...sectionNav.querySelectorAll('a[href^="#"]')].map(link => [link.hash.slice(1), link]));
+  const track = sectionNav.querySelector('.tp-sections-track');
+  const visible = new Map();
+  const mark = () => {
+    const current = [...visible.entries()].filter(([, ratio]) => ratio > 0).sort((a, b) => document.getElementById(a[0]).offsetTop - document.getElementById(b[0]).offsetTop).pop()?.[0];
+    links.forEach((link, id) => id === current ? link.setAttribute('aria-current', 'location') : link.removeAttribute('aria-current'));
+    const active = current && links.get(current);
+    if (active && track) {
+      const frame = track.getBoundingClientRect(), bounds = active.getBoundingClientRect();
+      if (bounds.left < frame.left || bounds.right > frame.right) track.scrollBy({left: bounds.left - frame.left - 16, behavior: reducedMotion.matches ? 'instant' : 'smooth'});
+    }
+  };
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => visible.set(entry.target.id, entry.isIntersecting && entry.boundingClientRect.top < window.innerHeight * .45 ? 1 : 0));
+    mark();
+  }, {rootMargin: '0px 0px -55% 0px'});
+  links.forEach((_, id) => { const section = document.getElementById(id); if (section) observer.observe(section); });
+}
+
 // One native-scrolling controller keeps hero thumbnails, touch and keyboard in sync.
 document.querySelectorAll('[data-carousel]').forEach(carousel => {
   const track = carousel.querySelector('[data-carousel-track]');
@@ -257,3 +279,4 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
   }).observe(track);
   update();
 });
+
