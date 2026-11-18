@@ -32,6 +32,13 @@ birthDate?.addEventListener('input', () => {
   birthDate.setCustomValidity(Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === `${year}-${month}-${day}` ? '' : 'Introduce una fecha válida.');
 });
 
+// Health details are optional; once given, their specific consent becomes required.
+const healthConsent = document.querySelector('[data-consent="health"]');
+const healthFields = ['#ALERGIAS_INTOLERANCIAS', '#ENFERMEDAD_PROBLEMA'].map(id => document.querySelector(id)).filter(Boolean);
+const updateHealthConsent = () => { if (healthConsent) healthConsent.required = healthFields.some(input => input.value.trim()); };
+healthFields.forEach(input => input.addEventListener('input', updateHealthConsent));
+updateHealthConsent();
+
 function createSteps(form) {
   const sections = [...form.querySelectorAll('[data-registration-step]')];
   const progress = form.querySelector('.registration-progress');

@@ -8,6 +8,7 @@ import {brevoConfig, registrationDepartures} from './brevo.mjs';
 import {renderCatalog} from './render-catalog.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
 import {renderHomeTrips} from './render-home-trips.mjs';
+import {legalRoutes} from './legal.mjs';
 import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
 const site=siteConfig();
 const root=path.resolve(process.argv.find(a=>a.startsWith('--dir='))?.slice(6)??'dist');
@@ -39,6 +40,8 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
  pages.set(file,{html,ids});
  if(!file.startsWith(path.join(root,'inscripciones')+path.sep)&&!/<header[^>]*>[\s\S]*?href="\/niveles\/"[\s\S]*?<\/header>/.test(html))errors.push(`Missing level guide in header: ${file}`);
  if((html.match(/<h1\b/g)||[]).length!==1)errors.push(`Expected one page heading: ${file}`);
+ for(const route of legalRoutes)if(!html.includes(`href="${route}"`))errors.push(`Missing legal link ${route}: ${file}`);
+ if(site.indexable&&html.includes('[PENDIENTE'))errors.push(`Pending legal text cannot be published as indexable: ${file}`);
  if(applySiteMeta(html,pageMeta(routeOf(path.relative(root,file)),trips,site),site)!==html)errors.push(`Robots/canonical out of date for this deployment: ${file}`);
  if((!file.startsWith(path.join(root,'inscripciones')+path.sep)&&/<form\b|type="email"/.test(html))||/mailto:|data-details=/.test(html))errors.push(`Legacy form or modal trip action: ${file}`);
  const contacts=[...html.matchAll(/data-whatsapp="([^"]+)" href="([^"]+)"/g)];
@@ -64,7 +67,7 @@ for(const [name,expected] of [['robots.txt',robotsTxt(site)],['sitemap.xml',site
  if(current!==expected)errors.push(`${name} missing or out of date for this deployment`);
 }
 // Route expectations grow with trip data; retain all per-page checks above.
-const routes=['/', '/niveles/', '/conocenos/', '/viajes/', '/preguntas-frecuentes/', ...trips.flatMap(t=>[`/viajes/${t.slug}/`,`/inscripciones/${t.slug}/`])];
+const routes=['/', '/niveles/', '/conocenos/', '/viajes/', '/preguntas-frecuentes/', ...legalRoutes, ...trips.flatMap(t=>[`/viajes/${t.slug}/`,`/inscripciones/${t.slug}/`])];
 for(const route of routes){if(!pages.has(path.join(root,route,'index.html')))errors.push(`Missing expected route ${route}`);}
 const guide=pages.get(path.join(root,'niveles/index.html'));
 if(guide){

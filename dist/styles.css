@@ -83,3 +83,8 @@
 
 /* Shared line icons follow the 24px, 1.7 stroke system of Plan de surf. */
 .lst-line-icon{display:block;flex-shrink:0;width:32px;height:32px;color:inherit}
+
+/* Legal links, shared by every footer. */
+.footer-legal{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:12px;line-height:1.6}
+.footer-legal a{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-underline-offset:3px}
+.lst-footer .footer-legal{margin-top:10px}
