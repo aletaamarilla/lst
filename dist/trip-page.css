@@ -131,7 +131,7 @@ body.tp.trip-designed .trip-alternative:hover{background:var(--tp-paper);color:v
 body.tp.trip-designed .trip-programme{--band:var(--tp-sea);color:var(--tp-paper);margin-top:28px;padding:64px 0 80px}
 body.tp.trip-designed .trip-programme h2{color:var(--tp-paper)}
 body.tp.trip-designed .day-rhythm{margin:8px 0 40px;padding:0;border:0;background:none;color:inherit}
-body.tp.trip-designed .day-rhythm>strong{display:block;font:700 12px var(--tp-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--tp-orange);margin-bottom:18px}
+body.tp.trip-designed .day-rhythm>strong{display:inline-block;font:700 12px var(--tp-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--tp-ink);background:var(--tp-orange);padding:7px 12px;border-radius:999px;margin-bottom:22px}
 body.tp.trip-designed .day-sequence{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none;counter-reset:tp-step}
 body.tp.trip-designed .day-sequence::before{content:"";position:absolute;left:8%;right:8%;top:34px;height:14px;background:var(--tp-orange);opacity:.55;
  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 14'%3E%3Cpath d='M0 7c7.5-7 15-7 22.5 0S37.5 14 45 7 52.5 0 60 7' fill='none' stroke='black' stroke-width='2.4'/%3E%3C/svg%3E") 0 0/60px 14px repeat-x;
@@ -289,11 +289,11 @@ body.tp.trip-designed .booking-card-top{display:flex;justify-content:space-betwe
 body.tp.trip-designed .booking-trip-name{margin:0;font-family:var(--tp-display);text-transform:uppercase;font-size:24px;line-height:1}
 body.tp.trip-designed .booking-status{margin:0;padding:5px 10px;border-radius:999px;font:700 10px var(--tp-mono);letter-spacing:.04em;background:var(--tp-orange);color:var(--tp-ink);border:0}
 body.tp.trip-designed .booking-status[data-tone="quiet"]{background:rgba(255,250,231,.14);color:var(--tp-paper)}
-body.tp.trip-designed .booking-card-price{margin:0;font-family:var(--tp-display);line-height:.86}
+body.tp.trip-designed .booking-card-price{margin:0 24px;font-family:var(--tp-display);line-height:.86}
 body.tp.trip-designed .booking-card-price strong{font-family:var(--tp-display);font-weight:400;font-size:76px;letter-spacing:0;color:var(--tp-paper)}
 body.tp.trip-designed .booking-card-price del{display:block;font:700 13px var(--tp-mono);color:rgba(255,250,231,.55)}
-body.tp.trip-designed .booking-card-price-note{margin:6px 0 0;font:700 11px var(--tp-mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,250,231,.6)}
-body.tp.trip-designed .booking-card .trip-offer{margin-top:12px;border-radius:12px;background:rgba(234,89,52,.16);border:0;color:var(--tp-paper)}
+body.tp.trip-designed .booking-card-price-note{margin:8px 24px 0;font:700 11px var(--tp-mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,250,231,.85)}
+body.tp.trip-designed .booking-card .trip-offer{margin:12px 24px 0;border-radius:12px;background:rgba(234,89,52,.16);border:0;color:var(--tp-paper)}
 body.tp.trip-designed .booking-essentials{position:relative;margin:22px 0 0;padding:20px 24px;border-top:2px dashed rgba(255,250,231,.25)}
 body.tp.trip-designed .booking-date{display:flex;gap:10px;align-items:center;margin:0 0 12px;font-size:15px;font-weight:600;color:var(--tp-paper)}
 body.tp.trip-designed .booking-date svg{color:var(--tp-orange)}
@@ -413,6 +413,17 @@ body.tp.trip-designed .day-sequence .rhythm-icon svg{color:var(--tp-sea);stroke:
 body.tp.trip-designed .day-sequence .rhythm-icon svg *{stroke:currentColor}
 body.tp.trip-designed .day-sequence .rhythm-icon svg .icon-accent{stroke:var(--tp-orange)}
 body.tp.trip-designed .tp-sections-track{-webkit-mask:linear-gradient(90deg,#000 calc(100% - 40px),transparent);mask:linear-gradient(90deg,#000 calc(100% - 40px),transparent)}
+
+/* En la banda mar todo el texto va en papel sólido: nada de grises sobre el verde. */
+body.tp.trip-designed .trip-programme :is(p,li,span,figcaption,small){color:var(--tp-paper)}
+body.tp.trip-designed .trip-programme .day-rhythm>p{font-size:16px;line-height:1.55}
+body.tp.trip-designed .trip-programme .surf-plan-grid p{font-size:17px;line-height:1.55}
+body.tp.trip-designed .trip-programme .visual-card-index,body.tp.trip-designed .trip-programme .rhythm-icon *{color:inherit}
+body.tp.trip-designed .trip-programme .visual-card-index{color:var(--tp-orange)}
+body.tp.trip-designed .trip-programme .day-rhythm>strong{color:var(--tp-ink)}
+body.tp.trip-designed .trip-programme .day-sequence .rhythm-icon{color:var(--tp-sea)}
+body.tp.trip-designed .trip-programme .day-sequence .rhythm-icon svg{color:var(--tp-sea)}
+body.tp.trip-designed .trip-programme .trip-team-roles li{color:var(--tp-paper)}
 
 /* ---------- PANTALLAS MAYORES ---------- */
 @media (min-width:700px){
