@@ -11,7 +11,7 @@ const cardWidths = [500, 1000, 1600];
 const cardSizes = '(min-width: 1100px) 33vw, (min-width: 700px) 50vw, 100vw';
 
 // Keep the next date on one line when the published range allows it.
-const compactDate = value => {
+export const compactDate = value => {
   const match = /^(\d{1,2}) ([a-z]{3,4}) (\d{4}) — (\d{1,2}) ([a-z]{3,4}) (\d{4})$/i.exec(value);
   if (!match) return value;
   const [, firstDay, firstMonth, firstYear, lastDay, lastMonth, lastYear] = match;

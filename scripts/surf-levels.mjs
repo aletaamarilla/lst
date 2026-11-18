@@ -3,10 +3,10 @@
 // Trip levels in Sanity stay the integers 1–4; they map 1:1 to these levels.
 
 export const SURF_LEVELS = Object.freeze([
-  {n: 1, name: 'Iniciación', tag: 'De la espuma a la primera ola verde', short: 'Espumas, ponerte de pie y tus primeras olas verdes.', wave: 'Espuma → olas verdes de hasta 0,8 m', board: 'Siempre soft (6\'6"–9\')'},
-  {n: 2, name: 'Base', tag: 'Leer la ola y moverse por la pared', short: 'Lees la ola, recorres la pared y aprendes el pato.', wave: '0,5–1,2 m', board: 'Fibra o soft grande → tabla que se hunde (5\'10"–9\')'},
-  {n: 3, name: 'Intermedio', tag: 'Independencia, línea y primeras maniobras', short: 'Independencia en el agua, velocidad y primeras maniobras.', wave: '1–1,8 m', board: 'Cualquier tabla que se hunda (5\'6"–7\'6")'},
-  {n: 4, name: 'Avanzado', tag: 'Maniobras consistentes y surf crítico', short: 'Maniobras consistentes, tubos y olas con fuerza.', wave: '1,5 m → cualquier condición', board: 'Distintas tablas según el día: corta, step-up, twin…'},
+  {n: 1, name: 'Iniciación', tag: 'De la espuma a la primera ola verde', short: 'Espumas, ponerte de pie y tus primeras olas verdes.', waveShort: 'Espuma a 0,8 m', wave: 'De la espuma a olas verdes de hasta 0,8 m', board: 'Siempre blanda (soft), de 6\'6" a 9\''},
+  {n: 2, name: 'Base', tag: 'Leer la ola y moverse por la pared', short: 'Lees la ola, recorres la pared y aprendes el pato.', waveShort: '0,5 a 1,2 m', wave: 'De 0,5 a 1,2 m', board: 'De fibra o soft grande, hasta una que ya se hunda (de 5\'10" a 9\')'},
+  {n: 3, name: 'Intermedio', tag: 'Independencia, línea y primeras maniobras', short: 'Independencia en el agua, velocidad y primeras maniobras.', waveShort: '1 a 1,8 m', wave: 'De 1 a 1,8 m', board: 'Cualquier tabla que se hunda (de 5\'6" a 7\'6")'},
+  {n: 4, name: 'Avanzado', tag: 'Maniobras consistentes y surf crítico', short: 'Maniobras consistentes, tubos y olas con fuerza.', waveShort: 'Desde 1,5 m', wave: 'Desde 1,5 m, en cualquier condición', board: 'Varias según el día: corta, step-up, twin…'},
 ]);
 
 export const levelName = n => SURF_LEVELS[n - 1]?.name;
@@ -14,12 +14,6 @@ export const levelName = n => SURF_LEVELS[n - 1]?.name;
 export const levelTitle = n => `Nivel ${n} · ${levelName(n)}`;
 /** Registration choices: «2 · Base — Leer la ola y moverse por la pared» */
 export const surfLevelOptions = SURF_LEVELS.map(l => `${l.n} · ${l.name} — ${l.tag}`);
-
-export const PHASES = Object.freeze([
-  {range: 'Fase 1 · 1.1 – 2.1', name: 'Bases', text: 'Seguridad, postura, remada y aprender a coger y leer la ola.'},
-  {range: 'Fase 2 · 2.2 – 4.1', name: 'Método LST', lst: true, text: 'Línea, velocidad (speed) y timing.'},
-  {range: 'Fase 3 · 4.2 en adelante', name: 'Rendimiento', text: 'Compromiso en la sección crítica, estilo propio y competición.'},
-]);
 
 // Sublevels: c code, t title, w waves, lst Método LST, d description,
 // b board [name, note], can «Ya hace», cant «Todavía no», work, err.
@@ -77,61 +71,69 @@ export function testResult(answers) {
 
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const subId = code => 'subnivel-' + code.replace('.', '-');
-const lstBadges = '<span class="lv-lst"><span><b>L</b>Línea</span><span><b>S</b>Speed</span><span><b>T</b>Timing</span></span>';
+// The same growing waves as the home's level list.
+const WAVES = [
+  'M0 52 C 20 48, 40 50, 60 48 S 100 46, 120 50 V60 H0Z',
+  'M0 54 C 24 52, 44 36, 66 34 C 82 33, 90 44, 100 50 S 116 54, 120 54 V60 H0Z',
+  'M0 56 C 22 54, 38 24, 62 18 C 82 13, 94 22, 90 32 C 88 40, 98 50, 120 56 V60 H0Z',
+  'M0 58 C 16 56, 28 12, 56 5 C 80 0, 100 8, 98 22 C 96 32, 82 31, 84 23 C 86 17, 94 20, 93 26 C 96 42, 108 54, 120 58 V60 H0Z',
+];
+const list = items => `<ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
 
-function sublevelCard(s, level) {
-  const can = s.can.map(item => `<li><label><input type="checkbox" data-can><span>${esc(item)}</span></label></li>`).join('');
-  const cant = s.cant.map(item => `<li>${esc(item)}</li>`).join('');
-  return `<details class="lv-sub" id="${subId(s.c)}" data-sub="${s.c}">
-<summary><span class="lv-code">${s.c}</span><span class="lv-sub-title">${esc(s.t)}</span><span class="lv-chips">${s.lst ? '<span class="lv-chip lv-chip--lst">Método LST</span>' : ''}<span class="lv-chip">${esc(s.w)}</span></span><span class="lv-toggle" aria-hidden="true"></span></summary>
-<div class="lv-sub-body"><p class="lv-desc">${esc(s.d)}</p><p class="lv-board"><strong>Tabla · ${esc(s.b[0])}</strong> ${esc(s.b[1])}</p>
-<div class="lv-gap"><div class="lv-can"><h4>✓ Ya hace</h4><ul>${can}</ul><p class="lv-can-hint" data-can-hint hidden>Te ves en todo. Si tampoco te cuesta lo de «Todavía no», mira el siguiente subnivel.</p></div><div class="lv-cant"><h4>Todavía no es capaz de</h4><ul>${cant}</ul></div></div>
-<p class="lv-foot"><span><strong>Trabajamos:</strong> ${esc(s.work)}</span> <span><strong>Errores típicos:</strong> ${esc(s.err)}</span></p>
-<div class="lv-sub-actions"><button class="lv-choose" type="button" data-choose="${s.c}" hidden>Este es mi nivel</button><a class="lv-sub-trips" href="/viajes/?nivel=${level.n}">Viajes de nivel ${level.n}</a></div></div>
-</details>`;
+function step(s) {
+  return `<li class="lv-step"><details class="lv-sub" id="${subId(s.c)}" data-sub="${s.c}">
+<summary><span class="lv-sub-title">${esc(s.t)}</span><span class="lv-sub-desc">${esc(s.d)}</span></summary>
+<div class="lv-sub-body">
+<div class="lv-gap"><div class="lv-can"><h4>Ya lo haces si…</h4>${list(s.can)}</div><div class="lv-cant"><h4>${s.cant.length > 1 ? 'Te falta para el siguiente paso' : 'Y después'}</h4>${list(s.cant)}</div></div>
+<p class="lv-board"><strong>Tabla: ${esc(s.b[0])}.</strong> ${esc(s.b[1])}</p>
+<p class="lv-foot">En clase trabajamos: ${esc(s.work.replace(/\.$/, '').replace(/^./, c => c.toLowerCase()))}. Errores típicos: ${esc(s.err.replaceAll(' · ', ', ').replace(/^./, c => c.toLowerCase()))}.</p>
+<button class="lv-choose" type="button" data-choose="${s.c}" hidden>Este es mi nivel</button>
+</div>
+</details></li>`;
 }
 
 function levelSection(level) {
   const subs = SUBLEVELS.filter(s => s.c.startsWith(level.n + '.'));
   return `<section class="lv-level" id="nivel-${level.n}" data-level-panel="${level.n}" aria-labelledby="nivel-${level.n}-title" tabindex="-1">
-<header class="lv-level-head"><span class="lv-level-num" aria-hidden="true">${level.n}</span><div class="lv-level-name"><p class="eyebrow">NIVEL ${level.n}</p><h3 id="nivel-${level.n}-title">${esc(level.name)}</h3><p>${esc(level.tag)}</p></div><dl class="lv-level-meta"><div><dt>Olas</dt><dd>${esc(level.wave)}</dd></div><div><dt>Tabla habitual</dt><dd>${esc(level.board)}</dd></div></dl></header>
-${subs.map(s => sublevelCard(s, level)).join('\n')}
+<header class="lv-level-head"><h3 id="nivel-${level.n}-title">${esc(level.name)}</h3><p class="lv-level-tag">${esc(level.tag)}.</p>
+<dl class="lv-level-facts"><div><dt>Olas</dt><dd>${esc(level.wave)}</dd></div><div><dt>Tabla</dt><dd>${esc(level.board)}</dd></div></dl></header>
+<ol class="lv-path">${subs.map(step).join('\n')}</ol>
+<p class="lv-level-trips"><a href="/viajes/?nivel=${level.n}">Ver viajes para ${esc(level.name)}</a></p>
 </section>`;
 }
 
 function competitionSection() {
   const C = COMPETITION;
-  return `<section class="lv-level lv-level--comp" id="nivel-5" data-level-panel="5" aria-labelledby="nivel-5-title" tabindex="-1">
-<header class="lv-level-head"><span class="lv-level-num" aria-hidden="true">5</span><div class="lv-level-name"><p class="eyebrow">RUTA 5</p><h3 id="nivel-5-title">${C.name}</h3><p>${esc(C.tag)}</p></div><dl class="lv-level-meta"><div><dt>Acceso</dt><dd>${esc(C.access)}</dd></div><div><dt>Formato</dt><dd>${esc(C.format)}</dd></div></dl></header>
-<p class="lv-comp-intro">${esc(C.intro)}</p>
-<ol class="lv-comp-steps">${C.subs.map(s => `<li id="${subId(s.c)}"><span class="lv-code">${s.c}</span><div><h4>${esc(s.t)}</h4><span class="lv-chip">${esc(s.w)}</span><p>${esc(s.d)}</p></div></li>`).join('')}</ol>
-<div class="lv-gap"><div class="lv-can"><h4>Qué valoran los jueces</h4><p>${esc(C.judges)}</p></div><div class="lv-cant"><h4>Errores típicos</h4><ul>${C.err.map(e => `<li>${esc(e)}</li>`).join('')}</ul></div></div>
-<p class="lv-foot"><span><strong>Foco del coaching · Táctica:</strong> ${esc(C.focus)}</span></p>
+  return `<section class="lv-comp" id="nivel-5" aria-labelledby="nivel-5-title" tabindex="-1">
+<div class="lv-comp-intro"><h3 id="nivel-5-title">¿Y competir?</h3><p>${esc(C.intro)}</p></div>
+<ol class="lv-comp-steps">${C.subs.map(s => `<li id="${subId(s.c)}"><h4>${esc(s.t)}</h4><p>${esc(s.d)}</p><p class="lv-comp-from">${esc(s.w.replace(/^Desde nivel (\d\.\d)$/, (m, c) => `Desde ${NAMES_BY_CODE[c]}`).replace(/^Nivel 4\.2–4\.3$/, `Desde ${NAMES_BY_CODE['4.2']}`))}</p></li>`).join('')}</ol>
+<p class="lv-comp-judges">${esc(C.judges)} Táctica: ${esc(C.focus)}</p>
 </section>`;
 }
+const NAMES_BY_CODE = Object.fromEntries(SUBLEVELS.map(s => [s.c, `«${s.t}»`]));
 
 export function levelGuideHtml() {
-  const all = [...SURF_LEVELS, COMPETITION];
-  const ladder = [...SUBLEVELS.map(s => [s.c.split('.')[0], s.c, s.t]), ...COMPETITION.subs.map(s => ['5', s.c, s.t])];
-  const phases = PHASES.map(p => `<li class="lv-phase${p.lst ? ' lv-phase--lst' : ''}"><p class="lv-phase-range">${esc(p.range)}</p><h3>${esc(p.name)}</h3><p>${esc(p.text)}</p>${p.lst ? lstBadges : ''}</li>`).join('');
-  return `<section class="lv-phases section-width" aria-labelledby="lv-phases-title"><h2 class="visually-hidden" id="lv-phases-title">Las tres fases del método LST</h2><ol>${phases}</ol></section>
-<section class="lv-guide section-width" id="guia-niveles" aria-labelledby="lv-guide-title" tabindex="-1">
-<div class="lv-guide-head"><div><p class="eyebrow">LOS NIVELES</p><h2 id="lv-guide-title">Encuentra tu subnivel.</h2></div><p>Qué hace un surfista en cada subnivel, qué le falta para subir y con qué tabla y olas suele surfear.</p></div>
-<nav class="lv-tabs" aria-label="Niveles">${all.map(l => `<a href="#nivel-${l.n}" data-level-tab="${l.n}"><b>${l.n === 5 ? 'Ruta' : 'Nivel'} ${l.n}</b><span>${esc(l.name)}</span></a>`).join('')}</nav>
-<nav class="lv-ladder" aria-label="Subniveles">${ladder.map(([n, c, t]) => `<a href="#${subId(c)}" data-step="${c}" data-step-level="${n}" class="lv-step lv-step--${n}" title="${esc(t)}">${c}</a>`).join('')}</nav>
-<p class="lv-howto"><strong>Cómo saber tu nivel:</strong> si te identificas con todo lo de <em>✓ Ya hace</em> pero no con lo de <em>Todavía no</em>, ese es tu nivel. Marca lo que ya haces. Olas orientativas, medidas en la cara de la ola.</p>
-<p class="lv-pickbar" data-pickbar hidden>Abre el subnivel con el que te identificas y pulsa <strong>«Este es mi nivel»</strong>.</p>
+  const picker = SURF_LEVELS.map((l, i) => `<a class="lv-wave" href="#nivel-${l.n}" data-level-tab="${l.n}"><svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="${WAVES[i]}"/></svg><span class="lv-wave-name">${esc(l.name)}</span><span class="lv-wave-size">${esc(l.waveShort)}</span></a>`).join('');
+  return `<section class="lv-guide section-width" id="guia-niveles" aria-labelledby="lv-guide-title" tabindex="-1">
+<div class="lv-guide-head"><h2 id="lv-guide-title">Cuatro niveles. Cada uno, una ola más grande.</h2><p>Elige una ola para ver qué se hace en ese nivel, con qué tabla y qué te falta para subir.</p></div>
+<nav class="lv-waves" aria-label="Niveles de surf">${picker}</nav>
+<p class="lv-howto">Tu nivel es aquel en el que ya haces todo lo de «Ya lo haces si…» pero todavía no lo de al lado. Desde Base entrenamos con el método LST: línea, velocidad y timing. Las alturas son orientativas, medidas en la cara de la ola. ¿Quieres competir? Mira <a href="#nivel-5">la ruta de competición</a>.</p>
+<p class="lv-pickbar" data-pickbar hidden>Abre el paso que mejor te describe y pulsa «Este es mi nivel».</p>
 <div class="lv-levels">
-${all.map(l => l.n === 5 ? competitionSection() : levelSection(l)).join('\n')}
+${SURF_LEVELS.map(levelSection).join('\n')}
 </div>
+${competitionSection()}
 </section>
-<section class="lv-test section-width" id="test" aria-labelledby="lv-test-title" tabindex="-1">
-<div class="lv-test-intro"><p class="eyebrow">TEST RÁPIDO</p><h2 id="lv-test-title">¿Cuál es tu nivel?</h2><p>${LEVEL_TEST.length} preguntas de sí o no, de la primera espuma a la libertad total. Responde con sinceridad: si dudas, quédate con «Todavía no». Es lo que más te va a hacer progresar.</p></div>
-<div class="lv-test-card" data-level-test><noscript><p>El test necesita JavaScript. Puedes encontrar tu nivel con la guía de arriba o escribirnos por WhatsApp.</p></noscript></div>
+<section class="lv-test" id="test" aria-labelledby="lv-test-title" tabindex="-1">
+<div class="lv-test-inner section-width">
+<div class="lv-test-intro"><h2 id="lv-test-title">¿Cuál es tu nivel?</h2><p>Doce preguntas de sí o no. Si dudas, responde «Todavía no»: así el resultado te ayuda más.</p></div>
+<div class="lv-test-card" data-level-test><noscript><p>El test necesita JavaScript. Puedes encontrar tu nivel en la guía de arriba o escribirnos por WhatsApp.</p></noscript></div>
+</div>
 </section>
 <script type="application/json" id="level-test-data">${JSON.stringify({
     test: LEVEL_TEST,
     names: Object.fromEntries([...SUBLEVELS, ...COMPETITION.subs].map(s => [s.c, s.t])),
+    descriptions: Object.fromEntries(SUBLEVELS.map(s => [s.c, s.d])),
     levels: Object.fromEntries(SURF_LEVELS.map(l => [l.n, l.name])),
   }).replace(/</g, '\\u003c')}</script>`;
 }

@@ -23,7 +23,7 @@ test('local offers survive navigation through home, levels, catalogue and canoni
    assert.equal(response.headers.get('x-lst-data-source'),'sanity-local-preview');
    if(!route.startsWith('/viajes/el-palmar'))assert.match(html,/100 € de descuento/,route);
    assert.match(html,/599 €/);assert.match(html,/Primeras 8 plazas/);assert([...html.matchAll(/<del>([\s\S]*?)<\/del>/g)].some(([,text])=>text.replace(/<[^>]+>/g,'').includes('699 €')));
-   if(route==='/viajes/')assert.match(html,/class="catalog-card home-trip" data-compact-home/);
+   if(route==='/viajes/')assert.match(html,/class="ct-ticket" id="viaje-/);
   }
   const preview=await fetch(origin+'/catalog-snapshot.json').then(r=>r.json());
   assert.equal(preview.source,'sanity-local-preview');

@@ -66,13 +66,14 @@ test('filtering, empty results and clearing never mutate trips', () => {
   assert.equal(JSON.stringify(trips), before);
 });
 
-test('catalogue renders every trip once with shared cards and no date control', async () => {
+test('catalogue renders every trip once, grouped by month, with no date control', async () => {
   const {trips: published} = JSON.parse(await readFile('dist/catalog-snapshot.json', 'utf8'));
   const template = '<!-- catalog:start --><!-- catalog:end -->';
   const html = renderCatalog(template, published);
   assert.equal((html.match(/data-catalog-trip/g) || []).length, published.length);
-  assert.equal((html.match(/<h2 /g) || []).length, published.length);
-  assert.equal((html.match(/class="home-trip-link catalog-card-link"/g) || []).length, published.length);
+  assert.equal((html.match(/<h3 /g) || []).length, published.length);
+  assert.equal((html.match(/class="hp-btn catalog-card-link"/g) || []).length, published.length);
+  assert.equal((html.match(/<h2 /g) || []).length, (html.match(/<section class="ct-month/g) || []).length);
   assert.doesNotMatch(html, /<option|catalog-date/);
   assert.doesNotMatch(html, /data-state|catalog-card-state|Con fecha|Próximamente/);
   assert.equal(renderCatalog(html, published), html);

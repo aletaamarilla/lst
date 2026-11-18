@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import {levelsFor} from './trip-model.mjs';
-import {SURF_LEVELS, SUBLEVELS, COMPETITION, LEVEL_TEST} from './surf-levels.mjs';
+import {SURF_LEVELS, SUBLEVELS, LEVEL_TEST} from './surf-levels.mjs';
 const require=createRequire(import.meta.url);
 const {chromium}=require(process.env.LST_PLAYWRIGHT_MODULE||'playwright');
 const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
@@ -14,7 +14,6 @@ const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-levels-verificat
 fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
 const trips=JSON.parse(fs.readFileSync('dist/catalog-snapshot.json')).trips;
 const hasPending=trips.some(t=>t.state==='upcoming');
-const steps=[...SUBLEVELS.map(s=>s.c),...COMPETITION.subs.map(s=>s.c)];
 const report={checks:[],issues:[],errors:[],whatsapp:[],routes:['/niveles/',...trips.map(t=>`/viajes/${t.slug}/`)]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
@@ -42,10 +41,12 @@ try{
   const title=await geometry(p,'#guide-title');check(tag+' title below header',title.top>=title.header,title);
   const external=await p.locator('main a[href^="http"]').evaluateAll(links=>links.map(a=>a.href).filter(href=>!['wa.me','www.instagram.com'].includes(new URL(href).hostname)));
   check(tag+' no legacy or external content links',external.length===0,external);
-  check(tag+' three phases',await p.locator('.lv-phase').count()===3);
-  check(tag+' five level tabs',await p.locator('[data-level-tab]:visible').count()===5);
+  check(tag+' four level waves',await p.locator('[data-level-tab]:visible').count()===4);
   check(tag+' one level panel at a time',JSON.stringify(await visiblePanels(p))==='["1"]',await visiblePanels(p));
-  check(tag+' ladder lists every sublevel',JSON.stringify(await p.locator('[data-step]').evaluateAll(els=>els.map(e=>e.dataset.step)))===JSON.stringify(steps));
+  check(tag+' competition route visible',await p.locator('#nivel-5').isVisible());
+  check(tag+' no sublevel codes in the guide',!/\b[1-5]\.[1-3]\b/.test(await p.locator('.lv-guide').innerText()));
+  const labels=await p.locator('.lv-wave').evaluateAll(els=>els.map(e=>{const n=e.querySelector('.lv-wave-name');return n.scrollWidth<=e.clientWidth+1;}));
+  check(tag+' wave names fit',labels.every(Boolean),labels);
   check(tag+' one shared help block',await p.locator('[data-guide-enquiry]').count()===1);
   if(hasPending)check(tag+' pending destinations initially folded',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
   if(zoom===1&&[390,1440].includes(width)&&height>500){
@@ -56,42 +57,37 @@ try{
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-completa.png`),fullPage:true});
   }
   // Level tabs: one panel, its URL and its trips.
-  for(const level of [...SURF_LEVELS.map(l=>l.n),5]){
+  for(const level of SURF_LEVELS.map(l=>l.n)){
    await p.locator(`[data-level-tab="${level}"]`).click();
    check(tag+' tab shows level '+level,JSON.stringify(await visiblePanels(p))===JSON.stringify([String(level)]));
    check(tag+' tab current '+level,await p.locator(`[data-level-tab="${level}"]`).getAttribute('aria-current')==='true');
-   check(tag+' tab URL '+level,new URL(p.url()).hash==='#nivel-'+level&&new URL(p.url()).searchParams.get('nivel')===(level<=4?String(level):null),p.url());
-   if(level<=4)check(tag+' tab filters trips '+level,JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(level)));
+   check(tag+' tab URL '+level,new URL(p.url()).hash==='#nivel-'+level&&new URL(p.url()).searchParams.get('nivel')===String(level),p.url());
+   check(tag+' tab filters trips '+level,JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(level)));
    const tab=await p.locator(`[data-level-tab="${level}"]`).evaluate(e=>{const r=e.getBoundingClientRect();return {height:r.height,clipped:e.scrollWidth>e.clientWidth+1};});
    check(tag+' tab touch target '+level,tab.height>=44&&!tab.clipped,tab);
    const head=await geometry(p,`#nivel-${level}`);check(tag+' level head below header '+level,head.top>=head.header-1,head);
   }
-  // Ladder: opens and reveals the sublevel card.
-  await p.locator('[data-step="2.3"]').click();
-  check(tag+' ladder opens sublevel',await p.locator('#subnivel-2-3').evaluate(e=>e.open)&&JSON.stringify(await visiblePanels(p))==='["2"]');
-  check(tag+' ladder URL',new URL(p.url()).hash==='#subnivel-2-3');
+  // Steps open in place.
+  await p.locator('[data-level-tab="2"]').click();await p.locator('#subnivel-2-3 summary').click();
+  check(tag+' step opens',await p.locator('#subnivel-2-3').evaluate(e=>e.open)&&await p.locator('#subnivel-2-3 .lv-can li').first().isVisible());
   const summary=await p.locator('#subnivel-2-3 summary').evaluate(e=>({upright:[...e.children].every(c=>getComputedStyle(c).transform==='none'),top:e.getBoundingClientRect().top,header:document.querySelector('.site-header').getBoundingClientRect().bottom}));
   check(tag+' sublevel heading upright and below header',summary.upright&&summary.top>=summary.header-1,summary);
-  for(const box of await p.locator('#subnivel-2-3 [data-can]').all())await box.check();
-  check(tag+' all «Ya hace» suggests next sublevel',await p.locator('#subnivel-2-3 [data-can-hint]').isVisible());
-  await p.locator('#subnivel-2-3 [data-can]').first().uncheck();
-  check(tag+' hint hides again',await p.locator('#subnivel-2-3 [data-can-hint]').isHidden());
   // Quick test: five «Sí» then «Todavía no» places the visitor in 2.2.
   await p.locator('#test').scrollIntoViewIfNeeded();
   check(tag+' test first question',(await p.locator('.lv-q-count').innerText()).includes(`1 de ${LEVEL_TEST.length}`));
-  await answer(p,true);await answer(p,false);await p.locator('[data-level-test] [data-back]').click();
-  check(tag+' test back keeps answers',(await p.locator('.lv-q-count').innerText()).startsWith('Pregunta 2'));
+  await answer(p,true);await answer(p,true);await p.locator('[data-level-test] [data-back]').click();
+  check(tag+' test back returns one question',(await p.locator('.lv-q-count').innerText()).startsWith('Pregunta 2'));
   for(let i=0;i<4;i++)await answer(p,true);
   await answer(p,false);
-  check(tag+' test result 2.2',await p.locator('.lv-result-code').innerText()==='2.2'&&(await p.locator('.lv-result h3').innerText())==='Cambio de tabla');
+  check(tag+' test result 2.2',await p.locator('.lv-result-level').innerText()==='Base'&&(await p.locator('.lv-result h3').innerText())==='Cambio de tabla');
   check(tag+' result stored',await p.evaluate(()=>localStorage.getItem('lstLevel'))==='2.2');
-  check(tag+' ladder marks result',await p.locator('[data-step="2.2"]').evaluate(e=>e.classList.contains('is-mine')));
+  check(tag+' guide marks result',await p.locator('#subnivel-2-2').evaluate(e=>e.classList.contains('is-mine')));
   const actions=await p.locator('.lv-result-actions :is(a,button)').evaluateAll(els=>els.map(e=>{const r=e.getBoundingClientRect();return {text:e.textContent.trim(),height:r.height,clipped:e.scrollWidth>e.clientWidth+1};}));
   check(tag+' result actions fit',actions.every(a=>a.height>=44&&!a.clipped),actions);
   await p.locator('[data-level-test] [data-trips]').click();
   check(tag+' result filters trips',JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(2))&&new URL(p.url()).searchParams.get('nivel')==='2');
   const message=new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text');
-  check(tag+' enquiry carries the result',message.includes('2.2')&&message.includes('autonomía'),message);
+  check(tag+' enquiry carries the result',message.includes('Cambio de tabla')&&message.includes('2.2')&&message.includes('autonomía'),message);
   await p.locator('[data-level-test] [data-see]').click();
   check(tag+' result opens its sublevel',await p.locator('#subnivel-2-2').evaluate(e=>e.open));
   await p.locator('[data-level-test] [data-yes]').click();
@@ -100,13 +96,13 @@ try{
   await p.locator('[data-level-test] [data-restart]').first().click();
   for(let i=0;i<3;i++)await answer(p,true);
   await answer(p,false);
-  check(tag+' second result 1.3',await p.locator('.lv-result-code').innerText()==='1.3');
+  check(tag+' second result 1.3',await p.locator('.lv-result h3').innerText()==='Primeras olas verdes');
   await p.locator('[data-level-test] [data-no]').click();await p.locator('[data-level-test] [data-choose-open]').click();
   check(tag+' choose mode',await p.locator('[data-pickbar]').isVisible());
   await p.locator('[data-level-tab="3"]').click();await p.locator('#subnivel-3-1 summary').click();await p.locator('[data-choose="3.1"]').click();
-  check(tag+' chosen level',await p.locator('.lv-result-code').innerText()==='3.1'&&await p.locator('[data-pickbar]').isHidden()&&await p.locator('[data-choose="3.1"]').isHidden());
+  check(tag+' chosen level',await p.locator('.lv-result h3').innerText()==='Independencia'&&await p.locator('[data-pickbar]').isHidden()&&await p.locator('[data-choose="3.1"]').isHidden());
   await p.reload();await p.evaluate(()=>document.fonts.ready);
-  check(tag+' reload restores result',await p.locator('.lv-result-code').innerText()==='3.1'&&await p.locator('[data-step="3.1"]').evaluate(e=>e.classList.contains('is-mine')));
+  check(tag+' reload restores result',await p.locator('.lv-result h3').innerText()==='Independencia'&&await p.locator('#subnivel-3-1').evaluate(e=>e.classList.contains('is-mine')));
   await p.evaluate(()=>localStorage.clear());
   // Trips filters.
   for(const {n,name} of SURF_LEVELS){
@@ -125,7 +121,7 @@ try{
   check(tag+' skip link',await p.evaluate(()=>document.activeElement.id==='contenido'));
   for(let n=0;n<60;n++){
    await p.keyboard.press('Tab');
-   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:r.top>=h-1&&r.bottom<=innerHeight+1};});
+   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=e.matches('.skip-link')?0:document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:r.top>=h-1&&r.bottom<=innerHeight+1};});
    if(focus)check(tag+' keyboard focus visible',focus.visible,focus);
   }
   await p.locator('.guide-next a').click();
@@ -149,15 +145,15 @@ try{
  // Every trip page links to the guide.
  for(const width of [390,1440]){
   const c=await context({viewport:{width,height:900}}),p=await c.newPage();
-  for(const trip of trips){await p.goto(base+`/viajes/${trip.slug}/`);check(width+' '+trip.slug+' header has levels',await p.locator('.trip-header a[href="/niveles/"]').isVisible());await p.locator('.trip-level a[href="/niveles/"]').click();check(width+' '+trip.slug+' to guide',new URL(p.url()).pathname==='/niveles/');}
+  for(const trip of trips){await p.goto(base+`/viajes/${trip.slug}/`);if(width<1000)await p.locator('.menu-toggle').click();check(width+' '+trip.slug+' header has levels',await p.locator('.trip-header a[href="/niveles/"]').isVisible());if(width<1000)await p.keyboard.press('Escape');await p.locator('.trip-level a[href="/niveles/"]').click();check(width+' '+trip.slug+' to guide',new URL(p.url()).pathname==='/niveles/');}
   await c.close();
  }
  // Without JavaScript the whole guide stays readable.
  const c=await context({viewport:{width:390,height:844},javaScriptEnabled:false}),p=await c.newPage();
  await p.goto(base+'/niveles/');
- check('all levels without JS',await p.locator('.lv-level:visible').count()===5);
+ check('all levels without JS',await p.locator('.lv-level:visible').count()===4&&await p.locator('#nivel-5').isVisible());
  check('every sublevel without JS',await p.locator('.lv-sub').count()===SUBLEVELS.length);
- await p.locator('[data-step="3.3"]').click();check('native ladder anchor without JS',new URL(p.url()).hash==='#subnivel-3-3');
+ await p.locator('.lv-waves a[href="#nivel-3"]').click();check('native wave anchor without JS',new URL(p.url()).hash==='#nivel-3');
  await p.locator('#subnivel-3-3 summary').click();check('native disclosure without JS',await p.locator('#subnivel-3-3').evaluate(e=>e.open));
  check('test explains it needs JS',(await p.locator('[data-level-test]').innerText()).includes('JavaScript'));
  if(hasPending){await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');}

@@ -1,61 +1,49 @@
 import {closeTripDates} from './home.js';
-// Level guide (content generated from scripts/surf-levels.mjs): level tabs,
-// sublevel ladder, the quick test and the trips filtered by level.
+// Level guide (content generated from scripts/surf-levels.mjs): the wave picker,
+// each level's steps, the quick test and the trips filtered by level.
 const data=JSON.parse(document.getElementById('level-test-data').textContent);
 const LEVELS=data.levels; // {1:'Iniciación',…}
 const LEGACY={rookies:1,aprendices:2,riders:3,supercracks:4};
 const STORE='lstLevel';
 const guide=document.querySelector('.lv-guide');
-const tabs=[...document.querySelectorAll('[data-level-tab]')];
+const waves=[...document.querySelectorAll('[data-level-tab]')];
 const panels=[...document.querySelectorAll('[data-level-panel]')];
-const steps=[...document.querySelectorAll('[data-step]')];
 const pickbar=document.querySelector('[data-pickbar]');
 const chooseButtons=[...document.querySelectorAll('[data-choose]')];
 const reduceMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const scrollTo=el=>el.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'start'});
 const storage={get(){try{return localStorage.getItem(STORE);}catch{return null;}},set(v){try{localStorage.setItem(STORE,v);}catch{}}};
-const validCode=code=>Object.hasOwn(data.names,code??'');
-let current=1,mine=validCode(storage.get())?storage.get():null,choosing=false;
+const validCode=code=>Object.hasOwn(data.descriptions,code??'');
+const levelOf=code=>Number(code.split('.')[0]);
+let mine=validCode(storage.get())?storage.get():null;
 
-// ---- Levels and sublevels -------------------------------------------------
+// ---- Wave picker and steps -------------------------------------------------
 guide.classList.add('is-enhanced');
 function selectLevel(n){
- current=n;
+ if(!(n>=1&&n<=4))return;
  panels.forEach(p=>p.hidden=Number(p.dataset.levelPanel)!==n);
- tabs.forEach(t=>{if(Number(t.dataset.levelTab)===n)t.setAttribute('aria-current','true');else t.removeAttribute('aria-current');});
- steps.forEach(s=>s.classList.toggle('is-current',Number(s.dataset.stepLevel)===n));
+ waves.forEach(w=>{if(Number(w.dataset.levelTab)===n)w.setAttribute('aria-current','true');else w.removeAttribute('aria-current');});
 }
-function markMine(){
- steps.forEach(s=>{s.classList.toggle('is-mine',s.dataset.step===mine);if(s.dataset.step===mine)s.setAttribute('aria-label',`${s.dataset.step}, tu nivel`);else s.removeAttribute('aria-label');});
- document.querySelectorAll('.lv-sub').forEach(d=>d.classList.toggle('is-mine',d.dataset.sub===mine));
-}
+function markMine(){document.querySelectorAll('.lv-sub').forEach(d=>d.classList.toggle('is-mine',d.dataset.sub===mine));}
 function openSub(code,{scroll=true}={}){
- const n=Number(code.split('.')[0]);selectLevel(n);
+ selectLevel(levelOf(code));
  const el=document.getElementById('subnivel-'+code.replace('.','-'));
  if(!el)return;
  if(el.tagName==='DETAILS')el.open=true;
- if(scroll)scrollTo(el);
+ if(scroll)scrollTo(el.closest('li')??el);
  el.querySelector('summary')?.focus({preventScroll:true});
 }
 function setUrl(hash,level,push=false){
  const url=new URL(location.href);
- if(level&&level<=4)url.searchParams.set('nivel',String(level));else url.searchParams.delete('nivel');
+ if(level>=1&&level<=4)url.searchParams.set('nivel',String(level));else url.searchParams.delete('nivel');
  url.hash=hash;
  history[push?'pushState':'replaceState'](null,'',url);
 }
-tabs.forEach(tab=>tab.addEventListener('click',event=>{
+waves.forEach(wave=>wave.addEventListener('click',event=>{
+ if(event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
  event.preventDefault();
- const n=Number(tab.dataset.levelTab);selectLevel(n);showTrips(n<=4?n:null);setUrl('nivel-'+n,n);
+ const n=Number(wave.dataset.levelTab);selectLevel(n);showTrips(n);setUrl('nivel-'+n,n);
  scrollTo(document.getElementById('nivel-'+n));
-}));
-steps.forEach(step=>step.addEventListener('click',event=>{
- event.preventDefault();
- const code=step.dataset.step,n=Number(step.dataset.stepLevel);openSub(code);showTrips(n<=4?n:null);setUrl(step.hash.slice(1),n);
-}));
-// Ticking every «Ya hace» item suggests checking the next sublevel.
-document.querySelectorAll('.lv-sub').forEach(sub=>sub.addEventListener('change',()=>{
- const boxes=[...sub.querySelectorAll('[data-can]')];
- sub.querySelector('[data-can-hint]').hidden=!boxes.every(b=>b.checked);
 }));
 
 // ---- Trips by level --------------------------------------------------------
@@ -77,11 +65,11 @@ function showTrips(level){
  const dated=count('confirmed'),pending=count('upcoming');
  const pendingCount=document.querySelector('[data-guide-pending-count]');if(pendingCount)pendingCount.textContent=String(pending);
  document.querySelector('.guide-trips-empty').hidden=dated+pending!==0;
- helpEyebrow.textContent=level?`ESTÁS EXPLORANDO EL NIVEL ${level} · ${name.toUpperCase()}`:generalHelpEyebrow;
- tripsTitle.textContent=level?`Viajes para nivel ${level} · ${name}.`:'Viajes de surf por nivel.';
- tripsStatus.textContent=`${dated} ${dated===1?'viaje con fecha':'viajes con fecha'}${level?` para el nivel ${level}`:''}${pending?` · ${pending} ${pending===1?'destino por anunciar':'destinos por anunciar'}`:''}. Revisa si la salida pide autonomía.`;
- const code=mine&&Number(mine.split('.')[0])===level?mine:null;
- if(level){const url=new URL(generalEnquiry);url.searchParams.set('text',`¡Hola, LST! ${code?`He hecho el test de niveles y me sale el ${code} (${data.names[code]})`:`Me reconozco en el nivel ${level} (${name})`} y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?`);enquiry.href=url.href;}else enquiry.href=generalEnquiry;
+ helpEyebrow.textContent=level?`ESTÁS VIENDO EL NIVEL ${name.toUpperCase()}`:generalHelpEyebrow;
+ tripsTitle.textContent=level?`Viajes para ${name}.`:'Viajes de surf por nivel.';
+ tripsStatus.textContent=`${dated} ${dated===1?'viaje con fecha':'viajes con fecha'}${level?` para ${name}`:''}${pending?`, y ${pending} ${pending===1?'destino por anunciar':'destinos por anunciar'}`:''}. Revisa si la salida pide autonomía.`;
+ const code=mine&&levelOf(mine)===level?mine:null;
+ if(level){const url=new URL(generalEnquiry);url.searchParams.set('text',`¡Hola, LST! ${code?`He hecho el test de niveles y me sale ${name}, en el paso «${data.names[code]}» (${code})`:`Me reconozco en el nivel ${name}`} y quiero consultar qué viaje encaja conmigo. ¿Podemos revisar mi experiencia y autonomía en el agua?`);enquiry.href=url.href;}else enquiry.href=generalEnquiry;
 }
 filters.forEach(b=>b.addEventListener('click',()=>{const level=Number(b.dataset.guideFilter)||null;showTrips(level);if(level)selectLevel(level);setUrl('viajes-por-nivel',level,true);}));
 
@@ -89,7 +77,7 @@ filters.forEach(b=>b.addEventListener('click',()=>{const level=Number(b.dataset.
 const box=document.querySelector('[data-level-test]');
 const T=data.test;
 let answers=[];
-const el=(html)=>{const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstElementChild;};
+const el=html=>{const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstElementChild;};
 const esc=v=>String(v).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const COMMUNITY='https://chat.whatsapp.com/DoqfNJPCkM337LAVePu2Eq';
 function result(list){
@@ -97,14 +85,13 @@ function result(list){
  if(no===-1)return list.length===T.length?{code:'4.3',top:true}:null;
  return {code:no===0?'1.1':T[no-1][0],start:no===0};
 }
-function render(view){box.replaceChildren(view);}
 function question(focus){
  const i=answers.length;
- render(el(`<div class="lv-q" role="group" aria-labelledby="lv-q-text">
+ box.replaceChildren(el(`<div class="lv-q" role="group" aria-labelledby="lv-q-text">
   <p class="lv-q-count">Pregunta ${i+1} de ${T.length}</p>
   <div class="lv-q-progress" aria-hidden="true"><span style="width:${i/T.length*100}%"></span></div>
   <p class="lv-q-text" id="lv-q-text" tabindex="-1">${esc(T[i][1])}</p>
-  <div class="lv-q-answers"><button type="button" class="button" data-answer="yes">Sí</button><button type="button" class="button lv-btn-light" data-answer="no">Todavía no</button>${i?'<button type="button" class="lv-q-back" data-back>← Atrás</button>':''}</div>
+  <div class="lv-q-answers"><button type="button" class="button" data-answer="yes">Sí</button><button type="button" class="button lv-btn-light" data-answer="no">Todavía no</button>${i?'<button type="button" class="lv-q-back" data-back>Atrás</button>':''}</div>
  </div>`));
  box.querySelector('[data-answer="yes"]').addEventListener('click',()=>answer(true));
  box.querySelector('[data-answer="no"]').addEventListener('click',()=>answer(false));
@@ -116,23 +103,23 @@ function answer(yes){
  const r=result(answers);
  if(r){mine=r.code;storage.set(mine);markMine();showResult(r);}else question(true);
 }
-function nextOf(code){const i=T.findIndex(([c])=>c===code);return T[i+1]?.[0];}
+const nextOf=code=>{const i=T.findIndex(([c])=>c===code);return T[i+1]?.[0];};
 function showResult(r,{chosen=false,focus=true}={}){
- const code=r.code,level=Number(code.split('.')[0]),next=nextOf(code);
- const text=chosen?'Has elegido este nivel. Si te ves en él, confírmalo abajo.'
-  :r.top?'Estás en la cima técnica. Siguiente paso: progresión libre o la ruta de competición.'
-  :r.start?'Estás empezando: el 1.1 es tu punto de partida. Lo importante ahora es la postura, la remada y la seguridad.'
-  :`Tu siguiente paso es el ${next} · ${data.names[next]}. Mira en tu subnivel qué te falta en «Todavía no».`;
- render(el(`<div class="lv-result" aria-live="polite">
-  <p class="eyebrow">TU NIVEL</p>
-  <p class="lv-result-code" tabindex="-1">${code}</p>
+ const code=r.code,level=levelOf(code),next=nextOf(code),name=LEVELS[level];
+ const nextText=chosen?'Lo has elegido tú. Si te ves aquí, confírmalo abajo.'
+  :r.top?'Estás en lo más alto. Lo siguiente es progresar por tu cuenta o probar la competición.'
+  :r.start?'Es el punto de partida: postura, remada y seguridad en el agua.'
+  :`Lo siguiente: «${data.names[next]}». En tu paso tienes lo que te falta.`;
+ box.replaceChildren(el(`<div class="lv-result" aria-live="polite">
+  <p class="lv-result-lead">Estás en</p>
+  <p class="lv-result-level" tabindex="-1">${esc(name)}</p>
   <h3>${esc(data.names[code])}</h3>
-  <p class="lv-result-level">Nivel ${level} · ${esc(LEVELS[level])}</p>
-  <p>${esc(text)}</p>
-  <div class="lv-result-actions"><a class="button" href="#subnivel-${code.replace('.','-')}" data-see>Ver mi nivel en detalle</a><a class="button lv-btn-dark" href="#viajes-por-nivel" data-trips>Viajes para nivel ${level}</a><button type="button" class="lv-q-back" data-restart>Repetir el test</button></div>
-  <div class="lv-agree" data-agree><h4>¿Estás de acuerdo con tu nivel?</h4><p>Revisa lo que pone en «Ya hace» y «Todavía no» de tu subnivel antes de responder.</p><div class="lv-q-answers"><button type="button" class="button" data-yes>Sí</button><button type="button" class="button lv-btn-light" data-no>No</button></div></div>
-  <div class="lv-agree" data-refine hidden><h4>Vamos a afinarlo</h4><p>Puedes repetir el test o revisar los niveles y elegir el que de verdad te describe.</p><div class="lv-q-answers"><button type="button" class="button" data-restart>Repetir el test</button><button type="button" class="button lv-btn-light" data-choose-open>Elegir mi nivel</button></div></div>
-  <div class="lv-agree lv-thanks" data-thanks hidden><h4>¡Hecho! Tu nivel es el ${code} · ${esc(data.names[code])}</h4><p>Únete a la comunidad de Let’s Surf Together en WhatsApp: compartimos tips para mejorar tu surf e información de los próximos viajes.</p><a class="button" href="${COMMUNITY}" target="_blank" rel="noopener noreferrer">Unirme al grupo de WhatsApp</a></div>
+  <p class="lv-result-desc">${esc(data.descriptions[code])}</p>
+  <p class="lv-result-next">${esc(nextText)}</p>
+  <div class="lv-result-actions"><a class="button" href="#subnivel-${code.replace('.','-')}" data-see>Ver mi nivel</a><a class="button lv-btn-dark" href="#viajes-por-nivel" data-trips>Viajes para ${esc(name)}</a><button type="button" class="lv-q-back" data-restart>Repetir el test</button></div>
+  <div class="lv-agree" data-agree><h4>¿Te ves en este nivel?</h4><p>Míralo en la guía antes de responder: qué ya haces y qué te falta.</p><div class="lv-q-answers"><button type="button" class="button" data-yes>Sí, es el mío</button><button type="button" class="button lv-btn-light" data-no>No del todo</button></div></div>
+  <div class="lv-agree" data-refine hidden><h4>Vamos a afinarlo</h4><p>Repite el test o elige tu nivel directamente en la guía.</p><div class="lv-q-answers"><button type="button" class="button" data-restart>Repetir el test</button><button type="button" class="button lv-btn-light" data-choose-open>Elegir en la guía</button></div></div>
+  <div class="lv-agree lv-thanks" data-thanks hidden><h4>Perfecto, ya sabes tu nivel</h4><p>Únete al grupo de WhatsApp de LST: compartimos consejos para mejorar tu surf y los próximos viajes.</p><a class="button" href="${COMMUNITY}" target="_blank" rel="noopener noreferrer">Unirme al grupo de WhatsApp</a></div>
  </div>`));
  box.querySelector('[data-see]').addEventListener('click',e=>{e.preventDefault();openSub(code);showTrips(level);setUrl(e.currentTarget.hash.slice(1),level);});
  box.querySelector('[data-trips]').addEventListener('click',e=>{e.preventDefault();selectLevel(level);showTrips(level);setUrl('viajes-por-nivel',level,true);scrollTo(document.getElementById('viajes-por-nivel'));});
@@ -140,12 +127,12 @@ function showResult(r,{chosen=false,focus=true}={}){
  box.querySelector('[data-yes]').addEventListener('click',()=>{box.querySelector('[data-agree]').hidden=true;box.querySelector('[data-thanks]').hidden=false;});
  box.querySelector('[data-no]').addEventListener('click',()=>{box.querySelector('[data-agree]').hidden=true;box.querySelector('[data-refine]').hidden=false;});
  box.querySelector('[data-choose-open]').addEventListener('click',()=>setChoosing(true));
- if(focus)box.querySelector('.lv-result-code').focus();
+ if(focus)box.querySelector('.lv-result-level').focus();
 }
 function restart(){answers=[];setChoosing(false);question(true);scrollTo(document.getElementById('test'));}
 function setChoosing(on){
- choosing=on;pickbar.hidden=!on;chooseButtons.forEach(b=>b.hidden=!on);
- if(on){const level=mine?Number(mine.split('.')[0]):1;selectLevel(level);scrollTo(document.getElementById('guia-niveles'));pickbar.focus?.();}
+ pickbar.hidden=!on;chooseButtons.forEach(b=>b.hidden=!on);
+ if(on){selectLevel(mine?levelOf(mine):1);scrollTo(document.getElementById('guia-niveles'));}
 }
 chooseButtons.forEach(b=>b.addEventListener('click',()=>{
  mine=b.dataset.choose;storage.set(mine);markMine();setChoosing(false);
@@ -155,19 +142,24 @@ chooseButtons.forEach(b=>b.addEventListener('click',()=>{
 // ---- Initial state from the URL (and old #rookies-style links) ----------------
 function fromUrl(){
  const hash=location.hash.slice(1),query=new URLSearchParams(location.search).get('nivel');
- const sub=/^subnivel-([1-5])-([1-3])$/.exec(hash);
- const level=/^nivel-([1-5])$/.exec(hash)?.[1]??LEGACY[hash]??(/^[1-4]$/.test(query??'')?query:LEGACY[query]);
+ const sub=/^subnivel-([1-4])-([1-3])$/.exec(hash);
+ const level=/^nivel-([1-4])$/.exec(hash)?.[1]??LEGACY[hash]??(/^[1-4]$/.test(query??'')?query:LEGACY[query]);
  return {sub:sub?`${sub[1]}.${sub[2]}`:null,level:level?Number(level):null};
 }
 function sync(){
  const {sub,level}=fromUrl();
- if(sub){openSub(sub,{scroll:false});const n=Number(sub[0]);showTrips(n<=4?n:null);return;}
- const n=level??(mine?Number(mine.split('.')[0]):1);
- selectLevel(n);showTrips(level&&level<=4?level:null);
- if(LEGACY[location.hash.slice(1)]){setUrl('nivel-'+level,level);document.getElementById('nivel-'+level).scrollIntoView();}
+ if(sub){openSub(sub,{scroll:false});showTrips(levelOf(sub));return;}
+ selectLevel(level??(mine?levelOf(mine):1));showTrips(level);
+ if(LEGACY[location.hash.slice(1)])setUrl('nivel-'+level,level);
+}
+// Hidden panels change the layout, so land on the requested level or step once they are set.
+function arrive(){
+ const target=document.getElementById(location.hash.slice(1));
+ if(target&&(target.closest('.lv-guide')||target.id==='viajes-por-nivel'))(target.closest('li')??target).scrollIntoView({block:'start',behavior:'instant'});
 }
 markMine();
 if(mine)showResult({code:mine},{focus:false});else question(false);
 sync();
+if(document.readyState==='complete')arrive();else addEventListener('load',arrive,{once:true});
 addEventListener('hashchange',sync);
 addEventListener('popstate',sync);
