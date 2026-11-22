@@ -4,6 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {compactDepartureDate, levelProfileTitle, surfRhythm} from './trip-decision.mjs';
 import {renderTrip} from './render-trips.mjs';
 import {renderRegistration} from './render-registration.mjs';
+import {dossierHref} from './dossier-url.mjs';
 
 const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
 const morocco=trips.find(t=>t.slug==='marruecos');
@@ -36,7 +37,7 @@ test('all date alternatives and their own prices, deposits and actions remain vi
     const split=options[i].indexOf('<details class="departure-more">');
     assert(split>0);const main=options[i].slice(0,split),more=options[i].slice(split);
     assert(main.includes(maldives.departures[i].id));assert(main.includes('data-registration='));assert(main.includes('departure-summary-deposit'));
-    assert(more.includes(maldives.departures[i].dossier));assert(more.includes('Condiciones de pago'));assert(more.includes('data-whatsapp='));
+    assert(more.includes(dossierHref(maldives.departures[i].dossier)));assert(more.includes('Condiciones de pago'));assert(more.includes('data-whatsapp='));
   }
 });
 

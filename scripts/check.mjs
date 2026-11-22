@@ -59,6 +59,8 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
 for(const [file,{html,ids}] of pages){
  for(const m of html.matchAll(/(?:src|href)="([^"]+)"/g)){
   const ref=m[1];if(!ref.startsWith('/')&&!ref.startsWith('#')&&!ref.startsWith('?'))continue;
+  // Trip PDFs are not files of dist: vercel.json rewrites /descargas/* to the PDF host (scripts/vercel-rewrites.test.mjs pins it).
+  if(ref.startsWith('/descargas/'))continue;
   if(ref.startsWith('?')){const u=new URL(ref,'https://local.test/'+path.relative(root,path.dirname(file)).replaceAll(path.sep,'/')+'/');if(u.hash&&!ids.has(u.hash.slice(1)))errors.push(`Broken local query anchor ${ref}: ${file}`);continue;}
   if(ref.startsWith('#')){if(ref.length>1&&!ids.has(ref.slice(1)))errors.push(`Broken anchor ${ref}: ${file}`);continue;}
   const u=new URL(ref,'https://local.test');let target=path.join(root,decodeURIComponent(u.pathname));

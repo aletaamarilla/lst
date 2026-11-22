@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {renderTrip, publicDetail} from './render-trips.mjs';
 import {renderRegistration} from './render-registration.mjs';
+import {dossierHref} from './dossier-url.mjs';
 
 const trips = JSON.parse(await readFile('dist/catalog-snapshot.json', 'utf8')).trips;
 const source = trips.find(t => t.slug === 'marruecos');
@@ -18,7 +19,7 @@ test('deposit, custom notice and single-date PDF survive removal of the payment 
   assert(!cost.includes('booking-conditions'));assert(!cost.includes('Condiciones propias de la fecha.'));
   assert(cost.includes(trip.notice));
   assert(cost.includes('mobile-booking-options'));
-  assert(cost.includes(source.departures[0].dossier));
+  assert(cost.includes(dossierHref(source.departures[0].dossier)));
   assert(cost.includes('Por confirmar'));
   assert(!cost.includes('Pensión completa'));
 });

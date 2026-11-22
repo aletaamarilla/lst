@@ -7,6 +7,7 @@ import {salesPitch, practicalDetails, salesFaqs} from './trip-sales-content.mjs'
 import {compactDepartureDate, levelProfileTitle, surfRhythm} from './trip-decision.mjs';
 import {SURF_LEVELS, levelFigure, levelWave} from './surf-levels.mjs';
 import {TRIP_BUNDLE} from './trip-styles.mjs';
+import {dossierHref} from './dossier-url.mjs';
 
 // Reuse literal services from this programme; do not infer names or transfer staff between trips.
 export function accompanimentItems(trip) {
@@ -87,14 +88,14 @@ const dossier=trip=>{
  const departures=departuresFor(trip);
  if(departures.length>1)return '';
  const href=departures[0]?.dossier||trip.dossier;
- return href?`<a class="dossier-link" href="${escape(href)}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier <span class="dossier-format">PDF</span></a>`:'';
+ return href?`<a class="dossier-link" href="${escape(dossierHref(href))}" target="_blank" rel="noopener noreferrer">${arrow("down")} Descargar dossier <span class="dossier-format">PDF</span></a>`:'';
 };
 // En móvil, el dossier es una tarjeta clara al final de «Qué incluye» (en escritorio va en la ficha lateral).
 const dossierCard=trip=>{
  const departures=departuresFor(trip);
  if(departures.length>1)return '';
  const href=departures[0]?.dossier||trip.dossier;
- return href?`<a class="dossier-link dossier-card" href="${escape(href)}" target="_blank" rel="noopener noreferrer"><svg class="dossier-card-icon" aria-hidden="true" viewBox="0 0 40 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M6 3h20l10 10v32H6z"/><path d="M26 3v10h10"/><path class="dossier-card-lines" d="M12 24h16M12 31h16M12 38h10"/></svg><span class="dossier-card-text"><strong>Descarga el dossier</strong><span>El programa completo, en PDF</span></span><span class="dossier-card-go" aria-hidden="true">${arrow('down')}</span></a>`:'';
+ return href?`<a class="dossier-link dossier-card" href="${escape(dossierHref(href))}" target="_blank" rel="noopener noreferrer"><svg class="dossier-card-icon" aria-hidden="true" viewBox="0 0 40 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M6 3h20l10 10v32H6z"/><path d="M26 3v10h10"/><path class="dossier-card-lines" d="M12 24h16M12 31h16M12 38h10"/></svg><span class="dossier-card-text"><strong>Descarga el dossier</strong><span>El programa completo, en PDF</span></span><span class="dossier-card-go" aria-hidden="true">${arrow('down')}</span></a>`:'';
 };
 const registrationLink=(trip,departure,classes='button trip-registration',label=departure?'Solicitar plaza en esta fecha':'Solicitar plaza')=>{const href=registrationUrl(trip,departure);return href?`<a class="${classes}" data-registration="${escape(trip.id)}" href="${escape(href)}">${escape(label)}</a>`:'';};
 const paymentFor=(trip,departure)=>departure.payment===undefined?trip.payment:departure.payment;
@@ -138,7 +139,7 @@ const departurePayment=(trip,d,{showDeposit=true,openTerms=false}={})=>{
 // A sold-out trip asks about alternatives even when it had several dates: there is no date left to choose.
 const bookingAction=(trip,label,classes)=>isFull(trip)?contact(trip,'Consultar viaje completo',classes,`¡Hola, LST! Veo que ${trip.name} está completo. Quiero consultar otras opciones con el equipo.`):departuresFor(trip).length>1?`<button type="button" class="${classes}" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Elegir fecha</button>`:registrationUrl(trip)?registrationLink(trip,undefined,classes):contact(trip,label,classes);
 
-const dateDossier=d=>d.dossier?`<a class="dossier-link departure-dossier" href="${escape(d.dossier)}" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del ${escape(d.date)}"><span class="dossier-format">PDF</span> Ver programa ${arrow('external')}</a>`:'';
+const dateDossier=d=>d.dossier?`<a class="dossier-link departure-dossier" href="${escape(dossierHref(d.dossier))}" target="_blank" rel="noopener noreferrer" aria-label="Ver PDF del ${escape(d.date)}"><span class="dossier-format">PDF</span> Ver programa ${arrow('external')}</a>`:'';
 function dateDialog(trip){
  const departures=departuresFor(trip);
  if(departures.length<2)return '';
