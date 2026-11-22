@@ -13,7 +13,10 @@ import {applyStructuredData} from './structured-data.mjs';
 import {llmsTxt} from './llms.mjs';
 import {TRIP_BUNDLE, tripBundle} from './trip-styles.mjs';
 import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
+import {analyticsConfig, analyticsPage, applyAnalytics} from './analytics.mjs';
 const site=siteConfig();
+// Generated pages carry the GA4 block when this deployment measures, as build.mjs writes them.
+const analytics=analyticsConfig(process.env,site);
 const root=path.resolve(process.argv.find(a=>a.startsWith('--dir='))?.slice(6)??'dist');
 const args=process.argv.slice(2);
 if(args.some(a=>!a.startsWith('--dir=')))throw Error('Uso: check.mjs [--dir=/ruta/local]');
@@ -32,8 +35,8 @@ for(const [file,render] of [['index.html',renderHomeTrips],['viajes/index.html',
  const current=await readFile(path.join(root,file),'utf8');
  if(render(current,trips)!==current)errors.push(`Generated view out of date: ${file}`);
 }
-for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');const route=`/viajes/${slug}/`,meta=pageMeta(route,trips,site);if(current!==applyStructuredData(applySiteMeta(renderTrip(t,trips),meta,site),route,trips,site,{public:meta.canonical===route}))errors.push(`Trip page out of date: ${slug}`);}
-for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const file=path.join(root,'inscripciones',slug,'index.html');const html=await readFile(file,'utf8');if(html!==applySiteMeta(renderRegistration(t,slug),pageMeta(`/inscripciones/${slug}/`,trips,site),site))errors.push(`Registration page out of date: ${slug}`);if(registrationDepartures(t).length&&!html.includes(`action="${brevoConfig.action}"`))errors.push(`Brevo endpoint missing: ${slug}`);}
+for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');const route=`/viajes/${slug}/`,meta=pageMeta(route,trips,site);if(current!==applyAnalytics(applyStructuredData(applySiteMeta(renderTrip(t,trips),meta,site),route,trips,site,{public:meta.canonical===route}),analyticsPage(route,trips),analytics))errors.push(`Trip page out of date: ${slug}`);}
+for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const file=path.join(root,'inscripciones',slug,'index.html');const html=await readFile(file,'utf8');if(html!==applyAnalytics(applySiteMeta(renderRegistration(t,slug),pageMeta(`/inscripciones/${slug}/`,trips,site),site),analyticsPage(`/inscripciones/${slug}/`,trips),analytics))errors.push(`Registration page out of date: ${slug}`);if(registrationDepartures(t).length&&!html.includes(`action="${brevoConfig.action}"`))errors.push(`Brevo endpoint missing: ${slug}`);}
 async function walk(dir){const files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else files.push(p);}return files;}
 const files=await walk(root);
 const pages=new Map();
