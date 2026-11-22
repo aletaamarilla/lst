@@ -147,7 +147,7 @@ body.hp-page .hp-ticket-name a{color:var(--hp-paper);text-decoration:none;pointe
   .hp-tag-date{left:12px;right:auto;top:12px;bottom:auto}
   .hp-tag-hot,.hp-tag-soft{left:auto;right:12px;top:12px}
   .hp-tag{padding:5px 8px}
-  .hp-stub{grid-area:2/1;padding:16px 20px 18px;border-top:2px dashed rgba(255,250,231,.25);gap:10px;align-content:start}
+  .hp-stub{grid-area:2/1;padding:16px 20px 18px;border-top:2px dashed rgba(255,250,231,.25);gap:10px;display:flex;flex-direction:column}
   .hp-stub::before,.hp-stub::after{display:block}
   .hp-price span{font-size:34px}
   .hp-stub-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px}
