@@ -110,3 +110,23 @@ body.catalog-page .lst-footer{border-top:0}
 /* Early bird */
 .ct-price .eb-was{margin-right:4px;font:400 19px/1 var(--hp-display);color:rgba(255,250,231,.6)}
 .ct-offer.eb-line{font-weight:600;font-size:13px}
+
+/* Mobile: a month with two or more visible trips shows them as posters, two per row, like the home.
+   Duration and area move to the trip page; prices line up at the bottom; a lone last poster stays half width and centred. */
+@media (max-width:719px){
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])){grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden]))>.ct-ticket{--photo-h:132px;grid-template-columns:minmax(0,1fr);grid-template-rows:var(--photo-h) 1fr;min-height:0;text-align:center}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden]))>.ct-ticket:nth-last-child(1 of :not([hidden])):nth-child(odd of :not([hidden])){grid-column:1/-1;justify-self:center;width:calc(50% - 5px)}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden]))>.ct-ticket::before,
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden]))>.ct-ticket::after{top:calc(var(--photo-h) - 9px);bottom:auto;width:16px;height:16px}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden]))>.ct-ticket::before{left:-8px}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden]))>.ct-ticket::after{left:auto;right:-8px}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-photo{border-radius:4px 4px 0 0;border-right:0;border-bottom:2px dashed rgba(255,250,231,.4)}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-body{display:flex;flex-direction:column;padding:12px 10px 14px}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-dates{justify-content:center}
+ body.hp-page .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-ticket .ct-name{font-size:23px}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-length{display:none}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-foot{order:2;justify-content:center;margin-top:auto}
+ .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-offer{order:1;margin:6px 0 4px}
+ body.hp-page .ct-month-trips:has(>.ct-ticket:not([hidden])~.ct-ticket:not([hidden])) .ct-price{margin:0;text-align:center}
+}
