@@ -56,8 +56,10 @@ export function createSiteServer({root=path.resolve('dist'),previewTrips=null}={
       res.writeHead(200,{'Content-Type':types[extension]||'application/octet-stream','Cache-Control':'no-cache','X-Content-Type-Options':'nosniff','X-LST-Data-Source':previewTrips?'sanity-local-preview':'dist'});
       res.end(content);
     } catch {
-      res.writeHead(404,{'Content-Type':'text/plain; charset=utf-8'});
-      res.end('No encontrado');
+      // Same page Vercel serves for unknown routes; plain text only if it is missing.
+      const page=await readFile(path.join(root,'404.html')).catch(()=>null);
+      res.writeHead(404,{'Content-Type':page?'text/html; charset=utf-8':'text/plain; charset=utf-8','Cache-Control':'no-cache'});
+      res.end(page??'No encontrado');
     }
   });
 }

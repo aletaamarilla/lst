@@ -16,7 +16,7 @@ export function siteConfig(env = process.env) {
 // Route is the public path of the page, e.g. "/viajes/marruecos/".
 export function pageMeta(route, trips, site) {
   const self = {canonical: route, index: site.indexable};
-  if (route.startsWith('/inscripciones/')) return {canonical: null, index: false};
+  if (route === '/404.html' || route.startsWith('/inscripciones/')) return {canonical: null, index: false};
   const slug = /^\/viajes\/([^/]+)\/$/.exec(route)?.[1];
   if (!slug) return self;
   if (trips.some(trip => trip.slug === slug)) return self;
@@ -55,4 +55,8 @@ export function sitemapXml(routes, trips, site) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${listed.map(route => `  <url><loc>${site.origin}${route}</loc></url>\n`).join('')}</urlset>\n`;
 }
 
-export const routeOf = relativeFile => `/${relativeFile.split(/[\\/]/).slice(0, -1).map(part => `${part}/`).join('')}`;
+// index.html files are folder routes; any other page (404.html) keeps its own name.
+export const routeOf = relativeFile => {
+  const parts = relativeFile.split(/[\\/]/);
+  return parts.at(-1) === 'index.html' ? `/${parts.slice(0, -1).map(part => `${part}/`).join('')}` : `/${parts.join('/')}`;
+};

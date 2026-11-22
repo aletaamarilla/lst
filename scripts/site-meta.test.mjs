@@ -65,6 +65,12 @@ test('sitemap lists only self-canonical indexable pages', () => {
 test('routes come from the file location', () => {
   assert.equal(routeOf('index.html'), '/');
   assert.equal(routeOf('viajes/marruecos/index.html'), '/viajes/marruecos/');
+  assert.equal(routeOf('404.html'), '/404.html');
+});
+
+test('the not-found page is never indexed nor listed', () => {
+  assert.deepEqual(pageMeta('/404.html', trips, live), {canonical: null, index: false});
+  assert.doesNotMatch(sitemapXml(['/', '/404.html'], trips, live), /404/);
 });
 
 test('only Sanity images are resized', () => {
