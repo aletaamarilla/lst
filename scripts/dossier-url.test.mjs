@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {DOSSIER_HOST, dossierProblem, isSanityFileUrl} from './dossier-url.mjs';
+import {DOSSIER_HOST, dossierProblem, isSanityFileUrl, dossierHref} from './dossier-url.mjs';
 
 const onHost = path => 'https://' + DOSSIER_HOST + path;
 
@@ -37,4 +37,13 @@ test('isSanityFileUrl recognises Sanity file links and nothing else', () => {
   assert.equal(isSanityFileUrl(onHost('/a.pdf')), false);
   assert.equal(isSanityFileUrl('https://cdn.sanity.io/images/q5bj2rn2/production/abc.jpg'), false);
   assert.equal(isSanityFileUrl('not a url'), false);
+});
+
+test('dossierHref serves a PDF on the downloads host through the site itself, and leaves any other link alone', () => {
+  assert.equal(dossierHref(onHost('/marruecos-2027-01-17.pdf')), '/descargas/marruecos-2027-01-17.pdf');
+  assert.equal(dossierHref('https://' + DOSSIER_HOST.toUpperCase() + '/a.pdf'), '/descargas/a.pdf');
+  assert.equal(dossierHref(onHost('/2027/a.pdf?v=2')), '/descargas/2027/a.pdf?v=2');
+  assert.equal(dossierHref('https://example.com/a.pdf'), 'https://example.com/a.pdf');
+  assert.equal(dossierHref(''), '');
+  assert.equal(dossierHref(undefined), '');
 });

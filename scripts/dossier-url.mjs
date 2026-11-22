@@ -18,3 +18,15 @@ export function isSanityFileUrl(value) {
   const url = parse(value);
   return !!url && url.hostname === 'cdn.sanity.io' && url.pathname.startsWith('/files/');
 }
+
+// Browsers fetch the PDFs through the site's own domain: vercel.json rewrites /descargas/* to DOSSIER_HOST.
+// Spanish ISPs block the Cloudflare IPs behind DOSSIER_HOST during football matches; the site's host is not blocked.
+export const DOSSIER_PATH = '/descargas';
+
+// The stored URL (what Studio validates and the build checks) -> the link the page renders.
+// Anything not on DOSSIER_HOST is returned untouched.
+export function dossierHref(value) {
+  if (value == null || value === '') return '';
+  const url = parse(String(value));
+  return url && url.protocol === 'https:' && url.hostname === DOSSIER_HOST ? DOSSIER_PATH + url.pathname + url.search : value;
+}

@@ -5,9 +5,15 @@
   "outputDirectory": "dist",
   "installCommand": "npm install --ignore-scripts --package-lock=false",
   "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/descargas/:path*",
+      "destination": "https://descargas.letsurftogether.com/:path*"
+    }
+  ],
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/((?!descargas/).*)",
       "headers": [
         {"key": "X-Content-Type-Options", "value": "nosniff"},
         {"key": "Referrer-Policy", "value": "strict-origin-when-cross-origin"},
@@ -32,6 +38,13 @@
       "source": "/(.*\\.js)",
       "headers": [
         {"key": "Cache-Control", "value": "public, max-age=600, must-revalidate"}
+      ]
+    },
+    {
+      "source": "/descargas/(.*)",
+      "headers": [
+        {"key": "x-vercel-enable-rewrite-caching", "value": "1"},
+        {"key": "X-Content-Type-Options", "value": "nosniff"}
       ]
     }
   ],
