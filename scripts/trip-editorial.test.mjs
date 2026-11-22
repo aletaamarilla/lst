@@ -26,9 +26,9 @@ test('the cover keeps the photograph clear and the destination identity follows 
 test('CMS editorial sections render in the requested order and retain their own exact content',()=>{
  const t=adaptTrip(editorial()),before=structuredClone(t),html=renderTrip(t);
  // Price and inclusions come right after «Niveles de este viaje», before the extras.
- const ids=['destino','nivel','incluye','plan','spots','alojamiento','actividades','dudas','reservar'];
+ const ids=['destino','nivel','incluye','plan','spots','actividades','dudas','reservar'];
  for(let i=1;i<ids.length;i++)assert(html.indexOf(`id="${ids[i]}"`)>html.indexOf(`id="${ids[i-1]}"`));
- assert.match(html,/Entre el océano &amp; las montañas/);assert.match(html,/Primeras olas/);assert.doesNotMatch(html,/Ganar confianza\.|Progresar juntos\./);assert.match(html,/Coaching/);assert.match(html,/Fotos de ambiente, no de la casa del viaje/);assert.doesNotMatch(html,/Fotografías de ejemplo/);
+ assert.match(html,/Entre el océano &amp; las montañas/);assert.match(html,/Primeras olas/);assert.doesNotMatch(html,/Ganar confianza\.|Progresar juntos\./);assert.match(html,/Coaching/);assert.doesNotMatch(html,/id="alojamiento"|stay-carousel-track|Fotografías de ejemplo|Fotos de ambiente/);
  assert(html.includes(t.levelRequirement));
  assert.doesNotMatch(html,/<de prueba>/);assert.deepEqual(t,before);
  assert.match(html,/class="related-section"/);
@@ -39,7 +39,7 @@ test('optional editorial fields do not invent activities, spots or accommodation
  assert.equal(t.activities,undefined);assert.equal(t.spots,undefined);
  assert.doesNotMatch(html,/id="actividades"|id="spots"|stay-carousel-track/);
  for(const value of t.includes)assert(html.includes(value));
- assert.match(html,/stay-compact/);
+ assert.doesNotMatch(html,/id="alojamiento"|stay-block/);
 });
 
 test('visual CMS data rejects outside-project images and incomplete card copy',()=>{

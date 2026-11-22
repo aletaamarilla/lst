@@ -44,7 +44,7 @@ test('closed and pending trips never advertise the active promotional conditions
 
 test('the programme avoids repeated photography and keeps the documented photos in the upper gallery',()=>{
  const html=renderTrip(palmar,trips);
- const programme=html.slice(html.indexOf('id="plan"'),html.indexOf('id="alojamiento"'));
+ const programme=html.match(/<section class="trip-programme[\s\S]*?<\/section>/)[0];
  assert(!programme.includes('<img'));assert(!programme.includes('class="programme-photo"'));
  assert(html.includes('Surfista deslizándose en una ola en El Palmar, 2024.'));
  assert(html.includes('Recuerdo de un viaje de LST a El Palmar en 2024.'));

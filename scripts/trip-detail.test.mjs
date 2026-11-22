@@ -84,7 +84,7 @@ test('the reading journey preserves custom programme titles, visible services an
  const t=trip({story:[['Mi sesión especial','Texto editorial de la sesión.']],faqs:[],stay:{title:'',text:'Casa para el grupo.',note:''}});
  const html=renderTrip(t);
  assert.match(html,/Mi sesión especial/);assert.match(html,/Texto editorial de la sesión\./);
- assert.match(html,/Casa para el grupo\./);assert.match(html,/Resolver las dudas del viaje/);
+ assert.doesNotMatch(html,/Casa para el grupo\./);assert.match(html,/Resolver las dudas del viaje/);
  assert.doesNotMatch(html,/<h2><\/h2>|undefined/);
 });
 
@@ -155,18 +155,21 @@ test('full, pending and unmapped trips keep consultation without promising an un
  }
 });
 
-test('accommodation without photos is compact and preserves useful facts while photographed accommodation remains visual',()=>{
+test('accommodation shows only with real photos: none or AI examples hide the whole section',()=>{
  const stay={title:'Casa del grupo',name:'Casa Norte',text:'Habitaciones dobles y triples. Cocina compartida.',note:'Consulta las necesidades de accesibilidad.',image:'',alt:''};
- const compact=renderTrip(trip({stay})).match(/<section\b[^>]*class="[^"]*\bstay-block\b[^>]*>[\s\S]*?<\/section>/)?.[0];
- assert(compact,'Accommodation section must remain present');assert.match(compact,/\bstay-compact\b/);
- assert(compact.includes(stay.text));assert(compact.includes(stay.note));
- assert.doesNotMatch(compact,/<figure|<img|<p[^>]*>\s*<\/p>|undefined/);
+ const section=html=>html.match(/<section\b[^>]*class="[^"]*\bstay-block\b[^>]*>[\s\S]*?<\/section>/)?.[0];
+ const bare=renderTrip(trip({stay}));
+ assert.equal(section(bare),undefined);assert.doesNotMatch(bare,/id="alojamiento"|href="#alojamiento"/);
+ const ai=renderTrip(trip({stay:{...stay,gallery:[['https://example.com/a.webp','Ejemplo de terraza de una surf house.','Una terraza']],galleryNote:'Imágenes de ejemplo generadas para mostrar el ambiente.'}}));
+ assert.equal(section(ai),undefined);assert.doesNotMatch(ai,/example\.com\/a\.webp|href="#alojamiento"/);
+ const flagged=renderTrip(trip({stay:{...stay,gallery:[['https://example.com/b.webp','Salón generado con IA','']]}}));
+ assert.equal(section(flagged),undefined);
  const visualStay={...stay,image:'https://example.com/stay.jpg',alt:'Terraza de la casa'};
- const visual=renderTrip(trip({stay:visualStay})).match(/<section\b[^>]*class="[^"]*\bstay-block\b[^>]*>[\s\S]*?<\/section>/)?.[0];
- assert(visual);assert.doesNotMatch(visual,/\bstay-compact\b/);assert.match(visual,/<figure/);
+ const html=renderTrip(trip({stay:visualStay})),visual=section(html);
+ assert(visual);assert.match(visual,/<figure/);assert.match(html,/href="#alojamiento"/);
  assert(visual.includes(visualStay.image));assert(visual.includes(visualStay.alt));
- const sparse=renderTrip(trip({stay:{title:'',name:'',text:'Casa para el grupo.',note:'',image:'',alt:''}})).match(/<section\b[^>]*class="[^"]*\bstay-block\b[^>]*>[\s\S]*?<\/section>/)[0];
- assert.doesNotMatch(sparse,/<p[^>]*>\s*<\/p>|<h2>\s*<\/h2>|undefined/);
+ assert(visual.includes(stay.text));assert(visual.includes(stay.note));
+ assert.doesNotMatch(visual,/<p[^>]*>\s*<\/p>|undefined/);
 });
 
 test('inclusions use explicit labels and preserve all included services, exclusions and conditions',()=>{

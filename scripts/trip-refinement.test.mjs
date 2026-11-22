@@ -29,13 +29,14 @@ test('the surf plan replaces both extra programme disclosures while older trips 
  for(const [,text] of old.story)assert(fallback.includes(escape(publicDetail(text))));
 });
 
-test('the removed accommodation preview notice does not suppress other editorial gallery notes',()=>{
+test('AI example accommodation photos are hidden while real photos keep their editorial gallery note',()=>{
  const html=renderTrip(beginner,trips);
- assert(!html.includes(beginner.stay.galleryNote));
- for(const [image,alt,caption] of beginner.stay.gallery){assert(html.includes(image));assert(html.includes(escape(alt)));assert(html.includes(escape(caption)));}
+ assert(!html.includes(beginner.stay.galleryNote));assert(!html.includes('id="alojamiento"'));
+ for(const [image] of beginner.stay.gallery)assert(!html.includes(image));
  const note='La distribución de las habitaciones se confirma con el equipo.';
- const custom=renderTrip({...beginner,stay:{...beginner.stay,galleryNote:note}});
- assert(custom.includes(escape(note)));
+ const gallery=[['https://cdn.sanity.io/images/q5bj2rn2/production/real-1200x800.jpg','Terraza de la casa del viaje.','La terraza']];
+ const custom=renderTrip({...beginner,stay:{...beginner.stay,gallery,galleryNote:note}});
+ assert(custom.includes(escape(note)));assert(custom.includes(gallery[0][0]));assert(custom.includes('id="alojamiento"'));
 });
 
 test('booking separates the primary action, supporting links and conditions without the removed section navigation',()=>{
