@@ -32,6 +32,29 @@ birthDate?.addEventListener('input', () => {
   birthDate.setCustomValidity(Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === `${year}-${month}-${day}` ? '' : 'Introduce una fecha válida.');
 });
 
+// Brevo only accepts the national number as 5 to 15 digits, with the prefix in its own select.
+// Spaces, dashes and a typed prefix (+34, 0034) are removed; a typed prefix also picks the country.
+const phone = document.querySelector('#WHATSAPP');
+const phoneCode = document.querySelector('[name="WHATSAPP__COUNTRY_CODE"]');
+const nationalNumber = () => {
+  const raw = phone.value.trim();
+  let digits = raw.replace(/\D/g, '');
+  if (/^(\+|00)/.test(raw)) {
+    if (raw.startsWith('00')) digits = digits.slice(2);
+    const option = [...(phoneCode?.options ?? [])].map(o => ({o, code: o.value.replace(/\D/g, '')}))
+      .filter(({code}) => code && digits.startsWith(code)).sort((a, b) => b.code.length - a.code.length)[0];
+    if (option) { phoneCode.value = option.o.value; digits = digits.slice(option.code.length); }
+  }
+  return digits;
+};
+const checkPhone = () => {
+  const digits = nationalNumber();
+  phone.setCustomValidity(!phone.value.trim() || /^[0-9]{5,15}$/.test(digits) ? '' : 'Escribe solo el número de teléfono, sin prefijo. Por ejemplo: 612345678.');
+  return digits;
+};
+phone?.addEventListener('input', checkPhone);
+phone?.addEventListener('change', () => { const digits = checkPhone(); if (digits) phone.value = digits; });
+
 // Health details are optional; once given, their specific consent becomes required.
 const healthConsent = document.querySelector('[data-consent="health"]');
 const healthFields = ['#ALERGIAS_INTOLERANCIAS', '#ENFERMEDAD_PROBLEMA'].map(id => document.querySelector(id)).filter(Boolean);
@@ -139,6 +162,7 @@ if (form) {
     if (sending || complete) return;
     // Enter follows the same progression as the Continue button.
     if (!wizard.last) { wizard.advance(); return; }
+    if (phone) { const digits = checkPhone(); if (digits) phone.value = digits; }
     if (!wizard.validateAll()) return;
     sending = true;
     wizard.lock(true);
