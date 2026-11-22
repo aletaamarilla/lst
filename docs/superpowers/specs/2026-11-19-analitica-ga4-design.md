@@ -2,6 +2,8 @@
 
 Fecha: 19/11/2026 · Tamaño: cambio pequeño.
 
+> **Superado el 22/11/2026** por `2026-11-22-auditoria-analitica-panel-design.md` (sección «Cambio de rumbo»): LST ya no comparte el admin de Travelhood, así que se abandonan su vocabulario de eventos, `measurement_version` y la tabla de abajo. Este documento queda como historia del primer diseño.
+
 ## Por qué
 
 LST comparte el panel `travelhood-admin` con Travelhood y Aleta Amarilla. El panel **lee GA4**; no recibe eventos. LST está registrado como instalación `lets-surf-together` con perfil `web`: muestra tráfico nativo de GA4 en cuanto se conecte su propiedad. Hoy la web no mide nada ni tiene aviso de cookies.
@@ -37,11 +39,13 @@ Anti-objetivos: medir sin consentimiento; enviar nombres, correos, teléfonos o 
 | Abrir fechas y precios | `destination_dates_price_interaction` | `destination_slug`, `cta_location` |
 | Abrir PDF del programa | `destination_pdf_download` | `destination_slug`, `cta_location` (solo clic) |
 | WhatsApp en ficha o inscripción | `destination_whatsapp_click` | `destination_slug`, `cta_location` |
-| Ir a inscripción | `destination_booking_click` | `destination_slug`, `cta_location`, `booking_provider=own_form` |
-| Inscripción aceptada por Brevo | `registration_form_accepted` | `destination_slug` |
+| Ir a inscripción | `destination_booking_click` | `destination_slug`, `cta_location` |
+| Llegar a un paso del formulario | `registration_form_step` | `destination_slug`, `form_step` (`2` a `5`) |
+| Inscripción aceptada por Brevo | `registration_form_accepted` | `destination_slug`, `trip_id` (salida elegida) |
 | Inscripción enviada que falla | `registration_form_error` | `destination_slug`, `error_category` (lista cerrada de Travelhood) |
-| WhatsApp al final de las FAQ | `faq_contact_click` | `cta_location=faq_contact` |
-| WhatsApp fuera de un viaje | `whatsapp_click` | `cta_location`, `whatsapp_topic` |
+| WhatsApp fuera de un viaje | `whatsapp_click` | `cta_location` (incluye `faq_contact`) |
+| Terminar el test de nivel | `level_test_complete` | `surf_level` (`1` a `4`) |
+| Instagram o grupo de WhatsApp | `social_click` | `link_type` (`instagram`, `whatsapp_group`) |
 
 `cta_location` sale de una tabla fija en `analytics.js`; lo que no esté en la tabla se envía como `unclassified`, y un test impide publicar botones sin clasificar. `destination_view` se envía una vez por página.
 
@@ -74,12 +78,19 @@ Para leer esto hace falta ampliar el panel, que hoy fija en código las nueve ub
 
 **Propuesta de clasificación comercial para el futuro adaptador** (a confirmar con LST): comerciales `reserve_whatsapp`, `booking_card_whatsapp`, `mobile_dock_whatsapp`, `departure_whatsapp`, `trip_summary_whatsapp`, `registration_whatsapp` y los cuatro `*_enquiry`; resto (`header_whatsapp`, `level_whatsapp`, `level_guide_whatsapp`, `group_fit_whatsapp`, `team_whatsapp`, `footer_whatsapp`, `closing_whatsapp`, `how_to_book_whatsapp`, `catalog_help_whatsapp`, `filter_empty_whatsapp`, `mobile_bar_whatsapp`, `unclassified`) en otros.
 
+## Estado de GA4 (22/11/2026)
+
+Comprobado en la propiedad de LST (cuenta «Lucas Surf», flujo «Let's Surf Together · web»). Los identificadores se guardan fuera de Git.
+
+- Zona horaria de informes: cambiada de Canarias a España peninsular (`Europe/Madrid`) antes de recibir ningún dato.
+- Medición mejorada: solo vistas de página.
+- Dimensiones de evento registradas: `measurement_version`, `traffic_type`, `page_type`, `destination_slug`, `cta_location` (8/11) y `booking_provider`, `error_category`, `whatsapp_topic` (22/11).
+- También están registradas `departure_id` (salida) y `trip_id` (viaje), de un diseño anterior. La web no las envía y quedarán vacías; ojo, `trip_id` significa aquí el viaje y en Travelhood la salida.
+- Filtro «Internal Traffic»: existe en modo Prueba, no excluye nada. No hay filtro de desarrollador.
+
 ## Pendiente fuera del código
 
-- ID `G-…` y ID numérico de la propiedad de LST.
-- Registrar en GA4 las dimensiones personalizadas de evento `measurement_version`, `traffic_type`, `page_type`, `destination_slug`, `cta_location`, `booking_provider`, `error_category` y `whatsapp_topic`.
-- Desactivar la medición mejorada del flujo web, como en Travelhood: activada, el clic saliente automático envía la URL de WhatsApp con el teléfono y el texto del mensaje.
-- Activar en GA4 los filtros de tráfico interno y de desarrollador sobre `traffic_type`.
-- Crear la propiedad GA4 con zona horaria `Europe/Madrid`: el panel rechaza cualquier otra.
+- Poner `GA4_MEASUREMENT_ID` y `SITE_URL` (dominio del flujo) en el entorno Production de Vercel y desplegar.
+- Tras los primeros eventos reales, comprobar en GA4 que `traffic_type` llega bien y decidir si se activan los filtros de tráfico interno y de desarrollador: una exclusión activa descarta datos de forma permanente.
 - Configurar el panel (`ADMIN_CLIENT=lets-surf-together`, OIDC y `GA4_PROPERTY_ID`) según su guía de alta.
 - Confirmar con LST la lista de ubicaciones comerciales antes de adaptar el panel.

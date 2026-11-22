@@ -35,13 +35,17 @@ El build cierra las salidas cuya fecha de inicio ya ha llegado (día en Madrid):
 
 ## Analítica
 
-GA4 con el vocabulario de eventos de Travelhood, para que el panel común (`travelhood-admin`) lea las tres webs igual. Diseño y lista de eventos: `docs/superpowers/specs/2026-11-19-analitica-ga4-design.md`.
+GA4 y un informe de Data Studio propios de LST. Eventos, anuncios y panel: `docs/superpowers/specs/2026-11-22-auditoria-analitica-panel-design.md` (la sección «Cambio de rumbo» manda sobre el resto). Rutina del informe mensual: `docs/informe-mensual.md`.
 
 - **Activación:** `GA4_MEASUREMENT_ID` (`G-…`) solo en el entorno **Production** de Vercel. Sin la variable el build no inyecta ni GA4 ni el aviso de cookies. Nada se carga de Google hasta que la visita acepta.
-- **En cada envío**, vistas de página incluidas: `measurement_version="1"`, `page_type` y `traffic_type`. Es `external` solo en el dominio de `SITE_URL`; en cualquier otro dominio es `developer` y lleva `debug_mode`.
-- **Visitas del equipo:** con la analítica aceptada, ejecutar en la consola del navegador `document.cookie='lst_analytics_internal=1; path=/; max-age=31536000; SameSite=Lax; Secure'` y recargar. Esas visitas salen como `traffic_type=internal`. Para volver a contar como visitante, borrar la cookie.
-- **Botones:** `cta_location` sale de dos tablas fijas en `dist/analytics.js`. Al añadir un botón de WhatsApp, inscripción, fechas o PDF en un sitio nuevo hay que darle una entrada: `scripts/analytics-browser.test.mjs` falla si alguna página publicada tiene un botón sin clasificar.
-- **Inscripción:** `dist/registration.js` avisa del envío aceptado o fallido con hechos (estado HTTP, si Brevo señaló campos, tipo de error), nunca con mensajes ni datos del formulario.
+- **En cada envío**, vistas de página incluidas: `page_type`, `destination_slug` (si la página es de un viaje) y `traffic_type`. Es `external` solo en el dominio de `SITE_URL`; en cualquier otro dominio es `developer` y lleva `debug_mode`. La vista de una ficha es el `page_view` de GA4 con `page_type=trip`; no hay evento aparte (las páginas de inscripción llevan el mismo `destination_slug` pero `page_type=registration`).
+- **Eventos:** `whatsapp_click`, `registration_click`, `dates_open`, `pdf_click`, `registration_step`, `generate_lead` (solicitud aceptada), `registration_error`, `level_test_complete` y `social_click`.
+- **Visitas del equipo:** abrir una vez en cada dispositivo `https://<dominio>/?equipo=1` y aceptar el aviso. Desde entonces ese navegador sale como `traffic_type=internal` durante un año. `?equipo=0` lo deshace. El parámetro se quita solo de la dirección, para que nadie comparta el enlace marcado al copiarla.
+- **Botones:** `cta_location` sale de una tabla fija de once lugares en `dist/analytics.js` (`header`, `reserve`, `departure`, `mobile_bar`, `trip_info`, `registration`, `levels`, `help`, `faq`, `closing`, `footer`). Al añadir un botón de WhatsApp, inscripción, fechas o PDF hay que darle una entrada: `scripts/analytics-browser.test.mjs` falla si alguna página publicada tiene un botón sin clasificar, sin evento o en un lugar distinto del documentado; solo corre con `npm test`, no en el despliegue de Vercel.
+- **Inscripción:** `dist/registration.js` avisa con hechos, nunca con mensajes ni datos del formulario: cada paso alcanzado por primera vez (`registration_step`, pasos 2 a 5), el envío aceptado como `generate_lead` con la salida elegida (`trip_id`: el viaje más la fecha de inicio, por ejemplo `maldivas-2027-03-21`, tomada de `data-departure-start`) y el envío fallido (estado HTTP, si Brevo señaló campos, tipo de error).
+- **Test de nivel:** `dist/home.js` y `dist/levels.js` avisan del nivel cuando el test da un resultado por respuestas (`level_test_complete`); elegir el nivel a mano o recuperar uno guardado no cuenta.
+- **Comunidad:** los enlaces a Instagram y al grupo de WhatsApp se reconocen por su dominio y salen como `social_click`, aparte de los contactos por WhatsApp con el equipo.
+- **Procedencia:** mientras la visita no elige en el aviso, `analytics.js` anota en `sessionStorage` (`lst-entry`) las etiquetas `utm_*` y el sitio externo de llegada. Si acepta en una página posterior, GA4 las recibe en `page_location` y `page_referrer`; al aceptar o rechazar, la anotación se borra (también si la elección se hizo en otra pestaña: se borra en la siguiente página).
 
 ## Estructura
 
