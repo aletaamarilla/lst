@@ -88,15 +88,13 @@ export function adaptTrip(doc, {today} = {}) {
     return {...departure, ...departurePricing(departure, {state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
   });
   if (doc.state === 'confirmed' && !departures.length) throw Error(`Faltan fechas: ${slug}`);
-  // A trip whose dates have all started keeps its page as "próximamente", without registration.
+  // Started departures close; a trip whose dates have all started is no longer published (null).
+  // Trips that never had dates stay as "próximamente".
   if (today) {
     if (!validDate(today)) throw Error('Fecha de referencia inválida');
     const future = departures.filter(d => d.start > today);
-    if (future.length !== departures.length) {
-      departures.splice(0, departures.length, ...future);
-      if (!future.length) doc = {...doc, state: 'upcoming'};
-      for (const d of departures) d.state = doc.state;
-    }
+    if (departures.length && !future.length) return null;
+    departures.splice(0, departures.length, ...future);
   }
   const capacity = {total: doc.capacity?.total ?? null, available: doc.capacity?.available ?? null};
   for (const key of ['total', 'available']) if (capacity[key] != null && (!Number.isInteger(capacity[key]) || capacity[key] < (key === 'total' ? 1 : 0))) throw Error(`Capacidad inválida: ${slug}`);
@@ -148,7 +146,7 @@ export function adaptTrips(documents, options = {}) {
     if (!source || source._type !== 'trip' || source === doc || source.editorialSource || /^(drafts|versions)\./.test(id ?? '')) throw Error('Referencia de contenido inválida: ' + doc._id);
     const shared = Object.fromEntries(sharedTripContentFields.map(field => [field, source[field]]));
     return adaptTrip({...doc, ...shared}, options);
-  });
+  }).filter(Boolean);
   if (new Set(trips.map(t => t.slug)).size !== trips.length) throw Error('Slugs duplicados en Sanity');
   const consolidated = consolidateTrips(trips);
   validateRegistrationMappings(consolidated);

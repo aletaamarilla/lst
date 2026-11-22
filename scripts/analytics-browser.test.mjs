@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 import vm from 'node:vm';
 import {readFile, readdir} from 'node:fs/promises';
 import path from 'node:path';
+import {renderTrip} from './render-trips.mjs';
 
 const source = await readFile('dist/analytics.js', 'utf8');
 const ID = 'G-ABC123XYZ';
@@ -261,7 +262,10 @@ test('nothing is reported after consent is withdrawn', () => {
 
 // Full trips and trips without dates swap the booking buttons for a WhatsApp enquiry in the same places.
 test('a trip that cannot be booked online reports its main buttons in the same places', async () => {
-  const site = open({page: {page_type: 'trip', destination_slug: 'hossegor'}, html: await readFile('dist/viajes/hossegor/index.html', 'utf8')});
+  // No published trip is always in this state, so a published one is rendered without dates ("próximamente").
+  const {trips} = JSON.parse(await readFile('dist/catalog-snapshot.json', 'utf8'));
+  const pending = {...trips.find(t => t.slug === 'el-palmar'), state: 'upcoming', availability: 'enquiry', departures: []};
+  const site = open({page: {page_type: 'trip', destination_slug: 'el-palmar'}, html: renderTrip(pending, trips)});
   const located = selector => {
     site.click(site.elements.find(e => e.matches(`a[data-whatsapp]${selector}`)));
     return site.events().at(-1).cta_location;
@@ -326,7 +330,6 @@ const PLACE_CASES = [
   ['dist/viajes/maldivas/index.html', 'a.departure-dossier', 'departure'], // Also a .dossier-link
   ['dist/viajes/maldivas/index.html', 'a.departure-enquiry', 'departure'],
   ['dist/viajes/maldivas/index.html', 'button.trip-header-cta', 'header'],
-  ['dist/viajes/hossegor/index.html', 'a.trip-team-contact', 'trip_info'],
   ['dist/inscripciones/maldivas/index.html', 'a.rg-whatsapp', 'registration'],
   ['dist/niveles/index.html', 'a[data-guide-enquiry]', 'levels'],
   ['dist/index.html', '.hp-how a[data-whatsapp]', 'help'],

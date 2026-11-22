@@ -12,9 +12,9 @@ import {buildSite} from './build.mjs';
 import {createSiteServer, renderPreviewPage} from './serve.mjs';
 const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
 const get=slug=>structuredClone(trips.find(t=>t.slug===slug));
-// Hossegor's only departure (20–22 nov 2026) has started, so the published snapshot no longer lists it.
-// Its Brevo mapping must still hold, so these tests restore that departure on a copy.
-const hossegor=()=>{const t=get('hossegor');if(t.departures.length)return t;const d=get('el-palmar').departures[0];return {...t,state:'confirmed',availability:'available',departures:[{...d,id:'hossegor-2026-11-20',start:'2026-11-20',end:'2026-11-22',date:'20 nov 2026 — 22 nov 2026',duration:'2 noches',price:399}]};};
+// Hossegor's only departure (20–22 nov 2026) has passed, so the published snapshot no longer has the trip.
+// Its Brevo mapping must still hold, so these tests rebuild that departure on a copy.
+const hossegor=()=>{const t=get('hossegor');if(t?.departures.length)return t;const base=get('el-palmar'),d=base.departures[0];return {...base,id:'hossegor',slug:'hossegor',name:'Hossegor',state:'confirmed',availability:'available',departures:[{...d,id:'hossegor-2026-11-20',start:'2026-11-20',end:'2026-11-22',date:'20 nov 2026 — 22 nov 2026',duration:'2 noches',price:399}]};};
 const fixture=slug=>slug==='hossegor'?hossegor():get(slug);
 const inventory=JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json','utf8'));
 const documents=prepareDrafts(inventory).map(doc=>({...doc,_id:doc._id.replace(/^drafts\./,'')}));

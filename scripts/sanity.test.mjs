@@ -341,7 +341,7 @@ test('old documents without manual status retain enquiry when no availability wa
   assert.equal(adaptTrip(doc).availability, 'full');
 });
 
-test('departures that have started are closed at build time; a trip without future dates becomes "próximamente"', () => {
+test('departures that have started are closed at build time; a trip whose dates have all passed is hidden', () => {
   const doc = published(0);
   const [first] = doc.departures;
   const later = {...structuredClone(first), _key: 'later', start: '2099-01-10', end: '2099-01-12'};
@@ -351,9 +351,11 @@ test('departures that have started are closed at build time; a trip without futu
   const open = adaptTrip(both, {today: first.start});
   assert.deepEqual(open.departures.map(d => d.id), ['later']);
   assert.equal(open.state, 'confirmed');
-  const closed = adaptTrip({...doc, departures: [first]}, {today: first.start});
-  assert.equal(closed.state, 'upcoming');
-  assert.deepEqual(closed.departures, []);
+  assert.equal(adaptTrip({...doc, departures: [first]}, {today: first.start}), null);
+  assert.equal(adaptTrips([{...doc, departures: [first]}], {today: first.start}).length, 0);
+  // A trip that never had dates is still "próximamente".
+  const pending = adaptTrip({...doc, state: 'upcoming', departures: []}, {today: first.start});
+  assert.equal(pending.state, 'upcoming');
   // The day before it starts, it is still open.
   const dayBefore = new Date(Date.parse(first.start) - 86400000).toISOString().slice(0, 10);
   assert.equal(adaptTrip({...doc, departures: [first]}, {today: dayBefore}).departures.length, 1);
