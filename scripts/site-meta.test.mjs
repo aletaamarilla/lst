@@ -47,6 +47,15 @@ test('applies robots, canonical and og:url once', () => {
   assert.throws(() => applySiteMeta('<head></head>', meta, live));
 });
 
+test('every page gets the square icon set once, replacing older icon links', () => {
+  const meta = pageMeta('/', trips, live);
+  const old = page.replace('</head>', '<link rel="icon" href="/assets/brand/symbol-orange.svg" type="image/svg+xml"></head>');
+  const once = applySiteMeta(old, meta, live);
+  assert.doesNotMatch(once, /symbol-orange/);
+  for (const href of ['/favicon.ico', '/icon.svg', '/apple-touch-icon.png', '/site.webmanifest']) assert.equal(once.split(`href="${href}"`).length, 2, href);
+  assert.equal(applySiteMeta(once, meta, live), once);
+});
+
 test('sitemap lists only self-canonical indexable pages', () => {
   const xml = sitemapXml(['/viajes/marruecos/', '/', '/viajes/marruecos-2027-01-17/', '/inscripciones/marruecos/', '/viajes/asturias/'], trips, live);
   assert.deepEqual([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]), ['https://www.example.com/', 'https://www.example.com/viajes/marruecos/']);

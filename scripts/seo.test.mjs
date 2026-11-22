@@ -43,3 +43,8 @@ test('llms.txt summarises LST and lists every trip with dates, levels and price'
   assert.match(text, /\(https:\/\/www\.example\.com\/niveles\/\)/);
   assert.match(text, /\(https:\/\/www\.example\.com\/preguntas-frecuentes\/\)/);
 });
+
+test('a trip shares its cover cropped to the 1200×630 link preview size', () => {
+  const html = renderTrip({...trip, hero: 'https://cdn.sanity.io/images/p/production/abc-6000x4000.jpg', heroAlt: 'Grupo en el agua'}, [trip]);
+  assert.match(html, /<meta property="og:image" content="https:\/\/cdn\.sanity\.io\/images\/p\/production\/abc-6000x4000\.jpg\?w=1200&amp;h=630&amp;fit=crop&amp;fm=jpg&amp;q=82"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">/);
+});

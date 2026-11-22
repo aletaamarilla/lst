@@ -29,12 +29,16 @@ export function pageMeta(route, trips, site) {
 const robotsTag = /<meta name="robots" content="[^"]*">/;
 const canonicalTag = /<link rel="canonical" href="[^"]*">/g;
 const ogUrlTag = /<meta property="og:url" content="[^"]*">/;
+const iconTags = /<link rel="(?:icon|apple-touch-icon|manifest)"[^>]*>/g;
+
+// One icon set for every page: square tile for tabs (ico + svg), home screens and Android.
+export const ICON_LINKS = '<link rel="icon" href="/favicon.ico" sizes="32x32"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">';
 
 // Idempotent: the versioned output is also the template of the next build.
 export function applySiteMeta(html, meta, site) {
   if (!robotsTag.test(html)) throw Error('Falta la etiqueta robots en una página.');
   const canonical = meta.canonical ? `<link rel="canonical" href="${site.origin}${meta.canonical}">` : '';
-  let result = html.replace(canonicalTag, '').replace(robotsTag, `<meta name="robots" content="${meta.index ? 'index,follow' : 'noindex,nofollow'}">${canonical}`);
+  let result = html.replace(canonicalTag, '').replace(iconTags, '').replace(robotsTag, `<meta name="robots" content="${meta.index ? 'index,follow' : 'noindex,nofollow'}">${canonical}${ICON_LINKS}`);
   if (meta.canonical) result = result.replace(ogUrlTag, `<meta property="og:url" content="${site.origin}${meta.canonical}">`);
   return result;
 }
