@@ -68,6 +68,8 @@ function createSteps(form) {
     form.dataset.currentStep = String(current);
   };
   const show = (index, focus = true) => {
+    // A fact for the measurement script: a step reached for the first time, never what was typed.
+    if (index > visited) document.dispatchEvent(new CustomEvent('lst:registration-step', {detail: {step: index + 1}}));
     current = index;
     visited = Math.max(visited, index);
     update();
@@ -174,7 +176,8 @@ if (form) {
         return;
       }
       complete = true;
-      document.dispatchEvent(new CustomEvent('lst:registration-accepted')); // Measured only with consent; carries no form data.
+      // Measured only with consent; carries the start date of the departure chosen and no form data.
+      document.dispatchEvent(new CustomEvent('lst:registration-accepted', {detail: {start: dates.find(input => input.checked)?.dataset.departureStart}}));
       button.textContent = 'Inscripción enviada';
       form.hidden = true;
       show(success, typeof result.message === 'string' ? result.message : '¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.');

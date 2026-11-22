@@ -37,23 +37,28 @@
       "permanent": true
     },
     {
+      "source": "/author/(.*)",
+      "destination": "/conocenos/",
+      "permanent": true
+    },
+    {
       "source": "/rookies/",
-      "destination": "/niveles/",
+      "destination": "/niveles/#nivel-1",
       "permanent": true
     },
     {
       "source": "/nivel-ii-aprendices/",
-      "destination": "/niveles/",
+      "destination": "/niveles/#nivel-2",
       "permanent": true
     },
     {
       "source": "/nivel-iii-rides/",
-      "destination": "/niveles/",
+      "destination": "/niveles/#nivel-3",
       "permanent": true
     },
     {
       "source": "/nivel-iv-supercracks/",
-      "destination": "/niveles/",
+      "destination": "/niveles/#nivel-4",
       "permanent": true
     },
     {
@@ -62,12 +67,17 @@
       "permanent": true
     },
     {
-      "source": "/hola-mundo/",
+      "source": "/hola-mundo/(.*)",
       "destination": "/",
       "permanent": true
     },
     {
-      "source": "/category/:path*",
+      "source": "/category/(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mi-cuenta/(.*)",
       "destination": "/",
       "permanent": true
     },
@@ -82,17 +92,17 @@
       "permanent": true
     },
     {
-      "source": "/producto/:path*",
+      "source": "/producto/(.*)",
       "destination": "/viajes/",
       "permanent": true
     },
     {
-      "source": "/categoria-producto/:path*",
+      "source": "/categoria-producto/(.*)",
       "destination": "/viajes/",
       "permanent": true
     },
     {
-      "source": "/tienda/",
+      "source": "/tienda/(.*)",
       "destination": "/viajes/",
       "permanent": true
     },
@@ -102,13 +112,8 @@
       "permanent": true
     },
     {
-      "source": "/finalizar-compra/",
+      "source": "/finalizar-compra/(.*)",
       "destination": "/viajes/",
-      "permanent": true
-    },
-    {
-      "source": "/mi-cuenta/",
-      "destination": "/",
       "permanent": true
     }
   ]

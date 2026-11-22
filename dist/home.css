@@ -701,3 +701,74 @@ body.home-modern:not(.catalog-page):not(.levels-page) .home-trip[data-compact-ho
  body.home-modern .lst-footer-links,body.home-modern .footer-legal{justify-content:center}
  body.home-modern .lst-footer-brand{margin-inline:auto}
 }
+
+/* ======================================================================================
+   MENÚ MÓVIL (nov 2026, 4ª pasada): una pantalla entera de mar. Al abrirlo, la cabecera y el panel
+   se vuelven verde mar con líneas de ola; cada sección es una palabra grande en Aura con una línea
+   que dice qué hay dentro, separadas por cortes de billete; abajo, «Hablamos» como botón naranja.
+   La página de debajo no se desplaza mientras está abierto.
+   ====================================================================================== */
+body.home-modern .nav-sub{display:none}
+@media(max-width:999px){
+ html.menu-open{overflow:hidden}
+ body.home-modern .site-header:has(#main-nav.is-open){z-index:60;background:#0f4c51;color:var(--lst-paper);border-bottom:1px solid rgba(255,250,231,.16)}
+ body.home-modern .site-header:has(#main-nav.is-open) .brand-light{display:block}
+ body.home-modern .site-header:has(#main-nav.is-open) .brand-dark{display:none}
+ body.home-modern .site-header:has(#main-nav.is-open) :is(.lst-header-trip,.trip-header-cta){visibility:hidden}
+ body.home-modern .menu-toggle span{transition:transform .2s}
+ body.home-modern .menu-toggle[aria-expanded="true"] span:first-child{transform:translateY(4px) rotate(45deg)}
+ body.home-modern .menu-toggle[aria-expanded="true"] span:last-child{transform:translateY(-4px) rotate(-45deg)}
+ body.home-modern .site-header #main-nav{position:fixed;top:var(--menu-top,var(--home-header-height));left:0;right:0;bottom:0;max-height:none;margin:0;
+  padding:4px max(24px,env(safe-area-inset-left)) calc(20px + env(safe-area-inset-bottom));border:0;border-radius:0;overflow:auto;overscroll-behavior:contain;
+  flex-direction:column;align-items:stretch;gap:0;color:var(--lst-paper);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cpath d='M0 12c20-9 40-9 60 0s40 9 60 0 30-7 40-4M0 36c20-9 40-9 60 0s40 9 60 0 30-7 40-4' fill='none' stroke='%23FFFAE7' stroke-opacity='.07' stroke-width='2'/%3E%3C/svg%3E") 0 0/160px 48px,
+   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 140' preserveAspectRatio='none'%3E%3Cpath d='M0 92C50 70 96 40 160 34s104 20 120 38c10 12-2 24-14 18-9-5-5-17 5-17 40 0 82 18 129 30V140H0Z' fill='%230A3A3E'/%3E%3C/svg%3E") 0 100%/100% 150px no-repeat,#0f4c51}
+ body.home-modern .site-header #main-nav.is-open{display:flex;animation:lst-menu-in .26s ease-out both}
+ body.home-modern .site-header #main-nav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:0;margin:0;padding:clamp(14px,2.6vh,22px) 8px;
+  border:0;border-bottom:2px dashed rgba(255,250,231,.22);border-radius:0;background:none;color:var(--lst-paper);
+  font:400 clamp(34px,10.5vw,52px)/.9 var(--lst-display);text-transform:uppercase;text-align:center;text-decoration:none;white-space:normal}
+ body.home-modern .site-header #main-nav a .nav-sub{display:block;font:500 14px/1.3 'Work Sans',Arial,sans-serif;text-transform:none;color:rgba(255,250,231,.72)}
+ body.home-modern .site-header #main-nav a:hover,body.home-modern .site-header #main-nav a[aria-current="page"]{color:var(--lst-orange)}
+ body.home-modern .site-header #main-nav a:focus-visible{outline:3px solid var(--lst-paper);outline-offset:-3px}
+ /* Hablamos: botón naranja al pie, a la altura del pulgar. */
+ body.home-modern .site-header #main-nav .lst-nav-contact{position:relative;align-self:stretch;margin:auto 0 0;padding:14px 16px 12px;border:0;border-radius:2px;background:var(--lst-orange);color:var(--lst-ink);font-size:30px}
+ body.home-modern .site-header #main-nav .lst-nav-contact:hover{background:var(--lst-paper);color:var(--lst-ink)}
+ body.home-modern .site-header #main-nav .lst-nav-contact .nav-sub{color:rgba(27,27,27,.75);font-size:13px}
+ /* En las fichas de viaje el enlace trae icono y texto en un span pequeño: aquí, igual que en el resto. */
+ body.home-modern .site-header #main-nav .lst-nav-contact>span:not(.nav-sub){font-size:inherit}
+ body.home-modern .site-header #main-nav .lst-nav-contact>svg{display:none}
+ body.home-modern .site-header #main-nav a:nth-last-child(2){border-bottom:0;margin-bottom:20px}
+}
+@keyframes lst-menu-in{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){body.home-modern .site-header #main-nav.is-open{animation:none}body.home-modern .menu-toggle span{transition:none}}
+
+/* ======================================================================================
+   PIE (nov 2026, 4ª pasada: «una lista centrada sin personalidad»). Arranca con una ola de papel sobre
+   la última banda, la firma de LST en grande y las dos formas de hablar con el equipo; después el logo,
+   los enlaces en dos columnas, lo legal y el © al final.
+   ====================================================================================== */
+body.home-modern .lst-footer{position:relative;padding:40px 0 24px;border-top:0;background:var(--lst-paper);color:var(--lst-ink);text-align:center}
+body.home-modern .lst-footer::before{content:"";position:absolute;left:0;right:0;top:-21px;height:22px;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 28' preserveAspectRatio='none'%3E%3Cpath d='M0 28V14C120 2 240 2 360 12S600 26 720 16 960 4 1080 14 1320 24 1440 12V28Z' fill='%23fffae7'/%3E%3C/svg%3E") 0 0/100% 100% no-repeat}
+body.home-modern .lst-footer-sign{display:grid;justify-items:center;gap:18px;padding-bottom:30px;border-bottom:2px dashed var(--lst-line)}
+body.home-modern .lst-footer-motto{margin:0;font:400 clamp(40px,11vw,64px)/.9 var(--lst-display);text-transform:uppercase;letter-spacing:0;color:var(--lst-ink)}
+body.home-modern .lst-footer-contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+body.home-modern .lst-footer-contact a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 18px 10px;border:2px solid var(--lst-ink);border-radius:2px;
+  color:var(--lst-ink);font:400 18px/1 var(--lst-display);text-transform:uppercase;text-decoration:none;white-space:normal}
+body.home-modern .lst-footer-contact .lst-footer-wa{border-color:var(--lst-orange);background:var(--lst-orange)}
+body.home-modern .lst-footer-contact .lst-footer-ig{font:600 15px/1.2 'Work Sans',Arial,sans-serif;text-transform:none}
+body.home-modern .lst-footer-contact a:hover{background:var(--lst-ink);border-color:var(--lst-ink);color:var(--lst-paper)}
+body.home-modern .lst-footer-contact a:focus-visible{outline:3px solid var(--lst-ink);outline-offset:3px}
+body.home-modern .lst-footer-contact .whatsapp-icon{width:18px;height:18px}
+body.home-modern .lst-footer-top{flex-direction:column;align-items:center;gap:10px;padding:28px 0 18px}
+body.home-modern .lst-footer-brand{width:190px;margin-inline:auto}
+body.home-modern .lst-footer-top>span{font-size:14px;color:var(--lst-muted)}
+body.home-modern .lst-footer-bottom{display:grid;justify-content:center;justify-items:center;gap:6px;padding-top:0;border-top:0;font-size:13px}
+body.home-modern .lst-footer-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;width:min(100%,420px)}
+body.home-modern .lst-footer-links a{justify-content:center;min-height:44px;padding:8px 0;font-size:15px;font-weight:600;color:var(--lst-ink)}
+body.home-modern .lst-footer .footer-legal{justify-content:center;gap:0 18px;margin-top:4px}
+body.home-modern .lst-footer-copy{margin-top:8px;font-size:13px;color:var(--lst-muted)}
+@media(min-width:1000px){
+ body.home-modern .lst-footer{padding-top:56px}
+ body.home-modern .lst-footer-links{display:flex;flex-wrap:wrap;justify-content:center;gap:0 28px;width:auto}
+}

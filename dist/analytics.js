@@ -1,5 +1,5 @@
-// GA4 shared with the travelhood-admin panel (event vocabulary of its common standard v1).
-// Nothing loads from Google until the visitor accepts. No personal data is ever sent.
+// GA4 for LST's own Data Studio report. Nothing loads from Google until the visitor accepts.
+// No personal data is ever sent: every value below comes from a closed list or a catalogue code.
 (() => {
   const config = window.lstAnalytics;
   if (!config?.id) return;
@@ -15,21 +15,75 @@
   function gtag() { window.dataLayer.push(arguments); }
   gtag('consent', 'default', {analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied'});
 
-  // Sent with every hit, page views included, with Travelhood's names and values.
-  // The team marks its own browser with the cookie lst_analytics_internal=1.
+  // Sent with every hit, page views included: who is visiting, what kind of page and which trip it is about.
+  // The team marks its own browser by opening any page with ?equipo=1 once (?equipo=0 undoes it);
+  // the cookie lst_analytics_internal=1 remembers it for a year.
   const bare = name => String(name).replace(/^www\./, '');
-  const internal = /(?:^|; )lst_analytics_internal=1(?:;|$)/.test(document.cookie);
+  const team = new URLSearchParams(location.search).get('equipo');
+  if (team === '1') document.cookie = 'lst_analytics_internal=1; path=/; max-age=31536000; SameSite=Lax; Secure';
+  if (team === '0') document.cookie = 'lst_analytics_internal=; path=/; max-age=0; SameSite=Lax; Secure';
+  if (team === '1' || team === '0') {
+    // Out of the address once handled, so the mark is not passed on to visitors by copying the link.
+    try {
+      const url = new URL(location.href);
+      url.searchParams.delete('equipo');
+      history.replaceState(history.state, '', url);
+    } catch { /* The address stays as it is. */ }
+  }
+  const internal = team === '1' || (team !== '0' && /(?:^|; )lst_analytics_internal=1(?:;|$)/.test(document.cookie));
   const external = !internal && bare(location.hostname) === bare(host);
   const common = {
-    measurement_version: '1',
     traffic_type: internal ? 'internal' : external ? 'external' : 'developer',
     page_type: page.page_type,
+    ...(page.destination_slug ? {destination_slug: page.destination_slug} : {}), // A trip's view is its page_view with page_type=trip.
     ...(external ? {} : {debug_mode: true}) // GA4 reads any value as "on": only present outside real traffic.
   };
 
+  // Where the visit came from, noted in this tab only until the visitor chooses: someone who lands
+  // from a campaign and accepts on a later page would otherwise count as direct traffic.
+  // Nothing leaves the browser without consent, and the note is erased on either choice.
+  const ENTRY = 'lst-entry';
+  const LABELS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'utm_id'];
+  const labelsOf = query => new URLSearchParams([...new URLSearchParams(query)].filter(([key]) => LABELS.includes(key)));
+  const outside = url => { try { return bare(new URL(url).hostname) !== bare(location.hostname); } catch { return false; } };
+  const entry = {
+    get() {
+      try {
+        const kept = JSON.parse(sessionStorage.getItem(ENTRY));
+        return kept && typeof kept.query === 'string' && typeof kept.referrer === 'string' ? kept : null;
+      } catch { return null; }
+    },
+    set(kept) { try { sessionStorage.setItem(ENTRY, JSON.stringify(kept)); } catch { /* Measured without it. */ } },
+    clear() { try { sessionStorage.removeItem(ENTRY); } catch { /* Nothing was kept. */ } }
+  };
+  const chosen = () => {
+    const saved = storage.get();
+    return saved?.version === VERSION && typeof saved.analytics === 'boolean' ? saved : null;
+  };
+  if (!chosen() && !entry.get()) {
+    const query = labelsOf(location.search).toString();
+    const referrer = outside(document.referrer) ? document.referrer : '';
+    if (query || referrer) entry.set({query, referrer});
+  }
+  // What GA4 can no longer see on a later page: the campaign labels and the outside site.
+  function origin() {
+    const kept = entry.get();
+    const fields = {};
+    if (!kept) return fields;
+    try {
+      const url = new URL(location.href);
+      const labels = [...labelsOf(kept.query)];
+      if (labels.length && ![...url.searchParams.keys()].some(key => key.startsWith('utm_'))) {
+        for (const [key, value] of labels) url.searchParams.append(key, value);
+        fields.page_location = url.href;
+      }
+    } catch { /* GA4 reads the address as it is. */ }
+    if (kept.referrer && !outside(document.referrer)) fields.page_referrer = kept.referrer;
+    return fields;
+  }
+
   let granted = false;
   let loaded = false;
-  let viewed = false;
   function load() {
     window[`ga-disable-${id}`] = false;
     gtag('consent', 'update', {analytics_storage: 'granted'});
@@ -40,13 +94,9 @@
       script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(id)}`;
       document.head.append(script);
       gtag('js', new Date());
-      gtag('config', id, common);
+      gtag('config', id, {...common, ...origin()});
     }
     granted = true;
-    if (page.page_type === 'trip' && !viewed) {
-      viewed = true; // Once per page, however many times consent changes.
-      send('destination_view', {destination_slug: page.destination_slug});
-    }
   }
   function revoke() {
     granted = false;
@@ -66,48 +116,59 @@
     if (granted) gtag('event', name, {...common, ...params});
   }
 
-  // Controlled button locations; anything else is reported as unclassified, never guessed.
-  const WHATSAPP = [
-    ['.reserve-whatsapp', 'reserve_whatsapp'], ['.booking-whatsapp', 'booking_card_whatsapp'],
-    ['.dock-whatsapp', 'mobile_dock_whatsapp'], ['.departure-enquiry', 'departure_whatsapp'],
-    // A full trip or one without dates shows an enquiry where the booking button would be.
-    ['.trip-header-cta', 'header_enquiry'], ['.reserve-main', 'reserve_enquiry'],
-    ['.booking-card-cta', 'booking_card_enquiry'], ['.dock-cta', 'mobile_dock_enquiry'],
-    ['.trip-team-contact', 'team_whatsapp'], ['.group-fit-contact', 'group_fit_whatsapp'],
-    ['.trip-meta-contact', 'trip_summary_whatsapp'], ['.trip-summary *', 'trip_summary_whatsapp'],
-    ['.rg-whatsapp', 'registration_whatsapp'], ['.lst-nav-contact', 'header_whatsapp'],
-    ['.hp-bar-wa', 'mobile_bar_whatsapp'], ['[data-guide-enquiry]', 'level_guide_whatsapp'],
-    ['.hp-filter-empty *', 'filter_empty_whatsapp'], ['#catalog-empty *', 'filter_empty_whatsapp'],
-    ['.hp-how *', 'how_to_book_whatsapp'], ['.ct-help *', 'catalog_help_whatsapp'],
-    ['.faq-help *', 'faq_contact'], ['.hp-close *', 'closing_whatsapp'],
-    ['footer *', 'footer_whatsapp'], ['#nivel *', 'level_whatsapp'], ['.trip-native-dates *', 'departure_whatsapp']
+  // Where on the page a button is, in eleven places that mean something to the client. Anything else is
+  // reported as unclassified, never guessed. The first match wins, so the wildcard entries go last;
+  // `npm test` (not part of the Vercel build) fails if a published button is unclassified or its place changes.
+  const PLACES = [
+    ['.trip-header-cta', 'header'], ['.lst-nav-contact', 'header'],
+    ['.reserve-whatsapp', 'reserve'], ['.reserve-main', 'reserve'], ['.booking-whatsapp', 'reserve'], ['.booking-card-cta', 'reserve'],
+    ['.dock-whatsapp', 'mobile_bar'], ['.dock-cta', 'mobile_bar'], ['.hp-bar-wa', 'mobile_bar'],
+    ['.departure-enquiry', 'departure'], ['.trip-registration', 'departure'], ['.essential-dates', 'departure'],
+    ['.departure-dossier', 'departure'], ['.departure-dialog *', 'departure'], ['.trip-native-dates *', 'departure'],
+    ['.trip-team-contact', 'trip_info'], ['.group-fit-contact', 'trip_info'],
+    ['.trip-summary *', 'trip_info'], ['.dossier-link', 'trip_info'],
+    ['.rg-whatsapp', 'registration'],
+    ['[data-guide-enquiry]', 'levels'], ['#nivel *', 'levels'],
+    ['.hp-filter-empty *', 'help'], ['#catalog-empty *', 'help'], ['.hp-how *', 'help'], ['.ct-help *', 'help'],
+    ['.faq-help *', 'faq'], ['.hp-close *', 'closing'], ['footer *', 'footer']
   ];
-  const ACTIONS = [
-    ['.trip-header-cta', 'header'], ['.reserve-main', 'reserve'], ['.booking-card-cta', 'booking_card'],
-    ['.dock-cta', 'mobile_dock'], ['.trip-registration', 'departure'], ['.essential-dates', 'essentials'],
-    ['.departure-dossier', 'departure'], ['.departure-dialog *', 'departure'], ['.dossier-link', 'trip']
-  ];
-  const locate = (element, table) => table.find(([selector]) => element.matches(selector))?.[1] ?? 'unclassified';
+  const locate = element => PLACES.find(([selector]) => element.matches(selector))?.[1] ?? 'unclassified';
+
+  // Community links are known by their host; they are not commercial contact.
+  const SOCIAL = new Map([['instagram.com', 'instagram'], ['www.instagram.com', 'instagram'], ['chat.whatsapp.com', 'whatsapp_group']]);
+  const social = link => SOCIAL.get(/^https?:\/\/([^/?#:]+)/i.exec(link?.getAttribute('href') ?? '')?.[1].toLowerCase());
 
   document.addEventListener('click', event => {
-    const element = event.target instanceof Element && event.target.closest('a[data-whatsapp], a[data-registration], [data-open-dates], a.dossier-link');
-    if (!element || !granted) return;
-    const destination = page.destination_slug;
-    if (element.matches('a[data-whatsapp]')) {
-      const cta_location = locate(element, WHATSAPP);
-      if (destination) send('destination_whatsapp_click', {destination_slug: destination, cta_location});
-      else if (cta_location === 'faq_contact') send('faq_contact_click', {cta_location});
-      else send('whatsapp_click', {whatsapp_topic: element.dataset.whatsapp, cta_location});
-    } else if (!destination) return;
-    else if (element.matches('a[data-registration]')) send('destination_booking_click', {destination_slug: destination, cta_location: locate(element, ACTIONS), booking_provider: 'own_form'});
-    else if (element.matches('[data-open-dates]')) send('destination_dates_price_interaction', {destination_slug: destination, cta_location: locate(element, ACTIONS)});
-    else send('destination_pdf_download', {destination_slug: destination, cta_location: locate(element, ACTIONS)});
+    if (!granted || !(event.target instanceof Element)) return;
+    const link_type = social(event.target.closest('a'));
+    if (link_type) send('social_click', {link_type});
+    const element = event.target.closest('a[data-whatsapp], a[data-registration], [data-open-dates], a.dossier-link');
+    if (!element) return;
+    const cta_location = locate(element);
+    if (element.matches('a[data-whatsapp]')) send('whatsapp_click', {cta_location});
+    else if (!page.destination_slug) return; // Registration, dates and PDF only exist on a trip.
+    else if (element.matches('a[data-registration]')) send('registration_click', {cta_location});
+    else if (element.matches('[data-open-dates]')) send('dates_open', {cta_location});
+    else send('pdf_click', {cta_location});
   }, true);
 
-  document.addEventListener('lst:registration-accepted', () => {
-    if (page.destination_slug) send('registration_form_accepted', {destination_slug: page.destination_slug});
+  document.addEventListener('lst:level-test', event => {
+    const level = event.detail?.level;
+    if (Number.isInteger(level) && level >= 1 && level <= 4) send('level_test_complete', {surf_level: String(level)});
   });
-  // Travelhood's closed list of error categories. The form reports facts (HTTP status, whether
+  // The form announces facts; only controlled values go on: a step number and a start date.
+  document.addEventListener('lst:registration-step', event => {
+    const step = event.detail?.step;
+    if (page.destination_slug && Number.isInteger(step) && step >= 2 && step <= 5) send('registration_step', {form_step: String(step)});
+  });
+  document.addEventListener('lst:registration-accepted', event => {
+    if (!page.destination_slug) return;
+    // trip_id is the departure: the trip plus its start date, readable whatever key the CMS gives it.
+    const start = event.detail?.start;
+    const dated = typeof start === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(start);
+    send('generate_lead', dated ? {trip_id: `${page.destination_slug}-${start}`} : {}); // GA4's own name for a request received.
+  });
+  // A closed list of error categories. The form reports facts (HTTP status, whether
   // Brevo pointed at fields, the error type); messages and field contents never get here.
   function failure({status, fields, error}) {
     if (status === 429) return 'rate_limited';
@@ -119,7 +180,7 @@
     return 'unknown';
   }
   document.addEventListener('lst:registration-failed', event => {
-    if (page.destination_slug) send('registration_form_error', {destination_slug: page.destination_slug, error_category: failure(event.detail ?? {})});
+    if (page.destination_slug) send('registration_error', {error_category: failure(event.detail ?? {})});
   });
 
   // Consent notice: two equal choices, no pre-ticked analytics, always reachable from the cookie page.
@@ -129,6 +190,7 @@
     notice?.remove();
     notice = null;
     if (analytics) load(); else revoke();
+    entry.clear();
   }
   function showNotice() {
     if (notice) { notice.querySelector('button').focus(); return; }
@@ -150,8 +212,9 @@
       button.hidden = false;
       button.addEventListener('click', showNotice);
     });
-    const saved = storage.get();
-    if (saved?.version === VERSION && typeof saved.analytics === 'boolean') { if (saved.analytics) load(); }
+    const saved = chosen();
+    // A choice made in another tab: the note is used once, or not at all, and erased either way.
+    if (saved) { if (saved.analytics) load(); entry.clear(); }
     else showNotice();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start); else start();

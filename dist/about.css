@@ -1,29 +1,14 @@
-/* Conócenos (nov 2026). Portada en papel con la foto de Marruecos; la historia como una postal de
-   Lucas, con sello; el día de viaje en cuatro momentos; el equipo con la foto de Laga; respeto.
+/* Conócenos (nov 2026). Portada: la foto de Marruecos a todo el ancho con el título encima (.lp-hero); la historia como una postal de
+   Lucas, con sello; el equipo con la foto de Laga; respeto.
    Usa el sistema de la home (homepage.css); aquí solo lo propio de la página. */
 body.hp-page.about-page{padding-bottom:0}
 body.hp-page.about-page section[id]{scroll-margin-top:84px}
 
-/* Cabecera en papel desde el principio: la portada ya no es una foto a sangre. */
-body.home-modern.hp-page.about-page .site-header,
-body.home-modern.hp-page.about-page .site-header:not(.is-scrolled):not(:has(nav.is-open)){background:var(--lst-paper);color:var(--lst-ink)}
-body.home-modern.hp-page.about-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-light{display:none}
-body.home-modern.hp-page.about-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-dark{display:block}
-
 /* Titulares de sección: Aura, tamaño contenido, sin antetítulos */
 body.hp-page .ab-h{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.9;font-size:clamp(38px,8vw,56px);text-wrap:balance}
 
-/* PORTADA: título centrado, la ola dibujada y la foto entera debajo */
-body.hp-page .ab-hero{padding:calc(var(--home-header-height,78px) + 44px) 0 56px;background:var(--hp-paper);color:var(--hp-ink);text-align:center}
-body.hp-page .ab-hero h1{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;line-height:.86;letter-spacing:0;font-size:clamp(56px,16vw,84px)}
-body.hp-page .ab-h1-a,body.hp-page .ab-h1-b{display:block}
-body.hp-page .ab-h1-b{color:var(--hp-orange)}
-body.hp-page .ab-swash{margin:8px auto 0}
-body.hp-page .ab-swash path{stroke:var(--hp-ink)}
-body.hp-page.about-page .ab-hero .hp-sub{max-width:36ch;margin:18px auto 0;color:var(--hp-ink)}
-body.hp-page .ab-hero-photo{margin:36px 0 0}
-body.hp-page.about-page .ab-hero-photo img{display:block;width:100%;height:auto;max-width:none;aspect-ratio:4/3;object-fit:cover;object-position:50% 40%;border-radius:4px}
-body.hp-page.about-page .ab-hero .hp-hero-cap{margin:10px 0 0;padding:0;color:var(--hp-muted);text-align:center}
+/* PORTADA: la foto compartida de las landings (.lp-hero, homepage.css), encuadrada en las caras. */
+.ab-hero .lp-hero-photo img{object-position:50% 38%}
 
 /* Fotos: encuadre completo, pie corto en texto normal */
 body.hp-page .ab-photo{margin:0}
@@ -47,21 +32,20 @@ body.hp-page.about-page .ab-sign .ab-sign-line{display:block;font-family:var(--h
 body.hp-page.about-page .ab-sign .ab-sign-who{display:block;margin-top:6px;font-size:18px;font-weight:600;color:var(--hp-ink)}
 
 /* ASÍ SON LOS DÍAS: cuatro momentos del día, en orden */
-body.hp-page .ab-way{padding-block:64px;background:var(--hp-paper)}
-body.hp-page .ab-way-head{display:grid;gap:16px;margin-bottom:32px;text-align:center;justify-items:center}
-body.hp-page.about-page .ab-way-head p{margin:0;font-size:17px;line-height:1.5;max-width:46ch}
-body.hp-page .ab-way-head a{color:inherit;text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:2px;text-underline-offset:4px}
-body.hp-page .ab-day{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px;margin:0;padding:0;list-style:none}
-body.hp-page.about-page .ab-day img{aspect-ratio:4/5;object-fit:cover}
-body.hp-page.about-page .ab-day figcaption{margin-top:10px;font-size:13px}
-body.hp-page.about-page .ab-day figcaption strong{display:block;margin-bottom:4px;font-family:var(--hp-display);font-weight:400;font-size:24px;line-height:1;text-transform:uppercase;color:var(--hp-ink)}
 
 /* EQUIPO: la foto de Laga a lo ancho y tres ideas debajo */
-body.hp-page .ab-team{padding-block:64px;background:var(--hp-paper-2)}
+/* Venimos con vosotros (nov 2026, 4ª pasada: «demasiado plana y mucho texto»): banda verde mar con
+   líneas de ola, la foto del grupo y tres frases cortas con su titular en naranja, cortadas como billetes. */
+body.hp-page .ab-team{position:relative;isolation:isolate;padding-block:56px 64px;color:var(--hp-paper);
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 48'%3E%3Cpath d='M0 12c20-9 40-9 60 0s40 9 60 0 30-7 40-4M0 36c20-9 40-9 60 0s40 9 60 0 30-7 40-4' fill='none' stroke='%23FFFAE7' stroke-opacity='.07' stroke-width='2'/%3E%3C/svg%3E") 0 0/160px 48px,var(--hp-sea)}
+body.hp-page.about-page .ab-team-photo figcaption{color:rgba(255,250,231,.75);text-align:center}
 body.hp-page .ab-team .ab-h{text-align:center;margin-bottom:28px}
-body.hp-page.about-page .ab-team-photo img{aspect-ratio:4/3;object-fit:cover}
-body.hp-page .ab-team-points{display:grid;gap:0;margin-top:28px}
-body.hp-page.about-page .ab-team-points p{margin:0;padding:16px 0;border-top:2px solid var(--hp-ink);font-size:17px;line-height:1.5}
+body.hp-page.about-page .ab-team-photo img{aspect-ratio:16/10;object-fit:cover}
+body.hp-page .ab-team-points{display:grid;gap:0;margin:26px 0 0;padding:0;list-style:none;text-align:center}
+body.hp-page .ab-team-points li{padding:18px 0;border-top:2px dashed rgba(255,250,231,.24)}
+body.hp-page .ab-team-points li:last-child{border-bottom:2px dashed rgba(255,250,231,.24)}
+body.hp-page.about-page .ab-team-points h3{margin:0 0 6px;font:400 26px/1 var(--hp-display);text-transform:uppercase;letter-spacing:0;color:var(--hp-orange)}
+body.hp-page.about-page .ab-team-points p{max-width:32ch;margin:0 auto;font-size:16px;line-height:1.45;color:rgba(255,250,231,.88)}
 body.hp-page.about-page .ab-team-cta{margin:24px 0 0;text-align:center}
 
 /* RESPETO: la foto del atardecer de fondo */
@@ -78,20 +62,18 @@ body.hp-page .ab-next .hp-ctas{margin-top:28px;justify-content:center}
 body.hp-page .ab-note{margin:16px auto 0;font-size:14px!important;color:rgba(255,250,231,.6)!important}
 
 @media (min-width:720px){
-  body.hp-page.about-page .ab-hero-photo img{aspect-ratio:21/9}
   body.hp-page .ab-postcard{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);transform:rotate(-.6deg)}
   body.hp-page .ab-postcard-photo{padding:16px}
   body.hp-page.about-page .ab-postcard-photo img{height:calc(100% - 26px);aspect-ratio:auto;min-height:420px}
   body.hp-page .ab-postcard-text{margin:16px 16px 16px 0;padding:28px 12px 28px 32px;border-top:0;border-left:2px dashed var(--hp-rule)}
   body.hp-page .ab-stamp{top:24px;right:12px}
-  body.hp-page .ab-day{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
   body.hp-page.about-page .ab-team-photo img{aspect-ratio:21/9}
   body.hp-page .ab-team-points{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
+  body.hp-page .ab-team-points li:last-child{border-bottom:0}
 }
 @media (min-width:1000px){
-  body.hp-page .ab-hero{padding-top:calc(var(--home-header-height,88px) + 64px)}
   body.hp-page .ab-origin{padding-block:88px 104px}
-  body.hp-page .ab-way,body.hp-page .ab-team{padding-block:96px}
+  body.hp-page .ab-team{padding-block:96px}
   body.hp-page .ab-respect{padding-block:320px 88px}
 }
 
@@ -100,7 +82,6 @@ body.hp-page .ab-postcard>*{min-width:0}
 body.hp-page.about-page main .hp-btn{white-space:normal;text-align:center}
 @media (prefers-reduced-motion:reduce){body.hp-page .ab-postcard{transform:none}}
 /* Con el texto al 200 % los pies y el sello no empujan el ancho. */
-body.hp-page .ab-day li,body.hp-page .ab-day figure{min-width:0;overflow-wrap:anywhere}
 /* En móvil la postal empieza por el texto: al llegar a #origen se lee el título sin bajar. */
 @media (max-width:719px){
   body.hp-page .ab-postcard-text{order:-1;margin:0 12px;padding:28px 8px 22px;border-top:0;border-bottom:2px dashed var(--hp-rule)}

@@ -7,14 +7,14 @@ const escape = value => String(value).replace(/[&<>"']/g, c => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 }[c]));
 
-// /viajes/ reads as the season: trips grouped by the month of their first
-// departure, with a "tide line" index of every departure at the top.
+// /viajes/ is a departures board: a short opening, the level filter, and every
+// trip as a compact ticket (photo, date, name, level, length and price), in date
+// order under the month of its first departure.
 const MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-const SHORT = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
 const PENDING = 'pendiente';
 
 const photoWidths = [500, 800, 1200];
-const photoSizes = '(min-width: 900px) 34vw, 100vw';
+const photoSizes = '(min-width: 900px) 280px, 120px';
 
 // Level filters: one per guide level, so /viajes/?nivel=N links keep working.
 export const catalogLevels = [
@@ -27,24 +27,10 @@ export const catalogLevels = [
 
 const startOf = trip => trip.state === 'confirmed' ? departuresFor(trip).map(d => d.start).filter(Boolean).sort()[0] : undefined;
 const monthKey = start => start ? start.slice(0, 7) : PENDING;
-const monthIndex = key => Number(key.slice(0, 4)) * 12 + Number(key.slice(5, 7)) - 1;
-const keyOf = index => `${Math.floor(index / 12)}-${String(index % 12 + 1).padStart(2, '0')}`;
-// "Landas · Francia" → "Landas, Francia".
-const place = trip => trip.place ? String(trip.place).split('·').map(s => s.trim()).filter(Boolean).join(', ') : '';
-// "20–22 nov 2026" → "20–22": the month is already the column.
-const dayRange = departure => {
-  const [start, end] = [departure.start, departure.end].map(v => v && new Date(v + 'T00:00:00Z'));
-  if (!start) return '';
-  if (!end || end <= start) return String(start.getUTCDate());
-  return start.getUTCMonth() === end.getUTCMonth()
-    ? `${start.getUTCDate()}–${end.getUTCDate()}`
-    : `${start.getUTCDate()} – ${end.getUTCDate()} ${SHORT[end.getUTCMonth()]}`;
-};
-
-const levelBar = trip => {
-  const levels = levelsFor(trip);
-  return `<span class="ct-lvbar" aria-hidden="true">${[1, 2, 3, 4].map(l => `<i${levels.includes(l) ? ' class="on"' : ''}></i>`).join('')}</span>`;
-};
+// "4–8 dic 2026" → "4–8 dic": the month heading already gives the year.
+const shortDate = value => compactDate(value).replace(/ \d{4}$/, '');
+// The region after the last "·": "Vejer de la Frontera · Cádiz" → "Cádiz".
+const area = trip => trip.place ? String(trip.place).split('·').at(-1).trim() : '';
 
 function renderTicket(trip) {
   const id = escape(trip.id);
@@ -57,55 +43,28 @@ function renderTicket(trip) {
   const image = trip.cardImage || trip.hero;
   const alt = trip.cardImage ? trip.cardImageAlt : (trip.heroAlt || trip.name);
   const srcset = image ? photoSrcset(image, photoWidths) : '';
-  const tag = !dated ? 'Fechas por anunciar' : availability === 'Plazas disponibles' ? '' : availability;
+  const tag = availability === 'Últimas plazas' || availability === 'Completo' ? availability : offer ? (offer.label || 'Oferta') : '';
+  const hot = availability === 'Últimas plazas' || (offer && availability !== 'Completo');
   const durations = [...new Set(departures.map(d => d.duration).filter(d => d && d !== 'Por confirmar'))];
-  const where = place(trip);
-  const tagline = dated && trip.tagline && trip.tagline !== trip.name ? `<p class="ct-tagline">${escape(trip.tagline)}</p>` : '';
-  const dates = departures.length
-    ? `<ul class="ct-dates">${departures.map(d => `<li>${escape(compactDate(d.date))}</li>`).join('')}</ul>`
-    : 'Por anunciar';
-  const facts = [
-    [departures.length > 1 ? 'Fechas' : 'Fecha', dates],
-    durations.length ? ['Duración', escape(durations.join(' o '))] : null,
-    ['Nivel', `${levelBar(trip)}<span>${escape(levelLabel(trip))}</span>`],
-  ].filter(Boolean).map(([term, value]) => `<div><dt>${term}</dt><dd>${value}</dd></div>`).join('');
+  const place = area(trip);
+  const length = durations.length ? `${escape(durations.join(' o '))}${place ? `<span class="ct-area"> · ${escape(place)}</span>` : ''}` : escape(place);
+  const when = departures.length
+    ? `<ul class="ct-dates">${departures.map(d => `<li>${escape(shortDate(d.date))}</li>`).join('')}</ul>`
+    : ''; // Without dates the month heading already says «Fechas por anunciar».
   const price = fare
-    ? `<p class="ct-price">${from ? '<small>desde</small>' : ''}${offer ? `<del>${escape(formatPrice(fare.regularPrice))}</del>` : ''}<strong>${escape(formatPrice(fare.price))}</strong><small>por persona</small></p>`
+    ? `<p class="ct-price">${from ? '<small>desde</small> ' : ''}${offer ? `<del>${escape(formatPrice(fare.regularPrice))}</del> ` : ''}<strong>${escape(formatPrice(fare.price))}</strong> <small>por persona</small></p>`
     : `<p class="ct-price ct-price-tbc"><strong>${escape(tripPrice(trip))}</strong></p>`;
   const saving = offer ? Math.round((fare.regularPrice - fare.price) * 100) / 100 : 0;
-  const condition = offer ? `<p class="ct-offer" id="catalog-${id}-offer"><strong>${escape(formatPrice(saving))} de descuento</strong> ${escape(promotionCondition(offer))}</p>` : '';
+  const condition = offer ? `<p class="ct-offer" id="catalog-${id}-offer"><strong>${escape(formatPrice(saving))} de descuento:</strong> ${escape(promotionCondition(offer))}</p>` : '';
   return `<article class="ct-ticket" id="viaje-${escape(trip.slug)}" data-catalog-trip data-levels="${levelsFor(trip).join(' ')}" aria-labelledby="catalog-${id}-title">
-<a class="ct-photo" href="${href}" tabindex="-1" aria-hidden="true">${image ? `<img src="${escape(sizedPhoto(image, 800))}"${srcset ? ` srcset="${escape(srcset)}" sizes="${photoSizes}"` : ''} alt="${escape(alt)}" width="800" height="600" loading="lazy" decoding="async">` : '<span class="ct-photo-empty">LST</span>'}${tag ? `<span class="ct-tag${availability === 'Últimas plazas' ? ' ct-tag-hot' : ''}">${escape(tag)}</span>` : ''}</a>
-<div class="ct-body">${where ? `<p class="ct-place">${escape(where)}</p>` : ''}<h3 class="ct-name" id="catalog-${id}-title" style="--len:${[...trip.name].length}"><a href="${href}">${escape(trip.name)}</a></h3>${tagline}<dl class="ct-facts">${facts}</dl></div>
-<div class="ct-stub">${price}${condition}<a class="hp-btn catalog-card-link" href="${href}" aria-label="${dated ? 'Ver viaje' : 'Ver destino'}: ${escape(trip.name)}">${dated ? 'Ver viaje' : 'Ver destino'}</a></div>
+<div class="ct-photo">${image ? `<img src="${escape(sizedPhoto(image, 500))}"${srcset ? ` srcset="${escape(srcset)}" sizes="${photoSizes}"` : ''} alt="${escape(alt)}" width="500" height="500" loading="lazy" decoding="async">` : '<span class="ct-photo-empty" aria-hidden="true">LST</span>'}${tag ? `<span class="ct-tag${hot ? ' ct-tag-hot' : ''}">${escape(tag)}</span>` : ''}</div>
+<div class="ct-body">${when}<h3 class="ct-name" id="catalog-${id}-title">${escape(trip.name)}</h3><p class="ct-level">${escape(levelLabel(trip))}</p>
+<div class="ct-foot">${length ? `<p class="ct-length">${length}</p>` : ''}${price}</div>${condition}</div>
+<a class="hp-btn catalog-card-link" href="${href}" aria-label="${dated ? 'Ver viaje' : 'Ver destino'}: ${escape(trip.name)}"${offer ? ` aria-describedby="catalog-${id}-offer"` : ''}><span>${dated ? 'Ver viaje' : 'Ver destino'}</span></a>
 </article>`;
 }
 
 const monthTitle = key => key === PENDING ? 'Fechas por anunciar' : MONTHS[Number(key.slice(5, 7)) - 1];
-
-function renderSeason(groups) {
-  // One entry per departure, in the month it starts; the ticket sits in the trip's first month.
-  const entries = groups.filter(g => g.key !== PENDING).flatMap(g => g.trips.flatMap(trip =>
-    departuresFor(trip).filter(d => d.start).map(d => ({trip, d, key: d.start.slice(0, 7)}))))
-    .sort((a, b) => a.d.start.localeCompare(b.d.start));
-  if (!entries.length) return '';
-  const first = monthIndex(entries[0].key), last = monthIndex(entries.at(-1).key);
-  const byKey = new Map(groups.map(g => [g.key, g]));
-  let previousYear = '';
-  const columns = Array.from({length: last - first + 1}, (_, i) => {
-    const key = keyOf(first + i);
-    const list = entries.filter(e => e.key === key);
-    const year = key.slice(0, 4);
-    const label = `<span class="ct-season-m">${SHORT[Number(key.slice(5, 7)) - 1]}</span>${year !== previousYear ? `<span class="ct-season-y">${year}</span>` : ''}`;
-    previousYear = year;
-    const head = byKey.has(key) ? `<a class="ct-season-head" href="#mes-${key}">${label}</a>` : `<span class="ct-season-head">${label}</span>`;
-    if (!list.length) return `<li class="ct-season-col is-quiet">${head}<p class="ct-season-none">Sin salidas</p></li>`;
-    return `<li class="ct-season-col">${head}<ul>${list.map(({trip, d}) => `<li data-levels="${levelsFor(trip).join(' ')}"><a href="#viaje-${escape(trip.slug)}"><span class="ct-season-d">${escape(dayRange(d))}</span> ${escape(trip.name)}</a></li>`).join('')}</ul></li>`;
-  });
-  const pending = byKey.get(PENDING);
-  if (pending) columns.push(`<li class="ct-season-col ct-season-later"><a class="ct-season-head" href="#mes-${PENDING}"><span class="ct-season-m">Más</span></a><ul>${pending.trips.map(trip => `<li data-levels="${levelsFor(trip).join(' ')}"><a href="#viaje-${escape(trip.slug)}">${escape(trip.name)}</a></li>`).join('')}</ul></li>`);
-  return `<nav class="ct-season" aria-label="Salidas de la temporada, por mes"><svg class="ct-tide" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 C 60 26, 90 8, 150 8 S 240 30, 300 28 S 400 6, 470 10 S 560 32, 640 26 S 760 4, 840 12 S 950 34, 1030 24 S 1140 10, 1200 18"/></svg><ol class="ct-season-cols" style="--cols:${columns.length}">${columns.join('')}</ol></nav>`;
-}
 
 function renderFilters(trips) {
   return `<div class="ct-filters" data-catalog-filters role="group" aria-label="Filtrar viajes por nivel" hidden><p class="ct-filters-q" aria-hidden="true">¿Cómo surfeas?</p><div class="ct-chips">${catalogLevels.map(([value, label, detail, wave]) => {
@@ -137,8 +96,5 @@ export function renderCatalog(current, trips) {
 <p class="ct-status" id="catalog-status" role="status" aria-live="polite" aria-atomic="true">${trips.length} de ${trips.length} viajes.</p>
 <div class="ct-months" id="catalog-results">${months}</div>`
     : '<p class="ct-status" id="catalog-status" role="status">No hay viajes publicados en este momento.</p>';
-  let html = current.replace(markers, () => `<!-- catalog:start -->\n${content}\n<!-- catalog:end -->`);
-  const season = /<!-- catalog-season:start -->[\s\S]*?<!-- catalog-season:end -->/;
-  if (season.test(html)) html = html.replace(season, () => `<!-- catalog-season:start -->${renderSeason(groups)}<!-- catalog-season:end -->`);
-  return html;
+  return current.replace(markers, () => `<!-- catalog:start -->\n${content}\n<!-- catalog:end -->`);
 }

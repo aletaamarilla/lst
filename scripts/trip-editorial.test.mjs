@@ -25,7 +25,7 @@ test('the cover keeps the photograph clear and the destination identity follows 
 
 test('CMS editorial sections render in the requested order and retain their own exact content',()=>{
  const t=adaptTrip(editorial()),before=structuredClone(t),html=renderTrip(t);
- // Price and inclusions come right after «¿Es este tu viaje?», before the extras.
+ // Price and inclusions come right after «Niveles de este viaje», before the extras.
  const ids=['destino','nivel','incluye','plan','spots','alojamiento','actividades','dudas','reservar'];
  for(let i=1;i<ids.length;i++)assert(html.indexOf(`id="${ids[i]}"`)>html.indexOf(`id="${ids[i-1]}"`));
  assert.match(html,/Entre el océano &amp; las montañas/);assert.match(html,/Primeras olas/);assert.doesNotMatch(html,/Ganar confianza\.|Progresar juntos\./);assert.match(html,/Coaching/);assert.match(html,/Fotos de ambiente, no de la casa del viaje/);assert.doesNotMatch(html,/Fotografías de ejemplo/);

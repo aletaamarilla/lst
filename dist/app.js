@@ -8,10 +8,24 @@ const updateHeaderHeight = () => {
 updateHeaderHeight();
 new ResizeObserver(updateHeaderHeight).observe(header);
 const mobileMenu = window.matchMedia('(max-width: 999px)');
+// In the phone menu each section says what is inside it (hidden on the desktop bar).
+const navNotes = {'/viajes/': 'Fechas, destinos y precios', '/niveles/': '¿En qué ola estás?', '/conocenos/': 'Quién hay detrás de LST', '/preguntas-frecuentes/': 'Lo que todo el mundo pregunta'};
+nav.querySelectorAll('a').forEach(link => {
+  const note = link.classList.contains('lst-nav-contact') ? 'Te respondemos por WhatsApp' : navNotes[new URL(link.href, location.href).pathname];
+  if (!note || link.querySelector('.nav-sub')) return;
+  const span = document.createElement('span');
+  span.className = 'nav-sub';
+  span.setAttribute('aria-hidden', 'true');
+  span.textContent = note;
+  link.append(span);
+});
 function setMenu(open) {
   toggle.setAttribute('aria-expanded', String(open));
   toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  // The panel starts right under the header, wherever the header is at that moment.
+  if (open) nav.style.setProperty('--menu-top', `${Math.max(0, Math.round(header.getBoundingClientRect().bottom))}px`);
   nav.classList.toggle('is-open', open);
+  document.documentElement.classList.toggle('menu-open', open && mobileMenu.matches);
 }
 toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
 nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {

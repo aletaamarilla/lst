@@ -9,9 +9,11 @@ const palmar=trips.find(t=>t.slug==='el-palmar');
 const summary=html=>{const start=html.indexOf('<dl class="trip-essential-facts"');assert(start>=0);return html.slice(start,html.indexOf('<p class="trip-kickoff"',start));};
 const offer={label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true};
 
-test('single-date essentials expose the actual date, level and group before the reading content without a second booking action',()=>{
+test('single-date essentials expose the actual date, level and place before the reading content without a second booking action',()=>{
  const original=structuredClone(palmar),html=renderTrip(palmar,trips),facts=summary(html);
- for(const value of ['4–8 dic 2026','4 noches','Todos los niveles','Hasta 30 personas'])assert(facts.includes(value));
+ for(const value of ['4–8 dic 2026','4 noches','Todos los niveles','Vejer de la Frontera, Cádiz'])assert(facts.includes(value));
+ // El tamaño del grupo no se anuncia: «hasta 30 personas» asusta más de lo que informa.
+ assert.doesNotMatch(facts,/personas|Grupo por confirmar/);
  assert(html.indexOf(facts)>html.indexOf('id="trip-title"'));assert(html.indexOf(facts)<html.indexOf('id="nivel"'));
  assert(!facts.includes('data-registration='));assert(!facts.includes('data-open-dates'));
  // «Qué incluye» se alcanza desde el menú de secciones, no desde un enlace repetido junto a los datos.
@@ -27,7 +29,6 @@ test('mobile offer copy belongs to the selected fare and does not combine capaci
  assert(facts.includes('Ver 2 fechas'));assert(facts.includes('data-open-dates'));
  assert(facts.includes('Primeras 8 plazas'));assert(facts.includes(later.date));
  assert(!facts.includes('Hasta 30 personas'));assert(!facts.includes('Hasta 12 personas'));
- assert.match(facts,/grupo por confirmar/i);
  const dock=html.match(/<div class="trip-dock"[\s\S]*?<dialog/)[0];
  assert(dock.includes('599 €'));assert(dock.includes('Primeras 8 plazas'));
 });

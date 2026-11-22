@@ -113,7 +113,7 @@ try{
   await page.locator('#dudas summary').first().click();check(tag+' FAQ question opens',await page.locator('#dudas details').first().evaluate(e=>e.open));
   const close=await page.locator('.hp-close.hp-close-photo').evaluate(e=>({img:e.querySelector('img').complete&&e.querySelector('img').naturalWidth>0,alt:e.querySelector('img').alt,links:[...e.querySelectorAll('a')].map(a=>a.getAttribute('href'))}));
   check(tag+' closing photo and actions',close.img&&close.alt.length>10&&close.links[0]==='#viajes'&&close.links[1]?.startsWith('https://wa.me/34648189257?'),close);
-  check(tag+' footer links',await page.locator('.lst-footer .lst-footer-links a').count()===6&&await page.locator('.lst-footer .footer-legal a').count()===4);
+  check(tag+' footer links',await page.locator('.lst-footer .lst-footer-links a').count()===5&&await page.locator('.lst-footer .footer-legal a').count()===4);
 
   // Every image loads and has a text alternative (empty only when the image repeats nearby text).
   const images=await page.evaluate(()=>[...document.images].map(i=>({src:i.getAttribute('src').slice(0,70),alt:i.getAttribute('alt'),loaded:i.complete&&i.naturalWidth>0,decorative:i.getAttribute('aria-hidden')==='true'||!!i.closest('[aria-hidden="true"]')||(i.getAttribute('alt')===''&&!!i.closest('a')?.textContent.trim())})));

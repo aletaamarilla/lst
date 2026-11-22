@@ -105,6 +105,7 @@ if (quiz) {
     step += 1;
     if (step < questions.length) { questions[step].classList.add('is-on'); questions[step].querySelector('button')?.focus(); return; }
     level = score <= 1 ? 1 : score <= 3 ? 2 : score <= 5 ? 3 : 4;
+    document.dispatchEvent(new CustomEvent('lst:level-test', {detail: {level}})); // A fact for the measurement script.
     result.querySelector('.hp-result-level').textContent = names[level];
     result.hidden = false;
     levels.forEach(item => item.classList.toggle('is-on', Number(item.dataset.lvl) === level));

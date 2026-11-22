@@ -35,11 +35,13 @@ try{
   check(tag+' title clears header',geometry.titleTop>=geometry.headerHeight,geometry);
   const masthead=await page.locator('.site-header').evaluate(e=>({ink:getComputedStyle(e).color,paper:getComputedStyle(e).backgroundColor,light:getComputedStyle(e.querySelector('.brand-light')).display,dark:getComputedStyle(e.querySelector('.brand-dark')).display}));
   const heroSpacing=await page.locator('.faq-hero').evaluate(e=>({copyTop:e.querySelector('h1').getBoundingClientRect().top,headerBottom:document.querySelector('header').getBoundingClientRect().bottom}));
-  check(tag+' paper opening clears header',heroSpacing.copyTop>=heroSpacing.headerBottom,heroSpacing);
-  check(tag+' masthead colours and logo',masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block',masthead);
-  check(tag+' opening uses typography without a repeated photo',await page.locator('.faq-hero img').count()===0);
+  check(tag+' photo opening clears header',heroSpacing.copyTop>=heroSpacing.headerBottom,heroSpacing);
+  // Over the opening photo the masthead is cream with the light logo; without JS it is the paper bar.
+  check(tag+' masthead colours and logo',mode==='no-js'?masthead.ink==='rgb(27, 27, 27)'&&masthead.light==='none'&&masthead.dark==='block':masthead.ink==='rgb(255, 250, 231)'&&masthead.light==='block'&&masthead.dark==='none',masthead);
+  // The opening photo (people talking after a session) is not repeated in the topics.
+  check(tag+' opening photo is not repeated',await page.evaluate(()=>{const hero=[...document.querySelectorAll('.faq-hero img')].map(i=>i.getAttribute('src'));return hero.length===1&&[...document.querySelectorAll('main img')].filter(i=>i.getAttribute('src')===hero[0]).length===1;}));
   // The redesign dropped the decorative topic icons: each topic is a plain text heading next to its questions.
-  check(tag+' four topics with text headings',await page.locator('.faq-topic > .faq-topic-in > .faq-topic-side > h2.faq-topic-title').count()===4&&await page.locator('.faq-index a').count()===4);
+  check(tag+' four topics with text headings',await page.locator('.faq-topic > .faq-topic-in > .faq-topic-side > h2.faq-topic-title').count()===4&&await page.locator('.faq-chat a.faq-bubble').count()===4);
   // Labels use the home system's Work Sans (--hp-mono); Space Mono is no longer part of the page.
   check(tag+' retained fonts',geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&(geometry.fonts.label??'Work Sans').includes('Work Sans')&&geometry.fonts.auraLoaded&&geometry.fonts.workSansLoaded&&geometry.fonts.auraFile,geometry.fonts);
   await page.keyboard.press('Tab');check(tag+' skip-link first',await page.locator('.skip-link').evaluate(e=>e===document.activeElement));
@@ -59,7 +61,7 @@ try{
   const openGeometry=await measure(page);check(tag+' open answers do not overflow',openGeometry.scrollWidth<=width+1&&openGeometry.overflow.length===0,openGeometry.overflow);
   await summaries.first().focus();await page.keyboard.press('Enter');check(tag+' independent close preserves others',await page.locator('.faq-answers details[open]').count()===questions-1);
   for(const id of ['grupo','nivel','preparacion','reserva']){
-   await page.locator(`.faq-index a[href="#${id}"]`).click();
+   await page.locator(`.faq-chat a.faq-bubble[href="#${id}"]`).click();
    const position=await page.evaluate(id=>({header:document.querySelector('header').getBoundingClientRect().bottom,title:document.querySelector(`#${id}-title`).getBoundingClientRect().top}),id);
    check(tag+' anchor clears header '+id,position.title>=position.header-1,position);
   }

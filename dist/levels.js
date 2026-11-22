@@ -66,7 +66,8 @@ function question(focus){
 function answer(yes){
  answers.push(yes);
  const r=result(answers);
- if(r){mine=r.code;storage.set(mine);markMine();showResult(r);}else question(true);
+ // Only a result reached by answering is announced to the measurement script, never a level picked by hand or restored.
+ if(r){mine=r.code;storage.set(mine);markMine();document.dispatchEvent(new CustomEvent('lst:level-test',{detail:{level:levelOf(mine)}}));showResult(r);}else question(true);
 }
 const nextOf=code=>{const i=T.findIndex(([c])=>c===code);return T[i+1]?.[0];};
 // The chapter already lists its trips; the result shows the first three of them.
@@ -137,3 +138,25 @@ if(mine)showResult({code:mine},{focus:false});else question(false);
 sync();
 if(document.readyState==='complete')arrive();else addEventListener('load',arrive,{once:true});
 addEventListener('hashchange',()=>{sync();arrive();});
+
+// ---- Barra de niveles (fija al bajar por los capítulos) ---------------------
+// Marca el nivel que se está leyendo, para saber siempre dónde estás.
+const jumps=[...document.querySelectorAll('[data-level-jump]')];
+const chapters=[...document.querySelectorAll('.lv-chapter')];
+if(jumps.length&&chapters.length&&'IntersectionObserver' in window){
+ const mark=n=>jumps.forEach(a=>{if(a.dataset.levelJump===String(n))a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});
+ const seen=new Map();
+ const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>seen.set(e.target,e.isIntersecting));
+  const current=chapters.find(c=>seen.get(c));
+  if(current)mark(current.id.replace('nivel-',''));
+ },{rootMargin:'-45% 0px -50% 0px'});
+ chapters.forEach(c=>io.observe(c));
+}
+// La barra de niveles solo aparece cuando la portada (con los mismos cuatro nombres) ya no se ve.
+const jumpBar=document.querySelector('.lv-jump');
+const intro=document.querySelector('.lv-intro');
+if(jumpBar&&intro&&'IntersectionObserver' in window){
+ jumpBar.dataset.watch='';
+ new IntersectionObserver(([e])=>jumpBar.classList.toggle('is-on',!e.isIntersecting)).observe(intro);
+}

@@ -92,7 +92,7 @@ if(guide){
 }
 const about=pages.get(path.join(root,'conocenos/index.html'));
 if(about){
- for(const id of ['origen','asi-viajamos','acompanamiento','respeto'])if(!about.ids.has(id))errors.push(`Missing about section ${id}`);
+ for(const id of ['origen','acompanamiento','respeto'])if(!about.ids.has(id))errors.push(`Missing about section ${id}`);
  if(!about.html.includes('src="/app.js"')||!about.html.includes('Nos vemos en el pico.'))errors.push('About must preserve shared navigation and Lucas signature');
  if(/Universal Plastic|3\s*%|recogida de plásticos/i.test(about.html.replace(/<[^>]+>/g,'')))errors.push('Environmental actions must remain pending current evidence');
  for(const [,href] of about.html.matchAll(/<a\b[^>]*href="([^"]+)"/g))if(/^https?:/.test(href)&&!['wa.me','www.instagram.com'].includes(new URL(href).hostname))errors.push(`About must not link to legacy content: ${href}`);

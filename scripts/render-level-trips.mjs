@@ -34,7 +34,7 @@ export function tripRowsByLevel(trips){
 export function renderLevelTrips(current, trips) {
 // After the test: the help to find your level, and the way to the whole catalogue.
 const html=`<section class="lv-help" id="orientacion" aria-labelledby="orientation-title" tabindex="-1"><div class="lv-help-inner section-width">
-<h2 id="orientation-title">¿Sigues con dudas?</h2>
+<h2 id="orientation-title">Mándanos un vídeo</h2>
 <p>Mándanos un vídeo de 2 o 3 olas a <strong>info@letsurftogether.com</strong> o por Instagram a <a href="https://www.instagram.com/letsurftogether/" target="_blank" rel="noopener noreferrer">@letsurftogether</a> y te decimos tu nivel y qué trabajar.</p>
 ${trips.length?'':'<p class="lv-help-empty">No hay viajes publicados en este momento. Escríbenos y te contamos las próximas salidas.</p>'}
 <div class="hp-ctas"><a class="hp-btn" data-guide-enquiry data-whatsapp="nivel" href="${WHATSAPP}" target="_blank" rel="noopener noreferrer">Escribir por WhatsApp</a><a class="hp-btn hp-btn-line" href="/viajes/">Ver todos los viajes</a></div>

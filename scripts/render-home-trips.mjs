@@ -138,7 +138,7 @@ export function renderHomeTicket(trip) {
   return `<article class="hp-ticket" data-levels="${levelsFor(trip).join(' ')}" aria-labelledby="ticket-${id}-title">
 <a class="hp-ticket-media" href="${href}" tabindex="-1" aria-hidden="true">${image ? `<img src="${escape(image.src)}"${image.srcset ? ` srcset="${escape(image.srcset)}" sizes="${ticketSizes}"` : ''} alt="${escape(image.alt)}" width="800" height="860" loading="lazy" decoding="async">` : '<span class="hp-ticket-placeholder" aria-hidden="true">LST</span>'}<span class="hp-tag hp-tag-date">${escape(dateTag)}</span>${status}</a>
 <h3 class="hp-ticket-name" id="ticket-${id}-title"><a href="${href}">${escape(trip.name)}</a></h3>
-<div class="hp-stub"><div class="hp-stub-top"><div class="hp-facts">${facts ? `<span>${facts}</span>` : ''}<span class="hp-lvtext">${escape(levelLabel(trip))}</span></div>${price}</div>${tagline}${condition}<div class="hp-acts">${action}</div></div>
+<div class="hp-stub"><div class="hp-stub-top"><div class="hp-facts"><span class="hp-lv"><span class="hp-lvtext">${escape(levelLabel(trip))}</span></span>${facts ? `<span class="hp-where">${facts}</span>` : ''}</div>${price}</div>${tagline}${condition}<div class="hp-acts">${action}</div></div>
 </article>`;
 }
 

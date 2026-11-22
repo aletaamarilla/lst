@@ -1,6 +1,6 @@
 import {siteConfig} from './site-meta.mjs';
 
-// GA4 shared with the travelhood-admin panel. The panel reads GA4; this site only emits.
+// GA4 for LST's own Data Studio report, which reads GA4; this site only emits.
 // The measurement ID is decided per deployment: without it, nothing is measured (previews).
 // The public domain goes with it: visits anywhere else are reported as developer traffic.
 export function analyticsConfig(env = process.env, site = siteConfig(env)) {

@@ -46,7 +46,7 @@ export const SUBLEVELS = Object.freeze([
 
 export const COMPETITION = Object.freeze({
   n: 5, name: 'Competición', tag: 'Una ruta, no solo un nivel', access: 'Desde nivel 3.3 – 4.1', format: 'Mangas · prioridad · 2 mejores olas',
-  intro: 'Competir es un camino paralelo: se puede empezar en circuitos locales desde el nivel 3 y seguir progresando a la vez en los niveles técnicos.',
+  intro: 'Un camino aparte: puedes empezar a competir desde Intermedio sin dejar de progresar en tu nivel.',
   subs: [
     {c: '5.1', t: 'Primeras competiciones', w: 'Desde nivel 3.3', d: 'Pruebas locales y de club. Aprende el formato: mangas, prioridad y que puntúan las dos mejores olas.'},
     {c: '5.2', t: 'Circuito autonómico y nacional', w: 'Desde nivel 4.1', d: 'Estrategia de manga, elegir olas bajo presión, preparación física y mental.'},
@@ -154,12 +154,15 @@ ${rows ? `<ul class="lv-trip-list">${rows}</ul>` : `<p class="lv-trips-none">Aho
 }
 
 const NAMES_BY_CODE = Object.fromEntries(SUBLEVELS.map(s => [s.c, `«${s.t}»`]));
+// Competición: tres escalones en un bloque de tinta, cada uno con un podio de tres barras
+// (la suya en naranja); lo que valoran los jueces queda plegado para no amontonar texto.
+const podium = i => `<svg class="lv-comp-podium" viewBox="0 0 34 30" aria-hidden="true">${[0, 1, 2].map(j => `<rect x="${j * 12}" y="${18 - j * 9}" width="10" height="${12 + j * 9}"${j === i ? ' class="on"' : ''}/>`).join('')}</svg>`;
 function competitionSection() {
   const C = COMPETITION;
   return `<section class="lv-comp section-width" id="nivel-5" aria-labelledby="nivel-5-title" tabindex="-1">
-<div class="lv-comp-intro"><h3 id="nivel-5-title">¿Y competir?</h3><p>${esc(C.intro)}</p></div>
-<ol class="lv-comp-steps">${C.subs.map(s => `<li id="${subId(s.c)}"><h4>${esc(s.t)}</h4><p>${esc(s.d)}</p><p class="lv-comp-from">${esc(s.w.replace(/^Desde nivel (\d\.\d)$/, (m, c) => `Desde ${NAMES_BY_CODE[c]}`).replace(/^Nivel 4\.2–4\.3$/, `Desde ${NAMES_BY_CODE['4.2']}`))}</p></li>`).join('')}</ol>
-<p class="lv-comp-judges">${esc(C.judges)} Táctica: ${esc(C.focus)}</p>
+<div class="lv-comp-intro"><h3 id="nivel-5-title">Competición</h3><p>${esc(C.intro)}</p></div>
+<ol class="lv-comp-steps">${C.subs.map((s, i) => `<li id="${subId(s.c)}">${podium(i)}<div><h4>${esc(s.t)}</h4><p>${esc(s.d)}</p><p class="lv-comp-from">${esc(s.w.replace(/^Desde nivel (\d\.\d)$/, (m, c) => `Desde ${NAMES_BY_CODE[c]}`).replace(/^Nivel 4\.2–4\.3$/, `Desde ${NAMES_BY_CODE['4.2']}`))}</p></div></li>`).join('')}</ol>
+<details class="lv-comp-judges"><summary>¿Qué valoran los jueces?</summary><p>${esc(C.judges)} Táctica: ${esc(C.focus)}</p></details>
 </section>`;
 }
 
@@ -172,6 +175,7 @@ export function levelGuideHtml(tripRows = {}) {
 <p class="lv-pickbar" data-pickbar hidden>Abre el paso que mejor te describe y pulsa «Este es mi nivel».</p>
 </section>
 <div class="lv-chapters">
+<nav class="lv-jump" aria-label="Ir a un nivel">${SURF_LEVELS.map(l => `<a href="#nivel-${l.n}" data-level-jump="${l.n}">${esc(l.name)}</a>`).join('')}</nav>
 ${SURF_LEVELS.map(level => chapter(level, tripRows[level.n])).join('\n')}
 </div>
 ${competitionSection()}

@@ -35,6 +35,7 @@ class Element {
     for (let node = this; node; node = node.parent) if (node.matches(selector)) return node;
     return null;
   }
+  getAttribute(name) { return this.attrs[name] ?? null; }
 }
 function simple(el, compound) {
   return [...compound.matchAll(/\*|^[a-z]+|\.[\w-]+|#[\w-]+|\[[\w-]+\]/g)].every(([token]) => {
@@ -64,7 +65,9 @@ function parse(html) {
 }
 
 // --- A page with consent already given, unless told otherwise ---------------------------------
-function open({page = {page_type: 'home'}, html = '', hostname = HOST, cookie = '', consent = true} = {}) {
+// `session` stands for the tab's session storage: share one Map between pages of the same visit; null blocks it.
+function open({page = {page_type: 'home'}, html = '', hostname = HOST, cookie = '', consent = true, url = `https://${hostname}/`, referrer = '', session = new Map()} = {}) {
+  const blocked = () => { throw Error('blocked'); };
   const listeners = {};
   const listen = (type, fn) => (listeners[type] ??= []).push(fn);
   const store = new Map(consent === null ? [] : [['lst-consent', JSON.stringify({analytics: consent, version: 1, date: '2026-11-21'})]]);
@@ -74,10 +77,15 @@ function open({page = {page_type: 'home'}, html = '', hostname = HOST, cookie = 
   const window = {
     lstAnalytics: {id: ID, host: HOST, page},
     Element,
-    location: {hostname},
+    location: {hostname, href: url, search: new URL(url).search},
+    URL, URLSearchParams,
+    history: {state: null, replaceState(state, title, address) { window.location.href = String(address); window.location.search = new URL(String(address)).search; }},
     localStorage: {getItem: key => store.get(key) ?? null, setItem: (key, value) => store.set(key, value)},
+    sessionStorage: session
+      ? {getItem: key => session.get(key) ?? null, setItem: (key, value) => session.set(key, value), removeItem: key => session.delete(key)}
+      : {getItem: blocked, setItem: blocked, removeItem: blocked},
     document: {
-      readyState: 'complete', cookie,
+      readyState: 'complete', cookie, referrer,
       head: {append() {}}, body: {append(node) { notice = node; }},
       addEventListener: listen,
       querySelectorAll: selector => selector === '[data-consent-open]' ? [consentButton] : [],
@@ -89,6 +97,8 @@ function open({page = {page_type: 'home'}, html = '', hostname = HOST, cookie = 
   const calls = () => Array.from(window.dataLayer ?? [], args => [...args]); // Copies: the script's arrays belong to another realm.
   return {
     elements,
+    cookie: () => window.document.cookie,
+    address: () => window.location.href,
     config: () => ({...calls().find(([command, id]) => command === 'config' && id === ID)?.[2]}),
     events: () => calls().filter(([command]) => command === 'event').map(([, name, params]) => ({name, ...params})),
     click(target) { for (const fn of listeners.click ?? []) fn({target}); },
@@ -103,12 +113,11 @@ const el = (tag, attrs, parent = null) => new Element(tag, attrs, parent);
 const trip = {page_type: 'trip', destination_slug: 'maldivas'};
 
 // --- Common parameters ------------------------------------------------------------------------
-test('page views and every event carry the common standard parameters, with the version as text', () => {
+test('every hit carries the page type, the trip of the page and who is visiting; loading a page sends no event of its own', () => {
   const site = open({page: trip});
-  const common = {measurement_version: '1', traffic_type: 'external', page_type: 'trip'};
-  assert.deepEqual(site.config(), common);
-  const [view] = site.events();
-  assert.deepEqual(view, {name: 'destination_view', ...common, destination_slug: 'maldivas'});
+  assert.deepEqual(site.config(), {traffic_type: 'external', page_type: 'trip', destination_slug: 'maldivas'});
+  assert.deepEqual(site.events(), []); // The page view is GA4's own and already carries all of it.
+  assert.deepEqual(open().config(), {traffic_type: 'external', page_type: 'home'});
 });
 
 test('only the public domain counts as external traffic; anything else is developer and flagged for debug', () => {
@@ -129,56 +138,169 @@ test('the team marks its own visits with a cookie and they are reported as inter
   assert.equal(open({cookie: 'lst_analytics_internal=0'}).config().traffic_type, 'external');
 });
 
+test('the team marks or unmarks a browser by opening a link once', () => {
+  const marked = open({url: `https://${HOST}/?equipo=1`});
+  assert.equal(marked.config().traffic_type, 'internal');
+  assert.equal(marked.cookie(), 'lst_analytics_internal=1; path=/; max-age=31536000; SameSite=Lax; Secure');
+  const unmarked = open({url: `https://${HOST}/?equipo=0`, cookie: 'lst_analytics_internal=1'});
+  assert.equal(unmarked.config().traffic_type, 'external');
+  assert.equal(unmarked.cookie(), 'lst_analytics_internal=; path=/; max-age=0; SameSite=Lax; Secure');
+  assert.equal(open({url: `https://${HOST}/?equipo=si`}).config().traffic_type, 'external');
+});
+
+test('the team link does not stay in the address, so it cannot be passed on by copying it', () => {
+  const marked = open({url: `https://${HOST}/viajes/?equipo=1&nivel=2#mes`});
+  assert.equal(marked.address(), `https://${HOST}/viajes/?nivel=2#mes`);
+  assert.equal(open({url: `https://${HOST}/?equipo=0`}).address(), `https://${HOST}/`);
+  assert.equal(open({url: `https://${HOST}/?equipo=si`}).address(), `https://${HOST}/?equipo=si`);
+});
+
+// --- Where the visit came from, kept until the visitor chooses ---------------------------------
+const AD = `https://${HOST}/?utm_source=ig&utm_medium=paid_social&utm_campaign=maldivas&utm_id=123&fbclid=x`;
+const LABELS = 'utm_source=ig&utm_medium=paid_social&utm_campaign=maldivas&utm_id=123';
+
+test('a visit that accepts on a later page keeps its campaign and the site it came from', () => {
+  const session = new Map();
+  open({consent: null, url: AD, referrer: 'https://l.instagram.com/', session});
+  const later = open({consent: null, page: trip, url: `https://${HOST}/viajes/maldivas/?salida=a#fechas`, referrer: `https://${HOST}/`, session});
+  later.choose('accept');
+  assert.equal(later.config().page_location, `https://${HOST}/viajes/maldivas/?salida=a&${LABELS}#fechas`);
+  assert.equal(later.config().page_referrer, 'https://l.instagram.com/');
+  assert.equal(session.size, 0);
+});
+
+test('accepting on the page of arrival overrides nothing: GA4 already sees the address', () => {
+  const session = new Map();
+  const site = open({consent: null, url: AD, referrer: 'https://l.instagram.com/', session});
+  site.choose('accept');
+  assert.equal('page_location' in site.config(), false);
+  assert.equal('page_referrer' in site.config(), false);
+  assert.equal(session.size, 0);
+});
+
+test('only the first page is noted, and only campaign labels and outside sites', () => {
+  const session = new Map();
+  open({consent: null, url: `https://${HOST}/?nivel=2`, referrer: `https://${HOST}/viajes/`, session});
+  assert.equal(session.size, 0);
+  open({consent: null, url: AD, referrer: 'https://www.google.com/', session});
+  open({consent: null, url: `https://${HOST}/?utm_source=other`, referrer: 'https://example.org/', session});
+  assert.deepEqual(JSON.parse(session.get('lst-entry')), {query: LABELS, referrer: 'https://www.google.com/'});
+});
+
+test('rejecting forgets the origin, and a visitor who already chose is never noted', () => {
+  const session = new Map();
+  const site = open({consent: null, url: AD, session});
+  assert.equal(session.size, 1);
+  site.choose('reject');
+  assert.equal(session.size, 0);
+  const returning = open({consent: true, url: AD, session});
+  assert.equal('page_location' in returning.config(), false);
+  open({consent: false, url: AD, session});
+  assert.equal(session.size, 0);
+});
+
+test('a browser that blocks or garbles session storage is still measured', () => {
+  const blocked = open({consent: null, page: trip, url: AD, session: null});
+  blocked.choose('accept');
+  assert.equal(blocked.config().page_type, 'trip');
+  const garbled = open({consent: null, session: new Map([['lst-entry', '{bad']])});
+  garbled.choose('accept');
+  assert.equal(garbled.config().page_type, 'home'); // Measured all the same...
+  assert.equal('page_location' in garbled.config(), false); // ...only without the kept origin.
+});
+
+test('a choice made in another tab uses the note once and erases it', () => {
+  const session = new Map([['lst-entry', JSON.stringify({query: LABELS, referrer: 'https://l.instagram.com/'})]]);
+  const accepted = open({consent: true, page: trip, url: `https://${HOST}/viajes/maldivas/`, referrer: `https://${HOST}/`, session});
+  assert.equal(accepted.config().page_location, `https://${HOST}/viajes/maldivas/?${LABELS}`);
+  assert.equal(session.size, 0);
+  const rejected = new Map([['lst-entry', JSON.stringify({query: LABELS, referrer: ''})]]);
+  open({consent: false, url: `https://${HOST}/`, session: rejected});
+  assert.equal(rejected.size, 0);
+});
+
 // --- Events -----------------------------------------------------------------------------------
-test('going to the registration form reports who takes the booking', () => {
+test('going to the registration form reports the button; the trip comes with every hit of the page', () => {
   const site = open({page: trip});
   site.click(el('a', {'data-registration': '', class: 'button reserve-main'}));
-  const event = site.events().at(-1);
-  assert.equal(event.name, 'destination_booking_click');
-  assert.equal(event.booking_provider, 'own_form');
-  assert.equal(event.cta_location, 'reserve');
+  const {name, cta_location, ...rest} = site.events().at(-1);
+  assert.deepEqual([name, cta_location], ['registration_click', 'reserve']);
+  assert.deepEqual(rest, {traffic_type: 'external', page_type: 'trip', destination_slug: 'maldivas'});
 });
 
-test('the WhatsApp button that closes the FAQ page is a FAQ contact, the header one is not', async () => {
+test('opening the dates and the PDF are their own events, with the place of the button', () => {
+  const site = open({page: trip});
+  site.click(el('button', {'data-open-dates': '', class: 'button trip-header-cta'}));
+  site.click(el('a', {class: 'dossier-link', href: 'https://example.com/programa.pdf'}));
+  assert.deepEqual(site.events().map(e => [e.name, e.cta_location]), [['dates_open', 'header'], ['pdf_click', 'trip_info']]);
+});
+
+test('every WhatsApp contact is one event, the FAQ button included, told apart by its place', async () => {
   const site = open({page: {page_type: 'faq'}, html: await readFile('dist/preguntas-frecuentes/index.html', 'utf8')});
   const links = site.elements.filter(e => e.matches('a[data-whatsapp]'));
-  const help = links.find(e => e.matches('.faq-help *'));
-  const header = links.find(e => e.matches('.lst-nav-contact'));
-  site.click(help);
-  site.click(header);
-  const [faq, other] = site.events();
-  assert.deepEqual([faq.name, faq.cta_location, faq.whatsapp_topic], ['faq_contact_click', 'faq_contact', undefined]);
-  assert.deepEqual([other.name, other.cta_location], ['whatsapp_click', 'header_whatsapp']);
+  site.click(links.find(e => e.matches('.faq-help *')));
+  site.click(links.find(e => e.matches('.lst-nav-contact')));
+  assert.deepEqual(site.events().map(e => [e.name, e.cta_location]), [['whatsapp_click', 'faq'], ['whatsapp_click', 'header']]);
 });
 
-test('a trip view is counted once per page, even if consent is withdrawn and given again', () => {
-  const site = open({page: trip, consent: null});
-  assert.equal(site.events().length, 0);
-  site.choose('accept');
-  site.choose('reject');
-  site.choose('accept');
-  assert.deepEqual(site.events().map(e => e.name), ['destination_view']);
+test('a WhatsApp click on a trip page names the trip; outside a trip it does not', () => {
+  const onTrip = open({page: trip});
+  onTrip.click(el('a', {'data-whatsapp': 'maldivas', class: 'reserve-whatsapp'}));
+  assert.equal(onTrip.events().at(-1).destination_slug, 'maldivas');
+  const home = open();
+  home.click(el('a', {'data-whatsapp': 'orientacion'}, el('footer', {})));
+  assert.equal('destination_slug' in home.events().at(-1), false);
 });
 
 test('nothing is reported after consent is withdrawn', () => {
   const site = open({page: trip});
   site.choose('reject');
   site.click(el('a', {'data-registration': '', class: 'button reserve-main'}));
-  assert.deepEqual(site.events().map(e => e.name), ['destination_view']);
+  assert.deepEqual(site.events(), []);
 });
 
 // Full trips and trips without dates swap the booking buttons for a WhatsApp enquiry in the same places.
-test('a trip that cannot be booked online reports its main buttons as enquiries', async () => {
+test('a trip that cannot be booked online reports its main buttons in the same places', async () => {
   const site = open({page: {page_type: 'trip', destination_slug: 'hossegor'}, html: await readFile('dist/viajes/hossegor/index.html', 'utf8')});
   const located = selector => {
     site.click(site.elements.find(e => e.matches(`a[data-whatsapp]${selector}`)));
     return site.events().at(-1).cta_location;
   };
-  assert.equal(located('.trip-header-cta'), 'header_enquiry');
-  assert.equal(located('.reserve-main'), 'reserve_enquiry');
-  assert.equal(located('.booking-card-cta'), 'booking_card_enquiry');
-  assert.equal(located('.dock-cta'), 'mobile_dock_enquiry');
-  assert.equal(located('.trip-team-contact'), 'team_whatsapp');
+  assert.equal(located('.trip-header-cta'), 'header');
+  assert.equal(located('.reserve-main'), 'reserve');
+  assert.equal(located('.booking-card-cta'), 'reserve');
+  assert.equal(located('.dock-cta'), 'mobile_bar');
+  assert.equal(located('.trip-team-contact'), 'trip_info');
+});
+
+test('registration, dates and PDF buttons only count on a trip; WhatsApp counts everywhere', () => {
+  const site = open({page: {page_type: 'home'}});
+  site.click(el('a', {'data-registration': '', class: 'reserve-main'}));
+  site.click(el('button', {'data-open-dates': '', class: 'trip-header-cta'}));
+  site.click(el('a', {class: 'dossier-link'}));
+  assert.deepEqual(site.events(), []);
+  site.click(el('a', {'data-whatsapp': 'orientacion'}, el('footer', {})));
+  assert.deepEqual(site.events().map(e => e.name), ['whatsapp_click']);
+});
+
+test('finishing the level test reports the level, from 1 to 4 and nothing else', () => {
+  const site = open({page: {page_type: 'levels'}});
+  for (const level of [1, 4, 0, 5, 2.3, '2']) site.dispatch('lst:level-test', {level});
+  site.dispatch('lst:level-test');
+  assert.deepEqual(site.events().map(e => [e.name, e.surf_level, e.page_type]),
+    [['level_test_complete', '1', 'levels'], ['level_test_complete', '4', 'levels']]);
+});
+
+test('links to Instagram and to the WhatsApp group are community clicks, apart from contact', async () => {
+  const site = open({html: await readFile('dist/index.html', 'utf8')});
+  site.click(site.elements.find(e => e.matches('.lst-footer-ig')));
+  site.click(el('a', {href: 'https://chat.whatsapp.com/abc', class: 'button'}));
+  site.click(el('a', {href: 'https://example.com/instagram.com'}));
+  site.click(el('a', {href: '#test'}));
+  site.click(el('a', {'data-whatsapp': 'orientacion', href: 'https://wa.me/34600000000'}, el('footer', {})));
+  assert.deepEqual(site.events().map(e => [e.name, e.link_type, e.cta_location]), [
+    ['social_click', 'instagram', undefined], ['social_click', 'whatsapp_group', undefined], ['whatsapp_click', undefined, 'footer']]);
+  assert.ok(site.events().every(e => e.traffic_type === 'external' && e.page_type === 'home'));
 });
 
 // --- Every measurable button of the published site has a known place ----------------------------
@@ -193,28 +315,107 @@ async function pages(dir = 'dist') {
 const published = JSON.parse(await readFile('dist/catalog-snapshot.json', 'utf8')).trips;
 const {analyticsPage} = await import('./analytics.mjs');
 
+// The eleven places the report shows (README and design document list the same).
+const PLACES = ['closing', 'departure', 'faq', 'footer', 'header', 'help', 'levels', 'mobile_bar', 'registration', 'reserve', 'trip_info'];
+
+// Where each kind of button really is. The wildcard selectors make a wrong order land in a plausible place,
+// so the pairs where the table's order decides are pinned here by name.
+const PLACE_CASES = [
+  ['dist/viajes/maldivas/index.html', 'a.group-fit-contact', 'trip_info'], // Also inside #nivel
+  ['dist/viajes/maldivas/index.html', 'button.essential-dates', 'departure'], // Also inside .trip-summary
+  ['dist/viajes/maldivas/index.html', 'a.departure-dossier', 'departure'], // Also a .dossier-link
+  ['dist/viajes/maldivas/index.html', 'a.departure-enquiry', 'departure'],
+  ['dist/viajes/maldivas/index.html', 'button.trip-header-cta', 'header'],
+  ['dist/viajes/hossegor/index.html', 'a.trip-team-contact', 'trip_info'],
+  ['dist/inscripciones/maldivas/index.html', 'a.rg-whatsapp', 'registration'],
+  ['dist/niveles/index.html', 'a[data-guide-enquiry]', 'levels'],
+  ['dist/index.html', '.hp-how a[data-whatsapp]', 'help'],
+  ['dist/index.html', '.hp-close a[data-whatsapp]', 'closing'],
+  ['dist/index.html', 'a.hp-bar-wa', 'mobile_bar'],
+  ['dist/index.html', 'footer a[data-whatsapp]', 'footer'],
+  ['dist/viajes/index.html', '.ct-help a[data-whatsapp]', 'help'],
+  ['dist/preguntas-frecuentes/index.html', '.faq-help a[data-whatsapp]', 'faq'],
+  ['dist/conocenos/index.html', 'a.lst-nav-contact', 'header']
+];
+test('each kind of button reports the place it is in, including where the order of the table decides', async () => {
+  for (const [file, selector, expected] of PLACE_CASES) {
+    const folder = path.relative('dist', path.dirname(file)).split(path.sep).join('/');
+    const site = open({page: analyticsPage(folder ? `/${folder}/` : '/', published), html: await readFile(file, 'utf8')});
+    const target = site.elements.find(e => e.matches(selector));
+    assert.ok(target, `${selector} must exist in ${file}`);
+    site.click(target);
+    assert.equal(site.events().at(-1)?.cta_location, expected, `${selector} in ${file}`);
+  }
+});
+
 test('no button of the published pages is reported as unclassified', async () => {
   const unclassified = [];
   let measured = 0;
+  const seen = new Set();
+  const dropped = [];
   for (const file of await pages()) {
     const folder = path.relative('dist', path.dirname(file)).split(path.sep).join('/');
     const site = open({page: analyticsPage(folder ? `/${folder}/` : '/', published), html: await readFile(file, 'utf8')});
     const before = site.events().length;
-    for (const element of site.elements.filter(e => e.matches('a[data-whatsapp], a[data-registration], [data-open-dates], a.dossier-link'))) site.click(element);
+    const clickable = site.elements.filter(e => e.matches('a[data-whatsapp], a[data-registration], [data-open-dates], a.dossier-link'));
+    for (const element of clickable) site.click(element);
+    // A button that sends nothing is as bad as one in the wrong place: nothing would ever show it.
+    if (site.events().length - before !== clickable.length) dropped.push(`${file}: ${clickable.length} buttons, ${site.events().length - before} events`);
     for (const event of site.events().slice(before)) {
       measured++;
-      if (event.cta_location === 'unclassified' || !event.cta_location) unclassified.push(`${file} ${event.name} ${event.whatsapp_topic ?? event.destination_slug}`);
+      seen.add(event.cta_location);
+      if (event.cta_location === 'unclassified' || !event.cta_location) unclassified.push(`${file} ${event.name} ${event.destination_slug ?? event.page_type}`);
     }
   }
   assert.ok(measured > 150, `expected the published buttons to be measured, got ${measured}`);
   assert.deepEqual(unclassified, []);
+  assert.deepEqual(dropped, []);
+  assert.deepEqual([...seen].sort(), PLACES.slice().sort(), 'the places in use are the documented ones');
 });
 
 // --- Registration form ------------------------------------------------------------------------
-test('an accepted registration is reported with its trip', () => {
-  const site = open({page: {page_type: 'registration', destination_slug: 'senegal'}});
+test('an accepted registration is a lead, with the departure chosen', () => {
+  const site = open({page: {page_type: 'registration', destination_slug: 'maldivas'}});
+  for (const start of ['2027-03-21', 'ana@example.com', '2027-3-1', 'maldivas-2027-03-21']) site.dispatch('lst:registration-accepted', {start});
   site.dispatch('lst:registration-accepted');
-  assert.deepEqual(site.events().map(e => [e.name, e.destination_slug]), [['registration_form_accepted', 'senegal']]);
+  assert.deepEqual(site.events().map(e => [e.name, e.destination_slug, e.trip_id]), [
+    ['generate_lead', 'maldivas', 'maldivas-2027-03-21'],
+    ...Array(4).fill(['generate_lead', 'maldivas', undefined])]);
+});
+
+// The code sent to GA4 is the trip plus the start date: readable whatever key the CMS gives a departure.
+test('every departure offered on a published form carries the date its code is built from', async () => {
+  let offered = 0;
+  for (const file of (await pages()).filter(f => f.split(path.sep).includes('inscripciones'))) {
+    for (const radio of parse(await readFile(file, 'utf8')).filter(e => e.tag === 'input' && e.attrs.name === 'VIAJE_SURF')) {
+      offered++;
+      assert.match(radio.attrs['data-departure-start'] ?? '', /^\d{4}-\d{2}-\d{2}$/, file);
+    }
+  }
+  assert.ok(offered > 0, 'expected published forms with departures');
+});
+
+test('reaching a later step of the form is reported with a controlled step number', () => {
+  const site = open({page: {page_type: 'registration', destination_slug: 'senegal'}});
+  for (const step of [2, 3, 5, 1, 6, '3', 2.5]) site.dispatch('lst:registration-step', {step});
+  site.dispatch('lst:registration-step');
+  assert.deepEqual(site.events().map(e => [e.name, e.destination_slug, e.form_step]),
+    [2, 3, 5].map(step => ['registration_step', 'senegal', String(step)]));
+});
+
+// A renamed fact would silently stop being measured: both sides must use the same name.
+const ANNOUNCED = {
+  'dist/registration.js': ['lst:registration-step', 'lst:registration-accepted', 'lst:registration-failed'],
+  'dist/home.js': ['lst:level-test'], 'dist/levels.js': ['lst:level-test']
+};
+test('the pages announce facts with the names this script listens for', async () => {
+  for (const [file, names] of Object.entries(ANNOUNCED)) {
+    const text = await readFile(file, 'utf8');
+    for (const name of names) {
+      assert.ok(text.includes(`CustomEvent('${name}'`), `${file} must announce ${name}`);
+      assert.ok(source.includes(`addEventListener('${name}'`), `analytics.js must listen for ${name}`);
+    }
+  }
 });
 
 test('a failed registration reports why, from a closed list and never from messages', () => {
@@ -227,5 +428,5 @@ test('a failed registration reports why, from a closed list and never from messa
   ];
   for (const [detail] of cases) site.dispatch('lst:registration-failed', detail);
   assert.deepEqual(site.events().map(e => [e.name, e.destination_slug, e.error_category]),
-    cases.map(([, category]) => ['registration_form_error', 'senegal', category]));
+    cases.map(([, category]) => ['registration_error', 'senegal', category]));
 });

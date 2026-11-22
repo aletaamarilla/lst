@@ -10,11 +10,11 @@ const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;'
 test('level profiles retain their copy while contextual enquiries support level and group fit',()=>{
  const html=renderTrip(beginner,trips);
  const level=html.match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
- assert.match(level,/<h2>¿Es este tu viaje\?<\/h2>/);
+ assert.match(level,/<h2>Niveles de este viaje<\/h2>/);
  for(const [title,text] of beginner.audience.profiles){const expected={'Nivel I · Iniciación':'Iniciación','Nivel II · Intermedio bajo':'Base'}[title]??title;assert(level.includes(escape(expected)));assert(level.includes(escape(text)));}
  for(const value of [beginner.audience.text,beginner.audience.objective])assert(!level.includes(escape(value)));
  assert.doesNotMatch(level,/Para este viaje:|Consultar mi nivel/);
- assert.match(level,/¿Dudas con tu nivel\?/);assert.match(level,/¿Vienes por tu cuenta\?/);assert.match(level,/data-whatsapp=/);
+ assert.match(level,/¿Dudas con tu nivel\?/);assert.match(level,/Puedes venir por tu cuenta/);assert.match(level,/Pregunta cómo es el grupo/);assert.doesNotMatch(level,/hasta \d+ personas/);assert.match(level,/data-whatsapp=/);
  assert.match(level,/href="\/niveles\/"/);
  const advancedLevel=renderTrip(advanced,trips).match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
  assert(advancedLevel.includes(escape(publicDetail(advanced.levelRequirement))));

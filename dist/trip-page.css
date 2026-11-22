@@ -625,11 +625,6 @@ body.tp.trip-designed .trip-reserve .reserve-copy>p:not(.eyebrow){color:var(--tp
   /* Nivel */
   body.tp.trip-designed .level-heading{display:block;text-align:center}
   body.tp.trip-designed .level-heading .level-lead{margin-inline:auto}
-  body.tp.trip-designed .tp-levels{border:2px solid var(--tp-ink);border-radius:2px;gap:0}
-  body.tp.trip-designed .tp-level{text-align:center;justify-items:center;padding:16px 8px 14px;margin:0}
-  body.tp.trip-designed .tp-level:nth-child(odd){border-right:2px solid var(--tp-ink)}
-  body.tp.trip-designed .tp-level:nth-child(-n+2){border-bottom:2px solid var(--tp-ink)}
-  body.tp.trip-designed .tp-level svg{margin-inline:auto}
   body.tp.trip-designed .trip-level>p:not(.eyebrow){text-align:center}
   body.tp.trip-designed .level-actions{justify-content:center}
   body.tp.trip-designed .trip-community{text-align:center}
@@ -666,4 +661,118 @@ body.tp.trip-designed .trip-reserve .reserve-copy>p:not(.eyebrow){color:var(--tp
   body.tp.trip-designed .related-trip-name{font-size:26px}
   body.tp.trip-designed .related-trip::after{background:linear-gradient(transparent 30%,rgba(27,27,27,.95))}
   body.tp.trip-designed .related-section .text-link{display:block;text-align:center}
+}
+
+/* ======================================================================================
+   Ajustes nov 2026 (4ª pasada, móvil).
+   ====================================================================================== */
+/* ¿Es este tu viaje?: los cuatro niveles en una fila, pequeños y pegados como en la portada de la
+   guía, así la ola crece de izquierda a derecha. En color, los niveles de este viaje. */
+body.tp.trip-designed .tp-levels{grid-template-columns:repeat(4,minmax(0,1fr));gap:0;max-width:640px;margin:20px auto 0;border:0}
+body.tp.trip-designed .tp-level{display:grid;justify-items:center;align-content:start;margin:0;padding:0;border:0;text-align:center}
+body.tp.trip-designed .tp-level .lv-figure{width:100%;max-width:none;margin:0 0 10px}
+body.tp.trip-designed .tp-level h3{padding-inline:2px;font-size:clamp(14px,3.9vw,21px)}
+body.tp.trip-designed .tp-level p{padding-inline:4px;font-size:clamp(11.5px,3.1vw,14px);line-height:1.25}
+/* Con tres datos bajo el título, el lugar ocupa la fila entera. */
+body.tp.trip-designed .trip-essential-facts>div:last-child:nth-child(odd){grid-column:1/-1}
+/* Incluido: cada cosa en su línea, con su marca y una raya entre una y otra. */
+body.tp.trip-designed .inclusion-groups li{position:relative;padding:8px 0 8px 26px;border-top:1px dashed rgba(255,250,231,.18)}
+body.tp.trip-designed .inclusion-groups li:first-child{border-top:0}
+body.tp.trip-designed .inclusion-groups li::before{display:block;content:"";position:absolute;left:3px;top:14px;width:11px;height:6px;border:solid var(--tp-orange);border-width:0 0 2px 2px;border-radius:0;background:none;transform:rotate(-45deg)}
+@media (max-width:699px){
+  /* Vas con grupo: foto más baja, menos texto y el botón centrado. */
+  body.tp.trip-designed .trip-community{padding:0}
+  body.tp.trip-designed .community-moment img{aspect-ratio:16/9}
+  body.tp.trip-designed .community-copy{gap:14px;padding:20px 18px 22px}
+  body.tp.trip-designed .group-fit{gap:8px;justify-items:center}
+  body.tp.trip-designed .group-fit h3{margin:0;font-size:30px}
+  body.tp.trip-designed .group-fit p{max-width:32ch;margin-inline:auto}
+  body.tp.trip-designed .trip-community .group-fit .group-fit-contact{display:inline-flex;justify-self:center;justify-content:center;width:auto;margin:6px auto 0}
+}
+/* Dossier en móvil: tarjeta de papel sobre la banda oscura, con el PDF dibujado y un botón naranja. */
+body.tp.trip-designed .trip-costs .mobile-booking-options{margin-top:26px}
+body.tp.trip-designed .trip-costs .dossier-link.dossier-card{display:grid;grid-template-columns:40px minmax(0,1fr) 46px;align-items:center;gap:14px;min-height:0;margin:0;padding:14px 14px 14px 16px;
+  border:0;border-radius:4px;background:var(--tp-paper);color:var(--tp-ink);text-decoration:none;box-shadow:0 18px 30px -22px rgba(0,0,0,.7)}
+body.tp.trip-designed .dossier-card-icon{width:36px;height:44px;color:var(--tp-ink)}
+body.tp.trip-designed .dossier-card-icon .dossier-card-lines{stroke:var(--tp-orange)}
+body.tp.trip-designed .dossier-card-text{display:grid;gap:4px;min-width:0}
+body.tp.trip-designed .dossier-card-text strong{font:400 24px/.95 var(--tp-display);text-transform:uppercase;letter-spacing:0}
+body.tp.trip-designed .dossier-card-text span{font-size:14px;line-height:1.3;color:var(--tp-muted)}
+body.tp.trip-designed .dossier-card-go{display:grid;place-items:center;width:46px;height:46px;border-radius:2px;background:var(--tp-orange);color:var(--tp-ink)}
+body.tp.trip-designed .dossier-card-go svg{display:block;width:22px;height:22px}
+body.tp.trip-designed .trip-costs .dossier-card:hover .dossier-card-go{background:var(--tp-ink);color:var(--tp-paper)}
+body.tp.trip-designed .trip-costs .dossier-card:focus-visible{outline:3px solid var(--tp-paper);outline-offset:3px}
+/* PLAN DE SURF (nov 2026, 4ª pasada): una sola hoja de papel sobre la banda mar con todo el programa a la
+   vista. Cada bloque lleva un dibujo según de qué trata (agua, entreno, excursión, tarde, noche) y no lleva
+   número, porque no es una secuencia. Sin desplegables ni tarjetas alternas. */
+body.tp.trip-designed .trip-programme .plan-sheet{margin-top:20px;padding:4px 18px;border-radius:4px;background:var(--tp-paper);color:var(--tp-ink);box-shadow:0 22px 40px -26px rgba(0,0,0,.7)}
+body.tp.trip-designed .trip-programme .plan-row{display:grid;grid-template-columns:36px minmax(0,1fr);gap:14px;align-items:start;padding:18px 0;text-align:left}
+body.tp.trip-designed .trip-programme .plan-row+.plan-row{border-top:2px dashed rgba(27,27,27,.16)}
+body.tp.trip-designed .trip-programme .plan-row .programme-icon{width:34px;height:34px;margin-top:-2px;color:var(--tp-ink)}
+body.tp.trip-designed .trip-programme .plan-row .programme-icon .icon-accent{stroke:var(--tp-orange)}
+body.tp.trip-designed .trip-programme .plan-row h4{margin:0 0 6px;font:400 22px/1 var(--tp-display);text-transform:uppercase;letter-spacing:0;color:var(--tp-ink)}
+body.tp.trip-designed .trip-programme .plan-row p{margin:0;font-size:15.5px;line-height:1.5;color:var(--tp-ink)}
+@media (min-width:700px){
+ body.tp.trip-designed .trip-programme .plan-sheet{padding:8px 28px}
+ body.tp.trip-designed .trip-programme .plan-row{grid-template-columns:44px minmax(0,1fr);gap:18px;padding:22px 0}
+ body.tp.trip-designed .trip-programme .plan-row h4{font-size:26px}
+ body.tp.trip-designed .trip-programme .plan-row p{font-size:16px}
+}
+/* ANTES DE RESERVAR (nov 2026, 4ª pasada): en vez de tres tarjetas iguales con icono en un cuadrado, un solo
+   billete con un corte perforado entre cada cosa. Lo que decide va primero y en negrita. */
+body.tp.trip-designed .tp-practical-ticket{position:relative;margin-top:4px;padding:0 18px;border-radius:4px;background:var(--tp-paper-2);color:var(--tp-ink)}
+body.tp.trip-designed .tp-practical-row{position:relative;padding:18px 0;text-align:left}
+body.tp.trip-designed .tp-practical-row+.tp-practical-row{border-top:2px dashed rgba(27,27,27,.2)}
+body.tp.trip-designed .tp-practical-row+.tp-practical-row::before,
+body.tp.trip-designed .tp-practical-row+.tp-practical-row::after{content:"";position:absolute;top:-10px;width:18px;height:18px;border-radius:50%;background:var(--tp-paper)}
+body.tp.trip-designed .tp-practical-row+.tp-practical-row::before{left:-27px}
+body.tp.trip-designed .tp-practical-row+.tp-practical-row::after{right:-27px}
+body.tp.trip-designed .tp-practical-row h3{display:flex;align-items:center;gap:10px;margin:0 0 8px;font:400 22px/1 var(--tp-display);text-transform:uppercase;letter-spacing:0}
+body.tp.trip-designed .tp-practical-row h3 svg{flex:none;width:26px;height:26px;color:var(--tp-ink)}
+body.tp.trip-designed .tp-practical-row h3 svg .icon-accent{stroke:var(--tp-orange)}
+body.tp.trip-designed .tp-practical-row p{margin:0;font-size:15.5px;line-height:1.5}
+body.tp.trip-designed .tp-practical-row p strong{font-weight:700}
+@media (min-width:700px){
+ body.tp.trip-designed .tp-practical-ticket{padding:0 28px}
+ body.tp.trip-designed .tp-practical-row{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;padding:22px 0}
+ body.tp.trip-designed .tp-practical-row h3{align-items:flex-start;margin:0}
+ body.tp.trip-designed .tp-practical-row+.tp-practical-row::before{left:-37px}
+ body.tp.trip-designed .tp-practical-row+.tp-practical-row::after{right:-37px}
+}
+/* SPOTS Y FUERA DEL AGUA (nov 2026, 4ª pasada: «las fotos son gigantes»). Sin carrusel: cada sitio es una
+   fila con una foto pequeña, su nombre y una frase; en escritorio, dos columnas. */
+body.tp.trip-designed .visual-track{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);gap:0;overflow:visible;scroll-snap-type:none;margin:12px 0 0;padding:0}
+body.tp.trip-designed .visual-card{display:grid;grid-template-columns:96px minmax(0,1fr);gap:14px;align-items:center;min-width:0;padding:14px 0;border:0;border-top:2px dashed var(--tp-rule-line,rgba(27,27,27,.18));border-radius:0;overflow:visible;background:none;color:var(--tp-ink);isolation:auto}
+body.tp.trip-designed .visual-card::after{content:none}
+body.tp.trip-designed .visual-card img{grid-area:auto;width:96px;height:96px;aspect-ratio:1;border-radius:4px;object-fit:cover}
+body.tp.trip-designed .visual-card:hover img{transform:none}
+body.tp.trip-designed .visual-card-copy{grid-area:auto;align-self:center;z-index:auto;padding:0;text-align:left}
+body.tp.trip-designed .visual-card-heading{margin-bottom:4px}
+body.tp.trip-designed .visual-card h3{font-size:22px;line-height:.95;color:inherit}
+body.tp.trip-designed .visual-card p{font-size:15px;line-height:1.4;color:inherit;opacity:.85}
+body.tp.trip-designed .visual-card:not(:has(img)){grid-template-columns:minmax(0,1fr)}
+body.tp.trip-designed .visual-card:not(:has(img)) .visual-card-copy{padding-top:0}
+body.tp.trip-designed .trip-programme .visual-card{--tp-rule-line:rgba(255,250,231,.22);color:var(--tp-paper)}
+@media (min-width:700px){
+ body.tp.trip-designed .visual-track,body.tp.trip-designed .trip-programme .visual-track{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-columns:auto;column-gap:28px}
+ body.tp.trip-designed .visual-card{grid-template-columns:120px minmax(0,1fr);gap:18px}
+ body.tp.trip-designed .visual-card img{width:120px;height:120px}
+}
+
+/* NIVELES DE ESTE VIAJE (nov 2026, 4ª pasada: «la explicación de abajo ocupa mucho»). Lo que se trabaja en
+   cada nivel va en cajas de dos en dos, pegadas bajo los dibujos y con el nombre en el verde de la ola. */
+body.tp.trip-designed .audience-profiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin:16px 0 0;border:2px solid var(--tp-ink);border-radius:2px;background:var(--tp-paper)}
+body.tp.trip-designed .audience-profiles article{min-width:0;padding:12px 12px 14px;border:0;border-radius:0;background:none;text-align:center}
+body.tp.trip-designed .audience-profiles article:nth-of-type(even){border-left:2px solid var(--tp-ink)}
+body.tp.trip-designed .audience-profiles article:nth-of-type(n+3){border-top:2px solid var(--tp-ink)}
+body.tp.trip-designed .audience-profiles article:only-of-type,
+body.tp.trip-designed .audience-profiles article:last-of-type:nth-of-type(odd){grid-column:1/-1}
+body.tp.trip-designed .audience-profiles h3{margin:0 0 6px;font:400 19px/1 var(--tp-display);text-transform:uppercase;letter-spacing:0;color:var(--tp-sea)}
+body.tp.trip-designed.trip-designed .audience-profiles p{margin:0;font-size:14.5px!important;line-height:1.4;color:var(--tp-ink)}
+body.tp.trip-designed .audience-profiles .level-requirement{grid-column:1/-1;margin:0;padding:10px 12px;border-top:2px solid var(--tp-ink);text-align:center}
+@media (min-width:700px){
+ body.tp.trip-designed .audience-profiles{grid-template-columns:repeat(auto-fit,minmax(0,1fr))}
+ body.tp.trip-designed .audience-profiles article{padding:16px 18px 18px}
+ body.tp.trip-designed .audience-profiles article:nth-of-type(n+3){border-top:0;border-left:2px solid var(--tp-ink)}
+ body.tp.trip-designed .audience-profiles article:last-of-type:nth-of-type(odd){grid-column:auto}
 }

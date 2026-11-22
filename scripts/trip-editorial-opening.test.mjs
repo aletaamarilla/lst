@@ -19,7 +19,8 @@ test('the title, duration and concise facts are outside the photograph, with no 
  const start=html.indexOf('<dl class="trip-essential-facts"'),facts=html.slice(start,html.indexOf('<p class="trip-kickoff"',start));
  assert.match(cover,/--trip-cover-ratio:6000 \/ 4000/);assert.doesNotMatch(cover,/<h1|trip-cover-level/);
  assert.match(meta,/<h1 id="trip-title">Marruecos<\/h1>/);
- for(const text of ['7 noches','17–24 ene 2027','Iniciación y Base','Hasta 15 personas','Agadir, Marruecos'])assert(facts.includes(text));
+ for(const text of ['7 noches','17–24 ene 2027','Iniciación y Base','Agadir, Marruecos'])assert(facts.includes(text));
+ assert(!facts.includes('Hasta 15 personas'));
  assert(html.indexOf(facts)<html.indexOf('id="nivel"'));
  assert.doesNotMatch(meta+facts,/°C|desértico|clima/i);assert.deepEqual(morocco,before);
 });
