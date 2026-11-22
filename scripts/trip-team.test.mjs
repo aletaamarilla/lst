@@ -59,3 +59,24 @@ test('a destination without confirmed staff keeps a candid enquiry without asser
  assert.doesNotMatch(section,/trip-team-roles|Coaching con Lucas|Lucas, tu coordinador|COORDINADOR DEL VIAJE/);
  assert.match(section,/Consultar el acompañamiento/);
 });
+
+const cdn='https://cdn.sanity.io/images/q5bj2rn2/production/';
+const coach=(name,extra={})=>({name,role:'Coach de surf',text:`${name} te acompaña en el agua.`,focus:['Videoanálisis'],photo:{alt:`${name} surfeando.`,url:`${cdn}${name}.jpg`},...extra});
+const withCoaches=coaches=>adaptTrip({...structuredClone(draft),_id:draft._id.slice(7),team:{title:'Tus coaches.',text:'Agua y tierra.',coaches}});
+
+test('two coaches replace the team card with their photos joined by a plus',()=>{
+ const trip=withCoaches([coach('Lucas',{portrait:{alt:'Lucas.',url:`${cdn}lucas-retrato.jpg`}}),coach('Sergio',{role:'Coach de surfskate'})]);
+ const html=renderTrip(trip,[trip]);
+ const block=html.match(/<section class="trip-block trip-coaches"[\s\S]*?<\/section>/)[0];
+ assert.match(block,/class="coaches-grid coaches-2"/);
+ assert.equal(block.match(/class="coaches-plus"/g).length,1);
+ assert.match(block,/Lucas surfeando\./);assert.match(block,/class="coach-portrait"[^>]*alt="Lucas\."|alt="Lucas\."[^>]*/);
+ assert.match(block,/Coach de surfskate/);
+ assert.doesNotMatch(html,/<section class="trip-block trip-team">/);
+});
+
+test('a trip without coaches keeps the team card, and more than two coaches is refused',()=>{
+ assert.match(renderTrip(fixture(),[fixture()]),/<section class="trip-block trip-team">/);
+ assert.throws(()=>withCoaches([coach('A'),coach('B'),coach('C')]),/Máximo dos coaches/);
+ assert.throws(()=>withCoaches([coach('A',{photo:undefined})]),/coach/);
+});

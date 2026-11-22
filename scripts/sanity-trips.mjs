@@ -142,6 +142,14 @@ export function adaptTrip(doc, {today} = {}) {
   if (doc.cardImage) { result.cardImage = image(doc.cardImage, 'cardImage'); result.cardImageAlt = text(doc.cardImage.alt, 'cardImage.alt', true); }
   if (doc.testimonial) result.testimonial = {context: text(doc.testimonial.context, 'testimonial.context'), quote: text(doc.testimonial.quote, 'testimonial.quote', true), author: text(doc.testimonial.author, 'testimonial.author', true), trip: text(doc.testimonial.trip, 'testimonial.trip')};
   if (doc.team) result.team = {title: text(doc.team.title, 'team.title'), text: text(doc.team.text, 'team.text')};
+  if (doc.team?.coaches != null) {
+    const coaches = list(doc.team.coaches, 'team.coaches');
+    if (coaches.length > 2) throw Error(`Máximo dos coaches: ${slug}`);
+    result.team.coaches = coaches.map(c => ({name: text(c.name, 'coach.name', true), role: text(c.role, 'coach.role', true), text: text(c.text, 'coach.text', true),
+      focus: strings(c.focus, 'coach.focus').slice(0, 3), photo: image(c.photo, 'coach.photo'), photoAlt: text(c.photo?.alt, 'coach.photo.alt', true),
+      portrait: image(c.portrait, 'coach.portrait'), portraitAlt: text(c.portrait?.alt, 'coach.portrait.alt')}));
+    for (const c of result.team.coaches) if (!c.photo) throw Error(`Coach sin foto: ${slug}`);
+  }
   return result;
 }
 

@@ -22,6 +22,8 @@ En «Destino» puedes cambiar la descripción «¿Por qué este destino?», la *
 
 En «Programa» se editan los títulos y textos del plan, actividades, spots, alojamiento, inclusiones, exclusiones y acompañamiento. Los títulos del programa se muestran literalmente. El nombre y el texto del acompañamiento salen de ese viaje; sin información no se atribuye un coordinador concreto.
 
+**Coaches del viaje:** en «Programa» → «Acompañamiento» → **Coaches del viaje** puedes añadir uno o dos coaches con su nombre, qué hacen en el viaje («Coach de surf», «Coach de surfskate»), una presentación breve, hasta tres cosas que trabajan contigo, una foto en acción y, si quieres, un retrato. Con dos coaches la ficha muestra sus fotos juntas unidas por un «+»; con uno, foto y texto lado a lado. El título y la descripción de «Acompañamiento» hacen de entradilla. Si no añades coaches, se mantiene la tarjeta de acompañamiento de siempre.
+
 Si un documento muestra **Contenido compartido del viaje**, contiene una fecha adicional de un viaje ya agrupado. Abre el documento enlazado para editar sus textos, fotos o programa. Los controles compartidos se ocultan en la fecha adicional para evitar cambios sin efecto; sus fechas, tarifas, disponibilidad, capacidad, PDF y condiciones propias siguen siendo editables. Para añadir nuevas fechas, usa preferentemente la lista «Salidas» del viaje principal.
 
 Las FAQs propias tienen prioridad sobre las sugerencias generales para la misma pregunta. Las condiciones de cancelación pueden mantenerse aquí o en las condiciones del viaje, según el contenido aprobado. La «Opinión de un viajero» es opcional: al retirarla desaparece de la ficha y no se recupera una cita por el nombre del destino.

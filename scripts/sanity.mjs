@@ -30,7 +30,8 @@ export function readPublishedTrips({env = process.env, ...options} = {}) {
     "gallery": gallery[]{..., "url": asset->url},
     "activities": activities[]{..., "image": image{..., "url": asset->url}},
     "spots": spots[]{..., "image": image{..., "url": asset->url}},
-    "stay": stay{..., "image": image{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url}}
+    "stay": stay{..., "image": image{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url}},
+    "team": team{..., "coaches": coaches[]{..., "photo": photo{..., "url": asset->url}, "portrait": portrait{..., "url": asset->url}}}
   }`, {...options, token: env.SANITY_READ_TOKEN, perspective: 'published'});
 }
 

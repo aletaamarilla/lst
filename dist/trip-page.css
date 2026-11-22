@@ -796,3 +796,57 @@ body.tp.trip-designed .trip-dock .dock-price .eb-was{font:400 18px/1 var(--tp-di
 body.tp.trip-designed .trip-dock .dock-offer{font-weight:600;color:var(--tp-orange)}
 body.tp.trip-designed .departure-option-price .eb-was{margin-right:6px;font:400 20px/1 var(--tp-display);color:var(--tp-muted)}
 body.tp.trip-designed .departure-option-booking>.eb-line{grid-column:1/-1;font:600 13px/1.4 var(--tp-body);color:var(--orange-text)}
+/* Coaches: foto en acción + retrato. Dos coaches comparten una tira de fotos unida por un «+». */
+body.tp.trip-designed .trip-coaches{margin-top:36px;padding:26px 18px 18px;border-radius:4px;background:var(--tp-ink);color:var(--tp-paper)}
+body.tp.trip-designed .trip-coaches h3{font:400 clamp(30px,6vw,44px)/.92 var(--tp-display);text-transform:uppercase;color:var(--tp-orange);margin:0 0 12px;text-align:center}
+body.tp.trip-designed .trip-coaches .coaches-intro p{max-width:60ch;margin:0 auto;font-size:15px;line-height:1.6;text-align:center}
+body.tp.trip-designed .trip-coaches .coaches-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);margin-top:24px}
+body.tp.trip-designed .trip-coaches .coach{display:grid;align-content:start;min-width:0}
+body.tp.trip-designed .trip-coaches .coach-photo{position:relative;margin:0}
+body.tp.trip-designed .trip-coaches .coach-photo img:first-child{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:4px}
+body.tp.trip-designed .trip-coaches .coach-portrait{position:absolute;left:14px;bottom:-30px;width:68px;height:68px;border-radius:50%;object-fit:cover;border:3px solid var(--tp-orange);background:var(--tp-ink)}
+body.tp.trip-designed .trip-coaches .coach-copy{padding:40px 2px 0}
+body.tp.trip-designed .trip-coaches .coach-photo:not(:has(.coach-portrait))+.coach-copy{padding-top:18px}
+body.tp.trip-designed .trip-coaches .coach-role{font:600 13px/1.3 var(--tp-body);color:var(--tp-orange);margin:0 0 6px}
+body.tp.trip-designed .trip-coaches .coach h4{font:400 clamp(26px,5vw,32px)/1 var(--tp-display);text-transform:uppercase;letter-spacing:0;color:var(--tp-paper);margin:0 0 10px}
+body.tp.trip-designed .trip-coaches .coach-copy>p:not(.coach-role){font-size:15px;line-height:1.6;margin:0}
+body.tp.trip-designed .trip-coaches .coach-focus{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:7px}
+body.tp.trip-designed .trip-coaches .coach-focus li{position:relative;margin:0;padding-left:20px;font-size:14px;line-height:1.45}
+body.tp.trip-designed .trip-coaches .coach-focus li::before{content:"";position:absolute;left:0;top:.62em;width:11px;height:2px;background:var(--tp-orange)}
+body.tp.trip-designed .trip-coaches .coaches-plus{justify-self:center;display:grid;place-items:center;width:44px;height:44px;margin:22px 0;border-radius:2px;background:var(--tp-orange);color:var(--tp-ink);font:400 36px/1 var(--tp-display);padding-top:4px}
+body.tp.trip-designed .trip-coaches>.text-link{display:flex;justify-content:center;align-items:center;gap:8px;min-height:44px;margin-top:16px;color:var(--tp-paper)}
+@media (min-width:700px){
+ body.tp.trip-designed .trip-coaches{padding:34px 32px 24px}
+ body.tp.trip-designed .trip-coaches :is(h3,.coaches-intro p){text-align:left;margin-left:0}
+ body.tp.trip-designed .trip-coaches>.text-link{justify-content:flex-start}
+ /* Las dos fotos se tocan; el «+» queda en la unión, a media altura de la foto (ancho/2 × 10/16 ÷ 2). */
+ body.tp.trip-designed .trip-coaches .coaches-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:first-child{grid-column:1;grid-row:1}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child{grid-column:2;grid-row:1}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:first-child img:first-child{border-radius:4px 0 0 4px}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child img:first-child{border-radius:0 4px 4px 0}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:first-child .coach-copy{padding-right:30px}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child .coach-copy{padding-left:30px;border-left:1px solid var(--tp-rule-dark)}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child .coach-portrait{left:44px}
+ body.tp.trip-designed .trip-coaches .coaches-plus{grid-column:1/-1;grid-row:1;align-self:start;z-index:1;width:52px;height:52px;margin:calc(15.625% - 26px) 0 0;box-shadow:0 0 0 5px var(--tp-ink)}
+ body.tp.trip-designed .trip-coaches .coaches-1 .coach{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;align-items:center}
+ body.tp.trip-designed .trip-coaches .coaches-1 .coach-copy{padding-top:0}
+}
+@media (max-width:699px){
+ /* Móvil: la misma tira agua + asfalto arriba y los dos textos debajo, para no apilar dos fotos grandes. */
+ body.tp.trip-designed .trip-coaches .coaches-2{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:0}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach{display:contents}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:first-child .coach-photo{grid-area:1/1}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child .coach-photo{grid-area:1/2}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:first-child .coach-copy{grid-area:2/1/3/3}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child .coach-copy{grid-area:3/1/4/3;margin-top:22px;padding-top:22px;border-top:1px solid var(--tp-rule-dark)}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach-photo img:first-child{aspect-ratio:4/5}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:first-child .coach-photo img:first-child{border-radius:4px 0 0 4px}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach:last-child .coach-photo img:first-child{border-radius:0 4px 4px 0}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach-portrait{width:54px;height:54px;left:10px;bottom:10px}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coach-copy{padding-top:18px}
+ body.tp.trip-designed .trip-coaches .coaches-2 .coaches-plus{grid-area:1/1/2/3;align-self:center;z-index:1;margin:0;box-shadow:0 0 0 4px var(--tp-ink)}
+ body.tp.trip-designed .trip-coaches .coach h4{font-size:26px;margin-bottom:8px}
+ body.tp.trip-designed .trip-coaches .coach-copy>p:not(.coach-role),body.tp.trip-designed .trip-coaches .coaches-intro p{font-size:14px;line-height:1.55}
+ body.tp.trip-designed .trip-coaches .coach-focus{margin-top:10px;gap:5px}
+}

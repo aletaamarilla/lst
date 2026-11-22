@@ -161,6 +161,17 @@ export const trip = defineType({
     defineField({name: 'team', title: 'Acompañamiento', type: 'object', group: 'program', fields: [
       defineField({name: 'title', title: 'Título', type: 'string'}),
       defineField({name: 'text', title: 'Descripción', type: 'text'}),
+      defineField({name: 'coaches', title: 'Coaches del viaje', type: 'array', description: 'Opcional. Con uno o dos coaches la ficha muestra su foto en acción, su retrato y lo que trabajan contigo. Vacío = tarjeta de acompañamiento con el título y la descripción de arriba.', validation: r => r.max(2), of: [defineArrayMember({
+        name: 'coach', title: 'Coach', type: 'object', fields: [
+          defineField({name: 'name', title: 'Nombre', type: 'string', validation: r => r.required()}),
+          defineField({name: 'role', title: 'Qué hace en el viaje', type: 'string', description: 'Por ejemplo «Coach de surf» o «Coach de surfskate».', validation: r => r.required()}),
+          defineField({name: 'text', title: 'Presentación breve', type: 'text', rows: 3, validation: r => r.required().max(240)}),
+          defineField({name: 'focus', title: 'Qué trabaja contigo', type: 'array', description: 'Hasta tres frases cortas.', validation: r => r.max(3), of: [defineArrayMember({type: 'string'})]}),
+          defineField({name: 'photo', title: 'Foto en acción', type: 'image', options: {hotspot: true}, validation: r => r.required(), fields: [defineField({name: 'alt', title: 'Descripción de la foto', type: 'string', validation: r => r.required()})]}),
+          defineField({name: 'portrait', title: 'Retrato', type: 'image', options: {hotspot: true}, description: 'Opcional. Se muestra en un círculo sobre la foto en acción.', fields: [defineField({name: 'alt', title: 'Descripción de la foto', type: 'string'})]}),
+        ],
+        preview: {select: {title: 'name', subtitle: 'role', media: 'portrait'}},
+      })]}),
     ]}),
     defineField({name: 'payment', title: 'Señal y condiciones', type: 'object', group: 'departures', fields: [
       defineField({name: 'depositAmount', title: 'Señal fija (€)', type: 'number', description: 'Importe manual. No se calcula desde porcentajes o tarifas.', validation: r => r.greaterThan(0).precision(2)}),
