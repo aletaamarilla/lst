@@ -50,6 +50,16 @@
   ],
   "redirects": [
     {
+      "source": "/viajes/maldivas-2027-03-28/",
+      "destination": "/viajes/maldivas-pascua/",
+      "permanent": true
+    },
+    {
+      "source": "/inscripciones/maldivas-2027-03-28/",
+      "destination": "/inscripciones/maldivas-pascua/",
+      "permanent": true
+    },
+    {
       "source": "/surftrips/",
       "destination": "/viajes/",
       "permanent": true
