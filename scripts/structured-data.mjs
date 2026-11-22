@@ -66,6 +66,7 @@ function tripNode(trip, route, html, site) {
     ...(departures.length ? {offers: departures.filter(d => Number.isFinite(d.price)).map(d => ({'@type': 'Offer',
       name: `${trip.name} · ${d.date}`, price: d.price, priceCurrency: 'EUR', url: `${site.origin}${route}`,
       availability: `https://schema.org/${availability[d.availability ?? trip.availability] ?? 'InStock'}`,
+      ...(d.earlyBird ? {priceValidUntil: d.earlyBird.until} : {}),
       ...(d.start ? {validThrough: d.start} : {})}))} : {}),
     ...(departures.length ? {subTrip: departures.map(d => ({'@type': 'Trip', name: `${trip.name} · ${d.date}`, departureTime: d.start, arrivalTime: d.end}))} : {})};
 }

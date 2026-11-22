@@ -174,10 +174,6 @@ body.trip-designed .site-header :is(a,button):focus-visible{outline-color:curren
 .trip-designed a[data-whatsapp]{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border:1px solid currentColor;border-radius:100px;background:transparent;color:var(--sea,#164e45);font-size:12px;line-height:1.6;text-decoration:none}
 .trip-designed a[data-whatsapp]:hover{background:var(--sea-soft,#e9efea)}
 body.trip-designed .site-header nav a[data-whatsapp]{border-radius:100px;padding-inline:16px;gap:8px;font-size:12px}
-.trip-offer{padding:10px 12px;border-radius:10px;background:#fff1d9;color:var(--ink)}
-.trip-offer-label{display:flex;flex-wrap:wrap;justify-content:space-between;gap:3px 9px;font-size:11px;line-height:1.6}
-.trip-offer-condition,.trip-offer-date{font-size:11px;line-height:1.7;margin-top:3px}
-.trip-offer-date{border-top:1px solid #e8dac0;padding-top:6px}
 .trip-designed .booking-card{border:1px solid #d4dccf;border-radius:22px;background:#f3f1e5;box-shadow:0 14px 34px #25362714;color:var(--ink);padding:23px}
 .trip-designed .booking-trip-name{font:600 11px/1.5 var(--body);text-transform:uppercase;letter-spacing:.08em;margin:0;color:#515d50}
 .booking-card-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 10px}
@@ -185,10 +181,6 @@ body.trip-designed .site-header nav a[data-whatsapp]{border-radius:100px;padding
 .booking-status::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
 .booking-status[data-tone="available"]{background:#dcebdc;color:#315c3c}
 .booking-status[data-tone="limited"]{background:#eee3bb;color:#665017}
-.booking-card>.trip-offer{display:flex;flex-wrap:wrap;align-items:center;gap:5px 8px;margin-top:11px;padding:0;border:0;background:transparent}
-.booking-card .trip-offer-label{display:inline-flex;justify-content:flex-start;padding:4px 8px;border-radius:100px;background:#dceadd;color:#31583c;font-size:10px;font-weight:600;gap:4px 8px}
-.booking-card .trip-offer-condition,.booking-card .trip-offer-date{font-size:10px;color:#515d50;margin:0;line-height:1.6}
-.booking-card .trip-offer-date{flex-basis:100%;border:0;padding-top:1px}
 .booking-icon{display:block;flex-shrink:0}
 .booking-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
 .booking-tags>span{display:inline-flex;align-items:center;min-height:25px;padding:3px 8px;border-radius:7px;background:#e1e7dc;color:#425440;font-size:10px;line-height:1.5}
@@ -249,7 +241,6 @@ body.trip-designed .site-header nav a[data-whatsapp]{border-radius:100px;padding
 .departure-payment summary{font-size:11px;min-height:44px;display:list-item}
 .trip-designed .departure-close{border-radius:100px}
 .trip-designed .departure-dialog-help{font-size:11px;line-height:1.8}
-.departure-option-booking .trip-offer{width:100%}
 .departure-option-booking .trip-registration{width:100%}
 .trip-native-dates article{padding-block:20px;border-bottom:1px solid var(--line)}
 .trip-native-dates h3{font-size:16px}
@@ -269,7 +260,7 @@ body.trip-designed .site-header nav a[data-whatsapp]{border-radius:100px;padding
  .trip-designed .departure-dialog{border-radius:18px;max-width:740px}
  .trip-designed .departure-option{display:block}
  .trip-designed .departure-option-booking{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px 20px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
- .departure-option-booking>.trip-offer,.departure-option-booking>.departure-payment{grid-column:1/-1}
+ .departure-option-booking>.departure-payment{grid-column:1/-1}
  .trip-designed .departure-option-price{text-align:left}
  .trip-designed .departure-enquiry{grid-column:2;justify-self:end}
 }

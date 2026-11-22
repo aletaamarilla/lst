@@ -1,7 +1,7 @@
 import {renderDepartureRows} from './render-departure-rows.mjs';
 import {departuresFor, levelLabel, levelsFor, tripPrice, tripPriceDetails, formatPrice, availabilityLabel} from './trip-model.mjs';
 import {registrationDepartures, registrationUrl} from './brevo.mjs';
-import {promotionCondition} from './trip-pricing.mjs';
+import {liveEarlyBird, earlyBirdWas, earlyBirdPriceAttrs, earlyBirdOnly, earlyBirdShortLine} from './early-bird.mjs';
 import {sizedPhoto, photoSrcset} from './photo.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -28,15 +28,16 @@ export function renderHomeTrip(trip, {heading, idPrefix = 'trip', compact = fals
     const availability = availabilityLabel(trip);
     const firstDate = [...departures].sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999'))[0];
     const pricing = tripPriceDetails(trip);
-    const offer = compact ? pricing.departure?.promotion : null;
+    const offer = compact ? liveEarlyBird(pricing.departure) : null;
     // Keep the displayed date, current price and saving on the same departure.
     const shownDate = offer ? pricing.departure : firstDate;
     const preview = shownDate ? compactDate(shownDate.date) : 'Por anunciar';
     const previewLabel = offer && shownDate.id !== firstDate?.id ? 'Fecha de la tarifa' : 'Próx. fecha';
-    const discount = offer ? `<p class="home-trip-saving" id="${idPrefix}-${id}-offer"><strong>${escape(formatPrice(Math.round((pricing.departure.regularPrice - pricing.departure.price) * 100) / 100))} de descuento</strong><span>${escape(promotionCondition(offer))}</span></p>` : '';
+    const discount = offer ? `<p class="home-trip-saving eb-line" id="${idPrefix}-${id}-offer"${earlyBirdOnly(pricing.departure)}>${escape(earlyBirdShortLine(pricing.departure))}</p>` : '';
     const amount = escape(tripPrice(trip));
-    const currentPrice = `${homepage ? amount.replace(/([\d.,]+ €)$/, '<span class="home-trip-current">$1</span>') : amount}${departures.some(d => d.price !== null) ? '<small>por persona</small>' : ''}`;
-    const footer = compact ? `<div class="home-trip-booking${offer ? ' has-offer' : ''}">${discount}<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts${offer ? ` ${idPrefix}-${id}-offer` : ''}" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-price">${offer ? `<del>${escape(formatPrice(pricing.departure.regularPrice))}</del>` : ''}${currentPrice}</span><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span></a></div>` : `<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span><span class="home-trip-price">${currentPrice}</span></a>`;
+    const priced = offer ? `<span${earlyBirdPriceAttrs(pricing.departure, tripPrice({...trip, departures: departures.map(d => ({...d, price: d.regularPrice ?? d.price, earlyBird: null}))}))}>${amount}</span>` : amount;
+    const currentPrice = `${homepage ? amount.replace(/([\d.,]+ €)$/, '<span class="home-trip-current">$1</span>') : priced}${departures.some(d => d.price !== null) ? '<small>por persona</small>' : ''}`;
+    const footer = compact ? `<div class="home-trip-booking${offer ? ' has-offer' : ''}">${discount}<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts${offer ? ` ${idPrefix}-${id}-offer` : ''}" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-price">${offer ? earlyBirdWas(pricing.departure) : ''}${currentPrice}</span><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span></a></div>` : `<a class="home-trip-link" aria-describedby="${idPrefix}-${id}-facts" href="/viajes/${escape(trip.slug)}/" aria-labelledby="${idPrefix}-${id}-action ${idPrefix}-${id}-title"><span class="home-trip-action" id="${idPrefix}-${id}-action">${dated ? 'Ver viaje' : 'Ver destino'}</span><span class="home-trip-price">${currentPrice}</span></a>`;
     const status = availability === 'Plazas disponibles' ? '' : `<span class="home-trip-status">${escape(availability)}</span>`;
     const dates = `<a class="home-trip-dates-link" href="/viajes/${escape(trip.slug)}/" aria-label="Ver viaje de ${escape(trip.name)}">${departures.length ? renderDepartureRows(trip, 'home-trip-departures') : '<p>Fechas por anunciar</p>'}</a>`;
     const [image, imageAlt] = homepage && trip.cardImage ? [trip.cardImage, trip.cardImageAlt] : [trip.hero, trip.heroAlt || trip.name];
@@ -112,26 +113,25 @@ export function renderHomeTicket(trip) {
   const sorted = [...departures].sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999'));
   const first = sorted[0];
   const {departure: fare, from} = tripPriceDetails(trip);
-  const offer = fare?.promotion;
+  const offer = liveEarlyBird(fare);
   const availability = availabilityLabel(trip);
   const href = `/viajes/${escape(trip.slug)}/`;
   const image = photo(trip, 800);
   // An offer always shows the date of the departure that carries it.
   const shown = offer ? fare : first;
   const dateTag = !dated || !shown ? 'Por anunciar'
-    : offer && departures.length > 1 ? `Tarifa del ${shortDate(shown.date)}`
+    : offer && departures.length > 1 && shown.id !== first?.id ? `Tarifa del ${shortDate(shown.date)}`
     : departures.length > 1 ? `${departures.length} fechas · desde ${shortDate(shown.date)}` : shortDate(shown.date);
   const status = availability === 'Últimas plazas' ? `<span class="hp-tag hp-tag-hot">Últimas plazas</span>`
     : availability === 'Completo' ? `<span class="hp-tag hp-tag-soft">Completo</span>`
-    : offer ? `<span class="hp-tag hp-tag-hot">${escape(offer.label || 'Oferta')}</span>` : '';
+    : offer ? `<span class="hp-tag hp-tag-hot"${earlyBirdOnly(fare)}>Early bird</span>` : '';
   const duration = shown?.duration && shown.duration !== 'Por confirmar' ? shown.duration : '';
   const area = trip.place ? String(trip.place).split('·').at(-1).trim() : '';
   const facts = [duration, area].filter(Boolean).map(escape).join(' · ');
   const price = fare
-    ? `<p class="hp-price">${from ? '<small class="hp-from">desde</small>' : ''}${offer ? `<del>${escape(formatPrice(fare.regularPrice))}</del>` : ''}<span>${escape(formatPrice(fare.price))}</span><small>por persona</small></p>`
+    ? `<p class="hp-price">${from ? '<small class="hp-from">desde</small>' : ''}${offer ? earlyBirdWas(fare) : ''}<span${earlyBirdPriceAttrs(fare, formatPrice(fare.regularPrice))}>${escape(formatPrice(fare.price))}</span><small>por persona</small></p>`
     : `<p class="hp-price hp-price-tbc"><span>${escape(tripPrice(trip))}</span></p>`;
-  const saving = offer ? Math.round((fare.regularPrice - fare.price) * 100) / 100 : 0;
-  const condition = offer ? `<p class="hp-offer"><strong>${escape(formatPrice(saving))} de descuento</strong> · ${escape(promotionCondition(offer))}</p>` : '';
+  const condition = offer ? `<p class="hp-offer eb-line"${earlyBirdOnly(fare)}>${escape(earlyBirdShortLine(fare))}</p>` : '';
   const line = dated ? ticketLine(trip) : '';
   const tagline = line ? `<p class="hp-tagline">${escape(line)}</p>` : '';
   const action = `<a class="hp-btn" href="${href}" aria-label="Ver viaje de ${escape(trip.name)}">${dated ? 'Ver viaje' : 'Ver destino'}</a>`;

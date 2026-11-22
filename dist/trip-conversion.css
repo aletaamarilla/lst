@@ -121,8 +121,6 @@ body.trip-designed .stay-block>p:not(.eyebrow){font-size:16px}
 .trip-designed .booking-card{background:var(--surface);border:1px solid #deded1;box-shadow:0 8px 24px #50462d0b;border-radius:16px}
 .trip-designed .booking-status{background:#edf2e9;color:var(--sea);border:1px solid #dbe5d8}
 .trip-designed .booking-status[data-tone="limited"]{background:#fbf0d9;color:#7c4400;border-color:#e8dcbe}
-.trip-designed .booking-card .trip-offer{background:transparent}
-.trip-designed .booking-card .trip-offer-label{background:#f7e8dd;color:#7d412b}
 .trip-designed .booking-tags>span{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:6px}
 .trip-designed .booking-deposit{background:transparent;border-color:transparent;padding:8px 0;gap:8px}
 .trip-designed .booking-card .booking-deposit p{font-size:14px}
@@ -155,8 +153,6 @@ body.trip-designed .stay-block>p:not(.eyebrow){font-size:16px}
 .trip-designed .departure-option-price del{font-size:12px}
 .trip-designed .departure-option-price>span{flex-basis:100%;font-size:12px}
 .trip-designed .departure-option-booking>.trip-registration,.trip-designed .departure-option-booking>.departure-enquiry{grid-column:2;grid-row:1;width:auto;min-width:115px;min-height:44px;padding:9px 12px;font-size:13px;justify-self:stretch;text-align:center}
-.trip-designed .departure-option-booking>.trip-offer{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 8px;background:transparent;border:0;padding:0;margin:0}
-.trip-designed .departure-option-booking .trip-offer-label,.trip-designed .departure-option-booking .trip-offer-condition{font-size:12px;margin:0;line-height:1.5}
 .departure-summary-deposit{grid-column:1/-1;margin:0;font-size:13px;line-height:1.5;color:var(--muted)}
 .departure-more{border-top:1px solid #164e4526;margin-top:8px}
 .departure-more>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:500;min-height:44px;padding-block:10px;cursor:pointer;list-style:none}
@@ -226,9 +222,6 @@ body.trip-designed .button:hover{background:var(--ink);color:var(--paper);border
 .trip-essential-facts dd{margin:0;font-size:15px;font-weight:500;line-height:1.5}
 .essential-dates{display:inline-flex;align-items:center;gap:8px;max-width:100%;min-height:44px;margin-block:-10px;padding:7px 0;border:0;background:transparent;text-decoration:underline;text-underline-offset:4px;font:inherit;color:var(--ink);text-align:left}
 .essentials-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;margin-top:18px}
-.trip-designed .essentials-footer .trip-offer{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 9px;margin:0;padding:0;border:0;background:transparent}
-.trip-designed .essentials-footer :is(.trip-offer-label,.trip-offer-condition,.trip-offer-date){padding:0;margin:0;border:0;background:transparent;color:var(--ink);font-size:13px;line-height:1.6}
-.trip-designed .essentials-footer .trip-offer-date{flex-basis:100%;color:var(--muted)}
 .essentials-footer .text-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:13px}
 .trip-designed .trip-summary{padding-block:20px 24px}
 .trip-designed .destination-details>summary{font-size:15px}
@@ -257,9 +250,8 @@ body.trip-designed .button:hover{background:var(--ink);color:var(--paper);border
 .trip-designed .request-steps{gap:24px}
 .trip-designed .request-steps p{font-size:15px}
 .trip-designed .booking-card{border:0;border-radius:24px;background:var(--ink);color:var(--paper);box-shadow:none}
-.trip-designed .booking-card :is(.booking-trip-name,.booking-card-price-note,.booking-essentials,.booking-date,.booking-card-help,.booking-deposit,.booking-deposit p,.booking-deposit strong,.booking-deposit span,.booking-secondary a,.booking-tags>span,.trip-offer-label,.trip-offer-condition,.trip-offer-date){color:var(--paper)}
-.trip-designed .booking-card :is(.booking-card-price-note,.booking-card-help,.trip-offer-label,.trip-offer-condition,.trip-offer-date,.booking-tags>span,.booking-date,.booking-secondary a,.booking-deposit span){font-size:13px}
-.trip-designed .booking-card .trip-offer-label{padding:0;background:transparent}
+.trip-designed .booking-card :is(.booking-trip-name,.booking-card-price-note,.booking-essentials,.booking-date,.booking-card-help,.booking-deposit,.booking-deposit p,.booking-deposit strong,.booking-deposit span,.booking-secondary a,.booking-tags>span){color:var(--paper)}
+.trip-designed .booking-card :is(.booking-card-price-note,.booking-card-help,.booking-tags>span,.booking-date,.booking-secondary a,.booking-deposit span){font-size:13px}
 .trip-designed .booking-card .booking-tags>span{border-color:#fffae747;background:transparent}
 .trip-designed .booking-card .booking-secondary{border-color:#fffae747}
 .trip-designed .booking-status{background:var(--paper);color:var(--ink);border:0;font-size:11px}

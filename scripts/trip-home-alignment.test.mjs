@@ -7,7 +7,8 @@ const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trip
 const palmar=trips.find(t=>t.slug==='el-palmar');
 // Los datos que deciden abren el contenido, en el mismo bloque que la entradilla: de la lista de datos a la entradilla.
 const summary=html=>{const start=html.indexOf('<dl class="trip-essential-facts"');assert(start>=0);return html.slice(start,html.indexOf('<p class="trip-kickoff"',start));};
-const offer={label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true};
+// Resolved by the CMS adapter on a day the early bird is live.
+const offer={price:599,regularPrice:699,earlyBird:{price:599,until:'2026-11-30',saving:100}};
 
 test('single-date essentials expose the actual date, level and place before the reading content without a second booking action',()=>{
  const original=structuredClone(palmar),html=renderTrip(palmar,trips),facts=summary(html);
@@ -23,21 +24,21 @@ test('single-date essentials expose the actual date, level and place before the 
 });
 
 test('mobile offer copy belongs to the selected fare and does not combine capacities from different departures',()=>{
- const first={...palmar.departures[0],price:799,regularPrice:799,capacity:{total:30},promotions:undefined};
- const later={...first,id:'later',date:'18 dic 2026 — 22 dic 2026',start:'2026-12-18',end:'2026-12-22',price:699,regularPrice:699,capacity:{total:12},promotions:[offer]};
+ const first={...palmar.departures[0],price:799,regularPrice:799,capacity:{total:30},earlyBird:null};
+ const later={...first,id:'later',date:'18 dic 2026 — 22 dic 2026',start:'2026-12-18',end:'2026-12-22',capacity:{total:12},...offer};
  const trip={...palmar,departures:[first,later]},html=renderTrip(trip,trips),facts=summary(html);
  assert(facts.includes('Ver 2 fechas'));assert(facts.includes('data-open-dates'));
- assert(facts.includes('Primeras 8 plazas'));assert(facts.includes(later.date));
+ assert(facts.includes('Early bird hasta el 30 de noviembre'));assert(facts.includes(later.date));
  assert(!facts.includes('Hasta 30 personas'));assert(!facts.includes('Hasta 12 personas'));
  const dock=html.match(/<div class="trip-dock"[\s\S]*?<dialog/)[0];
- assert(dock.includes('599 €'));assert(dock.includes('Primeras 8 plazas'));
+ assert(dock.includes('599 €'));assert(dock.includes('Early bird hasta el 30 nov'));
 });
 
-test('closed and pending trips never advertise the active promotional conditions in the essentials',()=>{
- const departure={...palmar.departures[0],price:699,regularPrice:699,promotions:[offer]};
+test('closed and pending trips never advertise the early bird in the essentials',()=>{
+ const departure={...palmar.departures[0],...offer};
  for(const extra of [{availability:'full'},{state:'upcoming'}]){
   const html=renderTrip({...palmar,departures:[departure],...extra},trips),facts=summary(html);
-  assert(!facts.includes('Primeras 8 plazas'));assert(!facts.includes('Early bird'));
+  assert(!facts.includes('Early bird'));assert(!facts.includes('data-eb-'));
   if(extra.state==='upcoming'){assert.match(facts,/por anunciar/i);assert(!facts.includes('4–8 dic 2026'));}
  }
 });

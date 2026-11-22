@@ -449,3 +449,9 @@ body.levels-page .lv-hero-foot .button:focus-visible{outline-color:var(--paper)}
 .lv-jump[data-watch]{margin-bottom:-46px;opacity:0;visibility:hidden;transition:opacity .2s,visibility 0s .2s}
 .lv-jump[data-watch].is-on{opacity:1;visibility:visible;transition:opacity .2s}
 @media(prefers-reduced-motion:reduce){.lv-jump[data-watch]{transition:none}}
+
+/* Early bird */
+.lv-trip-price .eb-was{display:inline-block;margin-right:6px;font:400 .72em/1 var(--display);color:var(--muted)}
+.lv-result-trips .lv-trip-price .eb-was,body.levels-page .lv-chapter .lv-trip-price .eb-was{display:inline-block;margin:0 6px 0 0;font:400 17px/1 var(--display);color:rgba(255,250,231,.62)}
+.lv-trip-offer.eb-line{font-weight:600;color:var(--orange-text)}
+.lv-result-trips .lv-trip-offer.eb-line{color:var(--orange)}

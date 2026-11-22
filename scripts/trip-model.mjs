@@ -1,5 +1,4 @@
 import {levelNames} from './surf-levels.mjs';
-import {departurePricing} from './trip-pricing.mjs';
 const ALL_LEVELS = Object.freeze([1, 2, 3, 4]);
 
 function configuredLevels(trip) {
@@ -41,7 +40,8 @@ export function departuresFor(trip) {
     if (!['confirmed', 'upcoming'].includes(result.state)) {
       throw new Error(`Invalid departure state: ${trip.id}/${departure.id}`);
     }
-    return {...result, ...departurePricing(result)};
+    // The CMS adapter resolves the early bird against the build day; this only keeps the shape.
+    return {...result, regularPrice: departure.regularPrice ?? result.price, earlyBird: departure.earlyBird ?? null};
   });
 }
 
@@ -73,9 +73,8 @@ export const formatPrice = value => `${new Intl.NumberFormat('es-ES', {maximumFr
 export function tripPriceDetails(trip) {
   const departures = departuresFor(trip);
   let priced = departures.filter(d => d.price !== null);
-  // Legacy journeys keep their price semantics. Promotional journeys never use a
-  // sold-out departure to advertise a cheaper fare on another available date.
-  if (departures.some(d => d.promotions?.length) && departures.some(d => !isFull(d))) priced = priced.filter(d => !isFull(d));
+  // Never advertise a sold-out departure's price while another date is still open.
+  if (departures.some(d => d.earlyBird) && departures.some(d => !isFull(d))) priced = priced.filter(d => !isFull(d));
   priced.sort((a, b) => a.price - b.price || (a.start || '').localeCompare(b.start || ''));
   return {departure: priced[0] ?? null, from: new Set(priced.map(d => d.price)).size > 1 || priced.length < departures.length};
 }

@@ -39,9 +39,9 @@ test('date options preserve their own payments and never replace explicit null w
   assert(!fallback.includes('999 €'));assert(!fallback.includes('Condición general que no aplica.'));
 });
 
-test('the early offer pairs price, promotion date and truthful group capacity across heterogeneous departures', () => {
-  const a = {...source.departures[0], id: 'early', capacity: {total: 8}, promotions: undefined, price: 899, regularPrice: 899};
-  const b = {...a, id: 'later', date: 'Salida posterior', start: '2027-02-01', capacity: null, promotions: [{label: 'Oferta posterior', price: 799, active: true, condition: 'Cupo confirmado'}]};
+test('the early bird pairs price, its date and truthful group capacity across heterogeneous departures', () => {
+  const a = {...source.departures[0], id: 'early', capacity: {total: 8}, earlyBird: null, price: 899, regularPrice: 899};
+  const b = {...a, id: 'later', date: 'Salida posterior', start: '2027-02-01', capacity: null, price: 799, earlyBird: {price: 799, until: '2026-12-06', saving: 100}};
   const trip = {...source, capacity: {total: 99}, departures: [a, b]};
   const html = renderTrip(trip, trips);
   const sidebar = html.match(/<aside class="trip-booking"[\s\S]*?<\/aside>/)[0];

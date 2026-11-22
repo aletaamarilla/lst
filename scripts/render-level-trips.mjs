@@ -1,6 +1,6 @@
 import {compactDate} from './render-home-trips.mjs';
 import {levelsFor, levelLabel, departuresFor, tripPriceDetails, tripPrice, formatPrice, availabilityLabel} from './trip-model.mjs';
-import {promotionCondition} from './trip-pricing.mjs';
+import {liveEarlyBird, earlyBirdWas, earlyBirdPriceAttrs, earlyBirdOnly, earlyBirdShortLine} from './early-bird.mjs';
 import {sizedPhoto} from './photo.mjs';
 import {renderLevelGuide} from './surf-levels.mjs';
 const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -14,10 +14,9 @@ function tripRow(trip){
  const more=departures.length>1?` y ${departures.length-1} ${departures.length===2?'fecha más':'fechas más'}`:'';
  const when=departures.length?`${compactDate(departures[0].date)}${more}`:'Fechas por anunciar';
  const {departure:fare,from}=tripPriceDetails(trip);
- const offer=fare?.promotion;
- const price=fare?`<span class="lv-trip-price">${from?'<small>desde</small>':''}${offer?`<del>${escape(formatPrice(fare.regularPrice))}</del>`:''}${escape(formatPrice(fare.price))}</span>`:`<span class="lv-trip-price lv-trip-price-tbc">${escape(tripPrice(trip))}</span>`;
- const saving=offer?Math.round((fare.regularPrice-fare.price)*100)/100:0;
- const offerText=offer?`<span class="lv-trip-offer"><strong>${escape(formatPrice(saving))} de descuento</strong> ${escape(promotionCondition(offer))}</span>`:'';
+ const offer=liveEarlyBird(fare);
+ const price=fare?`<span class="lv-trip-price">${from?'<small>desde</small>':''}${offer?earlyBirdWas(fare):''}<span${earlyBirdPriceAttrs(fare,formatPrice(fare.regularPrice))}>${escape(formatPrice(fare.price))}</span></span>`:`<span class="lv-trip-price lv-trip-price-tbc">${escape(tripPrice(trip))}</span>`;
+ const offerText=offer?`<span class="lv-trip-offer eb-line"${earlyBirdOnly(fare)}>${escape(earlyBirdShortLine(fare))}</span>`:'';
  const availability=dated?availabilityLabel(trip):'';
  const tag=availability&&availability!=='Plazas disponibles'?`<span class="lv-trip-tag${availability==='Completo'?' is-full':''}">${escape(availability)}</span>`:'';
  const image=trip.cardImage||trip.hero;

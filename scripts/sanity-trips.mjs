@@ -1,7 +1,7 @@
 import {sharedTripContentFields} from './trip-content-fields.mjs';
 import {validateRegistrationMappings} from './brevo.mjs';
 import {tripName, consolidateTrips, aggregateAvailability} from './trip-groups.mjs';
-import {departurePricing, validatePromotions} from './trip-pricing.mjs';
+import {departurePricing, validateEarlyBird} from './trip-pricing.mjs';
 import {isSanityFileUrl} from './dossier-url.mjs';
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -91,8 +91,8 @@ export function adaptTrip(doc, {today} = {}) {
       ...(d.brevoValue != null ? {brevoValue: validateBrevoValue(d.brevoValue)} : {}),
       ...(d.message ? {message: text(d.message, 'message')} : {}),
       ...(d.payment ? {payment: {depositAmount: positive(d.payment.depositAmount ?? doc.payment?.depositAmount, 'departure.payment.depositAmount'), terms: text(d.payment.terms, 'departure.payment.terms') || text(doc.payment?.terms, 'payment.terms')}} : {}),
-      ...(d.promotions != null ? {promotions: validatePromotions(d.promotions, d.price, d.capacity?.total ?? doc.capacity?.total)} : {})};
-    return {...departure, ...departurePricing(departure, {state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
+      ...(d.earlyBird != null ? {earlyBird: validateEarlyBird(d.earlyBird, d.price, d.start)} : {})};
+    return {...departure, ...departurePricing(departure, {today: today ?? madridToday(), state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
   });
   if (doc.state === 'confirmed' && !departures.length) throw Error(`Faltan fechas: ${slug}`);
   // Started departures close; a trip whose dates have all started is no longer published (null).

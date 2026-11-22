@@ -98,9 +98,9 @@ test('additional dates inherit content from their visible editorial owner and ke
  assert.throws(()=>adaptTrips([{...first,editorialSource:{_ref:second._id}},second]),/Referencia/);
 });
 
-test('existing promotion drafts receive guarded editorial patches and are retained without publishing their pending fares',()=>{
+test('existing early bird drafts receive guarded editorial patches and are retained without publishing their pending fares',()=>{
  const doc=raw(),draft={...structuredClone(doc),_id:'drafts.'+doc._id,_rev:'pending-revision',_system:{base:{id:doc._id}}};
- draft.departures[0].promotions=[{label:'Pending early bird',price:299,active:true}];draft.priceNote='Pending reduced tariff';
+ draft.departures[0].earlyBird={price:299,until:'2026-12-01'};draft.priceNote='Pending reduced tariff';
  const before=structuredClone(draft),plans=planEditorialMigration([doc,draft],seedFor(doc));
  assert.equal(plans[0].draftRevision,'pending-revision');assert(!('departures' in plans[0].set));assert(!('priceNote' in plans[0].set));
  const [mutation]=editorialDraftMutations([doc,draft],plans);assert.equal(mutation.patch.ifRevisionID,draft._rev);assert.equal(mutation.patch.id,draft._id);

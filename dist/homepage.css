@@ -488,3 +488,7 @@ body.hp-page .lp-hero-sub{max-width:34ch;margin:12px auto 0;font-size:17px;line-
   .hp-home .hp-how .hp-steps p{max-width:none;margin-inline:0}
 }
 @media (min-width:720px){.hp-how .hp-steps{padding:0 26px}.hp-how .hp-steps li+li::after{left:-35px;right:-35px}}
+
+/* Early bird */
+.hp-price .eb-was{font:400 20px/1 var(--hp-display);color:rgba(255,250,231,.6)}
+.hp-offer.eb-line{font-weight:600}

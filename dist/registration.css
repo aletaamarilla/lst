@@ -232,3 +232,7 @@ body.rg .registration-date-picker>summary>span{transform:none}
  .rg-support-in{justify-content:center;text-align:center}
  body.rg .registration-support p{margin-inline:auto}
 }
+
+/* Early bird */
+body.rg .rg-ticket-price .eb-was{font:400 28px/.9 var(--display);color:rgba(255,250,231,.62)}
+.rg-ticket-eb{margin-top:10px;font:600 14px/1.4 var(--body);color:var(--orange)}

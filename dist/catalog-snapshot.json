@@ -24,7 +24,9 @@
           "duration": "4 noches",
           "price": 699,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf",
+          "regularPrice": 699,
+          "earlyBird": null,
+          "dossier": "https://descargas.letsurftogether.com/el-palmar-2026-12-04.pdf",
           "availability": "available",
           "capacity": {
             "total": 30,
@@ -42,7 +44,7 @@
       "tagline": "Tu próxima escapada sabe a sal.",
       "intro": "Let’s Surf Together\nEn Let’s Surf Together creemos que un surftrip no es solo surfear.\nEs compartir, aprender y vivir una experiencia que se queda contigo mucho\ndespués de volver a casa \nEste puente de diciembre volvemos a El Palmar (Cádiz), uno de los rincones con\nmás ambiente surfero del sur, y queremos que formes parte de ello.\nSerán 5 días intensos: 4 clases de surf en 3 grupos según tu nivel,\nvideocorrecciones para pulir cada detalle de tu técnica, surfskate en pista\nprivada y Animal Flow para sentirte ágil dentro y fuera del agua.\nY fuera del agua, visita a Conil, barbacoa, música en el pueblo y una última noche\ncon fiesta temática de los 80 y 90 \nEs el tercer año que repetimos este puente en Nexo, y cada año la gente vuelve\nencantadaaaa.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "priceNote": "",
       "storyTitle": "El programa.",
       "storyLabel": "EL VIAJE",
       "storyIntro": "",
@@ -124,7 +126,7 @@
           "Puedes vivir los ratos libres a tu ritmo. La fiesta y los planes fuera del agua son una invitación a compartir; también hay espacio para descansar, respetando los horarios del grupo."
         ]
       ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/60afab26acc133e104425a4ee00eac97e85ffd73.pdf",
+      "dossier": "https://descargas.letsurftogether.com/el-palmar-2026-12-04.pdf",
       "payment": {
         "depositAmount": 250,
         "terms": "Señal fija de 250 € al confirmar. Resto: Más adelante; sin fecha concreta. El equipo te indicará los pasos para formalizar la reserva."
@@ -173,9 +175,15 @@
           "start": "2027-02-12",
           "end": "2027-02-16",
           "duration": "4 noches",
-          "price": 699,
+          "price": 649,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b7879c83c36282f4442bdf858399c5025e41a1f3.pdf",
+          "earlyBird": {
+            "price": 649,
+            "until": "2027-01-17",
+            "saving": 50
+          },
+          "regularPrice": 699,
+          "dossier": "https://descargas.letsurftogether.com/fuerteventura-2027-02-12.pdf",
           "availability": "available",
           "capacity": {
             "total": 12,
@@ -193,7 +201,7 @@
       "tagline": "Una pausa con sabor a isla.",
       "intro": "Let’s Surf Together\nESCÁPATE DEL INVIERNO A SURFEAR\n¿Te imaginas escaparte del invierno a surfear con sol, buen clima y olas en una\nde las islas más bonitas de Canarias? \nEste surftrip está pensado tanto para quienes quieren dar sus primeros pasos en\nel surf como para quienes ya se defienden y quieren seguir aprendiendo cosas\nnuevas.\nSerán 5 días llenos de surf, volcanes, dunas, atardeceres y momentos\ncompartidos con un grupo reducido de 12 personas con la misma pasión.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "priceNote": "",
       "storyTitle": "El programa.",
       "storyLabel": "EL VIAJE",
       "storyIntro": "",
@@ -267,7 +275,7 @@
           "Desayunos y comidas todos los días y 2 cenas en casa. Las otras 2 cenas son libres en el pueblo."
         ]
       ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/b7879c83c36282f4442bdf858399c5025e41a1f3.pdf",
+      "dossier": "https://descargas.letsurftogether.com/fuerteventura-2027-02-12.pdf",
       "payment": {
         "depositAmount": 250,
         "terms": "Señal fija de 250 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
@@ -316,9 +324,15 @@
           "start": "2027-03-21",
           "end": "2027-03-28",
           "duration": "7 noches",
-          "price": 1499,
+          "price": 1399,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/d53e33596750353b022553e1dff49fcb8f566f46.pdf",
+          "earlyBird": {
+            "price": 1399,
+            "until": "2026-12-20",
+            "saving": 100
+          },
+          "regularPrice": 1499,
+          "dossier": "https://descargas.letsurftogether.com/maldivas-2027-03-21.pdf",
           "availability": "available",
           "capacity": {
             "total": 10,
@@ -335,9 +349,15 @@
           "start": "2027-03-28",
           "end": "2027-04-04",
           "duration": "7 noches",
-          "price": 1499,
+          "price": 1399,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/e2baa3a0fe6f25868500c7fdcd6c6eefe0430b4b.pdf",
+          "earlyBird": {
+            "price": 1399,
+            "until": "2026-12-20",
+            "saving": 100
+          },
+          "regularPrice": 1499,
+          "dossier": "https://descargas.letsurftogether.com/maldivas-2027-03-28.pdf",
           "availability": "available",
           "capacity": {
             "total": 10,
@@ -355,7 +375,7 @@
       "tagline": "Haz sitio a una semana mirando al mar.",
       "intro": "Let's Surf Together\nU N A  S E M A N A  P A R A  S U B I R  D E  N I V E L  E N  E L  P A R A Í S O\nUn surftrip no es solo surfear: es compartir, crecer y vivir una semana que se queda contigo para\nsiempre. Ya estuvimos en Maldivas y volvemos, esta vez con un grupo reducido de solo 10\npersonas.\nAsí Lucas puede hacer un seguimiento individual de cada uno durante toda la semana:\nanalizará tu surf, te dará correcciones concretas y trabajará contigo lo que de verdad necesitas\npara mejorar, dentro del agua y en vídeo.\nY todo con el ambiente de siempre de LST: olas perfectas, agua turquesa, buena comida y\nsunsets en grupo.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "priceNote": "",
       "storyTitle": "El programa.",
       "storyLabel": "EL VIAJE",
       "storyIntro": "",
@@ -471,9 +491,15 @@
           "start": "2027-01-17",
           "end": "2027-01-24",
           "duration": "7 noches",
-          "price": 899,
+          "price": 860,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/5c6db16bd916a52f50354b5f50aac1bb98b84c69.pdf",
+          "earlyBird": {
+            "price": 860,
+            "until": "2026-12-06",
+            "saving": 39
+          },
+          "regularPrice": 899,
+          "dossier": "https://descargas.letsurftogether.com/marruecos-2027-01-17.pdf",
           "availability": "available",
           "capacity": {
             "total": 15,
@@ -491,7 +517,7 @@
       "tagline": "Un viaje para encontrar tu ritmo en el agua.",
       "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: con el pie en la arena y la tabla en el\nagua \nDespués de un 2026 lleno de viajes y surftrips increíbles, toca volver a las raíces.\nA recordar por qué nos enamoramos del surf, a conectar con nuestra primera ola\ny con esa sensación de libertad que solo el mar te da.\nEste surftrip está diseñado para quienes quieren dar sus primeros pasos en el\nsurf o mejorar su base, coger confianza en el agua y empezar a disfrutar de las\nprimeras paredes y maniobras sencillas.\nSerá una semana llena de surf, cultura marroquí y momentos compartidos con\nun grupo reducido de personas con la misma pasión.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "priceNote": "",
       "storyTitle": "El programa.",
       "storyLabel": "EL VIAJE",
       "storyIntro": "",
@@ -588,7 +614,7 @@
           "Buscaremos el mejor spot según las condiciones. Estamos en manos de la naturaleza, y eso es parte de la aventura. Ya llevamos unos cuantos viajes y sabemos cómo orientar el camp para seguir progresando y disfrutando ;)"
         ]
       ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/5c6db16bd916a52f50354b5f50aac1bb98b84c69.pdf",
+      "dossier": "https://descargas.letsurftogether.com/marruecos-2027-01-17.pdf",
       "payment": {
         "depositAmount": 270,
         "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
@@ -633,8 +659,8 @@
         {
           "title": "Paradise Valley",
           "text": "Una jornada entre montañas, palmeras y piscinas naturales.",
-          "image": "",
-          "alt": ""
+          "image": "https://cdn.sanity.io/images/q5bj2rn2/production/5360c52d0190eb37da3baf53b230ff2bf61d72a9-1333x2000.jpg",
+          "alt": "Barranco de roca con palmeras y una pasarela de madera en Paradise Valley."
         }
       ],
       "spots": [
@@ -743,9 +769,15 @@
           "start": "2027-01-24",
           "end": "2027-01-31",
           "duration": "7 noches",
-          "price": 899,
+          "price": 860,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/2c75a88174e3071f85f59b20c8684fffdcca10f1.pdf",
+          "earlyBird": {
+            "price": 860,
+            "until": "2026-12-06",
+            "saving": 39
+          },
+          "regularPrice": 899,
+          "dossier": "https://descargas.letsurftogether.com/marruecos-2027-01-24.pdf",
           "availability": "available",
           "capacity": {
             "total": 10,
@@ -763,7 +795,7 @@
       "tagline": "Dale tiempo a tu surf.",
       "intro": "Let’s Surf Together\nEMPEZAMOS EL AÑO DE LA MEJOR MANERA\nEmpezamos el año de la mejor manera: entrenando duro en el agua y buscando\nnuevos retos \nDespués de un 2026 lleno de olas, aprendizajes y surftrips épicos, toca dar el\nsiguiente paso: que tu surf deje de ser solo coger olas y empiece a fluir.\nPara ganar velocidad y control en la pared, aprender a bombear, colocarte\nmejor en la ola y soltar tus primeros giros con buena técnica. Para sentir que de\nverdad progresas, sesión a sesión.\nUna semana enfocada en progresar en tu surf, con sesiones intensivas, análisis\nen detalle y tiempo para disfrutar de la cultura marroquí.",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "priceNote": "",
       "storyTitle": "El programa.",
       "storyLabel": "EL VIAJE",
       "storyIntro": "",
@@ -855,7 +887,7 @@
           "Buscaremos el mejor spot según las condiciones. Ya llevamos unos cuantos viajes y sabemos cómo orientar el plan para encontrar las olas buenas ;) Y si algún día el swell baja, aprovecharemos para descubrir un poco Marruecos."
         ]
       ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/2c75a88174e3071f85f59b20c8684fffdcca10f1.pdf",
+      "dossier": "https://descargas.letsurftogether.com/marruecos-2027-01-24.pdf",
       "payment": {
         "depositAmount": 270,
         "terms": "Señal fija de 270 € al confirmar. Resto: Más adelante, antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
@@ -1002,7 +1034,9 @@
           "duration": "7 noches",
           "price": 1299,
           "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/0265db128ef6c50005e0754e1437cd11aa3957fd.pdf",
+          "regularPrice": 1299,
+          "earlyBird": null,
+          "dossier": "https://descargas.letsurftogether.com/senegal-2027-02-28.pdf",
           "availability": "available",
           "capacity": {
             "total": 12,
@@ -1020,7 +1054,7 @@
       "tagline": "Una semana que va más allá de las olas.",
       "intro": "Let’s Surf Together\nUNA AVENTURA DE SURF EN ÁFRICA\nHay viajes que se recuerdan toda la vida, y este es uno de ellos \nNos vamos a Senegal, al punto más occidental de África, a surfear olas atlánticas\ncon sol, en un país lleno de color, ritmo y energía.\nSerá una semana para mejorar tu surf en las olas de Senegal, vivir una aventura\nen el desierto de Lompoul, ver el Lago Rosa y descubrir la Isla de Gorée.\nTodo con un grupo reducido de 12 personas con la misma pasión, con el estilo de\nsiempre de LST: surf, coaching, buen rollo y momentos que no se olvidan.\nLa familia LST en un viaje anterior",
       "notice": "La solicitud inicia una consulta; el equipo confirmará la reserva contigo.",
-      "priceNote": "Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.",
+      "priceNote": "",
       "storyTitle": "El programa.",
       "storyLabel": "EL VIAJE",
       "storyIntro": "",
@@ -1123,7 +1157,7 @@
           "Buscaremos el mejor spot según las condiciones y adaptaremos el plan. Estamos en manos de la naturaleza, y eso también es parte de la aventura ;)"
         ]
       ],
-      "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/0265db128ef6c50005e0754e1437cd11aa3957fd.pdf",
+      "dossier": "https://descargas.letsurftogether.com/senegal-2027-02-28.pdf",
       "payment": {
         "depositAmount": 325,
         "terms": "Señal fija de 325 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."

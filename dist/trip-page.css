@@ -78,7 +78,6 @@ body.tp.trip-designed .tp-lvbar{display:flex;gap:3px}
 body.tp.trip-designed .tp-lvbar i{width:12px;height:5px;border-radius:1px;background:var(--tp-rule)}
 body.tp.trip-designed .tp-lvbar i.on{background:var(--tp-orange)}
 body.tp.trip-designed .essentials-footer{margin-top:14px}
-body.tp.trip-designed .essentials-footer .trip-offer-label{color:var(--orange-text,#B8411F)}
 /* ---------- CONTENIDO ---------- */
 body.tp.trip-designed .trip-layout{position:relative}
 body.tp.trip-designed .trip-block{border-style:none;padding-block:56px}
@@ -274,7 +273,6 @@ body.tp.trip-designed .booking-card-price{margin:0 24px;font-family:var(--tp-dis
 body.tp.trip-designed .booking-card-price strong{font-family:var(--tp-display);font-weight:400;font-size:56px;letter-spacing:0;color:var(--tp-paper)}
 body.tp.trip-designed .booking-card-price del{display:block;font:700 13px var(--tp-mono);color:rgba(255,250,231,.55)}
 body.tp.trip-designed .booking-card-price-note{margin:8px 24px 0;font:700 13px var(--tp-mono);text-transform:none;letter-spacing:0;color:rgba(255,250,231,.85)}
-body.tp.trip-designed .booking-card .trip-offer{margin:12px 24px 0;border-radius:12px;background:rgba(234,89,52,.16);border:0;color:var(--tp-paper)}
 body.tp.trip-designed .booking-essentials{position:relative;margin:18px 0 0;padding:16px 24px;border-top:2px dashed rgba(255,250,231,.25)}
 body.tp.trip-designed .booking-date{display:flex;gap:10px;align-items:center;margin:0 0 12px;font-size:15px;font-weight:600;color:var(--tp-paper)}
 body.tp.trip-designed .booking-date svg{color:var(--tp-orange)}
@@ -561,7 +559,7 @@ body.tp.trip-designed :is(.lst-nav-contact span,.tp-polaroid figcaption,.booking
 /* ---------- FORMAS (nov 2026): sin píldoras ni redondeos blandos ----------
    Tarjetas y fotos con esquina de 4 px, como papel cortado; botones, etiquetas y controles a 2 px. */
 body.tp.trip-designed :is(.booking-card,.related-trip,.departure-option,.visual-card,.tp-practical-card,.trip-programme .surf-plan-grid article,.trip-programme .day-rhythm,.trip-programme .plan-item,.stay-carousel-track .trip-figure img,.pending-program){border-radius:4px}
-body.tp.trip-designed :is(.related-trip small,.booking-status,.booking-tags span,.departure-close,.trip-programme .day-rhythm>strong,.booking-card .trip-offer,.booking-deposit,.stay-block .rail-controls button,.trip-dock .dock-whatsapp,.trip-programme .plan-item .plan-toggle,.inclusion-list>h3>span,.tp-practical-icon,.trip-programme .surf-service-heading svg){border-radius:2px}
+body.tp.trip-designed :is(.related-trip small,.booking-status,.booking-tags span,.departure-close,.trip-programme .day-rhythm>strong,.booking-deposit,.stay-block .rail-controls button,.trip-dock .dock-whatsapp,.trip-programme .plan-item .plan-toggle,.inclusion-list>h3>span,.tp-practical-icon,.trip-programme .surf-service-heading svg){border-radius:2px}
 body.tp.trip-designed .trip-dock{border-radius:0}
 body.tp.trip-designed .departure-dialog{border-radius:4px 4px 0 0}
 @media (min-width:640px){body.tp.trip-designed .departure-dialog{border-radius:4px}}
@@ -779,3 +777,22 @@ body.tp.trip-designed .audience-profiles .level-requirement{grid-column:1/-1;mar
  body.tp.trip-designed .audience-profiles article:nth-of-type(n+3){border-top:0;border-left:2px solid var(--tp-ink)}
  body.tp.trip-designed .audience-profiles article:last-of-type:nth-of-type(odd):not(:only-of-type){grid-column:auto}
 }
+
+/* Early bird. Booking card (≥1000px): struck general price above the current one, then the deadline. */
+body.tp.trip-designed .booking-card-price:has(.eb-was){display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+body.tp.trip-designed .booking-card-price .eb-was{order:-2;font:400 30px/1 var(--tp-display);letter-spacing:.01em;color:rgba(255,250,231,.62)}
+body.tp.trip-designed .eb-note{margin:16px 24px 0;padding-top:12px;border-top:1px solid var(--tp-orange)}
+body.tp.trip-designed .eb-note p{margin:0;font:400 14px/1.45 var(--tp-body);color:var(--tp-paper)}
+body.tp.trip-designed .eb-note strong{font-weight:600;color:var(--tp-orange)}
+body.tp.trip-designed .eb-note .eb-note-after{margin-top:4px;font-size:13px;color:rgba(255,250,231,.72)}
+/* Under the trip facts, on paper: the same note for phones and tablets, where the card is hidden. */
+body.tp.trip-designed .essentials-footer .eb-note{flex-basis:100%;max-width:34rem;margin:0}
+body.tp.trip-designed .essentials-footer .eb-note p{color:var(--tp-ink)}
+body.tp.trip-designed .essentials-footer .eb-note strong{color:var(--orange-text)}
+body.tp.trip-designed .essentials-footer .eb-note .eb-note-after{color:var(--tp-muted)}
+@media (min-width:1000px){body.tp.trip-designed .essentials-footer .eb-note{display:none}}
+/* Mobile dock and the dates dialog. */
+body.tp.trip-designed .trip-dock .dock-price .eb-was{font:400 18px/1 var(--tp-display);color:rgba(255,250,231,.62)}
+body.tp.trip-designed .trip-dock .dock-offer{font-weight:600;color:var(--tp-orange)}
+body.tp.trip-designed .departure-option-price .eb-was{margin-right:6px;font:400 20px/1 var(--tp-display);color:var(--tp-muted)}
+body.tp.trip-designed .departure-option-booking>.eb-line{grid-column:1/-1;font:600 13px/1.4 var(--tp-body);color:var(--orange-text)}

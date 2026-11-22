@@ -106,3 +106,7 @@ body.catalog-page .lst-footer{border-top:0}
   .ct-help p{margin-inline:0}
   .ct-help .hp-ctas{justify-content:flex-start}
 }
+
+/* Early bird */
+.ct-price .eb-was{margin-right:4px;font:400 19px/1 var(--hp-display);color:rgba(255,250,231,.6)}
+.ct-offer.eb-line{font-weight:600;font-size:13px}

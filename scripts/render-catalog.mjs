@@ -1,6 +1,6 @@
 import {compactDate} from './render-home-trips.mjs';
 import {levelsFor, levelLabel, departuresFor, tripPriceDetails, tripPrice, formatPrice, availabilityLabel} from './trip-model.mjs';
-import {promotionCondition} from './trip-pricing.mjs';
+import {liveEarlyBird, earlyBirdWas, earlyBirdPriceAttrs, earlyBirdOnly, earlyBirdShortLine} from './early-bird.mjs';
 import {sizedPhoto, photoSrcset} from './photo.mjs';
 
 const escape = value => String(value).replace(/[&<>"']/g, c => ({
@@ -38,12 +38,12 @@ function renderTicket(trip) {
   const dated = trip.state === 'confirmed';
   const departures = dated ? [...departuresFor(trip)].sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999')) : [];
   const {departure: fare, from} = tripPriceDetails(trip);
-  const offer = fare?.promotion;
+  const offer = liveEarlyBird(fare);
   const availability = availabilityLabel(trip);
   const image = trip.cardImage || trip.hero;
   const alt = trip.cardImage ? trip.cardImageAlt : (trip.heroAlt || trip.name);
   const srcset = image ? photoSrcset(image, photoWidths) : '';
-  const tag = availability === 'Últimas plazas' || availability === 'Completo' ? availability : offer ? (offer.label || 'Oferta') : '';
+  const tag = availability === 'Últimas plazas' || availability === 'Completo' ? availability : offer ? 'Early bird' : '';
   const hot = availability === 'Últimas plazas' || (offer && availability !== 'Completo');
   const durations = [...new Set(departures.map(d => d.duration).filter(d => d && d !== 'Por confirmar'))];
   const place = area(trip);
@@ -52,12 +52,11 @@ function renderTicket(trip) {
     ? `<ul class="ct-dates">${departures.map(d => `<li>${escape(shortDate(d.date))}</li>`).join('')}</ul>`
     : ''; // Without dates the month heading already says «Fechas por anunciar».
   const price = fare
-    ? `<p class="ct-price">${from ? '<small>desde</small> ' : ''}${offer ? `<del>${escape(formatPrice(fare.regularPrice))}</del> ` : ''}<strong>${escape(formatPrice(fare.price))}</strong> <small>por persona</small></p>`
+    ? `<p class="ct-price">${from ? '<small>desde</small> ' : ''}${offer ? `${earlyBirdWas(fare)} ` : ''}<strong${earlyBirdPriceAttrs(fare, formatPrice(fare.regularPrice))}>${escape(formatPrice(fare.price))}</strong> <small>por persona</small></p>`
     : `<p class="ct-price ct-price-tbc"><strong>${escape(tripPrice(trip))}</strong></p>`;
-  const saving = offer ? Math.round((fare.regularPrice - fare.price) * 100) / 100 : 0;
-  const condition = offer ? `<p class="ct-offer" id="catalog-${id}-offer"><strong>${escape(formatPrice(saving))} de descuento:</strong> ${escape(promotionCondition(offer))}</p>` : '';
+  const condition = offer ? `<p class="ct-offer eb-line" id="catalog-${id}-offer"${earlyBirdOnly(fare)}>${escape(earlyBirdShortLine(fare))}</p>` : '';
   return `<article class="ct-ticket" id="viaje-${escape(trip.slug)}" data-catalog-trip data-levels="${levelsFor(trip).join(' ')}" aria-labelledby="catalog-${id}-title">
-<div class="ct-photo">${image ? `<img src="${escape(sizedPhoto(image, 500))}"${srcset ? ` srcset="${escape(srcset)}" sizes="${photoSizes}"` : ''} alt="${escape(alt)}" width="500" height="500" loading="lazy" decoding="async">` : '<span class="ct-photo-empty" aria-hidden="true">LST</span>'}${tag ? `<span class="ct-tag${hot ? ' ct-tag-hot' : ''}">${escape(tag)}</span>` : ''}</div>
+<div class="ct-photo">${image ? `<img src="${escape(sizedPhoto(image, 500))}"${srcset ? ` srcset="${escape(srcset)}" sizes="${photoSizes}"` : ''} alt="${escape(alt)}" width="500" height="500" loading="lazy" decoding="async">` : '<span class="ct-photo-empty" aria-hidden="true">LST</span>'}${tag ? `<span class="ct-tag${hot ? ' ct-tag-hot' : ''}"${tag === 'Early bird' ? earlyBirdOnly(fare) : ''}>${escape(tag)}</span>` : ''}</div>
 <div class="ct-body">${when}<h3 class="ct-name" id="catalog-${id}-title">${escape(trip.name)}</h3><p class="ct-level">${escape(levelLabel(trip))}</p>
 <div class="ct-foot">${length ? `<p class="ct-length">${length}</p>` : ''}${price}</div>${condition}</div>
 <a class="hp-btn catalog-card-link" href="${href}" aria-label="${dated ? 'Ver viaje' : 'Ver destino'}: ${escape(trip.name)}"${offer ? ` aria-describedby="catalog-${id}-offer"` : ''}><span>${dated ? 'Ver viaje' : 'Ver destino'}</span></a>

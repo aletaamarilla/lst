@@ -1,5 +1,5 @@
 import {defineArrayMember, defineField, defineType, type ConditionalPropertyCallbackContext} from 'sanity'
-import {promotionsField} from './promotions'
+import {earlyBirdField} from './earlyBird'
 import {sharedTripContentFields} from '../../scripts/trip-content-fields.mjs'
 import {dossierProblem} from '../../scripts/dossier-url.mjs'
 
@@ -88,8 +88,8 @@ export const trip = defineType({
           defineField({name: 'capacity', title: 'Capacidad de esta salida (opcional)', type: 'object', description: 'Vacío = hereda la capacidad general del viaje.', fields: [
             defineField({name: 'total', title: 'Capacidad total', type: 'number', validation: r => r.integer().min(1)}),
           ]}),
-          defineField({name: 'price', title: 'Precio general por persona (€)', type: 'number', description: 'Tarifa general sin descuento. Vacío = por confirmar. Las tarifas reducidas se configuran debajo; no se cambia este importe al activar un early bird.', validation: (rule) => rule.greaterThan(0).precision(2)}),
-          promotionsField,
+          defineField({name: 'price', title: 'Precio general por persona (€)', type: 'number', description: 'Precio sin descuento. Vacío = por confirmar. El early bird va debajo; este importe no cambia.', validation: (rule) => rule.greaterThan(0).precision(2)}),
+          earlyBirdField,
           defineField({name: 'dossier', title: 'URL del dossier de esta salida (opcional)', type: 'url', description: 'Vacío = usa el dossier general del viaje.', validation: (rule) => rule.uri({scheme: ['https']}).custom((value) => dossierProblem(value) || true)}),
           defineField({name: 'payment', title: 'Señal y condiciones de esta salida', type: 'object', description: 'Opcional. Cada campo vacío hereda el valor general del viaje.', fields: [
             defineField({name: 'depositAmount', title: 'Señal fija (€)', type: 'number', validation: r => r.greaterThan(0).precision(2)}),
@@ -97,7 +97,7 @@ export const trip = defineType({
           ]}),
           defineField({name: 'message', title: 'Mensaje de consulta por WhatsApp', type: 'text', rows: 3}),
         ],
-        preview: {select: {title: 'start', subtitle: 'duration'}},
+        preview: {select: {title: 'start', subtitle: 'duration', earlyBird: 'earlyBird.until'}, prepare: ({title, subtitle, earlyBird}) => ({title, subtitle: [subtitle, earlyBird && `Early bird hasta ${earlyBird}`].filter(Boolean).join(' · ')})},
       })],
     }),
     defineField({name: 'priceNote', title: 'Condiciones de la tarifa', type: 'text', group: 'departures'}),

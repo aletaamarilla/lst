@@ -1,3 +1,20 @@
+// Early bird ends at midnight in Spain. Static pages may outlive that day, so the
+// browser retires the offer itself: struck prices and notes go, the general price returns.
+{
+  const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Madrid', year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date());
+  const days = until => Math.round((Date.parse(`${until}T00:00:00Z`) - Date.parse(`${today}T00:00:00Z`)) / 864e5);
+  for (const node of document.querySelectorAll('[data-eb-until]')) {
+    const left = days(node.dataset.ebUntil);
+    const role = node.dataset.eb;
+    if (left >= 0) {
+      if (role === 'days') node.textContent = left === 0 ? 'Hoy es el último día. ' : `Quedan ${left} ${left === 1 ? 'día' : 'días'}. `;
+      continue;
+    }
+    if (role === 'price') node.textContent = node.dataset.ebRegular;
+    else if (role === 'label') node.dataset.priceLabel = node.dataset.ebRegular;
+    else node.remove();
+  }
+}
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#main-nav');
 const header = document.querySelector('.site-header');

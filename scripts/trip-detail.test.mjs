@@ -5,24 +5,26 @@ import {renderTrip, detailIntro, publicDetail} from './render-trips.mjs';
 import {departuresFor, departureMessage} from './trip-model.mjs';
 import {registrationUrl} from './brevo.mjs';
 const source=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips.find(t=>t.slug==='el-palmar');
-const offer=(overrides={})=>({label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true,...overrides});
-const date=(overrides={})=>({...source.departures[0],id:'one',price:699,regularPrice:699,availability:'available',promotions:[offer()],...overrides});
+// A departure as the CMS adapter resolves it on a day when the early bird is live.
+const offer=(price=599,regularPrice=699,until='2026-12-06')=>({price,regularPrice,earlyBird:{price,until,saving:Math.round((regularPrice-price)*100)/100}});
+const date=(overrides={})=>({...source.departures[0],id:'one',availability:'available',...offer(),...overrides});
 const trip=(overrides={})=>({...source,availability:'available',departures:[date()],...overrides});
 const block=(html,cls)=>{const start=html.indexOf('class="'+cls+'"');assert(start>=0);const end=html.indexOf(cls==='offer-overview-booking'?'</section>':cls==='trip-booking'?'</aside>':'<dialog',start);return html.slice(start,end);};
 
-test('trip details show the same active price, general price, saving and cup at all booking placements',()=>{
+test('trip details show the same early bird price, general price and deadline at all booking placements',()=>{
  const t=trip(),before=structuredClone(t),html=renderTrip(t);
  for(const section of ['trip-booking','trip-dock']){
   const part=block(html,section);
-  assert.match(part,/599 €/);assert.match(part,/699 €/);assert.match(part,/Early bird/);assert.match(part,/Primeras 8 plazas/);
+  assert.match(part,/599 €/);assert.match(part,/699 €/);assert.match(part,/Early bird hasta el 6 (de diciembre|dic)/);
  }
+ assert.match(block(html,'trip-booking'),/Ahorras 100 €/);
  assert.deepEqual(t,before);
 });
 
 test('date selector keeps the offer and enquiry with its own date, and never borrows a missing price',()=>{
- const t=trip({departures:[date(),date({id:'two',date:'Otra fecha',start:'2027-01-01',end:'2027-01-03',price:null,regularPrice:null,promotions:undefined})]});
+ const t=trip({departures:[date(),date({id:'two',date:'Otra fecha',start:'2027-01-01',end:'2027-01-03',price:null,regularPrice:null,earlyBird:null})]});
  const html=renderTrip(t),options=[...html.matchAll(/<article class="departure-option">([\s\S]*?)<\/article>/g)].map(m=>m[1]);
- assert.equal(options.length,2);assert.match(options[0],/599 €|100 € de descuento/);assert.match(options[0],/699 €/);
+ assert.equal(options.length,2);assert.match(options[0],/599 €/);assert.match(options[0],/100 € menos hasta el 6 dic/);assert.match(options[0],/699 €/);
  assert.match(options[1],/Consultar precio/);assert.doesNotMatch(options[1],/599 €|699 €|Early bird/);
  const d=departuresFor(t);
  for(let i=0;i<2;i++){
@@ -31,30 +33,30 @@ test('date selector keeps the offer and enquiry with its own date, and never bor
  }
 });
 
-test('full, inactive and pending tariffs never advertise a discount',()=>{
- for(const t of [trip({availability:'full'}),trip({departures:[date({availability:'full'})]}),trip({departures:[date({promotions:[offer({active:false})]})]}),trip({state:'upcoming',departures:[]})]){
-  const html=renderTrip(t);assert.doesNotMatch(html,/Early bird|de descuento|<del>/);
+test('full, ended and pending offers never advertise a discount',()=>{
+ for(const t of [trip({availability:'full'}),trip({departures:[date({availability:'full'})]}),trip({departures:[date({price:699,earlyBird:null})]}),trip({state:'upcoming',departures:[]})]){
+  const html=renderTrip(t);assert.doesNotMatch(html,/Early bird|data-eb-|<del/);
  }
 });
 
 test('the price for a later promoted date names that date without changing the earliest trip facts',()=>{
- const t=trip({departures:[date({promotions:undefined,price:699}),date({id:'later',date:'La fecha posterior',start:'2027-02-01',price:699})]});
+ const t=trip({departures:[date({price:699,earlyBird:null}),date({id:'later',date:'La fecha posterior',start:'2027-02-01'})]});
  const html=renderTrip(t);
- assert.match(html,/Tarifa para el La fecha posterior/);assert.match(html,/Desde 599 €/);
+ assert.match(html,/Ahorras 100 € en la salida del La fecha posterior/);assert.match(html,/Desde 599 €/);
  assert.match(html,/class="booking-essentials"/);assert.match(html,/2 salidas/);
 });
 
-test('unknown cup, fractional prices and editor labels remain exact and escaped',()=>{
- const t=trip({departures:[date({price:699.5,regularPrice:699.5,promotions:[offer({label:'Early <bird>',price:649.25,firstPlace:null,lastPlace:null,condition:'Plazas <limitadas>'})]})]});
+test('fractional prices stay exact in the price and the saving',()=>{
+ const t=trip({departures:[date(offer(649.25,699.5))]});
  const html=renderTrip(t);
- assert.match(html,/649,25 €/);assert.match(html,/699,5 €/);assert.match(html,/Plazas &lt;limitadas&gt;/);assert.match(html,/Early &lt;bird&gt;/);
- assert.doesNotMatch(html,/<bird>|<limitadas>|Quedan|Primeras/);
+ assert.match(html,/649,25 €/);assert.match(html,/699,5 €/);assert.match(html,/Ahorras 50,25 €/);
+ assert.doesNotMatch(html,/Primeras|de descuento/);
 });
 
 test('native date enquiries remain reachable without JavaScript and keep the common range and per-date offers',()=>{
- const t=trip({departures:[date(),date({id:'rider',date:'Riders',start:'2027-01-01',end:'2027-01-03',promotions:undefined})]});
+ const t=trip({departures:[date(),date({id:'rider',date:'Riders',start:'2027-01-01',end:'2027-01-03',price:699,earlyBird:null})]});
  const html=renderTrip(t),fallback=html.match(/<noscript>[\s\S]*?<\/noscript>/)[0];
- assert.match(fallback,/fechas-sin-javascript/);assert.match(html,/Todos los niveles/);assert.match(fallback,/Primeras 8 plazas/);
+ assert.match(fallback,/fechas-sin-javascript/);assert.match(html,/Todos los niveles/);assert.match(fallback,/Early bird hasta el 6 de diciembre/);
  assert.equal((fallback.match(/data-whatsapp=/g)??[]).length,2);
  assert(html.indexOf('<noscript>')<html.indexOf('<aside class="trip-booking"'));
 });
@@ -72,7 +74,7 @@ test('PDF cleanup preserves conditions while the requested introductory block st
 });
 
 test('no numeric price means no from prefix, while mixed durations are described per departure',()=>{
- const t=trip({departures:[date({price:null,regularPrice:null,promotions:undefined,duration:'2 noches'}),date({id:'later',date:'Otra salida',start:'2027-01-01',end:'2027-01-08',price:null,regularPrice:null,promotions:undefined,duration:'7 noches'})]});
+ const t=trip({departures:[date({price:null,regularPrice:null,earlyBird:null,duration:'2 noches'}),date({id:'later',date:'Otra salida',start:'2027-01-01',end:'2027-01-08',price:null,regularPrice:null,earlyBird:null,duration:'7 noches'})]});
  const html=renderTrip(t);
  assert.doesNotMatch(html,/Desde Precio|Desde Consultar/);
  assert.match(html,/Según la salida/);

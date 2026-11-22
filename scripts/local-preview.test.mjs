@@ -9,7 +9,7 @@ import {createSiteServer,readLocalPreview} from './serve.mjs';
 const snapshot=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8'));
 const trips=structuredClone(snapshot.trips);
 const trip=trips.find(t=>t.slug==='el-palmar');
-trip.departures[0]={...trip.departures[0],price:699,regularPrice:699,promotions:[{label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true}]};
+trip.departures[0]={...trip.departures[0],price:599,regularPrice:699,earlyBird:{price:599,until:'2026-11-30',saving:100}};
 
 test('local offers survive navigation through home, levels, catalogue and canonical/historical details without altering dist',async()=>{
  const files=['index.html','niveles/index.html','viajes/index.html','viajes/el-palmar/index.html','viajes/el-palmar-2026-12-04/index.html','catalog-snapshot.json'];
@@ -21,8 +21,8 @@ test('local offers survive navigation through home, levels, catalogue and canoni
    const response=await fetch(origin+route),html=await response.text();
    assert.equal(response.status,200,route);
    assert.equal(response.headers.get('x-lst-data-source'),'sanity-local-preview');
-   if(!route.startsWith('/viajes/el-palmar'))assert.match(html,/100 € de descuento/,route);
-   assert.match(html,/599 €/);assert.match(html,/Primeras 8 plazas/);assert([...html.matchAll(/<del>([\s\S]*?)<\/del>/g)].some(([,text])=>text.replace(/<[^>]+>/g,'').includes('699 €')));
+   if(!route.startsWith('/viajes/el-palmar'))assert.match(html,/100 € menos hasta el 30 nov/,route);
+   assert.match(html,/599 €/);assert([...html.matchAll(/<del class="eb-was"[^>]*>([\s\S]*?)<\/del>/g)].some(([,text])=>text.replace(/<[^>]+>/g,'').includes('699 €')));
    if(route==='/viajes/')assert.match(html,/class="ct-ticket" id="viaje-/);
   }
   const preview=await fetch(origin+'/catalog-snapshot.json').then(r=>r.json());

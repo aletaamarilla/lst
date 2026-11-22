@@ -1,7 +1,8 @@
 import {levelLabel, levelsFor, departuresFor, departureMessage, tripMessage, tripFacts, tripPrice, tripPriceDetails, formatPrice, isFull, availabilityLabel} from './trip-model.mjs';
 import {registrationUrl} from './brevo.mjs';
 import {siteFooter} from './legal.mjs';
-import {promotionCondition} from './trip-pricing.mjs';
+import {liveEarlyBird, earlyBirdWas, earlyBirdPriceAttrs, earlyBirdOnly, earlyBirdNote, earlyBirdShortLine} from './early-bird.mjs';
+import {earlyBirdUntilShort} from './trip-pricing.mjs';
 import {groupedInclusions} from './trip-experience.mjs';
 import {salesPitch, practicalDetails, salesFaqs} from './trip-sales-content.mjs';
 import {compactDepartureDate, levelProfileTitle, surfRhythm} from './trip-decision.mjs';
@@ -68,20 +69,17 @@ export function detailIntro(value = '') {
 function stayCopy(value = '') {
  return value.replace(/\s*\(p\.\s*\d+(?:[–-]\d+)?\)/g, '').replace(/\s+sin nombre/g, '').replace(/;\s*(?:nombre y habitaciones no indicados|no se especifica distribución de habitaciones)\.?/g, '.').trim();
 }
+// Booking card and essentials: the deadline sentence. Dialog rows: one short line.
 function offerMarkup(trip, departure, {date = false, compact = false} = {}) {
- if (trip.state !== 'confirmed' || isFull(trip) || !departure?.promotion || isFull(departure)) return '';
- const promotion = departure.promotion;
- const saving = Math.round((departure.regularPrice - departure.price) * 100) / 100;
- return `<div class="trip-offer${compact?' trip-offer-compact':''}"><p class="trip-offer-label">${escape(promotion.label)}${compact?'':` <strong>${escape(formatPrice(saving))} de descuento</strong>`}</p><p class="trip-offer-condition">${escape(promotionCondition(promotion))}</p>${date ? `<p class="trip-offer-date">Tarifa para el ${escape(departure.date)}</p>` : ''}</div>`;
-}
-// Match the exact summary produced by update-trip-promotions.mjs; never strip custom additions.
-function generatedTariffNote(trip) {
- const conditions=departuresFor(trip).filter(d=>d.promotions?.length&&d.regularPrice!=null).map(d=>`${d.promotions.map(p=>`${p.label}: ${formatPrice(p.price)} (${promotionCondition(p).toLocaleLowerCase('es')})`).join('; ')}. Tarifa general: ${formatPrice(d.regularPrice)}.`);
- return conditions.length?`${[...new Set(conditions)].join(' ')} Precios por persona. La consulta no confirma la reserva.`:null;
+ if (trip.state !== 'confirmed' || isFull(trip) || !liveEarlyBird(departure) || isFull(departure)) return '';
+ if (compact) return `<p class="eb-line"${earlyBirdOnly(departure)}>${escape(earlyBirdShortLine(departure))}</p>`;
+ return earlyBirdNote(departure, {date: date ? departure.date : null});
 }
 function fareMarkup(trip, departure, {from = false} = {}) {
- const offer = trip.state === 'confirmed' && !isFull(trip) && !isFull(departure ?? {}) && departure?.promotion;
- return `${offer ? `<del><span class="visually-hidden">Precio general: </span>${escape(formatPrice(departure.regularPrice))}</del> ` : ''}<strong>${from && departure?.price != null ? 'Desde ' : ''}${escape(departure?.price != null ? formatPrice(departure.price) : departure ? 'Consultar precio' : price(trip))}</strong>`;
+ const offer = trip.state === 'confirmed' && !isFull(trip) && !isFull(departure ?? {}) && liveEarlyBird(departure);
+ const prefix = from && departure?.price != null ? 'Desde ' : '';
+ const amount = departure?.price != null ? formatPrice(departure.price) : departure ? 'Consultar precio' : price(trip);
+ return `${offer ? `${earlyBirdWas(departure)} ` : ''}<strong${offer ? earlyBirdPriceAttrs(departure, prefix + formatPrice(departure.regularPrice)) : ''}>${escape(prefix + amount)}</strong>`;
 }
 
 const dossier=trip=>{
@@ -162,7 +160,7 @@ const multiple=departures.length>1;
 const firstDeparture=departures[0];
 const pricing=tripPriceDetails(trip);
 const shownDeparture=pricing.departure;
-const offer=real&&!isFull(trip)&&shownDeparture?.promotion;
+const offer=real&&!isFull(trip)&&shownDeparture&&!isFull(shownDeparture)&&liveEarlyBird(shownDeparture);
 const pitch=salesPitch(trip);
 const practical=practicalDetails(trip);
 const extraFaqs=salesFaqs(trip);
@@ -174,7 +172,7 @@ const canRegister=!!registrationUrl(trip);
 const deposit=tripDeposit(trip);
 const bookingTone=isFull(trip)?'quiet':availabilityLabel(trip)==='Plazas disponibles'?'available':availabilityLabel(trip)==='Últimas plazas'?'limited':'quiet';
 // Condense only the known generic note; keep any custom commercial wording.
-const sidebarPriceNote=!summaryPrice(trip)||summaryPrice(trip)==='Tarifa general por persona, sin promociones. La solicitud no confirma la reserva.'||summaryPrice(trip)===generatedTariffNote(trip)?'por persona':summaryPrice(trip);
+const sidebarPriceNote=summaryPrice(trip)||'por persona';
 
 // A documented group moment is not a portrait or identification of the host.
 const teamMoment=real?trip.gallery.find(([,alt,caption])=>/grupo|comunidad/i.test(alt)&&! /ejemplo|generad[ao]|\bIA\b/i.test(alt+' '+caption)):null;
@@ -236,7 +234,7 @@ const sectionLinks=[['destino','El destino'],['nivel','Nivel'],['incluye','Qué 
 const sectionNav=`<nav class="tp-sections" aria-label="Secciones del viaje"><div class="tp-sections-track">${sectionLinks.map(([id,label])=>`<a href="#${id}">${escape(label)}</a>`).join('')}</div></nav>`;
 // Bajo el título solo van los datos que deciden (fecha, nivel, grupo, lugar) y una promoción si la hay;
 // lo que incluye el precio tiene su propia sección justo después.
-const essentialOffer=offerMarkup(trip,shownDeparture,{date:multiple,compact:true});
+const essentialOffer=offerMarkup(trip,shownDeparture,{date:multiple});
 const essentials=`<section class="trip-essentials trip-shell" aria-label="Datos de este viaje"><nav class="trip-crumbs" aria-label="Breadcrumb"><a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/viajes/">Viajes</a><span aria-hidden="true">/</span><span aria-current="page">${escape(trip.name)}</span></nav><div class="trip-heading-row" style="--tp-len:${Math.max(...trip.name.split(/\s+/).map(w=>w.length))}"><div class="trip-identity"><h1 id="trip-title"${trip.name.length>11?' class="trip-title-long"':''}>${escape(trip.name)}</h1></div></div></section>`;
 // Los datos que deciden (fecha y noches, nivel, grupo, lugar) abren el contenido, en el mismo bloque que la entradilla.
 const essentialFacts=`<dl class="trip-essential-facts"><div><dt class="visually-hidden">${multiple?'Salidas':'Fecha'}</dt><dd>${calendarIcon}${multiple?`<button type="button" class="essential-dates" data-open-dates aria-haspopup="dialog" aria-controls="departure-dialog">Ver ${departures.length} fechas ${arrow('down')}</button>`:`<span>${escape(real&&firstDeparture?compactDepartureDate(firstDeparture):'Fechas por anunciar')}</span>`}<span class="trip-meta-duration"><span class="visually-hidden">Duración: </span>${escape(durationLabel)}</span></dd></div><div><dt class="visually-hidden">Surf</dt><dd>${surfIcon}<span>${escape(levelLabel(trip))}</span>${levelBar(trip)}</dd></div>${trip.place?`<div class="trip-meta-location"><dt class="visually-hidden">Destino</dt><dd>${pinIcon}<span>${escape(trip.place.split(/\s*·\s*/).join(', '))}</span></dd></div>`:''}</dl>${essentialOffer?`<div class="essentials-footer">${essentialOffer}</div>`:''}`;
@@ -298,12 +296,12 @@ return withWhatsApp(`<!doctype html>
     ${multiple?`<noscript><style>.trip-designed [data-open-dates],.trip-designed [data-open-gallery],.trip-designed .gallery-photo>span{display:none}</style><section id="fechas-sin-javascript" class="trip-native-dates"><h2>Fechas</h2>${departures.map(d=>`<article><h3>${escape(d.date)}</h3>${dateDossier(d)}${offerMarkup(trip,d)}<p>${fareMarkup(trip,d)}</p>${departurePayment(trip,d)}${registrationLink(trip,d)}${contact(trip,isFull(trip)||isFull(d)?'Consultar alternativas':'Consultar esta fecha','button',departureMessage(trip,d))}</article>`).join('')}</section></noscript>`:''}
    </section>
   </article>
-  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><div class="booking-card-top"><p class="booking-trip-name">${escape(trip.name)}</p><p class="booking-status" data-tone="${bookingTone}">${status(trip)}</p></div><p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(sidebarPriceNote)}</p>${offerMarkup(trip,shownDeparture,{date:multiple,compact:true})}<div class="booking-essentials"><p class="booking-date">${calendarIcon}<span>${escape(multiple?`${departures.length} salidas`:firstDeparture?.date??'Fechas por anunciar')}</span></p><div class="booking-tags"><span>${escape(durationLabel)}</span><span>${escape(levelLabel(trip))}</span></div></div>${depositMarkup(deposit)}${bookingAction(trip,cta,"button booking-card-cta")}<p class="booking-card-help">${canRegister?'Solicitud sujeta a confirmación.':real?'Consulta la disponibilidad.':'Fechas por confirmar.'}</p><div class="booking-secondary">${dossier(trip).replace('Descargar dossier','Ver dossier')}${contact(trip,'¿Dudas?','button booking-whatsapp')}</div></div></aside>
+  <aside class="trip-booking" aria-label="${real?'Consultar este viaje':'Consultar la próxima salida'}"><div class="booking-card"><div class="booking-card-top"><p class="booking-trip-name">${escape(trip.name)}</p><p class="booking-status" data-tone="${bookingTone}">${status(trip)}</p></div><p class="booking-card-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p><p class="booking-card-price-note">${escape(sidebarPriceNote)}</p>${offerMarkup(trip,shownDeparture,{date:multiple})}<div class="booking-essentials"><p class="booking-date">${calendarIcon}<span>${escape(multiple?`${departures.length} salidas`:firstDeparture?.date??'Fechas por anunciar')}</span></p><div class="booking-tags"><span>${escape(durationLabel)}</span><span>${escape(levelLabel(trip))}</span></div></div>${depositMarkup(deposit)}${bookingAction(trip,cta,"button booking-card-cta")}<p class="booking-card-help">${canRegister?'Solicitud sujeta a confirmación.':real?'Consulta la disponibilidad.':'Fechas por confirmar.'}</p><div class="booking-secondary">${dossier(trip).replace('Descargar dossier','Ver dossier')}${contact(trip,'¿Dudas?','button booking-whatsapp')}</div></div></aside>
  </div>
  <section class="related-section"><div class="trip-shell"><p class="eyebrow">SIGUE MIRANDO</p><h2>Otros viajes</h2><div class="related-list">${related}</div><a class="text-link" href="/viajes/">Ver todos los viajes</a></div></section>
 </main>
 ${siteFooter()}
-<div class="trip-dock" aria-label="Fechas e inscripción">${offer?`<span class="dock-offer">${escape(shownDeparture.promotion.label)} · ${escape(promotionCondition(shownDeparture.promotion))}</span>`:''}<div class="dock-details">${isFull(trip)?'<strong>Completo</strong>':real?`<p class="dock-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p>`:'<strong>Próximamente</strong>'}<span>${real?`por persona · ${escape(offer?shownDeparture.duration:durationLabel)}`:'Fechas por anunciar'}</span>${deposit?`<span class="dock-deposit">${deposit.amount!==null?`Señal: ${escape(formatPrice(deposit.amount))}`:deposit.multiple?'Señal según la fecha':'Señal por confirmar'}</span>`:''}</div>${bookingAction(trip,cta,'button dock-cta')}${contact(trip,'Hablar por WhatsApp','button dock-whatsapp')}</div>
+<div class="trip-dock" aria-label="Fechas e inscripción">${offer?`<span class="dock-offer"${earlyBirdOnly(shownDeparture)}>Early bird hasta el ${escape(earlyBirdUntilShort(shownDeparture.earlyBird.until))}</span>`:''}<div class="dock-details">${isFull(trip)?'<strong>Completo</strong>':real?`<p class="dock-price">${fareMarkup(trip,shownDeparture,{from:pricing.from})}</p>`:'<strong>Próximamente</strong>'}<span>${real?`por persona · ${escape(offer?shownDeparture.duration:durationLabel)}`:'Fechas por anunciar'}</span>${deposit?`<span class="dock-deposit">${deposit.amount!==null?`Señal: ${escape(formatPrice(deposit.amount))}`:deposit.multiple?'Señal según la fecha':'Señal por confirmar'}</span>`:''}</div>${bookingAction(trip,cta,'button dock-cta')}${contact(trip,'Hablar por WhatsApp','button dock-whatsapp')}</div>
 <dialog class="photo-dialog" aria-labelledby="photo-title"><div class="photo-heading"><div><p id="photo-title">Fotos de ${escape(trip.name)}</p><p class="photo-instruction">Desliza para ver más</p></div><button class="photo-close" type="button" aria-label="Cerrar fotos">Cerrar</button></div><div class="photo-strip" tabindex="0" role="region" aria-label="Galería de fotos, desplazamiento horizontal">${photoSlides}</div><div class="photo-controls"><button type="button" data-photo-prev aria-label="Foto anterior">Anterior</button><span class="photo-counter" aria-live="polite" aria-atomic="true">1 / ${coverImages.length}</span><button type="button" data-photo-next aria-label="Foto siguiente">Siguiente</button></div></dialog>
 ${dateDialog(trip)}
 
