@@ -3,5 +3,113 @@
   "framework": null,
   "buildCommand": "npm run build && npm run check",
   "outputDirectory": "dist",
-  "installCommand": "npm install --ignore-scripts --package-lock=false"
+  "installCommand": "npm install --ignore-scripts --package-lock=false",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/surftrips/",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/surftrips-pasados/",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/surfcamp-pasado/",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/sobre-lst/",
+      "destination": "/conocenos/",
+      "permanent": true
+    },
+    {
+      "source": "/conoce-lst/",
+      "destination": "/conocenos/",
+      "permanent": true
+    },
+    {
+      "source": "/servicios-2/",
+      "destination": "/conocenos/",
+      "permanent": true
+    },
+    {
+      "source": "/rookies/",
+      "destination": "/niveles/",
+      "permanent": true
+    },
+    {
+      "source": "/nivel-ii-aprendices/",
+      "destination": "/niveles/",
+      "permanent": true
+    },
+    {
+      "source": "/nivel-iii-rides/",
+      "destination": "/niveles/",
+      "permanent": true
+    },
+    {
+      "source": "/nivel-iv-supercracks/",
+      "destination": "/niveles/",
+      "permanent": true
+    },
+    {
+      "source": "/contacto/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hola-mundo/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/terminos-y-condiciones-de-contratacion/",
+      "destination": "/condiciones/",
+      "permanent": true
+    },
+    {
+      "source": "/producto/marruecos/",
+      "destination": "/viajes/marruecos/",
+      "permanent": true
+    },
+    {
+      "source": "/producto/:path*",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/categoria-producto/:path*",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/tienda/",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/carrito/",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/finalizar-compra/",
+      "destination": "/viajes/",
+      "permanent": true
+    },
+    {
+      "source": "/mi-cuenta/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }

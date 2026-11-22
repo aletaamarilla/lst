@@ -20,36 +20,30 @@ test('editorial framing comes from CMS fields regardless of the destination slug
   assert.deepEqual(trip, before);
 });
 
-test('meal arrangements remain specific: full board, two free dinners, or lunches paid separately', () => {
-  assert.match(practicalText(bySlug('el-palmar')), /Pensión completa: cena del viernes a comida del martes/);
-  assert.match(practicalText(bySlug('hossegor')), /desayuno del domingo/);
-  assert.match(practicalText(bySlug('fuerteventura')), /2 cenas en casa/);
-  assert.match(practicalText(bySlug('fuerteventura')), /Por tu cuenta: 2 cenas libres/);
-  assert.doesNotMatch(practicalText(bySlug('fuerteventura')), /Pensión completa/);
-  assert.match(practicalText(bySlug('senegal')), /Desayuno y cena todos los días/);
-  assert.match(practicalText(bySlug('senegal')), /Por tu cuenta: Comidas del mediodía; Bebidas de la cena del desierto/);
-  assert.doesNotMatch(practicalText(bySlug('senegal')), /Pensión completa/);
-  assert.match(practicalText(bySlug('maldivas')), /Pensión completa: desayuno, comida y cena/);
+const listText = trip => [...(trip.includes ?? []), ...(trip.excludes ?? [])].join(' ');
+
+test('meals and equipment are not repeated in the practical cards; the price lists keep the specific arrangements', () => {
+  for (const trip of trips.filter(item => item.state === 'confirmed')) {
+    const titles = practicalDetails(trip).map(item => item.title);
+    assert(!titles.some(title => /comidas|neopreno/i.test(title)), trip.slug + ' repeats meals or equipment: ' + titles.join(', '));
+  }
+  assert.match(listText(bySlug('el-palmar')), /Pensión completa/);
+  assert.match(listText(bySlug('fuerteventura')), /cenas/);
+  assert.match(listText(bySlug('marruecos')), /Material de iniciación y neoprenos/);
+  assert.match(listText(bySlug('marruecos')), /Tablas evolutivas y shortboards: alquiler aparte/);
 });
 
-test('the Moroccan programmes keep different equipment requirements, and Maldivas never inherits included equipment', () => {
-  const beginner = practicalText(bySlug('marruecos'));
-  const advanced = practicalText(bySlug('marruecos-avanzado'));
-  assert.match(beginner, /Material de iniciación y neoprenos/);
-  assert.match(beginner, /Tablas evolutivas y shortboards: alquiler aparte/);
-  assert.doesNotMatch(advanced, /Material de iniciación y neoprenos/);
-  assert.match(advanced, /Tabla propia o alquiler en destino/);
-  assert.match(practicalText(bySlug('hossegor')), /Aparte del precio: Material de surf/);
+test('a trip whose lists say nothing about equipment still tells you to ask, and Maldivas never inherits included equipment', () => {
   assert.match(practicalText(bySlug('maldivas')), /Consulta.*tabla y equipación/);
   assert.doesNotMatch(practicalText(bySlug('maldivas')), /material.*incluido|neopreno.*incluido/i);
+  assert.doesNotMatch(practicalText(bySlug('marruecos-avanzado')), /Material de iniciación y neoprenos/);
 });
 
-test('school cover and travel insurance are distinguished without inventing a policy for Maldivas', () => {
-  assert.match(practicalText(bySlug('el-palmar')), /seguro de la escuela local/);
-  assert.match(practicalText(bySlug('el-palmar')), /distinta de un seguro de viaje/);
-  assert.match(practicalText(bySlug('senegal')), /seguro de viaje no está incluido/);
-  assert.match(practicalText(bySlug('maldivas')), /descuento no equivale a una póliza incluida/);
-  assert.doesNotMatch(practicalText(bySlug('maldivas')), /seguro de viaje no está incluido|seguro de viaje incluido/);
+test('every trip states the compulsory travel insurance; school cover is not presented as a substitute', () => {
+  for (const slug of ['el-palmar', 'senegal', 'maldivas']) assert.match(practicalText(bySlug(slug)), /seguro de viaje es obligatorio[\s\S]*IATI Seguros/);
+  assert.match(practicalText(bySlug('el-palmar')), /seguro de la escuela local, que no sustituye al seguro de viaje/);
+  assert.match(practicalText(bySlug('senegal')), /No está incluido en el precio/);
+  assert.doesNotMatch(practicalText(bySlug('maldivas')), /seguro de viaje incluido/);
 });
 
 test('transport reflects current inclusions and generated flight answers replace old estimates without urgency', () => {
@@ -86,10 +80,12 @@ test('upcoming destinations never advertise services left in their CMS document'
 
 test('unknown destinations and removed services have no inherited itinerary or material claims', () => {
   const unknown = {slug: 'nuevo-destino', state: 'confirmed', includes: [], excludes: [], story: []};
-  assert.deepEqual(practicalDetails(unknown), []);
+  // Only the general rule applies: compulsory insurance (términos de participación).
+  const onlyInsurance = details => details.map(d => d.title);
+  assert.deepEqual(onlyInsurance(practicalDetails(unknown)), ['El seguro para tu viaje']);
   assert.deepEqual(salesFaqs(unknown), []);
   const changed = {...bySlug('maldivas'), includes: [], excludes: [], story: []};
-  assert.deepEqual(practicalDetails(changed), []);
+  assert.deepEqual(onlyInsurance(practicalDetails(changed)), ['El seguro para tu viaje']);
   assert.deepEqual(salesFaqs(changed), []);
   assert.doesNotMatch(allText(changed), /Lucas|snorkel|Transfers|pensión completa/i);
 });

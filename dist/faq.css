@@ -1,5 +1,6 @@
-/* FAQs: una página para leer. Papel, preguntas en texto normal y una foto al final.
-   Usa el sistema de la home (homepage.css); aquí solo lo propio de la página. */
+/* FAQs con el sistema de la home (homepage.css). Cada tema es una banda de color con su imagen
+   concreta (una foto real, el dibujo a escala de los niveles o el billete de la reserva) y sus
+   preguntas en cajas rectas de 2 px. El índice son pestañas de texto con subrayado naranja. */
 body.hp-page.faq-page{padding-bottom:0}
 body.hp-page.faq-page section[id]{scroll-margin-top:84px}
 
@@ -9,61 +10,103 @@ body.home-modern.hp-page.faq-page .site-header:not(.is-scrolled):not(:has(nav.is
 body.home-modern.hp-page.faq-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-light{display:none}
 body.home-modern.hp-page.faq-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-dark{display:block}
 
-/* APERTURA */
-body.hp-page .faq-hero{padding:calc(var(--home-header-height,78px) + 40px) 0 40px;background:var(--hp-paper);border-bottom:2px solid var(--hp-ink)}
-body.hp-page .faq-pill{background:var(--hp-ink);color:var(--hp-paper);backdrop-filter:none}
-body.hp-page .faq-hero h1{position:relative;margin:.4em 0 0;max-width:12ch;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;line-height:.88;letter-spacing:0;font-size:clamp(52px,14vw,132px);text-wrap:balance}
+/* APERTURA: título centrado y el índice de temas */
+body.hp-page .faq-hero{padding:calc(var(--home-header-height,78px) + 44px) 0 0;background:var(--hp-paper);text-align:center}
+body.hp-page .faq-hero h1{margin:0 auto;max-width:14ch;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;line-height:.88;letter-spacing:0;font-size:clamp(46px,12vw,84px);text-wrap:balance}
 body.hp-page .faq-hero h1 span{color:var(--hp-orange)}
-body.hp-page.faq-page .faq-lead{margin:24px 0 0;max-width:46ch;font-size:19px;line-height:1.5}
-body.hp-page .faq-lead a,body.hp-page .faq-a a{color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:2px;text-underline-offset:4px}
-body.hp-page .faq-index{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
-body.hp-page .faq-index a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--hp-ink);color:var(--hp-ink);font-weight:600;font-size:15px;text-decoration:none;transition:background .15s,color .15s}
-body.hp-page .faq-index a:hover{background:var(--hp-ink);color:var(--hp-paper)}
-body.hp-page .faq-index a:focus-visible{outline:3px solid var(--hp-orange);outline-offset:2px}
+body.hp-page.faq-page .faq-lead{margin:20px auto 0;max-width:44ch;font-size:17px;line-height:1.5}
+body.hp-page .faq-lead a,body.hp-page .faq-a a,body.hp-page .faq-topic-media figcaption a{color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:2px;text-underline-offset:4px}
+/* Pestañas de texto: subrayado naranja al pasar y en el tema que se está leyendo. */
+body.hp-page .faq-index{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 16px;margin:32px 0 0;border-top:2px solid var(--hp-ink)}
+body.hp-page .faq-index a{display:flex;align-items:center;justify-content:center;min-height:52px;padding:6px 4px;color:var(--hp-ink);font-family:var(--hp-display);font-size:20px;line-height:1;text-transform:uppercase;text-decoration:none;text-align:center}
+body.hp-page .faq-index a:hover,body.hp-page .faq-index a:focus-visible{text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:3px;text-underline-offset:6px}
+body.hp-page .faq-index a:focus-visible{outline:3px solid var(--hp-orange);outline-offset:-3px}
 
-/* TEMAS: título a la izquierda, preguntas a la derecha */
-body.hp-page .faq-topic{padding-block:44px;background:var(--hp-paper)}
-body.hp-page .faq-topic+.faq-topic{border-top:1px solid var(--hp-rule)}
-body.hp-page .faq-topic-in{display:grid;gap:14px}
+/* TEMAS: bandas alternas papel / papel tostado / mar */
+body.hp-page .faq-topic{padding-block:48px;background:var(--hp-paper)}
+body.hp-page .faq-topic:nth-of-type(even){background:var(--hp-paper-2)}
+body.hp-page .faq-topic#preparacion{background:var(--hp-sea);color:var(--hp-paper)}
+body.hp-page .faq-topic-in{display:grid;gap:24px}
 body.hp-page .faq-topic-in>*{min-width:0}
+body.hp-page .faq-topic-side{display:grid;gap:18px;text-align:center}
 body.hp-page .faq-topic-title{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.9;font-size:clamp(36px,9vw,52px)}
+body.hp-page .faq-topic-media{margin:0}
+body.hp-page.faq-page .faq-topic-media img{display:block;width:100%;height:auto;max-width:none;aspect-ratio:16/10;object-fit:cover;border-radius:4px}
+body.hp-page .faq-topic-media figcaption{margin-top:8px;font-size:13px;color:var(--hp-muted)}
+body.hp-page .faq-topic#preparacion .faq-topic-media figcaption{color:rgba(255,250,231,.7)}
 
-body.hp-page .faq-answers details{border-bottom:1px solid var(--hp-rule)}
-body.hp-page .faq-answers details:last-child{border-bottom:0}
-body.hp-page .faq-answers summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:16px 0;list-style:none;cursor:pointer;font-size:20px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
+/* Tu nivel: las cuatro figuras a escala de la guía, pegadas como una ola que crece. */
+.faq-topic-levels ol{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;padding:0;list-style:none}
+.faq-topic-levels li{display:grid;justify-items:center;gap:8px;font-family:var(--hp-display);font-size:clamp(13px,3.4vw,18px);text-transform:uppercase}
+.faq-topic-levels .lv-figure{display:block;width:100%;height:auto;overflow:visible}
+.faq-topic-levels .lv-figure-wave{fill:var(--hp-sea)}
+.faq-topic-levels .lv-figure-board{fill:var(--hp-orange);stroke:var(--hp-ink);stroke-width:1.5}
+.faq-topic-levels .lv-figure-stringer{stroke:var(--hp-ink);stroke-width:1;opacity:.35}
+.faq-topic-levels .lv-figure-person{fill:var(--hp-ink)}
+.faq-topic-levels .lv-figure-ground{stroke:var(--hp-ink);stroke-width:2}
+body.hp-page .faq-topic-levels figcaption{margin-top:14px;font-size:14px;color:var(--hp-ink)}
+
+/* Reserva: el billete de la ficha, con los tres momentos del pago. */
+.faq-topic-ticket ol{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;padding:0;list-style:none;counter-reset:pay;border-radius:4px;background:var(--hp-ink);color:var(--hp-paper)}
+.faq-topic-ticket li{counter-increment:pay;display:grid;justify-items:center;gap:4px;padding:20px 8px 18px;text-align:center}
+.faq-topic-ticket li+li{border-left:2px dashed rgba(255,250,231,.3)}
+.faq-topic-ticket li::before{content:counter(pay);font-family:var(--hp-display);font-size:40px;line-height:.85;color:var(--hp-orange)}
+.faq-topic-ticket strong{font-family:var(--hp-display);font-weight:400;font-size:22px;line-height:1;text-transform:uppercase}
+.faq-topic-ticket span{font-size:13px;line-height:1.3;color:rgba(255,250,231,.75)}
+
+/* Preguntas: cajas rectas, la abierta con el borde en tinta y la respuesta dentro. */
+body.hp-page .faq-answers{display:grid;gap:10px}
+body.hp-page .faq-answers details{border:0;border-radius:2px;background:#fffdf5;color:var(--hp-ink);box-shadow:inset 0 0 0 2px var(--hp-rule)}
+body.hp-page .faq-answers details[open]{box-shadow:inset 0 0 0 2px var(--hp-ink)}
+body.hp-page .faq-topic#preparacion .faq-answers details{box-shadow:none}
+body.hp-page .faq-topic#preparacion .faq-answers details[open]{box-shadow:inset 0 0 0 2px var(--hp-orange)}
+body.hp-page .faq-answers summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;padding:14px 18px;list-style:none;cursor:pointer;font-size:17px;font-weight:600;line-height:1.3;overflow-wrap:anywhere}
 body.hp-page .faq-answers summary::-webkit-details-marker{display:none}
-body.hp-page .faq-answers summary>span{position:relative;flex:0 0 22px;width:22px;height:22px}
-body.hp-page .faq-answers summary>span::before,body.hp-page .faq-answers summary>span::after{content:"";position:absolute;left:3px;right:3px;top:10px;height:2px;background:currentColor;transition:transform .18s}
+body.hp-page .faq-answers summary>span{position:relative;flex:0 0 20px;width:20px;height:20px}
+body.hp-page .faq-answers summary>span::before,body.hp-page .faq-answers summary>span::after{content:"";position:absolute;left:2px;right:2px;top:9px;height:2px;background:currentColor;transition:transform .18s}
 body.hp-page .faq-answers summary>span::after{transform:rotate(90deg)}
+body.hp-page .faq-answers details[open] summary>span{transform:none}
 body.hp-page .faq-answers details[open] summary>span::after{transform:rotate(0)}
-body.hp-page .faq-answers summary:hover{color:var(--hp-orange)}
-body.hp-page .faq-answers summary:focus-visible{outline:3px solid var(--hp-orange);outline-offset:4px}
-body.hp-page .faq-a{padding:0 0 22px;max-width:58ch}
-body.hp-page.faq-page .faq-a p{margin:0 0 .8em;color:inherit;font-size:18px;line-height:1.55}
+body.hp-page .faq-answers summary:hover{text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:2px;text-underline-offset:4px}
+body.hp-page .faq-answers summary:focus-visible{outline:3px solid var(--hp-orange);outline-offset:2px}
+body.hp-page .faq-a{padding:0 18px 18px;max-width:62ch;overflow-wrap:anywhere}
+body.hp-page.faq-page .faq-a p{margin:0 0 .8em;color:inherit;font-size:16px;line-height:1.55}
 body.hp-page.faq-page .faq-a p:last-child{margin-bottom:0}
-body.hp-page .faq-a ul{margin:0 0 .8em;padding:0;list-style:none;font-size:18px;line-height:1.5}
-body.hp-page .faq-a li{padding:8px 0 8px 14px;border-left:3px solid var(--hp-orange)}
+body.hp-page .faq-a ul{margin:0 0 .8em;padding:0;list-style:none;font-size:16px;line-height:1.5}
+body.hp-page .faq-a li{padding:6px 0 6px 14px;border-left:3px solid var(--hp-orange)}
 body.hp-page .faq-a li+li{margin-top:6px}
 
 /* CIERRE: foto y WhatsApp */
-body.hp-page .faq-help-in{display:grid;gap:32px}
-body.hp-page .faq-help-photo{margin:0;max-width:300px}
-body.hp-page.faq-page .faq-help-photo img{display:block;width:100%;height:auto;max-width:none;border-radius:6px}
-body.hp-page .faq-help .hp-h2{font-size:clamp(52px,14vw,120px)}
-body.hp-page .faq-help p{margin:20px 0 0}
+body.hp-page .faq-help-in{display:grid;gap:32px;text-align:center}
+body.hp-page .faq-help-in>*{min-width:0;overflow-wrap:anywhere}
+body.hp-page .faq-help-photo{margin:0}
+body.hp-page .faq-help-in>div{order:-1}
+body.hp-page.faq-page .faq-help-photo img{display:block;width:100%;height:auto;max-width:none;aspect-ratio:4/3;object-fit:cover;object-position:52% 70%;border-radius:4px}
+body.hp-page .faq-help-photo figcaption{margin-top:10px;font-size:13px;color:rgba(255,250,231,.65)}
+body.hp-page .faq-help .hp-h2{font-size:clamp(44px,12vw,72px)}
+body.hp-page .faq-help p{margin:20px auto 0;max-width:40ch}
 body.hp-page .faq-help .hp-ctas{margin-top:28px}
-body.hp-page .faq-note{margin:16px 0 0;font-size:14px!important;color:rgba(255,250,231,.6)!important}
+body.hp-page .faq-help .hp-btn{white-space:normal;text-align:center}
+body.hp-page .faq-note{margin:16px auto 0;font-size:14px!important;color:rgba(255,250,231,.6)!important}
 
 @media (min-width:720px){
-  body.hp-page .faq-topic{padding-block:56px}
-  body.hp-page .faq-topic-in{grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:48px;align-items:start}
-  body.hp-page .faq-topic-title{position:sticky;top:110px;padding-top:12px}
-  body.hp-page .faq-help-in{grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:56px;align-items:center}
-  body.hp-page .faq-help-photo{max-width:none}
-  body.hp-page .faq-help .hp-h2{font-size:clamp(64px,8vw,120px)}
+  body.hp-page .faq-index{display:flex;justify-content:center;gap:0 36px;margin-top:40px}
+  body.hp-page .faq-index a{padding-inline:0}
+  body.hp-page .faq-topic{padding-block:64px}
+  body.hp-page .faq-topic-in{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px;align-items:start}
+  body.hp-page .faq-topic-side{position:sticky;top:110px;text-align:left}
+  body.hp-page.faq-page .faq-topic-media img{aspect-ratio:4/3}
+  body.hp-page .faq-topic-levels li{font-size:15px}
+  body.hp-page .faq-help-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;text-align:left}
+  body.hp-page .faq-help p,body.hp-page .faq-note{margin-left:0}
+  body.hp-page .faq-help .hp-ctas{display:flex;flex-wrap:wrap}
+  body.hp-page .faq-help-photo{transform:rotate(2deg)}
 }
 @media (min-width:1000px){
-  body.hp-page .faq-hero{padding:calc(var(--home-header-height,88px) + 72px) 0 56px}
-  body.hp-page .faq-help-in{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr)}
+  body.hp-page .faq-hero{padding-top:calc(var(--home-header-height,88px) + 64px)}
+  body.hp-page .faq-topic-in{grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:72px}
 }
-@media (prefers-reduced-motion:reduce){body.hp-page .faq-answers summary>span::after{transition:none}}
+@media (prefers-reduced-motion:reduce){body.hp-page .faq-answers summary>span::before,body.hp-page .faq-answers summary>span::after{transition:none}}
+/* Con el texto al 200 % los nombres largos parten línea en vez de salirse. */
+.faq-topic-levels li,.faq-topic-ticket li{min-width:0;overflow-wrap:anywhere}
+body.hp-page .faq-index a,body.hp-page .faq-answers>details,body.hp-page .faq-answers summary{min-width:0;overflow-wrap:anywhere}

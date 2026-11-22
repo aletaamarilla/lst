@@ -16,10 +16,12 @@ test('the title, duration and concise facts are outside the photograph, with no 
  const before=structuredClone(morocco),html=renderTrip(morocco,trips);
  const cover=html.match(/<section class="trip-cover"[\s\S]*?<\/section>/)[0];
  const meta=html.match(/<section class="trip-essentials[\s\S]*?<\/section>/)[0];
+ const start=html.indexOf('<dl class="trip-essential-facts"'),facts=html.slice(start,html.indexOf('<p class="trip-kickoff"',start));
  assert.match(cover,/--trip-cover-ratio:6000 \/ 4000/);assert.doesNotMatch(cover,/<h1|trip-cover-level/);
  assert.match(meta,/<h1 id="trip-title">Marruecos<\/h1>/);
- for(const text of ['7 noches','17–24 ene 2027','Niveles 1–2','Hasta 15 personas','Costa atlántica'])assert(meta.includes(text));
- assert.doesNotMatch(meta,/°C|desértico|clima/i);assert.deepEqual(morocco,before);
+ for(const text of ['7 noches','17–24 ene 2027','Iniciación y Base','Hasta 15 personas','Agadir, Marruecos'])assert(facts.includes(text));
+ assert(html.indexOf(facts)<html.indexOf('id="nivel"'));
+ assert.doesNotMatch(meta+facts,/°C|desértico|clima/i);assert.deepEqual(morocco,before);
 });
 
 test('community has its own photograph and testimony without duplicating that photo in the host block',()=>{

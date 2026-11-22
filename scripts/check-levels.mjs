@@ -13,7 +13,6 @@ const base=process.env.LST_PREVIEW_URL||'http://127.0.0.1:4175';
 const out=process.env.LST_QA_OUTPUT||path.join(os.tmpdir(),'lst-levels-verification');
 fs.mkdirSync(path.join(out,'capturas'),{recursive:true});
 const trips=JSON.parse(fs.readFileSync('dist/catalog-snapshot.json')).trips;
-const hasPending=trips.some(t=>t.state==='upcoming');
 const report={checks:[],issues:[],errors:[],whatsapp:[],routes:['/niveles/',...trips.map(t=>`/viajes/${t.slug}/`)]};
 const check=(name,pass,detail)=>{report.checks.push({name,pass,detail});if(!pass)report.issues.push({name,detail});};
 const browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
@@ -25,9 +24,9 @@ async function context(options){
 }
 const enlarge=async(p,zoom)=>{if(zoom===2){await p.evaluate(()=>{const els=[...document.querySelectorAll('body,body *')],sizes=els.map(e=>parseFloat(getComputedStyle(e).fontSize));els.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});await p.waitForTimeout(80);}};
 const geometry=async(p,selector)=>p.locator(selector).evaluate(e=>{const r=e.getBoundingClientRect();return {top:r.top,bottom:r.bottom,header:document.querySelector('.site-header').getBoundingClientRect().bottom};});
-const visiblePanels=p=>p.locator('[data-level-panel]').evaluateAll(els=>els.filter(e=>!e.hidden).map(e=>e.dataset.levelPanel));
-const shownTrips=p=>p.locator('.guide-trip-card:visible').evaluateAll(els=>els.map(e=>e.querySelector('.home-trip-link').pathname.split('/')[2]).sort());
-const datedFor=level=>trips.filter(t=>t.state==='confirmed'&&levelsFor(t).includes(level)).map(t=>t.slug).sort();
+const arrived=(p,id)=>p.waitForFunction(id=>{const r=document.getElementById(id).getBoundingClientRect(),h=document.querySelector('.site-header').getBoundingClientRect().bottom;return r.top>=h-1&&r.top<=h+40;},id,{timeout:5000}).then(()=>true,()=>false);
+const rowsIn=(p,sel)=>p.locator(`${sel} .lv-trip`).evaluateAll(els=>els.map(e=>e.querySelector('a').pathname.split('/')[2]).sort());
+const tripsFor=level=>trips.filter(t=>levelsFor(t).includes(level)).map(t=>t.slug).sort();
 const answer=async(p,yes)=>p.locator(`[data-level-test] [data-answer="${yes?'yes':'no'}"]`).click();
 try{
  for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1024,900,1],[1440,900,1],[390,360,1],[320,740,2],[390,844,2],[1440,900,2]]){
@@ -42,13 +41,13 @@ try{
   const external=await p.locator('main a[href^="http"]').evaluateAll(links=>links.map(a=>a.href).filter(href=>!['wa.me','www.instagram.com'].includes(new URL(href).hostname)));
   check(tag+' no legacy or external content links',external.length===0,external);
   check(tag+' four level waves',await p.locator('[data-level-tab]:visible').count()===4);
-  check(tag+' one level panel at a time',JSON.stringify(await visiblePanels(p))==='["1"]',await visiblePanels(p));
+  check(tag+' four level chapters',await p.locator('.lv-chapter:visible').count()===4&&await p.locator('.lv-chapter .lv-cover img').count()===4);
+  check(tag+' each chapter says what is next',await p.locator('.lv-fact--goal').count()===4);
   check(tag+' competition route visible',await p.locator('#nivel-5').isVisible());
-  check(tag+' no sublevel codes in the guide',!/\b[1-5]\.[1-3]\b/.test(await p.locator('.lv-guide').innerText()));
-  const labels=await p.locator('.lv-wave').evaluateAll(els=>els.map(e=>{const n=e.querySelector('.lv-wave-name');return n.scrollWidth<=e.clientWidth+1;}));
-  check(tag+' wave names fit',labels.every(Boolean),labels);
+  check(tag+' no sublevel codes in the guide',!/\b[1-5]\.[1-3]\b/.test(await p.locator('.lv-chapters').innerText()));
+  const labels=await p.locator('.lv-index-item').evaluateAll(els=>els.map(e=>{const n=e.querySelector('.lv-index-name');return n.scrollWidth<=e.clientWidth+1;}));
+  check(tag+' level names fit',labels.every(Boolean),labels);
   check(tag+' one shared help block',await p.locator('[data-guide-enquiry]').count()===1);
-  if(hasPending)check(tag+' pending destinations initially folded',await p.locator('.guide-trip-pending').evaluate(e=>!e.open));
   if(zoom===1&&[390,1440].includes(width)&&height>500){
    for(const img of await p.locator('main img').all()){await img.scrollIntoViewIfNeeded();await img.evaluate(e=>new Promise((resolve,reject)=>{if(e.complete)return e.naturalWidth?resolve():reject(Error('Image failed: '+e.src));e.addEventListener('load',resolve,{once:true});e.addEventListener('error',()=>reject(Error('Image failed: '+e.src)),{once:true});}));}
    check(tag+' photographs loaded',await p.locator('main img').evaluateAll(imgs=>imgs.every(img=>img.complete&&img.naturalWidth>0)));
@@ -56,13 +55,14 @@ try{
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-portada.png`)});
    await p.screenshot({path:path.join(out,'capturas',`niveles-${width}-completa.png`),fullPage:true});
   }
-  // Level tabs: one panel, its URL and its trips.
+  // Index: each figure jumps to its chapter and preselects its trips.
   for(const level of SURF_LEVELS.map(l=>l.n)){
    await p.locator(`[data-level-tab="${level}"]`).click();
-   check(tag+' tab shows level '+level,JSON.stringify(await visiblePanels(p))===JSON.stringify([String(level)]));
+   check(tag+' index lands on chapter '+level,await arrived(p,'nivel-'+level));
    check(tag+' tab current '+level,await p.locator(`[data-level-tab="${level}"]`).getAttribute('aria-current')==='true');
-   check(tag+' tab URL '+level,new URL(p.url()).hash==='#nivel-'+level&&new URL(p.url()).searchParams.get('nivel')===String(level),p.url());
-   check(tag+' tab filters trips '+level,JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(level)));
+   check(tag+' index URL '+level,new URL(p.url()).hash==='#nivel-'+level,p.url());
+   check(tag+' chapter lists its trips '+level,JSON.stringify(await rowsIn(p,`[data-level-trips="${level}"]`))===JSON.stringify(tripsFor(level)));
+   check(tag+' chapter links to catalogue '+level,await p.locator(`[data-level-trips="${level}"] a[href="/viajes/?nivel=${level}"]`).count()===1);
    const tab=await p.locator(`[data-level-tab="${level}"]`).evaluate(e=>{const r=e.getBoundingClientRect();return {height:r.height,clipped:e.scrollWidth>e.clientWidth+1};});
    check(tag+' tab touch target '+level,tab.height>=44&&!tab.clipped,tab);
    const head=await geometry(p,`#nivel-${level}`);check(tag+' level head below header '+level,head.top>=head.header-1,head);
@@ -84,8 +84,10 @@ try{
   check(tag+' guide marks result',await p.locator('#subnivel-2-2').evaluate(e=>e.classList.contains('is-mine')));
   const actions=await p.locator('.lv-result-actions :is(a,button)').evaluateAll(els=>els.map(e=>{const r=e.getBoundingClientRect();return {text:e.textContent.trim(),height:r.height,clipped:e.scrollWidth>e.clientWidth+1};}));
   check(tag+' result actions fit',actions.every(a=>a.height>=44&&!a.clipped),actions);
-  await p.locator('[data-level-test] [data-trips]').click();
-  check(tag+' result filters trips',JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(2))&&new URL(p.url()).searchParams.get('nivel')==='2');
+  const resultTrips=await rowsIn(p,'[data-result-trips]');
+  check(tag+' result lists trips for Base',resultTrips.length===Math.min(3,tripsFor(2).length)&&resultTrips.every(slug=>tripsFor(2).includes(slug)),resultTrips);
+  const rows=await p.locator('[data-result-trips] .lv-trip>a').evaluateAll(els=>els.map(e=>({h:e.getBoundingClientRect().height,clipped:e.scrollWidth>e.clientWidth+1})));
+  check(tag+' result trips fit',rows.every(r=>r.h>=44&&!r.clipped),rows);
   const message=new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text');
   check(tag+' enquiry carries the result',message.includes('Cambio de tabla')&&message.includes('2.2')&&message.includes('autonomía'),message);
   await p.locator('[data-level-test] [data-see]').click();
@@ -104,27 +106,19 @@ try{
   await p.reload();await p.evaluate(()=>document.fonts.ready);
   check(tag+' reload restores result',await p.locator('.lv-result h3').innerText()==='Independencia'&&await p.locator('#subnivel-3-1').evaluate(e=>e.classList.contains('is-mine')));
   await p.evaluate(()=>localStorage.clear());
-  // Trips filters.
-  for(const {n,name} of SURF_LEVELS){
-   await p.locator(`[data-guide-filter="${n}"]`).click();
-   check(tag+' travel context '+n,new URL(p.url()).searchParams.get('nivel')===String(n)&&new URL(p.url()).hash==='#viajes-por-nivel');
-   check(tag+' prioritises dated trips '+n,JSON.stringify(await shownTrips(p))===JSON.stringify(datedFor(n)));
-   const pendingCount=trips.filter(t=>t.state==='upcoming'&&levelsFor(t).includes(n)).length;
-   if(hasPending)check(tag+' pending matching count '+n,await p.locator('[data-guide-pending-count]').innerText()===String(pendingCount));
-   check(tag+' selected enquiry '+n,new URL(await p.locator('[data-guide-enquiry]').getAttribute('href')).searchParams.get('text').includes(name));
-  }
-  await p.locator('[data-guide-filter=""]').click();
-  check(tag+' all shows dated trips',await p.locator('.guide-trip-card:visible').count()===trips.filter(t=>t.state==='confirmed').length);
+  // Every trip row opens its trip.
+  const links=await p.locator('.lv-chapters .lv-trip a').evaluateAll(els=>els.map(e=>e.getAttribute('href')));
+  check(tag+' trip rows link to trips',links.length>0&&links.every(h=>/^\/viajes\/[a-z0-9-]+\/$/.test(h)),links);
   await p.goto(base+'/niveles/');await p.evaluate(()=>document.fonts.ready);await enlarge(p,zoom);
   check(tag+' mobile/direct levels access',await p.locator(width<1000?'.header-levels':'#main-nav a[href="/niveles/"]').isVisible());
   await p.locator('.skip-link').focus();await p.keyboard.press('Enter');
   check(tag+' skip link',await p.evaluate(()=>document.activeElement.id==='contenido'));
   for(let n=0;n<60;n++){
    await p.keyboard.press('Tab');
-   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=e.matches('.skip-link')?0:document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:r.top>=h-1&&r.bottom<=innerHeight+1};});
+   const focus=await p.evaluate(()=>{const e=document.activeElement;if(e===document.body||e.closest('.site-header'))return null;const r=e.getBoundingClientRect(),h=e.matches('.skip-link')?0:document.querySelector('.site-header').getBoundingClientRect().bottom;return {text:e.textContent.trim().slice(0,65),top:r.top,bottom:r.bottom,header:h,visible:(r.top>=h-1&&r.bottom<=innerHeight+1)||(r.height>innerHeight-h&&r.top<innerHeight&&r.bottom>h)};});
    if(focus)check(tag+' keyboard focus visible',focus.visible,focus);
   }
-  await p.locator('.guide-next a').click();
+  await p.locator('#orientacion a[href="/viajes/"]').click();
   await p.locator('[data-catalog-filters]').waitFor({state:'visible'});
   check(tag+' explore full catalog',new URL(p.url()).pathname==='/viajes/'&&await p.locator('[data-catalog-trip]:visible').count()===trips.length);
   await c.close();
@@ -132,14 +126,11 @@ try{
  // Direct and legacy URLs.
  {
   const c=await context({viewport:{width:390,height:844}}),p=await c.newPage();
-  await p.goto(base+'/niveles/#nivel-4');check('direct level URL',JSON.stringify(await visiblePanels(p))==='["4"]');
-  await p.goto(base+'/niveles/#subnivel-3-2');check('direct sublevel URL',await p.locator('#subnivel-3-2').evaluate(e=>e.open)&&JSON.stringify(await visiblePanels(p))==='["3"]');
-  await p.goto(base+'/niveles/#riders');check('legacy anchor opens level 3',JSON.stringify(await visiblePanels(p))==='["3"]'&&new URL(p.url()).hash==='#nivel-3');
-  await p.goto(base+'/niveles/?nivel=aprendices#viajes-por-nivel');check('legacy travel filter',await p.locator('[data-guide-filter="2"]').getAttribute('aria-pressed')==='true');
-  await p.goto(base+'/niveles/');await p.locator('[data-guide-filter="1"]').click();await p.locator('[data-guide-filter="3"]').click();
-  await p.reload();check('reload restores travel level',await p.locator('[data-guide-filter="3"]').getAttribute('aria-pressed')==='true');
-  await p.goBack();check('back restores level 1 trips',await p.locator('[data-guide-filter="1"]').getAttribute('aria-pressed')==='true');
-  await p.goForward();check('forward restores level 3 trips',await p.locator('[data-guide-filter="3"]').getAttribute('aria-pressed')==='true');
+  await p.goto(base+'/niveles/#nivel-4');check('direct level URL',await arrived(p,'nivel-4'));
+  await p.goto(base+'/niveles/#subnivel-3-2');check('direct sublevel URL',await p.locator('#subnivel-3-2').evaluate(e=>e.open));
+  await p.goto(base+'/niveles/#riders');check('legacy anchor opens level 3',await arrived(p,'nivel-3')&&new URL(p.url()).hash==='#nivel-3');
+  await p.goto(base+'/niveles/?nivel=aprendices#viajes-por-nivel');check('old travel link lands on Base',await arrived(p,'nivel-2')&&new URL(p.url()).hash==='#nivel-2');
+  await p.goto(base+'/niveles/?nivel=3');check('catalogue level link lands on Intermedio',await arrived(p,'nivel-3'));
   await c.close();
  }
  // Every trip page links to the guide.
@@ -151,13 +142,12 @@ try{
  // Without JavaScript the whole guide stays readable.
  const c=await context({viewport:{width:390,height:844},javaScriptEnabled:false}),p=await c.newPage();
  await p.goto(base+'/niveles/');
- check('all levels without JS',await p.locator('.lv-level:visible').count()===4&&await p.locator('#nivel-5').isVisible());
+ check('all levels without JS',await p.locator('.lv-chapter:visible').count()===4&&await p.locator('#nivel-5').isVisible());
  check('every sublevel without JS',await p.locator('.lv-sub').count()===SUBLEVELS.length);
- await p.locator('.lv-waves a[href="#nivel-3"]').click();check('native wave anchor without JS',new URL(p.url()).hash==='#nivel-3');
+ await p.locator('.lv-index a[href="#nivel-3"]').click();check('native level anchor without JS',new URL(p.url()).hash==='#nivel-3');
  await p.locator('#subnivel-3-3 summary').click();check('native disclosure without JS',await p.locator('#subnivel-3-3').evaluate(e=>e.open));
  check('test explains it needs JS',(await p.locator('[data-level-test]').innerText()).includes('JavaScript'));
- if(hasPending){await p.locator('.guide-trip-pending summary').focus();await p.keyboard.press('Enter');}
- check('travel links without JS',await p.locator('.guide-trip-card:visible').count()===trips.length);
+ check('trip rows without JS',await p.locator('.lv-chapters .lv-trip:visible').count()===[1,2,3,4].reduce((n,l)=>n+tripsFor(l).length,0));
  check('contact without JS',await p.locator('#orientacion [data-whatsapp]').getAttribute('href')!==null);
  await c.close();
  for(const href of report.whatsapp){const u=new URL(href);if(u.hostname==='wa.me')check('WhatsApp destination',u.pathname==='/34648189257'&&!!u.searchParams.get('text'));}

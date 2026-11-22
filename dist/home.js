@@ -1,18 +1,22 @@
 // Home enhancements. Without JavaScript every trip stays visible and linked;
-// these only add the rotating destination, level filters and the level quiz.
+// these only add the rotating destination, level filters, the level quiz, the
+// mobile bar timing and the photo-strip arrows.
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Hero: "¿Te vienes a surfear?" rotates through published destinations.
+// Hero: "¿Te vienes a surfear?" goes once through the published destinations
+// and stops back on "surfear?". The word box has a fixed height, so nothing moves.
 const rot = document.querySelector('.hp-rot[data-words]');
 if (rot && !reduceMotion) {
   let words = [];
   try { words = JSON.parse(rot.dataset.words); } catch { words = []; }
-  const sequence = [rot.textContent.trim(), ...words];
+  const original = rot.textContent.trim();
+  const sequence = [original, ...words, original];
   let index = 0;
-  if (sequence.length > 1) setInterval(() => {
+  const timer = sequence.length > 2 ? setInterval(() => {
     if (document.hidden) return;
     const current = rot.lastElementChild;
-    index = (index + 1) % sequence.length;
+    index += 1;
+    if (index >= sequence.length - 1) clearInterval(timer);
     const next = document.createElement('span');
     next.textContent = sequence[index];
     next.className = 'is-in';
@@ -20,7 +24,16 @@ if (rot && !reduceMotion) {
     next.getBoundingClientRect();
     setTimeout(() => { current.className = 'is-out'; next.className = ''; }, 20);
     setTimeout(() => current.remove(), 700);
-  }, 2400);
+  }, 2400) : null;
+}
+
+// Mobile: the fixed bar repeats the hero buttons, so it appears only once the
+// hero has scrolled away. Without JavaScript (or IntersectionObserver) it stays.
+const hero = document.querySelector('.hp-hero');
+if (hero && document.querySelector('.hp-bar') && 'IntersectionObserver' in window) {
+  document.body.classList.add('hp-bar-watch');
+  // The top margin leaves out the strip of hero hidden under the fixed header.
+  new IntersectionObserver(([entry]) => document.body.classList.toggle('hp-bar-on', !entry.isIntersecting), {rootMargin: '-96px 0px 0px 0px'}).observe(hero);
 }
 
 // Trips: level filters, slide counter and dots on the mobile rail.
@@ -58,6 +71,24 @@ export function filterTrips(value) {
 chips.forEach(chip => chip.addEventListener('click', () => filterTrips(chip.dataset.filter)));
 rail?.addEventListener('scroll', updatePosition, {passive: true});
 drawDots();
+
+// "Así se vive un viaje": previous/next buttons for the photo strip (shown from 760 px).
+const strip = document.querySelector('.hp-strip');
+const stripNav = document.querySelector('[data-strip-nav]');
+if (strip && stripNav) {
+  const buttons = [...stripNav.querySelectorAll('[data-strip]')];
+  const step = () => (strip.querySelector('figure')?.getBoundingClientRect().width ?? strip.clientWidth) + parseFloat(getComputedStyle(strip).columnGap || 0);
+  const update = () => {
+    const max = strip.scrollWidth - strip.clientWidth - 2;
+    buttons[0].disabled = strip.scrollLeft <= 2;
+    buttons[1].disabled = strip.scrollLeft >= max;
+  };
+  buttons.forEach(button => button.addEventListener('click', () => strip.scrollBy({left: Number(button.dataset.strip) * step(), behavior: reduceMotion ? 'auto' : 'smooth'})));
+  strip.addEventListener('scroll', update, {passive: true});
+  addEventListener('resize', update);
+  stripNav.hidden = false;
+  update();
+}
 
 // Levels: a three-question orientation that highlights a level and filters trips.
 const quiz = document.querySelector('[data-quiz]');

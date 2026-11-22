@@ -25,24 +25,18 @@ export function practicalDetails(trip) {
     if (transfers.length) parts.push(join(transfers));
     details.push({title: 'Cómo llegar y moverte', text: join(parts)});
   }
-  const meals = inc.filter(item => /pensión|desayuno|comidas|cenas/i.test(item));
-  const extraMeals = exc.filter(item => /comidas|cenas|bebidas/i.test(item));
-  if (meals.length || extraMeals.length) details.push({title: 'Las comidas, claras desde el principio', text: join([...meals, ...(extraMeals.length ? ['Por tu cuenta: ' + extraMeals.join('; ')] : [])])});
-  const equipment = inc.filter(item => /material|neopreno/i.test(item));
-  const extraEquipment = exc.filter(item => /material|tabla|shortboard|neopreno/i.test(item));
-  if (equipment.length || extraEquipment.length) details.push({title: 'Tabla, neopreno y material', text: join([...equipment, ...(extraEquipment.length ? ['Aparte del precio: ' + extraEquipment.join('; ')] : [])])});
-  else if (/surf|coaching/i.test(inc.join(' '))) details.push({title: 'Antes de hacer la maleta', text: 'Consulta con el equipo qué tabla y equipación necesitas para este viaje y qué opciones hay en destino.'});
+  // Meals and equipment are already listed, item by item, in «Qué incluye el precio»; repeating them here
+  // only made the page longer. The one exception is a trip whose lists say nothing about equipment.
+  const mentionsEquipment = [...inc, ...exc].some(item => /material|tabla|shortboard|neopreno/i.test(item));
+  if (!mentionsEquipment && /surf|coaching/i.test(inc.join(' '))) details.push({title: 'Tabla y material', text: 'Consulta con el equipo qué tabla y equipación necesitas para este viaje y qué opciones hay en destino.'});
+  // Insurance is compulsory for every participant (términos de participación, apartado 7).
   const schoolInsurance = inc.some(item => /seguro.*escuela|escuela.*seguro/i.test(item));
   const insuranceExcluded = exc.some(item => /seguro/i.test(item));
-  const discount = inc.some(item => /descuento.*seguro/i.test(item));
-  if (schoolInsurance || insuranceExcluded || discount) {
-    const parts = [];
-    if (schoolInsurance) parts.push('Las clases incluyen el seguro de la escuela local. Esa cobertura es distinta de un seguro de viaje.');
-    if (insuranceExcluded) parts.push('El seguro de viaje no está incluido y se contrata aparte.');
-    if (discount) parts.push('Hay un descuento para contratar seguro; consulta sus condiciones con el equipo.');
-    if (!insuranceExcluded && !schoolInsurance && discount) parts.push('Consulta qué cobertura necesitas: el descuento no equivale a una póliza incluida.');
-    details.push({title: 'El seguro para tu viaje', text: join(parts)});
-  }
+  const parts = ['El seguro de viaje es obligatorio: debe cubrir accidentes, asistencia médica y la práctica de surf, y en viajes internacionales también repatriación. Envía el justificante antes del inicio.'];
+  if (schoolInsurance) parts.push('Las clases incluyen el seguro de la escuela local, que no sustituye al seguro de viaje.');
+  if (insuranceExcluded) parts.push('No está incluido en el precio.');
+  parts.push('Con el enlace de LST tienes descuento en IATI Seguros.');
+  details.push({title: 'El seguro para tu viaje', text: join(parts)});
   return details;
 }
 

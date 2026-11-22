@@ -1,81 +1,108 @@
-/* Conócenos: fotos reales con su pie, una nota de Lucas y poco más.
+/* Conócenos (nov 2026). Portada en papel con la foto de Marruecos; la historia como una postal de
+   Lucas, con sello; el día de viaje en cuatro momentos; el equipo con la foto de Laga; respeto.
    Usa el sistema de la home (homepage.css); aquí solo lo propio de la página. */
 body.hp-page.about-page{padding-bottom:0}
 body.hp-page.about-page section[id]{scroll-margin-top:84px}
 
-/* Titulares de sección: Aura, tamaño contenido, sin antetítulos */
-body.hp-page .ab-h{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.9;font-size:clamp(44px,11vw,84px);text-wrap:balance}
+/* Cabecera en papel desde el principio: la portada ya no es una foto a sangre. */
+body.home-modern.hp-page.about-page .site-header,
+body.home-modern.hp-page.about-page .site-header:not(.is-scrolled):not(:has(nav.is-open)){background:var(--lst-paper);color:var(--lst-ink)}
+body.home-modern.hp-page.about-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-light{display:none}
+body.home-modern.hp-page.about-page .site-header:not(.is-scrolled):not(:has(nav.is-open)) .brand-dark{display:block}
 
-/* HERO */
-body.hp-page .ab-hero{padding-bottom:28px}
-body.hp-page.about-page .ab-hero .hp-hero-bg img{object-position:52% 40%}
-body.hp-page .ab-hero-in{padding-top:min(88vw,400px)}
-body.hp-page .ab-hero h1{position:relative;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;line-height:.84;letter-spacing:0;margin:.32em 0 0;font-size:clamp(66px,20vw,210px)}
+/* Titulares de sección: Aura, tamaño contenido, sin antetítulos */
+body.hp-page .ab-h{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.9;font-size:clamp(38px,8vw,56px);text-wrap:balance}
+
+/* PORTADA: título centrado, la ola dibujada y la foto entera debajo */
+body.hp-page .ab-hero{padding:calc(var(--home-header-height,78px) + 44px) 0 56px;background:var(--hp-paper);color:var(--hp-ink);text-align:center}
+body.hp-page .ab-hero h1{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;line-height:.86;letter-spacing:0;font-size:clamp(56px,16vw,84px)}
 body.hp-page .ab-h1-a,body.hp-page .ab-h1-b{display:block}
 body.hp-page .ab-h1-b{color:var(--hp-orange)}
-body.hp-page .ab-hero .hp-sub{max-width:34ch}
+body.hp-page .ab-swash{margin:8px auto 0}
+body.hp-page .ab-swash path{stroke:var(--hp-ink)}
+body.hp-page.about-page .ab-hero .hp-sub{max-width:36ch;margin:18px auto 0;color:var(--hp-ink)}
+body.hp-page .ab-hero-photo{margin:36px 0 0}
+body.hp-page.about-page .ab-hero-photo img{display:block;width:100%;height:auto;max-width:none;aspect-ratio:4/3;object-fit:cover;object-position:50% 40%;border-radius:4px}
+body.hp-page.about-page .ab-hero .hp-hero-cap{margin:10px 0 0;padding:0;color:var(--hp-muted);text-align:center}
 
 /* Fotos: encuadre completo, pie corto en texto normal */
 body.hp-page .ab-photo{margin:0}
-body.hp-page.about-page .ab-photo img{display:block;width:100%;height:auto;max-width:none;border-radius:6px}
+body.hp-page.about-page .ab-photo img{display:block;width:100%;height:auto;max-width:none;border-radius:4px}
 body.hp-page.about-page .ab-photo figcaption{margin-top:8px;font-size:14px;line-height:1.4;color:var(--hp-muted)}
 
-/* ORIGEN: la nota de Lucas */
-body.hp-page .ab-origin{padding-block:72px}
-body.hp-page .ab-origin-in{display:grid;gap:44px}
-body.hp-page .ab-letter{max-width:34em}
-body.hp-page .ab-letter .ab-h{margin-bottom:28px}
-body.hp-page.about-page .ab-letter p{margin:0 0 1em;font-size:20px;line-height:1.55}
-body.hp-page.about-page .ab-letter p.ab-sign{margin:32px 0 0;padding:0;border:0;display:block}
-body.hp-page.about-page .ab-sign .ab-sign-line{display:block;font-family:var(--hp-display);text-transform:uppercase;font-size:clamp(36px,9vw,56px);line-height:.9;color:var(--hp-orange)}
+/* ORIGEN: la postal de Lucas. Foto a un lado, troquel, el texto con su sello al otro. */
+body.hp-page .ab-origin{padding-block:56px 72px;background:var(--hp-paper-2)}
+body.hp-page .ab-postcard{display:grid;border-radius:4px;background:#fffdf5;color:var(--hp-ink);box-shadow:0 30px 60px -30px rgba(27,27,27,.45),0 0 0 1px rgba(27,27,27,.08)}
+body.hp-page .ab-postcard-photo{margin:0;padding:12px 12px 0}
+body.hp-page.about-page .ab-postcard-photo img{display:block;width:100%;height:auto;max-width:none;aspect-ratio:4/3;object-fit:cover;border-radius:2px}
+body.hp-page .ab-postcard-photo figcaption{margin-top:8px;font-size:13px;line-height:1.4;color:var(--hp-muted)}
+body.hp-page .ab-postcard-text{position:relative;margin:16px 12px 0;padding:24px 8px 28px;border-top:2px dashed var(--hp-rule)}
+body.hp-page .ab-stamp{position:absolute;top:20px;right:4px;display:grid;place-items:center;width:64px;height:76px;background:var(--hp-orange);transform:rotate(4deg);
+  -webkit-mask:radial-gradient(circle 3px at 3px 3px,transparent 98%,#000) -3px -3px/8px 8px;mask:radial-gradient(circle 3px at 3px 3px,transparent 98%,#000) -3px -3px/8px 8px;box-shadow:inset 0 0 0 5px #fffdf5}
+body.hp-page.about-page .ab-stamp img{width:38px;height:38px}
+body.hp-page .ab-postcard .ab-h{margin:0 76px 22px 0}
+body.hp-page.about-page .ab-postcard-text p{margin:0 0 1em;font-size:17px;line-height:1.55;max-width:38em}
+body.hp-page.about-page .ab-postcard-text p.ab-sign{margin:28px 0 0;padding:0;border:0;display:block}
+body.hp-page.about-page .ab-sign .ab-sign-line{display:block;font-family:var(--hp-display);text-transform:uppercase;font-size:clamp(28px,6vw,36px);line-height:.9;color:var(--hp-orange)}
 body.hp-page.about-page .ab-sign .ab-sign-who{display:block;margin-top:6px;font-size:18px;font-weight:600;color:var(--hp-ink)}
 
-/* ASÍ VIAJAMOS: un álbum, cada foto con su proporción */
-body.hp-page .ab-way{background:var(--hp-paper-2);padding-block:72px}
-body.hp-page .ab-way-head{display:grid;gap:18px;margin-bottom:36px}
-body.hp-page.about-page .ab-way-head p{margin:0;font-size:19px;line-height:1.5;max-width:40ch}
+/* ASÍ SON LOS DÍAS: cuatro momentos del día, en orden */
+body.hp-page .ab-way{padding-block:64px;background:var(--hp-paper)}
+body.hp-page .ab-way-head{display:grid;gap:16px;margin-bottom:32px;text-align:center;justify-items:center}
+body.hp-page.about-page .ab-way-head p{margin:0;font-size:17px;line-height:1.5;max-width:46ch}
 body.hp-page .ab-way-head a{color:inherit;text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:2px;text-underline-offset:4px}
-body.hp-page .ab-album{display:grid;gap:24px}
+body.hp-page .ab-day{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px;margin:0;padding:0;list-style:none}
+body.hp-page.about-page .ab-day img{aspect-ratio:4/5;object-fit:cover}
+body.hp-page.about-page .ab-day figcaption{margin-top:10px;font-size:13px}
+body.hp-page.about-page .ab-day figcaption strong{display:block;margin-bottom:4px;font-family:var(--hp-display);font-weight:400;font-size:24px;line-height:1;text-transform:uppercase;color:var(--hp-ink)}
 
-/* EQUIPO */
-body.hp-page .ab-team{padding-block:72px}
-body.hp-page .ab-team-in{display:grid;gap:36px}
-body.hp-page .ab-team-copy .ab-h{margin-bottom:24px}
-body.hp-page.about-page .ab-team-copy p{margin:0 0 1em;font-size:19px;line-height:1.5;max-width:38ch}
-body.hp-page .ab-team-copy .hp-btn{margin-top:12px}
+/* EQUIPO: la foto de Laga a lo ancho y tres ideas debajo */
+body.hp-page .ab-team{padding-block:64px;background:var(--hp-paper-2)}
+body.hp-page .ab-team .ab-h{text-align:center;margin-bottom:28px}
+body.hp-page.about-page .ab-team-photo img{aspect-ratio:4/3;object-fit:cover}
+body.hp-page .ab-team-points{display:grid;gap:0;margin-top:28px}
+body.hp-page.about-page .ab-team-points p{margin:0;padding:16px 0;border-top:2px solid var(--hp-ink);font-size:17px;line-height:1.5}
+body.hp-page.about-page .ab-team-cta{margin:24px 0 0;text-align:center}
 
 /* RESPETO: la foto del atardecer de fondo */
-body.hp-page .ab-respect{position:relative;isolation:isolate;overflow:hidden;background:var(--hp-ink);color:var(--hp-paper);padding-block:min(70vw,320px) 56px}
+body.hp-page .ab-respect{position:relative;isolation:isolate;overflow:hidden;background:var(--hp-ink);color:var(--hp-paper);padding-block:min(70vw,300px) 56px;text-align:center}
 body.hp-page.about-page .ab-respect-bg{position:absolute;inset:0;z-index:-1;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 40%}
 body.hp-page .ab-respect::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,21,19,.1) 0%,rgba(21,21,19,.55) 45%,rgba(21,21,19,.92) 100%)}
-body.hp-page.about-page .ab-respect p{margin:18px 0 0;font-size:19px;line-height:1.5;max-width:40ch;color:rgba(255,250,231,.9)}
+body.hp-page.about-page .ab-respect p{margin:16px auto 0;font-size:17px;line-height:1.5;max-width:44ch;color:rgba(255,250,231,.9)}
 
 /* CIERRE */
-body.hp-page .ab-next .hp-h2{font-size:clamp(52px,14vw,140px)}
-body.hp-page .ab-next p{margin:20px 0 0}
-body.hp-page .ab-next .hp-ctas{margin-top:28px}
-body.hp-page .ab-note{margin:16px 0 0;font-size:14px!important;color:rgba(255,250,231,.6)!important}
+body.hp-page .ab-next{text-align:center}
+body.hp-page .ab-next .hp-h2{font-size:clamp(44px,12vw,72px)}
+body.hp-page .ab-next p{margin:20px auto 0;max-width:44ch}
+body.hp-page .ab-next .hp-ctas{margin-top:28px;justify-content:center}
+body.hp-page .ab-note{margin:16px auto 0;font-size:14px!important;color:rgba(255,250,231,.6)!important}
 
 @media (min-width:720px){
-  body.hp-page .ab-hero-in{padding-top:220px}
-  body.hp-page .ab-album{grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 24px;align-items:start}
-  body.hp-page .ab-a-surf{grid-column:1/5}
-  body.hp-page .ab-a-walk{grid-column:5/7;grid-row:1/3}
-  body.hp-page .ab-a-skate{grid-column:1/3;grid-row:2}
-  body.hp-page .ab-a-stretch{grid-column:3/5;grid-row:2}
-  body.hp-page .ab-a-dunes{grid-column:1/7;grid-row:3}
-  body.hp-page .ab-team-in{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:center}
+  body.hp-page.about-page .ab-hero-photo img{aspect-ratio:21/9}
+  body.hp-page .ab-postcard{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);transform:rotate(-.6deg)}
+  body.hp-page .ab-postcard-photo{padding:16px}
+  body.hp-page.about-page .ab-postcard-photo img{height:calc(100% - 26px);aspect-ratio:auto;min-height:420px}
+  body.hp-page .ab-postcard-text{margin:16px 16px 16px 0;padding:28px 12px 28px 32px;border-top:0;border-left:2px dashed var(--hp-rule)}
+  body.hp-page .ab-stamp{top:24px;right:12px}
+  body.hp-page .ab-day{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  body.hp-page.about-page .ab-team-photo img{aspect-ratio:21/9}
+  body.hp-page .ab-team-points{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 32px}
 }
 @media (min-width:1000px){
-  body.hp-page .ab-hero{min-height:min(100vh,820px);display:flex;flex-direction:column;justify-content:flex-end}
-  body.hp-page.about-page .ab-hero .hp-hero-bg img{object-position:50% 45%}
-  body.hp-page .ab-hero-in{padding-top:260px;width:100%}
-  body.hp-page .ab-hero h1{font-size:clamp(110px,12vw,190px)}
-  body.hp-page .ab-origin{padding-block:104px}
-  body.hp-page .ab-origin-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:80px;align-items:center}
-  body.hp-page .ab-way,body.hp-page .ab-team{padding-block:104px}
-  body.hp-page .ab-way-head{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:end;margin-bottom:48px}
-  body.hp-page .ab-a-dunes{grid-column:2/7}
-  body.hp-page .ab-respect{padding-block:340px 88px}
-  body.hp-page .ab-respect::after{background:linear-gradient(90deg,rgba(21,21,19,.85) 0%,rgba(21,21,19,.45) 50%,rgba(21,21,19,0) 75%),linear-gradient(180deg,transparent 50%,rgba(21,21,19,.6) 100%)}
+  body.hp-page .ab-hero{padding-top:calc(var(--home-header-height,88px) + 64px)}
+  body.hp-page .ab-origin{padding-block:88px 104px}
+  body.hp-page .ab-way,body.hp-page .ab-team{padding-block:96px}
+  body.hp-page .ab-respect{padding-block:320px 88px}
+}
+
+/* Con texto al 200 %: las columnas pueden encoger y los botones parten línea */
+body.hp-page .ab-postcard>*{min-width:0}
+body.hp-page.about-page main .hp-btn{white-space:normal;text-align:center}
+@media (prefers-reduced-motion:reduce){body.hp-page .ab-postcard{transform:none}}
+/* Con el texto al 200 % los pies y el sello no empujan el ancho. */
+body.hp-page .ab-day li,body.hp-page .ab-day figure{min-width:0;overflow-wrap:anywhere}
+/* En móvil la postal empieza por el texto: al llegar a #origen se lee el título sin bajar. */
+@media (max-width:719px){
+  body.hp-page .ab-postcard-text{order:-1;margin:0 12px;padding:28px 8px 22px;border-top:0;border-bottom:2px dashed var(--hp-rule)}
+  body.hp-page .ab-postcard-photo{padding:16px 12px 14px}
 }

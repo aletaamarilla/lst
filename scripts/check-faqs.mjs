@@ -17,7 +17,8 @@ const links=['/viajes/','/niveles/','/conocenos/','/preguntas-frecuentes/'];
 const measure=page=>page.evaluate(()=>{
  const h=document.querySelector('.site-header'),b=h.getBoundingClientRect();
  const overflow=[...document.querySelectorAll('main *')].filter(e=>e.clientWidth&&e.scrollWidth>e.clientWidth+2).map(e=>({tag:e.tagName,cls:e.className,text:e.textContent.slice(0,50)}));
- return {scrollWidth:document.documentElement.scrollWidth,headerHeight:b.height,headerPosition:getComputedStyle(h).position,titleTop:document.querySelector('h1').getBoundingClientRect().top,overflow,fonts:{heading:getComputedStyle(document.querySelector('h1')).fontFamily,body:getComputedStyle(document.body).fontFamily,label:getComputedStyle(document.querySelector('.eyebrow')).fontFamily}};
+ const loaded=family=>[...document.fonts].some(f=>f.family.replace(/["']/g,'')===family&&f.status==='loaded');
+ return {scrollWidth:document.documentElement.scrollWidth,headerHeight:b.height,headerPosition:getComputedStyle(h).position,titleTop:document.querySelector('h1').getBoundingClientRect().top,overflow,fonts:{heading:getComputedStyle(document.querySelector('h1')).fontFamily,body:getComputedStyle(document.body).fontFamily,label:document.querySelector('.eyebrow')?getComputedStyle(document.querySelector('.eyebrow')).fontFamily:null,auraLoaded:loaded('Aura'),workSansLoaded:loaded('Work Sans'),auraFile:performance.getEntriesByType('resource').some(e=>new URL(e.name).pathname==='/assets/fonts/aura.woff2')}};
 });
 try{
  for(const width of [320,390,768,1024,1440])for(const mode of ['normal','text200','no-js']){
@@ -37,20 +38,26 @@ try{
   check(tag+' paper opening clears header',heroSpacing.copyTop>=heroSpacing.headerBottom,heroSpacing);
   check(tag+' masthead colours and logo',masthead.ink==='rgb(27, 27, 27)'&&masthead.paper==='rgb(255, 250, 231)'&&masthead.light==='none'&&masthead.dark==='block',masthead);
   check(tag+' opening uses typography without a repeated photo',await page.locator('.faq-hero img').count()===0);
-  check(tag+' useful category icons',await page.locator('.faq-topic-heading > svg[aria-hidden="true"]').count()===4);
-  check(tag+' retained fonts',geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&geometry.fonts.label.includes('Space Mono'));
+  // The redesign dropped the decorative topic icons: each topic is a plain text heading next to its questions.
+  check(tag+' four topics with text headings',await page.locator('.faq-topic > .faq-topic-in > .faq-topic-side > h2.faq-topic-title').count()===4&&await page.locator('.faq-index a').count()===4);
+  // Labels use the home system's Work Sans (--hp-mono); Space Mono is no longer part of the page.
+  check(tag+' retained fonts',geometry.fonts.heading.includes('Aura')&&geometry.fonts.body.includes('Work Sans')&&(geometry.fonts.label??'Work Sans').includes('Work Sans')&&geometry.fonts.auraLoaded&&geometry.fonts.workSansLoaded&&geometry.fonts.auraFile,geometry.fonts);
   await page.keyboard.press('Tab');check(tag+' skip-link first',await page.locator('.skip-link').evaluate(e=>e===document.activeElement));
   await page.keyboard.press('Enter');check(tag+' skip-link focuses main',await page.locator('main').evaluate(e=>e===document.activeElement));
   // Use native keyboard activation; neither app.js nor a custom accordion is involved.
-  const summaries=page.locator('.faq-answers summary');
-  for(let i=0;i<await summaries.count();i++){
+  const summaries=page.locator('.faq-answers summary'),questions=await summaries.count();
+  check(tag+' all questions present',questions===11,questions);
+  // Topics with a single question start open; the keyboard opens every other one.
+  for(let i=0;i<questions;i++){
+   if(await summaries.nth(i).evaluate(e=>e.parentElement.open))continue;
    await summaries.nth(i).focus();await page.keyboard.press(i%2?'Space':'Enter');
    check(tag+' keyboard opens answer '+i,await summaries.nth(i).evaluate(e=>e.parentElement.open));
   }
   check(tag+' answer links are visibly underlined',await page.locator('.faq-answers a').evaluateAll(es=>es.every(e=>getComputedStyle(e).textDecorationLine.includes('underline'))));
-  check(tag+' multiple answers stay open',await page.locator('.faq-answers details[open]').count()===8);
+  check(tag+' multiple answers stay open',await page.locator('.faq-answers details[open]').count()===questions);
+  check(tag+' open icon stays inside its question',await page.locator('.faq-answers details[open] summary > span').evaluateAll(es=>es.every(e=>{const s=e.parentElement.getBoundingClientRect(),r=e.getBoundingClientRect();return getComputedStyle(e).transform==='none'&&r.right<=s.right+1;})));
   const openGeometry=await measure(page);check(tag+' open answers do not overflow',openGeometry.scrollWidth<=width+1&&openGeometry.overflow.length===0,openGeometry.overflow);
-  await summaries.first().focus();await page.keyboard.press('Enter');check(tag+' independent close preserves others',await page.locator('.faq-answers details[open]').count()===7);
+  await summaries.first().focus();await page.keyboard.press('Enter');check(tag+' independent close preserves others',await page.locator('.faq-answers details[open]').count()===questions-1);
   for(const id of ['grupo','nivel','preparacion','reserva']){
    await page.locator(`.faq-index a[href="#${id}"]`).click();
    const position=await page.evaluate(id=>({header:document.querySelector('header').getBoundingClientRect().bottom,title:document.querySelector(`#${id}-title`).getBoundingClientRect().top}),id);

@@ -66,7 +66,10 @@ async function dates(page,context,tag,long=false){
  check(tag+' close visible after dates scroll',(await usable(close)).ok,await usable(close));
  await page.keyboard.press('Tab');check(tag+' dates Tab wraps to close',await close.evaluate(e=>document.activeElement===e));
  for(let i=0;i<count;i++){
-  await page.keyboard.press('Tab');check(tag+` date ${i+1} keyboard order`,await links.nth(i).evaluate(e=>document.activeElement===e));
+  // Each date also has its «Programa y condiciones» toggles, so Tab may stop there first; it must never skip to a later date.
+  let reached=false,skipped=false;
+  for(let step=0;step<5&&!reached&&!skipped;step++){await page.keyboard.press('Tab');reached=await links.nth(i).evaluate(e=>document.activeElement===e);skipped=!reached&&await links.evaluateAll((all,i)=>all.slice(i+1).includes(document.activeElement),i);}
+  check(tag+` date ${i+1} keyboard order`,reached&&!skipped,{reached,skipped});
   check(tag+` date ${i+1} keyboard visible`,(await usable(links.nth(i))).ok,await usable(links.nth(i)));
  }
  const selected=long?[0,7,15]:[0,1];
@@ -100,7 +103,7 @@ try{
      await page.goto(`${baseURL}/viajes/${slug}/`);await page.evaluate(()=>document.fonts.ready);
      check(tag+' no horizontal overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
      const opener=page.locator('[data-photo="0"]');await opener.scrollIntoViewIfNeeded();await page.waitForTimeout(70);
-     const reading=await page.evaluate(()=>scrollY);const normal=await opener.locator('img').boundingBox();await opener.click();await page.waitForTimeout(60);
+     const reading=await page.evaluate(()=>scrollY);const normal=await opener.locator('img.trip-cover-image').boundingBox();await opener.click();await page.waitForTimeout(60);
      const close=page.locator('.photo-close'),prev=page.locator('[data-photo-prev]'),next=page.locator('[data-photo-next]'),count=await page.locator('.photo-slide').count();
      check(tag+' photo initial focus',await close.evaluate(e=>document.activeElement===e));
      check(tag+' photo beginning',await prev.isDisabled()&&await page.locator('.photo-counter').innerText()===`1 / ${count}`);
@@ -137,8 +140,8 @@ try{
      await page.locator('[data-open-gallery]').click();await settledPhoto(page,0);await close.click();await page.waitForTimeout(70);check(tag+' cover photo focus restored',await page.locator('[data-open-gallery]').evaluate(e=>document.activeElement===e));
      if(width<1000&&motion==='no-preference'){
       await page.locator('[data-photo="0"]').scrollIntoViewIfNeeded();
-      await swipe(page,page.locator('.gallery-track'));
-      check(tag+' page gallery native horizontal swipe',await page.locator('.gallery-track').evaluate(e=>e.scrollLeft>10)&&await page.locator('.photo-dialog').evaluate(e=>!e.open));
+      await swipe(page,page.locator('.cover-carousel-track'));
+      check(tag+' page gallery native horizontal swipe',await page.locator('.cover-carousel-track').evaluate(e=>e.scrollLeft>10)&&await page.locator('.photo-dialog').evaluate(e=>!e.open));
      }
      if(slug==='qa-multiple')await dates(page,context,tag);
      else{

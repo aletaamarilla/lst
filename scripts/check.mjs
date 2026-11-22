@@ -9,6 +9,8 @@ import {renderCatalog} from './render-catalog.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
 import {renderHomeTrips} from './render-home-trips.mjs';
 import {legalRoutes} from './legal.mjs';
+import {applyStructuredData} from './structured-data.mjs';
+import {llmsTxt} from './llms.mjs';
 import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
 const site=siteConfig();
 const root=path.resolve(process.argv.find(a=>a.startsWith('--dir='))?.slice(6)??'dist');
@@ -29,7 +31,7 @@ for(const [file,render] of [['index.html',renderHomeTrips],['viajes/index.html',
  const current=await readFile(path.join(root,file),'utf8');
  if(render(current,trips)!==current)errors.push(`Generated view out of date: ${file}`);
 }
-for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');if(current!==applySiteMeta(renderTrip(t,trips),pageMeta(`/viajes/${slug}/`,trips,site),site))errors.push(`Trip page out of date: ${slug}`);}
+for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const current=await readFile(path.join(root,'viajes',slug,'index.html'),'utf8');const route=`/viajes/${slug}/`,meta=pageMeta(route,trips,site);if(current!==applyStructuredData(applySiteMeta(renderTrip(t,trips),meta,site),route,trips,site,{public:meta.canonical===route}))errors.push(`Trip page out of date: ${slug}`);}
 for(const t of trips)for(const slug of [t.slug,...(t.aliases??[])]){const file=path.join(root,'inscripciones',slug,'index.html');const html=await readFile(file,'utf8');if(html!==applySiteMeta(renderRegistration(t,slug),pageMeta(`/inscripciones/${slug}/`,trips,site),site))errors.push(`Registration page out of date: ${slug}`);if(registrationDepartures(t).length&&!html.includes(`action="${brevoConfig.action}"`))errors.push(`Brevo endpoint missing: ${slug}`);}
 async function walk(dir){const files=[];for(const e of await readdir(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())files.push(...await walk(p));else files.push(p);}return files;}
 const files=await walk(root);
@@ -43,6 +45,11 @@ for(const file of files.filter(f=>f.endsWith('.html'))){
  for(const route of legalRoutes)if(!html.includes(`href="${route}"`))errors.push(`Missing legal link ${route}: ${file}`);
  if(site.indexable&&html.includes('[PENDIENTE'))errors.push(`Pending legal text cannot be published as indexable: ${file}`);
  if(applySiteMeta(html,pageMeta(routeOf(path.relative(root,file)),trips,site),site)!==html)errors.push(`Robots/canonical out of date for this deployment: ${file}`);
+ {const route=routeOf(path.relative(root,file)),meta=pageMeta(route,trips,site),ld=/<script type="application\/ld\+json">([\s\S]*?)<\/script>/.exec(html);
+  if(meta.canonical===route){if(!ld)errors.push(`Missing structured data: ${file}`);else{try{const data=JSON.parse(ld[1]);if(!data['@graph']?.some(n=>n['@type']==='Organization'))errors.push(`Structured data without organization: ${file}`);}catch{errors.push(`Invalid structured data: ${file}`);}}if(!/<meta property="og:image" content="https:/.test(html))errors.push(`Missing og:image: ${file}`);
+   // Hand-written pages only (trip names come from the CMS): longer texts are cut in search results.
+   if(!/^\/viajes\/[^/]+\/$/.test(route)){const pageTitle=/<title>([^<]*)<\/title>/.exec(html)?.[1]??'',pageDescription=/<meta name="description" content="([^"]*)"/.exec(html)?.[1]??'';if(pageTitle.length>60)errors.push(`Title over 60 characters (${pageTitle.length}): ${file}`);if(pageDescription.length>160)errors.push(`Description over 160 characters (${pageDescription.length}): ${file}`);}}
+  else if(ld)errors.push(`Structured data on a non-canonical page: ${file}`);}
  if((!file.startsWith(path.join(root,'inscripciones')+path.sep)&&/<form\b|type="email"/.test(html))||/mailto:|data-details=/.test(html))errors.push(`Legacy form or modal trip action: ${file}`);
  const contacts=[...html.matchAll(/data-whatsapp="([^"]+)" href="([^"]+)"/g)];
  if(!contacts.length)errors.push(`Missing contact: ${file}`);
@@ -62,7 +69,7 @@ for(const [file,{html,ids}] of pages){
 for(const file of files.filter(f=>f.endsWith('.css'))){const css=await readFile(file,'utf8');for(const m of css.matchAll(/url\(['"]?([^)'" ]+)/g)){if(m[1].startsWith('/'))try{await access(path.join(root,m[1]));}catch{errors.push(`Missing CSS asset ${m[1]}`)}}}
 // Crawler files must describe exactly the pages of this deployment.
 const publicRoutes=[...pages.keys()].map(file=>routeOf(path.relative(root,file)));
-for(const [name,expected] of [['robots.txt',robotsTxt(site)],['sitemap.xml',sitemapXml(publicRoutes,trips,site)]]){
+for(const [name,expected] of [['robots.txt',robotsTxt(site)],['sitemap.xml',sitemapXml(publicRoutes,trips,site)],['llms.txt',site.indexable?llmsTxt(trips,site):null]]){
  const current=await readFile(path.join(root,name),'utf8').catch(()=>null);
  if(current!==expected)errors.push(`${name} missing or out of date for this deployment`);
 }
@@ -76,7 +83,7 @@ if(guide){
  if(!guide.html.includes('<!-- level-guide:start -->'))errors.push('Missing level guide generation markers');
  for(const level of [1,2,3,4,5])if(!guide.ids.has(`nivel-${level}`)||!guide.html.includes(`href="#nivel-${level}"`))errors.push(`Missing direct level navigation: nivel-${level}`);
  for(const sub of ['1-1','1-2','1-3','2-1','2-2','2-3','3-1','3-2','3-3','4-1','4-2','4-3'])if(!guide.ids.has(`subnivel-${sub}`))errors.push(`Missing sublevel ${sub}`);
- for(const anchor of ['test','orientacion','viajes-por-nivel'])if(!guide.ids.has(anchor))errors.push(`Missing level guidance section ${anchor}`);
+ for(const anchor of ['test','orientacion'])if(!guide.ids.has(anchor))errors.push(`Missing level guidance section ${anchor}`);
  if(/Rookies|Aprendices|Supercracks/.test(guide.html))errors.push('Level guide must use the current level names');
  if(!guide.html.includes('href="/viajes/"'))errors.push('Level guide must link to the catalog');
  for(const level of [1,2,3,4])if(!guide.html.includes(`href="/viajes/?nivel=${level}"`))errors.push(`Missing catalog entry for level ${level}`);
@@ -122,7 +129,7 @@ if(faq){
  for(const id of ['grupo','nivel','preparacion','reserva'])if(!faq.ids.has(id))errors.push(`Missing FAQ topic ${id}`);
  if(/<details[^>]*\bname=/.test(faq.html))errors.push('FAQs must allow multiple open answers');
  if(!faq.html.includes('El mensaje inicia una consulta.'))errors.push('FAQ must distinguish enquiry from confirmation');
- if([...faq.html.matchAll(/<script\b[^>]*src="([^"]+)"/g)].some(m=>m[1]!=='/app.js'))errors.push('FAQ must not need additional JavaScript');
+ if([...faq.html.matchAll(/<script\b[^>]*src="([^"]+)"/g)].some(m=>!['/app.js','/analytics.js'].includes(m[1])))errors.push('FAQ must not need additional JavaScript');
 }
 for(const route of ['/niveles/','/conocenos/','/viajes/','/preguntas-frecuentes/']){
  const html=pages.get(path.join(root,route,'index.html'))?.html??'';

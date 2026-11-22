@@ -14,14 +14,17 @@ test('every generated footer links to the legal pages', () => {
     for (const route of legalRoutes) assert.ok(html.includes(`href="${route}"`), route);
 });
 
-test('registration asks for consent without changing the Brevo payload', () => {
+test('registration asks for the consents in the client terms; only the optional ones reach Brevo', () => {
   const html = renderRegistration(trip);
   const boxes = [...html.matchAll(/<input type="checkbox"[^>]*>/g)].map(m => m[0]);
-  assert.equal(boxes.length, 2);
-  for (const box of boxes) assert.doesNotMatch(box, /\bname=/);
+  assert.equal(boxes.length, 4);
   assert.match(boxes[0], /data-consent="privacy" required/);
   assert.match(boxes[1], /data-consent="health">/); // Required by registration.js only when health details are given.
-  assert.ok(html.indexOf('data-consent="privacy"') < html.indexOf('type="submit"'));
+  for (const box of boxes.slice(0, 2)) assert.doesNotMatch(box, /\bname=/);
+  assert.match(boxes[2], /data-consent="image" name="CONSENTIMIENTO_IMAGEN" value="1">/);
+  assert.match(boxes[3], /data-consent="marketing" name="OPT_IN" value="1">/);
+  for (const box of boxes.slice(2)) assert.doesNotMatch(box, /required|checked/);
+  assert.ok(html.indexOf('data-consent="marketing"') < html.indexOf('type="submit"'));
   assert.match(html, /href="\/privacidad\/" target="_blank"/);
 });
 

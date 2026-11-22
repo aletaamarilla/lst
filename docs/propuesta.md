@@ -205,3 +205,24 @@ Una apertura breve sitúa las dudas generales y remite a la ficha cuando la resp
 Los ocho desplegables permiten varias respuestas abiertas. El cierre «¿Te queda alguna duda?» ofrece consulta por WhatsApp y recuerda que la plaza se confirma con el equipo. La home conserva tres preguntas y enlaza a todas. Se unifica la cabecera de las páginas nuevas con cuatro destinos de navegación, conservando la experiencia y la reserva en home/pie y una alternativa nativa sin JavaScript. El catálogo concurrente de Viajes se integra sin duplicarlo.
 
 [Texto respaldado, selección, capturas y validación](qa/2026-10-13-faqs/README.md).
+
+
+## Escala y portadas más contenidas · 21/11/2026
+
+La home deja de partir el hero: la foto del grupo ocupa el fondo anclada a la derecha y se funde en tinta por la izquierda, donde va el texto, así no tapa ninguna cara. La opinión de Laura pasa de una banda de pantalla completa con botón a una franja de una línea con una postal pequeña; las salidas aparecen en el primer desplazamiento.
+
+En la ficha, la portada baja a 380–540 px en escritorio y el nombre del viaje a 88 px como máximo (antes 240). Bajo el título queda una fila con fecha y noches, nivel, grupo y lugar; los cuatro destacados se retiran porque «Qué incluye» llega justo después. El menú de secciones ocupa todo el ancho con pestañas cortas y la tarjeta de reserva empieza debajo, así ya no se solapan; el fundido lateral solo aparece si alguna pestaña no cabe. «¿Por qué …?» es una entradilla de cuatro líneas con dos polaroids pequeñas.
+
+Escala común: títulos de sección de 56 px como máximo, nombres en tarjetas de 24–44 px, texto de 15–17 px y secciones con 56–64 px de relleno vertical. Conócenos, FAQs y el catálogo heredan los títulos de sección más pequeños.
+
+Segunda vuelta del mismo día. Sin píldoras: botones rectos con el texto en Aura (como el nombre de un billete), etiquetas y controles a 2 px y tarjetas a 4 px. La home pierde el botón de WhatsApp del hero y la franja de la opinión; el filtro por nivel son cuatro botones rectos (dos por dos en móvil) y en móvil las salidas son una lista vertical de billetes apaisados, sin desplazamiento lateral. En la ficha, la portada queda con el nombre y su frase sobre la foto y flechas para pasar fotos con el ratón; los datos (fecha y noches, nivel, grupo, lugar) abren el contenido junto a la entradilla, sin título ni polaroids. Las pestañas son texto con subrayado naranja. «¿Es este tu viaje?» enseña los cuatro niveles con el dibujo a escala de la guía (persona, tabla y ola) y apaga los que no entran; «¿Te vienes?» deja la banda naranja y pasa a un cierre en papel con los tres pasos.
+
+Tercera vuelta. En la ficha, los datos van pegados bajo la portada y justo después «¿Por qué …?» en pequeño con la entradilla. El menú de secciones no se ve al entrar: aparece fijo arriba al pasar la portada. Con cinco fotos o más, la portada es un mosaico (una grande y cuatro pequeñas) para que se vea que hay más fotos; en móvil sigue el pase con miniaturas. En la home, los filtros recuperan la ola dibujada de cada nivel y su descripción, con el elegido en naranja.
+
+## Resto de páginas en el sistema de la home · 21/11/2026
+
+El formulario de inscripción deja su cabecera y su pie propios y usa los de toda la web. La portada lleva migas (Inicio / Viajes / destino / Inscripción) y el nombre del viaje a 84 px como mucho. El resumen lateral es la tarjeta de reserva de la ficha: nombre, precio grande, troquel con fecha y nivel, y los tres pasos siguientes. Los campos, las opciones y los botones son rectos (2 px), con etiquetas en Work Sans y botones en Aura; la opción elegida se pinta en naranja como el filtro de la home. Sin píldoras, sin Space Mono y sin flechas en los botones.
+
+Catálogo: portada a 84 px, meses a 56 px, nombres de viaje a 44 px, billetes a 4 px y el filtro por nivel de la home («Todos» a lo ancho y dos por dos en móvil; una fila fija en escritorio). La línea de meses de la portada ya no se desplaza de lado en móvil. Niveles: títulos en Aura mayúscula (84 px la portada y cada nivel, 56 px las secciones), botones rectos y sin el sello redondo ni la etiqueta «Niveles de surf». Conócenos y FAQs: portadas a 84 px, secciones a 56 px, cierres a 72 px y texto a 17 px; sin la etiqueta sobre el título. Legales: título en Aura mayúscula alineado con la columna de lectura y sin la pegatina naranja.
+
+La home también baja sus títulos de sección a 56 px: la regla `body.home-modern h2` de home.css ganaba a `.hp-h2` y los dejaba a 72. Ahora la regla es `body.hp-page .hp-h2`; los cierres («¿Te guardamos sitio?») siguen a 72 px, como en el resto de páginas.

@@ -29,7 +29,7 @@ test('the dock keeps a separate contextual WhatsApp action for open, multiple-da
 test('the surf programme goes directly to practical content without repeating gallery images',()=>{
  const before=structuredClone(morocco),html=renderTrip(morocco,trips);
  const plan=html.slice(html.indexOf('id="plan"'),html.indexOf('id="spots"')),copy=plan.replace(/<[^>]*>/g,'');
- assert(plan.includes('Plan de surf.'));assert(!plan.includes('<img'));assert(!plan.includes('data-photo='));
+ assert(plan.includes('Plan de surf</h2>'));assert(!plan.includes('<img'));assert(!plan.includes('data-photo='));
  assert(plan.includes('El orden y los horarios se adaptan al mar y al grupo.'));
  for(const [title,text] of morocco.surfPlan){assert(copy.includes(escape(title)));assert(copy.includes(escape(publicDetail(text))));}
  const services=plan.match(/<div class="surf-plan-grid">([\s\S]*)$/)[1];

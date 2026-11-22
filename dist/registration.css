@@ -1,243 +1,234 @@
-/* Inscripción con el sistema de la home y las fichas: portada en tinta con el nombre en Aura,
-   borde de ola, billete troquelado como resumen y un formulario de píldoras Space Mono. */
-@font-face{font-family:'Space Mono';src:url('/assets/fonts/space-mono-bold.woff2') format('woff2');font-weight:700;font-display:swap}
-.rg{
- --paper:#FFFAE7;--paper-2:#F3ECD2;--field:#FFFDF5;--ink:#151513;--orange:#EA5934;--sea:#0F4C51;--muted:#625E52;
- --rule:rgba(21,21,19,.16);--rule-strong:rgba(21,21,19,.32);--rule-dark:rgba(255,250,231,.2);
- --display:Aura,Impact,'Arial Narrow',sans-serif;--body:'Work Sans',Arial,sans-serif;--mono:'Space Mono',ui-monospace,monospace;
+/* Inscripción con el sistema de la home y de la ficha: la misma cabecera y pie, portada en tinta con el
+   nombre del viaje a la escala de la ficha, la tarjeta de reserva como resumen y un formulario de
+   controles rectos (2 px), etiquetas en Work Sans y botones en Aura. Sin píldoras ni Space Mono. */
+body.rg{
+ --field:#fffdf5;--rule:rgba(27,27,27,.16);--rule-strong:rgba(27,27,27,.34);--rule-dark:rgba(255,250,231,.2);
  --wave:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 28' preserveAspectRatio='none'%3E%3Cpath d='M0 28V14C30 2 60 2 90 12s60 14 90 4 45-14 60-2v14Z'/%3E%3C/svg%3E");
- --gutter:max(20px,calc((100% - 1180px)/2));
- margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 var(--body);overflow-x:clip
+ --gutter:max(20px,calc((100% - 1200px)/2));
+ padding-bottom:0;overflow-x:clip
 }
 .registration-document{scroll-behavior:auto}
-.rg :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
-.rg .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
-.rg [hidden],.rg .input--hidden{display:none!important}
-.rg a{color:inherit}
-
-/* Píldoras: el mismo botón que la home. */
-.rg .button,.rg .rg-whatsapp,.rg .registration-prev{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;border:0;border-radius:999px;font:700 14px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.04em;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s,color .15s,box-shadow .15s}
-.rg .button{background:var(--orange);color:var(--ink)}
-.rg .button:hover:not(:disabled){transform:translateY(-2px);background:var(--ink);color:var(--paper)}
-.rg .button:disabled{opacity:.55;cursor:default}
-.rg .registration-prev{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
-.rg .registration-prev:hover:not(:disabled){background:var(--ink);color:var(--paper)}
-.rg .rg-whatsapp{background:var(--ink);color:var(--paper)}
-.rg .rg-whatsapp:hover{background:var(--orange);color:var(--ink)}
-
-/* ---------- CABECERA Y PORTADA ---------- */
-.rg-header{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px var(--gutter);color:var(--paper)}
-.rg-header .brand{display:block;width:150px}
-.rg-header .brand img{display:block;width:100%;height:auto}
-.rg-back{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1.5px rgba(255,250,231,.5);font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.04em;text-decoration:none}
-.rg-back:hover{background:var(--paper);color:var(--ink)}
-
+body.rg :focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+body.rg .visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+body.rg [hidden],body.rg .input--hidden{display:none!important}
 .registration-shell{display:block;outline:0}
-.rg-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:var(--paper);padding:118px var(--gutter) 84px}
-.rg-hero-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:50% 40%;opacity:.55}
-.rg-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(21,21,19,.7) 0%,rgba(21,21,19,.25) 35%,rgba(21,21,19,.6) 70%,var(--ink) 100%)}
+
+/* ---------- PORTADA ---------- */
+.rg-hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:var(--paper);padding:calc(var(--home-header-height,88px) + 24px) var(--gutter) 72px}
+body.rg .rg-hero-photo{position:absolute;inset:0;z-index:-2;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 40%}
+.rg-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(27,27,27,.6) 0%,rgba(27,27,27,.3) 35%,rgba(27,27,27,.7) 75%,var(--ink) 100%)}
 .rg-hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:28px;background:var(--paper);-webkit-mask:var(--wave) 0 0/240px 28px repeat-x;mask:var(--wave) 0 0/240px 28px repeat-x}
-.rg-hero-inner{max-width:760px}
-.rg-kicker{display:inline-flex;gap:6px;margin:0 0 18px;padding:7px 12px;border-radius:999px;background:var(--orange);color:var(--ink);font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.04em}
-.rg-kicker span{opacity:.7}
-.rg-hero h1{margin:0;font:400 clamp(56px,calc((100vw - 48px) / (var(--rg-len,8) * .6)),168px)/.84 var(--display);text-transform:uppercase;letter-spacing:0;text-wrap:balance;overflow-wrap:normal;hyphens:none}
-.rg-swash{display:block;width:min(70%,460px);height:16px;margin:8px 0 0;overflow:visible}
+.rg-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;margin:0 0 8px;font:700 13px/1.5 var(--body);color:rgba(255,250,231,.92)}
+body.rg .rg-crumbs a{display:inline-flex;align-items:center;min-height:28px;text-underline-offset:4px}
+body.rg .rg-crumbs a:hover{text-decoration:underline}
+.rg-crumbs [aria-current]{color:var(--orange)}
+/* El nombre del viaje a la escala de la ficha (84 px como mucho); las palabras largas nunca se parten. */
+body.rg .rg-hero h1{margin:0;font:400 min(84px,13vw,calc((100vw - 40px) / (var(--rg-len,8) * .6)))/.88 var(--display);text-transform:uppercase;letter-spacing:0;text-wrap:balance;overflow-wrap:normal;hyphens:none}
+.rg-swash{display:block;width:min(60%,320px);height:14px;margin:6px 0 0;overflow:visible}
 .rg-swash path{fill:none;stroke:var(--orange);stroke-width:5;stroke-linecap:round;stroke-dasharray:900;animation:rg-draw .9s .25s ease-out both}
 @keyframes rg-draw{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}
-.rg-hero-lead{max-width:40ch;margin:22px 0 0;font-size:18px;line-height:1.5;color:rgba(255,250,231,.86)}
+body.rg .rg-hero-lead{max-width:42ch;margin:16px 0 0;font-size:18px;line-height:1.45;color:rgba(255,250,231,.88)}
 
 /* ---------- COLUMNAS ---------- */
-.registration-layout{display:grid;gap:28px;padding:36px var(--gutter) 72px}
-.registration-content{min-width:0}
+.registration-layout{display:grid;gap:24px;padding:28px var(--gutter) 64px}
+.registration-content,.registration-context{min-width:0}
 
-/* Billete: tinta, troquelado, como la tarjeta de reserva de la ficha. */
-.registration-context{min-width:0}
-.rg-ticket{position:relative;border-radius:22px;background:var(--ink);color:var(--paper);box-shadow:0 30px 60px -28px rgba(21,21,19,.75)}
-.rg-ticket-top{padding:22px 24px 16px}
-.rg-ticket-label{margin:0 0 6px;font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--orange)}
-.rg-ticket-trip{margin:0;font:400 44px/.9 var(--display);text-transform:uppercase}
-.rg-ticket-facts{position:relative;display:grid;grid-template-columns:1fr 1fr;margin:0;border-top:2px dashed rgba(255,250,231,.25)}
+/* Resumen: la tarjeta de reserva de la ficha (tinta, nombre, precio grande, troquel con la fecha). */
+.rg-ticket{position:relative;border-radius:4px;background:var(--ink);color:var(--paper);box-shadow:0 0 0 1px rgba(255,250,231,.18),0 30px 60px -28px rgba(27,27,27,.75)}
+.rg-ticket-top{padding:20px 24px 18px}
+body.rg .rg-ticket-trip{margin:0 0 10px;font:400 20px/1 var(--display);text-transform:uppercase}
+body.rg .rg-ticket-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;margin:0;line-height:.86}
+.rg-ticket-price strong{font:400 56px/.86 var(--display)}
+.rg-ticket-price small{font:700 13px/1.3 var(--body);color:rgba(255,250,231,.75)}
+.rg-ticket-price small:first-child{flex-basis:100%}
+.rg-ticket-price .rg-ticket-tbc{font:600 18px/1.3 var(--body)}
+.rg-ticket-facts{position:relative;display:grid;gap:12px;margin:0;padding:16px 24px 18px;border-top:2px dashed rgba(255,250,231,.25)}
 .rg-ticket-facts::before,.rg-ticket-facts::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--paper)}
-.rg-ticket-facts::before{left:-11px}.rg-ticket-facts::after{right:-11px}
-.rg-ticket-facts>div{min-width:0;padding:14px 24px 16px}
-.rg-ticket-facts>.rg-ticket-date{grid-column:1/-1;border-bottom:1px solid var(--rule-dark)}
-.rg-ticket-facts>div:last-child{border-left:1px solid var(--rule-dark)}
-.rg-ticket-facts dt{margin:0 0 4px;font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:rgba(255,250,231,.6)}
-.rg-ticket-facts dd{margin:0;font-size:16px;font-weight:600;line-height:1.3}
-.rg-ticket-facts dd small{display:block;font:700 10px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:rgba(255,250,231,.6)}
-.rg-ticket-date dd{font:400 30px/.95 var(--display);text-transform:uppercase}
-.rg-lvbar{display:flex;gap:3px;margin-top:8px}
-.rg-lvbar i{width:18px;height:6px;border-radius:3px;background:rgba(255,250,231,.2)}
-.rg-lvbar i.on{background:var(--orange)}
-.rg-ticket-next{counter-reset:next;display:grid;gap:10px;margin:0;padding:18px 24px 22px;list-style:none;border-top:2px dashed rgba(255,250,231,.25)}
-.rg-ticket-next li{counter-increment:next;display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start;font-size:14px;line-height:1.4;color:rgba(255,250,231,.82)}
-.rg-ticket-next li::before{content:counter(next);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:rgba(255,250,231,.12);color:var(--paper);font:700 12px var(--mono)}
-.rg-ticket-next li:first-child::before{background:var(--orange);color:var(--ink)}
+.rg-ticket-facts::before{left:-11px}
+.rg-ticket-facts::after{right:-11px}
+.rg-ticket-facts dt{margin:0 0 2px;font:600 13px/1.4 var(--body);color:rgba(255,250,231,.6)}
+.rg-ticket-facts dd{margin:0;font:600 16px/1.35 var(--body)}
+.rg-ticket-next{counter-reset:next;display:grid;gap:10px;margin:0;padding:16px 24px 20px;list-style:none;border-top:1px solid var(--rule-dark)}
+.rg-ticket-next li{counter-increment:next;display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:baseline;font-size:14px;line-height:1.4;color:rgba(255,250,231,.82)}
+.rg-ticket-next li::before{content:counter(next);font:400 22px/1 var(--display);color:var(--orange)}
 
-/* ---------- PROGRESO ---------- */
-.registration-progress{margin:0 0 30px;scroll-margin-top:16px}
+/* ---------- PROGRESO: cinco tramos, el actual en naranja ---------- */
+.registration-progress{margin:0 0 28px;scroll-margin-top:calc(var(--home-header-height,88px) + 16px)}
 .registration-progress ol{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:0;padding:0;list-style:none}
-.registration-progress button{display:flex;flex-direction:column;align-items:flex-start;gap:8px;width:100%;padding:0 0 4px;border:0;background:none;color:var(--muted);font:inherit;text-align:left;cursor:pointer}
-.registration-progress button::before{content:"";display:block;width:100%;height:6px;border-radius:3px;background:var(--rule)}
+.registration-progress button{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 6px;width:100%;min-height:44px;padding:0 0 4px;border:0;background:none;color:var(--muted);font:600 13px/1.3 var(--body);text-align:left;cursor:pointer}
+.registration-progress button::before{content:"";flex-basis:100%;height:4px;margin-bottom:6px;background:var(--rule)}
 .registration-progress button[data-complete]::before{background:var(--ink)}
 .registration-progress button[aria-current=step]::before{background:var(--orange)}
 .registration-progress button:disabled{cursor:default}
-.registration-progress-number{font:700 12px var(--mono);letter-spacing:.04em}
-.registration-progress-name{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.registration-progress-number{font:400 18px/1 var(--display)}
 .registration-progress button[aria-current=step],.registration-progress button[data-complete]{color:var(--ink)}
 .registration-progress button:not(:disabled):hover .registration-progress-name{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:4px}
 
 /* ---------- PASOS ---------- */
-.rg .registration-section:focus-visible,.rg .registration-shell:focus-visible,.rg .sib-form-message-panel:focus-visible{outline:0}
+body.rg .registration-section:focus-visible,body.rg .registration-shell:focus-visible,body.rg .sib-form-message-panel:focus-visible{outline:0}
 .registration-section+.registration-section{margin-top:56px}
 .registration-enhanced .registration-section+.registration-section{margin-top:0}
-.registration-step-count{display:inline-flex;gap:6px;margin:0 0 14px;font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--orange)}
-.registration-step-count span{color:var(--muted)}
-.registration-section h2{margin:0 0 14px;font:400 clamp(46px,9vw,88px)/.86 var(--display);text-transform:uppercase;letter-spacing:0;text-wrap:balance}
-.registration-step-intro{max-width:56ch;margin:0 0 30px;font-size:17px;line-height:1.5;color:var(--muted)}
+body.rg .registration-step-count{margin:0 0 8px;font:700 13px/1.4 var(--body);color:var(--orange-text)}
+.registration-step-count span{font-weight:600;color:var(--muted)}
+body.rg .registration-section h2{margin:0 0 10px;font:400 clamp(34px,6vw,44px)/.92 var(--display);text-transform:uppercase;letter-spacing:0;text-wrap:balance}
+body.rg .registration-step-intro{max-width:56ch;margin:0 0 28px;font-size:17px;line-height:1.5;color:var(--muted)}
 
 /* ---------- CAMPOS ---------- */
-.rg .sib-form-block{margin:0 0 22px;padding:0}
-.rg fieldset{min-width:0;margin:0 0 26px;padding:0;border:0}
+body.rg .sib-form-block{margin:0 0 20px;padding:0}
+body.rg fieldset{min-width:0;margin:0 0 24px;padding:0;border:0}
 .registration-grid{display:grid;gap:0 16px}
-.rg .entry__label,.rg legend{display:block;margin:0 0 8px;padding:0;font:700 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
-.rg legend{margin-bottom:12px}
-.rg .entry__label>span{color:var(--muted);text-transform:none;letter-spacing:0;font-weight:400;font-family:var(--body);font-size:13px}
-.rg .entry__field{display:flex;align-items:stretch;min-height:56px;border-radius:14px;background:var(--field);box-shadow:inset 0 0 0 2px var(--rule);transition:box-shadow .15s}
-.rg .entry__field:focus-within{box-shadow:inset 0 0 0 2px var(--ink),0 0 0 4px rgba(234,89,52,.35)}
-.rg .entry__field:has([aria-invalid=true]){box-shadow:inset 0 0 0 2px var(--orange)}
-.rg input.input,.rg select.input{flex:1;min-width:0;width:100%;height:auto;margin:0;padding:15px 16px;border:0;border-radius:14px;background:transparent;color:var(--ink);font:500 17px/1.3 var(--body);outline:0;appearance:none}
-.rg input.input::placeholder{color:rgba(98,94,82,.65)}
-.rg .sib-sms-input select.input{flex:0 0 auto;width:auto;padding-right:30px;border-right:2px solid var(--rule);border-radius:14px 0 0 14px;font:700 14px var(--mono);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23151513' stroke-width='2'/%3E%3C/svg%3E") right 11px center/11px no-repeat}
-.rg .registration-help{margin:8px 0 0;font-size:14px;color:var(--muted)}
-.rg .registration-help a{font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--ink);text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:4px}
-.rg fieldset+.registration-help{margin:-14px 0 26px}
-.rg .entry__error:empty{display:none}
-.rg .entry__error:not(:empty){display:block;margin-top:8px;font:700 12px var(--mono);color:#B23A1C}
-.rg #registration-date-error{margin:-8px 0 20px;padding:12px 14px;border-radius:12px;background:rgba(234,89,52,.14);font-size:15px}
+body.rg .entry__label,body.rg legend{display:block;margin:0 0 8px;padding:0;font:600 15px/1.4 var(--body);color:var(--ink)}
+body.rg legend{margin-bottom:10px}
+body.rg .entry__label>span{font-weight:400;font-size:14px;color:var(--muted)}
+body.rg .entry__field{display:flex;align-items:stretch;min-height:52px;border-radius:2px;background:var(--field);box-shadow:inset 0 0 0 1.5px var(--rule-strong);transition:box-shadow .15s}
+body.rg .entry__field:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+body.rg .entry__field:focus-within{box-shadow:inset 0 0 0 2px var(--ink);outline:3px solid var(--orange);outline-offset:2px}
+body.rg .entry__field:has([aria-invalid=true]){box-shadow:inset 0 0 0 2px var(--orange-text)}
+body.rg input.input,body.rg select.input{flex:1;min-width:0;width:100%;height:auto;margin:0;padding:14px;border:0;border-radius:2px;background:transparent;color:var(--ink);font:500 17px/1.3 var(--body);outline:0;appearance:none}
+body.rg input.input::placeholder{color:rgba(97,94,84,.7)}
+body.rg .sib-sms-input select.input{flex:0 0 auto;width:auto;padding-right:30px;border-right:1.5px solid var(--rule-strong);border-radius:2px 0 0 2px;font:600 15px var(--body);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231b1b1b' stroke-width='2'/%3E%3C/svg%3E") right 11px center/11px no-repeat}
+body.rg .registration-help{margin:8px 0 0;font-size:14px;color:var(--muted)}
+body.rg .registration-help a{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:4px}
+body.rg fieldset+.registration-help{margin:-12px 0 24px}
+body.rg .entry__error:empty{display:none}
+body.rg .entry__error:not(:empty){display:block;margin-top:8px;font:600 14px/1.4 var(--body);color:var(--orange-text)}
+body.rg #registration-date-error{margin:-8px 0 20px;padding:12px 14px;border-radius:2px;background:rgba(234,89,52,.14);font-size:15px}
 
-/* Opciones: píldoras que se rellenan de tinta al elegirlas. */
+/* Opciones: bloques rectos; la elegida se pinta en naranja, como el filtro de niveles de la home. */
 .registration-choices{display:flex;flex-wrap:wrap;gap:8px}
-.rg .entry__choice{margin:0}
-.rg .entry__choice label{position:relative;display:flex;align-items:center;gap:10px;min-height:50px;padding:12px 18px 12px 14px;border-radius:999px;background:var(--field);box-shadow:inset 0 0 0 2px var(--rule);font-size:16px;font-weight:500;line-height:1.3;cursor:pointer;transition:background .15s,color .15s,box-shadow .15s}
-.rg .entry__choice label:hover{box-shadow:inset 0 0 0 2px var(--ink)}
-.rg .entry__choice input[type=radio]{flex:none;display:grid;place-items:center;width:20px;height:20px;margin:0;border-radius:50%;border:2px solid var(--rule-strong);background:transparent;appearance:none;cursor:pointer}
-.rg .entry__choice input[type=radio]::after{content:"";width:8px;height:8px;border-radius:50%;background:transparent}
-.rg .entry__choice label:has(input:checked){background:var(--ink);color:var(--paper);box-shadow:none}
-.rg .entry__choice input[type=radio]:checked{border-color:var(--orange);background:var(--orange)}
-.rg .entry__choice input[type=radio]:checked::after{background:var(--ink)}
-.rg .entry__choice label:has(input:focus-visible){outline:3px solid var(--orange);outline-offset:3px}
-.rg .entry__choice input:focus-visible{outline:0}
-.registration-sizes .entry__choice label{justify-content:center;min-width:64px;padding-inline:14px;font:700 15px var(--mono)}
+body.rg .entry__choice{margin:0}
+body.rg .entry__choice label{position:relative;display:flex;align-items:center;gap:10px;min-height:48px;padding:12px 16px 12px 14px;border-radius:2px;background:var(--field);box-shadow:inset 0 0 0 1.5px var(--rule-strong);font-size:16px;font-weight:500;line-height:1.3;cursor:pointer;transition:background .15s,box-shadow .15s}
+body.rg .entry__choice label:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+body.rg .entry__choice input[type=radio]{flex:none;display:grid;place-items:center;width:18px;height:18px;margin:0;border-radius:50%;border:2px solid var(--ink);background:transparent;appearance:none;cursor:pointer}
+body.rg .entry__choice input[type=radio]::after{content:"";width:8px;height:8px;border-radius:50%;background:transparent}
+body.rg .entry__choice label:has(input:checked){background:var(--orange);box-shadow:inset 0 0 0 1.5px var(--ink)}
+body.rg .entry__choice input[type=radio]:checked::after{background:var(--ink)}
+body.rg .entry__choice label:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+body.rg .entry__choice input:focus-visible{outline:0}
+/* Tallas: cuatro casillas con la letra en Aura. */
+.registration-sizes .registration-choices{display:grid;grid-template-columns:repeat(4,minmax(0,72px))}
+body.rg .registration-sizes .entry__choice label{justify-content:center;padding-inline:10px;font:400 22px/1 var(--display)}
 .registration-sizes .entry__choice input[type=radio]{position:absolute;opacity:0;pointer-events:none}
-.rg fieldset:has(input[name=NIVEL_SURF]) .registration-choices{display:grid;gap:8px}
-.rg fieldset:has(input[name=NIVEL_SURF]) .entry__choice label{border-radius:16px}
+body.rg fieldset:has(input[name=NIVEL_SURF]) .registration-choices{display:grid;gap:8px}
 
-/* Fecha: un billete pequeño que se despliega. */
-.registration-date-picker{margin:0 0 26px;border-radius:18px;background:var(--paper-2);box-shadow:inset 0 0 0 2px var(--rule)}
-.registration-date-picker>summary{display:grid;grid-template-columns:1fr auto;align-items:center;gap:4px 12px;padding:16px 18px;list-style:none;cursor:pointer}
+/* Fecha: un billete. La salida elegida en Aura con su precio y un botón cuadrado («Cambiar»), como
+   «Ver viaje» en la próxima salida de la home; al abrirlo, un troquel y las fechas como bloques rectos.
+   Con una sola fecha no hay nada que elegir: se muestra fija, sin botón ni desplegable. */
+.registration-date-picker{margin:0 0 28px;border-radius:2px;background:var(--field);box-shadow:inset 0 0 0 2px var(--ink)}
+.registration-date-picker>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"label action" "date action" "fare action";align-items:center;gap:2px 16px;padding:16px 18px 16px;list-style:none;cursor:pointer}
 .registration-date-picker>summary::-webkit-details-marker{display:none}
-.registration-date-picker>summary>span:first-child{grid-column:1/-1;font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--orange)}
-.registration-date-picker>summary>strong{font:400 30px/.95 var(--display);text-transform:uppercase}
-.selected-date-fare{grid-column:1;justify-self:start;padding:4px 10px;border-radius:999px;background:var(--ink);color:var(--paper);font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.04em}
+.registration-date-picker>summary>span:first-child{grid-area:label;font:700 13px/1.4 var(--body);color:var(--orange-text)}
+.registration-date-picker>summary>strong{grid-area:date;margin-top:2px;font:400 clamp(24px,6vw,30px)/.95 var(--display);text-transform:uppercase;text-wrap:balance}
+.selected-date-fare{grid-area:fare;margin-top:4px;font:600 14px/1.4 var(--body);color:var(--muted)}
 .selected-date-fare:empty{display:none}
-.date-picker-action{grid-column:2;grid-row:2/span 2;align-self:center;padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 2px var(--ink);font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.04em}
-.registration-date-picker>summary:hover .date-picker-action{background:var(--ink);color:var(--paper)}
+.date-picker-action{grid-area:action;align-self:center;display:inline-flex;align-items:center;min-height:44px;padding:4px 14px 0;border-radius:2px;background:var(--ink);color:var(--paper);font:400 17px/1 var(--display);text-transform:uppercase;letter-spacing:.02em;transition:box-shadow .15s}
+.registration-date-picker>summary:hover .date-picker-action{box-shadow:inset 0 -4px 0 var(--orange)}
 .registration-date-picker[open]>summary{border-bottom:2px dashed var(--rule-strong)}
-.registration-date-picker .registration-dates{margin:0;padding:16px 18px 6px}
+.registration-date-picker[open] .date-picker-action{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+body.rg .registration-date-picker .registration-dates{margin:0;padding:16px 18px 18px}
+body.rg .registration-date-picker legend{margin:0 0 10px;font-size:14px;color:var(--muted)}
 .registration-date-picker #registration-date-error{margin:0 18px 16px}
+.registration-date-picker.is-single>summary{cursor:default}
+.registration-date-picker.is-single:has(input:checked)>summary{pointer-events:none;border-bottom:0}
+.registration-date-picker.is-single:has(input:checked) :is(.date-picker-action,.registration-dates){display:none}
 .registration-dates .registration-choices{display:grid;gap:8px}
-.registration-dates .entry__choice label{border-radius:16px;padding-block:12px}
+body.rg .registration-dates .entry__choice label{min-height:56px;box-shadow:inset 0 0 0 2px var(--rule-strong)}
+body.rg .registration-dates .entry__choice label:has(input:checked){box-shadow:inset 0 0 0 2px var(--ink)}
 .registration-dates .entry__choice label>span{display:grid;gap:2px}
 .registration-dates strong{font-weight:700}
-.registration-dates small{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.04em;opacity:.7}
+.registration-dates small{font:500 14px var(--body);opacity:.8}
 
 /* Consentimiento. */
-.registration-consent{margin-top:34px!important;padding:22px!important;border-radius:18px!important;background:var(--paper-2)!important}
+body.rg .registration-consent{margin-top:32px;padding:20px 22px;border-radius:4px;background:var(--paper-2)}
 .registration-consent-option{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;margin:0 0 14px;font-size:15px;line-height:1.45;cursor:pointer}
 .registration-consent-option input{width:22px;height:22px;margin:0;accent-color:var(--ink)}
-.registration-consent-option a{text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
-.registration-consent-info{margin:4px 0 0;padding-top:14px;border-top:1px solid var(--rule);font-size:13px;line-height:1.5;color:var(--muted)}
+body.rg .registration-consent a{text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:3px}
+.registration-consent-info{margin:4px 0 0;padding-top:14px;border-top:1px solid var(--rule);font-size:14px;line-height:1.5;color:var(--muted)}
 
 /* ---------- NAVEGACIÓN ---------- */
-.registration-navigation{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:24px;border-top:2px dashed var(--rule-strong)}
+.registration-navigation{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:24px;border-top:1.5px solid var(--rule)}
 .registration-navigation .registration-next,.registration-navigation .registration-submit{margin-left:auto}
-.registration-submit .button{min-width:240px}
-.registration-submit-note{margin:24px 0 0;padding:14px 16px;border-radius:14px;background:rgba(15,76,81,.08);font-size:14px;line-height:1.5;color:var(--sea)}
-.registration-required-note{margin:18px 0 0;font:700 11px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+body.rg .registration-navigation .hp-btn{min-height:52px;padding-inline:26px}
+body.rg .registration-navigation .hp-btn:disabled{opacity:.55;cursor:default}
+body.rg .registration-submit .hp-btn{min-width:240px}
+body.rg .registration-submit-note{margin:24px 0 0;padding:14px 16px;border-radius:2px;background:rgba(15,76,81,.08);font-size:15px;line-height:1.5;color:var(--sea)}
+body.rg .registration-required-note{margin:16px 0 0;font-size:14px;color:var(--muted)}
 
 /* ---------- MENSAJES ---------- */
-.rg .sib-form-message-panel{display:none;margin:0 0 24px;outline:0}
-.rg .sib-form-message-panel--active{display:block}
-.rg #error-message{padding:16px 18px;border-radius:14px;background:rgba(234,89,52,.16);box-shadow:inset 0 0 0 2px var(--orange);font-size:15px}
-.rg #success-message{position:relative;overflow:hidden;padding:32px 26px 30px;border-radius:24px;background:var(--orange);color:var(--ink)}
-.rg #success-message .eyebrow{margin:0 0 14px;font:700 12px var(--mono);letter-spacing:.06em;color:var(--ink)}
-.rg #success-message h2{margin:0 0 16px;font:400 clamp(46px,8vw,80px)/.86 var(--display);text-transform:uppercase}
-.rg #success-message>span{display:block;max-width:48ch;margin:0 0 24px;font-size:17px}
-.rg #success-message .button{background:var(--ink);color:var(--paper)}
-.rg #success-message .button:hover{background:var(--paper);color:var(--ink)}
+body.rg .sib-form-message-panel{display:none;margin:0 0 24px;outline:0}
+body.rg .sib-form-message-panel--active{display:block}
+body.rg #error-message{padding:16px 18px;border-radius:2px;background:rgba(234,89,52,.16);box-shadow:inset 0 0 0 2px var(--orange);font-size:15px}
+body.rg #success-message{padding:32px 28px;border-radius:4px;background:var(--orange);color:var(--ink)}
+body.rg #success-message h2{margin:0 0 14px;font:400 clamp(36px,6vw,56px)/.9 var(--display);text-transform:uppercase}
+body.rg #success-message>span{display:block;max-width:48ch;margin:0;font-size:17px}
+body.rg .rg-signature{margin:18px 0 22px;font:400 22px/1 var(--display);text-transform:uppercase}
+.registration-unavailable{padding:28px 26px;border-radius:4px;background:var(--ink);color:var(--paper)}
+body.rg .registration-unavailable h2{margin:0 0 12px;font:400 clamp(34px,6vw,48px)/.92 var(--display);text-transform:uppercase;color:var(--orange)}
+body.rg .registration-unavailable p{margin:0 0 22px;color:rgba(255,250,231,.85)}
 
-.registration-unavailable{padding:28px 24px;border-radius:24px;background:var(--ink);color:var(--paper)}
-.registration-unavailable h2{margin:0 0 14px;font:400 clamp(44px,8vw,76px)/.86 var(--display);text-transform:uppercase;color:var(--orange)}
-.registration-unavailable p{margin:0 0 22px;color:rgba(255,250,231,.85)}
-.registration-unavailable .rg-whatsapp{background:var(--orange);color:var(--ink)}
-.registration-unavailable .rg-whatsapp:hover{background:var(--paper)}
-
-/* ---------- AYUDA Y PIE ---------- */
-.registration-support{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:44px var(--gutter) 48px;background:var(--sea);color:var(--paper)}
+/* ---------- AYUDA: banda mar con borde de ola ---------- */
+.registration-support{position:relative;padding:48px var(--gutter) 56px;background:var(--sea);color:var(--paper)}
 .registration-support::before{content:"";position:absolute;left:0;right:0;top:-27px;height:28px;background:var(--sea);-webkit-mask:var(--wave) 0 0/240px 28px repeat-x;mask:var(--wave) 0 0/240px 28px repeat-x}
-.registration-support p{margin:0;max-width:48ch;font-size:17px;color:rgba(255,250,231,.85)}
-.registration-support strong{display:block;margin-bottom:6px;font:400 clamp(34px,6vw,52px)/.9 var(--display);text-transform:uppercase;color:var(--paper)}
-.registration-support .rg-whatsapp{background:var(--orange);color:var(--ink)}
-.registration-support .rg-whatsapp:hover{background:var(--paper)}
-.registration-footer{display:grid;gap:18px;padding:36px var(--gutter) calc(32px + env(safe-area-inset-bottom));background:var(--ink);color:rgba(255,250,231,.75);font:700 12px var(--mono);text-transform:uppercase;letter-spacing:.04em}
-.registration-footer .brand{width:150px}
-.registration-footer .brand img{display:block;width:100%;height:auto}
-.registration-footer div,.registration-footer .footer-legal{display:flex;flex-wrap:wrap;gap:8px 20px}
-.registration-footer a{text-decoration:none}
-.registration-footer a:hover{color:var(--orange)}
-.registration-footer p{margin:0;opacity:.6}
+.rg-support-in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 40px}
+body.rg .registration-support h2{margin:0;font:400 clamp(34px,6vw,48px)/.92 var(--display);text-transform:uppercase;text-wrap:balance}
+body.rg .registration-support p{margin:10px 0 0;max-width:44ch;font-size:17px;color:rgba(255,250,231,.88)}
 
 /* ---------- MÓVIL ---------- */
-@media(max-width:799px){
- .rg-header{padding-block:16px}
- .rg-header .brand{width:124px}
- .rg-hero{padding-top:92px;padding-bottom:64px}
- .rg-hero-lead{font-size:16px}
- .registration-layout{padding-top:20px}
- .rg-ticket-top{padding:18px 20px 14px}
- .rg-ticket-trip{font-size:32px}
- .rg-ticket-facts>div{padding:12px 20px 14px}
- .rg-ticket-date dd{font-size:26px}
+@media(max-width:999px){
+ .rg-hero{padding-bottom:60px}
+ body.rg .rg-hero-lead{font-size:16px}
+ .rg-ticket-top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 16px;padding:18px 20px 16px}
+ body.rg .rg-ticket-trip{margin:0;flex-basis:100%}
+ .rg-ticket-price strong{font-size:44px}
+ .rg-ticket-facts{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:12px 16px;padding:14px 20px 16px}
  .rg-ticket-next{display:none}
+}
+@media(max-width:799px){
  .registration-progress ol{gap:4px}
+ /* En móvil solo los números: el nombre del paso ya está en «Paso 1 de 5 / Tu viaje». */
  .registration-progress-name{display:none}
- .registration-progress button[aria-current=step] .registration-progress-name{display:block;white-space:nowrap}
- .registration-progress li:has([aria-current=step]){grid-column:span 1}
- .registration-navigation{position:sticky;bottom:0;z-index:4;margin-inline:-20px;padding:14px 20px calc(14px + env(safe-area-inset-bottom));background:var(--paper);border-top:2px dashed var(--rule-strong)}
- .registration-navigation .button,.registration-navigation .registration-prev{min-height:50px;padding-inline:18px}
- .registration-navigation .registration-next,.registration-submit,.registration-submit .button{flex:1;min-width:0}
- .registration-support{padding-top:36px}
+ .registration-navigation{position:sticky;bottom:0;z-index:4;margin-inline:-20px;padding:12px 20px calc(12px + env(safe-area-inset-bottom));background:var(--paper);border-top:1.5px solid var(--rule)}
+ body.rg .registration-navigation .hp-btn{min-height:50px;padding-inline:18px}
+ /* The buttons share the row but never shrink below their longest word: with larger text they wrap onto their own line. */
+ .registration-navigation .registration-next,.registration-submit{flex:1}
+ .registration-submit{display:flex}
+ body.rg .registration-submit .hp-btn{flex:1;min-width:0}
+ .registration-support{padding-top:40px}
 }
 @media(max-width:479px){
- .rg-back{padding:8px 12px;font-size:11px}
  .registration-contact-grid{grid-template-columns:1fr}
 }
 @media(min-width:560px){
  .registration-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .rg fieldset:has(input[name=NIVEL_SURF]) .registration-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
- .registration-contact-grid .sib-sms-field{grid-column:span 1}
+ body.rg fieldset:has(input[name=NIVEL_SURF]) .registration-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(min-width:1000px){
- .registration-layout{grid-template-columns:minmax(0,1fr) 360px;gap:72px;padding-top:48px;padding-bottom:96px}
- .registration-context{order:2;margin-top:-140px;z-index:3}
- .rg-ticket{position:sticky;top:24px}
+ .registration-layout{grid-template-columns:minmax(0,1fr) 360px;gap:64px;padding-top:44px;padding-bottom:88px}
+ .registration-context{order:2;margin-top:-168px;z-index:3}
+ .rg-ticket{position:sticky;top:calc(var(--home-header-height,88px) + 16px)}
  .registration-content{max-width:720px}
- .rg-hero{padding-bottom:110px}
- .rg-hero-inner{max-width:calc(100% - 420px)}
- .registration-enhanced .registration-section{min-height:520px}
+ .rg-hero{padding-bottom:88px}
+ .rg-hero-inner{max-width:calc(100% - 424px)}
+ .registration-enhanced .registration-section{min-height:500px}
 }
 @media(prefers-reduced-motion:reduce){
  .rg-swash path{animation:none}
- .rg .button,.rg .entry__choice label{transition:none}
+ body.rg .entry__choice label,body.rg .entry__field{transition:none}
+}
+
+/* La regla antigua «details[open] summary>span{rotate(45deg)}» de styles.css giraba «Tu fecha», el precio y
+   «Cambiar» al abrir el selector («al click en ver fecha se descuadra todo»). Aquí nada gira. */
+body.rg .registration-date-picker>summary>span{transform:none}
+
+/* Móvil: la portada centrada, como la home y la ficha del viaje. */
+@media(max-width:719px){
+ .rg-hero-inner{text-align:center}
+ .rg-crumbs{justify-content:center}
+ .rg-swash{margin-inline:auto}
+ body.rg .rg-hero-lead{margin-inline:auto}
+ .rg-ticket-top{justify-content:center;text-align:center}
+ body.rg .rg-ticket-price{justify-content:center}
+ .rg-ticket-facts{text-align:center}
+ .rg-support-in{justify-content:center;text-align:center}
+ body.rg .registration-support p{margin-inline:auto}
 }

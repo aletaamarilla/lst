@@ -302,34 +302,14 @@
       "slug": "hossegor",
       "name": "Hossegor",
       "place": "Landas · Francia",
-      "state": "confirmed",
-      "availability": "available",
+      "state": "upcoming",
+      "availability": "enquiry",
       "levels": [
         2,
         3
       ],
       "levelRequirement": "Independencia en el agua: remontar solo, coger olas sin empuje e ir por la pared. Revisión individual de solicitud.",
-      "departures": [
-        {
-          "id": "hossegor-2026-11-20",
-          "date": "20 nov 2026 — 22 nov 2026",
-          "start": "2026-11-20",
-          "end": "2026-11-22",
-          "duration": "2 noches",
-          "price": 399,
-          "state": "confirmed",
-          "dossier": "https://cdn.sanity.io/files/q5bj2rn2/production/43061e730eef28c167ef8029233ecba7745bbba0.pdf",
-          "availability": "available",
-          "capacity": {
-            "total": 6,
-            "available": null
-          },
-          "payment": {
-            "depositAmount": 200,
-            "terms": "Señal fija de 200 € al confirmar. Resto: Antes del viaje. El equipo te indicará los pasos para formalizar la reserva."
-          }
-        }
-      ],
+      "departures": [],
       "hero": "https://cdn.sanity.io/images/q5bj2rn2/production/a5fd08cab9db37c64f81fea5022e4b26f04885dc-6000x4000.jpg",
       "heroAlt": "Grupo de LST con su bandera entre los árboles en Francia, 2024.",
       "heroPosition": "50% 50%",

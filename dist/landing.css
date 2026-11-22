@@ -18,21 +18,21 @@ body.landing-page .landing-hero-photo img{position:absolute;inset:0;z-index:-2;w
 body.landing-page .landing-hero .eyebrow{margin-bottom:18px}
 body.landing-page .landing-hero h1{max-width:760px;font:400 clamp(60px,15.3vw,78px)/.98 var(--lst-display);letter-spacing:-.012em;text-wrap:balance}
 body.landing-page .landing-hero-description{max-width:340px;margin-top:20px;font-size:15px;line-height:1.65}
-body.landing-page .landing-hero-link{display:inline-flex;align-items:center;gap:18px;min-height:44px;margin-top:20px;font-size:13px;font-weight:500;text-decoration:underline;text-underline-offset:6px}
-.landing-hero-link span{font-size:20px;color:var(--lst-orange)}
+
+
 body.landing-page .landing-hero a:focus-visible{outline-color:var(--lst-paper)}
 body.landing-page :is(section[id],.faq-topic){scroll-margin-top:calc(var(--landing-header-height,78px) + 20px)}
-.landing-contact{padding-block:48px;background:var(--lst-ink);color:var(--lst-paper)}
-.landing-contact-layout{display:grid;gap:24px}
-body.landing-page .landing-contact h2{max-width:600px;margin-top:14px;font-size:44px;line-height:1.04}
-.landing-contact-copy>p:first-child{max-width:460px;font-size:15px;line-height:1.75}
-.landing-contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
-body.landing-page .landing-contact .lst-button{justify-content:center;max-width:100%;min-height:48px;padding:13px 20px;background:var(--lst-orange);border-color:var(--lst-orange);color:var(--lst-ink);font-size:14px}
-body.landing-page .landing-contact .lst-button:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
-body.landing-page .landing-contact .lst-link{min-height:48px;border-color:rgba(255,250,231,.5);color:var(--lst-paper);font-size:14px}
-body.landing-page .landing-contact .lst-link:hover{background:var(--lst-paper);border-color:var(--lst-paper);color:var(--lst-ink)}
-body.landing-page .landing-contact .landing-contact-note{margin-top:16px;font-size:13px;line-height:1.7;color:#ded9c8}
-body.landing-page .landing-contact :is(a,button):focus-visible{outline-color:var(--lst-paper)}
+
+
+
+
+
+
+
+
+
+
+
 /* Static navigation remains visible and usable when scripting is unavailable. */
 body.landing-page:has(.static-navigation) .site-header{position:sticky;top:0;background:var(--lst-paper);color:var(--lst-ink);border-bottom:1px solid var(--lst-line)}
 body.landing-page:has(.static-navigation) .site-header .brand-light{display:none}
@@ -46,14 +46,13 @@ body.landing-page:has(.static-navigation) .site-header :is(a,button):focus-visib
  body.landing-page .landing-hero-description{max-width:430px;font-size:17px}
  body.landing-page .eyebrow{font-size:11px}
  .landing-hero-photo figcaption{left:auto;right:max(32px,calc((100% - 1224px)/2));bottom:22px;font-size:11px}
- .landing-contact{padding-block:64px}
- .landing-contact-layout{grid-template-columns:1fr 1fr;gap:64px;align-items:center}
- body.landing-page .landing-contact h2{font-size:60px}
+ 
+ 
+ 
 }
 
 body.landing-page .site-header .lst-header-trip,body.landing-page .site-header nav .lst-nav-trip,body.landing-page .site-header .lst-header-trip:hover,body.landing-page .site-header nav .lst-nav-trip:hover{color:inherit}
 
 @media(min-width:1000px){html:has(.landing-page){--landing-header-height:var(--home-header-height,88px)}}
-
 /* Ink protects the orange lettering while keeping the photographic opening. */
 body.landing-page .landing-hero h1 em{font-style:normal;color:var(--lst-orange);background:var(--lst-ink);padding:0 .07em .02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}

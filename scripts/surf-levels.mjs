@@ -10,6 +10,18 @@ export const SURF_LEVELS = Object.freeze([
 ]);
 
 export const levelName = n => SURF_LEVELS[n - 1]?.name;
+// «y» becomes «e» before a word starting with an /i/ sound (Iniciación, Intermedio).
+const and = next => (/^[iI]/.test(next) ? 'e' : 'y');
+/** Trip levels in words: «Iniciación y Base», «Base e Intermedio», «Base a Avanzado». */
+export function levelNames(levels) {
+  const sorted = [...new Set(levels)].sort((a, b) => a - b);
+  if (!sorted.length || sorted.length === 4) return 'Todos los niveles';
+  const names = sorted.map(levelName);
+  const consecutive = sorted.every((level, i) => !i || level === sorted[i - 1] + 1);
+  if (names.length === 1) return names[0];
+  if (consecutive && names.length > 2) return `${names[0]} a ${names.at(-1)}`;
+  return `${names.slice(0, -1).join(', ')} ${and(names.at(-1))} ${names.at(-1)}`;
+}
 /** «Nivel 2 · Base» */
 export const levelTitle = n => `Nivel ${n} · ${levelName(n)}`;
 /** Registration choices: «2 · Base — Leer la ola y moverse por la pared» */
@@ -71,59 +83,98 @@ export function testResult(answers) {
 
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const subId = code => 'subnivel-' + code.replace('.', '-');
-// The same growing waves as the home's level list.
-const WAVES = [
-  'M0 52 C 20 48, 40 50, 60 48 S 100 46, 120 50 V60 H0Z',
-  'M0 54 C 24 52, 44 36, 66 34 C 82 33, 90 44, 100 50 S 116 54, 120 54 V60 H0Z',
-  'M0 56 C 22 54, 38 24, 62 18 C 82 13, 94 22, 90 32 C 88 40, 98 50, 120 56 V60 H0Z',
-  'M0 58 C 16 56, 28 12, 56 5 C 80 0, 100 8, 98 22 C 96 32, 82 31, 84 23 C 86 17, 94 20, 93 26 C 96 42, 108 54, 120 58 V60 H0Z',
-];
-const list = items => `<ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
 
-function step(s) {
+// What each level looks and feels like, for the guide's chapters.
+// waveM: top of the usual wave in metres; boardFt: a typical board; nose 1 = round, 0 = pointed.
+const CHAPTERS = {
+  1: {hook: 'La primera de pie no se olvida.', photo: '/assets/home/cantabria-sesion.webp', w: 900, h: 600, pos: '50% 60%', alt: 'Un grupo practica la puesta en pie sobre tablas blandas en la arena',
+    waveTitle: 'Olas por la cintura, como mucho', waveNote: 'Empiezas en la espuma y acabas cogiendo olas verdes de hasta 0,8 m.',
+    boardTitle: 'Una tabla blanda, más alta que tú', boardNote: 'Soft de 6\'6" a 9\'. Cuanto más volumen, más fácil.', waveM: 0.8, boardFt: 8.5, boardW: 0.6, nose: 1},
+  2: {hook: 'Empieza a dibujar tu línea.', photo: '/assets/surf-session.webp', w: 1600, h: 1066, pos: '60% 60%', alt: 'Una surfista recorre la pared de una ola junto a la costa',
+    waveTitle: 'De la rodilla al pecho', waveNote: 'Olas de 0,5 a 1,2 m en las que ya recorres la pared.',
+    boardTitle: 'De fibra, cada vez más corta', boardNote: 'Empiezas con una grande y bajas hasta una que puedas hundir (de 9\' a 5\'10").', waveM: 1.2, boardFt: 7.3, boardW: 0.54, nose: 0.75},
+  3: {hook: 'Cada giro tiene intención.', photo: '/assets/el-salvador.webp', w: 1000, h: 600, pos: '62% 45%', alt: 'Un surfista hace un giro sobre una ola en El Salvador',
+    waveTitle: 'Del pecho a la cabeza', waveNote: 'Olas de 1 a 1,8 m, sin ayuda y eligiendo tú el pico.',
+    boardTitle: 'Una que puedas hundir', boardNote: 'Más o menos de tu altura: de 5\'6" a 7\'6".', waveM: 1.8, boardFt: 6.4, boardW: 0.5, nose: 0.45},
+  4: {hook: 'El detalle cambia la ola.', photo: 'https://cdn.sanity.io/images/q5bj2rn2/production/38e9a54e13339cbff15a5cc4ada439843a55c289-2048x1366.jpg?w=1800&fit=max&auto=format', w: 2048, h: 1366, pos: '50% 48%', alt: 'Un surfista gira sobre una ola en una fotografía del archivo de Senegal',
+    waveTitle: 'De la cabeza para arriba', waveNote: 'Desde 1,5 m y en cualquier condición, también en reef y point.',
+    boardTitle: 'Corta, y otras según el día', boardNote: 'De 5\'4" a 6\'4", con step-up, twin o midlength cuando toca.', waveM: 2.3, boardFt: 5.9, boardW: 0.46, nose: 0.15},
+};
+
+// A person (1,70 m), their usual board and their usual wave, to scale.
+function figure(n) {
+  const c = CHAPTERS[n], G = 236, px = 80; // 80 px per metre
+  const h = c.waveM * px, L = c.boardFt * 0.3048 * px, r = c.boardW * px / 2, k = c.nose, bx = 58, top = G - L;
+  const wave = `M0 ${G} L0 ${G - h * .3} C 40 ${G - h * .34}, 96 ${G - h * .72}, 150 ${G - h * .96} C 186 ${G - h * 1.1}, 222 ${G - h * .92}, 220 ${G - h * .7} C 218 ${G - h * .56}, 204 ${G - h * .56}, 206 ${G - h * .68} C 226 ${G - h * .48}, 236 ${G - h * .24}, 240 ${G - h * .2} L240 ${G} Z`;
+  const board = `M${bx} ${top} C ${bx + r * k} ${top} ${bx + r} ${top + L * .16} ${bx + r} ${top + L * .42} L ${bx + r} ${G - L * .1} C ${bx + r} ${G - 3} ${bx + r * .45} ${G} ${bx} ${G} C ${bx - r * .45} ${G} ${bx - r} ${G - 3} ${bx - r} ${G - L * .1} L ${bx - r} ${top + L * .42} C ${bx - r} ${top + L * .16} ${bx - r * k} ${top} ${bx} ${top} Z`;
+  const p = 160, s = G - 136; // person: centre x, top of head
+  const person = `<circle cx="${p}" cy="${s + 11}" r="11"/><path d="M${p - 13} ${s + 27} h26 a7 7 0 0 1 7 7 v38 a4 4 0 0 1 -8 0 v-30 h-2 v94 h-9 v-56 h-2 v56 h-9 v-94 h-2 v30 a4 4 0 0 1 -8 0 v-38 a7 7 0 0 1 7 -7z"/>`;
+  return `<svg class="lv-figure" viewBox="0 0 240 244" role="img" aria-label="Una persona de 1,70 m junto a su tabla y a una ola de ${String(c.waveM).replace('.', ',')} m"><path class="lv-figure-wave" d="${wave}"/><path class="lv-figure-board" d="${board}"/><line class="lv-figure-stringer" x1="${bx}" y1="${top + 6}" x2="${bx}" y2="${G - 6}"/><g class="lv-figure-person">${person}</g><line class="lv-figure-ground" x1="0" y1="${G + 1}" x2="240" y2="${G + 1}"/></svg>`;
+}
+
+/** Trip pages reuse the guide's to-scale drawing and its wave in surfer words («Del pecho a la cabeza»). */
+export const levelFigure = n => (CHAPTERS[n] ? figure(n) : '');
+export const levelWave = n => CHAPTERS[n]?.waveTitle ?? '';
+
+const list = items => `<ul>${items.map(item => `<li>${esc(item)}</li>`).join('')}</ul>`;
+// Each step is one line (number and name); what it means opens underneath.
+function step(s, i) {
   return `<li class="lv-step"><details class="lv-sub" id="${subId(s.c)}" data-sub="${s.c}">
-<summary><span class="lv-sub-title">${esc(s.t)}</span><span class="lv-sub-desc">${esc(s.d)}</span></summary>
+<summary><span class="lv-sub-n" aria-hidden="true">${i + 1}</span><span class="lv-sub-title">${esc(s.t)}</span><span class="lv-sub-toggle" aria-hidden="true"></span></summary>
 <div class="lv-sub-body">
-<div class="lv-gap"><div class="lv-can"><h4>Ya lo haces si…</h4>${list(s.can)}</div><div class="lv-cant"><h4>${s.cant.length > 1 ? 'Te falta para el siguiente paso' : 'Y después'}</h4>${list(s.cant)}</div></div>
-<p class="lv-board"><strong>Tabla: ${esc(s.b[0])}.</strong> ${esc(s.b[1])}</p>
-<p class="lv-foot">En clase trabajamos: ${esc(s.work.replace(/\.$/, '').replace(/^./, c => c.toLowerCase()))}. Errores típicos: ${esc(s.err.replaceAll(' · ', ', ').replace(/^./, c => c.toLowerCase()))}.</p>
+<p class="lv-sub-desc">${esc(s.d)}</p>
+<div class="lv-can"><h4>Ya lo haces si…</h4>${list(s.can)}</div>
+<div class="lv-cant"><h4>${s.cant.length > 1 ? 'Te falta' : 'Y después'}</h4>${list(s.cant)}</div>
+<p class="lv-board"><strong>Tabla:</strong> ${esc(s.b[0])}. ${esc(s.b[1])}</p>
+<p class="lv-foot"><strong>En clase:</strong> ${esc(s.work)} <strong>Ojo con:</strong> ${esc(s.err.replaceAll(' · ', ', ').replace(/^./, c => c.toLowerCase()))}.</p>
 <button class="lv-choose" type="button" data-choose="${s.c}" hidden>Este es mi nivel</button>
 </div>
 </details></li>`;
 }
 
-function levelSection(level) {
-  const subs = SUBLEVELS.filter(s => s.c.startsWith(level.n + '.'));
-  return `<section class="lv-level" id="nivel-${level.n}" data-level-panel="${level.n}" aria-labelledby="nivel-${level.n}-title" tabindex="-1">
-<header class="lv-level-head"><h3 id="nivel-${level.n}-title">${esc(level.name)}</h3><p class="lv-level-tag">${esc(level.tag)}.</p>
-<dl class="lv-level-facts"><div><dt>Olas</dt><dd>${esc(level.wave)}</dd></div><div><dt>Tabla</dt><dd>${esc(level.board)}</dd></div></dl></header>
-<ol class="lv-path">${subs.map(step).join('\n')}</ol>
-<p class="lv-level-trips"><a href="/viajes/?nivel=${level.n}">Ver viajes para ${esc(level.name)}</a></p>
+function chapter(level, rows = '') {
+  const c = CHAPTERS[level.n], subs = SUBLEVELS.filter(s => s.c.startsWith(level.n + '.'));
+  const next = SURF_LEVELS[level.n];
+  const goal = next ? `<div class="lv-fact lv-fact--goal"><h4>Para pasar a ${esc(next.name)}</h4>${list(subs.at(-1).cant)}</div>`
+    : `<div class="lv-fact lv-fact--goal"><h4>Y después</h4><p>Es la cima técnica: progresar a tu aire o probar la competición.</p></div>`;
+  return `<section class="lv-chapter lv-chapter--${level.n}" id="nivel-${level.n}" aria-labelledby="nivel-${level.n}-title" tabindex="-1">
+<header class="lv-cover"><img src="${esc(c.photo)}" width="${c.w}" height="${c.h}" alt="${esc(c.alt)}" ${level.n === 1 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async" style="object-position:${c.pos}">
+<div class="lv-cover-text section-width"><p class="lv-cover-level">Nivel ${level.n}</p><h3 id="nivel-${level.n}-title">${esc(level.name)}</h3><p class="lv-cover-hook">${esc(c.hook)}</p></div></header>
+<div class="lv-chapter-body section-width">
+<div class="lv-facts">${figure(level.n)}
+<div class="lv-fact"><h4>Tu ola</h4><p class="lv-fact-big">${esc(c.waveTitle)}</p><p>${esc(c.waveNote)}</p></div>
+<div class="lv-fact"><h4>Tu tabla</h4><p class="lv-fact-big">${esc(c.boardTitle)}</p><p>${esc(c.boardNote)}</p></div>
+${goal}</div>
+<div class="lv-steps-head"><h4>Los tres pasos de ${esc(level.name)}</h4></div>
+<ol class="lv-steps">${subs.map(step).join('\n')}</ol>
+<div class="lv-chapter-trips" data-level-trips="${level.n}"><div class="lv-chapter-trips-head"><h4>Viajes para ${esc(level.name)}</h4><a href="/viajes/?nivel=${level.n}">Ver en el catálogo</a></div>
+${rows ? `<ul class="lv-trip-list">${rows}</ul>` : `<p class="lv-trips-none">Ahora mismo no hay salidas para este nivel. Escríbenos y te avisamos de las próximas.</p>`}</div>
+</div>
 </section>`;
 }
 
+const NAMES_BY_CODE = Object.fromEntries(SUBLEVELS.map(s => [s.c, `«${s.t}»`]));
 function competitionSection() {
   const C = COMPETITION;
-  return `<section class="lv-comp" id="nivel-5" aria-labelledby="nivel-5-title" tabindex="-1">
+  return `<section class="lv-comp section-width" id="nivel-5" aria-labelledby="nivel-5-title" tabindex="-1">
 <div class="lv-comp-intro"><h3 id="nivel-5-title">¿Y competir?</h3><p>${esc(C.intro)}</p></div>
 <ol class="lv-comp-steps">${C.subs.map(s => `<li id="${subId(s.c)}"><h4>${esc(s.t)}</h4><p>${esc(s.d)}</p><p class="lv-comp-from">${esc(s.w.replace(/^Desde nivel (\d\.\d)$/, (m, c) => `Desde ${NAMES_BY_CODE[c]}`).replace(/^Nivel 4\.2–4\.3$/, `Desde ${NAMES_BY_CODE['4.2']}`))}</p></li>`).join('')}</ol>
 <p class="lv-comp-judges">${esc(C.judges)} Táctica: ${esc(C.focus)}</p>
 </section>`;
 }
-const NAMES_BY_CODE = Object.fromEntries(SUBLEVELS.map(s => [s.c, `«${s.t}»`]));
 
-export function levelGuideHtml() {
-  const picker = SURF_LEVELS.map((l, i) => `<a class="lv-wave" href="#nivel-${l.n}" data-level-tab="${l.n}"><svg viewBox="0 0 120 60" preserveAspectRatio="none" aria-hidden="true"><path d="${WAVES[i]}"/></svg><span class="lv-wave-name">${esc(l.name)}</span><span class="lv-wave-size">${esc(l.waveShort)}</span></a>`).join('');
-  return `<section class="lv-guide section-width" id="guia-niveles" aria-labelledby="lv-guide-title" tabindex="-1">
-<div class="lv-guide-head"><h2 id="lv-guide-title">Cuatro niveles. Cada uno, una ola más grande.</h2><p>Elige una ola para ver qué se hace en ese nivel, con qué tabla y qué te falta para subir.</p></div>
-<nav class="lv-waves" aria-label="Niveles de surf">${picker}</nav>
-<p class="lv-howto">Tu nivel es aquel en el que ya haces todo lo de «Ya lo haces si…» pero todavía no lo de al lado. Desde Base entrenamos con el método LST: línea, velocidad y timing. Las alturas son orientativas, medidas en la cara de la ola. ¿Quieres competir? Mira <a href="#nivel-5">la ruta de competición</a>.</p>
+export function levelGuideHtml(tripRows = {}) {
+  const index = SURF_LEVELS.map(l => `<a class="lv-index-item" href="#nivel-${l.n}" data-level-tab="${l.n}">${figure(l.n)}<span class="lv-index-name">${esc(l.name)}</span><span class="lv-index-wave">${esc(CHAPTERS[l.n].waveTitle)}</span></a>`).join('');
+  return `<section class="lv-intro section-width" id="guia-niveles" aria-labelledby="lv-guide-title" tabindex="-1">
+<h2 id="lv-guide-title" class="visually-hidden">Los cuatro niveles</h2>
+<nav class="lv-index" aria-label="Niveles de surf">${index}</nav>
+<div class="lv-hero-foot"><a class="button" href="#test">Haz el test</a><p class="lv-howto">Medidas para una persona de 1,70 m. ¿Quieres competir? Mira <a href="#nivel-5">la ruta de competición</a>.</p></div>
 <p class="lv-pickbar" data-pickbar hidden>Abre el paso que mejor te describe y pulsa «Este es mi nivel».</p>
-<div class="lv-levels">
-${SURF_LEVELS.map(levelSection).join('\n')}
+</section>
+<div class="lv-chapters">
+${SURF_LEVELS.map(level => chapter(level, tripRows[level.n])).join('\n')}
 </div>
 ${competitionSection()}
-</section>
 <section class="lv-test" id="test" aria-labelledby="lv-test-title" tabindex="-1">
 <div class="lv-test-inner section-width">
 <div class="lv-test-intro"><h2 id="lv-test-title">¿Cuál es tu nivel?</h2><p>Doce preguntas de sí o no. Si dudas, responde «Todavía no»: así el resultado te ayuda más.</p></div>
@@ -138,8 +189,8 @@ ${competitionSection()}
   }).replace(/</g, '\\u003c')}</script>`;
 }
 
-export function renderLevelGuide(current) {
+export function renderLevelGuide(current, tripRows = {}) {
   const markers = /<!-- level-guide:start -->[\s\S]*?<!-- level-guide:end -->/;
   if (!markers.test(current)) throw Error('Missing level guide generation markers');
-  return current.replace(markers, `<!-- level-guide:start -->\n${levelGuideHtml()}\n<!-- level-guide:end -->`);
+  return current.replace(markers, `<!-- level-guide:start -->\n${levelGuideHtml(tripRows)}\n<!-- level-guide:end -->`);
 }

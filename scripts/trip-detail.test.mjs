@@ -97,7 +97,7 @@ test('the sidebar keeps the range concise and the level section retains requirem
  const t=trip({levels:[2,3],levelRequirement:requirement,levelText:requirement}),html=renderTrip(t);
  const sidebar=html.match(/<aside class="trip-booking"[\s\S]*?<\/aside>/)[0];
  const level=html.match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
- assert.match(sidebar,/Niveles 2–3/);assert(!sidebar.includes(requirement));
+ assert.match(sidebar,/Base e Intermedio/);assert(!sidebar.includes(requirement));
  assert(level.includes(requirement));
  const actions=level.match(/<div class="level-actions">([\s\S]*?)<\/div>/)?.[1];
  assert(actions,'The level guide remains available');
@@ -187,7 +187,9 @@ test('a full multi-date trip still exposes all dates and their PDFs, with altern
   assert.match(content,/https:\/\/example\.com\/full-first\.pdf/);assert.match(content,/https:\/\/example\.com\/full-general\.pdf/);
   assert.doesNotMatch(content,/data-registration=|Inscribirme/);assert.match(content,/Consultar alternativas/);
  }
- for(const cls of primaryActions){const cta=action(html,cls);assert.match(cta,/data-open-dates/);assert.match(cta,/>Elegir fecha<\/button>/);}
+ // Nothing is left to choose, so the main action asks about alternatives; the dates and PDFs stay one click away.
+ for(const cls of primaryActions){const cta=action(html,cls);assert.doesNotMatch(cta,/data-open-dates|Elegir fecha/);assert.match(cta,/Consultar viaje completo/);}
+ assert.match(html,/class="essential-dates" data-open-dates/);
 });
 test('distinct level introduction and autonomy requirement both remain visible, without duplicating identical copy',()=>{
  const intro='Progresamos en un grupo con una experiencia de surf parecida.';

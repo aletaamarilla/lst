@@ -36,7 +36,8 @@ try {
   doc.departures[0].price = 399.5;
   doc.departures.push({...doc.departures[0], _key: 'second', start: '2026-12-01', end: '2026-12-03', price: 450});
   doc.hero = {url: 'https://cdn.sanity.io/images/q5bj2rn2/production/browser-fixture.webp', alt: 'Imagen de prueba local'};
-  doc.gallery = [1, 2].map(i => ({...doc.hero, caption: `Foto ${i}`}));
+  // Gallery photos must differ from the hero: the cover shows the hero once, then the rest of the gallery.
+  doc.gallery = [1, 2].map(i => ({...doc.hero, url: doc.hero.url.replace('.webp', `-${i}.webp`), caption: `Foto ${i}`}));
   doc.faqs = [1, 2].map(i => ({question: `Pregunta QA ${i}`, answer: `Respuesta QA ${i}`}));
   const form = structuredClone(doc);
   form._id = 'lst-form-test'; form.name = 'Solicitud de prueba'; form.slug.current = 'solicitud-prueba';
@@ -45,8 +46,8 @@ try {
   const pending = {...structuredClone(form), _id: 'qa-pending', name: 'Destino pendiente QA', slug: {current: 'qa-pending'}, state: 'upcoming', levels: [4], departures: []};
   const full = {...structuredClone(doc), _id: 'qa-full', name: 'Destino completo QA', slug: {current: 'qa-full'}, levels: [3], availability: 'full'};
   const documents = [doc, form, pending, full];
-  await buildSite({out: path.join(temp, 'empty'), read: async () => []});
-  await buildSite({out: path.join(temp, 'sample'), read: async () => documents});
+  await buildSite({today:'2026-11-01', out: path.join(temp, 'empty'), read: async () => []});
+  await buildSite({today:'2026-11-01', out: path.join(temp, 'sample'), read: async () => documents});
   for (const width of [320, 390, 1440]) {
     const page = await browser.newPage({viewport: {width, height: 900}, reducedMotion: 'reduce'});
     page.on('pageerror', error => errors.push(error.message));
@@ -59,7 +60,7 @@ try {
     for (const url of ['/', '/viajes/', '/niveles/', '/viajes/asturias/']) {
       await page.goto(base + url);
       assert.match(await page.locator('main').innerText(), /No hay viajes publicados|no está publicado/);
-      assert.equal(await page.locator('[data-catalog-trip], .home-trip, .guide-trip-card').count(), 0);
+      assert.equal(await page.locator('[data-catalog-trip], .hp-ticket, .lv-trip').count(), 0);
       assert.equal(await page.locator('meta[name=robots]').getAttribute('content'), 'noindex,nofollow');
       checks += 3;
     }
@@ -68,21 +69,24 @@ try {
     await page.goto(base + '/viajes/');
     await page.screenshot({path: path.join(output, `empty-${width}.png`), fullPage: true});
     root = path.join(temp, 'sample');
-    for (const [url, selector] of [['/', '.home-trip-link'], ['/viajes/', '.catalog-card-link'], ['/niveles/', '.guide-trip-card .home-trip-link']]) {
+    // Home: dated trips as tickets, trips without dates under "Próximamente". Levels lists a trip once per level.
+    for (const [url, selector] of [['/', '.hp-ticket-name a, .hp-pending a'], ['/viajes/', '.catalog-card-link'], ['/niveles/', '.lv-trip > a']]) {
       await page.goto(base + url);
-      const links = await page.locator(selector).evaluateAll(links => links.map(a => a.getAttribute('href')).sort());
+      const links = await page.locator(selector).evaluateAll(links => [...new Set(links.map(a => a.getAttribute('href')))].sort());
       assert.deepEqual(links, adaptTrips(documents).map(d => `/viajes/${d.slug}/`).sort()); checks++;
     }
     await page.goto(base + `/viajes/?nivel=1&fecha=${doc.departures[0].start.slice(0, 7)}`);
     assert.equal(await page.locator('[data-catalog-trip]:visible').count(), 0); checks++;
     assert.equal(await page.locator('#catalog-empty').isVisible(), true); checks++;
-    await page.selectOption('#catalog-level', '2');
+    await page.locator('[data-catalog-level="2"]').click();
     assert.equal(await page.locator('[data-catalog-trip]:visible').count(), 2); checks++;
     assert.equal(new URL(page.url()).searchParams.get('nivel'), '2'); checks++;
     await page.goBack(); assert.equal(await page.locator('[data-catalog-trip]:visible').count(), 0); checks++;
     await page.goto(base + `/viajes/${doc.slug.current}/`);
     for (const question of await page.locator('.trip-faq summary').all()) await question.click();
-    assert.equal(await page.locator('.trip-faq details[open]').count(), 2); checks++;
+    // The trip's own questions come first; the page may add general ones after them.
+    assert.deepEqual((await page.locator('.trip-faq details[open] summary').allTextContents()).slice(0, 2), ['Pregunta QA 1+', 'Pregunta QA 2+']); checks++;
+    assert.equal(await page.locator('.trip-faq details:not([open])').count(), 0); checks++;
     await page.locator('[data-open-dates]:visible').first().click();
     assert.equal(await page.locator('#departure-dialog').evaluate(e => e.open), true); checks++;
     assert.equal(await page.locator('#departure-dialog [data-departure]').count(), 2); checks++;
@@ -92,22 +96,26 @@ try {
     assert.equal(await page.locator('[data-open-dates]:focus').count(), 1); checks++;
     await page.locator('[data-open-gallery]').click();
     await page.locator('[data-photo-next]').click();
-    assert.equal(await page.locator('.photo-counter').innerText(), '2 / 2'); checks++;
+    assert.equal(await page.locator('.photo-counter').innerText(), '2 / 3'); checks++;
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('[data-open-gallery]:focus').count(), 1); checks++;
     await page.screenshot({path: path.join(output, `detail-${width}.png`), fullPage: true});
     await page.goto(base + '/viajes/qa-full/');
-    assert.match(await page.locator('main').innerText(), /Completo/); checks++;
-    assert.equal(await page.locator('[data-open-dates]').count(), 0); checks++;
-    assert.match(await page.locator('.dock-cta').innerText(), /Consultar viaje completo/); checks++;
+    // textContent, not innerText: several labels are uppercased in CSS.
+    assert.match(await page.locator('main').textContent(), /está completa/); checks++;
+    // A full trip with several dates still lists them, each marked full, and never links to registration.
+    assert.equal(await page.locator('#departure-dialog [data-departure]').count(), 2); checks++;
+    assert.deepEqual(await page.locator('#departure-dialog .departure-option').evaluateAll(es => es.map(e => /Completo/.test(e.textContent))), [true, true]); checks++;
+    assert.equal(await page.locator('a[href^="/inscripciones/"]').count(), 0); checks++;
     await page.goto(base + '/viajes/qa-pending/');
-    assert.match(await page.locator('main').innerText(), /Por confirmar/); checks++;
+    assert.match(await page.locator('main').textContent(), /Por confirmar/); checks++;
     assert.equal(await page.locator('[data-open-dates], [data-open-gallery]').count(), 0); checks++;
     await page.goto(base + '/viajes/solicitud-prueba/');
     assert.equal(await page.locator('[data-application]').count(), 0); checks++;
-    assert.match(await page.locator('.trip-reserve').innerText(), /WhatsApp/); checks++;
+    assert.match(await page.locator('.trip-reserve').textContent(), /WhatsApp/); checks++;
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true); checks++;
-    for (const [url, card] of [['/', '.home-trip'], ['/viajes/', '[data-catalog-trip]']]) {
+    const dated = adaptTrips(documents).filter(t => t.state === 'confirmed');
+    for (const [url, card, count] of [['/', '.hp-ticket', dated.length], ['/viajes/', '[data-catalog-trip]', documents.length]]) {
       await page.goto(base + url);
       await page.evaluate(() => {
         const elements = [...document.querySelectorAll('body, body *')];
@@ -115,11 +123,12 @@ try {
         elements.forEach((e, i) => e.style.fontSize = `${sizes[i] * 2}px`);
       });
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true); checks++;
-      assert.equal(await page.locator(card).count(), documents.length); checks++;
+      assert.equal(await page.locator(card).count(), count); checks++;
       for (const item of await page.locator(card).all()) {
-        assert.equal(await item.locator('a').count(), 2); checks++;
+        // Photo, name and button all lead to the same trip page; a card holds no controls of its own.
+        const hrefs = new Set(await item.locator('a').evaluateAll(links => links.map(a => a.getAttribute('href'))));
+        assert.equal(hrefs.size, 1); assert.match([...hrefs][0], /^\/viajes\/[a-z0-9-]+\/$/); checks += 2;
         assert.equal(await item.locator('button, input').count(), 0); checks++;
-       { assert.equal(await item.locator('details summary').count(), 1); assert.equal(await item.locator('.home-trip-dates-panel[tabindex="0"]').count(), 1); checks += 2; }
       }
     }
     await page.close();
@@ -131,7 +140,7 @@ try {
   assert.equal(await noJs.locator('[data-catalog-trip]:visible').count(), documents.length); checks++;
   assert.equal(await noJs.locator('[data-catalog-filters]').isVisible(), false); checks++;
   await noJs.locator(`.catalog-card-link[href="/viajes/${form.slug.current}/"]`).click();
-  assert.match(await noJs.locator('h1').innerText(), /Solicitud de prueba/); checks++;
+  assert.match(await noJs.locator('h1').textContent(), /Solicitud de prueba/); checks++;
   assert.match(await noJs.locator('.reserve-main').getAttribute('href'), /^https:\/\/wa.me\//); checks++;
   await noJs.close();
   assert.deepEqual(errors, []);

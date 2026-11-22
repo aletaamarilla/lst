@@ -14,6 +14,9 @@ const before = path.resolve(process.env.LST_QA_BEFORE || 'docs/qa/2026-10-25-via
 const template = await readFile(path.join(root, 'viajes/index.html'), 'utf8');
 const {trips} = JSON.parse(await readFile(path.join(root, 'catalog-snapshot.json'), 'utf8'));
 const model = trips.map(t => ({levels:levelsFor(t), departures:departuresFor(t)}));
+// Departures close as their start date arrives, so derive the season line from the snapshot, not fixed counts.
+const isDated = t => t.state === 'confirmed' && departuresFor(t).some(d => d.start);
+const dated = trips.filter(isDated), undated = trips.filter(t => !isDated(t));
 let baseline = false, fixture = false;
 const mixed = {...structuredClone(trips[0]), id:'qa-mixed', name:'Varias fechas, mismo nivel', slug:'qa-mixed', hero:'/assets/el-salvador.webp', levels:[1,2], departures:[
  {id:'jan',start:'2027-01-25',end:'2027-02-02',date:'25 ene — 2 feb 2027',price:500,state:'confirmed'},
@@ -54,11 +57,12 @@ try{
   eq(await page.locator('#catalog-date').count(),0,'date filter removed');
   eq(await page.locator('#catalog-state,.catalog-card-state,.destination-collection,.home-more-trips,.catalog-help').count(),0,'no state controls, groups or extra help sections');
   ok(!/Con fecha|Próximamente/.test(await page.locator('main').innerText()),'obsolete state wording absent');
-  eq(await page.locator('.ct-season li[data-levels]').count(),trips.flatMap(t=>departuresFor(t)).filter(d=>d.start).length,'every dated departure on the season line');
+  eq(await page.locator('.ct-season-col:not(.ct-season-later) li[data-levels]').count(),dated.flatMap(t=>departuresFor(t)).filter(d=>d.start).length,'every dated departure on the season line');
+  eq((await page.locator('.ct-season-later li[data-levels] a').evaluateAll(es=>es.map(e=>e.getAttribute('href')))).sort(),undated.map(t=>'#viaje-'+t.slug).sort(),'trips without dates listed under Más');
   eq(await page.locator('[data-catalog-trip]:visible').count(),trips.length,'every destination visible');
   ok(await page.locator('h1').evaluate(e=>getComputedStyle(e).fontFamily.startsWith('Aura')),'same display type');
   ok(await page.locator('body').evaluate(e=>getComputedStyle(e).backgroundColor==='rgb(255, 250, 231)'&&getComputedStyle(e).fontFamily.includes('Work Sans')),'same cream and body type');
-  ok(await page.locator('.ct-ticket').evaluateAll(es=>es.every(e=>getComputedStyle(e.querySelector('.ct-stub')).backgroundColor==='rgb(21, 21, 19)')),'every ticket has an ink stub');
+  ok(await page.locator('.ct-ticket').evaluateAll(es=>{const probe=document.body.appendChild(document.createElement('i'));probe.style.background='var(--hp-ink)';const ink=getComputedStyle(probe).backgroundColor;probe.remove();return ink!=='rgba(0, 0, 0, 0)'&&es.every(e=>getComputedStyle(e.querySelector('.ct-stub')).backgroundColor===ink);}),'every ticket has an ink stub');
   if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)){
    await page.screenshot({path:path.join(output,`overflow-${width}.png`),fullPage:true});
    await writeFile(path.join(output,`overflow-${width}.json`),JSON.stringify(await page.evaluate(()=>[...document.querySelectorAll('body *')].filter(e=>e.getClientRects().length&&e.getBoundingClientRect().right>innerWidth+1).map(e=>({tag:e.tagName,class:e.className,text:e.textContent.slice(0,60),right:e.getBoundingClientRect().right,width:e.getBoundingClientRect().width}))),null,2));
@@ -70,7 +74,10 @@ try{
    eq(await page.locator('[data-catalog-trip]:visible').count(),expected,'matches level '+level+'/'+width);
    eq(await page.locator('#catalog-empty').isVisible(),expected===0,'empty status');
   }
-  await page.locator('[data-catalog-clear]:visible').first().click();
+  // The clear button lives in the empty state; use a level nobody offers when the current season has one.
+  const emptyLevel=['1','2','3','4'].find(level=>!filterCatalog(model,level).length);
+  if(emptyLevel){await pick(page,emptyLevel);await page.locator('[data-catalog-clear]:visible').first().click();}
+  else await pick(page,'');
   eq(await page.locator('[data-catalog-trip]:visible').count(),trips.length,'clear restores all');
   eq(new URL(page.url()).search,'','clear removes filter query');
   await page.locator('.ct-season li[data-levels] a').first().click();

@@ -201,6 +201,16 @@ if (sectionNav && 'IntersectionObserver' in window) {
   links.forEach((_, id) => { const section = document.getElementById(id); if (section) observer.observe(section); });
 }
 
+// The fade on the right of the section tabs only shows while some tabs are still hidden there.
+const sectionTrack = sectionNav?.querySelector('.tp-sections-track');
+if (sectionTrack) {
+  const clip = () => sectionTrack.classList.toggle('is-clipped', sectionTrack.scrollWidth - sectionTrack.clientWidth - sectionTrack.scrollLeft > 2);
+  clip();
+  sectionTrack.addEventListener('scroll', clip, {passive: true});
+  if ('ResizeObserver' in window) new ResizeObserver(clip).observe(sectionTrack);
+  document.fonts?.ready.then(clip);
+}
+
 // One native-scrolling controller keeps hero thumbnails, touch and keyboard in sync.
 document.querySelectorAll('[data-carousel]').forEach(carousel => {
   const track = carousel.querySelector('[data-carousel-track]');
@@ -280,3 +290,19 @@ document.querySelectorAll('[data-carousel]').forEach(carousel => {
   update();
 });
 
+
+// Once the section tabs reach the top, the site header steps aside on wide
+// screens: the tabs and the booking card already carry navigation and the CTA.
+const sectionTabs = typeof document.querySelector === 'function' ? document.querySelector('.tp-sections') : null;
+if (sectionTabs && 'IntersectionObserver' in window) {
+  const marker = document.createElement('span');
+  marker.setAttribute('aria-hidden', 'true');
+  sectionTabs.before(marker);
+  // The tabs stay out of sight on arrival and slide in once the cover has been scrolled past.
+  document.body.classList.add('tp-tabs-js');
+  new IntersectionObserver(([entry]) => {
+    const past = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+    document.body.classList.toggle('tp-header-away', past);
+    document.body.classList.toggle('tp-tabs-on', past);
+  }).observe(marker);
+}

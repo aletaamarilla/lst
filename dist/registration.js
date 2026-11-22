@@ -147,11 +147,14 @@ if (form) {
     error.classList.remove('sib-form-message-panel--active');
     form.querySelectorAll('.entry__error').forEach(label => { label.textContent = ''; });
     form.querySelectorAll('[aria-invalid]').forEach(input => input.removeAttribute('aria-invalid'));
+    // Facts for the measurement script (only heard with consent): never messages or form data.
+    const failed = detail => document.dispatchEvent(new CustomEvent('lst:registration-failed', {detail}));
+    let httpStatus = null;
     try {
       const endpoint = new URL(form.action);
       endpoint.searchParams.set('isAjax', '1');
       const response = await fetch(endpoint, {method:'POST', body:new FormData(form), credentials:'omit', signal:AbortSignal.timeout(30000)});
-      if (!response.ok) throw Error('Brevo HTTP error');
+      if (!response.ok) { httpStatus = response.status; throw Error('Brevo HTTP error'); }
       const result = await response.json();
       if (result.success !== true) {
         let firstInvalid = null;
@@ -166,10 +169,12 @@ if (form) {
           }
         }
         if (firstInvalid) wizard.reveal(firstInvalid);
+        failed({fields: !!firstInvalid});
         show(error, typeof result.message === 'string' ? result.message : originalError);
         return;
       }
       complete = true;
+      document.dispatchEvent(new CustomEvent('lst:registration-accepted')); // Measured only with consent; carries no form data.
       button.textContent = 'Inscripción enviada';
       form.hidden = true;
       show(success, typeof result.message === 'string' ? result.message : '¡Genial! Tu inscripción se ha enviado correctamente. El equipo de LST revisará tus datos para confirmar la plaza contigo.');
@@ -179,7 +184,8 @@ if (form) {
           if (redirect.protocol === 'https:' && !redirect.username && !redirect.password) location.assign(redirect.href);
         } catch { /* Keep the accepted submission confirmed if the redirect is malformed. */ }
       }
-    } catch {
+    } catch (problem) {
+      failed(httpStatus ? {status: httpStatus} : {error: problem?.name});
       // Keep the completed fields; never retry a personal-data submission automatically.
       show(error, 'No hemos podido confirmar el envío. Comprueba tu conexión. Si el problema continúa, consulta con el equipo antes de volver a enviar.');
     } finally {

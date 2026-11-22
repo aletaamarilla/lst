@@ -179,7 +179,7 @@ test('one read supplies home, catalogue, levels and details; stale demo content 
   const out = path.join(dir, 'site');
   try {
     let calls = 0;
-    await buildSite({out, read: async () => {calls++; return [published(0)];}});
+    await buildSite({today:'2026-11-01',out, read: async () => {calls++; return [published(0)];}});
     assert.equal(calls, 1);
     for (const file of ['index.html', 'viajes/index.html', 'niveles/index.html', `viajes/${published(0).slug.current}/index.html`]) {
       const html = await readFile(path.join(out, file), 'utf8');
@@ -188,7 +188,7 @@ test('one read supplies home, catalogue, levels and details; stale demo content 
     }
     for (const slug of legacySlugs) assert.match(await readFile(path.join(out, 'viajes', slug, 'index.html'), 'utf8'), /no está publicado/);
     // A later unpublish must remove both the card and the previous detail contents.
-    await buildSite({out, template: out, read: async () => []});
+    await buildSite({today:'2026-11-01',out, template: out, read: async () => []});
     assert.match(await readFile(path.join(out, 'viajes', published(0).slug.current, 'index.html'), 'utf8'), /no está publicado/);
     for (const file of ['index.html', 'viajes/index.html', 'niveles/index.html']) {
       const html = await readFile(path.join(out, file), 'utf8');
@@ -203,10 +203,10 @@ test('reading/validation/render errors preserve the last output', async () => {
   try {
     await writeFile(path.join(dir, 'sentinel'), 'last-valid');
     for (const read of [async () => {throw Error('read failed');}, async () => [{...published(0), levels: []}]]) {
-      await assert.rejects(buildSite({out: dir, read}));
+      await assert.rejects(buildSite({today:'2026-11-01', out: dir, read}));
       assert.equal(await readFile(path.join(dir, 'sentinel'), 'utf8'), 'last-valid');
     }
-    await assert.rejects(buildSite({out: dir, template: '/does-not-exist', read: async () => []}));
+    await assert.rejects(buildSite({today:'2026-11-01', out: dir, template: '/does-not-exist', read: async () => []}));
     assert.equal(await readFile(path.join(dir, 'sentinel'), 'utf8'), 'last-valid');
   } finally { await rm(dir, {recursive: true, force: true}); }
 });
@@ -339,4 +339,29 @@ test('old documents without manual status retain enquiry when no availability wa
   assert.equal(adaptTrip(doc).availability, 'available');
   doc.capacity.available = 0;
   assert.equal(adaptTrip(doc).availability, 'full');
+});
+
+test('departures that have started are closed at build time; a trip without future dates becomes "próximamente"', () => {
+  const doc = published(0);
+  const [first] = doc.departures;
+  const later = {...structuredClone(first), _key: 'later', start: '2099-01-10', end: '2099-01-12'};
+  const both = {...doc, departures: [first, later]};
+  // Without a reference date every departure is kept (fixtures, previews).
+  assert.equal(adaptTrip(both).departures.length, 2);
+  const open = adaptTrip(both, {today: first.start});
+  assert.deepEqual(open.departures.map(d => d.id), ['later']);
+  assert.equal(open.state, 'confirmed');
+  const closed = adaptTrip({...doc, departures: [first]}, {today: first.start});
+  assert.equal(closed.state, 'upcoming');
+  assert.deepEqual(closed.departures, []);
+  // The day before it starts, it is still open.
+  const dayBefore = new Date(Date.parse(first.start) - 86400000).toISOString().slice(0, 10);
+  assert.equal(adaptTrip({...doc, departures: [first]}, {today: dayBefore}).departures.length, 1);
+  assert.throws(() => adaptTrip(doc, {today: 'mañana'}), /referencia/);
+});
+
+test('madridToday uses the Spanish calendar day', async () => {
+  const {madridToday} = await import('./sanity-trips.mjs');
+  assert.equal(madridToday(new Date('2026-11-19T23:30:00Z')), '2026-11-20');
+  assert.equal(madridToday(new Date('2026-07-01T21:59:00Z')), '2026-07-01');
 });

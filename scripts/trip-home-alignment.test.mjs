@@ -5,15 +5,18 @@ import {renderTrip} from './render-trips.mjs';
 
 const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
 const palmar=trips.find(t=>t.slug==='el-palmar');
-const summary=html=>html.match(/<section class="trip-essentials[\s\S]*?<\/section>/)[0];
+// Los datos que deciden abren el contenido, en el mismo bloque que la entradilla: de la lista de datos a la entradilla.
+const summary=html=>{const start=html.indexOf('<dl class="trip-essential-facts"');assert(start>=0);return html.slice(start,html.indexOf('<p class="trip-kickoff"',start));};
 const offer={label:'Early bird',price:599,firstPlace:1,lastPlace:8,active:true};
 
 test('single-date essentials expose the actual date, level and group before the reading content without a second booking action',()=>{
  const original=structuredClone(palmar),html=renderTrip(palmar,trips),facts=summary(html);
  for(const value of ['4–8 dic 2026','4 noches','Todos los niveles','Hasta 30 personas'])assert(facts.includes(value));
- assert(html.indexOf(facts)<html.indexOf('id="destino"'));
+ assert(html.indexOf(facts)>html.indexOf('id="trip-title"'));assert(html.indexOf(facts)<html.indexOf('id="nivel"'));
  assert(!facts.includes('data-registration='));assert(!facts.includes('data-open-dates'));
- assert(facts.includes('href="#incluye"'));assert(html.includes('id="incluye"'));
+ // «Qué incluye» se alcanza desde el menú de secciones, no desde un enlace repetido junto a los datos.
+ const menu=html.match(/<nav class="tp-sections"[\s\S]*?<\/nav>/)[0];
+ assert(menu.includes('href="#incluye"'));assert(!facts.includes('href="#incluye"'));assert(html.includes('id="incluye"'));
  assert.deepEqual(palmar,original);
 });
 

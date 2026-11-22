@@ -46,7 +46,7 @@ test('existing CMS team headings and descriptions remain literal without destina
  const trip={...fixture(),team:{title:'Lucas va contigo.',text:'Texto propio sobre el acompañamiento & el grupo.'}};
  const before=structuredClone(trip);
  const section=renderTrip(trip).match(/<section class="trip-block trip-team">([\s\S]*?)<\/section>/)[1];
- assert.match(section,/Lucas va contigo\./);assert.doesNotMatch(section,/COORDINADOR DEL VIAJE/);
+ assert.match(section,/<h3>Lucas va contigo<\/h3>/);assert.doesNotMatch(section,/COORDINADOR DEL VIAJE/);
  assert.match(section,/Texto propio sobre el acompañamiento &amp; el grupo\./);
  assert.doesNotMatch(section,/<img|lucas-concept-ai/);assert.deepEqual(trip,before);
 });

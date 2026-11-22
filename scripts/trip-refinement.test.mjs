@@ -11,7 +11,7 @@ test('level profiles retain their copy while contextual enquiries support level 
  const html=renderTrip(beginner,trips);
  const level=html.match(/<section id="nivel"[\s\S]*?<\/section>/)[0];
  assert.match(level,/<h2>¿Es este tu viaje\?<\/h2>/);
- for(const [title,text] of beginner.audience.profiles){const expected={'Nivel I · Iniciación':'Nivel 1 · Iniciación','Nivel II · Intermedio bajo':'Nivel 2 · Base'}[title]??title;assert(level.includes(escape(expected)));assert(level.includes(escape(text)));}
+ for(const [title,text] of beginner.audience.profiles){const expected={'Nivel I · Iniciación':'Iniciación','Nivel II · Intermedio bajo':'Base'}[title]??title;assert(level.includes(escape(expected)));assert(level.includes(escape(text)));}
  for(const value of [beginner.audience.text,beginner.audience.objective])assert(!level.includes(escape(value)));
  assert.doesNotMatch(level,/Para este viaje:|Consultar mi nivel/);
  assert.match(level,/¿Dudas con tu nivel\?/);assert.match(level,/¿Vienes por tu cuenta\?/);assert.match(level,/data-whatsapp=/);

@@ -1,4 +1,4 @@
-import {levelTitle} from './surf-levels.mjs';
+import {levelName} from './surf-levels.mjs';
 export {surfLevelOptions} from './surf-levels.mjs';
 
 // Presentation helpers. Programme text, prices and availability remain owned by the CMS.
@@ -15,7 +15,7 @@ const ROMAN_LEVELS = {I: 1, II: 2, III: 3, IV: 4};
 export function levelProfileTitle(title) {
   const match = /^Nivel\s+(IV|I{1,3}|[1-4])\b/.exec(title ?? '');
   if (!match) return title;
-  return levelTitle(ROMAN_LEVELS[match[1]] ?? Number(match[1]));
+  return levelName(ROMAN_LEVELS[match[1]] ?? Number(match[1]));
 }
 
 export function compactDepartureDate(departure) {

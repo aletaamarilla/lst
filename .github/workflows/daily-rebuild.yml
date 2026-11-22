@@ -1,0 +1,23 @@
+# Rebuilds the production site every night so departures that start today
+# close automatically (see madridToday in scripts/sanity-trips.mjs).
+# Requires the repository secret VERCEL_DEPLOY_HOOK_URL: a Vercel deploy hook
+# for the production branch (Vercel → lst → Settings → Git → Deploy Hooks).
+name: Daily rebuild
+
+on:
+  schedule:
+    - cron: '15 23 * * *' # 00:15 in Madrid in winter, 01:15 in summer
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel production build
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "::error::Falta el secreto VERCEL_DEPLOY_HOOK_URL"; exit 1; fi
+          curl --fail --silent --show-error -X POST "$HOOK" > /dev/null

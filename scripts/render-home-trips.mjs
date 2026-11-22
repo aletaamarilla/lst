@@ -58,8 +58,10 @@ const WHATSAPP = 'https://wa.me/34648189257?text=Hola%2C%20LST.%20Quiero%20consu
 const ticketWidths = [500, 800, 1200];
 const ticketSizes = '(min-width: 1000px) 33vw, (min-width: 720px) 50vw, 84vw';
 // Level filters on the home: beginners, intermediate, and autonomous surfers.
-export const homeLevelFilters = [['all', 'Todas', 'Todos los niveles'], ['1', 'Empiezo', 'Nivel 1 · Iniciación'], ['2', 'Me defiendo', 'Nivel 2 · Base'], ['3', 'Voy suelto', 'Niveles 3 y 4']];
-// Same rule as home.js: "Voy suelto" groups the autonomous levels 3 and 4.
+// Names match /niveles/; the second line says the wave in surfer words, on one
+// growing scale: foam up to the waist, knee to chest, chest and up.
+export const homeLevelFilters = [['all', 'Todas', 'Cualquier nivel'], ['1', 'Iniciación', 'Espuma, hasta la cintura'], ['2', 'Base', 'De la rodilla al pecho'], ['3', 'Intermedio y avanzado', 'Del pecho para arriba']];
+// Same rule as home.js: the last filter groups the autonomous levels 3 and 4.
 export const matchesLevelFilter = (trip, filter) => filter === 'all' || (filter === '3' ? levelsFor(trip).some(l => l >= 3) : levelsFor(trip).includes(Number(filter)));
 // A wave that grows with the level; "Todas" stacks the small and the big one.
 const filterWaves = {
@@ -78,15 +80,15 @@ const chronological = trips => trips.filter(t => t.state === 'confirmed').map((t
   .sort((a, b) => (a.start || '9999').localeCompare(b.start || '9999') || a.order - b.order).map(t => t.trip);
 // Short label for a tag: "20–22 nov", "28 feb – 7 mar".
 const shortDate = value => compactDate(value).replace(/ \d{4}$/, '');
-const levelRange = trip => {
-  const levels = levelsFor(trip);
-  if (levels.length === 4) return 'Todos';
-  const consecutive = levels.every((level, i) => !i || level === levels[i - 1] + 1);
-  return consecutive && levels.length > 1 ? `${levels[0]}–${levels.at(-1)}` : levels.join(', ');
-};
-const levelBar = trip => {
-  const levels = levelsFor(trip);
-  return `<span class="hp-lvbar" aria-label="${escape(levelLabel(trip))}">${[1, 2, 3, 4].map(l => `<i${levels.includes(l) ? ' class="on"' : ''}></i>`).join('')}<em aria-hidden="true">${escape(levelRange(trip))}</em></span>`;
+// Natural Spanish list: "A", "A y B", "A, B y C" ("e" before an "i" sound: "Agadir e Imsouane").
+const and = next => /^h?i(?![aeiouáéíóú])/i.test(next) ? 'e' : 'y';
+const listOf = items => items.length > 1 ? `${items.slice(0, -1).join(', ')} ${and(items.at(-1))} ${items.at(-1)}` : items.join('');
+// A concrete line for the ticket: where you surf. More than three spots are
+// summarised so the line stays short; without spots, the CMS tagline.
+export const ticketLine = trip => {
+  const spots = (trip.spots ?? []).map(s => String(s?.title ?? s?.name ?? '').trim()).filter(Boolean);
+  if (spots.length) return `Surf en ${spots.length > 3 ? `${spots.slice(0, 3).join(', ')} y ${spots.length - 3} ${spots.length - 3 === 1 ? 'spot' : 'spots'} más` : listOf(spots)}`;
+  return trip.tagline && trip.tagline !== trip.name ? trip.tagline : '';
 };
 const photo = (trip, width) => {
   const image = trip.cardImage || trip.hero;
@@ -130,16 +132,17 @@ export function renderHomeTicket(trip) {
     : `<p class="hp-price hp-price-tbc"><span>${escape(tripPrice(trip))}</span></p>`;
   const saving = offer ? Math.round((fare.regularPrice - fare.price) * 100) / 100 : 0;
   const condition = offer ? `<p class="hp-offer"><strong>${escape(formatPrice(saving))} de descuento</strong> · ${escape(promotionCondition(offer))}</p>` : '';
-  const tagline = dated && trip.tagline && trip.tagline !== trip.name ? `<p class="hp-tagline">${escape(trip.tagline)}</p>` : '';
+  const line = dated ? ticketLine(trip) : '';
+  const tagline = line ? `<p class="hp-tagline">${escape(line)}</p>` : '';
   const action = `<a class="hp-btn" href="${href}" aria-label="Ver viaje de ${escape(trip.name)}">${dated ? 'Ver viaje' : 'Ver destino'}</a>`;
   return `<article class="hp-ticket" data-levels="${levelsFor(trip).join(' ')}" aria-labelledby="ticket-${id}-title">
 <a class="hp-ticket-media" href="${href}" tabindex="-1" aria-hidden="true">${image ? `<img src="${escape(image.src)}"${image.srcset ? ` srcset="${escape(image.srcset)}" sizes="${ticketSizes}"` : ''} alt="${escape(image.alt)}" width="800" height="860" loading="lazy" decoding="async">` : '<span class="hp-ticket-placeholder" aria-hidden="true">LST</span>'}<span class="hp-tag hp-tag-date">${escape(dateTag)}</span>${status}</a>
 <h3 class="hp-ticket-name" id="ticket-${id}-title"><a href="${href}">${escape(trip.name)}</a></h3>
-<div class="hp-stub"><div class="hp-stub-top"><div class="hp-facts">${facts ? `<span>${facts}</span>` : ''}${levelBar(trip)}</div>${price}</div>${tagline}${condition}<div class="hp-acts">${action}</div></div>
+<div class="hp-stub"><div class="hp-stub-top"><div class="hp-facts">${facts ? `<span>${facts}</span>` : ''}<span class="hp-lvtext">${escape(levelLabel(trip))}</span></div>${price}</div>${tagline}${condition}<div class="hp-acts">${action}</div></div>
 </article>`;
 }
 
-// The trip list is required; the hero, stats and mobile bar regions are optional.
+// The trip list is required; the hero and mobile bar regions are optional.
 const region = (current, name, content, required = false) => {
   const markers = new RegExp(`<!-- ${name}:start -->[\\s\\S]*?<!-- ${name}:end -->`);
   if (!markers.test(current)) { if (required) throw Error('Missing home trip generation region'); return current; }
@@ -150,8 +153,6 @@ export function renderHomeTrips(current, trips) {
   const dated = chronological(trips);
   const pending = trips.filter(t => t.state === 'upcoming');
   const next = nextDeparture(trips);
-  const open = trips.flatMap(t => registrationDepartures(t));
-  const prices = trips.filter(t => t.state === 'confirmed').map(t => tripPriceDetails(t).departure?.price).filter(Number.isFinite);
 
   const tickets = `${!trips.length ? '<p class="hp-empty" role="status">No hay viajes publicados en este momento. Puedes consultar las próximas salidas con el equipo.</p>' : ''}${dated.length ? `<div class="hp-chips" role="group" aria-label="¿Cómo surfeas? Filtra las salidas por nivel">${homeLevelFilters.map((filter, i) => filterButton(dated, filter, i)).join('')}</div>
 <div class="hp-rail" id="trip-content" tabindex="0" aria-label="Salidas">${dated.map(renderHomeTicket).join('\n')}</div>
@@ -161,14 +162,12 @@ export function renderHomeTrips(current, trips) {
   const nextCard = next ? (() => {
     const image = photo(next.trip, 200);
     const availability = availabilityLabel(next.trip);
-    return `<a class="hp-next" href="/viajes/${escape(next.trip.slug)}/">${image ? `<img src="${escape(image.src)}" alt="" width="88" height="88" decoding="async">` : ''}<span class="hp-next-body"><span class="hp-next-k">Próxima salida</span><strong>${escape(next.trip.name)}</strong><span class="hp-next-row"><span>${escape(compactDate(next.departure.date))}${next.departure.price ? ` · ${escape(formatPrice(next.departure.price))}` : ''}</span><span class="hp-next-go">${availability === 'Últimas plazas' ? 'Últimas plazas' : 'Ver viaje'}</span></span></span></a>`;
+    return `<a class="hp-next" href="/viajes/${escape(next.trip.slug)}/">${image ? `<img src="${escape(image.src)}" alt="" width="88" height="88" decoding="async">` : ''}<span class="hp-next-body"><span class="hp-next-k">Próxima salida</span><strong>${escape(next.trip.name)}</strong><span class="hp-next-row"><span>${escape(compactDate(next.departure.date))}${next.departure.price ? ` · <span class="hp-next-price">${escape(formatPrice(next.departure.price))}</span>` : ''}</span><span class="hp-next-go">${availability === 'Últimas plazas' ? 'Últimas plazas' : 'Ver viaje'}</span></span></span></a>`;
   })() : '';
 
   const bar = next
     ? `<nav class="hp-bar" aria-label="Próxima salida"><a class="hp-bar-info" href="/viajes/${escape(next.trip.slug)}/"><span>Próxima salida</span><strong>${escape(next.trip.name)}${next.departure.price ? ` · ${escape(formatPrice(next.departure.price))}` : ''}</strong></a><span class="hp-bar-acts">${whatsappLink('<span class="hp-sr">WhatsApp</span><svg viewBox="0 0 24 24" width="22" height="22" fill="none" aria-hidden="true"><path d="M20.5 11.5a8.6 8.6 0 0 1-12.7 7.5L3 20.5l1.5-4.7A8.6 8.6 0 1 1 20.5 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>', 'hp-bar-wa')}<a class="hp-btn" href="${escape(registrationUrl(next.trip, next.departure))}">Solicitar</a></span></nav>`
     : `<nav class="hp-bar" aria-label="Contacto"><a class="hp-bar-info" href="/viajes/"><span>Viajes de surf</span><strong>Ver todas las salidas</strong></a><span class="hp-bar-acts">${whatsappLink('WhatsApp', 'hp-btn')}</span></nav>`;
-
-  const stats = `<div class="hp-stat"><strong>${open.length}</strong><span>${open.length === 1 ? 'salida abierta' : 'salidas abiertas'} a inscripción</span></div><div class="hp-stat"><strong>1–4</strong><span>niveles, de cero a crack</span></div>${prices.length ? `<div class="hp-stat"><strong>${escape(formatPrice(Math.min(...prices)))}</strong><span>desde, por persona</span></div>` : ''}`;
 
   // Short destination names rotate in the hero after "¿Te vienes a…".
   const words = [...new Set(dated.map(t => t.name).filter(name => name.length <= 10))];
@@ -176,7 +175,6 @@ export function renderHomeTrips(current, trips) {
   let html = region(current, 'home-trips', `\n${tickets}\n`, true);
   html = region(html, 'home-next', nextCard);
   html = region(html, 'home-bar', bar);
-  html = region(html, 'home-stats', stats);
   html = region(html, 'home-words', `<span class="hp-rot" aria-hidden="true" data-words="${escape(JSON.stringify(words.map(w => `${w}?`)))}"><span>surfear?</span></span>`);
   return html;
 }

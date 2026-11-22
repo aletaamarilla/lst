@@ -12,8 +12,8 @@ body.catalog-page [hidden]{display:none!important}
 .hp-page .ct-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:62% 58%}
 .ct-hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,21,19,.55) 0%,rgba(21,21,19,.1) 30%,rgba(21,21,19,.55) 66%,var(--hp-ink) 100%)}
 .ct-hero-in{padding-top:min(70vw,330px)}
-body.hp-page .ct-hero h1{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.84;font-size:clamp(56px,15.5vw,176px);text-wrap:balance;max-width:11ch}
-.ct-sub{margin:18px 0 0;font-size:19px;line-height:1.4;max-width:34ch;color:rgba(255,250,231,.86)}
+body.hp-page .ct-hero h1{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.84;font-size:clamp(48px,13vw,84px);text-wrap:balance;max-width:12ch}
+.ct-sub{margin:16px 0 0;font-size:18px;line-height:1.4;max-width:34ch;color:rgba(255,250,231,.86)}
 .ct-hero-edge{position:absolute;left:0;right:0;bottom:-27px;width:100%;height:28px;fill:var(--hp-ink);z-index:1}
 
 /* LÍNEA DE MAREA: un mes por columna, cada salida en el mes en que empieza */
@@ -21,71 +21,66 @@ body.hp-page .ct-hero h1{margin:0;font-family:var(--hp-display);font-weight:400;
 .ct-tide{display:block;width:100%;height:30px;margin-bottom:-6px;overflow:visible;padding-inline:var(--hp-gl) var(--hp-gr)}
 .ct-tide path{fill:none;stroke:var(--hp-orange);stroke-width:3;stroke-linecap:round;vector-effect:non-scaling-stroke;stroke-dasharray:2400;animation:ct-tide 1.6s .2s cubic-bezier(.3,.6,.3,1) both}
 @keyframes ct-tide{from{stroke-dashoffset:2400}to{stroke-dashoffset:0}}
-.ct-season-cols{list-style:none;margin:0;padding:0 var(--hp-gr) 6px var(--hp-gl);display:grid;grid-template-columns:repeat(var(--cols),minmax(148px,1fr));overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--hp-gl);scrollbar-width:none}
+.ct-season-cols{list-style:none;margin:0;padding:0 var(--hp-gr) 6px var(--hp-gl);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));row-gap:8px}
 .ct-season-cols::-webkit-scrollbar{display:none}
-.ct-season-col{min-width:0;padding:14px 16px 6px 14px;border-left:1px solid var(--hp-line-dark);scroll-snap-align:start}
+.ct-season-col{min-width:0;padding:12px 14px 6px 12px;border-left:1px solid var(--hp-line-dark)}
 .ct-season-head{display:flex;align-items:baseline;gap:8px;color:var(--hp-paper);text-decoration:none}
 a.ct-season-head:hover .ct-season-m{color:var(--hp-orange)}
-.ct-season-m{font-family:var(--hp-display);font-size:38px;line-height:1;text-transform:uppercase;transition:color .15s}
-.ct-season-y{font-family:var(--hp-mono);font-weight:700;font-size:11px;color:var(--hp-orange)}
+.ct-season-m{font-family:var(--hp-display);font-size:30px;line-height:1;text-transform:uppercase;transition:color .15s}
+.ct-season-y{font-family:var(--hp-mono);font-weight:700;font-size:13px;color:var(--hp-orange)}
 .ct-season-col ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:2px}
 .ct-season-col li{transition:opacity .2s}
 .ct-season-col li.is-off{opacity:.28}
 .ct-season-col li a{display:block;padding:6px 0;color:var(--hp-paper);text-decoration:none;font-size:15px;line-height:1.25}
 .ct-season-col li a:hover{text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:2px;text-underline-offset:4px}
-.ct-season-d{display:block;font-family:var(--hp-mono);font-weight:700;font-size:12px;color:var(--hp-orange)}
+.ct-season-d{display:block;font-family:var(--hp-mono);font-weight:700;font-size:13px;color:var(--hp-orange)}
 .ct-season-none{margin:12px 0 0;font-size:14px;color:rgba(255,250,231,.42)}
-.ct-season-later .ct-season-m{font-size:30px}
+.ct-season-later .ct-season-m{font-size:26px}
 .ct-season :focus-visible{outline-color:var(--hp-paper)}
 
 /* FILTRO */
 .ct-list{padding-top:64px;padding-bottom:24px}
 .ct-filters{display:contents}
-.ct-filters-q{margin:0 0 12px;font-family:var(--hp-display);font-size:34px;line-height:1;text-transform:uppercase}
-/* Barra de niveles compacta y fija bajo la cabecera: se puede cambiar de nivel sin volver arriba */
-.ct-chips{position:sticky;top:calc(var(--home-header-height,78px) + 8px);z-index:20;display:flex;gap:4px;padding:5px;background:var(--hp-ink);border-radius:999px;
-  overflow-x:auto;scrollbar-width:none;box-shadow:0 12px 24px -16px rgba(21,21,19,.7)}
-.ct-chips::-webkit-scrollbar{display:none}
-body.hp-page .ct-chips .hp-chip{flex:0 0 auto;display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 8px 6px 12px;border-radius:999px}
-.ct-chips .hp-chip-wave{width:26px;height:18px;flex:none}
-.ct-chips .hp-chip-label{font-size:20px;line-height:1;white-space:nowrap}
-.ct-chips .hp-chip-detail{display:none}
-.ct-chips .hp-chip-count{position:static;flex:none}
-/* Móvil: los cinco a la vista; número del nivel grande y su nombre debajo */
-.ct-chip-n{font-family:var(--hp-display);font-size:24px;line-height:.9;text-transform:uppercase}
-@media (max-width:719px){
-  .ct-chips{border-radius:18px;overflow:visible}
-  body.hp-page .ct-chips .hp-chip{flex:1 1 0;min-width:0;flex-direction:column;justify-content:center;gap:3px;min-height:52px;padding:6px 2px;border-radius:13px}
-  .ct-chips .hp-chip-wave,.ct-chips .hp-chip-count{display:none}
-  .ct-chips .hp-chip-label{font:500 11px/1.1 var(--hp-body);text-transform:none;white-space:nowrap}
-  .ct-chips .hp-chip:first-child .hp-chip-label{display:none}
-  body.hp-page .ct-chips .hp-chip:first-child{flex-grow:1.15}
+.ct-filters-q{margin:0 0 10px;font-family:var(--hp-display);font-size:24px;line-height:1;text-transform:uppercase}
+/* Filtro por nivel: el de la home (bloques rectos con la ola de cada nivel, el elegido en naranja).
+   Móvil: «Todos» a lo ancho y los cuatro niveles dos por dos. Escritorio: una fila fija bajo la cabecera. */
+.ct-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:2px solid var(--hp-ink);border-radius:2px;background:var(--hp-paper)}
+body.hp-page .ct-chips .hp-chip{border-bottom:2px solid var(--hp-ink)}
+body.hp-page .ct-chips .hp-chip:nth-child(even){border-right:2px solid var(--hp-ink)}
+body.hp-page .ct-chips .hp-chip:nth-child(odd){border-right:0}
+body.hp-page .ct-chips .hp-chip:first-child{grid-column:1/-1;border-right:0}
+body.hp-page .ct-chips .hp-chip:nth-last-child(-n+2){border-bottom:0}
+.ct-chip-n{display:none}
+.ct-chips .hp-chip-label{font-size:19px}
+@media (min-width:720px){
+  .ct-chips{position:sticky;top:calc(var(--home-header-height,78px) + 8px);z-index:20;grid-template-columns:repeat(5,minmax(0,1fr));box-shadow:0 12px 24px -18px rgba(27,27,27,.6)}
+  body.hp-page .ct-chips .hp-chip:nth-child(n){grid-column:auto;border-bottom:0;border-right:2px solid var(--hp-ink)}
+  body.hp-page .ct-chips .hp-chip:last-child{border-right:0}
+  .ct-chips .hp-chip-label{font-size:20px}
 }
-@media (min-width:720px){.ct-chip-n{display:none}}
-@media (max-width:359px){.ct-chips{gap:2px;padding:4px}body.hp-page .ct-chips .hp-chip:first-child{flex-grow:1.1}.ct-chips .hp-chip:first-child .ct-chip-n{font-size:19px}.ct-chips .hp-chip-label{font-size:10px;letter-spacing:-.01em}}
 .ct-status{margin:14px 0 0;font-size:14px;color:var(--hp-muted)}
 
 /* MESES */
-.ct-month{margin-top:56px;scroll-margin-top:calc(var(--home-header-height,78px) + 72px)}
+.ct-month{margin-top:48px;scroll-margin-top:calc(var(--home-header-height,78px) + 72px)}
 body.hp-page .ct-month-name{position:relative;margin:0 0 18px;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.86;
-  font-size:clamp(56px,16vw,200px);color:var(--hp-sea)}
+  font-size:clamp(38px,7vw,56px);color:var(--hp-sea)}
 body.hp-page .ct-month-name span{display:inline-block;vertical-align:top;margin-top:.12em;font-family:var(--hp-mono);font-weight:700;font-size:14px;line-height:1;color:var(--hp-orange)}
-body.hp-page .ct-month-later .ct-month-name{font-size:clamp(48px,11vw,120px);white-space:normal;line-height:.86}
-.ct-month-trips{position:relative;z-index:1;display:grid;gap:22px}
+body.hp-page .ct-month-later .ct-month-name{font-size:clamp(34px,6vw,48px);white-space:normal;line-height:.86}
+.ct-month-trips{position:relative;z-index:1;display:grid;gap:16px}
 
 /* BILLETE */
-.ct-ticket{--notch:var(--hp-paper);position:relative;display:grid;grid-template-columns:minmax(0,1fr);border-radius:20px;background:var(--hp-paper-2);color:var(--hp-ink);
+.ct-ticket{--notch:var(--hp-paper);position:relative;display:grid;grid-template-columns:minmax(0,1fr);border-radius:4px;background:var(--hp-paper-2);color:var(--hp-ink);
   box-shadow:0 1px 0 rgba(21,21,19,.08),0 24px 40px -30px rgba(21,21,19,.7);scroll-margin-top:calc(var(--home-header-height,78px) + 72px)}
 .ct-ticket:target{outline:3px solid var(--hp-orange);outline-offset:4px}
-body.hp-page .ct-photo{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;border-radius:20px 20px 0 0;background:#2a2a27}
+body.hp-page .ct-photo{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;border-radius:4px 4px 0 0;background:#2a2a27}
 .hp-page .ct-photo img{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;transition:transform .6s}
 .ct-ticket:hover .ct-photo img{transform:scale(1.04)}
 .ct-photo-empty{display:grid;place-items:center;height:100%;font-family:var(--hp-display);font-size:60px;color:rgba(255,250,231,.2)}
-.ct-tag{position:absolute;top:14px;left:14px;font-family:var(--hp-mono);font-weight:700;font-size:11px;padding:6px 10px;border-radius:999px;background:var(--hp-paper);color:var(--hp-ink)}
+.ct-tag{position:absolute;top:12px;left:12px;font-family:var(--hp-mono);font-weight:700;font-size:13px;padding:5px 8px;border-radius:2px;background:var(--hp-paper);color:var(--hp-ink)}
 .ct-tag-hot{background:var(--hp-orange)}
 .ct-body{padding:20px 22px 22px;min-width:0}
 .ct-place{margin:0;font-size:14px;color:var(--hp-muted)}
-body.hp-page .ct-ticket .ct-name{margin:4px 0 0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.86;font-size:clamp(42px,12vw,60px);text-wrap:balance}
+body.hp-page .ct-ticket .ct-name{margin:4px 0 0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;letter-spacing:0;line-height:.88;font-size:clamp(32px,9vw,40px);text-wrap:balance}
 body.hp-page .ct-name a{color:var(--hp-ink);text-decoration:none}
 .ct-name a:hover{text-decoration:underline;text-decoration-color:var(--hp-orange);text-decoration-thickness:3px;text-underline-offset:.08em}
 .ct-tagline{margin:10px 0 0;font-size:17px;line-height:1.35;max-width:36ch}
@@ -95,15 +90,15 @@ body.hp-page .ct-name a{color:var(--hp-ink);text-decoration:none}
 .ct-facts dd{margin:0;font-size:15px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
 .ct-dates{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-family:var(--hp-mono);font-weight:700;font-size:13px}
 .ct-lvbar{display:inline-flex;gap:3px}
-.ct-lvbar i{width:14px;height:6px;border-radius:3px;background:var(--hp-rule)}
+.ct-lvbar i{width:14px;height:5px;border-radius:0;background:var(--hp-rule)}
 .ct-lvbar i.on{background:var(--hp-orange)}
 /* matriz: tinta, separada por la línea perforada */
 .ct-stub{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 22px 22px;background:var(--hp-ink);color:var(--hp-paper);
-  border-radius:0 0 20px 20px;border-top:2px dashed rgba(255,250,231,.3)}
+  border-radius:0 0 4px 4px;border-top:2px dashed rgba(255,250,231,.3)}
 .ct-stub::before,.ct-stub::after{content:"";position:absolute;top:-12px;width:22px;height:22px;border-radius:50%;background:var(--notch)}
 .ct-stub::before{left:-11px}.ct-stub::after{right:-11px}
 .ct-price{margin:0;font-family:var(--hp-display);line-height:.9;white-space:nowrap}
-.ct-price strong{display:block;font-weight:400;font-size:46px}
+.ct-price strong{display:block;font-weight:400;font-size:40px}
 .ct-price small{display:block;font-family:var(--hp-body);font-size:13px;color:rgba(255,250,231,.65);margin-top:4px}
 .ct-price small:first-child{margin:0 0 2px}
 .ct-price del{display:block;font-family:var(--hp-mono);font-size:13px;color:rgba(255,250,231,.55)}
@@ -114,14 +109,14 @@ body.hp-page .ct-name a{color:var(--hp-ink);text-decoration:none}
 body.hp-page .ct-stub .hp-btn:hover{background:var(--hp-paper);color:var(--hp-ink)}
 
 /* VACÍO */
-.ct-empty{margin-top:28px;padding:28px 22px;border-radius:20px;background:var(--hp-paper-2)}
+.ct-empty{margin-top:28px;padding:28px 22px;border-radius:4px;background:var(--hp-paper-2)}
 body.hp-page .ct-empty h2{margin:0;font-family:var(--hp-display);font-weight:400;text-transform:uppercase;font-size:clamp(36px,9vw,56px);line-height:.9;max-width:16ch}
 .ct-empty p{margin:12px 0 0;font-size:17px;max-width:44ch}
 
 /* AYUDA: banda mar */
-.ct-help{position:relative;margin-top:72px;background:var(--hp-sea);color:var(--hp-paper);padding-block:64px 72px}
-body.hp-page .ct-help .hp-h2{font-size:clamp(50px,13vw,112px)}
-.ct-help p{margin:18px 0 0;font-size:19px;line-height:1.4;max-width:40ch;color:rgba(255,250,231,.88)}
+.ct-help{position:relative;margin-top:64px;background:var(--hp-sea);color:var(--hp-paper);padding-block:56px 64px}
+body.hp-page .ct-help .hp-h2{font-size:clamp(38px,8vw,56px)}
+.ct-help p{margin:14px 0 0;font-size:17px;line-height:1.4;max-width:40ch;color:rgba(255,250,231,.88)}
 body.catalog-page .lst-footer{border-top:0}
 
 @media (min-width:720px){
@@ -133,11 +128,11 @@ body.catalog-page .lst-footer{border-top:0}
   .ct-season-cols{padding:0 0 6px;overflow:visible;grid-template-columns:repeat(var(--cols),minmax(0,1fr))}
 }
 @media (min-width:900px){
-  .ct-ticket{grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr) 228px;min-height:300px}
-  body.hp-page .ct-photo{aspect-ratio:auto;border-radius:20px 0 0 20px}
+  .ct-ticket{grid-template-columns:minmax(0,.95fr) minmax(0,1.25fr) 220px;min-height:260px}
+  body.hp-page .ct-photo{aspect-ratio:auto;border-radius:4px 0 0 4px}
   .ct-body{padding:26px 30px 26px}
-  body.hp-page .ct-ticket .ct-name{font-size:clamp(48px,4.6vw,68px)}
-  .ct-stub{flex-direction:column;align-items:stretch;justify-content:space-between;flex-wrap:nowrap;padding:26px 24px;border-radius:0 20px 20px 0;border-top:0;border-left:2px dashed rgba(255,250,231,.3)}
+  body.hp-page .ct-ticket .ct-name{font-size:clamp(34px,3.2vw,44px)}
+  .ct-stub{flex-direction:column;align-items:stretch;justify-content:space-between;flex-wrap:nowrap;padding:26px 24px;border-radius:0 4px 4px 0;border-top:0;border-left:2px dashed rgba(255,250,231,.3)}
   .ct-stub::before,.ct-stub::after{left:-12px;right:auto}
   .ct-stub::before{top:-11px}.ct-stub::after{top:auto;bottom:-11px}
   .ct-offer{order:0}

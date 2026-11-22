@@ -6,8 +6,8 @@ test('levels default to all four; explicit restrictions remain configured', () =
   assert.deepEqual(levelsFor({}), [1, 2, 3, 4]);
   assert.equal(levelLabel({}), 'Todos los niveles');
   assert.equal(levelLabel({levels: []}), 'Todos los niveles');
-  assert.equal(levelLabel({levels: [3, 2, 2]}), 'Niveles 2–3');
-  assert.equal(levelLabel({levels: [1, 3]}), 'Niveles 1, 3');
+  assert.equal(levelLabel({levels: [3, 2, 2]}), 'Base e Intermedio');
+  assert.equal(levelLabel({levels: [1, 3]}), 'Iniciación e Intermedio');
   assert.throws(() => levelsFor({levels: [5]}), /Invalid level/);
 });
 

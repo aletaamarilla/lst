@@ -29,7 +29,7 @@ const scenario=async(name,fn)=>{try{await fn();}catch(error){check(false,name,{e
 const pageOptions={viewport:{width:390,height:900},reducedMotion:'reduce'};
 const zoomText=page=>page.evaluate(()=>{const elements=[...document.querySelectorAll('body,body *')];const sizes=elements.map(e=>parseFloat(getComputedStyle(e).fontSize));elements.forEach((e,i)=>e.style.fontSize=sizes[i]*2+'px');});
 const loadHome=async page=>{await page.goto(base+'/',{waitUntil:'domcontentloaded'});await page.evaluate(()=>document.fonts.ready);};
-// Home level list (.hp-lvl): each level has «Ver viajes» and «Saber más».
+// Home level list (.hp-lvl): each level has one action, «Ver viajes»; the guide is linked once below the list.
 const measureActions=page=>page.evaluate(()=>{
  const rect=e=>{const r=e.getBoundingClientRect();return {left:r.left,top:r.top,right:r.right,bottom:r.bottom,width:r.width,height:r.height};};
  const overlap=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
@@ -37,31 +37,14 @@ const measureActions=page=>page.evaluate(()=>{
   const actions=[...item.querySelectorAll('.hp-lvl-links a')];
   const bounds=rect(item),heading=item.querySelector('h3');
   const links=actions.map(link=>({text:link.textContent.trim(),href:link.getAttribute('href'),bounds:rect(link),clipped:link.scrollWidth>link.clientWidth+1}));
-  return {tag:item.tagName,title:heading?.textContent,bounds,links,nested:!!item.querySelector('a a,button a,a button'),sameParent:actions.length===2&&actions[0].parentElement===actions[1].parentElement,overlap:links.length===2&&overlap(links[0].bounds,links[1].bounds)};
+  return {tag:item.tagName,title:heading?.textContent,bounds,links,nested:!!item.querySelector('a a,button a,a button'),overlap:false};
  });
 });
 const checkLayout=async(page,label)=>{
  const items=await measureActions(page);layouts.push({label,items});
- check(items.length===4&&items.every(item=>item.tag==='LI'&&item.links.length===2&&!item.nested&&item.sameParent),label+': four levels expose two sibling native links',items);
+ check(items.length===4&&items.every(item=>item.tag==='LI'&&item.links.length===1&&!item.nested),label+': four levels expose one native link each',items);
  check(items.every(item=>!item.overlap&&item.links.every(link=>!link.clipped&&link.bounds.left>=item.bounds.left-1&&link.bounds.right<=item.bounds.right+1)),label+': actions do not overlap or clip',items);
  check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),label+': no horizontal page overflow');
-};
-const checkArrival=async(page,slug,label)=>{
- await page.waitForURL(url=>url.pathname==='/niveles/'&&url.hash==='#'+slug,{waitUntil:'domcontentloaded'});
- await page.evaluate(()=>document.fonts.ready);
- await page.waitForFunction(slug=>{
-  const target=document.getElementById(slug),heading=target?.querySelector('h3'),header=document.querySelector('.site-header');
-  if(!heading||target.hidden)return false;
-  const r=heading.getBoundingClientRect(),h=header.getBoundingClientRect();
-  return r.top>=Math.max(h.bottom,0)-1&&r.bottom<=innerHeight;
- },slug);
- const result=await page.evaluate(slug=>{
-  const target=document.getElementById(slug),heading=target.querySelector('h3');
-  const r=heading.getBoundingClientRect(),h=document.querySelector('.site-header').getBoundingClientRect();
-  return {slug,url:location.pathname+location.search+location.hash,visible:!target.hidden,heading:heading.textContent,headingTop:r.top,headingBottom:r.bottom,headerBottom:h.bottom,viewportHeight:innerHeight};
- },slug);
- arrivals.push({label,...result});
- check(result.visible&&result.headingTop>=result.headerBottom-1&&result.headingBottom<=result.viewportHeight,label+': intended level is shown and its heading clears the fixed header',result);
 };
 try{
  browser=await chromium.launch({executablePath:process.env.LST_CHROMIUM_PATH,args:['--no-sandbox']});
@@ -71,7 +54,8 @@ try{
   try{
    await loadHome(page);await checkLayout(page,'width '+width+' normal');
    const contracts=await page.locator('.hp-lvl').evaluateAll(items=>items.map(item=>({title:item.querySelector('h3')?.textContent,links:[...item.querySelectorAll('.hp-lvl-links a')].map(a=>[a.textContent.trim(),a.getAttribute('href')])})));
-   check(contracts.every((item,i)=>item.title.includes(levels[i][1])&&item.links[0][1]==='/viajes/?nivel='+levels[i][2]&&item.links[1][1]==='/niveles/#'+levels[i][0]&&/ver viajes/i.test(item.links[0][0])&&/saber más/i.test(item.links[1][0])),'width '+width+': each action preserves its own destination and level name',contracts);
+   check(contracts.every((item,i)=>item.title.includes(levels[i][1])&&item.links.length===1&&item.links[0][1]==='/viajes/?nivel='+levels[i][2]&&/ver viajes/i.test(item.links[0][0])),'width '+width+': each action preserves its own destination and level name',contracts);
+   check(await page.locator('.hp-levels-foot a').evaluateAll(as=>as.length===1&&as[0].getAttribute('href')==='/niveles/'),'width '+width+': one link to the full level guide');
    await page.locator('.hp-lvls').scrollIntoViewIfNeeded();
    await page.screenshot({path:path.join(output,'levels-'+width+'.png'),fullPage:false});
    await zoomText(page);await checkLayout(page,'width '+width+' text 200%');
@@ -83,15 +67,12 @@ try{
   const page=await browser.newPage({...pageOptions,javaScriptEnabled});
   page.on('pageerror',error=>pageErrors.push(error.message));
   try{
-   for(const [slug,name,number]of levels){
+   for(const [,name,number]of levels){
     await loadHome(page);
     const item=page.locator('.hp-lvl').nth(Number(number)-1);
     await item.locator('a[href^="/viajes/"]').click();
     await page.waitForURL(url=>url.pathname==='/viajes/'&&url.searchParams.get('nivel')===number,{waitUntil:'domcontentloaded'});
     check(new URL(page.url()).searchParams.get('nivel')===number,'JS '+javaScriptEnabled+': '+name+' Ver viajes opens its catalogue filter');
-    await loadHome(page);
-    await item.locator('a[href^="/niveles/"]').click();
-    await checkArrival(page,slug,'JS '+javaScriptEnabled+' '+name);
    }
   }finally{await page.close();}
  });
@@ -99,11 +80,12 @@ try{
   const page=await browser.newPage(pageOptions);
   try{
    await loadHome(page);
-   const first=page.locator('.hp-lvl').first();
-   await first.locator('a[href^="/viajes/"]').focus();
+   await page.locator('.hp-lvl').first().locator('a[href^="/viajes/"]').focus();
    await page.keyboard.press('Tab');
-   check(await first.locator('a[href^="/niveles/"]').evaluate(e=>{const style=getComputedStyle(e);return document.activeElement===e&&e.matches(':focus-visible')&&style.outlineStyle!=='none'&&parseFloat(style.outlineWidth)>=2;}),'keyboard Tab reaches sibling Saber más with visible focus');
-   await page.keyboard.press('Enter');await checkArrival(page,'nivel-1','keyboard Enter');
+   check(await page.locator('.hp-lvl').nth(1).locator('a[href^="/viajes/"]').evaluate(e=>{const style=getComputedStyle(e);return document.activeElement===e&&e.matches(':focus-visible')&&style.outlineStyle!=='none'&&parseFloat(style.outlineWidth)>=2;}),'keyboard Tab reaches the next level Ver viajes with visible focus');
+   await page.locator('.hp-levels-foot a').focus();await page.keyboard.press('Enter');
+   await page.waitForURL(url=>url.pathname==='/niveles/',{waitUntil:'domcontentloaded'});
+   check(new URL(page.url()).pathname==='/niveles/','keyboard Enter on the guide link opens /niveles/');
   }finally{await page.close();}
  });
  check(pageErrors.length===0,'no page runtime errors',pageErrors);

@@ -13,9 +13,11 @@ const editorial=()=>({...raw(),destinationDescription:'Entre el océano & las mo
 test('the cover keeps the photograph clear and the destination identity follows immediately below it',()=>{
  const t=adaptTrip(editorial()),html=renderTrip(t),cover=html.match(/<section class="trip-cover"[\s\S]*?<\/section>/)[0];
  const identity=html.match(/<section class="trip-essentials[\s\S]*?<\/section>/)[0];
+ const facts=html.match(/<dl class="trip-essential-facts"[\s\S]*?<\/dl>/)[0];
  assert.equal((html.match(/<h1\b/g)||[]).length,1);
- assert(identity.includes(t.name));assert.match(identity,/Niveles 1–2/);
- assert.match(identity,/trip-meta-duration/);assert(identity.includes(t.departures[0].duration));
+ assert(identity.includes(t.name));assert.match(facts,/Iniciación y Base/);
+ assert.match(facts,/trip-meta-duration/);assert(facts.includes(t.departures[0].duration));
+ assert(html.indexOf(facts)<html.indexOf('id="nivel"'));
  assert.doesNotMatch(cover,/<h1|trip-cover-copy/);
  assert.doesNotMatch(cover,/trip-breadcrumb|trip-cover-cta|Quiero vivir|trip-hero-fare/);
  assert(html.indexOf('aria-label="Breadcrumb"')>html.indexOf('</section>'));
@@ -23,9 +25,10 @@ test('the cover keeps the photograph clear and the destination identity follows 
 
 test('CMS editorial sections render in the requested order and retain their own exact content',()=>{
  const t=adaptTrip(editorial()),before=structuredClone(t),html=renderTrip(t);
- const ids=['destino','nivel','plan','spots','alojamiento','actividades','incluye','dudas','reservar'];
+ // Price and inclusions come right after «¿Es este tu viaje?», before the extras.
+ const ids=['destino','nivel','incluye','plan','spots','alojamiento','actividades','dudas','reservar'];
  for(let i=1;i<ids.length;i++)assert(html.indexOf(`id="${ids[i]}"`)>html.indexOf(`id="${ids[i-1]}"`));
- assert.match(html,/Entre el océano &amp; las montañas/);assert.match(html,/Primeras olas/);assert.doesNotMatch(html,/Ganar confianza\.|Progresar juntos\./);assert.match(html,/Coaching/);assert.match(html,/Fotografías de ejemplo/);
+ assert.match(html,/Entre el océano &amp; las montañas/);assert.match(html,/Primeras olas/);assert.doesNotMatch(html,/Ganar confianza\.|Progresar juntos\./);assert.match(html,/Coaching/);assert.match(html,/Fotos de ambiente, no de la casa del viaje/);assert.doesNotMatch(html,/Fotografías de ejemplo/);
  assert(html.includes(t.levelRequirement));
  assert.doesNotMatch(html,/<de prueba>/);assert.deepEqual(t,before);
  assert.match(html,/class="related-section"/);
@@ -59,7 +62,7 @@ test('different editorial programmes are never consolidated into one dated trip'
 
 test('confirmed single-date trips expose their date in the reading content available on mobile',()=>{
  const trip=adaptTrip(editorial()),html=renderTrip(trip);
- const facts=html.match(/<section class="trip-essentials[\s\S]*?<\/section>/)?.[0];
+ const facts=html.match(/<dl class="trip-essential-facts"[\s\S]*?<\/dl>/)?.[0];
  assert(facts);assert.match(facts,/17–24 ene 2027/);assert.match(facts,/Duración:/);
  const pending=renderTrip({...trip,state:'upcoming',departures:[]});assert(!pending.includes(trip.departures[0].date));assert.match(pending,/por anunciar/i);
 });

@@ -2,9 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {renderHomeTrips, renderHomeTrip, renderHomeTicket, nextDeparture} from './render-home-trips.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
+import {readFileSync} from 'node:fs';
+
+const levelPage = readFileSync('dist/niveles/index.html', 'utf8');
 
 const shell = '<!-- home-trips:start --><!-- home-trips:end -->';
-const page = '<!-- home-words:start --><!-- home-words:end --><!-- home-next:start --><!-- home-next:end --><!-- home-stats:start --><!-- home-stats:end -->' + shell + '<!-- home-bar:start --><!-- home-bar:end -->';
+const page = '<!-- home-words:start --><!-- home-words:end --><!-- home-next:start --><!-- home-next:end -->' + shell + '<!-- home-bar:start --><!-- home-bar:end -->';
 const departure = (id, start, price) => ({id, start, date: `${start} — fin`, price, duration: '4 noches', state: 'confirmed'});
 const trip = (id, changes = {}) => ({id, slug: id, name: `Viaje ${id}`, state: 'confirmed', availability: 'available', levels: [1, 2], departures: [departure('one', '2027-01-01', 399)], ...changes});
 // Brevo only maps real client departures; this one has a registration form.
@@ -32,8 +35,12 @@ test('tickets expose levels for filtering and a filter for each level group', ()
   assert.match(html, /data-filter="all" aria-pressed="true">[\s\S]*?<span class="hp-chip-label">Todas<\/span>/);
   // Each filter shows how many trips it keeps: all 2, level I 2, level II 1, levels III-IV 2.
   for (const [filter, count] of [['all', 2], ['1', 2], ['2', 1], ['3', 2]]) assert.match(html, new RegExp(`data-filter="${filter}"[^]*?<span class="hp-chip-count" aria-label="${count} viajes?">${count}</span>`));
-  // The bar lights levels 1 and 3; the label follows the site-wide level notation.
-  assert.match(html, /<i class="on"><\/i><i><\/i><i class="on"><\/i><i><\/i><em aria-hidden="true">[^<]+<\/em>/);
+  // The ticket names the levels in words, as on /niveles/, without the abstract level dots.
+  assert.match(html, /<span class="hp-lvtext">Iniciación e Intermedio<\/span>/);
+  assert.doesNotMatch(html, /hp-lvbar|<i\b/);
+  // One wave scale that grows with the level: foam to the waist, knee to chest, chest and up.
+  for (const [filter, label, wave] of [['all', 'Todas', 'Cualquier nivel'], ['1', 'Iniciación', 'Espuma, hasta la cintura'], ['2', 'Base', 'De la rodilla al pecho'], ['3', 'Intermedio y avanzado', 'Del pecho para arriba']])
+    assert.match(html, new RegExp(`data-filter="${filter}"[^>]*>[^]*?<span class="hp-chip-label">${label}</span><span class="hp-chip-detail">${wave}</span>`));
 });
 
 test('missing and mixed prices never inherit an obsolete trip price', () => {
@@ -78,19 +85,33 @@ test('each ticket has one action, Ver viaje, to the trip page; registration live
   assert.match(renderHomeTicket(hossegor({availability: 'last_places'})), /hp-tag-hot">Últimas plazas/);
 });
 
-test('the next departure, stats and mobile bar come from requestable departures only', () => {
+test('the next departure, hero words and mobile bar come from requestable departures only; no stats band', () => {
   assert.equal(nextDeparture([trip('unmapped')]), null);
   const html = renderHomeTrips(page, [trip('cheap', {departures: [departure('c', '2027-01-01', 199)]}), hossegor()]);
-  assert.match(html, /<a class="hp-next" href="\/viajes\/hossegor\/">[\s\S]*<strong>Hossegor<\/strong>[\s\S]*20–22 nov 2026 · 399 €/);
+  assert.match(html, /<a class="hp-next" href="\/viajes\/hossegor\/">[\s\S]*<strong>Hossegor<\/strong>[\s\S]*20–22 nov 2026 · <span class="hp-next-price">399 €<\/span>/);
   assert.match(html, /<nav class="hp-bar"[\s\S]*href="\/inscripciones\/hossegor\/\?salida=h1">Solicitar/);
-  assert.match(html, /<strong>1<\/strong><span>salida abierta a inscripción/);
-  assert.match(html, /<strong>199 €<\/strong><span>desde, por persona/);
+  // The generic big-number band is gone: nothing counts departures or quotes a minimum price.
+  assert.doesNotMatch(html, /hp-stat|home-stats|salidas? abiertas?|desde, por persona/);
   // Long names would not fit the hero line, so only short ones rotate.
   assert.match(html, /data-words="\[&quot;Hossegor\?&quot;\]"/);
   const none = renderHomeTrips(page, [trip('unmapped')]);
   assert.match(none, /<!-- home-next:start --><!-- home-next:end -->/);
   assert.match(none, /<nav class="hp-bar" aria-label="Contacto">[\s\S]*data-whatsapp="orientacion"/);
   assert.equal(renderHomeTrips(html, [trip('cheap', {departures: [departure('c', '2027-01-01', 199)]}), hossegor()]), html);
+});
+
+test('tickets say where you surf when the trip has spots, otherwise keep the tagline', () => {
+  const spots = (...names) => names.map(title => ({title, text: 'x'}));
+  const line = value => renderHomeTicket(value).match(/<p class="hp-tagline">([^<]*)<\/p>/)?.[1];
+  assert.equal(line(trip('m', {tagline: 'Sabe a sal', spots: spots('Imsouane', 'Costa de Agadir')})), 'Surf en Imsouane y Costa de Agadir');
+  assert.equal(line(trip('m', {spots: spots('Costa de Agadir', 'Imsouane')})), 'Surf en Costa de Agadir e Imsouane');
+  assert.equal(line(trip('m', {spots: spots('Imsouane')})), 'Surf en Imsouane');
+  assert.equal(line(trip('m', {spots: spots('A', 'B', 'C')})), 'Surf en A, B y C');
+  assert.equal(line(trip('m', {spots: spots('Imsouane', 'Anchor Point', 'Desert Point', 'Banana', 'Camel')})), 'Surf en Imsouane, Anchor Point, Desert Point y 2 spots más');
+  assert.equal(line(trip('m', {tagline: 'Sabe a sal', spots: []})), 'Sabe a sal');
+  assert.equal(line(trip('m', {spots: [{title: '  '}]})), undefined);
+  assert.equal(line(trip('m', {state: 'upcoming', departures: [], spots: spots('Imsouane')})), undefined);
+  assert.match(renderHomeTicket(trip('m', {spots: spots('Sal & <mar>')})), /Surf en Sal &amp; &lt;mar&gt;/);
 });
 
 test('date text, taglines and photo descriptions are escaped', () => {
@@ -107,25 +128,28 @@ test('home uses the explicit CMS card photograph and otherwise falls back to the
   assert.match(renderHomeTrips(shell, [{...value, cardImage: undefined}]), /src="\/cover.webp" alt="Portada"/);
 });
 
-test('level guide cards keep their shared card, date controls and filter metadata', () => {
+test('each level chapter lists its trips as rows with filter metadata', () => {
   const values = [
     trip('multi', {name: 'Mar & <olas>', departures: [departure('one', '2027-01-01', 399.5), departure('two', '2027-02-01', 450)]}),
     trip('full', {availability: 'full'}),
     trip('pending', {state: 'upcoming', departures: []}),
   ];
   for (const value of values) {
-    const guide = renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->', [value]);
-    assert.match(guide, /<article data-trip-levels="1 2" data-trip-name=/);
-    assert.match(guide, /class="home-trip guide-trip-card(?: home-trip-pending)?" data-compact-home/);
-    assert.match(guide, new RegExp('id="guide-trip-' + value.id + '-title"'));
-    if (value.state === 'upcoming') assert.match(guide, /<details class="guide-trip-group guide-trip-pending"/);
-    else assert.match(guide, /data-home-dates/);
+    const guide = renderLevelTrips(levelPage, [value]);
+    const chapter = guide.match(/data-level-trips="1"[\s\S]*?<\/ul>/)?.[0] ?? '';
+    assert.match(chapter, /<li class="lv-trip" data-trip-levels="1 2" data-trip-name="[^"]+"><a href="\/viajes\//);
+    assert.doesNotMatch(guide.match(/data-level-trips="3"[\s\S]*?<\/div>/)[0], /lv-trip-list/);
+    if (value.state === 'upcoming') assert.match(chapter, /Fechas por anunciar/);
+    if (value.id === 'full') assert.match(chapter, /Completo/);
+    if (value.id === 'multi') assert.match(chapter, /y 1 fecha más/);
   }
 });
 
-test('empty level collections preserve the help and native empty-state contract', () => {
-  const html = renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->', []);
-  assert.match(html, /No hay viajes publicados para este nivel/);
-  assert.doesNotMatch(html, /<article/);
+test('empty level collections keep the help and say there are no trips', () => {
+  const html = renderLevelTrips(levelPage, []);
+  assert.match(html, /No hay viajes publicados en este momento/);
+  assert.match(html, /Ahora mismo no hay salidas para este nivel/);
+  assert.doesNotMatch(html, /class="lv-trip"/);
+  assert.match(html, /id="orientacion"/);
   assert.throws(() => renderLevelTrips('', []), /Missing guide trip generation markers/);
 });

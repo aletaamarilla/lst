@@ -12,13 +12,17 @@ import {buildSite} from './build.mjs';
 import {createSiteServer, renderPreviewPage} from './serve.mjs';
 const trips=JSON.parse(await readFile('dist/catalog-snapshot.json','utf8')).trips;
 const get=slug=>structuredClone(trips.find(t=>t.slug===slug));
+// Hossegor's only departure (20–22 nov 2026) has started, so the published snapshot no longer lists it.
+// Its Brevo mapping must still hold, so these tests restore that departure on a copy.
+const hossegor=()=>{const t=get('hossegor');if(t.departures.length)return t;const d=get('el-palmar').departures[0];return {...t,state:'confirmed',availability:'available',departures:[{...d,id:'hossegor-2026-11-20',start:'2026-11-20',end:'2026-11-22',date:'20 nov 2026 — 22 nov 2026',duration:'2 noches',price:399}]};};
+const fixture=slug=>slug==='hossegor'?hossegor():get(slug);
 const inventory=JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json','utf8'));
 const documents=prepareDrafts(inventory).map(doc=>({...doc,_id:doc._id.replace(/^drafts\./,'')}));
 
 test('all eight client categories map by destination and exact start/end, regardless of order',()=>{
  const expected={hossegor:['1'],'el-palmar':['2'],marruecos:['3'],'marruecos-avanzado':['4'],fuerteventura:['5'],senegal:['6'],maldivas:['7','8']};
  for(const [slug,values] of Object.entries(expected)) {
-  const t=get(slug);assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values);
+  const t=fixture(slug);assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values);
   t.departures.reverse();assert.deepEqual(t.departures.map(d=>brevoValue(t,d)),values.toReversed());
  }
  const t=get('el-palmar');t.departures[0].end='2026-12-09';assert.equal(registrationUrl(t),'');
@@ -44,7 +48,7 @@ test('canonical multi-date pages require an explicit date; single and dated alia
  const closedAlias=renderRegistration(t,'maldivas-2027-03-21');
  assert.doesNotMatch(closedAlias,/name="VIAJE_SURF"[^>]* checked/);
  assert.match(closedAlias,/id="registration-date-error" role="alert">/);
- assert.match(renderRegistration(get('hossegor')),/name="VIAJE_SURF"[^>]*value="1"[^>]* checked/);
+ assert.match(renderRegistration(hossegor()),/name="VIAJE_SURF"[^>]*value="1"[^>]* checked/);
  assert.equal(registrationUrl(t,t.departures[1]),'/inscripciones/maldivas/?salida='+t.departures[1].id);
 });
 
@@ -86,7 +90,7 @@ test('registration links are additive and remain available in the native date fa
 test('build generates forms and aliases, preserves static serving and removes forms when unpublished',async()=>{
  const temp=await mkdtemp(path.join(os.tmpdir(),'lst-brevo-'));const out=path.join(temp,'dist');
  try {
-  await buildSite({out,read:async()=>documents});
+  await buildSite({today:'2026-11-01',out,read:async()=>documents});
   assert.match(await readFile(path.join(out,'inscripciones/maldivas/index.html'),'utf8'),/name="VIAJE_SURF"/);
   assert.match(await readFile(path.join(out,'inscripciones/maldivas-2027-03-28/index.html'),'utf8'),/value="8"[^>]* checked/);
   const server=createSiteServer({root:out});await new Promise(r=>server.listen(0,'127.0.0.1',r));
@@ -95,7 +99,7 @@ test('build generates forms and aliases, preserves static serving and removes fo
    for(const suffix of ['','/'])assert.equal((await fetch(base+'/inscripciones/el-palmar'+suffix)).status,200);
    assert.equal((await fetch(base+'/inscripciones/desconocido/')).status,404);
   } finally {await new Promise(r=>server.close(r));}
-  await buildSite({out,read:async()=>[]});
+  await buildSite({today:'2026-11-01',out,read:async()=>[]});
   assert.doesNotMatch(await readFile(path.join(out,'inscripciones/maldivas/index.html'),'utf8'),/<form\b/);
   assert.doesNotMatch(await readFile(path.join(out,'inscripciones/maldivas-2027-03-28/index.html'),'utf8'),/<form\b/);
  } finally {await rm(temp,{recursive:true,force:true});}

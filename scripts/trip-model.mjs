@@ -1,3 +1,4 @@
+import {levelNames} from './surf-levels.mjs';
 import {departurePricing} from './trip-pricing.mjs';
 const ALL_LEVELS = Object.freeze([1, 2, 3, 4]);
 
@@ -13,14 +14,7 @@ function configuredLevels(trip) {
 
 export const levelsFor = configuredLevels;
 
-const labelFor = levels => {
-  if (levels.length === 4) return 'Todos los niveles';
-  const consecutive = levels.every((level, i) => !i || level === levels[i - 1] + 1);
-  const label = consecutive && levels.length > 1
-    ? `${levels[0]}–${levels.at(-1)}`
-    : levels.join(', ');
-  return `${levels.length === 1 ? 'Nivel' : 'Niveles'} ${label}`;
-};
+const labelFor = levelNames;
 export const levelLabel = trip => labelFor(levelsFor(trip));
 
 export function departuresFor(trip) {

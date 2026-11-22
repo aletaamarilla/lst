@@ -27,6 +27,22 @@ El build decide el dominio público y si los buscadores pueden indexar, según d
 
 Sin variables (local, previsualizaciones y el `dist` versionado) todo queda en `noindex` y `robots.txt` bloquea el rastreo. Para el lanzamiento, definir ambas solo en el entorno **Production** de Vercel y redesplegar. El build escribe `canonical`, `og:url`, `robots.txt` y `sitemap.xml`; las inscripciones y los avisos de viaje no publicado nunca se indexan, y las URLs fechadas apuntan como canónica a la ficha principal. `npm run check` comprueba que todo coincide con las variables del entorno donde se ejecuta.
 
+Además, cada página que es su propia canónica lleva un bloque `<!-- seo:start -->…<!-- seo:end -->` generado por `scripts/structured-data.mjs`: etiquetas Open Graph que falten (imagen por defecto `assets/og-default.jpg`) y JSON-LD con `Organization`, `WebSite`, `TouristTrip` con ofertas por salida, `BreadcrumbList` y `FAQPage`. Inscripciones, URLs fechadas y avisos no lo llevan. Con la indexación abierta el build escribe además `llms.txt` (`scripts/llms.mjs`): un resumen en texto para asistentes de IA con qué es LST, los viajes publicados con fechas, niveles y precio, y las páginas de referencia. `npm run check` exige que las páginas escritas a mano no pasen de 60 caracteres de título ni de 160 de descripción. `vercel.json` redirige (301) las URLs de la web WordPress anterior y fuerza la barra final.
+
+## Caducidad de salidas
+
+El build cierra las salidas cuya fecha de inicio ya ha llegado (día en Madrid): desaparecen de la home, el catálogo y la inscripción, y un viaje sin fechas futuras pasa a «Próximamente» conservando su URL. `.github/workflows/daily-rebuild.yml` lanza un build de producción cada noche; requiere el secreto de repositorio `VERCEL_DEPLOY_HOOK_URL` (un deploy hook de Vercel para la rama de producción, el mismo que usa el webhook de Sanity).
+
+## Analítica
+
+GA4 con el vocabulario de eventos de Travelhood, para que el panel común (`travelhood-admin`) lea las tres webs igual. Diseño y lista de eventos: `docs/superpowers/specs/2026-11-19-analitica-ga4-design.md`.
+
+- **Activación:** `GA4_MEASUREMENT_ID` (`G-…`) solo en el entorno **Production** de Vercel. Sin la variable el build no inyecta ni GA4 ni el aviso de cookies. Nada se carga de Google hasta que la visita acepta.
+- **En cada envío**, vistas de página incluidas: `measurement_version="1"`, `page_type` y `traffic_type`. Es `external` solo en el dominio de `SITE_URL`; en cualquier otro dominio es `developer` y lleva `debug_mode`.
+- **Visitas del equipo:** con la analítica aceptada, ejecutar en la consola del navegador `document.cookie='lst_analytics_internal=1; path=/; max-age=31536000; SameSite=Lax; Secure'` y recargar. Esas visitas salen como `traffic_type=internal`. Para volver a contar como visitante, borrar la cookie.
+- **Botones:** `cta_location` sale de dos tablas fijas en `dist/analytics.js`. Al añadir un botón de WhatsApp, inscripción, fechas o PDF en un sitio nuevo hay que darle una entrada: `scripts/analytics-browser.test.mjs` falla si alguna página publicada tiene un botón sin clasificar.
+- **Inscripción:** `dist/registration.js` avisa del envío aceptado o fallido con hechos (estado HTTP, si Brevo señaló campos, tipo de error), nunca con mensajes ni datos del formulario.
+
 ## Estructura
 
 - dist/index.html: home comercial. `scripts/render-home-trips.mjs` genera desde Sanity publicado los billetes de viaje, la próxima salida, las cifras, la barra móvil y los destinos del hero (regiones `home-*`).

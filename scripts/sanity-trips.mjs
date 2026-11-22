@@ -59,7 +59,11 @@ function validateCapacity(value, slug) {
   return capacity;
 }
 
-export function adaptTrip(doc) {
+// Calendar day in Spain, the reference for closing departures (YYYY-MM-DD).
+export const madridToday = (now = new Date()) => new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Madrid', year: 'numeric', month: '2-digit', day: '2-digit'}).format(now);
+
+// `today` closes departures that have already started; without it every date is kept.
+export function adaptTrip(doc, {today} = {}) {
   if (doc._type !== 'trip' || !doc._id || /^(drafts|versions)\./.test(doc._id)) throw Error('Documento no publicado');
   const slug = doc.slug?.current;
   if (!slugPattern.test(slug ?? '')) throw Error('Slug inválido');
@@ -84,6 +88,16 @@ export function adaptTrip(doc) {
     return {...departure, ...departurePricing(departure, {state: doc.state, availability: doc.availability ?? (doc.capacity?.available === 0 ? 'full' : undefined), capacity: doc.capacity})};
   });
   if (doc.state === 'confirmed' && !departures.length) throw Error(`Faltan fechas: ${slug}`);
+  // A trip whose dates have all started keeps its page as "próximamente", without registration.
+  if (today) {
+    if (!validDate(today)) throw Error('Fecha de referencia inválida');
+    const future = departures.filter(d => d.start > today);
+    if (future.length !== departures.length) {
+      departures.splice(0, departures.length, ...future);
+      if (!future.length) doc = {...doc, state: 'upcoming'};
+      for (const d of departures) d.state = doc.state;
+    }
+  }
   const capacity = {total: doc.capacity?.total ?? null, available: doc.capacity?.available ?? null};
   for (const key of ['total', 'available']) if (capacity[key] != null && (!Number.isInteger(capacity[key]) || capacity[key] < (key === 'total' ? 1 : 0))) throw Error(`Capacidad inválida: ${slug}`);
   if (capacity.available != null && capacity.total != null && capacity.available > capacity.total) throw Error(`Disponibilidad superior a capacidad: ${slug}`);
@@ -126,14 +140,14 @@ export function adaptTrip(doc) {
   return result;
 }
 
-export function adaptTrips(documents) {
+export function adaptTrips(documents, options = {}) {
   const trips = documents.map(doc => {
-    if (!doc.editorialSource) return adaptTrip(doc);
+    if (!doc.editorialSource) return adaptTrip(doc, options);
     const id = doc.editorialSource._ref;
     const source = documents.find(candidate => candidate._id === id);
     if (!source || source._type !== 'trip' || source === doc || source.editorialSource || /^(drafts|versions)\./.test(id ?? '')) throw Error('Referencia de contenido inválida: ' + doc._id);
     const shared = Object.fromEntries(sharedTripContentFields.map(field => [field, source[field]]));
-    return adaptTrip({...doc, ...shared});
+    return adaptTrip({...doc, ...shared}, options);
   });
   if (new Set(trips.map(t => t.slug)).size !== trips.length) throw Error('Slugs duplicados en Sanity');
   const consolidated = consolidateTrips(trips);

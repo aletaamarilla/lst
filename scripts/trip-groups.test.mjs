@@ -33,7 +33,7 @@ test('eight source dates become seven trips: two Morocco programmes and one Mald
  assert.deepEqual(trips.map(t=>t.name).sort(),['El Palmar','Fuerteventura','Hossegor','Maldivas','Marruecos','Marruecos avanzado','Senegal']);
  const trip=trips.find(t=>t.slug==='maldivas');
  assert.deepEqual(trip.aliases,maldives);assert.equal(trip.departures.length,2);
- assert.deepEqual(levelsFor(trip),[2,3]);assert.equal(levelLabel(trip),'Niveles 2–3');
+ assert.deepEqual(levelsFor(trip),[2,3]);assert.equal(levelLabel(trip),'Base e Intermedio');
  assert.deepEqual(trip.departures.map(d=>d.dossier),maldives.map(slug=>'https://example.com/'+slug+'.pdf'));
  assert(trip.departures.every(d=>d.capacity.total===10));
  for(const d of trip.departures){assert.equal(d.levels,undefined);assert.equal(d.programme,undefined);assert(renderTrip(trip).includes(encodeURIComponent(departureMessage(trip,d))));}
@@ -55,7 +55,7 @@ test('each Morocco product retains its own programme, material, requirements and
  assert(basic.includes.includes('Material de iniciación y neoprenos'));
  assert(!advanced.includes.includes('Material de iniciación y neoprenos'));
  assert(advanced.includes.includes('Surf coaching intensivo con Lucas'));
- assert.equal(tripFacts(advanced)[2][1],'Nivel 3 · '+advanced.levelRequirement);
+ assert.equal(tripFacts(advanced)[2][1],'Intermedio · '+advanced.levelRequirement);
 });
 
 test('stale per-date levels, requirements or programmes fail before publication',()=>{
@@ -76,11 +76,11 @@ test('same destination and level with a different itinerary never merge',()=>{
  }
 });
 
-test('all discovery views expose independent Morocco cards with a fixed range',()=>{
+test('all discovery views expose independent Morocco cards with a fixed range',async()=>{
  const trips=adaptTrips(documents()).filter(t=>t.slug.startsWith('marruecos'));
- for(const html of [renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->',trips),renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips),renderLevelTrips('<!-- level-trips:start --><!-- level-trips:end -->',trips)]){
+ for(const html of [renderHomeTrips('<!-- home-trips:start --><!-- home-trips:end -->',trips),renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips),renderLevelTrips(await readFile('dist/niveles/index.html','utf8'),trips)]){
   assert(html.includes('/viajes/marruecos/'));assert(html.includes('/viajes/marruecos-avanzado/'));
-  assert(html.includes('Marruecos avanzado'));assert(html.includes('Niveles 1–2'));assert(html.includes('Nivel 3'));
+  assert(html.includes('Marruecos avanzado'));assert(html.includes('Iniciación y Base'));assert(html.includes('Intermedio'));
   assert(!html.includes('Nivel según la fecha'));
  }
  const catalog=renderCatalog('<!-- catalog:start --><!-- catalog:end -->',trips);
@@ -111,15 +111,16 @@ test('canonical and dated URLs survive splitting, regrouping and withdrawal',asy
  const dir=await mkdtemp(path.join(os.tmpdir(),'lst-fixed-programme-')),out=path.join(dir,'site');
  const docs=documents();
  try{
-  await buildSite({out,read:async()=>docs});
+  await buildSite({today:'2026-11-01',out,read:async()=>docs});
   for(const [slug,aliases] of [['maldivas',maldives],['marruecos',[morocco[0]]],['marruecos-avanzado',[morocco[1]]]]){
    const canonical=await readFile(path.join(out,'viajes',slug,'index.html'),'utf8');
-   for(const alias of aliases)assert.equal(await readFile(path.join(out,'viajes',alias,'index.html'),'utf8'),canonical);
+   const noSeo=html=>html.replace(/<!-- seo:start -->[\s\S]*?<!-- seo:end -->/,'');
+   for(const alias of aliases)assert.equal(noSeo(await readFile(path.join(out,'viajes',alias,'index.html'),'utf8')),noSeo(canonical));
   }
-  await buildSite({out,template:out,read:async()=>docs.filter(d=>d.slug.current!==morocco[1])});
+  await buildSite({today:'2026-11-01',out,template:out,read:async()=>docs.filter(d=>d.slug.current!==morocco[1])});
   for(const slug of ['marruecos-avanzado',morocco[1]])assert.match(await readFile(path.join(out,'viajes',slug,'index.html'),'utf8'),/no está publicado/);
   assert.match(await readFile(path.join(out,'viajes/marruecos/index.html'),'utf8'),/Material de iniciación/);
-  await buildSite({out,template:out,read:async()=>[]});
+  await buildSite({today:'2026-11-01',out,template:out,read:async()=>[]});
   assert.match(await readFile(path.join(out,'viajes/maldivas/index.html'),'utf8'),/no está publicado/);
  }finally{await rm(dir,{recursive:true,force:true});}
 });
