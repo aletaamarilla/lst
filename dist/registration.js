@@ -32,10 +32,44 @@ birthDate?.addEventListener('input', () => {
   birthDate.setCustomValidity(Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === `${year}-${month}-${day}` ? '' : 'Introduce una fecha válida.');
 });
 
-// Brevo only accepts the national number as 5 to 15 digits, with the prefix in its own select.
-// Spaces, dashes and a typed prefix (+34, 0034) are removed; a typed prefix also picks the country.
+// Messages are written under each field: native validation bubbles never appear in iOS Safari
+// or in the Instagram and WhatsApp in-app browsers, so a blocked step looked like a dead button.
+const messageFor = input => {
+  const v = input.validity;
+  if (v.valueMissing) return input.type === 'radio' ? 'Elige una opción.' : input.type === 'checkbox' ? 'Marca esta casilla para continuar.' : 'Rellena este campo.';
+  if (v.customError) return input.validationMessage;
+  if (v.typeMismatch && input.type === 'email') return 'Escribe un email válido. Por ejemplo: nombre@gmail.com.';
+  if (v.patternMismatch && input.id === 'FECHADENACIMIENTO') return 'Escribe la fecha como dd-mm-aaaa. Por ejemplo: 15-06-1995.';
+  if (v.patternMismatch && input.id === 'CODIGO_POSTAL') return 'Escribe solo números.';
+  return input.validationMessage;
+};
+// Consent checkboxes have no Brevo error slot; one is added inside their label when needed.
+const errorSlot = input => {
+  const entry = input.closest('.form__entry');
+  if (entry) return entry.querySelector('.entry__error');
+  const option = input.closest('.registration-consent-option');
+  if (!option) return null;
+  return option.querySelector('.entry__error') ?? option.appendChild(Object.assign(document.createElement('span'), {className: 'entry__error entry__error--primary'}));
+};
+const showFieldError = (input, message = messageFor(input)) => {
+  const slot = errorSlot(input);
+  if (!slot) { input.reportValidity(); return; }
+  slot.textContent = message;
+  input.setAttribute('aria-invalid', 'true');
+};
+const clearFieldError = input => {
+  const scope = input.closest('.form__entry, .registration-consent-option');
+  if (!scope) return;
+  const slot = scope.querySelector('.entry__error');
+  if (slot) slot.textContent = '';
+  scope.querySelectorAll('[aria-invalid]').forEach(field => field.removeAttribute('aria-invalid'));
+};
+
+// Brevo joins the country prefix and the number, and accepts 6 to 19 digits in all, with no + or 0 in front.
+// Spaces, dashes, a typed prefix (+34, 0034) and a leading trunk 0 are removed; a typed prefix also picks the country.
 const phone = document.querySelector('#WHATSAPP');
 const phoneCode = document.querySelector('[name="WHATSAPP__COUNTRY_CODE"]');
+const phoneMessage = 'El WhatsApp debe tener entre 6 y 19 cifras contando el prefijo del país, sin + ni 0 delante. Elige el prefijo en la lista y escribe el número. Por ejemplo: 612345678.';
 const nationalNumber = () => {
   const raw = phone.value.trim();
   let digits = raw.replace(/\D/g, '');
@@ -45,15 +79,21 @@ const nationalNumber = () => {
       .filter(({code}) => code && digits.startsWith(code)).sort((a, b) => b.code.length - a.code.length)[0];
     if (option) { phoneCode.value = option.o.value; digits = digits.slice(option.code.length); }
   }
-  return digits;
+  return digits.replace(/^0+/, '');
 };
 const checkPhone = () => {
   const digits = nationalNumber();
-  phone.setCustomValidity(!phone.value.trim() || /^[0-9]{5,15}$/.test(digits) ? '' : 'Escribe solo el número de teléfono, sin prefijo. Por ejemplo: 612345678.');
+  const total = (phoneCode?.value.replace(/\D/g, '') ?? '').length + digits.length;
+  phone.setCustomValidity(!phone.value.trim() || (digits.length && total >= 6 && total <= 19) ? '' : phoneMessage);
   return digits;
 };
 phone?.addEventListener('input', checkPhone);
-phone?.addEventListener('change', () => { const digits = checkPhone(); if (digits) phone.value = digits; });
+phone?.addEventListener('change', () => {
+  const digits = checkPhone();
+  if (digits && phone.checkValidity()) phone.value = digits;
+  if (phone.value.trim() && !phone.checkValidity()) showFieldError(phone);
+});
+phoneCode?.addEventListener('change', () => { if (phone.value.trim()) { checkPhone(); if (phone.checkValidity()) clearFieldError(phone); else showFieldError(phone); } });
 
 // Health details are optional; once given, their specific consent becomes required.
 const healthConsent = document.querySelector('[data-consent="health"]');
@@ -102,11 +142,18 @@ function createSteps(form) {
       progress.scrollIntoView({block:'start', behavior:'auto'});
     }
   };
+  // Writes the message under the field, then brings it into view with focus on it.
+  const flag = invalid => {
+    if (invalid.name === 'VIAJE_SURF' && datePicker) datePicker.open = true;
+    showFieldError(invalid);
+    invalid.focus({preventScroll:true});
+    (invalid.closest('.form__entry, .registration-consent-option') ?? invalid).scrollIntoView({block:'center', behavior:'auto'});
+  };
   const invalidIn = section => [...section.querySelectorAll('input,select,textarea')].find(input => !input.checkValidity());
   const advance = () => {
     if (locked) return;
     const invalid = invalidIn(sections[current]);
-    if (invalid) { if (invalid.name === 'VIAJE_SURF' && datePicker) datePicker.open = true; invalid.reportValidity(); return; }
+    if (invalid) { flag(invalid); return; }
     if (current < sections.length - 1) show(current + 1);
   };
   previous.addEventListener('click', () => { if (!locked && current > 0) show(current - 1); });
@@ -124,7 +171,7 @@ function createSteps(form) {
     validateAll() {
       for (let i = 0; i < sections.length; i++) {
         const invalid = invalidIn(sections[i]);
-        if (invalid) { show(i); if (invalid.name === 'VIAJE_SURF' && datePicker) datePicker.open = true; invalid.reportValidity(); return false; }
+        if (invalid) { show(i, false); flag(invalid); return false; }
       }
       return true;
     },
@@ -150,19 +197,13 @@ if (form) {
     panel.focus({preventScroll:true});
     panel.scrollIntoView({behavior:'auto', block:'center'});
   };
-  form.addEventListener('input', event => {
-    const entry = event.target.closest('.form__entry');
-    if (entry) {
-      entry.querySelector('.entry__error').textContent = '';
-      entry.querySelectorAll('[aria-invalid]').forEach(input => input.removeAttribute('aria-invalid'));
-    }
-  });
+  form.addEventListener('input', event => clearFieldError(event.target));
   form.addEventListener('submit', async event => {
     event.preventDefault();
     if (sending || complete) return;
     // Enter follows the same progression as the Continue button.
     if (!wizard.last) { wizard.advance(); return; }
-    if (phone) { const digits = checkPhone(); if (digits) phone.value = digits; }
+    if (phone) { const digits = checkPhone(); if (digits && phone.checkValidity()) phone.value = digits; }
     if (!wizard.validateAll()) return;
     sending = true;
     wizard.lock(true);
