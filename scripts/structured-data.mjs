@@ -17,6 +17,8 @@ export const organization = Object.freeze({
 });
 
 const DEFAULT_IMAGE = '/assets/og-default.jpg';
+// Pages whose preview should be their own hero photo, cropped to 1200×630.
+const PAGE_IMAGES = {'/': '/assets/og-home.jpg'};
 const sections = {
   '/viajes/': 'Viajes', '/niveles/': 'Niveles', '/conocenos/': 'Conócenos', '/preguntas-frecuentes/': 'Preguntas frecuentes',
   '/aviso-legal/': 'Aviso legal', '/condiciones/': 'Condiciones', '/privacidad/': 'Privacidad', '/cookies/': 'Cookies',
@@ -91,7 +93,7 @@ export function socialTags(html, route, site) {
   const tags = [];
   if (!has('og:title')) tags.push(['og:title', title(html)]);
   if (!has('og:description') && description(html)) tags.push(['og:description', description(html)]);
-  if (!has('og:image')) tags.push(['og:image', absolute(DEFAULT_IMAGE, site)], ['og:image:width', '1200'], ['og:image:height', '630']);
+  if (!has('og:image')) tags.push(['og:image', absolute(PAGE_IMAGES[route] ?? DEFAULT_IMAGE, site)], ['og:image:width', '1200'], ['og:image:height', '630']);
   if (!has('og:url')) tags.push(['og:url', `${site.origin}${route}`]);
   if (!has('og:type')) tags.push(['og:type', 'website']);
   if (!has('og:site_name')) tags.push(['og:site_name', organization.name]);

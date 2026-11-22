@@ -31,6 +31,7 @@ test('a trip without open dates has no offers', () => {
 test('social tags fill only what is missing and the block is rebuilt idempotently', () => {
   assert.match(socialTags(page, '/preguntas-frecuentes/', site), /og:image" content="https:\/\/www.example.com\/assets\/og-default.jpg"/);
   assert.doesNotMatch(socialTags('<meta property="og:image" content="x">', '/', site), /og-default/);
+  assert.match(socialTags(page, '/', site), /og:image" content="https:\/\/www.example.com\/assets\/og-home.jpg"/);
   const once = applyStructuredData(page, '/preguntas-frecuentes/', [], site, {public: true});
   assert.equal(applyStructuredData(once, '/preguntas-frecuentes/', [], site, {public: true}), once);
   assert.equal(applyStructuredData(once, '/preguntas-frecuentes/', [], site, {public: false}), page);
