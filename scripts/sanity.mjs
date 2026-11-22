@@ -26,9 +26,8 @@ export async function querySanity(query, {perspective = 'published', params = {}
 
 export function readPublishedTrips({env = process.env, ...options} = {}) {
   return querySanity(`*[_type == "trip" && !(_id in path("drafts.**")) && !(_id in path("versions.**"))] | order(_createdAt asc, _id asc) {
-    ..., "dossier": coalesce(dossierFile.asset->url, dossier), "hero": hero{..., "url": asset->url}, "cardImage": cardImage{..., "url": asset->url},
+    ..., "hero": hero{..., "url": asset->url}, "cardImage": cardImage{..., "url": asset->url},
     "gallery": gallery[]{..., "url": asset->url},
-    "departures": departures[]{..., "dossier": coalesce(dossierFile.asset->url, dossier)},
     "activities": activities[]{..., "image": image{..., "url": asset->url}},
     "spots": spots[]{..., "image": image{..., "url": asset->url}},
     "stay": stay{..., "image": image{..., "url": asset->url}, "gallery": gallery[]{..., "url": asset->url}}

@@ -1,6 +1,7 @@
 import {defineArrayMember, defineField, defineType, type ConditionalPropertyCallbackContext} from 'sanity'
 import {promotionsField} from './promotions'
 import {sharedTripContentFields} from '../../scripts/trip-content-fields.mjs'
+import {dossierProblem} from '../../scripts/dossier-url.mjs'
 
 const editorialCards = (name: string, title: string) => defineField({name, title, type: 'array', group: 'program', of: [defineArrayMember({
   name: 'visualCard', type: 'object', fields: [
@@ -89,8 +90,7 @@ export const trip = defineType({
           ]}),
           defineField({name: 'price', title: 'Precio general por persona (€)', type: 'number', description: 'Tarifa general sin descuento. Vacío = por confirmar. Las tarifas reducidas se configuran debajo; no se cambia este importe al activar un early bird.', validation: (rule) => rule.greaterThan(0).precision(2)}),
           promotionsField,
-          defineField({name: 'dossierFile', title: 'PDF de esta salida (opcional)', type: 'file', options: {accept: 'application/pdf'}, description: 'PDF específico de esta fecha. Tiene prioridad sobre la URL de esta salida. Sin PDF ni URL propios, se usa el dossier general del viaje.'}),
-          defineField({name: 'dossier', title: 'URL del dossier de esta salida (opcional)', type: 'url', description: 'URL específica de esta fecha si no adjuntas un PDF propio. Vacío = usa el dossier general del viaje.', validation: (rule) => rule.uri({scheme: ['https']})}),
+          defineField({name: 'dossier', title: 'URL del dossier de esta salida (opcional)', type: 'url', description: 'Vacío = usa el dossier general del viaje.', validation: (rule) => rule.uri({scheme: ['https']}).custom((value) => dossierProblem(value) || true)}),
           defineField({name: 'payment', title: 'Señal y condiciones de esta salida', type: 'object', description: 'Opcional. Cada campo vacío hereda el valor general del viaje.', fields: [
             defineField({name: 'depositAmount', title: 'Señal fija (€)', type: 'number', validation: r => r.greaterThan(0).precision(2)}),
             defineField({name: 'terms', title: 'Condiciones de pago y cancelación', type: 'text'}),
@@ -121,8 +121,7 @@ export const trip = defineType({
         preview: {select: {title: 'question'}},
       })],
     }),
-    defineField({name: 'dossierFile', title: 'PDF del viaje', type: 'file', group: 'program', options: {accept: 'application/pdf'}, description: 'Sube o sustituye el PDF aprobado. Este archivo tiene prioridad sobre la URL anterior.'}),
-    defineField({name: 'dossier', title: 'URL anterior del dossier (opcional)', type: 'url', group: 'program', validation: (rule) => rule.uri({scheme: ['https']})}),
+    defineField({name: 'dossier', title: 'URL del dossier (PDF)', type: 'url', group: 'program', description: 'Sube el PDF al bucket de Cloudflare con un nombre sin espacios (por ejemplo marruecos-2027-01-17.pdf) y pega aquí su URL. Para sustituirlo, sube el nuevo con otro nombre (por ejemplo marruecos-2027-01-17-v2.pdf) y cambia la URL.', validation: (rule) => rule.uri({scheme: ['https']}).custom((value) => dossierProblem(value) || true)}),
     defineField({name: 'storyTitle', title: 'Título del programa', type: 'string', group: 'program'}),
     defineField({name: 'storyLabel', title: 'Antetítulo anterior', type: 'string', group: 'program', hidden: true}),
     defineField({name: 'storyIntro', title: 'Introducción del programa', type: 'text', group: 'program'}),

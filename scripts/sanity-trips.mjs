@@ -2,6 +2,7 @@ import {sharedTripContentFields} from './trip-content-fields.mjs';
 import {validateRegistrationMappings} from './brevo.mjs';
 import {tripName, consolidateTrips, aggregateAvailability} from './trip-groups.mjs';
 import {departurePricing, validatePromotions} from './trip-pricing.mjs';
+import {isSanityFileUrl} from './dossier-url.mjs';
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const optional = value => value == null || value === '';
@@ -20,6 +21,12 @@ export function httpsUrl(value, field) {
   let url; try { url = new URL(value); } catch { throw Error(`URL inválida: ${field}`); }
   if (url.protocol !== 'https:' || url.username || url.password) throw Error(`URL HTTPS requerida: ${field}`);
   return url.href;
+}
+// PDFs live on Cloudflare R2; a link back to a Sanity file would spend Sanity's quota again.
+function dossierUrl(value, field) {
+  const url = httpsUrl(value, field);
+  if (url && isSanityFileUrl(url)) throw Error(`El dossier debe estar en Cloudflare R2, no en Sanity: ${field}`);
+  return url;
 }
 function image(value, field) {
   if (!value) return '';
@@ -78,7 +85,7 @@ export function adaptTrip(doc, {today} = {}) {
     if (d.levels?.length || d.levelRequirement || d.programme) throw Error(`Separa el nivel y el programa en otro viaje: ${slug}/${d._key}`);
     const departure = {id: d._key, date: dates(d), start: d.start, end: d.end, duration: text(d.duration, 'duration') || 'Por confirmar',
       price: positive(d.price, 'price'), state: doc.state,
-      ...(d.dossier ? {dossier: httpsUrl(d.dossier, 'departure.dossier')} : {}),
+      ...(d.dossier ? {dossier: dossierUrl(d.dossier, 'departure.dossier')} : {}),
       ...(d.availability != null ? {availability: validateAvailability(d.availability, slug)} : {}),
       ...(d.capacity ? {capacity: validateCapacity(d.capacity, slug)} : {}),
       ...(d.brevoValue != null ? {brevoValue: validateBrevoValue(d.brevoValue)} : {}),
@@ -113,7 +120,7 @@ export function adaptTrip(doc, {today} = {}) {
     levelText: text(doc.levelText, 'levelText') || text(doc.levelRequirement, 'levelRequirement'),
     levelChecks: strings(doc.levelChecks, 'levelChecks'), includes: strings(doc.includes, 'includes'), excludes: strings(doc.excludes, 'excludes'),
     inclusionsNote: text(doc.inclusionsNote, 'inclusionsNote'), faqs: pairs(doc.faqs, 'question', 'answer', 'faqs'),
-    dossier: httpsUrl(doc.dossier, 'dossier'),
+    dossier: dossierUrl(doc.dossier, 'dossier'),
     payment: {depositAmount, terms: text(doc.payment?.terms, 'payment.terms')}, capacity,
     message: `¡Hola, LST! Me interesa ${name}. ¿Podemos consultar las próximas salidas?`, cms: true,
   };

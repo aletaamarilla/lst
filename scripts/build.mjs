@@ -3,6 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {readPublishedTrips} from './sanity.mjs';
 import {adaptTrips, madridToday} from './sanity-trips.mjs';
+import {assertDossiersReachable} from './dossier-check.mjs';
 import {renderTrip} from './render-trips.mjs';
 import {renderRegistration} from './render-registration.mjs';
 import {renderCatalog} from './render-catalog.mjs';
@@ -30,10 +31,11 @@ async function htmlFiles(dir, base = dir) {
   return found;
 }
 
-export async function buildSite({out = 'dist', read = readPublishedTrips, template = 'dist', site = siteConfig(), analytics = analyticsConfig(process.env, site), today = madridToday()} = {}) {
+export async function buildSite({out = 'dist', read = readPublishedTrips, template = 'dist', site = siteConfig(), analytics = analyticsConfig(process.env, site), today = madridToday(), verifyDossiers = null} = {}) {
   const target = path.resolve(out);
   // Fetch once and validate everything before touching the existing output.
   const trips = adaptTrips(await read(), {today});
+  await verifyDossiers?.(trips);
   const parent = path.dirname(target);
   await mkdir(parent, {recursive: true});
   const lock = `${target}.build-lock`;
@@ -107,6 +109,6 @@ export async function buildSite({out = 'dist', read = readPublishedTrips, templa
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2);
   if (args.some(a => !a.startsWith('--out='))) throw Error('Uso: build.mjs [--out=/ruta/local]');
-  try { console.log(JSON.stringify(await buildSite({out: args.find(a => a.startsWith('--out='))?.slice(6) ?? 'dist'}))); }
+  try { console.log(JSON.stringify(await buildSite({out: args.find(a => a.startsWith('--out='))?.slice(6) ?? 'dist', verifyDossiers: assertDossiersReachable}))); }
   catch (error) { console.error(error.message); process.exitCode = 1; }
 }

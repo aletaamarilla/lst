@@ -9,6 +9,7 @@ import {buildSite, legacySlugs} from './build.mjs';
 import {renderTrip} from './render-trips.mjs';
 import {tripPrice, departuresFor} from './trip-model.mjs';
 import {prepareDrafts, planImport, runImport} from './import-departures.mjs';
+import {DOSSIER_HOST} from './dossier-url.mjs';
 
 const inventory = JSON.parse(await readFile('docs/sanity/2026-10-23/salidas.json', 'utf8'));
 const drafts = prepareDrafts(inventory);
@@ -24,13 +25,31 @@ test('production explicitly requests published perspective, fixed target and sep
     assert.equal(url.searchParams.get('perspective'), 'published');
     assert.match(url.searchParams.get('query'), /drafts\.\*\*/);
     assert.match(url.searchParams.get('query'), /versions\.\*\*/);
-    assert.match(url.searchParams.get('query'), /coalesce\(dossierFile\.asset->url, dossier\)/);
+    assert.doesNotMatch(url.searchParams.get('query'), /dossierFile/);
     assert.equal(options.headers.Authorization, 'Bearer private-read');
     assert.equal(options.redirect, 'error');
     return reply([]);
   }});
   assert.deepEqual(docs, []);
   assert.equal(calls, 1);
+});
+
+test('a dossier still on Sanity stops the build, for the trip and for a departure', () => {
+  const sanityPdf = 'https://cdn.sanity.io/files/q5bj2rn2/production/abc.pdf';
+  const trip = published(0);
+  trip.dossier = sanityPdf;
+  assert.throws(() => adaptTrip(trip), /Cloudflare R2/);
+  const departure = published(0);
+  departure.departures[0].dossier = sanityPdf;
+  assert.throws(() => adaptTrip(departure), /Cloudflare R2/);
+});
+
+test('a dossier on the downloads host passes through, and no dossier stays empty', () => {
+  const doc = published(0);
+  doc.dossier = 'https://' + DOSSIER_HOST + '/x.pdf';
+  assert.equal(adaptTrip(doc).dossier, 'https://' + DOSSIER_HOST + '/x.pdf');
+  delete doc.dossier;
+  assert.equal(adaptTrip(doc).dossier, '');
 });
 
 test('an importer token is never reused as a production reader; failures do not leak credentials or bodies', async () => {
@@ -195,6 +214,19 @@ test('one read supplies home, catalogue, levels and details; stale demo content 
       assert.match(html, /No hay viajes publicados/);
       assert.doesNotMatch(html, /Hossegor|catalog-card-link|guide-trip-card|home-trip-link/);
     }
+  } finally { await rm(dir, {recursive: true, force: true}); }
+});
+
+test('the dossier check receives the adapted trips, and a failing check preserves the last output', async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'lst-dossier-check-'));
+  try {
+    await writeFile(path.join(dir, 'sentinel'), 'last-valid');
+    let received;
+    await assert.rejects(buildSite({today:'2026-11-01', out: dir, read: async () => [published(0)], verifyDossiers: async trips => {received = trips; throw Error('PDF no encontrado');}}), /PDF no encontrado/);
+    assert.equal(received.length, 1);
+    // adaptTrips groups date-specific documents (hossegor-2026-11-20) under one trip (hossegor).
+    assert.match(received[0].slug, /^hossegor/);
+    assert.equal(await readFile(path.join(dir, 'sentinel'), 'utf8'), 'last-valid');
   } finally { await rm(dir, {recursive: true, force: true}); }
 });
 
