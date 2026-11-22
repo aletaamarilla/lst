@@ -2,6 +2,7 @@
 // Playwright module and Chromium via LST_PLAYWRIGHT_MODULE / LST_CHROMIUM_PATH.
 // WhatsApp is fulfilled locally. Synthetic CMS content exists only in intercepted test routes.
 import {createRequire} from 'node:module';
+import {TRIP_BUNDLE, tripBundle} from './trip-styles.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
@@ -96,7 +97,7 @@ try{
     const tag=`${slug} ${width}x${height} ${motion}`;
     const context=await browser.newContext({viewport:{width,height},isMobile:width<1000,hasTouch:true,reducedMotion:motion});
     await context.route('https://**/*',async r=>{const url=new URL(r.request().url());if(url.hostname==='wa.me'){report.whatsapp.push({tag,url:url.href});await r.fulfill({contentType:'text/plain',body:'Local interception. No message sent.'});}else await r.abort();});
-    if(process.env.LST_DIALOG_BASELINE)for(const file of ['trip.css','trip.js'])await context.route(`**/${file}`,r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist',file)}));
+    if(process.env.LST_DIALOG_BASELINE){await context.route(`**/${TRIP_BUNDLE}`,async r=>r.fulfill({contentType:'text/css; charset=utf-8',body:await tripBundle(path.join(process.env.LST_DIALOG_BASELINE,'dist'))}));await context.route('**/trip.js',r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist','trip.js')}));}
     await intercept(context);
     const page=await context.newPage();page.setDefaultTimeout(5000);page.on('pageerror',e=>report.errors.push({tag,message:e.message}));
     try{
@@ -176,7 +177,7 @@ try{
  for(const [width,height,zoom] of [[320,740,1],[390,844,1],[768,1024,1],[1440,900,1],[320,320,1],[390,360,1],[390,480,2],[320,740,2],[320,320,2],[390,360,2],[390,420,2]].filter(matchesWidth)){
   const tag=`long-dates ${width}x${height} text${zoom*100}`,context=await browser.newContext({viewport:{width,height},reducedMotion:'reduce'});
   await context.route('https://**/*',async r=>{report.whatsapp.push({tag,url:r.request().url()});await r.fulfill({contentType:'text/plain',body:'Local interception. No message sent.'});});
-  if(process.env.LST_DIALOG_BASELINE)for(const file of ['trip.css','trip.js'])await context.route(`**/${file}`,r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist',file)}));
+  if(process.env.LST_DIALOG_BASELINE){await context.route(`**/${TRIP_BUNDLE}`,async r=>r.fulfill({contentType:'text/css; charset=utf-8',body:await tripBundle(path.join(process.env.LST_DIALOG_BASELINE,'dist'))}));await context.route('**/trip.js',r=>r.fulfill({path:path.join(process.env.LST_DIALOG_BASELINE,'dist','trip.js')}));}
   await intercept(context);
   await context.route('**/viajes/qa-multiple/',r=>r.fulfill({contentType:'text/html',body:fixtureHTML}));
   const page=await context.newPage();page.setDefaultTimeout(5000);

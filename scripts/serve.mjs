@@ -8,6 +8,7 @@ import {renderCatalog} from './render-catalog.mjs';
 import {renderLevelTrips} from './render-level-trips.mjs';
 import {renderTrip} from './render-trips.mjs';
 import {renderRegistration} from './render-registration.mjs';
+import {TRIP_BUNDLE, tripBundle} from './trip-styles.mjs';
 
 const types={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.ttf':'font/ttf','.woff2':'font/woff2'};
 
@@ -45,7 +46,8 @@ export function createSiteServer({root=path.resolve('dist'),previewTrips=null}={
       if(file!==root&&!file.startsWith(root+path.sep))throw Error('Invalid path');
       if((await stat(file)).isDirectory())file=path.join(file,'index.html');
       const extension=path.extname(file);
-      let content=await readFile(file);
+      // Rebuilt on each request so edits to the source stylesheets show without a build.
+      let content=name===`/${TRIP_BUNDLE}`?await tripBundle(root):await readFile(file);
       // Render against current templates on each request, without modifying release output.
       if(previewTrips&&(extension==='.html'||path.basename(file)==='catalog-snapshot.json')) {
         const relative=path.relative(root,file).split(path.sep).join('/');

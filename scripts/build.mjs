@@ -11,6 +11,7 @@ import {renderHomeTrips} from './render-home-trips.mjs';
 import {legalLinks} from './legal.mjs';
 import {applyStructuredData} from './structured-data.mjs';
 import {llmsTxt} from './llms.mjs';
+import {TRIP_BUNDLE, tripBundle} from './trip-styles.mjs';
 import {analyticsConfig, analyticsPage, applyAnalytics} from './analytics.mjs';
 import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
 
@@ -87,6 +88,7 @@ export async function buildSite({out = 'dist', read = readPublishedTrips, templa
     }
     await writeFile(path.join(stage, 'robots.txt'), robotsTxt(site));
     await writeFile(path.join(stage, 'sitemap.xml'), sitemapXml(routes, trips, site));
+    await writeFile(path.join(stage, TRIP_BUNDLE), await tripBundle(stage));
     // The summary for AI assistants only exists where crawlers are invited.
     if (site.indexable) await writeFile(path.join(stage, 'llms.txt'), llmsTxt(trips, site));
     else await rm(path.join(stage, 'llms.txt'), {force: true});

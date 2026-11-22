@@ -11,6 +11,7 @@ import {renderHomeTrips} from './render-home-trips.mjs';
 import {legalRoutes} from './legal.mjs';
 import {applyStructuredData} from './structured-data.mjs';
 import {llmsTxt} from './llms.mjs';
+import {TRIP_BUNDLE, tripBundle} from './trip-styles.mjs';
 import {siteConfig, pageMeta, applySiteMeta, robotsTxt, sitemapXml, routeOf} from './site-meta.mjs';
 const site=siteConfig();
 const root=path.resolve(process.argv.find(a=>a.startsWith('--dir='))?.slice(6)??'dist');
@@ -69,7 +70,7 @@ for(const [file,{html,ids}] of pages){
 for(const file of files.filter(f=>f.endsWith('.css'))){const css=await readFile(file,'utf8');for(const m of css.matchAll(/url\(['"]?([^)'" ]+)/g)){if(m[1].startsWith('/'))try{await access(path.join(root,m[1]));}catch{errors.push(`Missing CSS asset ${m[1]}`)}}}
 // Crawler files must describe exactly the pages of this deployment.
 const publicRoutes=[...pages.keys()].map(file=>routeOf(path.relative(root,file)));
-for(const [name,expected] of [['robots.txt',robotsTxt(site)],['sitemap.xml',sitemapXml(publicRoutes,trips,site)],['llms.txt',site.indexable?llmsTxt(trips,site):null]]){
+for(const [name,expected] of [[TRIP_BUNDLE,await tripBundle(root)],['robots.txt',robotsTxt(site)],['sitemap.xml',sitemapXml(publicRoutes,trips,site)],['llms.txt',site.indexable?llmsTxt(trips,site):null]]){
  const current=await readFile(path.join(root,name),'utf8').catch(()=>null);
  if(current!==expected)errors.push(`${name} missing or out of date for this deployment`);
 }
