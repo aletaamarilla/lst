@@ -770,9 +770,12 @@ body.tp.trip-designed .audience-profiles article:last-of-type:nth-of-type(odd){g
 body.tp.trip-designed .audience-profiles h3{margin:0 0 6px;font:400 19px/1 var(--tp-display);text-transform:uppercase;letter-spacing:0;color:var(--tp-sea)}
 body.tp.trip-designed.trip-designed .audience-profiles p{margin:0;font-size:14.5px!important;line-height:1.4;color:var(--tp-ink)}
 body.tp.trip-designed .audience-profiles .level-requirement{grid-column:1/-1;margin:0;padding:10px 12px;border-top:2px solid var(--tp-ink);text-align:center}
+/* En pantalla ancha, una fila con tantas columnas como niveles. Sin auto-fit: con minmax(0,…) crea cientos
+   de pistas de medio píxel y una sola caja acababa en una columna de texto vertical (Marruecos avanzado). */
 @media (min-width:700px){
- body.tp.trip-designed .audience-profiles{grid-template-columns:repeat(auto-fit,minmax(0,1fr))}
+ body.tp.trip-designed .audience-profiles:has(>article:nth-of-type(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
+ body.tp.trip-designed .audience-profiles:has(>article:nth-of-type(4)){grid-template-columns:repeat(4,minmax(0,1fr))}
  body.tp.trip-designed .audience-profiles article{padding:16px 18px 18px}
  body.tp.trip-designed .audience-profiles article:nth-of-type(n+3){border-top:0;border-left:2px solid var(--tp-ink)}
- body.tp.trip-designed .audience-profiles article:last-of-type:nth-of-type(odd){grid-column:auto}
+ body.tp.trip-designed .audience-profiles article:last-of-type:nth-of-type(odd):not(:only-of-type){grid-column:auto}
 }
