@@ -57,15 +57,23 @@ async function routing(context){
    if(mode==='network')return r.abort('failed');
    if(mode==='native')return r.fulfill({contentType:'text/html',body:'<h1>Native POST intercepted</h1>'});
    await new Promise(resolve=>setTimeout(resolve,100));
-   const response=mode==='rejected'?{success:false,message:'Revisa tu email.',errors:{EMAIL:'Email rechazado por Brevo.'}}:{success:true,...(mode==='redirect-malformed'?{redirect:'::::'}:mode==='redirect-insecure'?{redirect:'javascript:alert(1)'}:{})};
+   // Brevo names a refused field in `errors` or only at the start of its message, as it did with WhatsApp in production.
+   const refusals={rejected:{success:false,message:'Revisa tu email.',errors:{EMAIL:'Email rechazado por Brevo.'}},'rejected-message':{success:false,message:'WHATSAPP: revisa los datos que has introducido...'},'rejected-birth':{success:false,message:'FECHADENACIMIENTO: revisa los datos que has introducido...'},'rejected-unknown':{success:false,message:'Algo no ha ido bien.'}};
+   const response=refusals[mode]??{success:true,...(mode==='redirect-malformed'?{redirect:'::::'}:mode==='redirect-insecure'?{redirect:'javascript:alert(1)'}:{})};
    return r.fulfill({status:mode==='http'?503:200,headers:{'access-control-allow-origin':'*'},contentType:'application/json',body:mode==='malformed'?'not-json':JSON.stringify(response)});
   }
   return r.abort();
  });
 }
+// With JavaScript the birth date is chosen in three lists; without it, typed as dd-mm-aaaa.
+async function fillBirth(page,value){
+ const [day,month,year]=value.split('-');
+ if(!await page.locator('#FECHADENACIMIENTO-dia').isVisible())return page.locator('[name=FECHADENACIMIENTO]').fill(value);
+ await page.locator('#FECHADENACIMIENTO-dia').selectOption(day);await page.locator('#FECHADENACIMIENTO-mes').selectOption(month);await page.locator('#FECHADENACIMIENTO-ano').selectOption(year);
+}
 async function fillStep(page,index){
  if(index===0&&await page.locator('[name=VIAJE_SURF]:checked').count()===0)await page.locator('[name=VIAJE_SURF]').first().check();
- for(const [name,value] of Object.entries(groups[index]))await page.locator(`[name="${name}"]`).fill(value);
+ for(const [name,value] of Object.entries(groups[index]))if(name==='FECHADENACIMIENTO')await fillBirth(page,value);else await page.locator(`[name="${name}"]`).fill(value);
  // Click the label, as people do: size choices hide the native radio behind the label.
  // Privacy consent is always required; health consent too, because the step fills in health details.
  if(index===4)for(const consent of ['privacy','health'])await page.locator(`[data-consent="${consent}"]`).check();
@@ -119,12 +127,22 @@ try{
  await page.locator('[data-step-next]').click();check('empty step cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
  await fillStep(page,0);await page.locator('[name=EMAIL]').fill('incorrecto');await page.locator('[data-step-next]').click();
  check('invalid email cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
+ // The browser accepts nombre@gmailcom; Brevo does not, so it is stopped here with a reason.
+ await page.locator('[name=EMAIL]').fill('qa@example');await page.locator('[data-step-next]').click();
+ check('email without its ending cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
+ check('email without its ending says what is missing',/\.com/.test(await page.locator('#error-EMAIL').innerText()));
  await page.locator('[name=EMAIL]').fill('qa@example.test');await page.locator('[name=EMAIL]').press('Enter');
  check('Enter advances without sending',await page.locator('#sib-form').getAttribute('data-current-step'),'1');check('Enter did not submit to Brevo',submissions.length,0);
  check('step focus follows navigation',await page.locator('[data-registration-step="1"]').evaluate(e=>e===document.activeElement));
- await fillStep(page,1);await page.locator('[name=FECHADENACIMIENTO]').fill('31-02-1995');await page.locator('[data-step-next]').click();
+ check('birth date is three lists',await page.locator('[data-registration-step="1"] select:visible').count(),3);
+ check('birth date is not typed',await page.locator('[name=FECHADENACIMIENTO]').isVisible(),false);
+ check('birth date label opens the day list',await page.locator('label.entry__label:has-text("Fecha de nacimiento")').getAttribute('for'),'FECHADENACIMIENTO-dia');
+ await page.locator('[data-step-next]').click();
+ check('missing birth date asks for day, month and year',await page.locator('#error-FECHADENACIMIENTO').innerText(),'Elige el día, el mes y el año en que naciste.');
+ await fillStep(page,1);await fillBirth(page,'31-02-1995');await page.locator('[data-step-next]').click();
  check('impossible date cannot advance',await page.locator('#sib-form').getAttribute('data-current-step'),'1');
- await page.locator('[name=FECHADENACIMIENTO]').fill('15-06-1995');await page.locator('[data-step-prev]').click();
+ check('impossible date says why',await page.locator('#error-FECHADENACIMIENTO').innerText(),'Febrero de 1995 tiene 28 días.');
+ await fillBirth(page,'15-06-1995');await page.locator('[data-step-prev]').click();
  check('back preserves name',await page.locator('[name=NOMBRE]').inputValue(),'Prueba');
  check('back preserves selected trip',await page.locator('[name=VIAJE_SURF]:checked').getAttribute('data-departure-id'),second.id);
  await page.locator('[data-go-step="1"]').click();await page.locator('[data-step-next]').click();
@@ -135,7 +153,7 @@ try{
  await page.locator('[name=EMAIL]').fill('qa@example.test');await page.locator('[data-go-step="4"]').click();
  await watchFailures(page);
  mode='rejected';await page.locator('button[type=submit]').click();await page.waitForSelector('#error-message.sib-form-message-panel--active');
- check('rejected: reported as field errors, without their text',await failures(page),[{fields:true}]);
+ check('rejected: reported as field errors, without their text',await failures(page),[{fields:true,field:'EMAIL'}]);
  check('server field error reveals contact step',await page.locator('#sib-form').getAttribute('data-current-step'),'0');
  check('server error is connected to field',await page.locator('[name=EMAIL]').getAttribute('aria-invalid'),'true');
  check('server error is readable',await page.locator('#error-EMAIL').innerText(),'Email rechazado por Brevo.');
@@ -148,6 +166,23 @@ try{
  check('success has keyboard focus',await page.locator('#success-message').evaluate(e=>e===document.activeElement));
  const payload=submissions[0];check('same Brevo AJAX mode',new URL(payload.url).searchParams.get('isAjax'),'1');
  for(const [name,value] of [['VIAJE_SURF',await page.locator('[name=VIAJE_SURF]:checked').inputValue()],['NOMBRE','Prueba'],['EMAIL','fixed@example.test'],['WHATSAPP__COUNTRY_CODE','+34'],['FECHADENACIMIENTO','15-06-1995'],['locale','es'],['TALLA_CAMISETA','1'],['NIVEL_SURF','1']])check(`complete payload includes hidden-step ${name}`,payload.body.includes(`name="${name}"\r\n\r\n${value}\r\n`));
+ // A field named only in Brevo's message: back to its step, our own words under it, a way to ask on WhatsApp.
+ for(const [refusal,field,control,step,words] of [['rejected-message','WHATSAPP','#WHATSAPP','0',/prefijo del país/],['rejected-birth','FECHADENACIMIENTO','#FECHADENACIMIENTO-dia','1',/fecha de nacimiento/]]){
+  await page.goto(origin+'/inscripciones/el-palmar/');await watchFailures(page);await complete(page);mode=refusal;submissions=[];
+  await page.locator('button[type=submit]').click();await page.waitForSelector('#error-message.sib-form-message-panel--active');
+  check(`${refusal}: reported with the field name only`,await failures(page),[{fields:true,field}]);
+  check(`${refusal}: shows the field's step`,await page.locator('#sib-form').getAttribute('data-current-step'),step);
+  check(`${refusal}: marks the field`,await page.locator(control).getAttribute('aria-invalid'),'true');
+  check(`${refusal}: focus on the field`,await page.locator(control).evaluate(e=>e===document.activeElement));
+  check(`${refusal}: explains in our words`,words.test(await page.locator(`#error-${field}`).innerText()));
+  check(`${refusal}: never shows Brevo's field code`,(await page.locator('#error-message').innerText()).includes(`${field}:`),false);
+  check(`${refusal}: offers WhatsApp`,/^https:\/\/wa\.me\//.test(await page.locator('#error-message a[data-whatsapp]').getAttribute('href')));
+ }
+ await page.goto(origin+'/inscripciones/el-palmar/');await watchFailures(page);await complete(page);mode='rejected-unknown';
+ await page.locator('button[type=submit]').click();await page.waitForSelector('#error-message.sib-form-message-panel--active');
+ check('refusal without a field keeps the last step',await page.locator('#sib-form').getAttribute('data-current-step'),'4');
+ check('refusal without a field is reported as such',await failures(page),[{fields:false}]);
+ check('refusal without a field still offers WhatsApp',await page.locator('#error-message a[data-whatsapp]').isVisible());
  for(const failure of ['network','malformed','http','redirect-malformed','redirect-insecure']){
   await page.goto(origin+'/inscripciones/el-palmar/');await watchFailures(page);await complete(page);mode=failure;submissions=[];
   await page.locator('button[type=submit]').click();const succeeded=failure.startsWith('redirect');

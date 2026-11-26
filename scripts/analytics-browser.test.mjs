@@ -433,3 +433,19 @@ test('a failed registration reports why, from a closed list and never from messa
   assert.deepEqual(site.events().map(e => [e.name, e.destination_slug, e.error_category]),
     cases.map(([, category]) => ['registration_error', 'senegal', category]));
 });
+
+test('a field Brevo refused is reported by its form name, from a closed list', () => {
+  const site = open({page: {page_type: 'registration', destination_slug: 'senegal'}});
+  const fields = ['EMAIL', 'WHATSAPP', 'FECHADENACIMIENTO', 'ana@example.com', 'email', 'EMAIL: no es válido', 'OTRO_CAMPO', 42, undefined];
+  for (const field of fields) site.dispatch('lst:registration-failed', {fields: true, field});
+  assert.deepEqual(site.events().map(e => [e.error_category, e.error_field]),
+    fields.map((field, i) => ['validation', i < 3 ? field : undefined]));
+});
+
+test('every field of the published form can be reported when Brevo refuses it', async () => {
+  const html = await readFile('dist/inscripciones/el-palmar/index.html', 'utf8');
+  const names = new Set([...html.matchAll(/<(?:input|select|textarea)\b[^>]*\bname="([A-Z][A-Z0-9_]*)"/g)].map(([, name]) => name));
+  names.delete('WHATSAPP__COUNTRY_CODE'); // Reported as WHATSAPP: the prefix and the number are one answer.
+  assert.ok(names.has('EMAIL') && names.has('FECHADENACIMIENTO'));
+  for (const name of names) assert.ok(source.includes(`'${name}'`), `analytics.js must list ${name}`);
+});

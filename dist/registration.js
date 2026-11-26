@@ -23,19 +23,12 @@ updateDate();
 dates.forEach(input => input.addEventListener('change', () => { dateNotice.hidden = true; updateDate(); datePicker?.querySelector('summary').focus({preventScroll:true}); }));
 
 // Personal information stays only in this page; no browser storage or URL persistence.
-const birthDate = document.querySelector('#FECHADENACIMIENTO');
-birthDate?.addEventListener('input', () => {
-  const parts = /^(\d{2})-(\d{2})-(\d{4})$/.exec(birthDate.value);
-  if (!parts) { birthDate.setCustomValidity(''); return; }
-  const [, day, month, year] = parts;
-  const date = new Date(`${year}-${month}-${day}T00:00:00Z`);
-  birthDate.setCustomValidity(Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === `${year}-${month}-${day}` ? '' : 'Introduce una fecha válida.');
-});
 
 // Messages are written under each field: native validation bubbles never appear in iOS Safari
 // or in the Instagram and WhatsApp in-app browsers, so a blocked step looked like a dead button.
 const messageFor = input => {
   const v = input.validity;
+  if (v.valueMissing && input.closest('.registration-birthdate')) return 'Elige el día, el mes y el año en que naciste.';
   if (v.valueMissing) return input.type === 'radio' ? 'Elige una opción.' : input.type === 'checkbox' ? 'Marca esta casilla para continuar.' : 'Rellena este campo.';
   if (v.customError) return input.validationMessage;
   if (v.typeMismatch && input.type === 'email') return 'Escribe un email válido. Por ejemplo: nombre@gmail.com.';
@@ -94,6 +87,67 @@ phone?.addEventListener('change', () => {
   if (phone.value.trim() && !phone.checkValidity()) showFieldError(phone);
 });
 phoneCode?.addEventListener('change', () => { if (phone.value.trim()) { checkPhone(); if (phone.checkValidity()) clearFieldError(phone); else showFieldError(phone); } });
+
+// The browser accepts an address with nothing after the domain (nombre@gmailcom); Brevo refuses it.
+const email = document.querySelector('#EMAIL');
+const checkEmail = () => {
+  const value = email.value.trim();
+  email.setCustomValidity(value && !email.validity.typeMismatch && !/@[^@\s]+\.[^@\s.]{2,}$/.test(value)
+    ? 'Al email le falta el final, como .com o .es. Por ejemplo: nombre@gmail.com.' : '');
+};
+email?.addEventListener('input', checkEmail);
+
+// The birth date is chosen in three lists instead of typed in a format. They write dd-mm-aaaa into the
+// Brevo field, which stays in the form for the payload and is what people type without JavaScript.
+const MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+const birthDate = document.querySelector('#FECHADENACIMIENTO');
+const birthDay = birthDate ? birthLists(birthDate) : null;
+function birthLists(input) {
+  const pad = n => String(n).padStart(2, '0');
+  const thisYear = new Date().getFullYear();
+  const list = (part, label, autocomplete, options) => {
+    const select = Object.assign(document.createElement('select'), {className: 'input', id: `FECHADENACIMIENTO-${part}`, required: true, autocomplete});
+    select.setAttribute('aria-label', `${label} de nacimiento`);
+    select.setAttribute('aria-describedby', 'error-FECHADENACIMIENTO');
+    select.append(new Option(label, ''), ...options.map(([text, value]) => new Option(text, value)));
+    return select;
+  };
+  const lists = [
+    list('dia', 'Día', 'bday-day', Array.from({length: 31}, (_, i) => [String(i + 1), pad(i + 1)])),
+    list('mes', 'Mes', 'bday-month', MONTHS.map((name, i) => [name, pad(i + 1)])),
+    list('ano', 'Año', 'bday-year', Array.from({length: 91}, (_, i) => String(thisYear - i)).map(year => [year, year])),
+  ];
+  const [day] = lists;
+  const group = Object.assign(document.createElement('div'), {className: 'registration-birthdate'});
+  for (const select of lists) {
+    const box = Object.assign(document.createElement('div'), {className: 'entry__field'});
+    box.append(select);
+    group.append(box);
+  }
+  const typed = input.closest('.entry__field');
+  typed.before(group);
+  typed.hidden = true;
+  input.closest('.form__entry').querySelector('.entry__label').htmlFor = day.id;
+  const help = document.querySelector('#help-FECHADENACIMIENTO');
+  if (help) help.hidden = true;
+  const sync = () => {
+    const [d, m, y] = lists.map(select => select.value);
+    day.setCustomValidity('');
+    input.value = '';
+    if (!d || !m || !y) return;
+    const days = new Date(Date.UTC(Number(y), Number(m), 0)).getUTCDate();
+    if (Number(d) <= days) { input.value = `${d}-${m}-${y}`; return; }
+    const name = MONTHS[Number(m) - 1];
+    day.setCustomValidity(`${name[0].toUpperCase()}${name.slice(1)} de ${y} tiene ${days} días.`);
+    showFieldError(day);
+  };
+  // A date the browser restored into the field is shown in the lists.
+  const restored = /^(\d{2})-(\d{2})-(\d{4})$/.exec(input.value);
+  if (restored) lists.forEach((select, i) => { select.value = restored[i + 1]; });
+  lists.forEach(select => select.addEventListener('change', sync));
+  sync();
+  return day;
+}
 
 // Health details are optional; once given, their specific consent becomes required.
 const healthConsent = document.querySelector('[data-consent="health"]');
@@ -175,10 +229,13 @@ function createSteps(form) {
       }
       return true;
     },
+    // Shows the step of a field Brevo refused and puts the person on it, keeping the message under it.
     reveal(input) {
-      const index = sections.indexOf(input?.closest('[data-registration-step]'));
+      const index = sections.indexOf(input.closest('[data-registration-step]'));
       if (index >= 0) show(index, false);
-      if (input?.name === 'VIAJE_SURF' && datePicker) datePicker.open = true;
+      if (input.name === 'VIAJE_SURF' && datePicker) datePicker.open = true;
+      input.focus({preventScroll:true});
+      (input.closest('.form__entry, .registration-consent-option') ?? input).scrollIntoView({block:'center', behavior:'auto'});
     },
   };
 }
@@ -189,11 +246,39 @@ if (form) {
   const success = document.querySelector('#success-message');
   const error = document.querySelector('#error-message');
   const originalError = error.querySelector('.sib-form-message-panel__inner-text').textContent;
+  // Whatever goes wrong, the person can still ask the team in one tap (measured as a registration contact).
+  const ask = document.querySelector('.registration-support .rg-whatsapp')?.cloneNode(true);
+  if (ask) {
+    ask.className = 'hp-btn rg-whatsapp';
+    ask.textContent = 'Escríbenos por WhatsApp';
+    error.append(ask);
+  }
+  // Brevo names the fields it refuses either in `errors` or only at the start of its message
+  // ("WHATSAPP: revisa los datos que has introducido..."). Only names of this form's fields count;
+  // the prefix and the number are one WhatsApp answer.
+  const refusedFields = result => {
+    const named = Object.keys(result.errors ?? {});
+    if (typeof result.message === 'string') named.push(...[...result.message.matchAll(/\b([A-Z][A-Z0-9_]*)\s*:/g)].map(([, name]) => name));
+    return [...new Set(named.map(name => name === 'WHATSAPP__COUNTRY_CODE' ? 'WHATSAPP' : name))].filter(name => form.elements.namedItem(name));
+  };
+  // The control people see for an answer: the day list for the birth date, the first option of a choice.
+  const controlFor = name => {
+    if (name === 'FECHADENACIMIENTO' && birthDay) return birthDay;
+    const control = form.elements.namedItem(name);
+    return control instanceof RadioNodeList ? control[0] : control;
+  };
+  // Our words when Brevo only names the field; its own text when it gives one for the field.
+  const REFUSED = {
+    EMAIL: 'Brevo no ha aceptado este email. Revisa que esté bien escrito. Por ejemplo: nombre@gmail.com.',
+    WHATSAPP: phoneMessage,
+    FECHADENACIMIENTO: 'Revisa la fecha de nacimiento: Brevo no la ha aceptado.',
+  };
   let sending = false;
   let complete = false;
-  const show = (panel, message) => {
+  const show = (panel, message, focus = true) => {
     if (message) panel.querySelector('.sib-form-message-panel__inner-text').textContent = message;
     panel.classList.add('sib-form-message-panel--active');
+    if (!focus) return;
     panel.focus({preventScroll:true});
     panel.scrollIntoView({behavior:'auto', block:'center'});
   };
@@ -204,6 +289,7 @@ if (form) {
     // Enter follows the same progression as the Continue button.
     if (!wizard.last) { wizard.advance(); return; }
     if (phone) { const digits = checkPhone(); if (digits && phone.checkValidity()) phone.value = digits; }
+    if (email) checkEmail();
     if (!wizard.validateAll()) return;
     sending = true;
     wizard.lock(true);
@@ -224,20 +310,15 @@ if (form) {
       if (!response.ok) { httpStatus = response.status; throw Error('Brevo HTTP error'); }
       const result = await response.json();
       if (result.success !== true) {
-        let firstInvalid = null;
-        for (const [name, message] of Object.entries(result.errors ?? {})) {
-          const control = form.elements.namedItem(name);
-          const input = control instanceof RadioNodeList ? control[0] : control;
-          const label = input?.closest('.form__entry')?.querySelector('.entry__error');
-          if (label) {
-            label.textContent = String(message);
-            input.setAttribute('aria-invalid', 'true');
-            firstInvalid ??= input;
-          }
+        const refused = refusedFields(result);
+        for (const name of refused) {
+          const own = result.errors?.[name];
+          showFieldError(controlFor(name), typeof own === 'string' ? own : REFUSED[name] ?? 'Revisa este dato: Brevo no lo ha aceptado.');
         }
-        if (firstInvalid) wizard.reveal(firstInvalid);
-        failed({fields: !!firstInvalid});
-        show(error, typeof result.message === 'string' ? result.message : originalError);
+        failed(refused.length ? {fields: true, field: refused[0]} : {fields: false});
+        if (!refused.length) { show(error, typeof result.message === 'string' ? result.message : originalError); return; }
+        show(error, 'No se ha enviado: revisa el dato marcado y vuelve a enviar la solicitud.', false);
+        wizard.reveal(controlFor(refused[0]));
         return;
       }
       complete = true;

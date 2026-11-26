@@ -87,6 +87,10 @@ body.rg .entry__field:has([aria-invalid=true]){box-shadow:inset 0 0 0 2px var(--
 body.rg input.input,body.rg select.input{flex:1;min-width:0;width:100%;height:auto;margin:0;padding:14px;border:0;border-radius:2px;background:transparent;color:var(--ink);font:500 17px/1.3 var(--body);outline:0;appearance:none}
 body.rg input.input::placeholder{color:rgba(97,94,84,.7)}
 body.rg .sib-sms-input select.input{flex:0 0 auto;width:auto;padding-right:30px;border-right:1.5px solid var(--rule-strong);border-radius:2px 0 0 2px;font:600 15px var(--body);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231b1b1b' stroke-width='2'/%3E%3C/svg%3E") right 11px center/11px no-repeat}
+/* Fecha de nacimiento: tres listas (día, mes, año) en lugar de escribirla con formato. */
+body.rg .registration-birthdate{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.5fr) minmax(0,1fr);gap:8px}
+body.rg .registration-birthdate select.input{padding:14px 30px 14px 12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231b1b1b' stroke-width='2'/%3E%3C/svg%3E") right 11px center/11px no-repeat;text-overflow:ellipsis}
+body.rg .registration-birthdate select.input:has(option[value=""]:checked){color:var(--muted)}
 body.rg .registration-help{margin:8px 0 0;font-size:14px;color:var(--muted)}
 body.rg .registration-help a{font-weight:700;color:var(--ink);text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:4px}
 body.rg fieldset+.registration-help{margin:-12px 0 24px}
@@ -159,6 +163,8 @@ body.rg .registration-required-note{margin:16px 0 0;font-size:14px;color:var(--m
 body.rg .sib-form-message-panel{display:none;margin:0 0 24px;outline:0}
 body.rg .sib-form-message-panel--active{display:block}
 body.rg #error-message{padding:16px 18px;border-radius:2px;background:rgba(234,89,52,.16);box-shadow:inset 0 0 0 2px var(--orange);font-size:15px}
+body.rg #error-message>span{display:block}
+body.rg #error-message .rg-whatsapp{margin-top:14px}
 body.rg #success-message{padding:32px 28px;border-radius:4px;background:var(--orange);color:var(--ink)}
 body.rg #success-message h2{margin:0 0 14px;font:400 clamp(36px,6vw,56px)/.9 var(--display);text-transform:uppercase}
 body.rg #success-message>span{display:block;max-width:48ch;margin:0;font-size:17px}

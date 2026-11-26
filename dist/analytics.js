@@ -179,8 +179,17 @@
     if (error === 'TypeError') return 'network';
     return 'unknown';
   }
+  // When Brevo refuses a field, its name in the form says which answer to look at. Only the form's own
+  // field names pass, never anything Brevo or the person wrote.
+  const FIELDS = new Set(['VIAJE_SURF', 'NOMBRE', 'APELLIDOS', 'EMAIL', 'WHATSAPP', 'FECHADENACIMIENTO', 'DNI',
+    'DIRECCION', 'CIUDAD', 'CODIGO_POSTAL', 'PAIS', 'NIVEL_SURF', 'MATERIAL', 'MATERIAL_MEDIDAS', 'CONQUIENVIAJO',
+    'ACOMPANANTES', 'TALLA_CAMISETA', 'ALERGIAS_INTOLERANCIAS', 'ENFERMEDAD_PROBLEMA', 'MOTIVA', 'CONOCIDO',
+    'CONSENTIMIENTO_IMAGEN', 'OPT_IN']);
   document.addEventListener('lst:registration-failed', event => {
-    if (page.destination_slug) send('registration_error', {error_category: failure(event.detail ?? {})});
+    if (!page.destination_slug) return;
+    const detail = event.detail ?? {};
+    const field = FIELDS.has(detail.field) ? {error_field: detail.field} : {};
+    send('registration_error', {error_category: failure(detail), ...field});
   });
 
   // Consent notice: two equal choices, no pre-ticked analytics, always reachable from the cookie page.
