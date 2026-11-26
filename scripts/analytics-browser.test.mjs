@@ -96,12 +96,15 @@ function open({page = {page_type: 'home'}, html = '', hostname = HOST, cookie = 
   window.window = window;
   vm.runInNewContext(source, window);
   const calls = () => Array.from(window.dataLayer ?? [], args => [...args]); // Copies: the script's arrays belong to another realm.
+  const sent = () => calls().filter(([command]) => command === 'event').map(([, name, params]) => ({name, ...params}));
   return {
     elements,
     cookie: () => window.document.cookie,
     address: () => window.location.href,
     config: () => ({...calls().find(([command, id]) => command === 'config' && id === ID)?.[2]}),
-    events: () => calls().filter(([command]) => command === 'event').map(([, name, params]) => ({name, ...params})),
+    // What the visitor did; the view a trip's page reports on loading is read apart, with views().
+    events: () => sent().filter(event => event.name !== 'trip_page_view'),
+    views: () => sent().filter(event => event.name === 'trip_page_view'),
     click(target) { for (const fn of listeners.click ?? []) fn({target}); },
     dispatch(type, detail) { for (const fn of listeners[type] ?? []) fn({detail}); },
     choose(answer) {
@@ -114,11 +117,31 @@ const el = (tag, attrs, parent = null) => new Element(tag, attrs, parent);
 const trip = {page_type: 'trip', destination_slug: 'maldivas'};
 
 // --- Common parameters ------------------------------------------------------------------------
-test('every hit carries the page type, the trip of the page and who is visiting; loading a page sends no event of its own', () => {
+test('every hit carries the page type, the trip of the page and who is visiting', () => {
   const site = open({page: trip});
   assert.deepEqual(site.config(), {traffic_type: 'external', page_type: 'trip', destination_slug: 'maldivas'});
-  assert.deepEqual(site.events(), []); // The page view is GA4's own and already carries all of it.
+  assert.deepEqual(site.events(), []);
   assert.deepEqual(open().config(), {traffic_type: 'external', page_type: 'home'});
+});
+
+// GA4's Google tag sends the page view itself and leaves out what the page configures (README, «Medición»),
+// so the pages of a trip report their view with an event of their own, which keeps it.
+test('a trip page and its registration page each report one view of the trip; other pages none', () => {
+  assert.deepEqual(open({page: trip}).views(), [{name: 'trip_page_view', traffic_type: 'external', page_type: 'trip', destination_slug: 'maldivas'}]);
+  assert.deepEqual(open({page: {page_type: 'registration', destination_slug: 'maldivas'}}).views().map(e => [e.page_type, e.destination_slug]),
+    [['registration', 'maldivas']]);
+  for (const page of [{page_type: 'home'}, {page_type: 'catalog'}, {page_type: 'levels'}, {page_type: 'trip_unavailable'}])
+    assert.deepEqual(open({page}).views(), [], page.page_type);
+});
+
+test('the view of a trip is reported once, when the visitor accepts, and never without consent', () => {
+  const later = open({page: trip, consent: null});
+  assert.deepEqual(later.views(), []);
+  later.choose('accept');
+  later.choose('reject');
+  later.choose('accept');
+  assert.deepEqual(later.views().map(e => e.name), ['trip_page_view']);
+  assert.deepEqual(open({page: trip, consent: false}).views(), []);
 });
 
 test('only the public domain counts as external traffic; anything else is developer and flagged for debug', () => {

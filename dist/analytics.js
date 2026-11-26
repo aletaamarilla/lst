@@ -87,7 +87,8 @@
   function load() {
     window[`ga-disable-${id}`] = false;
     gtag('consent', 'update', {analytics_storage: 'granted'});
-    if (!loaded) {
+    const first = !loaded;
+    if (first) {
       loaded = true;
       const script = document.createElement('script');
       script.async = true;
@@ -97,6 +98,10 @@
       gtag('config', id, {...common, ...origin()});
     }
     granted = true;
+    // The Google tag GA4 serves for this ID sends its own page view and ignores what this config adds
+    // ("ignore duplicate instances of on-page configuration"; pausing that tag stops all measurement).
+    // Events keep their parameters, so each page of a trip reports its view once, with the trip.
+    if (first && page.destination_slug) send('trip_page_view', {});
   }
   function revoke() {
     granted = false;
